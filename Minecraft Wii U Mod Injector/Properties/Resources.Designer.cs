@@ -78,6 +78,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Properties {
         ///• Discord Rich Prescence Toggle in Settings
         ///• Theme and Color boxes will now display the set values when you launch the Injector (it was blank previously)
         ///• Removed the RAM Editing Tools search since the Injector is now open-source
+        ///• Injector Logo added to Settings and Credits
         ///
         ///- [Fixes]
         ///• Clean-up of old files for Quick Mods Manager and Language Manager
@@ -85,9 +86,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Properties {
         ///
         ///[Release v5.0 (5th of May, 2021)]
         ///
-        ///- [IMPORTANT INFORMATION]
-        ///
-        ///Hey everyone, Sloth@WiiPlaz [rest of string was truncated]&quot;;.
+        ///- [IMPORT [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string releaseNotes {
             get {

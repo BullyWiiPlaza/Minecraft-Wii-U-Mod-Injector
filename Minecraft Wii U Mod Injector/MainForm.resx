@@ -123,64 +123,6 @@
   <metadata name="StyleExtender.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>284, 17</value>
   </metadata>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="metroPanel1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        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
-        QmCC
-</value>
-  </data>
   <data name="discordRpcCheckBox.ToolTip" xml:space="preserve">
     <value>Whether the Injector will be displayed on your Discord Profile with detailed activity
 Toggling this constantly can mess up connection to Discord, if this happens just simply restart the Injector and Discord</value>
@@ -191,6 +133,7 @@ Toggling this constantly can mess up connection to Discord, if this happens just
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>25</value>
   </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="playersTile.TileImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAyAAAAJYCAYAAACadoJwAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO

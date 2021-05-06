@@ -349,7 +349,6 @@
             this.wiiuIpv4Box.MaxLength = 32767;
             this.wiiuIpv4Box.Name = "wiiuIpv4Box";
             this.wiiuIpv4Box.PasswordChar = '\0';
-            this.wiiuIpv4Box.PromptText = "Your Wii U\'s IPv4 address (Seen in the TCP Gecko Installer)";
             this.wiiuIpv4Box.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.wiiuIpv4Box.SelectedText = "";
             this.wiiuIpv4Box.SelectionLength = 0;
@@ -1745,7 +1744,7 @@
             // metroPanel1
             // 
             this.metroPanel1.BackColor = System.Drawing.Color.Transparent;
-            this.metroPanel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("metroPanel1.BackgroundImage")));
+            this.metroPanel1.BackgroundImage = global::Minecraft_Wii_U_Mod_Injector.Properties.Resources.Icon;
             this.metroPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.metroPanel1.HorizontalScrollbarBarColor = true;
             this.metroPanel1.HorizontalScrollbarHighlightOnWheel = false;

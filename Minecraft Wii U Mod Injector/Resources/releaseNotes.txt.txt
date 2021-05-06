@@ -1,11 +1,26 @@
 [Release v5.1 (6th of May, 2021)]
 
+- [IMPORTANT INFORMAITON]
+
+If you encounter any issues with the Mod Injector or have a suggestion for changes or want to submit a mod then please submit and issue
+on the official Github page or join the Discord (Link is in the settings page) as I'm free to suggestions to expand the Injector and fix
+as many bugs as I can. I might not care about Wii U but I care about my users and want the Injector to be the best it can be.
+
+Github Page:
+https://github.com/Kashiiera/Minecraft-Wii-U-Mod-Injector
+
+Discord:
+https://discord.gg/jrzZWaDc7a
+
+This update fixes some stuff and adds small QOL changes
+
 - [Changes]
 
 • Discord Rich Prescence Toggle in Settings
 • Theme and Color boxes will now display the set values when you launch the Injector (it was blank previously)
 • Removed the RAM Editing Tools search since the Injector is now open-source
 • Injector Logo added to Settings and Credits
+• Patch Notes will be bundled within the executable instead of a seperate file outside of it
 
 - [Fixes]
 • Clean-up of old files for Quick Mods Manager and Language Manager

@@ -15,22 +15,30 @@ namespace Minecraft_Wii_U_Mod_Injector.helpers
 
         public static void SetPresence(string details, string state)
         {
-            client.SetPresence(new RichPresence()
+            if (files.Configuration.ReadKey("DiscordRPC", "Discord") == "true")
             {
-                Details = details,
-                State = state,
-                Timestamps = new Timestamps() { Start = DateTime.UtcNow },
-                Assets = new Assets()
+                client.SetPresence(new RichPresence()
                 {
-                    LargeImageKey = "icon_large",
-                    LargeImageText = "Minecraft Wii U Mod Injector",
-                }
-            }); ;
+                    Details = details,
+                    State = state,
+                    Timestamps = new Timestamps() { Start = DateTime.UtcNow },
+                    Assets = new Assets()
+                    {
+                        LargeImageKey = "icon_large",
+                        LargeImageText = "Minecraft Wii U Mod Injector",
+                    }
+                }); ;
+            }
+            else
+                return;
         }
 
         public static void Deinitialize()
         {
-            client.Dispose();
+            if(client != null)
+                client.Dispose();
+
+            client = null;
         }
     }
 }

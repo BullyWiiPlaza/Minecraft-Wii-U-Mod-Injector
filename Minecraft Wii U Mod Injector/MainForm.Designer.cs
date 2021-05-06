@@ -132,8 +132,9 @@
             this.Glide = new MetroFramework.Controls.MetroTabPage();
             this.GlideRingScore = new MetroFramework.Controls.MetroLabel();
             this.GlideRingScoreSlider = new System.Windows.Forms.NumericUpDown();
-            this.donatorTab = new MetroFramework.Controls.MetroTabPage();
             this.settingsTab = new MetroFramework.Controls.MetroTabPage();
+            this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
+            this.discordRpcCheckBox = new MetroFramework.Controls.MetroCheckBox();
             this.creditsBtn = new MetroFramework.Controls.MetroButton();
             this.discordSrvBtn = new MetroFramework.Controls.MetroButton();
             this.colorsBox = new MetroFramework.Controls.MetroComboBox();
@@ -234,7 +235,7 @@
             this.versionTile.Name = "versionTile";
             this.versionTile.Size = new System.Drawing.Size(160, 181);
             this.versionTile.TabIndex = 6;
-            this.versionTile.Text = "5.0";
+            this.versionTile.Text = "v5.1";
             this.versionTile.UseSelectable = true;
             // 
             // MainTabs
@@ -244,13 +245,12 @@
             this.MainTabs.Controls.Add(this.worldTab);
             this.MainTabs.Controls.Add(this.generalTab);
             this.MainTabs.Controls.Add(this.minigamesTab);
-            this.MainTabs.Controls.Add(this.donatorTab);
             this.MainTabs.Controls.Add(this.settingsTab);
             this.MainTabs.ItemSize = new System.Drawing.Size(0, 1);
             this.MainTabs.Location = new System.Drawing.Point(166, 63);
             this.MainTabs.Multiline = true;
             this.MainTabs.Name = "MainTabs";
-            this.MainTabs.SelectedIndex = 0;
+            this.MainTabs.SelectedIndex = 5;
             this.MainTabs.Size = new System.Drawing.Size(952, 499);
             this.MainTabs.TabIndex = 7;
             this.MainTabs.UseSelectable = true;
@@ -315,9 +315,9 @@
             this.buildApiTitleLbl.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.buildApiTitleLbl.Location = new System.Drawing.Point(3, 3);
             this.buildApiTitleLbl.Name = "buildApiTitleLbl";
-            this.buildApiTitleLbl.Size = new System.Drawing.Size(155, 25);
+            this.buildApiTitleLbl.Size = new System.Drawing.Size(229, 25);
             this.buildApiTitleLbl.TabIndex = 6;
-            this.buildApiTitleLbl.Text = "Patch Notes for 5.0";
+            this.buildApiTitleLbl.Text = "Fetching Patch Notes for v5.1";
             this.buildApiTitleLbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // connectBtn
@@ -1719,24 +1719,10 @@
             this.GlideRingScoreSlider.TabIndex = 32;
             this.GlideRingScoreSlider.ValueChanged += new System.EventHandler(this.GlideRingScoreSliderChanged);
             // 
-            // donatorTab
-            // 
-            this.donatorTab.HorizontalScrollbarBarColor = true;
-            this.donatorTab.HorizontalScrollbarHighlightOnWheel = false;
-            this.donatorTab.HorizontalScrollbarSize = 10;
-            this.donatorTab.Location = new System.Drawing.Point(4, 5);
-            this.donatorTab.Name = "donatorTab";
-            this.donatorTab.Padding = new System.Windows.Forms.Padding(3);
-            this.donatorTab.Size = new System.Drawing.Size(944, 490);
-            this.donatorTab.TabIndex = 4;
-            this.donatorTab.Tag = "GeckoUNeeded";
-            this.donatorTab.Text = "Donator Features";
-            this.donatorTab.VerticalScrollbarBarColor = true;
-            this.donatorTab.VerticalScrollbarHighlightOnWheel = false;
-            this.donatorTab.VerticalScrollbarSize = 10;
-            // 
             // settingsTab
             // 
+            this.settingsTab.Controls.Add(this.metroPanel1);
+            this.settingsTab.Controls.Add(this.discordRpcCheckBox);
             this.settingsTab.Controls.Add(this.creditsBtn);
             this.settingsTab.Controls.Add(this.discordSrvBtn);
             this.settingsTab.Controls.Add(this.colorsBox);
@@ -1756,10 +1742,40 @@
             this.settingsTab.VerticalScrollbarHighlightOnWheel = false;
             this.settingsTab.VerticalScrollbarSize = 10;
             // 
+            // metroPanel1
+            // 
+            this.metroPanel1.BackColor = System.Drawing.Color.Transparent;
+            this.metroPanel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("metroPanel1.BackgroundImage")));
+            this.metroPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.metroPanel1.HorizontalScrollbarBarColor = true;
+            this.metroPanel1.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroPanel1.HorizontalScrollbarSize = 10;
+            this.metroPanel1.Location = new System.Drawing.Point(58, 193);
+            this.metroPanel1.Name = "metroPanel1";
+            this.metroPanel1.Size = new System.Drawing.Size(881, 301);
+            this.metroPanel1.TabIndex = 44;
+            this.metroPanel1.VerticalScrollbarBarColor = true;
+            this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
+            this.metroPanel1.VerticalScrollbarSize = 10;
+            // 
+            // discordRpcCheckBox
+            // 
+            this.discordRpcCheckBox.AutoSize = true;
+            this.discordRpcCheckBox.Checked = true;
+            this.discordRpcCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.discordRpcCheckBox.Location = new System.Drawing.Point(58, 76);
+            this.discordRpcCheckBox.Name = "discordRpcCheckBox";
+            this.discordRpcCheckBox.Size = new System.Drawing.Size(144, 15);
+            this.discordRpcCheckBox.TabIndex = 43;
+            this.discordRpcCheckBox.Text = "Discord Rich Prescense";
+            this.ToolTipManager.SetToolTip(this.discordRpcCheckBox, resources.GetString("discordRpcCheckBox.ToolTip"));
+            this.discordRpcCheckBox.UseSelectable = true;
+            this.discordRpcCheckBox.CheckedChanged += new System.EventHandler(this.discordRpcToggleChecked);
+            // 
             // creditsBtn
             // 
             this.creditsBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.creditsBtn.Location = new System.Drawing.Point(58, 127);
+            this.creditsBtn.Location = new System.Drawing.Point(58, 148);
             this.creditsBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.creditsBtn.Name = "creditsBtn";
             this.creditsBtn.Size = new System.Drawing.Size(881, 36);
@@ -1772,7 +1788,7 @@
             // discordSrvBtn
             // 
             this.discordSrvBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.discordSrvBtn.Location = new System.Drawing.Point(58, 79);
+            this.discordSrvBtn.Location = new System.Drawing.Point(58, 100);
             this.discordSrvBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.discordSrvBtn.Name = "discordSrvBtn";
             this.discordSrvBtn.Size = new System.Drawing.Size(881, 36);
@@ -1899,7 +1915,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
             this.Resizable = false;
-            this.Style = MetroFramework.MetroColorStyle.Red;
+            this.Style = MetroFramework.MetroColorStyle.Default;
             this.Text = "Minecraft Wii U Mod Injector";
             this.Theme = MetroFramework.MetroThemeStyle.Default;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Exit);
@@ -1951,7 +1967,6 @@
         public MetroFramework.Controls.MetroTabPage worldTab;
         public MetroFramework.Controls.MetroTabPage generalTab;
         public MetroFramework.Controls.MetroTabPage minigamesTab;
-        public MetroFramework.Controls.MetroTabPage donatorTab;
         public MetroFramework.Controls.MetroTabPage settingsTab;
         public MetroFramework.Controls.MetroTile homeTile;
         public MetroFramework.Controls.MetroTabPage mainTab;
@@ -2056,5 +2071,7 @@
         private MetroFramework.Controls.MetroLabel worldLbl;
         private MetroFramework.Controls.MetroTextBox buildApiDescBox;
         public MetroFramework.Controls.MetroCheckBox VisibleHitboxes;
+        public MetroFramework.Controls.MetroCheckBox discordRpcCheckBox;
+        private MetroFramework.Controls.MetroPanel metroPanel1;
     }
 }

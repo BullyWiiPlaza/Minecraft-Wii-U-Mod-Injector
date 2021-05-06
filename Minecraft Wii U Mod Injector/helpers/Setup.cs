@@ -20,20 +20,18 @@ namespace Minecraft_Wii_U_Mod_Injector.helpers
         {
             try
             {
-                // https://stackoverflow.com/a/2904963/3764804
                 ServicePointManager.Expect100Continue = true;
                 ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
 
-                Security.StartRAMEditingToolsSearch();
-                DiscordRP.Initialize();
                 SetupUserPrefs();
 
+                DiscordRP.Initialize();
                 DiscordRP.SetPresence("Modding", "Idle");
                 States.SwapState(States.StatesIds.Disconnected);
             }
             catch (Exception error)
             {
-                Exceptions.LogError(error, "Failed to setup", Exceptions.ExceptionId.FailedtoSetup);
+                Exceptions.LogError(error, "Failed to setup", Exceptions.ExceptionId.FailedtoSetup, false, true);
                 DiscordRP.Deinitialize();
                 Environment.Exit(0);
             }
@@ -49,6 +47,14 @@ namespace Minecraft_Wii_U_Mod_Injector.helpers
                         Configuration.ReadKey("StyleTheme", "Theming"));
                     Injector.Style = Injector.StyleManager.Style = (MetroColorStyle) Enum.Parse(typeof(MetroColorStyle),
                         Configuration.ReadKey("ColorTheme", "Theming"));
+
+                    Injector.themeBox.Text = Configuration.ReadKey("StyleTheme", "Theming");
+                    Injector.colorsBox.Text = Configuration.ReadKey("ColorTheme", "Theming");
+
+                    if (Configuration.KeyEqualsTo("DiscordRPC", "true", "Discord"))
+                        Injector.discordRpcCheckBox.Checked = true;
+                    else
+                        Injector.discordRpcCheckBox.Checked = false;
                 }
                 catch (Exception)
                 {
@@ -57,8 +63,7 @@ namespace Minecraft_Wii_U_Mod_Injector.helpers
             }
             catch (Exception error)
             {
-                Exceptions.LogError(error, "Exception in SetupUserPrefs() \n" + error,
-                    Exceptions.ExceptionId.FailedtoSetup);
+                Exceptions.LogError(error, "Exception in SetupUserPrefs() \n" + error, Exceptions.ExceptionId.FailedtoSetup, false, true);
                 Environment.Exit(0);
             }
         }

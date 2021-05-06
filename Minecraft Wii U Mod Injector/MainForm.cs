@@ -6,6 +6,7 @@ using System;
 using System.Diagnostics;
 using System.Windows.Forms;
 using System.IO;
+using System.Reflection;
 using Minecraft_Wii_U_Mod_Injector.helpers;
 using Minecraft_Wii_U_Mod_Injector.forms;
 using Minecraft_Wii_U_Mod_Injector.helpers.files;
@@ -57,7 +58,7 @@ namespace Minecraft_Wii_U_Mod_Injector
 
             #region patch notes and news section
 
-            buildApiDescBox.Text = File.ReadAllText(Application.StartupPath + "/local/notes.txt");
+            buildApiDescBox.Text = Properties.Resources.releaseNotes;
 
             #endregion
 
@@ -89,7 +90,7 @@ namespace Minecraft_Wii_U_Mod_Injector
                 MainTabs.SelectedIndex = tile.TileCount - 1;
 
             MainTabs.SelectedIndex = tile.TileCount;
-            DiscordRP.SetPresence("Modding", "In " + MainTabs.SelectedTab.Text + " tab");
+            DiscordRP.SetPresence("Modding", "Browsing " + MainTabs.SelectedTab.Text + " tab");
         }
 
         private void connectBtnClicked(object sender, EventArgs e)
@@ -114,15 +115,15 @@ namespace Minecraft_Wii_U_Mod_Injector
             }
             catch (System.Net.Sockets.SocketException error)
             {
-                Exceptions.LogError(error, "Wrong IP Address", Exceptions.ExceptionId.ConnectionProblem);
+                Messaging.Show(MessageBoxIcon.Error, "Couldn't detect TCPGecko running or IP Address is wrong.\nMake sure you have TCPGecko running and entered the correct IP Address for you Wii U");
+                Exceptions.LogError(error, "Wrong IP Address", Exceptions.ExceptionId.ConnectionProblem, false, false);
             }
             catch (Exception error)
             {
-                Exceptions.LogError(error, "Unable to Connect to the Wii U", Exceptions.ExceptionId.ConnectionProblem);
+                Exceptions.LogError(error, "Unable to Connect to the Wii U", Exceptions.ExceptionId.ConnectionProblem, false, true);
+
                 if (GetStates == States.StatesIds.Connecting)
-                {
                     States.SwapState(States.StatesIds.Disconnected);
-                }
             }
         }
 
@@ -157,7 +158,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             }
             catch (Exception Error)
             {
-                Exceptions.LogError(Error, "Failed to Change Injector Form Theme", Exceptions.ExceptionId.UnknownFail);
+                Exceptions.LogError(Error, "Failed to Change Injector Form Theme", Exceptions.ExceptionId.UnknownFail, false, true);
             }
         }
 
@@ -172,13 +173,35 @@ namespace Minecraft_Wii_U_Mod_Injector
             }
             catch (Exception Error)
             {
-                Exceptions.LogError(Error, "Failed to Change Injector Form Color", Exceptions.ExceptionId.UnknownFail);
+                Exceptions.LogError(Error, "Failed to Change Injector Form Color", Exceptions.ExceptionId.UnknownFail, false, true);
+            }
+        }
+
+        private void discordRpcToggleChecked(object sender, EventArgs e)
+        {
+            try
+            {
+                if (discordRpcCheckBox.Checked)
+                {
+                    Configuration.WriteKey("DiscordRPC", "true", "Discord");
+                    DiscordRP.Initialize();
+                    DiscordRP.SetPresence("Modding", "Idle");
+                }
+                else
+                {
+                    Configuration.WriteKey("DiscordRPC", "false", "Discord");
+                    DiscordRP.Deinitialize();
+                }
+            }
+            catch (Exception Error)
+            {
+                Exceptions.LogError(Error, "Failed to Toggle Discord RPC", Exceptions.ExceptionId.UnknownFail, false, true);
             }
         }
 
         private void discordSrvBtnClicked(object sender, EventArgs e)
         {
-            Process.Start("https://discord.gg/DFjm9Rg"); //Outdated, server was deleted (Thanks SkidZ.. 🙃)
+            Process.Start("https://discord.gg/jrzZWaDc7a");
         }
 
         private void creditsBtnClicked(object sender, EventArgs e)

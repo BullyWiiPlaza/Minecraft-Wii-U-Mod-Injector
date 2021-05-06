@@ -63,70 +63,35 @@ namespace Minecraft_Wii_U_Mod_Injector.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap DonatePayPal {
+        internal static System.Drawing.Bitmap Icon {
             get {
-                object obj = ResourceManager.GetObject("DonatePayPal", resourceCulture);
+                object obj = ResourceManager.GetObject("Icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        ///   Looks up a localized string similar to [Release v5.1 (6th of May, 2021)]
+        ///
+        ///- [Changes]
+        ///
+        ///• Discord Rich Prescence Toggle in Settings
+        ///• Theme and Color boxes will now display the set values when you launch the Injector (it was blank previously)
+        ///• Removed the RAM Editing Tools search since the Injector is now open-source
+        ///
+        ///- [Fixes]
+        ///• Clean-up of old files for Quick Mods Manager and Language Manager
+        ///• Fixed the Discord Server invite link (again)
+        ///
+        ///[Release v5.0 (5th of May, 2021)]
+        ///
+        ///- [IMPORTANT INFORMATION]
+        ///
+        ///Hey everyone, Sloth@WiiPlaz [rest of string was truncated]&quot;;.
         /// </summary>
-        internal static System.Drawing.Bitmap Edit {
+        internal static string releaseNotes {
             get {
-                object obj = ResourceManager.GetObject("Edit", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Folder {
-            get {
-                object obj = ResourceManager.GetObject("Folder", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Gecko {
-            get {
-                object obj = ResourceManager.GetObject("Gecko", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap New {
-            get {
-                object obj = ResourceManager.GetObject("New", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Recyle {
-            get {
-                object obj = ResourceManager.GetObject("Recyle", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Refresh {
-            get {
-                object obj = ResourceManager.GetObject("Refresh", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return ResourceManager.GetString("releaseNotes", resourceCulture);
             }
         }
     }

@@ -26,7 +26,7 @@ namespace Minecraft_Wii_U_Mod_Injector.helpers.files
             DatabaseError = 12,
         }
 
-        public static void LogError(Exception ErrorLog, string Information, ExceptionId ErrorCode)
+        public static void LogError(Exception ErrorLog, string Information, ExceptionId ErrorCode, bool showLogs, bool showMsg)
         {
             try
             {
@@ -44,7 +44,9 @@ namespace Minecraft_Wii_U_Mod_Injector.helpers.files
                 INI.Write("ExceptionString", ErrorLog.ToString());
                 INI.Write("Timestamp", CleanDate);
 
-                Process.Start(Application.StartupPath + "/logs/" + CleanDate + "-" + ErrorLog.Source + ".ini");
+                if(showLogs)
+                    Process.Start(Application.StartupPath + "/logs/" + CleanDate + "-" + ErrorLog.Source + ".ini");
+
                 Messaging.Show(MessageBoxIcon.Stop, "An Error has occured, a log file has been written to /logs/" + CleanDate + "-" + ErrorLog.Source + ".ini, the file has been opened.");
             }
             catch (Exception)

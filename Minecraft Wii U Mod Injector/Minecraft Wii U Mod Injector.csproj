@@ -256,7 +256,6 @@
     <Compile Include="helpers\winforms\FlexibleMessageBox.cs" />
     <Compile Include="helpers\winforms\Messaging.cs" />
     <Compile Include="helpers\Miscellaneous.cs" />
-    <Compile Include="helpers\Security.cs" />
     <Compile Include="helpers\Setup.cs" />
     <Compile Include="helpers\States.cs" />
     <Compile Include="MainForm.cs">
@@ -289,9 +288,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Content Include="local\notes.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -317,6 +313,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Icon.ico" />
+    <None Include="Resources\Icon.png" />
+    <None Include="Resources\releaseNotes.txt.txt" />
     <None Include="Resources\DonatePayPal.png" />
     <None Include="Resources\Refresh.png" />
     <None Include="Resources\Recyle.png" />

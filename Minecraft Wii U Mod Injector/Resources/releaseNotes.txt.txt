@@ -1,4 +1,17 @@
-ï»¿[Release 5.0]
+[Release v5.1 (6th of May, 2021)]
+
+- [Changes]
+
+• Discord Rich Prescence Toggle in Settings
+• Theme and Color boxes will now display the set values when you launch the Injector (it was blank previously)
+• Removed the RAM Editing Tools search since the Injector is now open-source
+• Injector Logo added to Settings and Credits
+
+- [Fixes]
+• Clean-up of old files for Quick Mods Manager and Language Manager
+• Fixed the Discord Server invite link (again)
+
+[Release v5.0 (5th of May, 2021)]
 
 - [IMPORTANT INFORMATION]
 
@@ -33,10 +46,10 @@ https://github.com/Kashiiera/Minecraft-Wii-U-Mod-Injector
 
 - [Changes]
 
-â€¢ Cleaned up UI
-â€¢ Added some new tooltips when you hover over a mod button
+• Cleaned up UI
+• Added some new tooltips when you hover over a mod button
 
 - [Fixes]
 
-â€¢ Fixed Discord Rich Prescence
-â€¢ Fixed the Discord Server invite link
+• Fixed Discord Rich Prescence
+• Fixed the Discord Server invite link

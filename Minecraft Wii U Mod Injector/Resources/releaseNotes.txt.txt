@@ -7,30 +7,30 @@ on the official Github page or join the Discord (Link is in the settings page) a
 as many bugs as I can. I might not care about Wii U but I care about my users and want the Injector to be the best it can be.
 
 Github Page:
-https://github.com/Kashiiera/Minecraft-Wii-U-Mod-Injector
+https://github.com/SlothWiiPlaza/Minecraft-Wii-U-Mod-Injector/
 
 Discord:
-https://discord.gg/jrzZWaDc7a
+https://discord.gg/jrzZWaDc7a/
 
 This update fixes some stuff and adds small QOL changes
 
 - [Changes]
 
-• Discord Rich Prescence Toggle in Settings
-• Theme and Color boxes will now display the set values when you launch the Injector (it was blank previously)
-• Removed the RAM Editing Tools search since the Injector is now open-source
-• Injector Logo added to Settings and Credits
-• Patch Notes will be bundled within the executable instead of a seperate file outside of it
+â€¢ Discord Rich Prescence Toggle in Settings
+â€¢ Theme and Color boxes will now display the set values when you launch the Injector (it was blank previously)
+â€¢ Removed the RAM Editing Tools search since the Injector is now open-source
+â€¢ Injector Logo added to Settings and Credits
+â€¢ Patch Notes will be bundled within the executable instead of a seperate file outside of it
 
 - [Fixes]
-• Clean-up of old files for Quick Mods Manager and Language Manager
-• Fixed the Discord Server invite link (again)
+â€¢ Clean-up of old files for Quick Mods Manager and Language Manager
+â€¢ Fixed the Discord Server invite link (again)
 
 [Release v5.0 (5th of May, 2021)]
 
 - [IMPORTANT INFORMATION]
 
-Hey everyone, Sloth@WiiPlaza here. (I'd prefer if you call me Kashiiera or Kiera instead.)
+Hey everyone, Sloth@WiiPlaza here.
 
 I've come back to update the Mod Injector to make access free once again like it was in 2018. 
 I had no intentions of ever making the Injector paid but sadly XxModZxX has taken my hard work
@@ -50,21 +50,20 @@ https://discord.gg/jrzZWaDc7a
 If you would like to support me or Bully@WiiPlaza you can follow us on our socials here:
 
 Sloth@WiiPlaza:
-https://www.youtube.com/channel/UCoW_EFIY3kskjV2howbuXvw
-https://twitter.com/Kashiiera
+https://www.youtube.com/SlothWiiPlaza
 
 Bully@WiiPlaza:
 https://youtube.com/BullyWiiPlaza
 
 The Injector will now be hosted on my Github instead of a dedicated website which can be found here:
-https://github.com/Kashiiera/Minecraft-Wii-U-Mod-Injector
+https://github.com/SlothWiiPlaza/Minecraft-Wii-U-Mod-Injector/
 
 - [Changes]
 
-• Cleaned up UI
-• Added some new tooltips when you hover over a mod button
+â€¢ Cleaned up UI
+â€¢ Added some new tooltips when you hover over a mod button
 
 - [Fixes]
 
-• Fixed Discord Rich Prescence
-• Fixed the Discord Server invite link
+â€¢ Fixed Discord Rich Prescence
+â€¢ Fixed the Discord Server invite link

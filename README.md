@@ -20,7 +20,7 @@ The new Discord Server can be found by clicking [here](https://discord.gg/jrzZWa
 You can report issues using the GitHub issue page or by joining the Discord Server linked above.
 
 # Developers
-* Sloth@WiiPlaza AKA Kashiiera: Development of the Injector, creating most mods
+* Sloth@WiiPlaza: Development of the Injector, creating most mods
 * Bully@WiiPlaza: creating serveral mods & help with development
 
 # Terms

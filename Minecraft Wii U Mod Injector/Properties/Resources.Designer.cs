@@ -73,20 +73,14 @@ namespace Minecraft_Wii_U_Mod_Injector.Properties {
         /// <summary>
         ///   Looks up a localized string similar to [Release v5.1 (6th of May, 2021)]
         ///
-        ///- [Changes]
+        ///- [IMPORTANT INFORMAITON]
         ///
-        ///• Discord Rich Prescence Toggle in Settings
-        ///• Theme and Color boxes will now display the set values when you launch the Injector (it was blank previously)
-        ///• Removed the RAM Editing Tools search since the Injector is now open-source
-        ///• Injector Logo added to Settings and Credits
+        ///If you encounter any issues with the Mod Injector or have a suggestion for changes or want to submit a mod then please submit and issue
+        ///on the official Github page or join the Discord (Link is in the settings page) as I&apos;m free to suggestions to expand the Injector and fix
+        ///as many bugs as I can. I might not care about Wii U but I care about my users and want the Injector to be the best it can be.
         ///
-        ///- [Fixes]
-        ///• Clean-up of old files for Quick Mods Manager and Language Manager
-        ///• Fixed the Discord Server invite link (again)
-        ///
-        ///[Release v5.0 (5th of May, 2021)]
-        ///
-        ///- [IMPORT [rest of string was truncated]&quot;;.
+        ///Github Page:
+        ///https://github.com/SlothWiiP [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string releaseNotes {
             get {

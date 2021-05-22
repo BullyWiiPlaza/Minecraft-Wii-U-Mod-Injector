@@ -67,19 +67,6 @@ namespace Minecraft_Wii_U_Mod_Injector
 
         private void Exit(object sender, FormClosingEventArgs e)
         {
-            if (GeckoU != null && GeckoU.GeckoUConnected())
-            {
-                try
-                {
-                    GeckoU.CallFunction(0x13377331, 0x73311337);
-                }
-                catch
-                {
-                    GeckoU = new GeckoUCore(Configuration.ReadKey("WiiUHost", "Wii U"));
-                    GeckoU.CallFunction(0x13377331, 0x73311337);
-                }
-            }
-
             DiscordRP.Deinitialize();
         }
 

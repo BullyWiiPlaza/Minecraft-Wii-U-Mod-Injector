@@ -250,7 +250,7 @@
             this.MainTabs.Location = new System.Drawing.Point(166, 63);
             this.MainTabs.Multiline = true;
             this.MainTabs.Name = "MainTabs";
-            this.MainTabs.SelectedIndex = 5;
+            this.MainTabs.SelectedIndex = 0;
             this.MainTabs.Size = new System.Drawing.Size(952, 499);
             this.MainTabs.TabIndex = 7;
             this.MainTabs.UseSelectable = true;
@@ -315,9 +315,9 @@
             this.buildApiTitleLbl.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.buildApiTitleLbl.Location = new System.Drawing.Point(3, 3);
             this.buildApiTitleLbl.Name = "buildApiTitleLbl";
-            this.buildApiTitleLbl.Size = new System.Drawing.Size(229, 25);
+            this.buildApiTitleLbl.Size = new System.Drawing.Size(239, 25);
             this.buildApiTitleLbl.TabIndex = 6;
-            this.buildApiTitleLbl.Text = "Fetching Patch Notes for v5.1";
+            this.buildApiTitleLbl.Text = "Fetching Patch Notes for v5.1.1";
             this.buildApiTitleLbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // connectBtn
@@ -349,6 +349,7 @@
             this.wiiuIpv4Box.MaxLength = 32767;
             this.wiiuIpv4Box.Name = "wiiuIpv4Box";
             this.wiiuIpv4Box.PasswordChar = '\0';
+            this.wiiuIpv4Box.PromptText = "Your Wii U\'s IPv4 address (Seen in the TCP Gecko Installer)";
             this.wiiuIpv4Box.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.wiiuIpv4Box.SelectedText = "";
             this.wiiuIpv4Box.SelectionLength = 0;

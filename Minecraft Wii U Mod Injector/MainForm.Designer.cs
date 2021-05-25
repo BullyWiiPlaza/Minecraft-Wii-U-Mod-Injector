@@ -235,7 +235,7 @@
             this.versionTile.Name = "versionTile";
             this.versionTile.Size = new System.Drawing.Size(160, 181);
             this.versionTile.TabIndex = 6;
-            this.versionTile.Text = "v5.1";
+            this.versionTile.Text = "v5.1.1";
             this.versionTile.UseSelectable = true;
             // 
             // MainTabs

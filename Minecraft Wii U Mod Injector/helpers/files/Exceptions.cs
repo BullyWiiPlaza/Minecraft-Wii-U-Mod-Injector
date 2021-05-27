@@ -1,10 +1,10 @@
-﻿using Minecraft_Wii_U_Mod_Injector.helpers.winforms;
+﻿using Minecraft_Wii_U_Mod_Injector.Helpers.Winforms;
 using System;
 using System.Diagnostics;
 using System.IO;
 using System.Windows.Forms;
 
-namespace Minecraft_Wii_U_Mod_Injector.helpers.files
+namespace Minecraft_Wii_U_Mod_Injector.Helpers.Files
 {
     class Exceptions
     {

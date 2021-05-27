@@ -4,18 +4,12 @@ using System.Linq;
 using System.Windows.Forms;
 using System.Collections.Generic;
 using System.Text;
-using Minecraft_Wii_U_Mod_Injector.helpers;
+using Minecraft_Wii_U_Mod_Injector.Helpers;
 
 namespace com.slothwiiplaza.geckou
 {
     public class GeckoUCore
     {
-        #region todo
-        /* Todo
-         * Clean up some stuff to make the code look "nice"
-         * Stuff i guess
-         */
-        #endregion todo
 
         #region base vars
 

@@ -1,9 +1,9 @@
 ﻿using MetroFramework.Forms;
-using Minecraft_Wii_U_Mod_Injector.helpers;
+using Minecraft_Wii_U_Mod_Injector.Helpers;
 using System;
 using System.Windows.Forms;
 
-namespace Minecraft_Wii_U_Mod_Injector.forms
+namespace Minecraft_Wii_U_Mod_Injector.Forms
 {
     public partial class NNIDEditor : MetroForm
     {

@@ -1,7 +1,7 @@
-﻿using Minecraft_Wii_U_Mod_Injector.helpers.files;
+﻿using Minecraft_Wii_U_Mod_Injector.Helpers.Files;
 using System.Windows.Forms;
 
-namespace Minecraft_Wii_U_Mod_Injector.helpers
+namespace Minecraft_Wii_U_Mod_Injector.Helpers
 {
     public class States
     {

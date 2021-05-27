@@ -5,7 +5,7 @@ using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Text;
 
-namespace Minecraft_Wii_U_Mod_Injector.helpers.files
+namespace Minecraft_Wii_U_Mod_Injector.Helpers.Files
 {
     class IniFile
     {

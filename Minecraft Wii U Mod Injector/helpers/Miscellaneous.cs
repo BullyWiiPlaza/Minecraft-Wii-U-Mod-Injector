@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Windows.Forms;
 
-namespace Minecraft_Wii_U_Mod_Injector.helpers
+namespace Minecraft_Wii_U_Mod_Injector.Helpers
 {
     public class Miscellaneous
     {

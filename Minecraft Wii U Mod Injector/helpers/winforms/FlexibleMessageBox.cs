@@ -5,7 +5,7 @@ using System.Globalization;
 using System.Linq;
 using System.Windows.Forms;
 
-namespace Minecraft_Wii_U_Mod_Injector.helpers.winforms
+namespace Minecraft_Wii_U_Mod_Injector.Helpers.Winforms
 {
     /*  FlexibleMessageBox – A flexible replacement for the .NET MessageBox
      * 

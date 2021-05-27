@@ -1,7 +1,7 @@
 ﻿using DiscordRPC;
 using System;
 
-namespace Minecraft_Wii_U_Mod_Injector.helpers
+namespace Minecraft_Wii_U_Mod_Injector.Helpers
 {
     class DiscordRP
     {
@@ -15,7 +15,7 @@ namespace Minecraft_Wii_U_Mod_Injector.helpers
 
         public static void SetPresence(string details, string state)
         {
-            if (files.Configuration.ReadKey("DiscordRPC", "Discord") == "true")
+            if (Files.Configuration.ReadKey("DiscordRPC", "Discord") == "true" || !Files.Configuration.KeyExists("DiscordRPC", "Discord"))
             {
                 client.SetPresence(new RichPresence()
                 {

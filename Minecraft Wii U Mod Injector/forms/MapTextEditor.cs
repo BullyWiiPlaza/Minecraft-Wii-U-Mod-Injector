@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Windows.Forms;
 using MetroFramework.Forms;
-using Minecraft_Wii_U_Mod_Injector.helpers;
-using Minecraft_Wii_U_Mod_Injector.helpers.winforms;
+using Minecraft_Wii_U_Mod_Injector.Helpers;
+using Minecraft_Wii_U_Mod_Injector.Helpers.Winforms;
 
-namespace Minecraft_Wii_U_Mod_Injector.forms
+namespace Minecraft_Wii_U_Mod_Injector.Forms
 {
     public partial class MapTextEditor : MetroForm
     {

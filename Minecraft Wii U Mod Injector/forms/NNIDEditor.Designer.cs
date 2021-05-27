@@ -1,4 +1,4 @@
-﻿namespace Minecraft_Wii_U_Mod_Injector.forms
+﻿namespace Minecraft_Wii_U_Mod_Injector.Forms
 {
     partial class NNIDEditor
     {

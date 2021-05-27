@@ -1,4 +1,4 @@
-﻿namespace Minecraft_Wii_U_Mod_Injector.helpers.files
+﻿namespace Minecraft_Wii_U_Mod_Injector.Helpers.Files
 {
     public class Configuration
     {

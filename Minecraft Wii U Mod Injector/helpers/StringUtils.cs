@@ -3,7 +3,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 
-namespace Minecraft_Wii_U_Mod_Injector.helpers
+namespace Minecraft_Wii_U_Mod_Injector.Helpers
 {
     class StringUtils
     {

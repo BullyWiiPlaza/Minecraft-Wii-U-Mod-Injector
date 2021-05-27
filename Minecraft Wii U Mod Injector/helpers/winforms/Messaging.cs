@@ -1,6 +1,6 @@
 ﻿using System.Windows.Forms;
 
-namespace Minecraft_Wii_U_Mod_Injector.helpers.winforms
+namespace Minecraft_Wii_U_Mod_Injector.Helpers.Winforms
 {
     class Messaging
     {
@@ -29,6 +29,10 @@ namespace Minecraft_Wii_U_Mod_Injector.helpers.winforms
         public static DialogResult Show(string message, MessageBoxButtons btns)
         {
             return FlexibleMessageBox.Show(message, Application.ProductName, btns, MessageBoxIcon.Question);
+        }
+        public static DialogResult Show(string message, MessageBoxButtons btns, MessageBoxIcon icon)
+        {
+            return FlexibleMessageBox.Show(message, Application.ProductName, btns, icon);
         }
     }
 }

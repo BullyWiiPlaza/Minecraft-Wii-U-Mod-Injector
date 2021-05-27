@@ -1,16 +1,30 @@
+[Release v5.1.2 (28th of May, 2021)]
+
+This update adds a handful of new mods and fixes some minor bugs
+
+- [Changes]
+
+* Commands are now available in the Commands tab, they are essentially slash commands from Java, on Wii U.
+* Bunch of new mods such as:
+*	1. Crafting Table Anywhere
+*	2. Walking Speed
+*	3. Bypass Friends Only
+*	4. Green, Orange and Blue Score Sliders for Glide
+*	5. Hitbox Scale
+*	6. Squeak Infinitely
+*	7. Unlock Hidden Gamemodes
+*	8. Custom FOV (Field of View) Slider
+
+* Added missing ToolTips for some mods (hover over a mod to find out what it does)
+* Updated Credits
+* Moved Discord Server and Credits to Home page
+* Removed the Maximize button, Injector is not intended for fullscreen use
+
+- [Fixes]
+
+* Discord RPC wouldn't enable if the key for it didn't exist in the configuration file
+
 [Release v5.1.1 (25th of May, 2021)]
-
-- [IMPORTANT INFORMAITON]
-
-If you encounter any issues with the Mod Injector or have a suggestion for changes or want to submit a mod then please submit and issue
-on the official Github page or join the Discord (Link is in the settings page) as I'm free to suggestions to expand the Injector and fix
-as many bugs as I can.
-
-Github Page:
-https://github.com/Kashiiera/Minecraft-Wii-U-Mod-Injector/
-
-Discord:
-https://discord.gg/jrzZWaDc7a/
 
 This update fixes a small crashing issue.
 

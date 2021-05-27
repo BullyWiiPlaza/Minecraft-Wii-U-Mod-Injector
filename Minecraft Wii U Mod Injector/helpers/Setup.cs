@@ -1,11 +1,8 @@
 ﻿using MetroFramework;
-using Minecraft_Wii_U_Mod_Injector.helpers.files;
+using Minecraft_Wii_U_Mod_Injector.Helpers.Files;
 using System;
-using System.Diagnostics;
-using System.Net;
-using System.Windows.Forms;
 
-namespace Minecraft_Wii_U_Mod_Injector.helpers
+namespace Minecraft_Wii_U_Mod_Injector.Helpers
 {
     class Setup
     {
@@ -20,9 +17,6 @@ namespace Minecraft_Wii_U_Mod_Injector.helpers
         {
             try
             {
-                ServicePointManager.Expect100Continue = true;
-                ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
-
                 SetupUserPrefs();
 
                 DiscordRP.Initialize();
@@ -58,7 +52,7 @@ namespace Minecraft_Wii_U_Mod_Injector.helpers
                 }
                 catch (Exception)
                 {
-                    // ignored
+                
                 }
             }
             catch (Exception error)

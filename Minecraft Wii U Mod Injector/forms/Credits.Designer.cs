@@ -1,4 +1,4 @@
-﻿namespace Minecraft_Wii_U_Mod_Injector.forms
+﻿namespace Minecraft_Wii_U_Mod_Injector.Forms
 {
     partial class Credits
     {
@@ -34,6 +34,7 @@
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
+            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             ((System.ComponentModel.ISupportInitialize)(this.StyleManager)).BeginInit();
             this.SuspendLayout();
             // 
@@ -46,15 +47,15 @@
             this.metroLabel1.AutoSize = true;
             this.metroLabel1.Location = new System.Drawing.Point(23, 60);
             this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(353, 76);
+            this.metroLabel1.Size = new System.Drawing.Size(353, 57);
             this.metroLabel1.TabIndex = 0;
             this.metroLabel1.Text = "Kashiiera AKA Sloth@WiiPlaza: \r\n- Creating/Programming the Minecraft Wii U Mod In" +
-    "jector\r\n- Creating most mods\r\n";
+    "jector\r\n- Creating most mods";
             // 
             // metroLabel3
             // 
             this.metroLabel3.AutoSize = true;
-            this.metroLabel3.Location = new System.Drawing.Point(23, 136);
+            this.metroLabel3.Location = new System.Drawing.Point(23, 132);
             this.metroLabel3.Name = "metroLabel3";
             this.metroLabel3.Size = new System.Drawing.Size(259, 76);
             this.metroLabel3.TabIndex = 2;
@@ -69,19 +70,29 @@
             this.metroPanel1.HorizontalScrollbarBarColor = true;
             this.metroPanel1.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel1.HorizontalScrollbarSize = 10;
-            this.metroPanel1.Location = new System.Drawing.Point(382, 10);
+            this.metroPanel1.Location = new System.Drawing.Point(382, 18);
             this.metroPanel1.Name = "metroPanel1";
-            this.metroPanel1.Size = new System.Drawing.Size(255, 219);
+            this.metroPanel1.Size = new System.Drawing.Size(255, 240);
             this.metroPanel1.TabIndex = 45;
             this.metroPanel1.VerticalScrollbarBarColor = true;
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel1.VerticalScrollbarSize = 10;
             // 
+            // metroLabel2
+            // 
+            this.metroLabel2.AutoSize = true;
+            this.metroLabel2.Location = new System.Drawing.Point(23, 223);
+            this.metroLabel2.Name = "metroLabel2";
+            this.metroLabel2.Size = new System.Drawing.Size(142, 38);
+            this.metroLabel2.TabIndex = 46;
+            this.metroLabel2.Text = "vylryna: \r\n- Creating some mods";
+            // 
             // Credits
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(660, 236);
+            this.ClientSize = new System.Drawing.Size(660, 273);
+            this.Controls.Add(this.metroLabel2);
             this.Controls.Add(this.metroPanel1);
             this.Controls.Add(this.metroLabel3);
             this.Controls.Add(this.metroLabel1);
@@ -103,5 +114,6 @@
         private MetroFramework.Controls.MetroLabel metroLabel1;
         private MetroFramework.Controls.MetroLabel metroLabel3;
         private MetroFramework.Controls.MetroPanel metroPanel1;
+        private MetroFramework.Controls.MetroLabel metroLabel2;
     }
 }

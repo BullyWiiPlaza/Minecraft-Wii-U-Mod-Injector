@@ -29,8 +29,9 @@ You can report issues using the GitHub issue page or by joining the Discord Serv
 
 # Support the Developers!
 
-Sloth@WiiPlaza:
-* [YouTube](https://www.youtube.com/SlothWiiPlaza)
+Sloth@WiiPlaza (AKA Kashiiera):
+* [Youtube (Kashiiera)](https://www.youtube.com/channel/UCoW_EFIY3kskjV2howbuXvw)
+* [YouTube (Sloth@WiiPlaza)](https://www.youtube.com/SlothWiiPlaza)
 
 Bully@WiiPlaza:
 * [YouTube](https://www.youtube.com/BullyWiiPlaza)

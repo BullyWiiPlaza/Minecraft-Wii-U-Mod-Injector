@@ -805,7 +805,7 @@ namespace Minecraft_Wii_U_Mod_Injector
 
         private void SlowMotionToggled(object sender, EventArgs e)
         {
-            GeckoU.WriteUIntToggle(0x109473C8, 0x3F700000, 0x3FF00000, ArmorHUD.Checked);
+            GeckoU.WriteUIntToggle(0x109473C8, 0x3F700000, 0x3FF00000, SlowMotion.Checked);
         }
     }
 }

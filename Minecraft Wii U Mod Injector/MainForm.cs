@@ -792,5 +792,20 @@ namespace Minecraft_Wii_U_Mod_Injector
             GeckoU.WriteFloat(0x108911B8, (float)FieldOfViewSlider.Value);
         }
         #endregion memory editing
+
+        private void TakeEverythingAnywhereToggled(object sender, EventArgs e)
+        {
+            GeckoU.WriteUIntToggle(0x02DEC0B4, on, 0x57E3063E, TakeEverythingAnywhere.Checked);
+        }
+
+        private void ArmorHUDToggled(object sender, EventArgs e)
+        {
+            GeckoU.WriteUIntToggle(0x02E9B1B0, 0x7FE4FB78, 0x7FC4F378, ArmorHUD.Checked);
+        }
+
+        private void SlowMotionToggled(object sender, EventArgs e)
+        {
+            GeckoU.WriteUIntToggle(0x109473C8, 0x3F700000, 0x3FF00000, ArmorHUD.Checked);
+        }
     }
 }

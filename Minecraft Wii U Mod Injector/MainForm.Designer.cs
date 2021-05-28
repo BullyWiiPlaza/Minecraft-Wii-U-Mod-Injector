@@ -183,6 +183,9 @@
             this.ToolTipManager = new MetroFramework.Components.MetroToolTip();
             this.playersTile = new MetroFramework.Controls.MetroTile();
             this.commandsTile = new MetroFramework.Controls.MetroTile();
+            this.TakeEverythingAnywhere = new MetroFramework.Controls.MetroCheckBox();
+            this.ArmorHUD = new MetroFramework.Controls.MetroCheckBox();
+            this.SlowMotion = new MetroFramework.Controls.MetroCheckBox();
             this.MainTabs.SuspendLayout();
             this.mainTab.SuspendLayout();
             this.playersTab.SuspendLayout();
@@ -299,7 +302,7 @@
             this.MainTabs.Location = new System.Drawing.Point(166, 63);
             this.MainTabs.Multiline = true;
             this.MainTabs.Name = "MainTabs";
-            this.MainTabs.SelectedIndex = 0;
+            this.MainTabs.SelectedIndex = 1;
             this.MainTabs.Size = new System.Drawing.Size(978, 533);
             this.MainTabs.TabIndex = 7;
             this.MainTabs.UseSelectable = true;
@@ -366,9 +369,9 @@
             this.buildApiTitleLbl.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.buildApiTitleLbl.Location = new System.Drawing.Point(3, 3);
             this.buildApiTitleLbl.Name = "buildApiTitleLbl";
-            this.buildApiTitleLbl.Size = new System.Drawing.Size(242, 25);
+            this.buildApiTitleLbl.Size = new System.Drawing.Size(173, 25);
             this.buildApiTitleLbl.TabIndex = 6;
-            this.buildApiTitleLbl.Text = "Fetching Patch Notes for v5.1.2";
+            this.buildApiTitleLbl.Text = "Patch Notes for v5.1.2";
             this.buildApiTitleLbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // creditsBtn
@@ -452,6 +455,9 @@
             // 
             // playersTab
             // 
+            this.playersTab.Controls.Add(this.SlowMotion);
+            this.playersTab.Controls.Add(this.ArmorHUD);
+            this.playersTab.Controls.Add(this.TakeEverythingAnywhere);
             this.playersTab.Controls.Add(this.FieldOfViewSlider);
             this.playersTab.Controls.Add(this.FieldOfView);
             this.playersTab.Controls.Add(this.HiddenGameModesUnlocked);
@@ -1864,7 +1870,7 @@
             this.Battle.Location = new System.Drawing.Point(4, 38);
             this.Battle.Name = "Battle";
             this.Battle.Padding = new System.Windows.Forms.Padding(3);
-            this.Battle.Size = new System.Drawing.Size(927, 439);
+            this.Battle.Size = new System.Drawing.Size(960, 469);
             this.Battle.TabIndex = 1;
             this.Battle.Text = "Battle";
             this.Battle.VerticalScrollbarBarColor = true;
@@ -1942,7 +1948,7 @@
             this.Tumble.Location = new System.Drawing.Point(4, 38);
             this.Tumble.Name = "Tumble";
             this.Tumble.Padding = new System.Windows.Forms.Padding(3);
-            this.Tumble.Size = new System.Drawing.Size(927, 439);
+            this.Tumble.Size = new System.Drawing.Size(960, 469);
             this.Tumble.TabIndex = 2;
             this.Tumble.Text = "Tumble";
             this.Tumble.VerticalScrollbarBarColor = true;
@@ -1977,7 +1983,7 @@
             this.Glide.Location = new System.Drawing.Point(4, 38);
             this.Glide.Name = "Glide";
             this.Glide.Padding = new System.Windows.Forms.Padding(3);
-            this.Glide.Size = new System.Drawing.Size(927, 439);
+            this.Glide.Size = new System.Drawing.Size(960, 469);
             this.Glide.TabIndex = 3;
             this.Glide.Text = "Glide";
             this.Glide.VerticalScrollbarBarColor = true;
@@ -2673,6 +2679,48 @@
             this.commandsTile.UseSelectable = true;
             this.commandsTile.Click += new System.EventHandler(this.swapTab);
             // 
+            // TakeEverythingAnywhere
+            // 
+            this.TakeEverythingAnywhere.AutoSize = true;
+            this.TakeEverythingAnywhere.Location = new System.Drawing.Point(383, 111);
+            this.TakeEverythingAnywhere.Name = "TakeEverythingAnywhere";
+            this.TakeEverythingAnywhere.Size = new System.Drawing.Size(161, 15);
+            this.TakeEverythingAnywhere.TabIndex = 25;
+            this.TakeEverythingAnywhere.Tag = "";
+            this.TakeEverythingAnywhere.Text = "Take Everything Anywhere";
+            this.ToolTipManager.SetToolTip(this.TakeEverythingAnywhere, "Whether the \"Take Everything\" option is usable in any world and minigame regardle" +
+        "ss of settings");
+            this.TakeEverythingAnywhere.UseSelectable = true;
+            this.TakeEverythingAnywhere.CheckedChanged += new System.EventHandler(this.TakeEverythingAnywhereToggled);
+            // 
+            // ArmorHUD
+            // 
+            this.ArmorHUD.AutoSize = true;
+            this.ArmorHUD.Location = new System.Drawing.Point(383, 132);
+            this.ArmorHUD.Name = "ArmorHUD";
+            this.ArmorHUD.Size = new System.Drawing.Size(85, 15);
+            this.ArmorHUD.TabIndex = 138;
+            this.ArmorHUD.Tag = "";
+            this.ArmorHUD.Text = "Armor HUD";
+            this.ToolTipManager.SetToolTip(this.ArmorHUD, "Whether the \"Take Everything\" option is usable in any world and minigame regardle" +
+        "ss of settings");
+            this.ArmorHUD.UseSelectable = true;
+            this.ArmorHUD.CheckedChanged += new System.EventHandler(this.ArmorHUDToggled);
+            // 
+            // SlowMotion
+            // 
+            this.SlowMotion.AutoSize = true;
+            this.SlowMotion.Location = new System.Drawing.Point(383, 153);
+            this.SlowMotion.Name = "SlowMotion";
+            this.SlowMotion.Size = new System.Drawing.Size(90, 15);
+            this.SlowMotion.TabIndex = 139;
+            this.SlowMotion.Tag = "";
+            this.SlowMotion.Text = "Slow Motion";
+            this.ToolTipManager.SetToolTip(this.SlowMotion, "Whether the \"Take Everything\" option is usable in any world and minigame regardle" +
+        "ss of settings");
+            this.SlowMotion.UseSelectable = true;
+            this.SlowMotion.CheckedChanged += new System.EventHandler(this.SlowMotionToggled);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2898,5 +2946,8 @@
         public MetroFramework.Controls.MetroCheckBox HiddenGameModesUnlocked;
         public System.Windows.Forms.NumericUpDown FieldOfViewSlider;
         public MetroFramework.Controls.MetroLabel FieldOfView;
+        public MetroFramework.Controls.MetroCheckBox TakeEverythingAnywhere;
+        public MetroFramework.Controls.MetroCheckBox ArmorHUD;
+        public MetroFramework.Controls.MetroCheckBox SlowMotion;
     }
 }

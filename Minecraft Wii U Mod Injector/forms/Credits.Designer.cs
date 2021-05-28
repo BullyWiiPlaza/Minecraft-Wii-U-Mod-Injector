@@ -31,10 +31,10 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Credits));
             this.StyleManager = new MetroFramework.Components.MetroStyleManager(this.components);
-            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
+            this.kashiieraCredits = new MetroFramework.Controls.MetroLabel();
+            this.bullywiiplazaCredits = new MetroFramework.Controls.MetroLabel();
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
-            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
+            this.vylrynaCredits = new MetroFramework.Controls.MetroLabel();
             ((System.ComponentModel.ISupportInitialize)(this.StyleManager)).BeginInit();
             this.SuspendLayout();
             // 
@@ -42,24 +42,24 @@
             // 
             this.StyleManager.Owner = this;
             // 
-            // metroLabel1
+            // kashiieraCredits
             // 
-            this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(23, 60);
-            this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(353, 57);
-            this.metroLabel1.TabIndex = 0;
-            this.metroLabel1.Text = "Kashiiera AKA Sloth@WiiPlaza: \r\n- Creating/Programming the Minecraft Wii U Mod In" +
+            this.kashiieraCredits.AutoSize = true;
+            this.kashiieraCredits.Location = new System.Drawing.Point(23, 60);
+            this.kashiieraCredits.Name = "kashiieraCredits";
+            this.kashiieraCredits.Size = new System.Drawing.Size(353, 57);
+            this.kashiieraCredits.TabIndex = 0;
+            this.kashiieraCredits.Text = "Kashiiera AKA Sloth@WiiPlaza: \r\n- Creating/Programming the Minecraft Wii U Mod In" +
     "jector\r\n- Creating most mods";
             // 
-            // metroLabel3
+            // bullywiiplazaCredits
             // 
-            this.metroLabel3.AutoSize = true;
-            this.metroLabel3.Location = new System.Drawing.Point(23, 132);
-            this.metroLabel3.Name = "metroLabel3";
-            this.metroLabel3.Size = new System.Drawing.Size(259, 76);
-            this.metroLabel3.TabIndex = 2;
-            this.metroLabel3.Text = "Bully@WiiPlaza: \r\n- Help with late development\r\n- Creating some mods\r\n- Hosting t" +
+            this.bullywiiplazaCredits.AutoSize = true;
+            this.bullywiiplazaCredits.Location = new System.Drawing.Point(23, 132);
+            this.bullywiiplazaCredits.Name = "bullywiiplazaCredits";
+            this.bullywiiplazaCredits.Size = new System.Drawing.Size(259, 76);
+            this.bullywiiplazaCredits.TabIndex = 2;
+            this.bullywiiplazaCredits.Text = "Bully@WiiPlaza: \r\n- Help with late development\r\n- Creating some mods\r\n- Hosting t" +
     "he Minecraft Wii U Mod Injector";
             // 
             // metroPanel1
@@ -70,33 +70,34 @@
             this.metroPanel1.HorizontalScrollbarBarColor = true;
             this.metroPanel1.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel1.HorizontalScrollbarSize = 10;
-            this.metroPanel1.Location = new System.Drawing.Point(382, 18);
+            this.metroPanel1.Location = new System.Drawing.Point(382, 35);
             this.metroPanel1.Name = "metroPanel1";
-            this.metroPanel1.Size = new System.Drawing.Size(255, 240);
+            this.metroPanel1.Size = new System.Drawing.Size(255, 245);
             this.metroPanel1.TabIndex = 45;
             this.metroPanel1.VerticalScrollbarBarColor = true;
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel1.VerticalScrollbarSize = 10;
             // 
-            // metroLabel2
+            // vylrynaCredits
             // 
-            this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Location = new System.Drawing.Point(23, 223);
-            this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(142, 38);
-            this.metroLabel2.TabIndex = 46;
-            this.metroLabel2.Text = "vylryna: \r\n- Creating some mods";
+            this.vylrynaCredits.AutoSize = true;
+            this.vylrynaCredits.Location = new System.Drawing.Point(23, 223);
+            this.vylrynaCredits.Name = "vylrynaCredits";
+            this.vylrynaCredits.Size = new System.Drawing.Size(339, 38);
+            this.vylrynaCredits.TabIndex = 46;
+            this.vylrynaCredits.Text = "vylryna: \r\n- Creating a handful of mods (most notably, commands)";
             // 
             // Credits
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(660, 273);
-            this.Controls.Add(this.metroLabel2);
+            this.ClientSize = new System.Drawing.Size(660, 288);
+            this.Controls.Add(this.vylrynaCredits);
             this.Controls.Add(this.metroPanel1);
-            this.Controls.Add(this.metroLabel3);
-            this.Controls.Add(this.metroLabel1);
+            this.Controls.Add(this.bullywiiplazaCredits);
+            this.Controls.Add(this.kashiieraCredits);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "Credits";
             this.Resizable = false;
             this.Style = MetroFramework.MetroColorStyle.Default;
@@ -111,9 +112,9 @@
 
         #endregion
         private MetroFramework.Components.MetroStyleManager StyleManager;
-        private MetroFramework.Controls.MetroLabel metroLabel1;
-        private MetroFramework.Controls.MetroLabel metroLabel3;
+        private MetroFramework.Controls.MetroLabel kashiieraCredits;
+        private MetroFramework.Controls.MetroLabel bullywiiplazaCredits;
         private MetroFramework.Controls.MetroPanel metroPanel1;
-        private MetroFramework.Controls.MetroLabel metroLabel2;
+        private MetroFramework.Controls.MetroLabel vylrynaCredits;
     }
 }

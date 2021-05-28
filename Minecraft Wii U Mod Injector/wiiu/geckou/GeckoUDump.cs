@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 
-namespace com.slothwiiplaza.geckou
+namespace WiiU.GeckoU
 {
     /// <summary>
     /// Add for sake of completness

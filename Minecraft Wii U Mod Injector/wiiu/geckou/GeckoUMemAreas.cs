@@ -1,4 +1,4 @@
-﻿namespace com.slothwiiplaza.geckou
+﻿namespace WiiU.GeckoU
 {
     public enum AddressType
     {

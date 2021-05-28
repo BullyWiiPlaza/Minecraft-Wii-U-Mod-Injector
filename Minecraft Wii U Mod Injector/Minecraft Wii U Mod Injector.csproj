@@ -223,13 +223,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="com\slothwiiplaza\geckou\GeckoU.cs" />
-    <Compile Include="com\slothwiiplaza\geckou\GeckoUByteSwap.cs" />
-    <Compile Include="com\slothwiiplaza\geckou\GeckoUCommands.cs" />
-    <Compile Include="com\slothwiiplaza\geckou\GeckoUConnect.cs" />
-    <Compile Include="com\slothwiiplaza\geckou\GeckoUDump.cs" />
-    <Compile Include="com\slothwiiplaza\geckou\GeckoUException.cs" />
-    <Compile Include="com\slothwiiplaza\geckou\GeckoUMemAreas.cs" />
+    <Compile Include="wiiu\geckou\GeckoU.cs" />
+    <Compile Include="wiiu\geckou\GeckoUByteSwap.cs" />
+    <Compile Include="wiiu\geckou\GeckoUCommands.cs" />
+    <Compile Include="wiiu\geckou\GeckoUConnect.cs" />
+    <Compile Include="wiiu\geckou\GeckoUDump.cs" />
+    <Compile Include="wiiu\geckou\GeckoUException.cs" />
+    <Compile Include="wiiu\geckou\GeckoUMemAreas.cs" />
     <Compile Include="forms\Credits.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -304,6 +304,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Icon.ico" />
+    <None Include="Resources\githubLogo.png" />
+    <None Include="Resources\releaseNote.txt" />
     <None Include="Resources\Icon.png" />
     <None Include="Resources\releaseNotes.txt" />
   </ItemGroup>

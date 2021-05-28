@@ -1,36 +1,75 @@
+[Release v5.1.3 (28th of May, 2021)]
+
+This update adds new mods and fixes some existing mods
+
+[Changes]
+
+• New mods:
+
+- Take Everything Anywhere
+- Armor HUD
+- Slow Motion
+- Deadmau5 Mode
+- Set World Spawn Command
+- Game Mode Command (Survival only, for now)
+
+•General Additions & Updates:
+
+- Updated Credits
+- Updated Discord Rich Presence texts
+- You can now clean the release notes by displaying only the current version changes (Settings tab)
+- Help Button added for the /give command
+- Discord Rich Presence will no longer reset when switching to the same tab
+- Github Repository added to Home Page for easy access to new releases
+
+[Fixes]
+
+• Fixed mods:
+
+- No Fog
+- Map Text Editor
+
+• General Fixes
+
+- Windows Buttons were blocked on the Credits Form due to the Injector Logo
+
 [Release v5.1.2 (28th of May, 2021)]
 
 This update adds a handful of new mods and fixes some minor bugs
 
-- [Changes]
+[Changes]
 
-* Commands are now available in the Commands tab, they are essentially slash commands from Java, on Wii U.
-* Bunch of new mods such as:
-*	1. Crafting Table Anywhere
-*	2. Walking Speed
-*	3. Bypass Friends Only
-*	4. Green, Orange and Blue Score Sliders for Glide
-*	5. Hitbox Scale
-*	6. Squeak Infinitely
-*	7. Unlock Hidden Gamemodes
-*	8. Custom FOV (Field of View) Slider
+- Commands are now available in the Commands tab, they are essentially slash commands from Java, on Wii U.
 
-* Added missing ToolTips for some mods (hover over a mod to find out what it does)
-* Updated Credits
-* Moved Discord Server and Credits to Home page
-* Removed the Maximize button, Injector is not intended for fullscreen use
+• New mods:
 
-- [Fixes]
+- Crafting Table Anywhere
+- Walking Speed
+- Bypass Friends Only
+- Green, Orange and Blue Score Sliders for Glide
+- Hitbox Scale
+- Squeak Infinitely
+- Unlock Hidden Gamemodes
+- Custom FOV (Field of View) Slider
 
-* Discord RPC wouldn't enable if the key for it didn't exist in the configuration file
+• General Additions & Updates:
+
+- Added missing ToolTips for some mods (hover over a mod to find out what it does)
+- Updated Credits
+- Moved Discord Server and Credits to Home page
+- Removed the Maximize button, Injector is not intended for fullscreen use
+
+[Fixes]
+
+- Discord RPC wouldn't enable if the key for it didn't exist in the configuration file
 
 [Release v5.1.1 (25th of May, 2021)]
 
 This update fixes a small crashing issue.
 
-- [Fixes]
+[Fixes]
 
-* Mod Injector no longer crashes Wii U upon closing, this was there before to prevent addressing stealing before the Injector was open-source.
+- Mod Injector no longer crashes Wii U upon closing, this was there before to prevent addressing stealing before the Injector was open-source.
 
 [Release v5.1 (6th of May, 2021)]
 
@@ -42,21 +81,22 @@ https://discord.gg/jrzZWaDc7a/
 
 This update fixes some stuff and adds small QOL changes
 
-- [Changes]
+[Changes]
 
-* Discord Rich Prescence Toggle in Settings
-* Theme and Color boxes will now display the set values when you launch the Injector (it was blank previously)
-* Removed the RAM Editing Tools search since the Injector is now open-source
-* Injector Logo added to Settings and Credits
-* Patch Notes will be bundled within the executable instead of a seperate file outside of it
+- Discord Rich Prescence Toggle in Settings
+- Theme and Color boxes will now display the set values when you launch the Injector (it was blank previously)
+- Removed the RAM Editing Tools search since the Injector is now open-source
+- Injector Logo added to Settings and Credits
+- Patch Notes will be bundled within the executable instead of a seperate file outside of it
 
-- [Fixes]
-* Clean-up of old files for Quick Mods Manager and Language Manager
-* Fixed the Discord Server invite link (again)
+[Fixes]
+
+- Clean-up of old files for Quick Mods Manager and Language Manager
+- Fixed the Discord Server invite link (again)
 
 [Release v5.0 (5th of May, 2021)]
 
-- [IMPORTANT INFORMATION]
+[IMPORTANT INFORMATION]
 
 Hey everyone, Sloth@WiiPlaza here.
 
@@ -86,12 +126,12 @@ https://youtube.com/BullyWiiPlaza
 The Injector will now be hosted on my Github instead of a dedicated website which can be found here:
 https://github.com/Kashiiera/Minecraft-Wii-U-Mod-Injector/
 
-- [Changes]
+[Changes]
 
-* Cleaned up UI
-* Added some new tooltips when you hover over a mod button
+- Cleaned up UI
+- Added some new tooltips when you hover over a mod button
 
-- [Fixes]
+[Fixes]
 
-* Fixed Discord Rich Prescence
-* Fixed the Discord Server invite link
+- Fixed Discord Rich Prescence
+- Fixed the Discord Server invite link

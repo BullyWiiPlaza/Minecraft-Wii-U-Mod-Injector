@@ -16,7 +16,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms
 
         private void Init(object sender, EventArgs e)
         {
-            DiscordRP.SetPresence("Modding", "In NNID Editor");
+            DiscordRP.SetPresence("Connected", "Nintendo Network ID Editor");
         }
 
         private void NNIDChangeBtnClicked(object sender, EventArgs e)
@@ -29,7 +29,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms
 
         private void Exiting(object sender, FormClosingEventArgs e)
         {
-            DiscordRP.SetPresence("Modding", "In " + new MainForm().MainTabs.SelectedTab.Text + " tab");
+            DiscordRP.SetPresence("Connected", new MainForm().playersTab.Text + " tab");
         }
     }
 }

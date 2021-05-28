@@ -34,17 +34,23 @@
             this.generalTile = new MetroFramework.Controls.MetroTile();
             this.minigamesTile = new MetroFramework.Controls.MetroTile();
             this.settingsTile = new MetroFramework.Controls.MetroTile();
-            this.versionTile = new MetroFramework.Controls.MetroTile();
+            this.buildTile = new MetroFramework.Controls.MetroTile();
             this.MainTabs = new MetroFramework.Controls.MetroTabControl();
             this.mainTab = new MetroFramework.Controls.MetroTabPage();
-            this.buildApiDescBox = new MetroFramework.Controls.MetroTextBox();
-            this.buildApiTitleLbl = new MetroFramework.Controls.MetroLabel();
+            this.githubRepo = new MetroFramework.Controls.MetroLabel();
+            this.githubLogo = new MetroFramework.Controls.MetroPanel();
+            this.buildNotesBox = new MetroFramework.Controls.MetroTextBox();
+            this.buildVerTitleLbl = new MetroFramework.Controls.MetroLabel();
             this.creditsBtn = new MetroFramework.Controls.MetroButton();
             this.connectBtn = new MetroFramework.Controls.MetroButton();
             this.discordSrvBtn = new MetroFramework.Controls.MetroButton();
             this.wiiuIpv4Box = new MetroFramework.Controls.MetroTextBox();
             this.wiiuIpv4Lbl = new MetroFramework.Controls.MetroLabel();
             this.playersTab = new MetroFramework.Controls.MetroTabPage();
+            this.DeadMauFiveMode = new MetroFramework.Controls.MetroCheckBox();
+            this.SlowMotion = new MetroFramework.Controls.MetroCheckBox();
+            this.ArmorHUD = new MetroFramework.Controls.MetroCheckBox();
+            this.TakeEverythingAnywhere = new MetroFramework.Controls.MetroCheckBox();
             this.FieldOfViewSlider = new System.Windows.Forms.NumericUpDown();
             this.FieldOfView = new MetroFramework.Controls.MetroLabel();
             this.HiddenGameModesUnlocked = new MetroFramework.Controls.MetroCheckBox();
@@ -148,8 +154,12 @@
             this.ringScoreG = new MetroFramework.Controls.MetroLabel();
             this.ringScoreGreen = new System.Windows.Forms.NumericUpDown();
             this.commandsTab = new MetroFramework.Controls.MetroTabPage();
+            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
+            this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
+            this.GameModeCommandBtn = new MetroFramework.Controls.MetroButton();
             this.worldCmdLbl = new MetroFramework.Controls.MetroLabel();
             this.worldPanel = new MetroFramework.Controls.MetroPanel();
+            this.SetWorldSpawnBtn = new MetroFramework.Controls.MetroButton();
             this.downfallCommandBtn = new MetroFramework.Controls.MetroButton();
             this.playerCmdLbl = new MetroFramework.Controls.MetroLabel();
             this.playerPanel = new MetroFramework.Controls.MetroPanel();
@@ -165,11 +175,13 @@
             this.enchantLevelBox = new MetroFramework.Controls.MetroTextBox();
             this.giveCmdLabel = new MetroFramework.Controls.MetroLabel();
             this.giveCommandPanel = new MetroFramework.Controls.MetroPanel();
+            this.itemIdHelpBtn = new MetroFramework.Controls.MetroButton();
             this.giveCommandBtn = new MetroFramework.Controls.MetroButton();
             this.giveDataBox = new MetroFramework.Controls.MetroTextBox();
             this.giveAmountBox = new MetroFramework.Controls.MetroTextBox();
             this.giveIDBox = new MetroFramework.Controls.MetroTextBox();
             this.settingsTab = new MetroFramework.Controls.MetroTabPage();
+            this.releaseNotesToggle = new MetroFramework.Controls.MetroCheckBox();
             this.resetConfigBtn = new MetroFramework.Controls.MetroButton();
             this.settingsLogo = new MetroFramework.Controls.MetroPanel();
             this.discordRpcCheckBox = new MetroFramework.Controls.MetroCheckBox();
@@ -183,9 +195,7 @@
             this.ToolTipManager = new MetroFramework.Components.MetroToolTip();
             this.playersTile = new MetroFramework.Controls.MetroTile();
             this.commandsTile = new MetroFramework.Controls.MetroTile();
-            this.TakeEverythingAnywhere = new MetroFramework.Controls.MetroCheckBox();
-            this.ArmorHUD = new MetroFramework.Controls.MetroCheckBox();
-            this.SlowMotion = new MetroFramework.Controls.MetroCheckBox();
+            this.githubRepoDesc = new MetroFramework.Controls.MetroLabel();
             this.MainTabs.SuspendLayout();
             this.mainTab.SuspendLayout();
             this.playersTab.SuspendLayout();
@@ -211,6 +221,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.ringScoreOrange)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ringScoreGreen)).BeginInit();
             this.commandsTab.SuspendLayout();
+            this.metroPanel1.SuspendLayout();
             this.worldPanel.SuspendLayout();
             this.playerPanel.SuspendLayout();
             this.timePanel.SuspendLayout();
@@ -276,18 +287,18 @@
             this.settingsTile.UseSelectable = true;
             this.settingsTile.Click += new System.EventHandler(this.swapTab);
             // 
-            // versionTile
+            // buildTile
             // 
-            this.versionTile.ActiveControl = null;
-            this.versionTile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.versionTile.AutoSize = true;
-            this.versionTile.Enabled = false;
-            this.versionTile.Location = new System.Drawing.Point(0, 461);
-            this.versionTile.Name = "versionTile";
-            this.versionTile.Size = new System.Drawing.Size(160, 147);
-            this.versionTile.TabIndex = 6;
-            this.versionTile.Text = "v5.1.2";
-            this.versionTile.UseSelectable = true;
+            this.buildTile.ActiveControl = null;
+            this.buildTile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.buildTile.AutoSize = true;
+            this.buildTile.Enabled = false;
+            this.buildTile.Location = new System.Drawing.Point(0, 461);
+            this.buildTile.Name = "buildTile";
+            this.buildTile.Size = new System.Drawing.Size(160, 147);
+            this.buildTile.TabIndex = 6;
+            this.buildTile.Text = "VERSION";
+            this.buildTile.UseSelectable = true;
             // 
             // MainTabs
             // 
@@ -302,15 +313,18 @@
             this.MainTabs.Location = new System.Drawing.Point(166, 63);
             this.MainTabs.Multiline = true;
             this.MainTabs.Name = "MainTabs";
-            this.MainTabs.SelectedIndex = 1;
+            this.MainTabs.SelectedIndex = 0;
             this.MainTabs.Size = new System.Drawing.Size(978, 533);
             this.MainTabs.TabIndex = 7;
             this.MainTabs.UseSelectable = true;
             // 
             // mainTab
             // 
-            this.mainTab.Controls.Add(this.buildApiDescBox);
-            this.mainTab.Controls.Add(this.buildApiTitleLbl);
+            this.mainTab.Controls.Add(this.githubRepoDesc);
+            this.mainTab.Controls.Add(this.githubRepo);
+            this.mainTab.Controls.Add(this.githubLogo);
+            this.mainTab.Controls.Add(this.buildNotesBox);
+            this.mainTab.Controls.Add(this.buildVerTitleLbl);
             this.mainTab.Controls.Add(this.creditsBtn);
             this.mainTab.Controls.Add(this.connectBtn);
             this.mainTab.Controls.Add(this.discordSrvBtn);
@@ -329,50 +343,81 @@
             this.mainTab.VerticalScrollbarHighlightOnWheel = false;
             this.mainTab.VerticalScrollbarSize = 10;
             // 
-            // buildApiDescBox
+            // githubRepo
+            // 
+            this.githubRepo.AutoSize = true;
+            this.githubRepo.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.githubRepo.Location = new System.Drawing.Point(835, 201);
+            this.githubRepo.Name = "githubRepo";
+            this.githubRepo.Size = new System.Drawing.Size(107, 25);
+            this.githubRepo.TabIndex = 44;
+            this.githubRepo.Text = "Github Repo";
+            this.githubRepo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // githubLogo
+            // 
+            this.githubLogo.BackColor = System.Drawing.Color.Transparent;
+            this.githubLogo.BackgroundImage = global::Minecraft_Wii_U_Mod_Injector.Properties.Resources.githubLogo;
+            this.githubLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.githubLogo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.githubLogo.HorizontalScrollbarBarColor = true;
+            this.githubLogo.HorizontalScrollbarHighlightOnWheel = false;
+            this.githubLogo.HorizontalScrollbarSize = 10;
+            this.githubLogo.Location = new System.Drawing.Point(835, 98);
+            this.githubLogo.Name = "githubLogo";
+            this.githubLogo.Size = new System.Drawing.Size(104, 100);
+            this.githubLogo.TabIndex = 43;
+            this.ToolTipManager.SetToolTip(this.githubLogo, "Redirects you to the Github Repostery to download the source code or new releases" +
+        "");
+            this.githubLogo.VerticalScrollbarBarColor = true;
+            this.githubLogo.VerticalScrollbarHighlightOnWheel = false;
+            this.githubLogo.VerticalScrollbarSize = 10;
+            this.githubLogo.Click += new System.EventHandler(this.githubLogoClicked);
+            // 
+            // buildNotesBox
             // 
             // 
             // 
             // 
-            this.buildApiDescBox.CustomButton.Image = null;
-            this.buildApiDescBox.CustomButton.Location = new System.Drawing.Point(366, 1);
-            this.buildApiDescBox.CustomButton.Name = "";
-            this.buildApiDescBox.CustomButton.Size = new System.Drawing.Size(455, 455);
-            this.buildApiDescBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.buildApiDescBox.CustomButton.TabIndex = 1;
-            this.buildApiDescBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.buildApiDescBox.CustomButton.UseSelectable = true;
-            this.buildApiDescBox.CustomButton.Visible = false;
-            this.buildApiDescBox.Lines = new string[] {
-        "Fetching Patch Notes..."};
-            this.buildApiDescBox.Location = new System.Drawing.Point(6, 31);
-            this.buildApiDescBox.MaxLength = 32767;
-            this.buildApiDescBox.Multiline = true;
-            this.buildApiDescBox.Name = "buildApiDescBox";
-            this.buildApiDescBox.PasswordChar = '\0';
-            this.buildApiDescBox.ReadOnly = true;
-            this.buildApiDescBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.buildApiDescBox.SelectedText = "";
-            this.buildApiDescBox.SelectionLength = 0;
-            this.buildApiDescBox.SelectionStart = 0;
-            this.buildApiDescBox.ShortcutsEnabled = true;
-            this.buildApiDescBox.Size = new System.Drawing.Size(822, 457);
-            this.buildApiDescBox.TabIndex = 8;
-            this.buildApiDescBox.Text = "Fetching Patch Notes...";
-            this.buildApiDescBox.UseSelectable = true;
-            this.buildApiDescBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.buildApiDescBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.buildNotesBox.CustomButton.Image = null;
+            this.buildNotesBox.CustomButton.Location = new System.Drawing.Point(378, 1);
+            this.buildNotesBox.CustomButton.Name = "";
+            this.buildNotesBox.CustomButton.Size = new System.Drawing.Size(443, 443);
+            this.buildNotesBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.buildNotesBox.CustomButton.TabIndex = 1;
+            this.buildNotesBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.buildNotesBox.CustomButton.UseSelectable = true;
+            this.buildNotesBox.CustomButton.Visible = false;
+            this.buildNotesBox.Lines = new string[] {
+        "Fetching Patch Notes for VERSION"};
+            this.buildNotesBox.Location = new System.Drawing.Point(6, 31);
+            this.buildNotesBox.MaxLength = 32767;
+            this.buildNotesBox.Multiline = true;
+            this.buildNotesBox.Name = "buildNotesBox";
+            this.buildNotesBox.PasswordChar = '\0';
+            this.buildNotesBox.ReadOnly = true;
+            this.buildNotesBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.buildNotesBox.SelectedText = "";
+            this.buildNotesBox.SelectionLength = 0;
+            this.buildNotesBox.SelectionStart = 0;
+            this.buildNotesBox.ShortcutsEnabled = true;
+            this.buildNotesBox.Size = new System.Drawing.Size(822, 445);
+            this.buildNotesBox.TabIndex = 8;
+            this.buildNotesBox.Text = "Fetching Patch Notes for VERSION";
+            this.buildNotesBox.UseSelectable = true;
+            this.buildNotesBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.buildNotesBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
-            // buildApiTitleLbl
+            // buildVerTitleLbl
             // 
-            this.buildApiTitleLbl.AutoSize = true;
-            this.buildApiTitleLbl.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.buildApiTitleLbl.Location = new System.Drawing.Point(3, 3);
-            this.buildApiTitleLbl.Name = "buildApiTitleLbl";
-            this.buildApiTitleLbl.Size = new System.Drawing.Size(173, 25);
-            this.buildApiTitleLbl.TabIndex = 6;
-            this.buildApiTitleLbl.Text = "Patch Notes for v5.1.2";
-            this.buildApiTitleLbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buildVerTitleLbl.AutoSize = true;
+            this.buildVerTitleLbl.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.buildVerTitleLbl.Location = new System.Drawing.Point(3, 3);
+            this.buildVerTitleLbl.Name = "buildVerTitleLbl";
+            this.buildVerTitleLbl.Size = new System.Drawing.Size(203, 25);
+            this.buildVerTitleLbl.TabIndex = 6;
+            this.buildVerTitleLbl.Text = "Patch Notes for VERSION";
+            this.buildVerTitleLbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // creditsBtn
             // 
@@ -455,6 +500,7 @@
             // 
             // playersTab
             // 
+            this.playersTab.Controls.Add(this.DeadMauFiveMode);
             this.playersTab.Controls.Add(this.SlowMotion);
             this.playersTab.Controls.Add(this.ArmorHUD);
             this.playersTab.Controls.Add(this.TakeEverythingAnywhere);
@@ -525,6 +571,59 @@
             this.playersTab.VerticalScrollbarBarColor = true;
             this.playersTab.VerticalScrollbarHighlightOnWheel = false;
             this.playersTab.VerticalScrollbarSize = 10;
+            // 
+            // DeadMauFiveMode
+            // 
+            this.DeadMauFiveMode.AutoSize = true;
+            this.DeadMauFiveMode.Location = new System.Drawing.Point(383, 174);
+            this.DeadMauFiveMode.Name = "DeadMauFiveMode";
+            this.DeadMauFiveMode.Size = new System.Drawing.Size(151, 15);
+            this.DeadMauFiveMode.TabIndex = 140;
+            this.DeadMauFiveMode.Tag = "";
+            this.DeadMauFiveMode.Text = "Mouse Ears (Deadmau5)";
+            this.ToolTipManager.SetToolTip(this.DeadMauFiveMode, "Whether the game will apply mouse ears to your player when holding an item");
+            this.DeadMauFiveMode.UseSelectable = true;
+            this.DeadMauFiveMode.CheckedChanged += new System.EventHandler(this.DeadMauFiveModeToggled);
+            // 
+            // SlowMotion
+            // 
+            this.SlowMotion.AutoSize = true;
+            this.SlowMotion.Location = new System.Drawing.Point(383, 153);
+            this.SlowMotion.Name = "SlowMotion";
+            this.SlowMotion.Size = new System.Drawing.Size(90, 15);
+            this.SlowMotion.TabIndex = 139;
+            this.SlowMotion.Tag = "";
+            this.SlowMotion.Text = "Slow Motion";
+            this.ToolTipManager.SetToolTip(this.SlowMotion, "Whether the game will be slowed down");
+            this.SlowMotion.UseSelectable = true;
+            this.SlowMotion.CheckedChanged += new System.EventHandler(this.SlowMotionToggled);
+            // 
+            // ArmorHUD
+            // 
+            this.ArmorHUD.AutoSize = true;
+            this.ArmorHUD.Location = new System.Drawing.Point(383, 132);
+            this.ArmorHUD.Name = "ArmorHUD";
+            this.ArmorHUD.Size = new System.Drawing.Size(85, 15);
+            this.ArmorHUD.TabIndex = 138;
+            this.ArmorHUD.Tag = "";
+            this.ArmorHUD.Text = "Armor HUD";
+            this.ToolTipManager.SetToolTip(this.ArmorHUD, "Whether to display a HUD Element which displays your currently equipped armor");
+            this.ArmorHUD.UseSelectable = true;
+            this.ArmorHUD.CheckedChanged += new System.EventHandler(this.ArmorHUDToggled);
+            // 
+            // TakeEverythingAnywhere
+            // 
+            this.TakeEverythingAnywhere.AutoSize = true;
+            this.TakeEverythingAnywhere.Location = new System.Drawing.Point(383, 111);
+            this.TakeEverythingAnywhere.Name = "TakeEverythingAnywhere";
+            this.TakeEverythingAnywhere.Size = new System.Drawing.Size(161, 15);
+            this.TakeEverythingAnywhere.TabIndex = 25;
+            this.TakeEverythingAnywhere.Tag = "";
+            this.TakeEverythingAnywhere.Text = "Take Everything Anywhere";
+            this.ToolTipManager.SetToolTip(this.TakeEverythingAnywhere, "Whether the \"Take Everything\" option is usable in any world and minigame regardle" +
+        "ss of settings");
+            this.TakeEverythingAnywhere.UseSelectable = true;
+            this.TakeEverythingAnywhere.CheckedChanged += new System.EventHandler(this.TakeEverythingAnywhereToggled);
             // 
             // FieldOfViewSlider
             // 
@@ -1766,7 +1865,7 @@
             this.SqueakInfinitely.Name = "SqueakInfinitely";
             this.SqueakInfinitely.Size = new System.Drawing.Size(110, 15);
             this.SqueakInfinitely.TabIndex = 24;
-            this.SqueakInfinitely.Tag = "Host";
+            this.SqueakInfinitely.Tag = "";
             this.SqueakInfinitely.Text = "Squeak Infinitely";
             this.ToolTipManager.SetToolTip(this.SqueakInfinitely, "Whether you will be able to squeak infinitely as a bat");
             this.SqueakInfinitely.UseSelectable = true;
@@ -1779,7 +1878,7 @@
             this.AllPermissions.Name = "AllPermissions";
             this.AllPermissions.Size = new System.Drawing.Size(98, 15);
             this.AllPermissions.TabIndex = 2;
-            this.AllPermissions.Tag = "Host";
+            this.AllPermissions.Tag = "";
             this.AllPermissions.Text = "All Permisions";
             this.ToolTipManager.SetToolTip(this.AllPermissions, "Whether you\'ll be granted all permissions (placing, breaking, using)");
             this.AllPermissions.UseSelectable = true;
@@ -1792,7 +1891,7 @@
             this.AlwaysDamaged.Name = "AlwaysDamaged";
             this.AlwaysDamaged.Size = new System.Drawing.Size(114, 15);
             this.AlwaysDamaged.TabIndex = 4;
-            this.AlwaysDamaged.Tag = "Host";
+            this.AlwaysDamaged.Tag = "";
             this.AlwaysDamaged.Text = "Always Damaged";
             this.ToolTipManager.SetToolTip(this.AlwaysDamaged, "Whether you will repeatedly be damaged");
             this.AlwaysDamaged.UseSelectable = true;
@@ -1805,7 +1904,7 @@
             this.TNTGriefing.Name = "TNTGriefing";
             this.TNTGriefing.Size = new System.Drawing.Size(89, 15);
             this.TNTGriefing.TabIndex = 7;
-            this.TNTGriefing.Tag = "Host";
+            this.TNTGriefing.Tag = "";
             this.TNTGriefing.Text = "TNT Griefing";
             this.ToolTipManager.SetToolTip(this.TNTGriefing, "Whether TNT is able to destroy blocks or not");
             this.TNTGriefing.UseSelectable = true;
@@ -1818,7 +1917,7 @@
             this.DisabledKillBarriers.Name = "DisabledKillBarriers";
             this.DisabledKillBarriers.Size = new System.Drawing.Size(129, 15);
             this.DisabledKillBarriers.TabIndex = 8;
-            this.DisabledKillBarriers.Tag = "Host";
+            this.DisabledKillBarriers.Tag = "";
             this.DisabledKillBarriers.Text = "Disabled Kill Barriers";
             this.ToolTipManager.SetToolTip(this.DisabledKillBarriers, "Whether Kill Barriers will be disabled");
             this.DisabledKillBarriers.UseSelectable = true;
@@ -1832,7 +1931,7 @@
             this.RequiredPlayers.Name = "RequiredPlayers";
             this.RequiredPlayers.Size = new System.Drawing.Size(110, 19);
             this.RequiredPlayers.TabIndex = 22;
-            this.RequiredPlayers.Tag = "Host";
+            this.RequiredPlayers.Tag = "";
             this.RequiredPlayers.Text = "Required Players:";
             // 
             // RequiredPlayersSlider
@@ -1886,7 +1985,7 @@
             this.EndGame.Name = "EndGame";
             this.EndGame.Size = new System.Drawing.Size(913, 27);
             this.EndGame.TabIndex = 9;
-            this.EndGame.Tag = "Host";
+            this.EndGame.Tag = "";
             this.EndGame.Text = "End Game";
             this.ToolTipManager.SetToolTip(this.EndGame, "Ends the current Battle Match");
             this.EndGame.UseSelectable = true;
@@ -1900,7 +1999,7 @@
             this.RefillInterval.Name = "RefillInterval";
             this.RefillInterval.Size = new System.Drawing.Size(123, 19);
             this.RefillInterval.TabIndex = 28;
-            this.RefillInterval.Tag = "Host";
+            this.RefillInterval.Tag = "";
             this.RefillInterval.Text = "Chest Refill Interval:";
             // 
             // RefillIntervalSlider
@@ -1932,7 +2031,7 @@
             this.AntiEndGame.Name = "AntiEndGame";
             this.AntiEndGame.Size = new System.Drawing.Size(102, 15);
             this.AntiEndGame.TabIndex = 5;
-            this.AntiEndGame.Tag = "Host";
+            this.AntiEndGame.Tag = "";
             this.AntiEndGame.Text = "Anti End Game";
             this.ToolTipManager.SetToolTip(this.AntiEndGame, "Whether the game will end");
             this.AntiEndGame.UseSelectable = true;
@@ -1962,7 +2061,7 @@
             this.TumbleHUD.Name = "TumbleHUD";
             this.TumbleHUD.Size = new System.Drawing.Size(91, 15);
             this.TumbleHUD.TabIndex = 3;
-            this.TumbleHUD.Tag = "NonHost";
+            this.TumbleHUD.Tag = "";
             this.TumbleHUD.Text = "Tumble HUD";
             this.ToolTipManager.SetToolTip(this.TumbleHUD, "Whether to disable the HUD in Tumble");
             this.TumbleHUD.UseSelectable = true;
@@ -2078,6 +2177,8 @@
             // 
             // commandsTab
             // 
+            this.commandsTab.Controls.Add(this.metroLabel1);
+            this.commandsTab.Controls.Add(this.metroPanel1);
             this.commandsTab.Controls.Add(this.worldCmdLbl);
             this.commandsTab.Controls.Add(this.worldPanel);
             this.commandsTab.Controls.Add(this.playerCmdLbl);
@@ -2101,6 +2202,42 @@
             this.commandsTab.VerticalScrollbarHighlightOnWheel = false;
             this.commandsTab.VerticalScrollbarSize = 10;
             // 
+            // metroLabel1
+            // 
+            this.metroLabel1.AutoSize = true;
+            this.metroLabel1.Location = new System.Drawing.Point(7, 151);
+            this.metroLabel1.Name = "metroLabel1";
+            this.metroLabel1.Size = new System.Drawing.Size(83, 19);
+            this.metroLabel1.TabIndex = 46;
+            this.metroLabel1.Text = "/gamemode";
+            // 
+            // metroPanel1
+            // 
+            this.metroPanel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.metroPanel1.Controls.Add(this.GameModeCommandBtn);
+            this.metroPanel1.HorizontalScrollbarBarColor = true;
+            this.metroPanel1.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroPanel1.HorizontalScrollbarSize = 10;
+            this.metroPanel1.Location = new System.Drawing.Point(3, 161);
+            this.metroPanel1.Name = "metroPanel1";
+            this.metroPanel1.Size = new System.Drawing.Size(180, 145);
+            this.metroPanel1.TabIndex = 45;
+            this.metroPanel1.VerticalScrollbarBarColor = true;
+            this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
+            this.metroPanel1.VerticalScrollbarSize = 10;
+            // 
+            // GameModeCommandBtn
+            // 
+            this.GameModeCommandBtn.FontWeight = MetroFramework.MetroButtonWeight.Regular;
+            this.GameModeCommandBtn.Location = new System.Drawing.Point(3, 11);
+            this.GameModeCommandBtn.Name = "GameModeCommandBtn";
+            this.GameModeCommandBtn.Size = new System.Drawing.Size(172, 23);
+            this.GameModeCommandBtn.TabIndex = 17;
+            this.GameModeCommandBtn.Text = "Survival";
+            this.ToolTipManager.SetToolTip(this.GameModeCommandBtn, "Executes the /give command using the parameters entered above");
+            this.GameModeCommandBtn.UseSelectable = true;
+            this.GameModeCommandBtn.Click += new System.EventHandler(this.GameModeCommandBtnClicked);
+            // 
             // worldCmdLbl
             // 
             this.worldCmdLbl.AutoSize = true;
@@ -2113,6 +2250,7 @@
             // worldPanel
             // 
             this.worldPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.worldPanel.Controls.Add(this.SetWorldSpawnBtn);
             this.worldPanel.Controls.Add(this.downfallCommandBtn);
             this.worldPanel.HorizontalScrollbarBarColor = true;
             this.worldPanel.HorizontalScrollbarHighlightOnWheel = false;
@@ -2124,6 +2262,18 @@
             this.worldPanel.VerticalScrollbarBarColor = true;
             this.worldPanel.VerticalScrollbarHighlightOnWheel = false;
             this.worldPanel.VerticalScrollbarSize = 10;
+            // 
+            // SetWorldSpawnBtn
+            // 
+            this.SetWorldSpawnBtn.FontWeight = MetroFramework.MetroButtonWeight.Regular;
+            this.SetWorldSpawnBtn.Location = new System.Drawing.Point(3, 49);
+            this.SetWorldSpawnBtn.Name = "SetWorldSpawnBtn";
+            this.SetWorldSpawnBtn.Size = new System.Drawing.Size(172, 23);
+            this.SetWorldSpawnBtn.TabIndex = 18;
+            this.SetWorldSpawnBtn.Text = "/setworldspawn";
+            this.ToolTipManager.SetToolTip(this.SetWorldSpawnBtn, "Executes the /toggledownfall command");
+            this.SetWorldSpawnBtn.UseSelectable = true;
+            this.SetWorldSpawnBtn.Click += new System.EventHandler(this.SetWorldSpawnBtnClicked);
             // 
             // downfallCommandBtn
             // 
@@ -2371,6 +2521,7 @@
             // giveCommandPanel
             // 
             this.giveCommandPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.giveCommandPanel.Controls.Add(this.itemIdHelpBtn);
             this.giveCommandPanel.Controls.Add(this.giveCommandBtn);
             this.giveCommandPanel.Controls.Add(this.giveDataBox);
             this.giveCommandPanel.Controls.Add(this.giveAmountBox);
@@ -2385,6 +2536,18 @@
             this.giveCommandPanel.VerticalScrollbarBarColor = true;
             this.giveCommandPanel.VerticalScrollbarHighlightOnWheel = false;
             this.giveCommandPanel.VerticalScrollbarSize = 10;
+            // 
+            // itemIdHelpBtn
+            // 
+            this.itemIdHelpBtn.Highlight = true;
+            this.itemIdHelpBtn.Location = new System.Drawing.Point(143, 20);
+            this.itemIdHelpBtn.Name = "itemIdHelpBtn";
+            this.itemIdHelpBtn.Size = new System.Drawing.Size(32, 23);
+            this.itemIdHelpBtn.TabIndex = 45;
+            this.itemIdHelpBtn.Text = "?";
+            this.ToolTipManager.SetToolTip(this.itemIdHelpBtn, "Executes the /give command using the parameters entered above");
+            this.itemIdHelpBtn.UseSelectable = true;
+            this.itemIdHelpBtn.Click += new System.EventHandler(this.itemIdHelpBtnClicked);
             // 
             // giveCommandBtn
             // 
@@ -2472,7 +2635,7 @@
             // 
             // 
             this.giveIDBox.CustomButton.Image = null;
-            this.giveIDBox.CustomButton.Location = new System.Drawing.Point(150, 1);
+            this.giveIDBox.CustomButton.Location = new System.Drawing.Point(113, 1);
             this.giveIDBox.CustomButton.Name = "";
             this.giveIDBox.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.giveIDBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -2491,7 +2654,7 @@
             this.giveIDBox.SelectionLength = 0;
             this.giveIDBox.SelectionStart = 0;
             this.giveIDBox.ShortcutsEnabled = true;
-            this.giveIDBox.Size = new System.Drawing.Size(172, 23);
+            this.giveIDBox.Size = new System.Drawing.Size(135, 23);
             this.giveIDBox.TabIndex = 17;
             this.giveIDBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.ToolTipManager.SetToolTip(this.giveIDBox, "The ID of the item you want");
@@ -2502,6 +2665,7 @@
             // 
             // settingsTab
             // 
+            this.settingsTab.Controls.Add(this.releaseNotesToggle);
             this.settingsTab.Controls.Add(this.resetConfigBtn);
             this.settingsTab.Controls.Add(this.settingsLogo);
             this.settingsTab.Controls.Add(this.discordRpcCheckBox);
@@ -2521,6 +2685,18 @@
             this.settingsTab.VerticalScrollbarBarColor = true;
             this.settingsTab.VerticalScrollbarHighlightOnWheel = false;
             this.settingsTab.VerticalScrollbarSize = 10;
+            // 
+            // releaseNotesToggle
+            // 
+            this.releaseNotesToggle.AutoSize = true;
+            this.releaseNotesToggle.Location = new System.Drawing.Point(208, 76);
+            this.releaseNotesToggle.Name = "releaseNotesToggle";
+            this.releaseNotesToggle.Size = new System.Drawing.Size(200, 15);
+            this.releaseNotesToggle.TabIndex = 46;
+            this.releaseNotesToggle.Text = "Only display current release notes";
+            this.ToolTipManager.SetToolTip(this.releaseNotesToggle, "Whether to only view the current release notes or all previous release notes");
+            this.releaseNotesToggle.UseSelectable = true;
+            this.releaseNotesToggle.CheckedChanged += new System.EventHandler(this.releaseNotesToggleClicked);
             // 
             // resetConfigBtn
             // 
@@ -2558,9 +2734,9 @@
             this.discordRpcCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
             this.discordRpcCheckBox.Location = new System.Drawing.Point(58, 76);
             this.discordRpcCheckBox.Name = "discordRpcCheckBox";
-            this.discordRpcCheckBox.Size = new System.Drawing.Size(144, 15);
+            this.discordRpcCheckBox.Size = new System.Drawing.Size(139, 15);
             this.discordRpcCheckBox.TabIndex = 43;
-            this.discordRpcCheckBox.Text = "Discord Rich Prescense";
+            this.discordRpcCheckBox.Text = "Discord Rich Presence";
             this.ToolTipManager.SetToolTip(this.discordRpcCheckBox, resources.GetString("discordRpcCheckBox.ToolTip"));
             this.discordRpcCheckBox.UseSelectable = true;
             this.discordRpcCheckBox.CheckedChanged += new System.EventHandler(this.discordRpcToggleChecked);
@@ -2646,7 +2822,7 @@
             // 
             this.ToolTipManager.Style = MetroFramework.MetroColorStyle.Default;
             this.ToolTipManager.StyleManager = null;
-            this.ToolTipManager.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.ToolTipManager.Theme = MetroFramework.MetroThemeStyle.Default;
             // 
             // playersTile
             // 
@@ -2679,47 +2855,16 @@
             this.commandsTile.UseSelectable = true;
             this.commandsTile.Click += new System.EventHandler(this.swapTab);
             // 
-            // TakeEverythingAnywhere
+            // githubRepoDesc
             // 
-            this.TakeEverythingAnywhere.AutoSize = true;
-            this.TakeEverythingAnywhere.Location = new System.Drawing.Point(383, 111);
-            this.TakeEverythingAnywhere.Name = "TakeEverythingAnywhere";
-            this.TakeEverythingAnywhere.Size = new System.Drawing.Size(161, 15);
-            this.TakeEverythingAnywhere.TabIndex = 25;
-            this.TakeEverythingAnywhere.Tag = "";
-            this.TakeEverythingAnywhere.Text = "Take Everything Anywhere";
-            this.ToolTipManager.SetToolTip(this.TakeEverythingAnywhere, "Whether the \"Take Everything\" option is usable in any world and minigame regardle" +
-        "ss of settings");
-            this.TakeEverythingAnywhere.UseSelectable = true;
-            this.TakeEverythingAnywhere.CheckedChanged += new System.EventHandler(this.TakeEverythingAnywhereToggled);
-            // 
-            // ArmorHUD
-            // 
-            this.ArmorHUD.AutoSize = true;
-            this.ArmorHUD.Location = new System.Drawing.Point(383, 132);
-            this.ArmorHUD.Name = "ArmorHUD";
-            this.ArmorHUD.Size = new System.Drawing.Size(85, 15);
-            this.ArmorHUD.TabIndex = 138;
-            this.ArmorHUD.Tag = "";
-            this.ArmorHUD.Text = "Armor HUD";
-            this.ToolTipManager.SetToolTip(this.ArmorHUD, "Whether the \"Take Everything\" option is usable in any world and minigame regardle" +
-        "ss of settings");
-            this.ArmorHUD.UseSelectable = true;
-            this.ArmorHUD.CheckedChanged += new System.EventHandler(this.ArmorHUDToggled);
-            // 
-            // SlowMotion
-            // 
-            this.SlowMotion.AutoSize = true;
-            this.SlowMotion.Location = new System.Drawing.Point(383, 153);
-            this.SlowMotion.Name = "SlowMotion";
-            this.SlowMotion.Size = new System.Drawing.Size(90, 15);
-            this.SlowMotion.TabIndex = 139;
-            this.SlowMotion.Tag = "";
-            this.SlowMotion.Text = "Slow Motion";
-            this.ToolTipManager.SetToolTip(this.SlowMotion, "Whether the \"Take Everything\" option is usable in any world and minigame regardle" +
-        "ss of settings");
-            this.SlowMotion.UseSelectable = true;
-            this.SlowMotion.CheckedChanged += new System.EventHandler(this.SlowMotionToggled);
+            this.githubRepoDesc.AutoSize = true;
+            this.githubRepoDesc.FontSize = MetroFramework.MetroLabelSize.Small;
+            this.githubRepoDesc.Location = new System.Drawing.Point(843, 226);
+            this.githubRepoDesc.Name = "githubRepoDesc";
+            this.githubRepoDesc.Size = new System.Drawing.Size(91, 30);
+            this.githubRepoDesc.TabIndex = 45;
+            this.githubRepoDesc.Text = "Check back often\r\nfor new releases!";
+            this.githubRepoDesc.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // MainForm
             // 
@@ -2730,7 +2875,7 @@
             this.Controls.Add(this.playersTile);
             this.Controls.Add(this.homeTile);
             this.Controls.Add(this.MainTabs);
-            this.Controls.Add(this.versionTile);
+            this.Controls.Add(this.buildTile);
             this.Controls.Add(this.settingsTile);
             this.Controls.Add(this.minigamesTile);
             this.Controls.Add(this.generalTile);
@@ -2778,6 +2923,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.ringScoreGreen)).EndInit();
             this.commandsTab.ResumeLayout(false);
             this.commandsTab.PerformLayout();
+            this.metroPanel1.ResumeLayout(false);
             this.worldPanel.ResumeLayout(false);
             this.playerPanel.ResumeLayout(false);
             this.timePanel.ResumeLayout(false);
@@ -2797,7 +2943,7 @@
         public MetroFramework.Controls.MetroTile generalTile;
         public MetroFramework.Controls.MetroTile minigamesTile;
         public MetroFramework.Controls.MetroTile settingsTile;
-        public MetroFramework.Controls.MetroTile versionTile;
+        public MetroFramework.Controls.MetroTile buildTile;
         public MetroFramework.Controls.MetroTabControl MainTabs;
         public MetroFramework.Controls.MetroTabPage playersTab;
         public MetroFramework.Controls.MetroTabPage worldTab;
@@ -2895,7 +3041,7 @@
         public MetroFramework.Controls.MetroComboBox themeBox;
         public MetroFramework.Controls.MetroButton creditsBtn;
         private MetroFramework.Components.MetroStyleExtender StyleExtender;
-        public MetroFramework.Controls.MetroLabel buildApiTitleLbl;
+        public MetroFramework.Controls.MetroLabel buildVerTitleLbl;
         private MetroFramework.Components.MetroToolTip ToolTipManager;
         private MetroFramework.Controls.MetroPanel worldDivVertical;
         private MetroFramework.Controls.MetroPanel worldDivHorizontal;
@@ -2904,7 +3050,6 @@
         private MetroFramework.Controls.MetroLabel blocksLbl;
         private MetroFramework.Controls.MetroLabel generationLoadingLbl;
         private MetroFramework.Controls.MetroLabel worldLbl;
-        private MetroFramework.Controls.MetroTextBox buildApiDescBox;
         public MetroFramework.Controls.MetroCheckBox VisibleHitboxes;
         public MetroFramework.Controls.MetroCheckBox discordRpcCheckBox;
         private MetroFramework.Controls.MetroPanel settingsLogo;
@@ -2949,5 +3094,16 @@
         public MetroFramework.Controls.MetroCheckBox TakeEverythingAnywhere;
         public MetroFramework.Controls.MetroCheckBox ArmorHUD;
         public MetroFramework.Controls.MetroCheckBox SlowMotion;
+        private MetroFramework.Controls.MetroButton itemIdHelpBtn;
+        public MetroFramework.Controls.MetroCheckBox DeadMauFiveMode;
+        private MetroFramework.Controls.MetroButton SetWorldSpawnBtn;
+        private MetroFramework.Controls.MetroLabel metroLabel1;
+        private MetroFramework.Controls.MetroPanel metroPanel1;
+        private MetroFramework.Controls.MetroButton GameModeCommandBtn;
+        public MetroFramework.Controls.MetroCheckBox releaseNotesToggle;
+        public MetroFramework.Controls.MetroTextBox buildNotesBox;
+        private MetroFramework.Controls.MetroPanel githubLogo;
+        public MetroFramework.Controls.MetroLabel githubRepo;
+        public MetroFramework.Controls.MetroLabel githubRepoDesc;
     }
 }

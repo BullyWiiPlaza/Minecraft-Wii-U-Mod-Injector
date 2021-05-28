@@ -33,7 +33,7 @@
             this.StyleManager = new MetroFramework.Components.MetroStyleManager(this.components);
             this.kashiieraCredits = new MetroFramework.Controls.MetroLabel();
             this.bullywiiplazaCredits = new MetroFramework.Controls.MetroLabel();
-            this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
+            this.appIco = new MetroFramework.Controls.MetroPanel();
             this.vylrynaCredits = new MetroFramework.Controls.MetroLabel();
             ((System.ComponentModel.ISupportInitialize)(this.StyleManager)).BeginInit();
             this.SuspendLayout();
@@ -62,30 +62,31 @@
             this.bullywiiplazaCredits.Text = "Bully@WiiPlaza: \r\n- Help with late development\r\n- Creating some mods\r\n- Hosting t" +
     "he Minecraft Wii U Mod Injector";
             // 
-            // metroPanel1
+            // appIco
             // 
-            this.metroPanel1.BackColor = System.Drawing.Color.Transparent;
-            this.metroPanel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("metroPanel1.BackgroundImage")));
-            this.metroPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.metroPanel1.HorizontalScrollbarBarColor = true;
-            this.metroPanel1.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroPanel1.HorizontalScrollbarSize = 10;
-            this.metroPanel1.Location = new System.Drawing.Point(382, 35);
-            this.metroPanel1.Name = "metroPanel1";
-            this.metroPanel1.Size = new System.Drawing.Size(255, 245);
-            this.metroPanel1.TabIndex = 45;
-            this.metroPanel1.VerticalScrollbarBarColor = true;
-            this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
-            this.metroPanel1.VerticalScrollbarSize = 10;
+            this.appIco.BackColor = System.Drawing.Color.Transparent;
+            this.appIco.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("appIco.BackgroundImage")));
+            this.appIco.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.appIco.HorizontalScrollbarBarColor = true;
+            this.appIco.HorizontalScrollbarHighlightOnWheel = false;
+            this.appIco.HorizontalScrollbarSize = 10;
+            this.appIco.Location = new System.Drawing.Point(382, 35);
+            this.appIco.Name = "appIco";
+            this.appIco.Size = new System.Drawing.Size(255, 245);
+            this.appIco.TabIndex = 45;
+            this.appIco.VerticalScrollbarBarColor = true;
+            this.appIco.VerticalScrollbarHighlightOnWheel = false;
+            this.appIco.VerticalScrollbarSize = 10;
             // 
             // vylrynaCredits
             // 
             this.vylrynaCredits.AutoSize = true;
             this.vylrynaCredits.Location = new System.Drawing.Point(23, 223);
             this.vylrynaCredits.Name = "vylrynaCredits";
-            this.vylrynaCredits.Size = new System.Drawing.Size(339, 38);
+            this.vylrynaCredits.Size = new System.Drawing.Size(339, 57);
             this.vylrynaCredits.TabIndex = 46;
-            this.vylrynaCredits.Text = "vylryna: \r\n- Creating a handful of mods (most notably, commands)";
+            this.vylrynaCredits.Text = "vylryna: \r\n- Creating a handful of mods (most notably, commands)\r\n- Helping me un" +
+    "derstand how commands work";
             // 
             // Credits
             // 
@@ -93,7 +94,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(660, 288);
             this.Controls.Add(this.vylrynaCredits);
-            this.Controls.Add(this.metroPanel1);
+            this.Controls.Add(this.appIco);
             this.Controls.Add(this.bullywiiplazaCredits);
             this.Controls.Add(this.kashiieraCredits);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -103,7 +104,6 @@
             this.Style = MetroFramework.MetroColorStyle.Default;
             this.Text = "Credits";
             this.Theme = MetroFramework.MetroThemeStyle.Default;
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Exiting);
             ((System.ComponentModel.ISupportInitialize)(this.StyleManager)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -114,7 +114,7 @@
         private MetroFramework.Components.MetroStyleManager StyleManager;
         private MetroFramework.Controls.MetroLabel kashiieraCredits;
         private MetroFramework.Controls.MetroLabel bullywiiplazaCredits;
-        private MetroFramework.Controls.MetroPanel metroPanel1;
+        private MetroFramework.Controls.MetroPanel appIco;
         private MetroFramework.Controls.MetroLabel vylrynaCredits;
     }
 }

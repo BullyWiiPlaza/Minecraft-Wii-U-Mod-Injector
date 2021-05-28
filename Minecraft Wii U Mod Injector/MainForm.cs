@@ -1,15 +1,14 @@
-﻿using com.slothwiiplaza.geckou;
-using MetroFramework.Controls;
+﻿using MetroFramework.Controls;
 using MetroFramework.Forms;
 using MetroFramework;
-using System;
-using System.Diagnostics;
-using System.Windows.Forms;
 using Minecraft_Wii_U_Mod_Injector.Helpers;
 using Minecraft_Wii_U_Mod_Injector.Forms;
 using Minecraft_Wii_U_Mod_Injector.Helpers.Files;
 using Minecraft_Wii_U_Mod_Injector.Helpers.Winforms;
-using System.Text.RegularExpressions;
+using System;
+using System.Diagnostics;
+using System.Windows.Forms;
+using WiiU.GeckoU;
 
 namespace Minecraft_Wii_U_Mod_Injector
 {
@@ -23,6 +22,24 @@ namespace Minecraft_Wii_U_Mod_Injector
         public static GeckoUConnect GeckoUConnection;
         public States.StatesIds GetStates = States.StatesIds.Disconnected;
 
+        #endregion
+
+        #region bools
+        private bool _isConnected;
+
+        public bool isConnected
+        {
+            get { return _isConnected; }
+            set
+            {
+                _isConnected = value;
+
+                if (_isConnected)
+                    DiscordRP.SetPresence("Connected", MainTabs.SelectedTab.Text + " tab");
+                else
+                    DiscordRP.SetPresence("Disconnected", MainTabs.SelectedTab.Text + " tab");
+            }
+        }
         #endregion
 
         #region assembly
@@ -87,9 +104,8 @@ namespace Minecraft_Wii_U_Mod_Injector
             new States(this);
             new Messaging(this);
             new Setup(this);
-            Setup.SetupInjector();
 
-            buildApiDescBox.Text = Properties.Resources.releaseNotes;
+            Setup.SetupInjector();
 
             ValidateEnteredIPAddress();
         }
@@ -102,28 +118,36 @@ namespace Minecraft_Wii_U_Mod_Injector
         private void swapTab(object sender, EventArgs e)
         {
             var tile = (MetroTile)sender;
-            if (tile.TileCount == 6)
-                MainTabs.SelectedIndex = tile.TileCount - 1;
 
-            MainTabs.SelectedIndex = tile.TileCount;
-            DiscordRP.SetPresence("Modding", "Browsing " + MainTabs.SelectedTab.Text + " tab");
+            if (MainTabs.SelectedIndex == tile.TileCount)
+                return;
+            else
+                MainTabs.SelectedIndex = tile.TileCount;
+
+            if (isConnected)
+                DiscordRP.SetPresence("Connected", MainTabs.SelectedTab.Text + " tab");
+            else
+                DiscordRP.SetPresence("Disconnected", MainTabs.SelectedTab.Text + " tab");
         }
 
         private void connectBtnClicked(object sender, EventArgs e)
         {
-            GeckoU = new GeckoUCore(wiiuIpv4Box.Text);
             try
             {
+                GeckoU = new GeckoUCore(wiiuIpv4Box.Text);
+
                 switch (GetStates)
                 {
                     case States.StatesIds.Disconnected:
                         States.SwapState(States.StatesIds.Connecting);
                         GeckoU.GUC.Connect();
                         States.SwapState(States.StatesIds.Connected);
+                        isConnected = true;
                         break;
 
                     case States.StatesIds.Connected:
                         GeckoU.GUC.Close();
+                        isConnected = false;
                         States.SwapState(States.StatesIds.Disconnected);
                         break;
                 }
@@ -132,6 +156,9 @@ namespace Minecraft_Wii_U_Mod_Injector
             {
                 Messaging.Show(MessageBoxIcon.Error, "Couldn't detect TCPGecko running or IP Address is wrong.\nMake sure you have TCPGecko running and entered the correct IP Address for you Wii U");
                 Exceptions.LogError(error, "Wrong IP Address", Exceptions.ExceptionId.ConnectionProblem, false, false);
+
+                if (GetStates == States.StatesIds.Connecting)
+                    States.SwapState(States.StatesIds.Disconnected);
             }
             catch (Exception error)
             {
@@ -236,7 +263,32 @@ namespace Minecraft_Wii_U_Mod_Injector
                 Exceptions.LogError(Error, "Failed to Reset Config", Exceptions.ExceptionId.UnknownFail, false, true);
             }
         }
+        private void releaseNotesToggleClicked(object sender, EventArgs e)
+        {
+            try
+            {
+                if (releaseNotesToggle.Checked)
+                {
+                    buildNotesBox.Text = Properties.Resources.releaseNote;
+                    Configuration.WriteKey("ReleaseNotes", "current", "Display");
+                }
+                else
+                {
+                    buildNotesBox.Text = Properties.Resources.releaseNotes;
+                    Configuration.WriteKey("ReleaseNotes", "all", "Display");
+                }
 
+            }
+            catch (Exception Error)
+            {
+                Exceptions.LogError(Error, "Failed to Toggle Release Notes", Exceptions.ExceptionId.UnknownFail, false, true);
+            }
+        }
+
+        private void githubLogoClicked(object sender, EventArgs e)
+        {
+            Process.Start("https://github.com/Kashiiera/Minecraft-Wii-U-Mod-Injector");
+        }
         private void discordSrvBtnClicked(object sender, EventArgs e)
         {
             Process.Start("https://discord.gg/jrzZWaDc7a");
@@ -244,17 +296,22 @@ namespace Minecraft_Wii_U_Mod_Injector
 
         private void creditsBtnClicked(object sender, EventArgs e)
         {
-            new Credits(this).Show();
+            new Credits(this).ShowDialog();
         }
 
         private void MapTextEditorClicked(object sender, EventArgs e)
         {
-            new MapTextEditor(this).Show();
+            new MapTextEditor(this).ShowDialog();
         }
 
         private void NNIDEditorBtnClicked(object sender, EventArgs e)
         {
-            new NNIDEditor(this).Show();
+            new NNIDEditor(this).ShowDialog();
+        }
+
+        private void itemIdHelpBtnClicked(object sender, EventArgs e)
+        {
+            Messaging.Show(MessageBoxIcon.Information, "Item IDs can be found at https://minecraft-ids.grahamedgecombe.com/ \nData Values are the numbers behind the : in the ID.\nFor example, if you want Birch Wood the ID would be 17 and the data value would be 2");
         }
         public static bool IsPointerLoaded()
         {
@@ -458,21 +515,18 @@ namespace Minecraft_Wii_U_Mod_Injector
 
         private void CraftAnythingToggled(object sender, EventArgs e)
         {
-            GeckoU.WriteUIntToggle(0x02F70970, on, off,
-                CraftAnything.Checked); //IsDebugSettingEnabled__12GameSettingsSF13eDebugSettingi
-            GeckoU.WriteUIntToggle(0x032283CC, 0x38800000, 0x38800001,
-                CraftAnything.Checked); //run__15MinecraftServerFLPv
+            GeckoU.WriteUIntToggle(0x02F70970, on, off, CraftAnything.Checked); //IsDebugSettingEnabled__12GameSettingsSF13eDebugSettingi
+            GeckoU.WriteUIntToggle(0x032283CC, 0x38800000, 0x38800001, CraftAnything.Checked); //run__15MinecraftServerFLPv
         }
 
         private void CreativeModeToggled(object sender, EventArgs e)
         {
-            GeckoU.WriteUIntToggle(0x02456F4C, on, 0x5403063E,
-                CreativeMode.Checked); //GameType::isCreative(const(void))
+            GeckoU.WriteUIntToggle(0x02456F4C, on, 0x5403063E, CreativeMode.Checked); //GameType::isCreative(const(void))
         }
 
         private void NoFogToggled(object sender, EventArgs e)
         {
-            GeckoU.WriteUIntToggle(0x030DAB7C, 0x38800000, 0x38800001, NoFog.Checked); //remove
+            GeckoU.WriteUIntToggle(0x030E4954, 0x38800000, 0x38800001, NoFog.Checked); //remove
         }
 
         private void StaticLiquidBlocksToggled(object sender, EventArgs e)
@@ -763,6 +817,36 @@ namespace Minecraft_Wii_U_Mod_Injector
             GeckoU.CallFunction(0x03B30000, new uint[1]);
         }
 
+        private void SetWorldSpawnBtnClicked(object sender, EventArgs e)
+        {
+            if (!IsPointerLoaded())
+            {
+                Messaging.Show("Commands only work in-game, please load a world before executing a command");
+                return;
+            }
+            byte[] Command = new byte[] { 0x94, 0x21, 0xFF, 0xE8, 0x7C, 0x08, 0x02, 0xA6, 0x3D, 0x00, 0x10, 0x30, 0x3D, 0x40, 0x10, 0x30, 0x93, 0xE1, 0x00, 0x14, 0x3F, 0xE0, 0x03, 0x16, 0x63, 0xFF, 0x68, 0x18, 0x90, 0x01, 0x00, 0x1C, 0x93, 0x81, 0x00, 0x08, 0x7F, 0xE9, 0x03, 0xA6, 0x93, 0xA1, 0x00, 0x0C, 0x3D, 0x20, 0x10, 0x30, 0x93, 0xC1, 0x00, 0x10, 0x61, 0x08, 0x30, 0x08, 0x61, 0x4A, 0x30, 0x0C, 0x61, 0x29, 0x30, 0x10, 0x83, 0xC8, 0x00, 0x00, 0x83, 0xAA, 0x00, 0x00, 0x83, 0x89, 0x00, 0x00, 0x4E, 0x80, 0x04, 0x21, 0x80, 0x83, 0x00, 0x34, 0x2C, 0x04, 0x00, 0x00, 0x41, 0x82, 0x00, 0x6C, 0x3D, 0x20, 0x02, 0x8B, 0x3C, 0x60, 0x10, 0x30, 0x61, 0x29, 0x51, 0x58, 0x39, 0x04, 0x07, 0x40, 0x7D, 0x29, 0x03, 0xA6, 0x7F, 0x87, 0xE3, 0x78, 0x7F, 0xA6, 0xEB, 0x78, 0x7F, 0xC5, 0xF3, 0x78, 0x60, 0x63, 0x30, 0x00, 0x4C, 0xC6, 0x31, 0x82, 0x4E, 0x80, 0x04, 0x21, 0x7F, 0xE9, 0x03, 0xA6, 0x4E, 0x80, 0x04, 0x21, 0x3D, 0x20, 0x03, 0x1B, 0x61, 0x29, 0x26, 0x54, 0x38, 0x80, 0x00, 0x00, 0x7D, 0x29, 0x03, 0xA6, 0x4C, 0xC6, 0x31, 0x82, 0x4E, 0x80, 0x04, 0x21, 0x3D, 0x20, 0x03, 0x04, 0x61, 0x29, 0xA5, 0xD8, 0x3C, 0x80, 0x10, 0x30, 0x7D, 0x29, 0x03, 0xA6, 0x60, 0x84, 0x30, 0x00, 0x4C, 0xC6, 0x31, 0x82, 0x4E, 0x80, 0x04, 0x21, 0x80, 0x01, 0x00, 0x1C, 0x3D, 0x20, 0x01, 0x0F, 0x61, 0x29, 0x6A, 0xE0, 0x83, 0x81, 0x00, 0x08, 0x83, 0xA1, 0x00, 0x0C, 0x7D, 0x29, 0x03, 0xA6, 0x83, 0xC1, 0x00, 0x10, 0x7C, 0x08, 0x03, 0xA6, 0x83, 0xE1, 0x00, 0x14, 0x38, 0x21, 0x00, 0x18, 0x4E, 0x80, 0x00, 0x20, 0x60, 0x00, 0x00, 0x00 };
+            GeckoU.WriteUInt(0x10303008, 0x0);
+            GeckoU.WriteUInt(0x1030300C, 0x0);
+            GeckoU.WriteUInt(0x10303010, 0x0);
+            GeckoU.WriteBytes(0x03B30000, Command);
+            GeckoU.CallFunction(0x03B30000, new uint[1]);
+        }
+
+        private void GameModeCommandBtnClicked(object sender, EventArgs e)
+        {
+            if (!IsPointerLoaded())
+            {
+                Messaging.Show("Commands only work in-game, please load a world before executing a command");
+                return;
+            }
+            byte[] Command = new byte[] { 0x94, 0x21, 0xFF, 0xE8, 0x7C, 0x08, 0x02, 0xA6, 0x3D, 0x00, 0x10, 0x30, 0x3D, 0x40, 0x10, 0x30, 0x93, 0xE1, 0x00, 0x14, 0x3F, 0xE0, 0x03, 0x16, 0x63, 0xFF, 0x68, 0x18, 0x90, 0x01, 0x00, 0x1C, 0x93, 0x81, 0x00, 0x08, 0x7F, 0xE9, 0x03, 0xA6, 0x93, 0xA1, 0x00, 0x0C, 0x3D, 0x20, 0x10, 0x30, 0x93, 0xC1, 0x00, 0x10, 0x61, 0x08, 0x30, 0x08, 0x61, 0x4A, 0x30, 0x0C, 0x61, 0x29, 0x30, 0x10, 0x83, 0xC8, 0x00, 0x00, 0x83, 0xAA, 0x00, 0x00, 0x83, 0x89, 0x00, 0x00, 0x4E, 0x80, 0x04, 0x21, 0x80, 0x83, 0x00, 0x34, 0x2C, 0x04, 0x00, 0x00, 0x41, 0x82, 0x00, 0x6C, 0x3D, 0x20, 0x02, 0x2D, 0x3C, 0x60, 0x10, 0x30, 0x61, 0x29, 0x02, 0xC4, 0x39, 0x04, 0x07, 0x40, 0x7D, 0x29, 0x03, 0xA6, 0x7F, 0x87, 0xE3, 0x78, 0x7F, 0xA6, 0xEB, 0x78, 0x7F, 0xC5, 0xF3, 0x78, 0x60, 0x63, 0x30, 0x00, 0x4C, 0xC6, 0x31, 0x82, 0x4E, 0x80, 0x04, 0x21, 0x7F, 0xE9, 0x03, 0xA6, 0x4E, 0x80, 0x04, 0x21, 0x3D, 0x20, 0x03, 0x1B, 0x61, 0x29, 0x26, 0x54, 0x38, 0x80, 0x00, 0x00, 0x7D, 0x29, 0x03, 0xA6, 0x4C, 0xC6, 0x31, 0x82, 0x4E, 0x80, 0x04, 0x21, 0x3D, 0x20, 0x03, 0x04, 0x61, 0x29, 0xA5, 0xD8, 0x3C, 0x80, 0x10, 0x30, 0x7D, 0x29, 0x03, 0xA6, 0x60, 0x84, 0x30, 0x00, 0x4C, 0xC6, 0x31, 0x82, 0x4E, 0x80, 0x04, 0x21, 0x80, 0x01, 0x00, 0x1C, 0x3D, 0x20, 0x01, 0x0F, 0x61, 0x29, 0x6A, 0xE0, 0x83, 0x81, 0x00, 0x08, 0x83, 0xA1, 0x00, 0x0C, 0x7D, 0x29, 0x03, 0xA6, 0x83, 0xC1, 0x00, 0x10, 0x7C, 0x08, 0x03, 0xA6, 0x83, 0xE1, 0x00, 0x14, 0x38, 0x21, 0x00, 0x18, 0x4E, 0x80, 0x00, 0x20, 0x60, 0x00, 0x00, 0x00 };
+            GeckoU.WriteUInt(0x10303008, 0x0);
+            GeckoU.WriteUInt(0x1030300C, (uint)int.Parse(timeAmountBox.Text));
+            GeckoU.WriteUInt(0x10303010, 0x0);
+            GeckoU.WriteBytes(0x03B30000, Command);
+            GeckoU.CallFunction(0x03B30000, new uint[1]);
+        }
+
         private void BypassFriendsOnlyToggled(object sender, EventArgs e)
         {
             GeckoU.WriteULongToggle(0x02D5731C, 0x386000014E800020, 0x7C0802A69421FFF0, BypassFriendsOnly.Checked); //CGameNetworkManager::IsInPublicJoinableGame((void))
@@ -791,7 +875,6 @@ namespace Minecraft_Wii_U_Mod_Injector
         {
             GeckoU.WriteFloat(0x108911B8, (float)FieldOfViewSlider.Value);
         }
-        #endregion memory editing
 
         private void TakeEverythingAnywhereToggled(object sender, EventArgs e)
         {
@@ -807,5 +890,11 @@ namespace Minecraft_Wii_U_Mod_Injector
         {
             GeckoU.WriteUIntToggle(0x109473C8, 0x3F700000, 0x3FF00000, SlowMotion.Checked);
         }
+
+        private void DeadMauFiveModeToggled(object sender, EventArgs e)
+        {
+            GeckoU.WriteUIntToggle(0x02F5D53C, on, off, DeadMauFiveMode.Checked);
+        }
+        #endregion memory editing
     }
 }

@@ -8,6 +8,8 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
     {
         public static MainForm Injector = new MainForm();
 
+        public static string version = "v5.1.3";
+
         public Setup(MainForm window)
         {
             Injector = window;
@@ -17,10 +19,14 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
         {
             try
             {
+                Injector.buildNotesBox.Text = Properties.Resources.releaseNotes;
+                Injector.buildVerTitleLbl.Text = "Patch Notes for " + version;
+                Injector.buildTile.Text = version;
+
                 SetupUserPrefs();
 
                 DiscordRP.Initialize();
-                DiscordRP.SetPresence("Modding", "Idle");
+                DiscordRP.SetPresence("Disconnected", "Idle");
                 States.SwapState(States.StatesIds.Disconnected);
             }
             catch (Exception error)
@@ -49,6 +55,14 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
                         Injector.discordRpcCheckBox.Checked = true;
                     else
                         Injector.discordRpcCheckBox.Checked = false;
+
+                    if (Configuration.KeyEqualsTo("ReleaseNotes", "all", "Display")) {
+                        Injector.releaseNotesToggle.Checked = false;
+                        Injector.buildNotesBox.Text = Properties.Resources.releaseNotes; }
+                    else if (Configuration.KeyEqualsTo("ReleaseNotes", "current", "Display")) {
+                        Injector.releaseNotesToggle.Checked = true;
+                        Injector.buildNotesBox.Text = Properties.Resources.releaseNote; }
+
                 }
                 catch (Exception)
                 {

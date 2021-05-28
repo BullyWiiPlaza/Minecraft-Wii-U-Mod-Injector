@@ -10,10 +10,5 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms
             StyleManager.Style = this.Style = Injector.StyleManager.Style;
             StyleManager.Theme = this.Theme = Injector.StyleManager.Theme;
         }
-
-        private void Exiting(object sender, System.Windows.Forms.FormClosingEventArgs e)
-        {
-
-        }
     }
 }

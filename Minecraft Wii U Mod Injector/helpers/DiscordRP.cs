@@ -19,7 +19,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
             {
                 client.SetPresence(new RichPresence()
                 {
-                    Details = details,
+                    Details = Setup.version + " - " + details,
                     State = state,
                     Timestamps = new Timestamps() { Start = DateTime.UtcNow },
                     Assets = new Assets()

@@ -122,9 +122,11 @@
             this.Controls.Add(this.NNIDNameBox);
             this.Controls.Add(this.NNIDNameLbl);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "NNIDEditor";
             this.Resizable = false;
             this.Text = "Nintendo Network Editor";
+            this.TopMost = true;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Exiting);
             this.Load += new System.EventHandler(this.Init);
             ((System.ComponentModel.ISupportInitialize)(this.StyleManager)).EndInit();

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace com.slothwiiplaza.geckou
+namespace WiiU.GeckoU
 {
     public class GeckoUException : Exception
     {

@@ -1,0 +1,34 @@
+[Release v5.1.3 (28th of May, 2021)]
+
+This update adds new mods and fixes some existing mods
+
+[Changes]
+
+• New mods:
+
+- Take Everything Anywhere
+- Armor HUD
+- Slow Motion
+- Deadmau5 Mode
+- Set World Spawn Command
+- Game Mode Command (Survival only, for now)
+
+•General Additions & Updates:
+
+- Updated Credits
+- Updated Discord Rich Presence texts
+- You can now clean the release notes by displaying only the current version changes (Settings tab)
+- Help Button added for the /give command
+- Discord Rich Presence will no longer reset when switching to the same tab
+- Github Repository added to Home Page for easy access to new releases
+
+[Fixes]
+
+• Fixed mods:
+
+- No Fog
+- Map Text Editor
+
+• General Fixes
+
+- Windows Buttons were blocked on the Credits Form due to the Injector Logo

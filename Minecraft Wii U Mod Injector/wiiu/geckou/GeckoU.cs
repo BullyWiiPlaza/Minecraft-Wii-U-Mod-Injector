@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Text;
 using Minecraft_Wii_U_Mod_Injector.Helpers;
 
-namespace com.slothwiiplaza.geckou
+namespace WiiU.GeckoU
 {
     public class GeckoUCore
     {
@@ -579,7 +579,7 @@ namespace com.slothwiiplaza.geckou
         /// <param name="value">String to write</param>
         public void WriteString(uint address, string value)
         {
-            var bytes = System.Text.Encoding.ASCII.GetBytes(value);
+            var bytes = Encoding.ASCII.GetBytes(value);
             WriteBytes(address, bytes);
         }
         #endregion Writing, Poking

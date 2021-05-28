@@ -63,6 +63,16 @@ namespace Minecraft_Wii_U_Mod_Injector.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap githubLogo {
+            get {
+                object obj = ResourceManager.GetObject("githubLogo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Icon {
             get {
                 object obj = ResourceManager.GetObject("Icon", resourceCulture);
@@ -71,16 +81,58 @@ namespace Minecraft_Wii_U_Mod_Injector.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to [Release v5.1 (6th of May, 2021)]
+        ///   Looks up a localized string similar to [Release v5.1.3 (28th of May, 2021)]
         ///
-        ///- [IMPORTANT INFORMAITON]
+        ///This update adds new mods and fixes some existing mods
         ///
-        ///If you encounter any issues with the Mod Injector or have a suggestion for changes or want to submit a mod then please submit and issue
-        ///on the official Github page or join the Discord (Link is in the settings page) as I&apos;m free to suggestions to expand the Injector and fix
-        ///as many bugs as I can. I might not care about Wii U but I care about my users and want the Injector to be the best it can be.
+        ///[Changes]
         ///
-        ///Github Page:
-        ///https://github.com/SlothWiiP [rest of string was truncated]&quot;;.
+        ///• New mods:
+        ///
+        ///- Take Everything Anywhere
+        ///- Armor HUD
+        ///- Slow Motion
+        ///- Deadmau5 Mode
+        ///- Set World Spawn Command
+        ///- Game Mode Command (Survival only, for now)
+        ///
+        ///•General Additions &amp; Updates:
+        ///
+        ///- Updated Credits
+        ///- Updated Discord Rich Presence texts
+        ///- You can now clean the release notes by displaying only the current version changes (Settings tab)
+        ///- Help Button added for the /give command
+        ///- D [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string releaseNote {
+            get {
+                return ResourceManager.GetString("releaseNote", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to [Release v5.1.3 (28th of May, 2021)]
+        ///
+        ///This update adds new mods and fixes some existing mods
+        ///
+        ///[Changes]
+        ///
+        /// New mods:
+        ///
+        ///- Take Everything Anywhere
+        ///- Armor HUD
+        ///- Slow Motion
+        ///- Deadmau5 Mode
+        ///- Set World Spawn Command
+        ///- Game Mode Command (Survival only, for now)
+        ///
+        ///General Additions &amp; Updates:
+        ///
+        ///- Updated Credits
+        ///- Updated Discord Rich Presence texts
+        ///- You can now clean the release notes by displaying only the current version changes (Settings tab)
+        ///- Help Button added for the /give command
+        ///- D [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string releaseNotes {
             get {

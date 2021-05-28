@@ -3,7 +3,7 @@ using System.IO;
 using System.Net.Sockets;
 using System.Threading;
 
-namespace com.slothwiiplaza.geckou
+namespace WiiU.GeckoU
 {
     public class GeckoUConnect
     {

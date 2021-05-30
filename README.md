@@ -9,7 +9,7 @@ A pre-compiled version can be found in the [Releases](https://github.com/Kashiie
 You will need Visual Studio 2019 and .NET Framework 4.8 to compile the Mod Injector
 
 # System Requirements
-* Operating System: Windows 7, Windows 8 or Windows 10
+* Operating System: Windows 7, Windows 8.1 or Windows 10
 * .NET Framework : 4.8
 * System Memory (RAM): 2 GB
 

@@ -20,7 +20,6 @@ namespace Minecraft_Wii_U_Mod_Injector
 
         public static GeckoUCore GeckoU;
         public static GeckoUConnect GeckoUConnection;
-        public States.StatesIds GetStates = States.StatesIds.Disconnected;
 
         #endregion
 
@@ -119,10 +118,10 @@ namespace Minecraft_Wii_U_Mod_Injector
         {
             var tile = (MetroTile)sender;
 
-            if (MainTabs.SelectedIndex == tile.TileCount)
-                return;
-            else
+            if (MainTabs.SelectedIndex != tile.TileCount)
                 MainTabs.SelectedIndex = tile.TileCount;
+            else
+                return;
 
             if (isConnected)
                 DiscordRP.SetPresence("Connected", MainTabs.SelectedTab.Text + " tab");
@@ -136,7 +135,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             {
                 GeckoU = new GeckoUCore(wiiuIpv4Box.Text);
 
-                switch (GetStates)
+                switch (States.currentState)
                 {
                     case States.StatesIds.Disconnected:
                         States.SwapState(States.StatesIds.Connecting);
@@ -152,20 +151,24 @@ namespace Minecraft_Wii_U_Mod_Injector
                         break;
                 }
             }
-            catch (System.Net.Sockets.SocketException error)
-            {
-                Messaging.Show(MessageBoxIcon.Error, "Couldn't detect TCPGecko running or IP Address is wrong.\nMake sure you have TCPGecko running and entered the correct IP Address for you Wii U");
-                Exceptions.LogError(error, "Wrong IP Address", Exceptions.ExceptionId.ConnectionProblem, false, false);
-
-                if (GetStates == States.StatesIds.Connecting)
-                    States.SwapState(States.StatesIds.Disconnected);
-            }
             catch (Exception error)
             {
-                Exceptions.LogError(error, "Unable to Connect to the Wii U", Exceptions.ExceptionId.ConnectionProblem, false, true);
+                switch(error)
+                {
+                    case System.Net.Sockets.SocketException:
+                        Messaging.Show(MessageBoxIcon.Error, "Couldn't detect TCPGecko running or IP Address is wrong.\nMake sure you have TCPGecko running and entered the correct IP Address for you Wii U");
+                        Exceptions.LogError(error, "Wrong IP Address", Exceptions.ExceptionId.ConnectionProblem, false, false);
+                        States.SwapState(States.StatesIds.Disconnected);
+                        break;
 
-                if (GetStates == States.StatesIds.Connecting)
-                    States.SwapState(States.StatesIds.Disconnected);
+                    case TimeoutException:
+                        Exceptions.LogError(error, "Unable to Connect to the Wii U, connection timed-out", Exceptions.ExceptionId.ConnectionProblem, false, true);
+                        States.SwapState(States.StatesIds.Disconnected);
+                        break;
+                }
+
+                Exceptions.LogError(error, "Unable to Connect to the Wii U", Exceptions.ExceptionId.ConnectionProblem, false, true);
+                States.SwapState(States.StatesIds.Disconnected);
             }
         }
 
@@ -316,13 +319,9 @@ namespace Minecraft_Wii_U_Mod_Injector
         public static bool IsPointerLoaded()
         {
             if (GeckoU.PeekUInt(GeckoU.PeekUInt(0x10A0A624) + 0x9C) == 0x0)
-            {
                 return false;
-            }
             else
-            {
                 return true;
-            }
         }
 
         #region memory editing
@@ -334,8 +333,7 @@ namespace Minecraft_Wii_U_Mod_Injector
 
         private void AlwaysSwimmingToggled(object sender, EventArgs e)
         {
-            GeckoU.WriteULongToggle(0x023405EC, 0x386000014E800020, 0x3D800233398C69B8,
-                AlwaysSwimming.Checked); //Entity::isSwimming((void))
+            GeckoU.WriteULongToggle(0x023405EC, 0x386000014E800020, 0x3D800233398C69B8, AlwaysSwimming.Checked); //Entity::isSwimming((void))
         }
 
         private void InfiniteRiptideToggled(object sender, EventArgs e)
@@ -355,14 +353,12 @@ namespace Minecraft_Wii_U_Mod_Injector
 
         private void InfiniteItemsToggled(object sender, EventArgs e)
         {
-            GeckoU.WriteLongToggle(0x024872AC, 0x600000004E800020, 0x3D800248398C7294,
-                InfiniteItems.Checked); //ItemInstance::shrink((int))
+            GeckoU.WriteLongToggle(0x024872AC, 0x600000004E800020, 0x3D800248398C7294, InfiniteItems.Checked); //ItemInstance::shrink((int))
         }
 
         private void RapidBowToggled(object sender, EventArgs e)
         {
-            GeckoU.WriteUIntToggle(0x02162F04, 0x3BE00001, 0x3BE00014,
-                RapidBow.Checked); //GetMaxBowDuration__7BowItemSFv
+            GeckoU.WriteUIntToggle(0x02162F04, 0x3BE00001, 0x3BE00014, RapidBow.Checked); //GetMaxBowDuration__7BowItemSFv
         }
 
         private void BloodVisionToggled(object sender, EventArgs e)
@@ -372,44 +368,37 @@ namespace Minecraft_Wii_U_Mod_Injector
 
         private void IgnorePotionsToggled(object sender, EventArgs e)
         {
-            GeckoU.WriteUIntToggle(0x0258E4BC, off, on,
-                IgnorePotions.Checked); //LivingEntity::isAffectedByPotions((void))
+            GeckoU.WriteUIntToggle(0x0258E4BC, off, on, IgnorePotions.Checked); //LivingEntity::isAffectedByPotions((void))
         }
 
         private void ForeverLastingPotionsToggled(object sender, EventArgs e)
         {
-            GeckoU.WriteUIntToggle(0x02576994, blr, 0x9421FF40,
-                ForeverLastingPotions.Checked); //LivingEntity::tickEffects((void))
+            GeckoU.WriteUIntToggle(0x02576994, blr, 0x9421FF40, ForeverLastingPotions.Checked); //LivingEntity::tickEffects((void))
         }
 
         private void BypassInvulnerabilityToggled(object sender, EventArgs e)
         {
-            GeckoU.WriteUIntToggle(0x0225458C, on, 0x88630009,
-                BypassInvulnerability.Checked); //DamageSource::isBypassInvul(const(void))
+            GeckoU.WriteUIntToggle(0x0225458C, on, 0x88630009, BypassInvulnerability.Checked); //DamageSource::isBypassInvul(const(void))
         }
 
         private void PlaceBlocksonHeadToggled(object sender, EventArgs e)
         {
-            GeckoU.WriteUIntToggle(0x0207F604, on, 0x7FC3F378,
-                PlaceBlocksonHead.Checked); //ArmorSlot::mayPlace((not_null_ptr__tm__15_12ItemInstance))
+            GeckoU.WriteUIntToggle(0x0207F604, on, 0x7FC3F378, PlaceBlocksonHead.Checked); //ArmorSlot::mayPlace((not_null_ptr__tm__15_12ItemInstance))
         }
 
         private void WalkonWaterToggled(object sender, EventArgs e)
         {
-            GeckoU.WriteULongToggle(0x025A963C, 0x3C60109E80639948, 0x3C6010568063B61C,
-                WalkonWater.Checked); //LiquidBlock::getClipAABB((BlockState const *, LevelSource *, BlockPos const &))
+            GeckoU.WriteULongToggle(0x025A963C, 0x3C60109E80639948, 0x3C6010568063B61C, WalkonWater.Checked); //LiquidBlock::getClipAABB((BlockState const *, LevelSource *, BlockPos const &))
         }
 
         private void AlwaysElytraToggled(object sender, EventArgs e)
         {
-            GeckoU.WriteULongToggle(0x0258DACC, 0x386000014E800020, 0x3D800233398C69B8,
-                AlwaysElytra.Checked); //LivingEntity::isFallFlying((void))
+            GeckoU.WriteULongToggle(0x0258DACC, 0x386000014E800020, 0x3D800233398C69B8, AlwaysElytra.Checked); //LivingEntity::isFallFlying((void))
         }
 
         private void CaveFinderToggled(object sender, EventArgs e)
         {
-            GeckoU.WriteUIntToggle(0x030E4924, 0x38800000, 0x38800001,
-                CaveFinder.Checked); //enableState__14GlStateManagerSFi
+            GeckoU.WriteUIntToggle(0x030E4924, 0x38800000, 0x38800001, CaveFinder.Checked); //enableState__14GlStateManagerSFi
         }
 
         private void WallhackToggled(object sender, EventArgs e)
@@ -419,8 +408,7 @@ namespace Minecraft_Wii_U_Mod_Injector
 
         private void LargeXPDropsToggled(object sender, EventArgs e)
         {
-            GeckoU.WriteUIntToggle(0x0239A26C, nop, 0x4180000C,
-                LargeXPDrops.Checked); //getExperienceValue__13ExperienceOrbSFi:
+            GeckoU.WriteUIntToggle(0x0239A26C, nop, 0x4180000C, LargeXPDrops.Checked); //getExperienceValue__13ExperienceOrbSFi:
             GeckoU.WriteUIntToggle(0x0239A270, 0x38607FFF, 0x386009AD, LargeXPDrops.Checked);
         }
 
@@ -431,8 +419,7 @@ namespace Minecraft_Wii_U_Mod_Injector
 
         private void NoCollisionToggled(object sender, EventArgs e)
         {
-            GeckoU.WriteUIntToggle(0x020E7BF4, blr, 0x9421FFE0,
-                NoCollision.Checked); //Block::addCollisionAABBs((BlockState const *, Level *, BlockPos const &, AABB const *, std::vector__tm__39_P4AABBQ2_3std23allocator__tm__7_P4AABB *, boost::shared_ptr__tm__8_6Entity, bool))
+            GeckoU.WriteUIntToggle(0x020E7BF4, blr, 0x9421FFE0, NoCollision.Checked); //Block::addCollisionAABBs((BlockState const *, Level *, BlockPos const &, AABB const *, std::vector__tm__39_P4AABBQ2_3std23allocator__tm__7_P4AABB *, boost::shared_ptr__tm__8_6Entity, bool))
         }
 
         private void InfiniteAirToggled(object sender, EventArgs e)
@@ -442,27 +429,23 @@ namespace Minecraft_Wii_U_Mod_Injector
 
         private void InfiniteDurabilityToggled(object sender, EventArgs e)
         {
-            GeckoU.WriteUIntToggle(0x0248909C, nop, 0x4181001C,
-                InfiniteDurability.Checked); //ItemInstance::hurt((int,Random *)) (bgt)
+            GeckoU.WriteUIntToggle(0x0248909C, nop, 0x4181001C, InfiniteDurability.Checked); //ItemInstance::hurt((int,Random *)) (bgt)
         }
 
         private void SuperKnockbackToggled(object sender, EventArgs e)
         {
-            GeckoU.WriteUIntToggle(0x0257D980, 0xFC00E838, 0xFC006378,
-                SuperKnockback.Checked); //Knockback__12LivingEntityFQ2_5boost25shared_ptr__tm__8_6EntityfdT3
+            GeckoU.WriteUIntToggle(0x0257D980, 0xFC00E838, 0xFC006378, SuperKnockback.Checked); //Knockback__12LivingEntityFQ2_5boost25shared_ptr__tm__8_6EntityfdT3
             GeckoU.WriteUIntToggle(0x0257D990, 0xFD20B890, 0xFD290372, SuperKnockback.Checked);
         }
 
         private void DisabledKnockbackToggled(object sender, EventArgs e)
         {
-            GeckoU.WriteUIntToggle(0x0257D85C, blr, 0x9421FFA8,
-                DisabledKnockback.Checked); //Knockback__12LivingEntityFQ2_5boost25shared_ptr__tm__8_6EntityfdT3
+            GeckoU.WriteUIntToggle(0x0257D85C, blr, 0x9421FFA8, DisabledKnockback.Checked); //Knockback__12LivingEntityFQ2_5boost25shared_ptr__tm__8_6EntityfdT3
         }
 
         private void SilkTouchAnythingToggled(object sender, EventArgs e)
         {
-            GeckoU.WriteUIntToggle(0x020EA77C, on, 0x57C3063E,
-                SilkTouchAnything.Checked); //Block::isSilkTouchable((void))
+            GeckoU.WriteUIntToggle(0x020EA77C, on, 0x57C3063E, SilkTouchAnything.Checked); //Block::isSilkTouchable((void))
         }
 
         private void DeveloperModeToggled(object sender, EventArgs e)
@@ -470,29 +453,24 @@ namespace Minecraft_Wii_U_Mod_Injector
             GeckoU.WriteUIntToggle(0x02F5C874, on, off, DeveloperMode.Checked); //CMinecraftApp::DebugArtToolsOn((void))
         }
 
-        private void PickLiquidBlocksToggled(object sender, EventArgs e) //rename to "PickAnyBlocks"
+        private void PickLiquidBlocksToggled(object sender, EventArgs e)
         {
-            GeckoU.WriteUIntToggle(0x025A98504, on, 0x57C3063E,
-                PickLiquidBlocks.Checked); //LiquidBlock::mayPick((BlockState const *, bool))
+            GeckoU.WriteUIntToggle(0x025A98504, on, 0x57C3063E, PickLiquidBlocks.Checked); //LiquidBlock::mayPick((BlockState const *, bool))
         }
 
         private void DuelWieldanyItemToggled(object sender, EventArgs e)
         {
-            GeckoU.WriteUIntToggle(0x024FD7F4, on, off,
-                DuelWieldanyItem
-                    .Checked); //_12ItemInstance::mayPlace__Q2_13InventoryMenu11OffhandSlotF35not_null_ptr__tm(void)
+            GeckoU.WriteUIntToggle(0x024FD7F4, on, off, DuelWieldanyItem.Checked); //_12ItemInstance::mayPlace__Q2_13InventoryMenu11OffhandSlotF35not_null_ptr__tm(void)
         }
 
         private void DisableStarvingToggled(object sender, EventArgs e)
         {
-            GeckoU.WriteUIntToggle(0x0271BA6C, on, 0x7FE3FB78,
-                DisableStarving.Checked); //Player::isAllowedToIgnoreExhaustion((void))
+            GeckoU.WriteUIntToggle(0x0271BA6C, on, 0x7FE3FB78, DisableStarving.Checked); //Player::isAllowedToIgnoreExhaustion((void))
         }
 
         private void InstantMiningToggled(object sender, EventArgs e)
         {
-            GeckoU.WriteUIntToggle(0x020E75C8, 0xC0230000, 0xC0230040,
-                InstantMining.Checked); //Block::getDestroySpeed((BlockState const *, Level *, BlockPos const &))
+            GeckoU.WriteUIntToggle(0x020E75C8, 0xC0230000, 0xC0230040, InstantMining.Checked); //Block::getDestroySpeed((BlockState const *, Level *, BlockPos const &))
         }
 
         private void FlyingToggled(object sender, EventArgs e)
@@ -502,10 +480,7 @@ namespace Minecraft_Wii_U_Mod_Injector
 
         private void DisableSuffocatingToggled(object sender, EventArgs e)
         {
-            if (!AlwaysDamagedPlayers.Checked || !AlwaysDamaged.Checked)
-                GeckoU.WriteUIntToggle(0x027206CC, off, 0x57E3063E, DisableSuffocating.Checked); //Player::isInWall((void))
-            else
-                DisableSuffocating.Checked = false; //these 2 mods are not compatible with eachother, they use the same function
+            GeckoU.WriteUIntToggle(0x027206CC, off, 0x57E3063E, DisableSuffocating.Checked); //Player::isInWall((void))
         }
 
         private void NoFallDamageToggled(object sender, EventArgs e)
@@ -526,14 +501,12 @@ namespace Minecraft_Wii_U_Mod_Injector
 
         private void NoFogToggled(object sender, EventArgs e)
         {
-            GeckoU.WriteUIntToggle(0x030E4954, 0x38800000, 0x38800001, NoFog.Checked); //remove
+            GeckoU.WriteUIntToggle(0x030E4954, 0x38800000, 0x38800001, NoFog.Checked);
         }
 
         private void StaticLiquidBlocksToggled(object sender, EventArgs e)
         {
-            GeckoU.WriteUIntToggle(0x022B9B8C, blr, 0x9421FF00,
-                StaticLiquidBlocks
-                    .Checked); //DynamicLiquidBlock::maintick((Level *, BlockPos const &, BlockState const *, Random *))
+            GeckoU.WriteUIntToggle(0x022B9B8C, blr, 0x9421FF00, StaticLiquidBlocks.Checked); //DynamicLiquidBlock::maintick((Level *, BlockPos const &, BlockState const *, Random *))
         }
 
         private void FoggyWeatherToggled(object sender, EventArgs e)
@@ -548,9 +521,7 @@ namespace Minecraft_Wii_U_Mod_Injector
 
         private void AcidLiquidBlocksToggled(object sender, EventArgs e)
         {
-            GeckoU.WriteUIntToggle(0x022B8EC4, on, 0x57E3063E,
-                AcidLiquidBlocks
-                    .Checked); //DynamicLiquidBlock::canSpreadTo((Level *, BlockPos const &, BlockState const *))
+            GeckoU.WriteUIntToggle(0x022B8EC4, on, 0x57E3063E, AcidLiquidBlocks.Checked); //DynamicLiquidBlock::canSpreadTo((Level *, BlockPos const &, BlockState const *))
         }
 
         private void DisableCreativeFlagToggled(object sender, EventArgs e)
@@ -560,86 +531,33 @@ namespace Minecraft_Wii_U_Mod_Injector
 
         private void GeneratePlainWorldToggled(object sender, EventArgs e)
         {
-            GeckoU.WriteUIntToggle(0x0214DB38, blr, 0x9421FD80,
-                GeneratePlainWorld.Checked); //BiomeDecorator::decorate((Biome *, Level *, Random *))
+            GeckoU.WriteUIntToggle(0x0214DB38, blr, 0x9421FD80, GeneratePlainWorld.Checked); //BiomeDecorator::decorate((Biome *, Level *, Random *))
         }
 
         private void FreezingWorldToggled(object sender, EventArgs e)
         {
-            GeckoU.WriteUIntToggle(0x0253C71C, on, off,
-                FreezingWorld.Checked); //Level::shouldFreeze((BlockPos const &, bool))
+            GeckoU.WriteUIntToggle(0x0253C71C, on, off, FreezingWorld.Checked); //Level::shouldFreeze((BlockPos const &, bool))
         }
 
         private void UncapEntitySpawnLimitToggled(object sender, EventArgs e)
         {
-            GeckoU.WriteUIntToggle(0x0256CDFC, on, 0x5403063E,
-                UncapEntitySpawnLimit.Checked); //Level::canCreateMore((eINSTANCEOF,Level::ESPAWN_TYPE))
+            GeckoU.WriteUIntToggle(0x0256CDFC, on, 0x5403063E, UncapEntitySpawnLimit.Checked); //Level::canCreateMore((eINSTANCEOF,Level::ESPAWN_TYPE))
         }
 
         private void AllDLCUnlockedToggled(object sender, EventArgs e)
         {
-            GeckoU.WriteUIntToggle(0x02AE8B30, on, 0x7FE3FB78,
-                AllDLCUnlocked.Checked); //DLCManager::IsDlcPackTemporarilyFree((int))
-            GeckoU.WriteUIntToggle(0x02AEF828, on, 0x7FE3FB78,
-                AllDLCUnlocked.Checked); //DLCManager::IsMiniGameTemporarilyFree((int))
-        }
-
-        private void AllPermissionsToggled(object sender, EventArgs e)
-        {
-            GeckoU.WriteUIntToggle(0x02C57E94, on, 0x57E3063E,
-                AllPermissions.Checked); //MiniGameDef::MayUseBlock(const(int))
-            GeckoU.WriteUIntToggle(0x02C57E34, on, 0x57E3063E,
-                AllPermissions.Checked); //MiniGameDef::MayUse(const(int))
-            GeckoU.WriteUIntToggle(0x02C51C20, on, 0x57E3063E,
-                AllPermissions.Checked); //MiniGameDef::MayUseBlock(const(int))
-            GeckoU.WriteUIntToggle(0x02C5CC84, on, 0X88630124,
-                AllPermissions.Checked); //MiniGameDef::CanCraft(const(void))
-            GeckoU.WriteUIntToggle(0x02C57D74, on, 0x57E3063E,
-                AllPermissions.Checked); //MiniGameDef::MayPlace(const(int))
-            GeckoU.WriteUIntToggle(0x02C57DD4, on, 0x57E3063E,
-                AllPermissions.Checked); //MiniGameDef::MayDestroy(const(int))
-        }
-
-        private void AlwaysDamagedToggled(object sender, EventArgs e)
-        {
-            GeckoU.WriteUIntToggle(0x02C7DDD0, on, off,
-                AlwaysDamaged.Checked); //MasterGameMode::IsInKillBox((boost::shared_ptr__tm__8_6Entity))
-        }
-
-        private void TNTGriefingToggled(object sender, EventArgs e)
-        {
-            GeckoU.WriteUIntToggle(0x02C59E04, on, off,
-                TNTGriefing.Checked); //MiniGameDef::canTntDestroyBlocks(const(void))
-        }
-
-        private void DisabledKillBarriersToggled(object sender, EventArgs e)
-        {
-            GeckoU.WriteUIntToggle(0x02C7DD38, off, on,
-                DisabledKillBarriers.Checked); //MasterGameMode::IsInKillBox((boost::shared_ptr__tm__8_6Entity))
-        }
-
-        private void AntiEndGameToggled(object sender, EventArgs e)
-        {
-            GeckoU.WriteUIntToggle(0x02C9554C, off, on, AntiEndGame.Checked); //MasterGameMode::CanEndPostGame((void))
-        }
-
-        private void TumbleHUDToggled(object sender, EventArgs e)
-        {
-            GeckoU.WriteUIntToggle(0x02E3A950, off, 0x57E3063E, TumbleHUD.Checked); //UIScene_HUD::HideMainHUD((void))
-            GeckoU.WriteUIntToggle(0x02C57EBC, off, 0x8863012A,
-                TumbleHUD.Checked); //MiniGameDef::LockedInventory(const(void))
+            GeckoU.WriteUIntToggle(0x02AE8B30, on, 0x7FE3FB78, AllDLCUnlocked.Checked); //DLCManager::IsDlcPackTemporarilyFree((int))
+            GeckoU.WriteUIntToggle(0x02AEF828, on, 0x7FE3FB78, AllDLCUnlocked.Checked); //DLCManager::IsMiniGameTemporarilyFree((int))
         }
 
         private void HostOptionsToggled(object sender, EventArgs e)
         {
-            GeckoU.WriteUIntToggle(0x02F17714, 0x38807D00, 0x388303F4,
-                HostOptions.Checked); //CMinecraftApp::SetGameHostOption((eGameHostOption, unsigned int))
+            GeckoU.WriteUIntToggle(0x02F17714, 0x38807D00, 0x388303F4, HostOptions.Checked); //CMinecraftApp::SetGameHostOption((eGameHostOption, unsigned int))
         }
 
         private void DisablePermanentKicksToggled(object sender, EventArgs e)
         {
-            GeckoU.WriteUIntToggle(0x0340D428, blr, mflr,
-                DisablePermanentKicks.Checked); //CProfile::QuadrantOfflineXUID((int))
+            GeckoU.WriteUIntToggle(0x0340D428, blr, mflr, DisablePermanentKicks.Checked); //CProfile::QuadrantOfflineXUID((int))
         }
 
         private void EnchantmentLevelSliderChanged(object sender, EventArgs e)
@@ -668,46 +586,65 @@ namespace Minecraft_Wii_U_Mod_Injector
             GeckoU.WriteFloat(0x10692528, (float)SprintingSpeedScaleSlider.Value);
         }
 
-        private void RequiredPlayersSliderChanged(object sender, EventArgs e)
-        {
-            GeckoU.WriteUInt(0x02C7C004, GeckoU.Mix(0x38600000, RequiredPlayersSlider.Value)); //MasterGameMode::GetMinimumPlayersToStart
-        }
-
-        private void RefillIntervalSliderChanged(object sender, EventArgs e)
-        {
-            GeckoU.WriteUInt(0x02C5CC74, GeckoU.Mix(0x38600000, RefillIntervalSlider.Value)); //MiniGameDef::GetItemRespawnTime
-        }
-
-        private void GlideRingScoreSliderChanged(object sender, EventArgs e)
-        {
-            GeckoU.WriteUInt(0x02D6EE14, GeckoU.Mix(0x38600000, ringScoreGreen.Value)); //ScoreRingRuleDefinition::getPointValue((void))
-            GeckoU.WriteUInt(0x02D6EE1C, GeckoU.Mix(0x38600000, ringScoreBlue.Value));
-            GeckoU.WriteUInt(0x02D6EE24, GeckoU.Mix(0x38600000, ringScoreOrange.Value));
-        }
-
         private void VisibleHitboxesToggled(object sender, EventArgs e)
         {
             uint whiteBoxAddress = GeckoU.PeekUInt(GeckoU.PeekUInt(0x10A72A94) + 0xC0);
             GeckoU.WriteUIntToggle(whiteBoxAddress += 0x90, 0x0001F000, 0x000100000, VisibleHitboxes.Checked);
         }
 
-        private void EndGameClicked(object sender, EventArgs e)
-        {
-            GeckoU.WriteUInt(0x02C93A90, blr);
-            GeckoU.WriteUInt(0x02C93A90, mflr);
-        }
-
         private void ExitGameClicked(object sender, EventArgs e)
         {
-            DialogResult confirmCG =
-                Messaging.Show("You're about to close the game, continue?", MessageBoxButtons.YesNo);
+            DialogResult confirmCG = Messaging.Show("You're about to close the game, continue?", MessageBoxButtons.YesNo);
 
             if (confirmCG == DialogResult.Yes)
-            {
                 GeckoU.CallFunction64(0x02F50028, 0x00000000); //CConsoleMinecraftApp::ExitGame((void))
-            }
         }
 
+        private void BypassFriendsOnlyToggled(object sender, EventArgs e)
+        {
+            GeckoU.WriteULongToggle(0x02D5731C, 0x386000014E800020, 0x7C0802A69421FFF0, BypassFriendsOnly.Checked); //CGameNetworkManager::IsInPublicJoinableGame((void))
+        }
+        private void WalkingSpeedScaleChanged(object sender, EventArgs e)
+        {
+            GeckoU.WriteFloat(0x1066ACC8, (float)WalkingSpeedScaleSlider.Value);
+        }
+
+        private void CraftingTableAnywhereToggled(object sender, EventArgs e)
+        {
+            GeckoU.WriteUIntToggle(0x02F59534, 0x480002E8, 0x7C0802A6, CraftingTableAnywhere.Checked);
+        }
+
+        private void HiddenGameModesUnlockedToggled(object sender, EventArgs e)
+        {
+            var pointer = GeckoU.PeekUInt(GeckoU.PeekUInt(0x109C4CEC) + 0x4C);
+            GeckoU.WriteUIntToggle(pointer, 0x5, 0x2, HiddenGameModesUnlocked.Checked);
+        }
+        private void FieldOfViewSliderChanged(object sender, EventArgs e)
+        {
+            GeckoU.WriteFloat(0x108911B8, (float)FieldOfViewSlider.Value);
+        }
+
+        private void TakeEverythingAnywhereToggled(object sender, EventArgs e)
+        {
+            GeckoU.WriteUIntToggle(0x02DEC0B4, on, 0x57E3063E, TakeEverythingAnywhere.Checked);
+        }
+
+        private void ArmorHUDToggled(object sender, EventArgs e)
+        {
+            GeckoU.WriteUIntToggle(0x02E9B1B0, 0x7FE4FB78, 0x7FC4F378, ArmorHUD.Checked);
+        }
+
+        private void SlowMotionToggled(object sender, EventArgs e)
+        {
+            GeckoU.WriteUIntToggle(0x109473C8, 0x3F700000, 0x3FF00000, SlowMotion.Checked);
+        }
+
+        private void DeadMauFiveModeToggled(object sender, EventArgs e)
+        {
+            GeckoU.WriteUIntToggle(0x02F5D53C, on, off, DeadMauFiveMode.Checked);
+        }
+
+        #region commands
         private void giveCommandBtnClicked(object sender, EventArgs e)
         {
             if (!IsPointerLoaded())
@@ -846,55 +783,72 @@ namespace Minecraft_Wii_U_Mod_Injector
             GeckoU.WriteBytes(0x03B30000, Command);
             GeckoU.CallFunction(0x03B30000, new uint[1]);
         }
+        #endregion
 
-        private void BypassFriendsOnlyToggled(object sender, EventArgs e)
+        #region minigames
+        private void AllPermissionsToggled(object sender, EventArgs e)
         {
-            GeckoU.WriteULongToggle(0x02D5731C, 0x386000014E800020, 0x7C0802A69421FFF0, BypassFriendsOnly.Checked); //CGameNetworkManager::IsInPublicJoinableGame((void))
-        }
-        private void WalkingSpeedScaleChanged(object sender, EventArgs e)
-        {
-            GeckoU.WriteFloat(0x1066ACC8, (float)WalkingSpeedScaleSlider.Value);
+            GeckoU.WriteUIntToggle(0x02C57E94, on, 0x57E3063E, AllPermissions.Checked); //MiniGameDef::MayUseBlock(const(int))
+            GeckoU.WriteUIntToggle(0x02C57E34, on, 0x57E3063E, AllPermissions.Checked); //MiniGameDef::MayUse(const(int))
+            GeckoU.WriteUIntToggle(0x02C51C20, on, 0x57E3063E, AllPermissions.Checked); //MiniGameDef::MayUseBlock(const(int))
+            GeckoU.WriteUIntToggle(0x02C5CC84, on, 0X88630124, AllPermissions.Checked); //MiniGameDef::CanCraft(const(void))
+            GeckoU.WriteUIntToggle(0x02C57D74, on, 0x57E3063E, AllPermissions.Checked); //MiniGameDef::MayPlace(const(int))
+            GeckoU.WriteUIntToggle(0x02C57DD4, on, 0x57E3063E, AllPermissions.Checked); //MiniGameDef::MayDestroy(const(int))
         }
 
-        private void CraftingTableAnywhereToggled(object sender, EventArgs e)
+        private void AlwaysDamagedToggled(object sender, EventArgs e)
         {
-            GeckoU.WriteUIntToggle(0x02F59534, 0x480002E8, 0x7C0802A6, CraftingTableAnywhere.Checked);
+            GeckoU.WriteUIntToggle(0x02C7DDD0, on, off, AlwaysDamaged.Checked); //MasterGameMode::IsInKillBox((boost::shared_ptr__tm__8_6Entity))
+        }
+
+        private void TNTGriefingToggled(object sender, EventArgs e)
+        {
+            GeckoU.WriteUIntToggle(0x02C59E04, on, off, TNTGriefing.Checked); //MiniGameDef::canTntDestroyBlocks(const(void))
+        }
+
+        private void DisabledKillBarriersToggled(object sender, EventArgs e)
+        {
+            GeckoU.WriteUIntToggle(0x02C7DD38, off, on, DisabledKillBarriers.Checked); //MasterGameMode::IsInKillBox((boost::shared_ptr__tm__8_6Entity))
+        }
+
+        private void AntiEndGameToggled(object sender, EventArgs e)
+        {
+            GeckoU.WriteUIntToggle(0x02C9554C, off, on, AntiEndGame.Checked); //MasterGameMode::CanEndPostGame((void))
+        }
+
+        private void EndGameClicked(object sender, EventArgs e)
+        {
+            GeckoU.WriteUInt(0x02C93A90, blr);
+            GeckoU.WriteUInt(0x02C93A90, mflr);
+        }
+
+        private void TumbleHUDToggled(object sender, EventArgs e)
+        {
+            GeckoU.WriteUIntToggle(0x02E3A950, off, 0x57E3063E, TumbleHUD.Checked); //UIScene_HUD::HideMainHUD((void))
+            GeckoU.WriteUIntToggle(0x02C57EBC, off, 0x8863012A, TumbleHUD.Checked); //MiniGameDef::LockedInventory(const(void))
+        }
+        private void RequiredPlayersSliderChanged(object sender, EventArgs e)
+        {
+            GeckoU.WriteUInt(0x02C7C004, GeckoU.Mix(0x38600000, RequiredPlayersSlider.Value)); //MasterGameMode::GetMinimumPlayersToStart
+        }
+
+        private void RefillIntervalSliderChanged(object sender, EventArgs e)
+        {
+            GeckoU.WriteUInt(0x02C5CC74, GeckoU.Mix(0x38600000, RefillIntervalSlider.Value)); //MiniGameDef::GetItemRespawnTime
+        }
+
+        private void GlideRingScoreSliderChanged(object sender, EventArgs e)
+        {
+            GeckoU.WriteUInt(0x02D6EE14, GeckoU.Mix(0x38600000, ringScoreGreen.Value)); //ScoreRingRuleDefinition::getPointValue((void))
+            GeckoU.WriteUInt(0x02D6EE1C, GeckoU.Mix(0x38600000, ringScoreBlue.Value));
+            GeckoU.WriteUInt(0x02D6EE24, GeckoU.Mix(0x38600000, ringScoreOrange.Value));
         }
 
         private void SqueakInfinitelyToggled(object sender, EventArgs e)
         {
             GeckoU.WriteUIntToggle(0x031A2730, blr, mflr, SqueakInfinitely.Checked); //MultiPlayerGameMode::CanMakeSpectateSound((void))
         }
-
-        private void HiddenGameModesUnlockedToggled(object sender, EventArgs e)
-        {
-            var pointer = GeckoU.PeekUInt(GeckoU.PeekUInt(0x109C4CEC) + 0x4C);
-            GeckoU.WriteUIntToggle(pointer, 0x5, 0x2, HiddenGameModesUnlocked.Checked);
-        }
-        private void FieldOfViewSliderChanged(object sender, EventArgs e)
-        {
-            GeckoU.WriteFloat(0x108911B8, (float)FieldOfViewSlider.Value);
-        }
-
-        private void TakeEverythingAnywhereToggled(object sender, EventArgs e)
-        {
-            GeckoU.WriteUIntToggle(0x02DEC0B4, on, 0x57E3063E, TakeEverythingAnywhere.Checked);
-        }
-
-        private void ArmorHUDToggled(object sender, EventArgs e)
-        {
-            GeckoU.WriteUIntToggle(0x02E9B1B0, 0x7FE4FB78, 0x7FC4F378, ArmorHUD.Checked);
-        }
-
-        private void SlowMotionToggled(object sender, EventArgs e)
-        {
-            GeckoU.WriteUIntToggle(0x109473C8, 0x3F700000, 0x3FF00000, SlowMotion.Checked);
-        }
-
-        private void DeadMauFiveModeToggled(object sender, EventArgs e)
-        {
-            GeckoU.WriteUIntToggle(0x02F5D53C, on, off, DeadMauFiveMode.Checked);
-        }
+        #endregion
         #endregion memory editing
     }
 }

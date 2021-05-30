@@ -15,6 +15,8 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
             Error = 4
         }
 
+        public static StatesIds currentState = StatesIds.Disconnected;
+
         public States(MainForm MainForm)
         {
             Injector = MainForm;
@@ -22,28 +24,30 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
 
         public static void SwapState(StatesIds State)
         {
-            if (State == StatesIds.Disconnected)
+            switch (State)
             {
-                Injector.connectBtn.Text = "Connect";
-                Injector.connectBtn.Enabled = true;
-                Injector.wiiuIpv4Box.Text = Configuration.ReadKey("WiiUHost", "Wii U");
-                SetupTabs(Injector, false);
-                Injector.GetStates = StatesIds.Disconnected;
-            }
-            if (State == StatesIds.Connected)
-            {
-                Injector.connectBtn.Enabled = true;
-                Injector.connectBtn.Text = "Disconnect";
-                Configuration.WriteKey("WiiUHost", Injector.wiiuIpv4Box.Text, "Wii U");
-                SetupTabs(Injector, true);
-                Injector.GetStates = StatesIds.Connected;
-            }
-            if (State == StatesIds.Connecting)
-            {
-                Injector.connectBtn.Enabled = false;
-                Injector.connectBtn.Text = "Connecting...";
-                SetupTabs(Injector, false);
-                Injector.GetStates = StatesIds.Connecting;
+                case StatesIds.Disconnected:
+                    Injector.connectBtn.Text = "Connect";
+                    Injector.connectBtn.Enabled = true;
+                    SetupTabs(Injector, false);
+                    Injector.wiiuIpv4Box.Text = Configuration.ReadKey("WiiUHost", "Wii U");
+                    currentState = StatesIds.Disconnected;
+                    break;
+
+                case StatesIds.Connected:
+                    Injector.connectBtn.Enabled = true;
+                    Injector.connectBtn.Text = "Disconnect";
+                    SetupTabs(Injector, true);
+                    Configuration.WriteKey("WiiUHost", Injector.wiiuIpv4Box.Text, "Wii U");
+                    currentState = StatesIds.Connected;
+                    break;
+
+                case StatesIds.Connecting:
+                    Injector.connectBtn.Enabled = false;
+                    Injector.connectBtn.Text = "Connecting...";
+                    SetupTabs(Injector, false);
+                    currentState = StatesIds.Connecting;
+                    break;
             }
         }
 
@@ -51,16 +55,16 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
         {
             foreach (MetroFramework.Controls.MetroTabPage Page in Injector.MainTabs.TabPages)
             {
-                if ((string)Page.Tag == "GeckoUNeeded")
+                if ((string)Page.Tag == "needsGeckoU")
                 {
                     foreach (Control c in Page.Controls)
                     {
                         c.Enabled = enabled;
                     }
                 }
-
-                Injector.minigamesTab.Enabled = enabled;
             }
+
+            Injector.minigamesTab.Enabled = enabled;
         }
     }
 }

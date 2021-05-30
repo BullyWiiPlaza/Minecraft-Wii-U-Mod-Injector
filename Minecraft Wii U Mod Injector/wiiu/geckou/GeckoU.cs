@@ -381,13 +381,15 @@ namespace WiiU.GeckoU
         /// <param name="checkBox">The CheckBox control to monitor</param>
         public void WriteUIntToggle(uint address, uint value, uint originalValue, bool toggle)
         {
-            if (toggle)
+            switch(toggle)
             {
-                WriteUInt(address, value);
-            }
-            else
-            {
-                WriteUInt(address, originalValue);
+                case true:
+                    WriteUInt(address, value);
+                    break;
+
+                case false:
+                    WriteUInt(address, originalValue);
+                    break;
             }
         }
 
@@ -400,13 +402,15 @@ namespace WiiU.GeckoU
         /// <param name="checkBox">The CheckBox control to monitor</param>
         public void WriteLongToggle(uint address, long value, long originalValue, bool toggle)
         {
-            if (toggle)
+            switch (toggle)
             {
-                WriteLong(address, value);
-            }
-            else
-            {
-                WriteLong(address, originalValue);
+                case true:
+                    WriteLong(address, value);
+                    break;
+
+                case false:
+                    WriteLong(address, originalValue);
+                    break;
             }
         }
 
@@ -419,13 +423,15 @@ namespace WiiU.GeckoU
         /// <param name="checkBox">The CheckBox control to monitor</param>
         public void WriteULongToggle(uint address, ulong value, ulong originalValue, bool toggle)
         {
-            if (toggle)
+            switch (toggle)
             {
-                WriteULong(address, value);
-            }
-            else
-            {
-                WriteULong(address, originalValue);
+                case true:
+                    WriteULong(address, value);
+                    break;
+
+                case false:
+                    WriteULong(address, originalValue);
+                    break;
             }
         }
 

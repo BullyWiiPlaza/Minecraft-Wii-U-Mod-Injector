@@ -33,9 +33,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers.Files
                 string CleanDate = DateTime.Now.ToString().Replace("/", "-").Replace(":", "-");
 
                 if (!Directory.Exists(Application.StartupPath + "/logs/"))
-                {
                     Directory.CreateDirectory(Application.StartupPath + "/logs/");
-                }
 
                 INI = new IniFile(Application.StartupPath + "/logs/" + CleanDate + "-" + ErrorLog.Source + ".ini");
                 INI.Write("ExceptionMessage", ErrorLog.Message);
@@ -44,10 +42,14 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers.Files
                 INI.Write("ExceptionString", ErrorLog.ToString());
                 INI.Write("Timestamp", CleanDate);
 
-                if(showLogs)
+                if (showLogs)
+                {
                     Process.Start(Application.StartupPath + "/logs/" + CleanDate + "-" + ErrorLog.Source + ".ini");
+                    Messaging.Show(MessageBoxIcon.Stop, "An Error has occured, a log file has been written to /logs/" + CleanDate + "-" + ErrorLog.Source + ".ini, the file has been opened.");
+                }
 
-                Messaging.Show(MessageBoxIcon.Stop, "An Error has occured, a log file has been written to /logs/" + CleanDate + "-" + ErrorLog.Source + ".ini, the file has been opened.");
+                if(showMsg)
+                    Messaging.Show(MessageBoxIcon.Stop, "An Error has occured, a log file has been written to /logs/" + CleanDate + "-" + ErrorLog.Source + ".ini");
             }
             catch (Exception)
             {

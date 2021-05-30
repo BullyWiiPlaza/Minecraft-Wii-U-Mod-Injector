@@ -6,11 +6,12 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
     class DiscordRP
     {
         public static DiscordRpcClient client;
+        public static DateTime startUpTime= DateTime.UtcNow;
 
         public static void Initialize()
         {
             client = new DiscordRpcClient("839430556583854101");
-            client.Initialize();
+            client.Initialize();         
         }
 
         public static void SetPresence(string details, string state)
@@ -21,7 +22,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
                 {
                     Details = Setup.version + " - " + details,
                     State = state,
-                    Timestamps = new Timestamps() { Start = DateTime.UtcNow },
+                    Timestamps = new Timestamps() { Start = startUpTime },
                     Assets = new Assets()
                     {
                         LargeImageKey = "icon_large",

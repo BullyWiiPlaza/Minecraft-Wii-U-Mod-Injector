@@ -8,7 +8,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
     {
         public static MainForm Injector = new MainForm();
 
-        public static string version = "v5.1.4 (WIP)";
+        public static string version = "v5.1.4.p1";
 
         public Setup(MainForm window)
         {

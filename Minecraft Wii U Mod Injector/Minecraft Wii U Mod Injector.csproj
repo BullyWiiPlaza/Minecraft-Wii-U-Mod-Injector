@@ -223,6 +223,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="forms\FAQ.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\FAQ.Designer.cs">
+      <DependentUpon>FAQ.cs</DependentUpon>
+    </Compile>
     <Compile Include="wiiu\geckou\GeckoU.cs" />
     <Compile Include="wiiu\geckou\GeckoUByteSwap.cs" />
     <Compile Include="wiiu\geckou\GeckoUCommands.cs" />
@@ -266,6 +272,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="forms\FAQ.resx">
+      <DependentUpon>FAQ.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="forms\Credits.resx">
       <DependentUpon>Credits.cs</DependentUpon>
     </EmbeddedResource>

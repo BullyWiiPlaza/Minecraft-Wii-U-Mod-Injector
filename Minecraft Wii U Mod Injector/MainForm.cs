@@ -292,6 +292,12 @@ namespace Minecraft_Wii_U_Mod_Injector
         {
             Process.Start("https://github.com/Kashiiera/Minecraft-Wii-U-Mod-Injector");
         }
+
+        private void openFaqInfoClicked(object sender, EventArgs e)
+        {
+            new FAQ(this).ShowDialog();
+        }
+
         private void discordSrvBtnClicked(object sender, EventArgs e)
         {
             Process.Start("https://discord.gg/jrzZWaDc7a");
@@ -414,7 +420,7 @@ namespace Minecraft_Wii_U_Mod_Injector
 
         private void WallClimbingToggled(object sender, EventArgs e)
         {
-            GeckoU.WriteUIntToggle(0x0257DF90, on, 0x57C3063E, WallClimbing.Checked); //LivingEntity::onLadder((void))
+            GeckoU.WriteUIntToggle(0x0257DF90, on, 0x57E3063E, WallClimbing.Checked); //LivingEntity::onLadder((void))
         }
 
         private void NoCollisionToggled(object sender, EventArgs e)
@@ -430,6 +436,7 @@ namespace Minecraft_Wii_U_Mod_Injector
         private void InfiniteDurabilityToggled(object sender, EventArgs e)
         {
             GeckoU.WriteUIntToggle(0x0248909C, nop, 0x4181001C, InfiniteDurability.Checked); //ItemInstance::hurt((int,Random *)) (bgt)
+            GeckoU.WriteUIntToggle(0x024889CC, off, on, InfiniteDurability.Checked); //ItemInstance::isDamageableItem((void))
         }
 
         private void SuperKnockbackToggled(object sender, EventArgs e)
@@ -849,6 +856,12 @@ namespace Minecraft_Wii_U_Mod_Injector
             GeckoU.WriteUIntToggle(0x031A2730, blr, mflr, SqueakInfinitely.Checked); //MultiPlayerGameMode::CanMakeSpectateSound((void))
         }
         #endregion
+
         #endregion memory editing
+
+        private void playerModelScaleSliderChanged(object sender, EventArgs e)
+        {
+            GeckoU.WriteFloat(0x1091B90C, Convert.ToSingle(playerModelScaleSlider.Value));
+        }
     }
 }

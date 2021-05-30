@@ -8,7 +8,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
     {
         public static MainForm Injector = new MainForm();
 
-        public static string version = "v5.1.3";
+        public static string version = "v5.1.4 (WIP)";
 
         public Setup(MainForm window)
         {
@@ -43,10 +43,8 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
             {
                 try
                 {
-                    Injector.Theme = Injector.StyleManager.Theme = (MetroThemeStyle) Enum.Parse(typeof(MetroThemeStyle),
-                        Configuration.ReadKey("StyleTheme", "Theming"));
-                    Injector.Style = Injector.StyleManager.Style = (MetroColorStyle) Enum.Parse(typeof(MetroColorStyle),
-                        Configuration.ReadKey("ColorTheme", "Theming"));
+                    Injector.Theme = Injector.StyleManager.Theme = (MetroThemeStyle) Enum.Parse(typeof(MetroThemeStyle), Configuration.ReadKey("StyleTheme", "Theming"));
+                    Injector.Style = Injector.StyleManager.Style = (MetroColorStyle) Enum.Parse(typeof(MetroColorStyle), Configuration.ReadKey("ColorTheme", "Theming"));
 
                     Injector.themeBox.Text = Configuration.ReadKey("StyleTheme", "Theming");
                     Injector.colorsBox.Text = Configuration.ReadKey("ColorTheme", "Theming");

@@ -37,6 +37,7 @@
             this.buildTile = new MetroFramework.Controls.MetroTile();
             this.MainTabs = new MetroFramework.Controls.MetroTabControl();
             this.mainTab = new MetroFramework.Controls.MetroTabPage();
+            this.openFaqInfo = new MetroFramework.Controls.MetroButton();
             this.githubRepoDesc = new MetroFramework.Controls.MetroLabel();
             this.githubRepo = new MetroFramework.Controls.MetroLabel();
             this.githubLogo = new MetroFramework.Controls.MetroPanel();
@@ -48,6 +49,8 @@
             this.wiiuIpv4Box = new MetroFramework.Controls.MetroTextBox();
             this.wiiuIpv4Lbl = new MetroFramework.Controls.MetroLabel();
             this.playersTab = new MetroFramework.Controls.MetroTabPage();
+            this.playerModelScaleSlider = new System.Windows.Forms.NumericUpDown();
+            this.PlayerModelScale = new MetroFramework.Controls.MetroLabel();
             this.DeadMauFiveMode = new MetroFramework.Controls.MetroCheckBox();
             this.SlowMotion = new MetroFramework.Controls.MetroCheckBox();
             this.ArmorHUD = new MetroFramework.Controls.MetroCheckBox();
@@ -107,16 +110,16 @@
             this.CraftAnything = new MetroFramework.Controls.MetroCheckBox();
             this.CreativeMode = new MetroFramework.Controls.MetroCheckBox();
             this.worldTab = new MetroFramework.Controls.MetroTabPage();
-            this.RapidFurnaceSmelting = new MetroFramework.Controls.MetroCheckBox();
+            this.FreezingWorld = new MetroFramework.Controls.MetroCheckBox();
+            this.FoggyWeather = new MetroFramework.Controls.MetroCheckBox();
             this.NoFog = new MetroFramework.Controls.MetroCheckBox();
+            this.RapidFurnaceSmelting = new MetroFramework.Controls.MetroCheckBox();
             this.StaticLiquidBlocks = new MetroFramework.Controls.MetroCheckBox();
             this.UncapEntitySpawnLimit = new MetroFramework.Controls.MetroCheckBox();
-            this.FoggyWeather = new MetroFramework.Controls.MetroCheckBox();
             this.GenerateAmplifiedWorld = new MetroFramework.Controls.MetroCheckBox();
             this.AcidLiquidBlocks = new MetroFramework.Controls.MetroCheckBox();
             this.DisableCreativeFlag = new MetroFramework.Controls.MetroCheckBox();
             this.GeneratePlainWorld = new MetroFramework.Controls.MetroCheckBox();
-            this.FreezingWorld = new MetroFramework.Controls.MetroCheckBox();
             this.generalTab = new MetroFramework.Controls.MetroTabPage();
             this.BypassFriendsOnly = new MetroFramework.Controls.MetroCheckBox();
             this.DisablePermanentKicks = new MetroFramework.Controls.MetroCheckBox();
@@ -193,6 +196,7 @@
             this.MainTabs.SuspendLayout();
             this.mainTab.SuspendLayout();
             this.playersTab.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.playerModelScaleSlider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.FieldOfViewSlider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.HitBoxScaleSlider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.WalkingSpeedScaleSlider)).BeginInit();
@@ -307,13 +311,14 @@
             this.MainTabs.Location = new System.Drawing.Point(166, 63);
             this.MainTabs.Multiline = true;
             this.MainTabs.Name = "MainTabs";
-            this.MainTabs.SelectedIndex = 2;
+            this.MainTabs.SelectedIndex = 0;
             this.MainTabs.Size = new System.Drawing.Size(978, 533);
             this.MainTabs.TabIndex = 7;
             this.MainTabs.UseSelectable = true;
             // 
             // mainTab
             // 
+            this.mainTab.Controls.Add(this.openFaqInfo);
             this.mainTab.Controls.Add(this.githubRepoDesc);
             this.mainTab.Controls.Add(this.githubRepo);
             this.mainTab.Controls.Add(this.githubLogo);
@@ -337,11 +342,24 @@
             this.mainTab.VerticalScrollbarHighlightOnWheel = false;
             this.mainTab.VerticalScrollbarSize = 10;
             // 
+            // openFaqInfo
+            // 
+            this.openFaqInfo.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.openFaqInfo.Location = new System.Drawing.Point(835, 31);
+            this.openFaqInfo.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.openFaqInfo.Name = "openFaqInfo";
+            this.openFaqInfo.Size = new System.Drawing.Size(104, 23);
+            this.openFaqInfo.TabIndex = 46;
+            this.openFaqInfo.Text = "FAQ - Information";
+            this.ToolTipManager.SetToolTip(this.openFaqInfo, "View the credits for the Mod Injector");
+            this.openFaqInfo.UseSelectable = true;
+            this.openFaqInfo.Click += new System.EventHandler(this.openFaqInfoClicked);
+            // 
             // githubRepoDesc
             // 
             this.githubRepoDesc.AutoSize = true;
             this.githubRepoDesc.FontSize = MetroFramework.MetroLabelSize.Small;
-            this.githubRepoDesc.Location = new System.Drawing.Point(843, 226);
+            this.githubRepoDesc.Location = new System.Drawing.Point(843, 261);
             this.githubRepoDesc.Name = "githubRepoDesc";
             this.githubRepoDesc.Size = new System.Drawing.Size(91, 30);
             this.githubRepoDesc.TabIndex = 45;
@@ -352,7 +370,7 @@
             // 
             this.githubRepo.AutoSize = true;
             this.githubRepo.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.githubRepo.Location = new System.Drawing.Point(835, 201);
+            this.githubRepo.Location = new System.Drawing.Point(835, 236);
             this.githubRepo.Name = "githubRepo";
             this.githubRepo.Size = new System.Drawing.Size(107, 25);
             this.githubRepo.TabIndex = 44;
@@ -364,11 +382,10 @@
             this.githubLogo.BackColor = System.Drawing.Color.Transparent;
             this.githubLogo.BackgroundImage = global::Minecraft_Wii_U_Mod_Injector.Properties.Resources.githubLogo;
             this.githubLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.githubLogo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.githubLogo.HorizontalScrollbarBarColor = true;
             this.githubLogo.HorizontalScrollbarHighlightOnWheel = false;
             this.githubLogo.HorizontalScrollbarSize = 10;
-            this.githubLogo.Location = new System.Drawing.Point(835, 98);
+            this.githubLogo.Location = new System.Drawing.Point(835, 133);
             this.githubLogo.Name = "githubLogo";
             this.githubLogo.Size = new System.Drawing.Size(104, 100);
             this.githubLogo.TabIndex = 43;
@@ -450,7 +467,7 @@
             // discordSrvBtn
             // 
             this.discordSrvBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.discordSrvBtn.Location = new System.Drawing.Point(835, 31);
+            this.discordSrvBtn.Location = new System.Drawing.Point(835, 101);
             this.discordSrvBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.discordSrvBtn.Name = "discordSrvBtn";
             this.discordSrvBtn.Size = new System.Drawing.Size(104, 23);
@@ -505,6 +522,8 @@
             // 
             // playersTab
             // 
+            this.playersTab.Controls.Add(this.playerModelScaleSlider);
+            this.playersTab.Controls.Add(this.PlayerModelScale);
             this.playersTab.Controls.Add(this.DeadMauFiveMode);
             this.playersTab.Controls.Add(this.SlowMotion);
             this.playersTab.Controls.Add(this.ArmorHUD);
@@ -576,6 +595,41 @@
             this.playersTab.VerticalScrollbarBarColor = true;
             this.playersTab.VerticalScrollbarHighlightOnWheel = false;
             this.playersTab.VerticalScrollbarSize = 10;
+            // 
+            // playerModelScaleSlider
+            // 
+            this.StyleExtender.SetApplyMetroTheme(this.playerModelScaleSlider, true);
+            this.playerModelScaleSlider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.playerModelScaleSlider.DecimalPlaces = 4;
+            this.playerModelScaleSlider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.playerModelScaleSlider.Increment = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            262144});
+            this.playerModelScaleSlider.Location = new System.Drawing.Point(619, 449);
+            this.playerModelScaleSlider.Name = "playerModelScaleSlider";
+            this.playerModelScaleSlider.Size = new System.Drawing.Size(322, 20);
+            this.playerModelScaleSlider.TabIndex = 142;
+            this.playerModelScaleSlider.Tag = "";
+            this.ToolTipManager.SetToolTip(this.playerModelScaleSlider, "How big (or small) should our player be?");
+            this.playerModelScaleSlider.Value = new decimal(new int[] {
+            9375,
+            0,
+            0,
+            262144});
+            this.playerModelScaleSlider.ValueChanged += new System.EventHandler(this.playerModelScaleSliderChanged);
+            // 
+            // PlayerModelScale
+            // 
+            this.PlayerModelScale.AutoSize = true;
+            this.PlayerModelScale.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.PlayerModelScale.Location = new System.Drawing.Point(474, 450);
+            this.PlayerModelScale.Name = "PlayerModelScale";
+            this.PlayerModelScale.Size = new System.Drawing.Size(124, 19);
+            this.PlayerModelScale.TabIndex = 141;
+            this.PlayerModelScale.Tag = "";
+            this.PlayerModelScale.Text = "Player Model Scale:";
             // 
             // DeadMauFiveMode
             // 
@@ -1491,18 +1545,32 @@
             this.worldTab.VerticalScrollbarHighlightOnWheel = false;
             this.worldTab.VerticalScrollbarSize = 10;
             // 
-            // RapidFurnaceSmelting
+            // FreezingWorld
             // 
-            this.RapidFurnaceSmelting.AutoSize = true;
-            this.RapidFurnaceSmelting.BackColor = System.Drawing.Color.Transparent;
-            this.RapidFurnaceSmelting.Location = new System.Drawing.Point(6, 174);
-            this.RapidFurnaceSmelting.Name = "RapidFurnaceSmelting";
-            this.RapidFurnaceSmelting.Size = new System.Drawing.Size(89, 15);
-            this.RapidFurnaceSmelting.TabIndex = 34;
-            this.RapidFurnaceSmelting.Tag = "";
-            this.RapidFurnaceSmelting.Text = "Fast Furnace";
-            this.ToolTipManager.SetToolTip(this.RapidFurnaceSmelting, "Whether furnaces will smelt materials at a fast rate");
-            this.RapidFurnaceSmelting.UseSelectable = true;
+            this.FreezingWorld.AutoSize = true;
+            this.FreezingWorld.BackColor = System.Drawing.Color.Transparent;
+            this.FreezingWorld.Location = new System.Drawing.Point(6, 6);
+            this.FreezingWorld.Name = "FreezingWorld";
+            this.FreezingWorld.Size = new System.Drawing.Size(102, 15);
+            this.FreezingWorld.TabIndex = 19;
+            this.FreezingWorld.Tag = "";
+            this.FreezingWorld.Text = "Freezing World";
+            this.ToolTipManager.SetToolTip(this.FreezingWorld, "Whether the world should freeze or not");
+            this.FreezingWorld.UseSelectable = true;
+            this.FreezingWorld.CheckedChanged += new System.EventHandler(this.FreezingWorldToggled);
+            // 
+            // FoggyWeather
+            // 
+            this.FoggyWeather.AutoSize = true;
+            this.FoggyWeather.Location = new System.Drawing.Point(6, 27);
+            this.FoggyWeather.Name = "FoggyWeather";
+            this.FoggyWeather.Size = new System.Drawing.Size(103, 15);
+            this.FoggyWeather.TabIndex = 24;
+            this.FoggyWeather.Tag = "";
+            this.FoggyWeather.Text = "Foggy Weather";
+            this.ToolTipManager.SetToolTip(this.FoggyWeather, "Whether to have a foggy view");
+            this.FoggyWeather.UseSelectable = true;
+            this.FoggyWeather.CheckedChanged += new System.EventHandler(this.FoggyWeatherToggled);
             // 
             // NoFog
             // 
@@ -1517,6 +1585,19 @@
             this.ToolTipManager.SetToolTip(this.NoFog, "Whether to remove the fog in-game");
             this.NoFog.UseSelectable = true;
             this.NoFog.CheckedChanged += new System.EventHandler(this.NoFogToggled);
+            // 
+            // RapidFurnaceSmelting
+            // 
+            this.RapidFurnaceSmelting.AutoSize = true;
+            this.RapidFurnaceSmelting.BackColor = System.Drawing.Color.Transparent;
+            this.RapidFurnaceSmelting.Location = new System.Drawing.Point(6, 174);
+            this.RapidFurnaceSmelting.Name = "RapidFurnaceSmelting";
+            this.RapidFurnaceSmelting.Size = new System.Drawing.Size(89, 15);
+            this.RapidFurnaceSmelting.TabIndex = 34;
+            this.RapidFurnaceSmelting.Tag = "";
+            this.RapidFurnaceSmelting.Text = "Fast Furnace";
+            this.ToolTipManager.SetToolTip(this.RapidFurnaceSmelting, "Whether furnaces will smelt materials at a fast rate");
+            this.RapidFurnaceSmelting.UseSelectable = true;
             // 
             // StaticLiquidBlocks
             // 
@@ -1544,19 +1625,6 @@
             this.ToolTipManager.SetToolTip(this.UncapEntitySpawnLimit, "Whether to uncap the entity spawn limit");
             this.UncapEntitySpawnLimit.UseSelectable = true;
             this.UncapEntitySpawnLimit.CheckedChanged += new System.EventHandler(this.UncapEntitySpawnLimitToggled);
-            // 
-            // FoggyWeather
-            // 
-            this.FoggyWeather.AutoSize = true;
-            this.FoggyWeather.Location = new System.Drawing.Point(6, 27);
-            this.FoggyWeather.Name = "FoggyWeather";
-            this.FoggyWeather.Size = new System.Drawing.Size(103, 15);
-            this.FoggyWeather.TabIndex = 24;
-            this.FoggyWeather.Tag = "";
-            this.FoggyWeather.Text = "Foggy Weather";
-            this.ToolTipManager.SetToolTip(this.FoggyWeather, "Whether to have a foggy view");
-            this.FoggyWeather.UseSelectable = true;
-            this.FoggyWeather.CheckedChanged += new System.EventHandler(this.FoggyWeatherToggled);
             // 
             // GenerateAmplifiedWorld
             // 
@@ -1613,20 +1681,6 @@
             this.ToolTipManager.SetToolTip(this.GeneratePlainWorld, "Whether worlds will generate with no trees or foliage");
             this.GeneratePlainWorld.UseSelectable = true;
             this.GeneratePlainWorld.CheckedChanged += new System.EventHandler(this.GeneratePlainWorldToggled);
-            // 
-            // FreezingWorld
-            // 
-            this.FreezingWorld.AutoSize = true;
-            this.FreezingWorld.BackColor = System.Drawing.Color.Transparent;
-            this.FreezingWorld.Location = new System.Drawing.Point(6, 6);
-            this.FreezingWorld.Name = "FreezingWorld";
-            this.FreezingWorld.Size = new System.Drawing.Size(102, 15);
-            this.FreezingWorld.TabIndex = 19;
-            this.FreezingWorld.Tag = "";
-            this.FreezingWorld.Text = "Freezing World";
-            this.ToolTipManager.SetToolTip(this.FreezingWorld, "Whether the world should freeze or not");
-            this.FreezingWorld.UseSelectable = true;
-            this.FreezingWorld.CheckedChanged += new System.EventHandler(this.FreezingWorldToggled);
             // 
             // generalTab
             // 
@@ -2814,6 +2868,7 @@
             this.mainTab.PerformLayout();
             this.playersTab.ResumeLayout(false);
             this.playersTab.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.playerModelScaleSlider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.FieldOfViewSlider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.HitBoxScaleSlider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.WalkingSpeedScaleSlider)).EndInit();
@@ -3019,5 +3074,8 @@
         private MetroFramework.Controls.MetroPanel githubLogo;
         public MetroFramework.Controls.MetroLabel githubRepo;
         public MetroFramework.Controls.MetroLabel githubRepoDesc;
+        public System.Windows.Forms.NumericUpDown playerModelScaleSlider;
+        public MetroFramework.Controls.MetroLabel PlayerModelScale;
+        public MetroFramework.Controls.MetroButton openFaqInfo;
     }
 }

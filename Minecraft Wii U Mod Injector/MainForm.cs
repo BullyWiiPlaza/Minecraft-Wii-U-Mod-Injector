@@ -871,10 +871,6 @@ namespace Minecraft_Wii_U_Mod_Injector
         {
             GeckoU.RPCToggle(0x0112A9E4, 0x0112A9EC, 0x0, 0x0, vpadDisplaySwitch.Checked);
         }
-        private void vpadStandbyBtnClicked(object sender, EventArgs e)
-        {
-            GeckoU.CallFunction64(0x0112E2D0, 0x2);
-        }
         #endregion
 
         #endregion memory editing

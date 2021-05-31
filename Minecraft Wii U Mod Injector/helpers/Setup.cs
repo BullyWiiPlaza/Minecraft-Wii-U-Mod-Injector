@@ -43,31 +43,28 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
         {
             try
             {
-                try
+                Injector.Theme = Injector.StyleManager.Theme = (MetroThemeStyle)Enum.Parse(typeof(MetroThemeStyle), Configuration.ReadKey("StyleTheme", "Theming"));
+                Injector.Style = Injector.StyleManager.Style = (MetroColorStyle)Enum.Parse(typeof(MetroColorStyle), Configuration.ReadKey("ColorTheme", "Theming"));
+
+                Injector.themeBox.Text = Configuration.ReadKey("StyleTheme", "Theming");
+                Injector.colorsBox.Text = Configuration.ReadKey("ColorTheme", "Theming");
+
+                if (Configuration.KeyEqualsTo("DiscordRPC", "true", "Discord"))
+                    Injector.discordRpcCheckBox.Checked = true;
+                else
+                    Injector.discordRpcCheckBox.Checked = false;
+
+                if (Configuration.KeyEqualsTo("ReleaseNotes", "all", "Display"))
                 {
-                    Injector.Theme = Injector.StyleManager.Theme = (MetroThemeStyle)Enum.Parse(typeof(MetroThemeStyle), Configuration.ReadKey("StyleTheme", "Theming"));
-                    Injector.Style = Injector.StyleManager.Style = (MetroColorStyle)Enum.Parse(typeof(MetroColorStyle), Configuration.ReadKey("ColorTheme", "Theming"));
-
-                    Injector.themeBox.Text = Configuration.ReadKey("StyleTheme", "Theming");
-                    Injector.colorsBox.Text = Configuration.ReadKey("ColorTheme", "Theming");
-
-                    if (Configuration.KeyEqualsTo("DiscordRPC", "true", "Discord"))
-                        Injector.discordRpcCheckBox.Checked = true;
-                    else
-                        Injector.discordRpcCheckBox.Checked = false;
-
-                    if (Configuration.KeyEqualsTo("ReleaseNotes", "all", "Display")) {
-                        Injector.releaseNotesToggle.Checked = false;
-                        Injector.buildNotesBox.Text = Properties.Resources.releaseNotes; }
-                    else if (Configuration.KeyEqualsTo("ReleaseNotes", "current", "Display")) {
-                        Injector.releaseNotesToggle.Checked = true;
-                        Injector.buildNotesBox.Text = Properties.Resources.releaseNote; }
-
+                    Injector.releaseNotesToggle.Checked = false;
+                    Injector.buildNotesBox.Text = Properties.Resources.releaseNotes;
                 }
-                catch (Exception)
+                else if (Configuration.KeyEqualsTo("ReleaseNotes", "current", "Display"))
                 {
-
+                    Injector.releaseNotesToggle.Checked = true;
+                    Injector.buildNotesBox.Text = Properties.Resources.releaseNote;
                 }
+
             }
             catch (Exception error)
             {
@@ -78,16 +75,23 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
 
         public static void DebugCheck()
         {
-            if (!Configuration.KeyExists("debug", "Advanced") || Configuration.KeyEqualsTo("debug", "false", "Advanced"))
+            try
             {
-                Size tabSize = new Size(140, 1);
-                Size verSize = new Size(160, 147);
-                Point verLoc = new Point(0, 461);
-                Injector.debugTile.Visible = false;
-                Injector.MainTabs.HideTab(Injector.debugTab);
-                Injector.MainTabs.ItemSize = tabSize;
-                Injector.buildTile.Size = verSize;
-                Injector.buildTile.Location = verLoc;
+                if (!Configuration.KeyExists("debug", "Advanced") || Configuration.KeyEqualsTo("debug", "false", "Advanced"))
+                {
+                    Size tabSize = new Size(140, 1);
+                    Size verSize = new Size(160, 147);
+                    Point verLoc = new Point(0, 461);
+                    Injector.debugTile.Visible = false;
+                    Injector.MainTabs.HideTab(Injector.debugTab);
+                    Injector.MainTabs.ItemSize = tabSize;
+                    Injector.buildTile.Size = verSize;
+                    Injector.buildTile.Location = verLoc;
+                }
+            }
+            catch(Exception)
+            {
+
             }
         }
     }

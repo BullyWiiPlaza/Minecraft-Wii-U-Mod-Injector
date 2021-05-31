@@ -1,6 +1,7 @@
 ﻿using MetroFramework;
 using Minecraft_Wii_U_Mod_Injector.Helpers.Files;
 using System;
+using System.Drawing;
 
 namespace Minecraft_Wii_U_Mod_Injector.Helpers
 {
@@ -8,7 +9,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
     {
         public static MainForm Injector = new MainForm();
 
-        public static string version = "v5.1.4.p1";
+        public static string version = "v5.1.4.p2";
 
         public Setup(MainForm window)
         {
@@ -24,6 +25,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
                 Injector.buildTile.Text = version;
 
                 SetupUserPrefs();
+                DebugCheck();
 
                 DiscordRP.Initialize();
                 DiscordRP.SetPresence("Disconnected", "Idle");
@@ -43,8 +45,8 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
             {
                 try
                 {
-                    Injector.Theme = Injector.StyleManager.Theme = (MetroThemeStyle) Enum.Parse(typeof(MetroThemeStyle), Configuration.ReadKey("StyleTheme", "Theming"));
-                    Injector.Style = Injector.StyleManager.Style = (MetroColorStyle) Enum.Parse(typeof(MetroColorStyle), Configuration.ReadKey("ColorTheme", "Theming"));
+                    Injector.Theme = Injector.StyleManager.Theme = (MetroThemeStyle)Enum.Parse(typeof(MetroThemeStyle), Configuration.ReadKey("StyleTheme", "Theming"));
+                    Injector.Style = Injector.StyleManager.Style = (MetroColorStyle)Enum.Parse(typeof(MetroColorStyle), Configuration.ReadKey("ColorTheme", "Theming"));
 
                     Injector.themeBox.Text = Configuration.ReadKey("StyleTheme", "Theming");
                     Injector.colorsBox.Text = Configuration.ReadKey("ColorTheme", "Theming");
@@ -64,13 +66,28 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
                 }
                 catch (Exception)
                 {
-                
+
                 }
             }
             catch (Exception error)
             {
                 Exceptions.LogError(error, "Exception in SetupUserPrefs() \n" + error, Exceptions.ExceptionId.FailedtoSetup, false, true);
                 Environment.Exit(0);
+            }
+        }
+
+        public static void DebugCheck()
+        {
+            if (!Configuration.KeyExists("debug", "Advanced") || Configuration.KeyEqualsTo("debug", "false", "Advanced"))
+            {
+                Size tabSize = new Size(140, 1);
+                Size verSize = new Size(160, 147);
+                Point verLoc = new Point(0, 461);
+                Injector.debugTile.Visible = false;
+                Injector.MainTabs.HideTab(Injector.debugTab);
+                Injector.MainTabs.ItemSize = tabSize;
+                Injector.buildTile.Size = verSize;
+                Injector.buildTile.Location = verLoc;
             }
         }
     }

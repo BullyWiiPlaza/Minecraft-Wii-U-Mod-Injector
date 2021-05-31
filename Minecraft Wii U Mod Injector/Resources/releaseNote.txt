@@ -1,4 +1,4 @@
-[Release v5.1.4.p1 (Work in Progress, not intended for stable release yet) (30th of May, 2021)]
+[Release v5.1.4.p2 (Work in Progress, not intended for stable release yet) (31th of May, 2021)]
 
 [Important Information]
 
@@ -16,6 +16,7 @@ This update adds old mods, new features and fixes a small amount of bugs
 
 - Added Frequently Asked Questions
 - Changed up the "Worlds / Blocks" tab to match others
+- UI Changes
 
 [Fixes]
 
@@ -26,3 +27,4 @@ This update adds old mods, new features and fixes a small amount of bugs
 + General Fixes
 
 - Reported Errors that were not intended to be display are now hidden as intended
+- Discord Rich Presence will keep time elapsed the same

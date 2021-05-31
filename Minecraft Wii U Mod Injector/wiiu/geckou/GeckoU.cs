@@ -369,6 +369,20 @@ namespace WiiU.GeckoU
 
             return ByteSwap.Swap(BitConverter.ToUInt64(buffer, 0));
         }
+
+        public void RPCToggle(uint address1, uint address2, uint value1, uint value2, bool toggle)
+        {
+            switch (toggle)
+            {
+                case true:
+                    CallFunction64(address1, value1);
+                    break;
+
+                case false:
+                    CallFunction64(address2, value2);
+                    break;
+            }
+        }
         #endregion rpc
 
         #region writing

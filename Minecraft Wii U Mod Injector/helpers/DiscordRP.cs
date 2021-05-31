@@ -6,7 +6,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
     class DiscordRP
     {
         public static DiscordRpcClient client;
-        public static DateTime startUpTime= DateTime.UtcNow;
+        public static DateTime startUpTime = DateTime.UtcNow;
 
         public static void Initialize()
         {

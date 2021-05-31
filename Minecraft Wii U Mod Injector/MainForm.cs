@@ -651,6 +651,11 @@ namespace Minecraft_Wii_U_Mod_Injector
             GeckoU.WriteUIntToggle(0x02F5D53C, on, off, DeadMauFiveMode.Checked);
         }
 
+        private void playerModelScaleSliderChanged(object sender, EventArgs e)
+        {
+            GeckoU.WriteFloat(0x1091B90C, Convert.ToSingle(playerModelScaleSlider.Value));
+        }
+
         #region commands
         private void giveCommandBtnClicked(object sender, EventArgs e)
         {
@@ -857,11 +862,21 @@ namespace Minecraft_Wii_U_Mod_Injector
         }
         #endregion
 
-        #endregion memory editing
-
-        private void playerModelScaleSliderChanged(object sender, EventArgs e)
+        #region debug
+        private void disableVPadInputToggled(object sender, EventArgs e)
         {
-            GeckoU.WriteFloat(0x1091B90C, Convert.ToSingle(playerModelScaleSlider.Value));
+            GeckoU.WriteUIntToggle(0x011293D0, blr, 0x38E00001, disableVPadInput.Checked);
         }
+        private void vpadDisplaySwitchToggled(object sender, EventArgs e)
+        {
+            GeckoU.RPCToggle(0x0112A9E4, 0x0112A9EC, 0x0, 0x0, vpadDisplaySwitch.Checked);
+        }
+        private void vpadStandbyBtnClicked(object sender, EventArgs e)
+        {
+            GeckoU.CallFunction64(0x0112E2D0, 0x2);
+        }
+        #endregion
+
+        #endregion memory editing
     }
 }

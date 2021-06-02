@@ -49,6 +49,12 @@
             this.wiiuIpv4Box = new MetroFramework.Controls.MetroTextBox();
             this.wiiuIpv4Lbl = new MetroFramework.Controls.MetroLabel();
             this.playersTab = new MetroFramework.Controls.MetroTabPage();
+            this.metroCheckBox1 = new MetroFramework.Controls.MetroCheckBox();
+            this.FrictionSlider = new System.Windows.Forms.NumericUpDown();
+            this.Friction = new MetroFramework.Controls.MetroLabel();
+            this.FieldOfViewSplitSlider = new System.Windows.Forms.NumericUpDown();
+            this.FieldofViewSplitscreen = new MetroFramework.Controls.MetroLabel();
+            this.GodMode = new MetroFramework.Controls.MetroCheckBox();
             this.playerModelScaleSlider = new System.Windows.Forms.NumericUpDown();
             this.PlayerModelScale = new MetroFramework.Controls.MetroLabel();
             this.DeadMauFiveMode = new MetroFramework.Controls.MetroCheckBox();
@@ -113,7 +119,6 @@
             this.FreezingWorld = new MetroFramework.Controls.MetroCheckBox();
             this.FoggyWeather = new MetroFramework.Controls.MetroCheckBox();
             this.NoFog = new MetroFramework.Controls.MetroCheckBox();
-            this.RapidFurnaceSmelting = new MetroFramework.Controls.MetroCheckBox();
             this.StaticLiquidBlocks = new MetroFramework.Controls.MetroCheckBox();
             this.UncapEntitySpawnLimit = new MetroFramework.Controls.MetroCheckBox();
             this.GenerateAmplifiedWorld = new MetroFramework.Controls.MetroCheckBox();
@@ -121,6 +126,8 @@
             this.DisableCreativeFlag = new MetroFramework.Controls.MetroCheckBox();
             this.GeneratePlainWorld = new MetroFramework.Controls.MetroCheckBox();
             this.generalTab = new MetroFramework.Controls.MetroTabPage();
+            this.DisableTeleporting = new MetroFramework.Controls.MetroCheckBox();
+            this.GamepadSplitscreen = new MetroFramework.Controls.MetroCheckBox();
             this.BypassFriendsOnly = new MetroFramework.Controls.MetroCheckBox();
             this.DisablePermanentKicks = new MetroFramework.Controls.MetroCheckBox();
             this.MapTextEditor = new MetroFramework.Controls.MetroButton();
@@ -188,9 +195,10 @@
             this.ColorLabel = new MetroFramework.Controls.MetroLabel();
             this.themeBox = new MetroFramework.Controls.MetroComboBox();
             this.debugTab = new MetroFramework.Controls.MetroTabPage();
+            this.vpadDisplaySwitch = new MetroFramework.Controls.MetroCheckBox();
             this.wiiuDebugLbl = new MetroFramework.Controls.MetroLabel();
-            this.wiiuDebugPanel = new MetroFramework.Controls.MetroPanel();
             this.disableVPadInput = new MetroFramework.Controls.MetroCheckBox();
+            this.wiiuDebugPanel = new MetroFramework.Controls.MetroPanel();
             this.homeTile = new MetroFramework.Controls.MetroTile();
             this.StyleManager = new MetroFramework.Components.MetroStyleManager(this.components);
             this.StyleExtender = new MetroFramework.Components.MetroStyleExtender(this.components);
@@ -198,10 +206,11 @@
             this.playersTile = new MetroFramework.Controls.MetroTile();
             this.commandsTile = new MetroFramework.Controls.MetroTile();
             this.debugTile = new MetroFramework.Controls.MetroTile();
-            this.vpadDisplaySwitch = new MetroFramework.Controls.MetroCheckBox();
             this.MainTabs.SuspendLayout();
             this.mainTab.SuspendLayout();
             this.playersTab.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.FrictionSlider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FieldOfViewSplitSlider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.playerModelScaleSlider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.FieldOfViewSlider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.HitBoxScaleSlider)).BeginInit();
@@ -233,7 +242,6 @@
             this.giveCommandPanel.SuspendLayout();
             this.settingsTab.SuspendLayout();
             this.debugTab.SuspendLayout();
-            this.wiiuDebugPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.StyleManager)).BeginInit();
             this.SuspendLayout();
             // 
@@ -318,10 +326,10 @@
             this.MainTabs.Location = new System.Drawing.Point(155, 61);
             this.MainTabs.Multiline = true;
             this.MainTabs.Name = "MainTabs";
-            this.MainTabs.SelectedIndex = 7;
+            this.MainTabs.SelectedIndex = 0;
             this.MainTabs.Size = new System.Drawing.Size(989, 545);
             this.MainTabs.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
-            this.MainTabs.TabIndex = 7;
+            this.MainTabs.TabIndex = 0;
             this.MainTabs.UseSelectable = true;
             // 
             // mainTab
@@ -340,10 +348,10 @@
             this.mainTab.HorizontalScrollbarBarColor = true;
             this.mainTab.HorizontalScrollbarHighlightOnWheel = false;
             this.mainTab.HorizontalScrollbarSize = 10;
-            this.mainTab.Location = new System.Drawing.Point(4, 29);
+            this.mainTab.Location = new System.Drawing.Point(4, 5);
             this.mainTab.Name = "mainTab";
             this.mainTab.Padding = new System.Windows.Forms.Padding(3);
-            this.mainTab.Size = new System.Drawing.Size(981, 512);
+            this.mainTab.Size = new System.Drawing.Size(981, 536);
             this.mainTab.TabIndex = 6;
             this.mainTab.Text = "Home";
             this.mainTab.VerticalScrollbarBarColor = true;
@@ -367,7 +375,7 @@
             // 
             this.githubRepoDesc.AutoSize = true;
             this.githubRepoDesc.FontSize = MetroFramework.MetroLabelSize.Small;
-            this.githubRepoDesc.Location = new System.Drawing.Point(863, 261);
+            this.githubRepoDesc.Location = new System.Drawing.Point(860, 262);
             this.githubRepoDesc.Name = "githubRepoDesc";
             this.githubRepoDesc.Size = new System.Drawing.Size(91, 30);
             this.githubRepoDesc.TabIndex = 45;
@@ -378,7 +386,7 @@
             // 
             this.githubRepo.AutoSize = true;
             this.githubRepo.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.githubRepo.Location = new System.Drawing.Point(855, 236);
+            this.githubRepo.Location = new System.Drawing.Point(851, 236);
             this.githubRepo.Name = "githubRepo";
             this.githubRepo.Size = new System.Drawing.Size(107, 25);
             this.githubRepo.TabIndex = 44;
@@ -393,7 +401,7 @@
             this.githubLogo.HorizontalScrollbarBarColor = true;
             this.githubLogo.HorizontalScrollbarHighlightOnWheel = false;
             this.githubLogo.HorizontalScrollbarSize = 10;
-            this.githubLogo.Location = new System.Drawing.Point(855, 133);
+            this.githubLogo.Location = new System.Drawing.Point(852, 133);
             this.githubLogo.Name = "githubLogo";
             this.githubLogo.Size = new System.Drawing.Size(104, 100);
             this.githubLogo.TabIndex = 43;
@@ -530,6 +538,12 @@
             // 
             // playersTab
             // 
+            this.playersTab.Controls.Add(this.metroCheckBox1);
+            this.playersTab.Controls.Add(this.FrictionSlider);
+            this.playersTab.Controls.Add(this.Friction);
+            this.playersTab.Controls.Add(this.FieldOfViewSplitSlider);
+            this.playersTab.Controls.Add(this.FieldofViewSplitscreen);
+            this.playersTab.Controls.Add(this.GodMode);
             this.playersTab.Controls.Add(this.playerModelScaleSlider);
             this.playersTab.Controls.Add(this.PlayerModelScale);
             this.playersTab.Controls.Add(this.DeadMauFiveMode);
@@ -593,16 +607,122 @@
             this.playersTab.HorizontalScrollbarBarColor = true;
             this.playersTab.HorizontalScrollbarHighlightOnWheel = false;
             this.playersTab.HorizontalScrollbarSize = 10;
-            this.playersTab.Location = new System.Drawing.Point(4, 29);
+            this.playersTab.Location = new System.Drawing.Point(4, 9);
             this.playersTab.Name = "playersTab";
             this.playersTab.Padding = new System.Windows.Forms.Padding(3);
-            this.playersTab.Size = new System.Drawing.Size(981, 512);
+            this.playersTab.Size = new System.Drawing.Size(981, 532);
             this.playersTab.TabIndex = 0;
             this.playersTab.Tag = "needsGeckoU";
             this.playersTab.Text = "Player(s)";
             this.playersTab.VerticalScrollbarBarColor = true;
             this.playersTab.VerticalScrollbarHighlightOnWheel = false;
             this.playersTab.VerticalScrollbarSize = 10;
+            // 
+            // metroCheckBox1
+            // 
+            this.metroCheckBox1.AutoSize = true;
+            this.metroCheckBox1.Location = new System.Drawing.Point(383, 216);
+            this.metroCheckBox1.Name = "metroCheckBox1";
+            this.metroCheckBox1.Size = new System.Drawing.Size(104, 15);
+            this.metroCheckBox1.TabIndex = 148;
+            this.metroCheckBox1.Tag = "";
+            this.metroCheckBox1.Text = "God Mode (All)";
+            this.ToolTipManager.SetToolTip(this.metroCheckBox1, "Whether to enable God Mode for everyone");
+            this.metroCheckBox1.UseSelectable = true;
+            this.metroCheckBox1.CheckedChanged += new System.EventHandler(this.GodModeAllToggled);
+            // 
+            // FrictionSlider
+            // 
+            this.StyleExtender.SetApplyMetroTheme(this.FrictionSlider, true);
+            this.FrictionSlider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.FrictionSlider.DecimalPlaces = 8;
+            this.FrictionSlider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.FrictionSlider.Increment = new decimal(new int[] {
+            10000000,
+            0,
+            0,
+            524288});
+            this.FrictionSlider.Location = new System.Drawing.Point(551, 475);
+            this.FrictionSlider.Minimum = new decimal(new int[] {
+            100,
+            0,
+            0,
+            -2147483648});
+            this.FrictionSlider.Name = "FrictionSlider";
+            this.FrictionSlider.Size = new System.Drawing.Size(424, 20);
+            this.FrictionSlider.TabIndex = 147;
+            this.FrictionSlider.Tag = "";
+            this.ToolTipManager.SetToolTip(this.FrictionSlider, "How much friction do we have?");
+            this.FrictionSlider.Value = new decimal(new int[] {
+            91000003,
+            0,
+            0,
+            524288});
+            this.FrictionSlider.ValueChanged += new System.EventHandler(this.FrictionSliderChanged);
+            // 
+            // Friction
+            // 
+            this.Friction.AutoSize = true;
+            this.Friction.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.Friction.Location = new System.Drawing.Point(490, 476);
+            this.Friction.Name = "Friction";
+            this.Friction.Size = new System.Drawing.Size(55, 19);
+            this.Friction.TabIndex = 146;
+            this.Friction.Tag = "";
+            this.Friction.Text = "Friction:";
+            // 
+            // FieldOfViewSplitSlider
+            // 
+            this.StyleExtender.SetApplyMetroTheme(this.FieldOfViewSplitSlider, true);
+            this.FieldOfViewSplitSlider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.FieldOfViewSplitSlider.DecimalPlaces = 3;
+            this.FieldOfViewSplitSlider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.FieldOfViewSplitSlider.Increment = new decimal(new int[] {
+            2571,
+            0,
+            0,
+            196608});
+            this.FieldOfViewSplitSlider.Location = new System.Drawing.Point(170, 503);
+            this.FieldOfViewSplitSlider.Maximum = new decimal(new int[] {
+            4,
+            0,
+            0,
+            0});
+            this.FieldOfViewSplitSlider.Name = "FieldOfViewSplitSlider";
+            this.FieldOfViewSplitSlider.Size = new System.Drawing.Size(300, 20);
+            this.FieldOfViewSplitSlider.TabIndex = 145;
+            this.FieldOfViewSplitSlider.Tag = "";
+            this.ToolTipManager.SetToolTip(this.FieldOfViewSplitSlider, "How high should our FOV in splitscreen be?");
+            this.FieldOfViewSplitSlider.Value = new decimal(new int[] {
+            7,
+            0,
+            0,
+            65536});
+            this.FieldOfViewSplitSlider.ValueChanged += new System.EventHandler(this.FieldOfViewSplitSliderChanged);
+            // 
+            // FieldofViewSplitscreen
+            // 
+            this.FieldofViewSplitscreen.AutoSize = true;
+            this.FieldofViewSplitscreen.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.FieldofViewSplitscreen.Location = new System.Drawing.Point(3, 503);
+            this.FieldofViewSplitscreen.Name = "FieldofViewSplitscreen";
+            this.FieldofViewSplitscreen.Size = new System.Drawing.Size(161, 19);
+            this.FieldofViewSplitscreen.TabIndex = 144;
+            this.FieldofViewSplitscreen.Tag = "";
+            this.FieldofViewSplitscreen.Text = "Field of View (Splitscreen):";
+            // 
+            // GodMode
+            // 
+            this.GodMode.AutoSize = true;
+            this.GodMode.Location = new System.Drawing.Point(383, 195);
+            this.GodMode.Name = "GodMode";
+            this.GodMode.Size = new System.Drawing.Size(109, 15);
+            this.GodMode.TabIndex = 143;
+            this.GodMode.Tag = "";
+            this.GodMode.Text = "God Mode (Self)";
+            this.ToolTipManager.SetToolTip(this.GodMode, "Whether to enable God Mode for local players only");
+            this.GodMode.UseSelectable = true;
+            this.GodMode.CheckedChanged += new System.EventHandler(this.GodModeToggled);
             // 
             // playerModelScaleSlider
             // 
@@ -615,9 +735,9 @@
             0,
             0,
             262144});
-            this.playerModelScaleSlider.Location = new System.Drawing.Point(619, 449);
+            this.playerModelScaleSlider.Location = new System.Drawing.Point(620, 449);
             this.playerModelScaleSlider.Name = "playerModelScaleSlider";
-            this.playerModelScaleSlider.Size = new System.Drawing.Size(322, 20);
+            this.playerModelScaleSlider.Size = new System.Drawing.Size(355, 20);
             this.playerModelScaleSlider.TabIndex = 142;
             this.playerModelScaleSlider.Tag = "";
             this.ToolTipManager.SetToolTip(this.playerModelScaleSlider, "How big (or small) should our player be?");
@@ -632,7 +752,7 @@
             // 
             this.PlayerModelScale.AutoSize = true;
             this.PlayerModelScale.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.PlayerModelScale.Location = new System.Drawing.Point(474, 450);
+            this.PlayerModelScale.Location = new System.Drawing.Point(490, 450);
             this.PlayerModelScale.Name = "PlayerModelScale";
             this.PlayerModelScale.Size = new System.Drawing.Size(124, 19);
             this.PlayerModelScale.TabIndex = 141;
@@ -644,10 +764,10 @@
             this.DeadMauFiveMode.AutoSize = true;
             this.DeadMauFiveMode.Location = new System.Drawing.Point(383, 174);
             this.DeadMauFiveMode.Name = "DeadMauFiveMode";
-            this.DeadMauFiveMode.Size = new System.Drawing.Size(151, 15);
+            this.DeadMauFiveMode.Size = new System.Drawing.Size(83, 15);
             this.DeadMauFiveMode.TabIndex = 140;
             this.DeadMauFiveMode.Tag = "";
-            this.DeadMauFiveMode.Text = "Mouse Ears (Deadmau5)";
+            this.DeadMauFiveMode.Text = "Mouse Ears";
             this.ToolTipManager.SetToolTip(this.DeadMauFiveMode, "Whether the game will apply mouse ears to your player when holding an item");
             this.DeadMauFiveMode.UseSelectable = true;
             this.DeadMauFiveMode.CheckedChanged += new System.EventHandler(this.DeadMauFiveModeToggled);
@@ -703,14 +823,14 @@
             0,
             0,
             262144});
-            this.FieldOfViewSlider.Location = new System.Drawing.Point(130, 477);
+            this.FieldOfViewSlider.Location = new System.Drawing.Point(96, 477);
             this.FieldOfViewSlider.Maximum = new decimal(new int[] {
             4,
             0,
             0,
             0});
             this.FieldOfViewSlider.Name = "FieldOfViewSlider";
-            this.FieldOfViewSlider.Size = new System.Drawing.Size(322, 20);
+            this.FieldOfViewSlider.Size = new System.Drawing.Size(374, 20);
             this.FieldOfViewSlider.TabIndex = 137;
             this.FieldOfViewSlider.Tag = "";
             this.ToolTipManager.SetToolTip(this.FieldOfViewSlider, "How high should our FOV be?");
@@ -727,10 +847,10 @@
             this.FieldOfView.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.FieldOfView.Location = new System.Drawing.Point(3, 477);
             this.FieldOfView.Name = "FieldOfView";
-            this.FieldOfView.Size = new System.Drawing.Size(125, 19);
+            this.FieldOfView.Size = new System.Drawing.Size(87, 19);
             this.FieldOfView.TabIndex = 136;
             this.FieldOfView.Tag = "";
-            this.FieldOfView.Text = "Field of View (FOV):";
+            this.FieldOfView.Text = "Field of View:";
             // 
             // HiddenGameModesUnlocked
             // 
@@ -751,18 +871,19 @@
             this.StyleExtender.SetApplyMetroTheme(this.HitBoxScaleSlider, true);
             this.HitBoxScaleSlider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.HitBoxScaleSlider.DecimalPlaces = 1;
+            this.HitBoxScaleSlider.Enabled = false;
             this.HitBoxScaleSlider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.HitBoxScaleSlider.Increment = new decimal(new int[] {
             1,
             0,
             0,
             65536});
-            this.HitBoxScaleSlider.Location = new System.Drawing.Point(130, 451);
+            this.HitBoxScaleSlider.Location = new System.Drawing.Point(93, 451);
             this.HitBoxScaleSlider.Name = "HitBoxScaleSlider";
-            this.HitBoxScaleSlider.Size = new System.Drawing.Size(322, 20);
+            this.HitBoxScaleSlider.Size = new System.Drawing.Size(377, 20);
             this.HitBoxScaleSlider.TabIndex = 134;
             this.HitBoxScaleSlider.Tag = "";
-            this.ToolTipManager.SetToolTip(this.HitBoxScaleSlider, "How big should entity hitboxes be? (setting this too high maybe cause lag)");
+            this.ToolTipManager.SetToolTip(this.HitBoxScaleSlider, "How big should entity hitboxes be? (disabled until fixed)");
             this.HitBoxScaleSlider.Value = new decimal(new int[] {
             5,
             0,
@@ -804,14 +925,14 @@
             0,
             0,
             262144});
-            this.WalkingSpeedScaleSlider.Location = new System.Drawing.Point(619, 397);
+            this.WalkingSpeedScaleSlider.Location = new System.Drawing.Point(629, 397);
             this.WalkingSpeedScaleSlider.Maximum = new decimal(new int[] {
             4,
             0,
             0,
             0});
             this.WalkingSpeedScaleSlider.Name = "WalkingSpeedScaleSlider";
-            this.WalkingSpeedScaleSlider.Size = new System.Drawing.Size(322, 20);
+            this.WalkingSpeedScaleSlider.Size = new System.Drawing.Size(346, 20);
             this.WalkingSpeedScaleSlider.TabIndex = 131;
             this.WalkingSpeedScaleSlider.Tag = "";
             this.ToolTipManager.SetToolTip(this.WalkingSpeedScaleSlider, "How fast can the player walk?");
@@ -826,7 +947,7 @@
             // 
             this.WalkingSpeedScale.AutoSize = true;
             this.WalkingSpeedScale.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.WalkingSpeedScale.Location = new System.Drawing.Point(474, 398);
+            this.WalkingSpeedScale.Location = new System.Drawing.Point(490, 398);
             this.WalkingSpeedScale.Name = "WalkingSpeedScale";
             this.WalkingSpeedScale.Size = new System.Drawing.Size(133, 19);
             this.WalkingSpeedScale.TabIndex = 130;
@@ -857,14 +978,14 @@
             0,
             0,
             262144});
-            this.SprintingSpeedScaleSlider.Location = new System.Drawing.Point(619, 423);
+            this.SprintingSpeedScaleSlider.Location = new System.Drawing.Point(635, 423);
             this.SprintingSpeedScaleSlider.Maximum = new decimal(new int[] {
             4,
             0,
             0,
             0});
             this.SprintingSpeedScaleSlider.Name = "SprintingSpeedScaleSlider";
-            this.SprintingSpeedScaleSlider.Size = new System.Drawing.Size(322, 20);
+            this.SprintingSpeedScaleSlider.Size = new System.Drawing.Size(340, 20);
             this.SprintingSpeedScaleSlider.TabIndex = 128;
             this.SprintingSpeedScaleSlider.Tag = "";
             this.ToolTipManager.SetToolTip(this.SprintingSpeedScaleSlider, "How fast can the player sprint?");
@@ -879,7 +1000,7 @@
             // 
             this.SprintingSpeedScale.AutoSize = true;
             this.SprintingSpeedScale.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.SprintingSpeedScale.Location = new System.Drawing.Point(474, 424);
+            this.SprintingSpeedScale.Location = new System.Drawing.Point(490, 424);
             this.SprintingSpeedScale.Name = "SprintingSpeedScale";
             this.SprintingSpeedScale.Size = new System.Drawing.Size(139, 19);
             this.SprintingSpeedScale.TabIndex = 127;
@@ -890,7 +1011,7 @@
             // 
             this.NNIDEditorBtn.Location = new System.Drawing.Point(3, 342);
             this.NNIDEditorBtn.Name = "NNIDEditorBtn";
-            this.NNIDEditorBtn.Size = new System.Drawing.Size(938, 23);
+            this.NNIDEditorBtn.Size = new System.Drawing.Size(972, 23);
             this.NNIDEditorBtn.TabIndex = 126;
             this.NNIDEditorBtn.Tag = "";
             this.NNIDEditorBtn.Text = "Nintendo Network Editor";
@@ -908,7 +1029,7 @@
             0,
             0,
             262144});
-            this.RiptideFlyingSpeedSlider.Location = new System.Drawing.Point(619, 370);
+            this.RiptideFlyingSpeedSlider.Location = new System.Drawing.Point(633, 370);
             this.RiptideFlyingSpeedSlider.Maximum = new decimal(new int[] {
             5,
             0,
@@ -920,7 +1041,7 @@
             0,
             -2147483648});
             this.RiptideFlyingSpeedSlider.Name = "RiptideFlyingSpeedSlider";
-            this.RiptideFlyingSpeedSlider.Size = new System.Drawing.Size(322, 20);
+            this.RiptideFlyingSpeedSlider.Size = new System.Drawing.Size(342, 20);
             this.RiptideFlyingSpeedSlider.TabIndex = 125;
             this.RiptideFlyingSpeedSlider.Tag = "";
             this.ToolTipManager.SetToolTip(this.RiptideFlyingSpeedSlider, "How fast should the Riptide Enchentment go?");
@@ -935,7 +1056,7 @@
             // 
             this.RiptideFlyingSpeed.AutoSize = true;
             this.RiptideFlyingSpeed.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.RiptideFlyingSpeed.Location = new System.Drawing.Point(474, 371);
+            this.RiptideFlyingSpeed.Location = new System.Drawing.Point(490, 371);
             this.RiptideFlyingSpeed.Name = "RiptideFlyingSpeed";
             this.RiptideFlyingSpeed.Size = new System.Drawing.Size(137, 19);
             this.RiptideFlyingSpeed.TabIndex = 124;
@@ -953,7 +1074,7 @@
             0,
             0,
             65536});
-            this.ReachSlider.Location = new System.Drawing.Point(130, 425);
+            this.ReachSlider.Location = new System.Drawing.Point(56, 425);
             this.ReachSlider.Maximum = new decimal(new int[] {
             512,
             0,
@@ -965,7 +1086,7 @@
             0,
             -2147483648});
             this.ReachSlider.Name = "ReachSlider";
-            this.ReachSlider.Size = new System.Drawing.Size(322, 20);
+            this.ReachSlider.Size = new System.Drawing.Size(414, 20);
             this.ReachSlider.TabIndex = 121;
             this.ReachSlider.Tag = "";
             this.ToolTipManager.SetToolTip(this.ReachSlider, "How far can the player reach?");
@@ -998,7 +1119,7 @@
             0,
             0,
             196608});
-            this.JumpHeightSlider.Location = new System.Drawing.Point(130, 399);
+            this.JumpHeightSlider.Location = new System.Drawing.Point(95, 399);
             this.JumpHeightSlider.Maximum = new decimal(new int[] {
             10,
             0,
@@ -1010,7 +1131,7 @@
             0,
             -2147483648});
             this.JumpHeightSlider.Name = "JumpHeightSlider";
-            this.JumpHeightSlider.Size = new System.Drawing.Size(322, 20);
+            this.JumpHeightSlider.Size = new System.Drawing.Size(375, 20);
             this.JumpHeightSlider.TabIndex = 119;
             this.JumpHeightSlider.Tag = "";
             this.ToolTipManager.SetToolTip(this.JumpHeightSlider, "How high should the player jump?");
@@ -1044,7 +1165,7 @@
             0,
             0});
             this.EnchantmentLevelSlider.Name = "EnchantmentLevelSlider";
-            this.EnchantmentLevelSlider.Size = new System.Drawing.Size(322, 20);
+            this.EnchantmentLevelSlider.Size = new System.Drawing.Size(340, 20);
             this.EnchantmentLevelSlider.TabIndex = 117;
             this.EnchantmentLevelSlider.Tag = "";
             this.ToolTipManager.SetToolTip(this.EnchantmentLevelSlider, "What enchantment level should the currently held item have?");
@@ -1532,7 +1653,6 @@
             this.worldTab.Controls.Add(this.FreezingWorld);
             this.worldTab.Controls.Add(this.FoggyWeather);
             this.worldTab.Controls.Add(this.NoFog);
-            this.worldTab.Controls.Add(this.RapidFurnaceSmelting);
             this.worldTab.Controls.Add(this.StaticLiquidBlocks);
             this.worldTab.Controls.Add(this.UncapEntitySpawnLimit);
             this.worldTab.Controls.Add(this.GenerateAmplifiedWorld);
@@ -1542,10 +1662,10 @@
             this.worldTab.HorizontalScrollbarBarColor = true;
             this.worldTab.HorizontalScrollbarHighlightOnWheel = false;
             this.worldTab.HorizontalScrollbarSize = 10;
-            this.worldTab.Location = new System.Drawing.Point(4, 29);
+            this.worldTab.Location = new System.Drawing.Point(4, 9);
             this.worldTab.Name = "worldTab";
             this.worldTab.Padding = new System.Windows.Forms.Padding(3);
-            this.worldTab.Size = new System.Drawing.Size(981, 512);
+            this.worldTab.Size = new System.Drawing.Size(981, 532);
             this.worldTab.TabIndex = 1;
             this.worldTab.Tag = "needsGeckoU";
             this.worldTab.Text = "World";
@@ -1594,19 +1714,6 @@
             this.NoFog.UseSelectable = true;
             this.NoFog.CheckedChanged += new System.EventHandler(this.NoFogToggled);
             // 
-            // RapidFurnaceSmelting
-            // 
-            this.RapidFurnaceSmelting.AutoSize = true;
-            this.RapidFurnaceSmelting.BackColor = System.Drawing.Color.Transparent;
-            this.RapidFurnaceSmelting.Location = new System.Drawing.Point(7, 174);
-            this.RapidFurnaceSmelting.Name = "RapidFurnaceSmelting";
-            this.RapidFurnaceSmelting.Size = new System.Drawing.Size(89, 15);
-            this.RapidFurnaceSmelting.TabIndex = 34;
-            this.RapidFurnaceSmelting.Tag = "";
-            this.RapidFurnaceSmelting.Text = "Fast Furnace";
-            this.ToolTipManager.SetToolTip(this.RapidFurnaceSmelting, "Whether furnaces will smelt materials at a fast rate");
-            this.RapidFurnaceSmelting.UseSelectable = true;
-            // 
             // StaticLiquidBlocks
             // 
             this.StaticLiquidBlocks.AutoSize = true;
@@ -1624,7 +1731,7 @@
             // UncapEntitySpawnLimit
             // 
             this.UncapEntitySpawnLimit.AutoSize = true;
-            this.UncapEntitySpawnLimit.Location = new System.Drawing.Point(7, 195);
+            this.UncapEntitySpawnLimit.Location = new System.Drawing.Point(7, 174);
             this.UncapEntitySpawnLimit.Name = "UncapEntitySpawnLimit";
             this.UncapEntitySpawnLimit.Size = new System.Drawing.Size(158, 15);
             this.UncapEntitySpawnLimit.TabIndex = 17;
@@ -1692,6 +1799,8 @@
             // 
             // generalTab
             // 
+            this.generalTab.Controls.Add(this.DisableTeleporting);
+            this.generalTab.Controls.Add(this.GamepadSplitscreen);
             this.generalTab.Controls.Add(this.BypassFriendsOnly);
             this.generalTab.Controls.Add(this.DisablePermanentKicks);
             this.generalTab.Controls.Add(this.MapTextEditor);
@@ -1701,16 +1810,46 @@
             this.generalTab.HorizontalScrollbarBarColor = true;
             this.generalTab.HorizontalScrollbarHighlightOnWheel = false;
             this.generalTab.HorizontalScrollbarSize = 10;
-            this.generalTab.Location = new System.Drawing.Point(4, 29);
+            this.generalTab.Location = new System.Drawing.Point(4, 9);
             this.generalTab.Name = "generalTab";
             this.generalTab.Padding = new System.Windows.Forms.Padding(3);
-            this.generalTab.Size = new System.Drawing.Size(981, 512);
+            this.generalTab.Size = new System.Drawing.Size(981, 532);
             this.generalTab.TabIndex = 2;
             this.generalTab.Tag = "needsGeckoU";
             this.generalTab.Text = "General Game";
             this.generalTab.VerticalScrollbarBarColor = true;
             this.generalTab.VerticalScrollbarHighlightOnWheel = false;
             this.generalTab.VerticalScrollbarSize = 10;
+            // 
+            // DisableTeleporting
+            // 
+            this.DisableTeleporting.AutoSize = true;
+            this.DisableTeleporting.BackColor = System.Drawing.Color.Transparent;
+            this.DisableTeleporting.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.DisableTeleporting.Location = new System.Drawing.Point(7, 111);
+            this.DisableTeleporting.Name = "DisableTeleporting";
+            this.DisableTeleporting.Size = new System.Drawing.Size(123, 15);
+            this.DisableTeleporting.TabIndex = 31;
+            this.DisableTeleporting.Tag = "";
+            this.DisableTeleporting.Text = "Disable Teleporting";
+            this.ToolTipManager.SetToolTip(this.DisableTeleporting, "Whether to disable the teleport command (untested online)");
+            this.DisableTeleporting.UseSelectable = true;
+            this.DisableTeleporting.CheckedChanged += new System.EventHandler(this.DisableTeleportingToggled);
+            // 
+            // GamepadSplitscreen
+            // 
+            this.GamepadSplitscreen.AutoSize = true;
+            this.GamepadSplitscreen.BackColor = System.Drawing.Color.Transparent;
+            this.GamepadSplitscreen.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.GamepadSplitscreen.Location = new System.Drawing.Point(7, 90);
+            this.GamepadSplitscreen.Name = "GamepadSplitscreen";
+            this.GamepadSplitscreen.Size = new System.Drawing.Size(134, 15);
+            this.GamepadSplitscreen.TabIndex = 30;
+            this.GamepadSplitscreen.Tag = "";
+            this.GamepadSplitscreen.Text = "Gamepad Splitscreen";
+            this.ToolTipManager.SetToolTip(this.GamepadSplitscreen, "Whether you can use splitscreen mode on the Gamepad");
+            this.GamepadSplitscreen.UseSelectable = true;
+            this.GamepadSplitscreen.CheckedChanged += new System.EventHandler(this.GamepadSplitscreenToggled);
             // 
             // BypassFriendsOnly
             // 
@@ -1745,10 +1884,10 @@
             // MapTextEditor
             // 
             this.MapTextEditor.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.MapTextEditor.Location = new System.Drawing.Point(490, 475);
+            this.MapTextEditor.Location = new System.Drawing.Point(508, 498);
             this.MapTextEditor.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.MapTextEditor.Name = "MapTextEditor";
-            this.MapTextEditor.Size = new System.Drawing.Size(416, 25);
+            this.MapTextEditor.Size = new System.Drawing.Size(450, 25);
             this.MapTextEditor.TabIndex = 20;
             this.MapTextEditor.Tag = "";
             this.MapTextEditor.Text = "Map Text Editor";
@@ -1785,10 +1924,10 @@
             // ExitGame
             // 
             this.ExitGame.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ExitGame.Location = new System.Drawing.Point(66, 475);
+            this.ExitGame.Location = new System.Drawing.Point(7, 498);
             this.ExitGame.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.ExitGame.Name = "ExitGame";
-            this.ExitGame.Size = new System.Drawing.Size(416, 25);
+            this.ExitGame.Size = new System.Drawing.Size(450, 25);
             this.ExitGame.TabIndex = 15;
             this.ExitGame.Tag = "";
             this.ExitGame.Text = "Exit Game";
@@ -1801,10 +1940,10 @@
             this.minigamesTab.HorizontalScrollbarBarColor = true;
             this.minigamesTab.HorizontalScrollbarHighlightOnWheel = false;
             this.minigamesTab.HorizontalScrollbarSize = 10;
-            this.minigamesTab.Location = new System.Drawing.Point(4, 29);
+            this.minigamesTab.Location = new System.Drawing.Point(4, 9);
             this.minigamesTab.Name = "minigamesTab";
             this.minigamesTab.Padding = new System.Windows.Forms.Padding(3);
-            this.minigamesTab.Size = new System.Drawing.Size(981, 512);
+            this.minigamesTab.Size = new System.Drawing.Size(981, 532);
             this.minigamesTab.TabIndex = 3;
             this.minigamesTab.Tag = "GeckoUNeeded";
             this.minigamesTab.Text = "Minigames";
@@ -1818,6 +1957,7 @@
             this.MinigamesTabs.Controls.Add(this.Battle);
             this.MinigamesTabs.Controls.Add(this.Tumble);
             this.MinigamesTabs.Controls.Add(this.Glide);
+            this.MinigamesTabs.ItemSize = new System.Drawing.Size(245, 30);
             this.MinigamesTabs.Location = new System.Drawing.Point(-3, -3);
             this.MinigamesTabs.Name = "MinigamesTabs";
             this.MinigamesTabs.SelectedIndex = 0;
@@ -1825,6 +1965,7 @@
             this.MinigamesTabs.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.MinigamesTabs.TabIndex = 2;
             this.MinigamesTabs.Tag = "needsGeckoU";
+            this.MinigamesTabs.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.MinigamesTabs.UseSelectable = true;
             // 
             // GeneralMinigames
@@ -1840,10 +1981,10 @@
             this.GeneralMinigames.HorizontalScrollbarBarColor = true;
             this.GeneralMinigames.HorizontalScrollbarHighlightOnWheel = false;
             this.GeneralMinigames.HorizontalScrollbarSize = 10;
-            this.GeneralMinigames.Location = new System.Drawing.Point(4, 38);
+            this.GeneralMinigames.Location = new System.Drawing.Point(4, 34);
             this.GeneralMinigames.Name = "GeneralMinigames";
             this.GeneralMinigames.Padding = new System.Windows.Forms.Padding(3);
-            this.GeneralMinigames.Size = new System.Drawing.Size(981, 496);
+            this.GeneralMinigames.Size = new System.Drawing.Size(981, 500);
             this.GeneralMinigames.TabIndex = 0;
             this.GeneralMinigames.Text = "General";
             this.GeneralMinigames.VerticalScrollbarBarColor = true;
@@ -1958,10 +2099,10 @@
             this.Battle.HorizontalScrollbarBarColor = true;
             this.Battle.HorizontalScrollbarHighlightOnWheel = false;
             this.Battle.HorizontalScrollbarSize = 10;
-            this.Battle.Location = new System.Drawing.Point(4, 38);
+            this.Battle.Location = new System.Drawing.Point(4, 34);
             this.Battle.Name = "Battle";
             this.Battle.Padding = new System.Windows.Forms.Padding(3);
-            this.Battle.Size = new System.Drawing.Size(981, 496);
+            this.Battle.Size = new System.Drawing.Size(981, 500);
             this.Battle.TabIndex = 1;
             this.Battle.Text = "Battle";
             this.Battle.VerticalScrollbarBarColor = true;
@@ -2036,10 +2177,10 @@
             this.Tumble.HorizontalScrollbarBarColor = true;
             this.Tumble.HorizontalScrollbarHighlightOnWheel = false;
             this.Tumble.HorizontalScrollbarSize = 10;
-            this.Tumble.Location = new System.Drawing.Point(4, 38);
+            this.Tumble.Location = new System.Drawing.Point(4, 34);
             this.Tumble.Name = "Tumble";
             this.Tumble.Padding = new System.Windows.Forms.Padding(3);
-            this.Tumble.Size = new System.Drawing.Size(981, 496);
+            this.Tumble.Size = new System.Drawing.Size(981, 500);
             this.Tumble.TabIndex = 2;
             this.Tumble.Text = "Tumble";
             this.Tumble.VerticalScrollbarBarColor = true;
@@ -2071,10 +2212,10 @@
             this.Glide.HorizontalScrollbarBarColor = true;
             this.Glide.HorizontalScrollbarHighlightOnWheel = false;
             this.Glide.HorizontalScrollbarSize = 10;
-            this.Glide.Location = new System.Drawing.Point(4, 38);
+            this.Glide.Location = new System.Drawing.Point(4, 34);
             this.Glide.Name = "Glide";
             this.Glide.Padding = new System.Windows.Forms.Padding(3);
-            this.Glide.Size = new System.Drawing.Size(981, 496);
+            this.Glide.Size = new System.Drawing.Size(981, 500);
             this.Glide.TabIndex = 3;
             this.Glide.Text = "Glide";
             this.Glide.VerticalScrollbarBarColor = true;
@@ -2184,9 +2325,9 @@
             this.commandsTab.HorizontalScrollbarBarColor = true;
             this.commandsTab.HorizontalScrollbarHighlightOnWheel = false;
             this.commandsTab.HorizontalScrollbarSize = 10;
-            this.commandsTab.Location = new System.Drawing.Point(4, 29);
+            this.commandsTab.Location = new System.Drawing.Point(4, 9);
             this.commandsTab.Name = "commandsTab";
-            this.commandsTab.Size = new System.Drawing.Size(981, 512);
+            this.commandsTab.Size = new System.Drawing.Size(981, 532);
             this.commandsTab.TabIndex = 7;
             this.commandsTab.Tag = "needsGeckoU";
             this.commandsTab.Text = "Commands";
@@ -2669,10 +2810,10 @@
             this.settingsTab.HorizontalScrollbarBarColor = true;
             this.settingsTab.HorizontalScrollbarHighlightOnWheel = false;
             this.settingsTab.HorizontalScrollbarSize = 10;
-            this.settingsTab.Location = new System.Drawing.Point(4, 29);
+            this.settingsTab.Location = new System.Drawing.Point(4, 9);
             this.settingsTab.Name = "settingsTab";
             this.settingsTab.Padding = new System.Windows.Forms.Padding(3);
-            this.settingsTab.Size = new System.Drawing.Size(981, 512);
+            this.settingsTab.Size = new System.Drawing.Size(981, 532);
             this.settingsTab.TabIndex = 5;
             this.settingsTab.Tag = "";
             this.settingsTab.Text = "Settings";
@@ -2698,7 +2839,7 @@
             this.resetConfigBtn.Location = new System.Drawing.Point(58, 100);
             this.resetConfigBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.resetConfigBtn.Name = "resetConfigBtn";
-            this.resetConfigBtn.Size = new System.Drawing.Size(881, 36);
+            this.resetConfigBtn.Size = new System.Drawing.Size(916, 36);
             this.resetConfigBtn.TabIndex = 45;
             this.resetConfigBtn.Text = "Reset Configuration";
             this.ToolTipManager.SetToolTip(this.resetConfigBtn, "Resets the configuration file");
@@ -2715,7 +2856,7 @@
             this.settingsLogo.HorizontalScrollbarSize = 10;
             this.settingsLogo.Location = new System.Drawing.Point(58, 145);
             this.settingsLogo.Name = "settingsLogo";
-            this.settingsLogo.Size = new System.Drawing.Size(881, 368);
+            this.settingsLogo.Size = new System.Drawing.Size(916, 368);
             this.settingsLogo.TabIndex = 44;
             this.settingsLogo.VerticalScrollbarBarColor = true;
             this.settingsLogo.VerticalScrollbarHighlightOnWheel = false;
@@ -2756,7 +2897,7 @@
             "Yellow"});
             this.colorsBox.Location = new System.Drawing.Point(58, 41);
             this.colorsBox.Name = "colorsBox";
-            this.colorsBox.Size = new System.Drawing.Size(881, 29);
+            this.colorsBox.Size = new System.Drawing.Size(917, 29);
             this.colorsBox.TabIndex = 37;
             this.colorsBox.UseSelectable = true;
             this.colorsBox.SelectedIndexChanged += new System.EventHandler(this.formColorSelected);
@@ -2788,56 +2929,56 @@
             "Light"});
             this.themeBox.Location = new System.Drawing.Point(58, 6);
             this.themeBox.Name = "themeBox";
-            this.themeBox.Size = new System.Drawing.Size(881, 29);
+            this.themeBox.Size = new System.Drawing.Size(917, 29);
             this.themeBox.TabIndex = 35;
             this.themeBox.UseSelectable = true;
             this.themeBox.SelectedIndexChanged += new System.EventHandler(this.formThemeSelected);
             // 
             // debugTab
             // 
+            this.debugTab.Controls.Add(this.vpadDisplaySwitch);
             this.debugTab.Controls.Add(this.wiiuDebugLbl);
+            this.debugTab.Controls.Add(this.disableVPadInput);
             this.debugTab.Controls.Add(this.wiiuDebugPanel);
             this.debugTab.HorizontalScrollbarBarColor = true;
             this.debugTab.HorizontalScrollbarHighlightOnWheel = false;
             this.debugTab.HorizontalScrollbarSize = 10;
-            this.debugTab.Location = new System.Drawing.Point(4, 5);
+            this.debugTab.Location = new System.Drawing.Point(4, 9);
             this.debugTab.Name = "debugTab";
-            this.debugTab.Size = new System.Drawing.Size(981, 536);
+            this.debugTab.Size = new System.Drawing.Size(981, 532);
             this.debugTab.TabIndex = 8;
+            this.debugTab.Tag = "needsGeckoU";
             this.debugTab.Text = "Debug";
             this.debugTab.VerticalScrollbarBarColor = true;
             this.debugTab.VerticalScrollbarHighlightOnWheel = false;
             this.debugTab.VerticalScrollbarSize = 10;
             // 
+            // vpadDisplaySwitch
+            // 
+            this.vpadDisplaySwitch.AutoSize = true;
+            this.vpadDisplaySwitch.Location = new System.Drawing.Point(7, 45);
+            this.vpadDisplaySwitch.Name = "vpadDisplaySwitch";
+            this.vpadDisplaySwitch.Size = new System.Drawing.Size(183, 15);
+            this.vpadDisplaySwitch.TabIndex = 3;
+            this.vpadDisplaySwitch.Text = "Power Button turns off display";
+            this.ToolTipManager.SetToolTip(this.vpadDisplaySwitch, "Holding down the power button on the gamepad will turn off the screen, not consol" +
+        "e");
+            this.vpadDisplaySwitch.UseSelectable = true;
+            this.vpadDisplaySwitch.CheckedChanged += new System.EventHandler(this.vpadDisplaySwitchToggled);
+            // 
             // wiiuDebugLbl
             // 
             this.wiiuDebugLbl.AutoSize = true;
-            this.wiiuDebugLbl.Location = new System.Drawing.Point(11, 7);
+            this.wiiuDebugLbl.Location = new System.Drawing.Point(7, 2);
             this.wiiuDebugLbl.Name = "wiiuDebugLbl";
             this.wiiuDebugLbl.Size = new System.Drawing.Size(41, 19);
             this.wiiuDebugLbl.TabIndex = 44;
             this.wiiuDebugLbl.Text = "Wii U";
             // 
-            // wiiuDebugPanel
-            // 
-            this.wiiuDebugPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.wiiuDebugPanel.Controls.Add(this.vpadDisplaySwitch);
-            this.wiiuDebugPanel.Controls.Add(this.disableVPadInput);
-            this.wiiuDebugPanel.HorizontalScrollbarBarColor = true;
-            this.wiiuDebugPanel.HorizontalScrollbarHighlightOnWheel = false;
-            this.wiiuDebugPanel.HorizontalScrollbarSize = 10;
-            this.wiiuDebugPanel.Location = new System.Drawing.Point(7, 17);
-            this.wiiuDebugPanel.Name = "wiiuDebugPanel";
-            this.wiiuDebugPanel.Size = new System.Drawing.Size(197, 492);
-            this.wiiuDebugPanel.TabIndex = 43;
-            this.wiiuDebugPanel.VerticalScrollbarBarColor = true;
-            this.wiiuDebugPanel.VerticalScrollbarHighlightOnWheel = false;
-            this.wiiuDebugPanel.VerticalScrollbarSize = 10;
-            // 
             // disableVPadInput
             // 
             this.disableVPadInput.AutoSize = true;
-            this.disableVPadInput.Location = new System.Drawing.Point(3, 11);
+            this.disableVPadInput.Location = new System.Drawing.Point(7, 24);
             this.disableVPadInput.Name = "disableVPadInput";
             this.disableVPadInput.Size = new System.Drawing.Size(146, 15);
             this.disableVPadInput.TabIndex = 2;
@@ -2846,6 +2987,20 @@
         "home button");
             this.disableVPadInput.UseSelectable = true;
             this.disableVPadInput.CheckedChanged += new System.EventHandler(this.disableVPadInputToggled);
+            // 
+            // wiiuDebugPanel
+            // 
+            this.wiiuDebugPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.wiiuDebugPanel.HorizontalScrollbarBarColor = true;
+            this.wiiuDebugPanel.HorizontalScrollbarHighlightOnWheel = false;
+            this.wiiuDebugPanel.HorizontalScrollbarSize = 10;
+            this.wiiuDebugPanel.Location = new System.Drawing.Point(3, 12);
+            this.wiiuDebugPanel.Name = "wiiuDebugPanel";
+            this.wiiuDebugPanel.Size = new System.Drawing.Size(980, 1);
+            this.wiiuDebugPanel.TabIndex = 43;
+            this.wiiuDebugPanel.VerticalScrollbarBarColor = true;
+            this.wiiuDebugPanel.VerticalScrollbarHighlightOnWheel = false;
+            this.wiiuDebugPanel.VerticalScrollbarSize = 10;
             // 
             // homeTile
             // 
@@ -2917,19 +3072,6 @@
             this.debugTile.UseSelectable = true;
             this.debugTile.Click += new System.EventHandler(this.swapTab);
             // 
-            // vpadDisplaySwitch
-            // 
-            this.vpadDisplaySwitch.AutoSize = true;
-            this.vpadDisplaySwitch.Location = new System.Drawing.Point(3, 32);
-            this.vpadDisplaySwitch.Name = "vpadDisplaySwitch";
-            this.vpadDisplaySwitch.Size = new System.Drawing.Size(183, 15);
-            this.vpadDisplaySwitch.TabIndex = 3;
-            this.vpadDisplaySwitch.Text = "Power Button turns off display";
-            this.ToolTipManager.SetToolTip(this.vpadDisplaySwitch, "Holding down the power button on the gamepad will turn off the screen, not consol" +
-        "e");
-            this.vpadDisplaySwitch.UseSelectable = true;
-            this.vpadDisplaySwitch.CheckedChanged += new System.EventHandler(this.vpadDisplaySwitchToggled);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2952,6 +3094,7 @@
             this.Style = MetroFramework.MetroColorStyle.Default;
             this.Text = "Minecraft Wii U Mod Injector";
             this.Theme = MetroFramework.MetroThemeStyle.Default;
+            this.TransparencyKey = System.Drawing.Color.Empty;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Exit);
             this.Load += new System.EventHandler(this.Init);
             this.MainTabs.ResumeLayout(false);
@@ -2959,6 +3102,8 @@
             this.mainTab.PerformLayout();
             this.playersTab.ResumeLayout(false);
             this.playersTab.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.FrictionSlider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FieldOfViewSplitSlider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.playerModelScaleSlider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.FieldOfViewSlider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.HitBoxScaleSlider)).EndInit();
@@ -2999,8 +3144,6 @@
             this.settingsTab.PerformLayout();
             this.debugTab.ResumeLayout(false);
             this.debugTab.PerformLayout();
-            this.wiiuDebugPanel.ResumeLayout(false);
-            this.wiiuDebugPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.StyleManager)).EndInit();
             this.ResumeLayout(false);
 
@@ -3112,7 +3255,6 @@
         private MetroFramework.Components.MetroStyleExtender StyleExtender;
         public MetroFramework.Controls.MetroLabel buildVerTitleLbl;
         private MetroFramework.Components.MetroToolTip ToolTipManager;
-        public MetroFramework.Controls.MetroCheckBox RapidFurnaceSmelting;
         public MetroFramework.Controls.MetroCheckBox VisibleHitboxes;
         public MetroFramework.Controls.MetroCheckBox discordRpcCheckBox;
         private MetroFramework.Controls.MetroPanel settingsLogo;
@@ -3177,5 +3319,13 @@
         private MetroFramework.Controls.MetroPanel wiiuDebugPanel;
         private MetroFramework.Controls.MetroCheckBox disableVPadInput;
         private MetroFramework.Controls.MetroCheckBox vpadDisplaySwitch;
+        public MetroFramework.Controls.MetroCheckBox GamepadSplitscreen;
+        public MetroFramework.Controls.MetroCheckBox DisableTeleporting;
+        public MetroFramework.Controls.MetroCheckBox GodMode;
+        public System.Windows.Forms.NumericUpDown FieldOfViewSplitSlider;
+        public MetroFramework.Controls.MetroLabel FieldofViewSplitscreen;
+        public System.Windows.Forms.NumericUpDown FrictionSlider;
+        public MetroFramework.Controls.MetroLabel Friction;
+        public MetroFramework.Controls.MetroCheckBox metroCheckBox1;
     }
 }

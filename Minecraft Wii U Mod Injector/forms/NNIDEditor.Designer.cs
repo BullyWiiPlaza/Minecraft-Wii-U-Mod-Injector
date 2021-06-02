@@ -36,6 +36,7 @@
             this.StyleManager = new MetroFramework.Components.MetroStyleManager(this.components);
             this.WarningLbl = new MetroFramework.Controls.MetroLabel();
             this.ToolTips = new MetroFramework.Components.MetroToolTip();
+            this.readNameBtn = new MetroFramework.Controls.MetroButton();
             ((System.ComponentModel.ISupportInitialize)(this.StyleManager)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,7 +55,7 @@
             // 
             // 
             this.NNIDNameBox.CustomButton.Image = null;
-            this.NNIDNameBox.CustomButton.Location = new System.Drawing.Point(417, 1);
+            this.NNIDNameBox.CustomButton.Location = new System.Drawing.Point(318, 1);
             this.NNIDNameBox.CustomButton.Name = "";
             this.NNIDNameBox.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.NNIDNameBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -72,7 +73,7 @@
             this.NNIDNameBox.SelectionLength = 0;
             this.NNIDNameBox.SelectionStart = 0;
             this.NNIDNameBox.ShortcutsEnabled = true;
-            this.NNIDNameBox.Size = new System.Drawing.Size(439, 23);
+            this.NNIDNameBox.Size = new System.Drawing.Size(340, 23);
             this.NNIDNameBox.TabIndex = 1;
             this.ToolTips.SetToolTip(this.NNIDNameBox, "The name to set");
             this.NNIDNameBox.UseSelectable = true;
@@ -112,11 +113,23 @@
             this.ToolTips.StyleManager = null;
             this.ToolTips.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
+            // readNameBtn
+            // 
+            this.readNameBtn.Location = new System.Drawing.Point(437, 97);
+            this.readNameBtn.Name = "readNameBtn";
+            this.readNameBtn.Size = new System.Drawing.Size(93, 23);
+            this.readNameBtn.TabIndex = 6;
+            this.readNameBtn.Text = "Read";
+            this.ToolTips.SetToolTip(this.readNameBtn, "Changes your name to the given one");
+            this.readNameBtn.UseSelectable = true;
+            this.readNameBtn.Click += new System.EventHandler(this.readNameBtnClicked);
+            // 
             // NNIDEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(550, 168);
+            this.Controls.Add(this.readNameBtn);
             this.Controls.Add(this.WarningLbl);
             this.Controls.Add(this.NNIDChangeBtn);
             this.Controls.Add(this.NNIDNameBox);
@@ -143,5 +156,6 @@
         private MetroFramework.Components.MetroStyleManager StyleManager;
         private MetroFramework.Controls.MetroLabel WarningLbl;
         private MetroFramework.Components.MetroToolTip ToolTips;
+        private MetroFramework.Controls.MetroButton readNameBtn;
     }
 }

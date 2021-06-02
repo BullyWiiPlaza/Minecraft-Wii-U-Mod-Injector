@@ -25,7 +25,6 @@ namespace Minecraft_Wii_U_Mod_Injector
 
         #region bools
         private bool _isConnected;
-
         public bool isConnected
         {
             get { return _isConnected; }
@@ -39,6 +38,8 @@ namespace Minecraft_Wii_U_Mod_Injector
                     DiscordRP.SetPresence("Disconnected", MainTabs.SelectedTab.Text + " tab");
             }
         }
+
+        private bool tooHighWarn = false;
         #endregion
 
         #region assembly
@@ -112,6 +113,7 @@ namespace Minecraft_Wii_U_Mod_Injector
         private void Exit(object sender, FormClosingEventArgs e)
         {
             DiscordRP.Deinitialize();
+            Settings.Write("TabIndex", MainTabs.SelectedIndex.ToString(), "Display");
         }
 
         private void swapTab(object sender, EventArgs e)
@@ -153,21 +155,22 @@ namespace Minecraft_Wii_U_Mod_Injector
             }
             catch (Exception error)
             {
-                switch(error)
+                switch (error)
                 {
                     case System.Net.Sockets.SocketException:
                         Messaging.Show(MessageBoxIcon.Error, "Couldn't detect TCPGecko running or IP Address is wrong.\nMake sure you have TCPGecko running and entered the correct IP Address for you Wii U");
-                        Exceptions.LogError(error, "Wrong IP Address", Exceptions.ExceptionId.ConnectionProblem, false, false);
+                        Exceptions.LogError(error, "Wrong IP Address", false, false);
                         States.SwapState(States.StatesIds.Disconnected);
                         break;
 
                     case TimeoutException:
-                        Exceptions.LogError(error, "Unable to Connect to the Wii U, connection timed-out", Exceptions.ExceptionId.ConnectionProblem, false, true);
+                        Messaging.Show(MessageBoxIcon.Error, "Couldn't connect to your Wii U, please check that:\nYou entered the correct IP Address\nTCPGecko is running from the Homebrew Launcher\nYour network connection might not be stable");
+                        Exceptions.LogError(error, "Unable to Connect to the Wii U, connection timed-out", false, false);
                         States.SwapState(States.StatesIds.Disconnected);
                         break;
                 }
 
-                Exceptions.LogError(error, "Unable to Connect to the Wii U", Exceptions.ExceptionId.ConnectionProblem, false, true);
+                Exceptions.LogError(error, "Unable to Connect to the Wii U", false, true);
                 States.SwapState(States.StatesIds.Disconnected);
             }
         }
@@ -199,11 +202,11 @@ namespace Minecraft_Wii_U_Mod_Injector
                 Theme = (MetroThemeStyle)Enum.Parse(typeof(MetroThemeStyle), themeBox.Text);
                 StyleManager.Theme = (MetroThemeStyle)Enum.Parse(typeof(MetroThemeStyle), themeBox.Text);
                 Refresh();
-                Configuration.WriteKey("StyleTheme", themeBox.Text, "Theming");
+                Settings.Write("Theme", themeBox.Text, "Display");
             }
             catch (Exception Error)
             {
-                Exceptions.LogError(Error, "Failed to Change Injector Form Theme", Exceptions.ExceptionId.UnknownFail, false, true);
+                Exceptions.LogError(Error, "Failed to Change Injector Form Theme", false, true);
             }
         }
 
@@ -214,11 +217,11 @@ namespace Minecraft_Wii_U_Mod_Injector
                 Style = (MetroColorStyle)Enum.Parse(typeof(MetroColorStyle), colorsBox.Text);
                 StyleManager.Style = (MetroColorStyle)Enum.Parse(typeof(MetroColorStyle), colorsBox.Text);
                 Refresh();
-                Configuration.WriteKey("ColorTheme", colorsBox.Text, "Theming");
+                Settings.Write("Color", colorsBox.Text, "Display");
             }
             catch (Exception Error)
             {
-                Exceptions.LogError(Error, "Failed to Change Injector Form Color", Exceptions.ExceptionId.UnknownFail, false, true);
+                Exceptions.LogError(Error, "Failed to Change Injector Form Color", false, true);
             }
         }
 
@@ -228,19 +231,23 @@ namespace Minecraft_Wii_U_Mod_Injector
             {
                 if (discordRpcCheckBox.Checked)
                 {
-                    Configuration.WriteKey("DiscordRPC", "true", "Discord");
+                    Settings.Write("DiscordRPC", "true", "Discord");
                     DiscordRP.Initialize();
-                    DiscordRP.SetPresence("Modding", "Idle");
+
+                    if (isConnected)
+                        DiscordRP.SetPresence("Connected", "Idle");
+                    else
+                        DiscordRP.SetPresence("Disconnected", "Idle");
                 }
                 else
                 {
-                    Configuration.WriteKey("DiscordRPC", "false", "Discord");
+                    Settings.Write("DiscordRPC", "false", "Discord");
                     DiscordRP.Deinitialize();
                 }
             }
             catch (Exception Error)
             {
-                Exceptions.LogError(Error, "Failed to Toggle Discord RPC", Exceptions.ExceptionId.UnknownFail, false, true);
+                Exceptions.LogError(Error, "Failed to Toggle Discord RPC", false, true);
             }
         }
 
@@ -263,7 +270,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             }
             catch (Exception Error)
             {
-                Exceptions.LogError(Error, "Failed to Reset Config", Exceptions.ExceptionId.UnknownFail, false, true);
+                Exceptions.LogError(Error, "Failed to Reset Config", false, true);
             }
         }
         private void releaseNotesToggleClicked(object sender, EventArgs e)
@@ -273,18 +280,18 @@ namespace Minecraft_Wii_U_Mod_Injector
                 if (releaseNotesToggle.Checked)
                 {
                     buildNotesBox.Text = Properties.Resources.releaseNote;
-                    Configuration.WriteKey("ReleaseNotes", "current", "Display");
+                    Settings.Write("ReleaseNotes", "current", "Display");
                 }
                 else
                 {
                     buildNotesBox.Text = Properties.Resources.releaseNotes;
-                    Configuration.WriteKey("ReleaseNotes", "all", "Display");
+                    Settings.Write("ReleaseNotes", "all", "Display");
                 }
 
             }
             catch (Exception Error)
             {
-                Exceptions.LogError(Error, "Failed to Toggle Release Notes", Exceptions.ExceptionId.UnknownFail, false, true);
+                Exceptions.LogError(Error, "Failed to Toggle Release Notes", false, true);
             }
         }
 
@@ -574,7 +581,7 @@ namespace Minecraft_Wii_U_Mod_Injector
 
         private void JumpHeightSliderChanged(object sender, EventArgs e)
         {
-            GeckoU.WriteFloat(0x1066A7CC, (float)JumpHeightSlider.Value);
+            GeckoU.WriteFloat(0x1066AAD4, (float)JumpHeightSlider.Value);
         }
 
         private void ReachSliderChanged(object sender, EventArgs e)
@@ -654,6 +661,42 @@ namespace Minecraft_Wii_U_Mod_Injector
         private void playerModelScaleSliderChanged(object sender, EventArgs e)
         {
             GeckoU.WriteFloat(0x1091B90C, Convert.ToSingle(playerModelScaleSlider.Value));
+        }
+
+        private void GamepadSplitscreenToggled(object sender, EventArgs e)
+        {
+            GeckoU.WriteUIntToggle(0x02F6EFFC, off, 0x8863072A, GamepadSplitscreen.Checked); //CConsoleMinecraftApp::IsDrcPreventingSplitscreen((void))
+        }
+
+        private void DisableTeleportingToggled(object sender, EventArgs e)
+        {
+            GeckoU.WriteUIntToggle(0x0336367C, blr, 0x9421FED0, DisableTeleporting.Checked); //TeleportCommand::execute
+        }
+
+        private void GodModeToggled(object sender, EventArgs e)
+        {
+            GeckoU.WriteUIntToggle(0x02727824, nop, 0xFC20F890, GodMode.Checked); //Player::getAbsorptionAmount((void))
+        }
+
+        private void GodModeAllToggled(object sender, EventArgs e)
+        {
+            GeckoU.WriteUIntToggle(0x025795C0, nop, 0xFC20F890, GodMode.Checked); //LivingEntity::setHealth((float))
+        }
+
+        private void FieldOfViewSplitSliderChanged(object sender, EventArgs e)
+        {
+            GeckoU.WriteFloat(0x108C7870, (float)FieldOfViewSplitSlider.Value);
+        }
+
+        private void FrictionSliderChanged(object sender, EventArgs e)
+        {
+            if (!tooHighWarn && FrictionSlider.Value > 2 || !tooHighWarn && FrictionSlider.Value < -2)
+            {
+                Messaging.Show(MessageBoxIcon.Exclamation, "Setting the friction too high (aswell as too negative) can crash your game, be warned.");
+                tooHighWarn = true;
+            }
+
+            GeckoU.WriteFloat(0x1066AAE8, (float)FrictionSlider.Value);
         }
 
         #region commands

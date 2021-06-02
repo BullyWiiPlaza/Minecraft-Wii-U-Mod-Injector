@@ -30,7 +30,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
                     Injector.connectBtn.Text = "Connect";
                     Injector.connectBtn.Enabled = true;
                     SetupTabs(Injector, false);
-                    Injector.wiiuIpv4Box.Text = Configuration.ReadKey("WiiUHost", "Wii U");
+                    Injector.wiiuIpv4Box.Text = Settings.Read("WiiUIPv4", "Wii U");
                     currentState = StatesIds.Disconnected;
                     break;
 
@@ -38,7 +38,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
                     Injector.connectBtn.Enabled = true;
                     Injector.connectBtn.Text = "Disconnect";
                     SetupTabs(Injector, true);
-                    Configuration.WriteKey("WiiUHost", Injector.wiiuIpv4Box.Text, "Wii U");
+                    Settings.Write("WiiUIPv4", Injector.wiiuIpv4Box.Text, "Wii U");
                     currentState = StatesIds.Connected;
                     break;
 

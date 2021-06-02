@@ -45,7 +45,7 @@
             this.kashiieraCredits.AutoSize = true;
             this.kashiieraCredits.Location = new System.Drawing.Point(23, 60);
             this.kashiieraCredits.Name = "kashiieraCredits";
-            this.kashiieraCredits.Size = new System.Drawing.Size(757, 209);
+            this.kashiieraCredits.Size = new System.Drawing.Size(757, 266);
             this.kashiieraCredits.TabIndex = 0;
             this.kashiieraCredits.Text = resources.GetString("kashiieraCredits.Text");
             // 
@@ -59,7 +59,7 @@
             this.appIco.HorizontalScrollbarSize = 10;
             this.appIco.Location = new System.Drawing.Point(774, 37);
             this.appIco.Name = "appIco";
-            this.appIco.Size = new System.Drawing.Size(255, 257);
+            this.appIco.Size = new System.Drawing.Size(255, 289);
             this.appIco.TabIndex = 45;
             this.appIco.VerticalScrollbarBarColor = true;
             this.appIco.VerticalScrollbarHighlightOnWheel = false;
@@ -69,7 +69,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1033, 317);
+            this.ClientSize = new System.Drawing.Size(1033, 338);
             this.Controls.Add(this.appIco);
             this.Controls.Add(this.kashiieraCredits);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

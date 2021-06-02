@@ -9,7 +9,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
     {
         public static MainForm Injector = new MainForm();
 
-        public static string version = "v5.1.4.p2";
+        public static string version = "v5.1.4";
 
         public Setup(MainForm window)
         {
@@ -24,16 +24,17 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
                 Injector.buildVerTitleLbl.Text = "Patch Notes for " + version;
                 Injector.buildTile.Text = version;
 
+                DiscordRP.Initialize();
+
                 SetupUserPrefs();
                 DebugCheck();
 
-                DiscordRP.Initialize();
                 DiscordRP.SetPresence("Disconnected", "Idle");
                 States.SwapState(States.StatesIds.Disconnected);
             }
             catch (Exception error)
             {
-                Exceptions.LogError(error, "Failed to setup", Exceptions.ExceptionId.FailedtoSetup, false, true);
+                Exceptions.LogError(error, "Failed to setup", false, true);
                 DiscordRP.Deinitialize();
                 Environment.Exit(0);
             }
@@ -43,23 +44,31 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
         {
             try
             {
-                Injector.Theme = Injector.StyleManager.Theme = (MetroThemeStyle)Enum.Parse(typeof(MetroThemeStyle), Configuration.ReadKey("StyleTheme", "Theming"));
-                Injector.Style = Injector.StyleManager.Style = (MetroColorStyle)Enum.Parse(typeof(MetroColorStyle), Configuration.ReadKey("ColorTheme", "Theming"));
+                try
+                {
+                    Injector.Theme = Injector.StyleManager.Theme = (MetroThemeStyle)Enum.Parse(typeof(MetroThemeStyle), Settings.Read("Theme", "Display"));
+                    Injector.Style = Injector.StyleManager.Style = (MetroColorStyle)Enum.Parse(typeof(MetroColorStyle), Settings.Read("Color", "Display"));
 
-                Injector.themeBox.Text = Configuration.ReadKey("StyleTheme", "Theming");
-                Injector.colorsBox.Text = Configuration.ReadKey("ColorTheme", "Theming");
+                    Injector.themeBox.Text = Settings.Read("Theme", "Display");
+                    Injector.colorsBox.Text = Settings.Read("Color", "Display");
 
-                if (Configuration.KeyEqualsTo("DiscordRPC", "true", "Discord"))
+                    Injector.MainTabs.SelectedIndex = Convert.ToInt32(Settings.Read("TabIndex", "Display"));
+                }
+                catch (Exception)
+                { }
+
+                if (Settings.EqualsTo("DiscordRPC", "true", "Discord"))
                     Injector.discordRpcCheckBox.Checked = true;
                 else
                     Injector.discordRpcCheckBox.Checked = false;
+                
 
-                if (Configuration.KeyEqualsTo("ReleaseNotes", "all", "Display"))
+                if (Settings.EqualsTo("ReleaseNotes", "all", "Display"))
                 {
                     Injector.releaseNotesToggle.Checked = false;
                     Injector.buildNotesBox.Text = Properties.Resources.releaseNotes;
                 }
-                else if (Configuration.KeyEqualsTo("ReleaseNotes", "current", "Display"))
+                else if (Settings.EqualsTo("ReleaseNotes", "current", "Display"))
                 {
                     Injector.releaseNotesToggle.Checked = true;
                     Injector.buildNotesBox.Text = Properties.Resources.releaseNote;
@@ -68,7 +77,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
             }
             catch (Exception error)
             {
-                Exceptions.LogError(error, "Exception in SetupUserPrefs() \n" + error, Exceptions.ExceptionId.FailedtoSetup, false, true);
+                Exceptions.LogError(error, "Exception in SetupUserPrefs()", false, true);
                 Environment.Exit(0);
             }
         }
@@ -77,11 +86,11 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
         {
             try
             {
-                if (!Configuration.KeyExists("debug", "Advanced") || Configuration.KeyEqualsTo("debug", "false", "Advanced"))
+                if (!Settings.Exists("debug", "Advanced") || Settings.EqualsTo("debug", "false", "Advanced"))
                 {
-                    Size tabSize = new Size(140, 1);
-                    Size verSize = new Size(160, 147);
-                    Point verLoc = new Point(0, 461);
+                    Size tabSize = new(140, 1);
+                    Size verSize = new(160, 147);
+                    Point verLoc = new(0, 461);
                     Injector.debugTile.Visible = false;
                     Injector.MainTabs.HideTab(Injector.debugTab);
                     Injector.MainTabs.ItemSize = tabSize;
@@ -90,9 +99,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
                 }
             }
             catch(Exception)
-            {
-
-            }
+            { }
         }
     }
 }

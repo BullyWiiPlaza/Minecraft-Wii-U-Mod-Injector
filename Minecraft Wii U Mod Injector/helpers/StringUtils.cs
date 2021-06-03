@@ -117,6 +117,17 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
             return output;
         }
 
+        public static string ByteArrayToString(byte[] ba)
+        {
+            var hex = new StringBuilder(ba.Length * 2);
+            foreach (var b in ba)
+            {
+                hex.AppendFormat("{0:x2}", b);
+            }
+
+            return hex.ToString();
+        }
+
         public static object Parse(Type type, string stringValue, bool ignoreCase)
         {
             object output = null;

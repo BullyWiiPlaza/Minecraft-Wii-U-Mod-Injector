@@ -258,7 +258,7 @@
             this.worldTile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.worldTile.TileCount = 2;
             this.worldTile.UseSelectable = true;
-            this.worldTile.Click += new System.EventHandler(this.swapTab);
+            this.worldTile.Click += new System.EventHandler(this.SwapTab);
             // 
             // generalTile
             // 
@@ -273,7 +273,7 @@
             this.generalTile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.generalTile.TileCount = 3;
             this.generalTile.UseSelectable = true;
-            this.generalTile.Click += new System.EventHandler(this.swapTab);
+            this.generalTile.Click += new System.EventHandler(this.SwapTab);
             // 
             // minigamesTile
             // 
@@ -288,7 +288,7 @@
             this.minigamesTile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.minigamesTile.TileCount = 4;
             this.minigamesTile.UseSelectable = true;
-            this.minigamesTile.Click += new System.EventHandler(this.swapTab);
+            this.minigamesTile.Click += new System.EventHandler(this.SwapTab);
             // 
             // settingsTile
             // 
@@ -303,7 +303,7 @@
             this.settingsTile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.settingsTile.TileCount = 6;
             this.settingsTile.UseSelectable = true;
-            this.settingsTile.Click += new System.EventHandler(this.swapTab);
+            this.settingsTile.Click += new System.EventHandler(this.SwapTab);
             // 
             // buildTile
             // 
@@ -2837,7 +2837,7 @@
             this.releaseNotesToggle.Text = "Only display current release notes";
             this.ToolTipManager.SetToolTip(this.releaseNotesToggle, "Whether to only view the current release notes or all previous release notes");
             this.releaseNotesToggle.UseSelectable = true;
-            this.releaseNotesToggle.CheckedChanged += new System.EventHandler(this.releaseNotesToggleClicked);
+            this.releaseNotesToggle.CheckedChanged += new System.EventHandler(this.ReleaseNotesToggleClicked);
             // 
             // resetConfigBtn
             // 
@@ -2850,7 +2850,7 @@
             this.resetConfigBtn.Text = "Reset Configuration";
             this.ToolTipManager.SetToolTip(this.resetConfigBtn, "Resets the configuration file");
             this.resetConfigBtn.UseSelectable = true;
-            this.resetConfigBtn.Click += new System.EventHandler(this.resetConfigClicked);
+            this.resetConfigBtn.Click += new System.EventHandler(this.ResetConfigClicked);
             // 
             // settingsLogo
             // 
@@ -2880,7 +2880,7 @@
             this.discordRpcCheckBox.Text = "Discord Rich Presence";
             this.ToolTipManager.SetToolTip(this.discordRpcCheckBox, resources.GetString("discordRpcCheckBox.ToolTip"));
             this.discordRpcCheckBox.UseSelectable = true;
-            this.discordRpcCheckBox.CheckedChanged += new System.EventHandler(this.discordRpcToggleChecked);
+            this.discordRpcCheckBox.CheckedChanged += new System.EventHandler(this.DiscordRpcToggleChecked);
             // 
             // colorsBox
             // 
@@ -3021,7 +3021,7 @@
             this.homeTile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.homeTile.UseSelectable = true;
             this.homeTile.UseTileImage = true;
-            this.homeTile.Click += new System.EventHandler(this.swapTab);
+            this.homeTile.Click += new System.EventHandler(this.SwapTab);
             // 
             // StyleMngr
             // 
@@ -3047,7 +3047,7 @@
             this.playersTile.TileCount = 1;
             this.playersTile.UseSelectable = true;
             this.playersTile.UseTileImage = true;
-            this.playersTile.Click += new System.EventHandler(this.swapTab);
+            this.playersTile.Click += new System.EventHandler(this.SwapTab);
             // 
             // commandsTile
             // 
@@ -3062,7 +3062,7 @@
             this.commandsTile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.commandsTile.TileCount = 5;
             this.commandsTile.UseSelectable = true;
-            this.commandsTile.Click += new System.EventHandler(this.swapTab);
+            this.commandsTile.Click += new System.EventHandler(this.SwapTab);
             // 
             // debugTile
             // 
@@ -3077,7 +3077,7 @@
             this.debugTile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.debugTile.TileCount = 7;
             this.debugTile.UseSelectable = true;
-            this.debugTile.Click += new System.EventHandler(this.swapTab);
+            this.debugTile.Click += new System.EventHandler(this.SwapTab);
             // 
             // MainForm
             // 

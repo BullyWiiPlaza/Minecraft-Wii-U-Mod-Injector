@@ -10,16 +10,12 @@ namespace WiiU.GeckoU
 {
     public class GeckoUCore
     {
-
         #region base vars
 
         public GeckoUConnect GUC;
-
-        private static int default_port = 7331;
-
-        private const uint packetsize = 0x400;
-        private const uint uplpacketsize = 0x400;
-        private uint maximumMemoryChunkSize = 0x400;
+        
+        private const int default_port = 7331;
+        private const uint maximumMemoryChunkSize = 0x400;
 
         public enum FTDICommand
         {
@@ -40,58 +36,41 @@ namespace WiiU.GeckoU
             GUC = new GeckoUConnect(host, default_port);
         }
 
-        /// <summary>
-        /// Initialize the GeckoUConnection Class
-        /// </summary>
-        /// <param name="host">Wii U IP Address</param>
-        /// <param name="port">Wii U Port</param>
-        public GeckoUCore(string host, int port)
-        {
-            GUC = new GeckoUConnect(host, port);
-        }
         #endregion connection
 
         #region the magic
         protected FTDICommand GeckoURead(byte[] recbyte, uint nobytes)
         {
-            uint bytes_read = 0;
+            uint bytesRead;
 
             try
             {
-                GUC.Read(recbyte, nobytes, ref bytes_read);
+                GUC.Read(recbyte, nobytes, out bytesRead);
             }
             catch (IOException)
             {
                 GUC.Close();
                 return FTDICommand.CMD_FatalError;
             }
-            if (bytes_read != nobytes)
-            {
-                return FTDICommand.CMD_ResultError;
-            }
 
-            return FTDICommand.CMD_OK;
+            return bytesRead != nobytes ? FTDICommand.CMD_ResultError : FTDICommand.CMD_OK;
         }
 
-        protected FTDICommand GeckoUWrite(byte[] sendbyte, Int32 nobytes)
+        protected FTDICommand GeckoUWrite(byte[] sendbyte, int nobytes)
         {
-            uint bytes_written = 0;
+            uint bytesWritten;
 
             try
             {
-                GUC.Write(sendbyte, nobytes, ref bytes_written);
+                GUC.Write(sendbyte, nobytes, out bytesWritten);
             }
             catch (IOException)
             {
                 GUC.Close();
                 return FTDICommand.CMD_FatalError;
             }
-            if (bytes_written != nobytes)
-            {
-                return FTDICommand.CMD_ResultError;
-            }
 
-            return FTDICommand.CMD_OK;
+            return bytesWritten != nobytes ? FTDICommand.CMD_ResultError : FTDICommand.CMD_OK;
         }
 
         /// <summary>
@@ -99,7 +78,7 @@ namespace WiiU.GeckoU
         /// </summary>
         /// <param name="id">The raw command id</param>
         /// <returns>FTDICommand</returns>
-        public FTDICommand RawCommand(Byte id)
+        public FTDICommand RawCommand(byte id)
         {
             return GeckoUWrite(BitConverter.GetBytes(id), 1);
         }
@@ -110,8 +89,7 @@ namespace WiiU.GeckoU
         /// <param name="command">Command to send</param>
         private void SendCommand(GeckoUCommands.Command command)
         {
-            uint bytesWritten = 0;
-            GUC.Write(new[] { (byte)command }, 1, ref bytesWritten);
+            GUC.Write(new[] { (byte)command }, 1, out _);
         }
 
         /// <summary>
@@ -126,9 +104,8 @@ namespace WiiU.GeckoU
             {
                 RequestBytes(address, length);
 
-                uint bytesRead = 0;
                 var response = new byte[1];
-                GUC.Read(response, 1, ref bytesRead);
+                GUC.Read(response, 1, out _);
 
                 var ms = new MemoryStream();
 
@@ -137,10 +114,10 @@ namespace WiiU.GeckoU
                     return ms.ToArray();
                 }
 
-                uint remainingBytesCount = length;
+                var remainingBytesCount = length;
                 while (remainingBytesCount > 0)
                 {
-                    uint chunkSize = remainingBytesCount;
+                    var chunkSize = remainingBytesCount;
 
                     if (chunkSize > maximumMemoryChunkSize)
                     {
@@ -148,8 +125,7 @@ namespace WiiU.GeckoU
                     }
 
                     var buffer = new byte[chunkSize];
-                    bytesRead = 0;
-                    GUC.Read(buffer, chunkSize, ref bytesRead);
+                    GUC.Read(buffer, chunkSize, out _);
 
                     ms.Write(buffer, 0, (int)chunkSize);
 
@@ -160,7 +136,7 @@ namespace WiiU.GeckoU
             }
             catch (Exception)
             {
-
+                // ignored
             }
 
             return null;
@@ -177,15 +153,14 @@ namespace WiiU.GeckoU
             {
                 SendCommand(GeckoUCommands.Command.COMMAND_READ_MEMORY);
 
-                uint bytesRead = 0;
                 var bytes = BitConverter.GetBytes(ByteSwap.Swap(address));
                 var bytes2 = BitConverter.GetBytes(ByteSwap.Swap(address + length));
-                GUC.Write(bytes, 4, ref bytesRead);
-                GUC.Write(bytes2, 4, ref bytesRead);
+                GUC.Write(bytes, 4, out _);
+                GUC.Write(bytes2, 4, out _);
             }
             catch (Exception)
             {
-
+                // ignored
             }
         }
 
@@ -199,15 +174,14 @@ namespace WiiU.GeckoU
         {
             var length = bytes.Length;
 
-            uint endAddress = address + (uint)bytes.Length;
-            uint bytesRead = 0;
-            GUC.Write(bytes, length, ref bytesRead);
+            var endAddress = address + (uint)bytes.Length;
+            GUC.Write(bytes, length, out _);
 
             return endAddress;
         }
 
         /// <summary>
-        /// Write Paritioned Bytes to the Wii U
+        /// Write paritioned bytes to the Wii U
         /// </summary>
         /// <param name="address">Address to write to</param>
         /// <param name="byteChunks">Partitioned Bytes to write</param>
@@ -220,26 +194,25 @@ namespace WiiU.GeckoU
             {
                 SendCommand(GeckoUCommands.Command.COMMAND_UPLOAD_MEMORY);
 
-                uint bytesRead = 0;
                 var start = BitConverter.GetBytes(ByteSwap.Swap(address));
                 var end = BitConverter.GetBytes(ByteSwap.Swap(address + length));
 
-                GUC.Write(start, 4, ref bytesRead);
-                GUC.Write(end, 4, ref bytesRead);
+                GUC.Write(start, 4, out _);
+                GUC.Write(end, 4, out _);
 
                 enumerable.Aggregate(address, UploadBytes);
             }
-            catch (Exception Error)
+            catch (Exception error)
             {
-                MessageBox.Show(Error.Message);
+                MessageBox.Show(error.Message);
             }
         }
 
         /// <summary>
-        /// Paritition the given Bytes
+        /// Paritition the given bytes
         /// </summary>
         /// <param name="bytes">Bytes to partition</param>
-        /// <param name="chunkSize">Size of the Chunk</param>
+        /// <param name="chunkSize">Size of the chunk</param>
         /// <returns></returns>
         private static IEnumerable<byte[]> Partition(byte[] bytes, uint chunkSize)
         {
@@ -259,9 +232,9 @@ namespace WiiU.GeckoU
         /// <summary>
         /// Copy a range of bytes
         /// </summary>
-        /// <param name="src">The Bytes to copy from</param>
+        /// <param name="src">The bytes to copy from</param>
         /// <param name="start">Start of the range</param>
-        /// <param name="end">End of the Range</param>
+        /// <param name="end">End of the range</param>
         /// <returns>Bytes</returns>
         private static byte[] CopyOfRange(byte[] src, long start, long end)
         {
@@ -276,7 +249,7 @@ namespace WiiU.GeckoU
         /// </summary>
         /// <param name="address">Address to write</param>
         /// <param name="bytes">Bytes to write</param>
-        public void WriteBytes(uint address, byte[] bytes) //Write bytes to the specified memory address
+        public void WriteBytes(uint address, byte[] bytes) // Write bytes to the specified memory address
         {
             var partitionedBytes = Partition(bytes, maximumMemoryChunkSize);
             WritePartitionedBytes(address, partitionedBytes);
@@ -338,15 +311,15 @@ namespace WiiU.GeckoU
         /// <param name="address">The function address to call</param>
         /// <param name="args">The arguements to pass through</param>
         /// <returns>UInt64</returns>
-        public UInt64 CallFunction64(uint address, params uint[] args)
+        public ulong CallFunction64(uint address, params uint[] args)
         {
-            byte[] buffer = new Byte[4 + 8 * 4];
+            var buffer = new byte[4 + 8 * 4];
 
             address = ByteSwap.Swap(address);
 
             BitConverter.GetBytes(address).CopyTo(buffer, 0);
 
-            for (int i = 0; i < 8; i++)
+            for (var i = 0; i < 8; i++)
             {
                 if (i < args.Length)
                 {
@@ -369,8 +342,8 @@ namespace WiiU.GeckoU
 
             return ByteSwap.Swap(BitConverter.ToUInt64(buffer, 0));
         }
-
-        public void RPCToggle(uint address1, uint address2, uint value1, uint value2, bool toggle)
+        
+        public void RpcToggle(uint address1, uint address2, uint value1, uint value2, bool toggle)
         {
             switch (toggle)
             {
@@ -391,8 +364,8 @@ namespace WiiU.GeckoU
         /// </summary>
         /// <param name="address">Address to write to</param>
         /// <param name="value">Value to write to when toggled</param>
-        /// <param name="originalValue">Value to write to when Untoggled</param>
-        /// <param name="checkBox">The CheckBox control to monitor</param>
+        /// <param name="originalValue">Value to write to when untoggled</param>
+        /// <param name="toggle">The toggle state</param>
         public void WriteUIntToggle(uint address, uint value, uint originalValue, bool toggle)
         {
             switch(toggle)
@@ -412,8 +385,8 @@ namespace WiiU.GeckoU
         /// </summary>
         /// <param name="address">Address to write to</param>
         /// <param name="value">Value to write to when toggled</param>
-        /// <param name="originalValue">Value to write to when Untoggled</param>
-        /// <param name="checkBox">The CheckBox control to monitor</param>
+        /// <param name="originalValue">Value to write to when untoggled</param>
+        /// <param name="toggle">The toggle state</param>
         public void WriteLongToggle(uint address, long value, long originalValue, bool toggle)
         {
             switch (toggle)
@@ -434,7 +407,7 @@ namespace WiiU.GeckoU
         /// <param name="address">Address to write to</param>
         /// <param name="value">Value to write to when toggled</param>
         /// <param name="originalValue">Value to write to when Untoggled</param>
-        /// <param name="checkBox">The CheckBox control to monitor</param>
+        /// <param name="toggle">The toggle state</param>
         public void WriteULongToggle(uint address, ulong value, ulong originalValue, bool toggle)
         {
             switch (toggle)
@@ -461,9 +434,9 @@ namespace WiiU.GeckoU
             {
                 Array.Reverse(bytes);
             }
-            catch (Exception Error)
+            catch (Exception error)
             {
-                MessageBox.Show(Error.Message);
+                MessageBox.Show(error.Message);
             }
             WriteBytes(address, bytes);
         }
@@ -480,9 +453,9 @@ namespace WiiU.GeckoU
             {
                 Array.Reverse(bytes);
             }
-            catch (Exception Error)
+            catch (Exception error)
             {
-                MessageBox.Show(Error.Message);
+                MessageBox.Show(error.Message);
             }
             WriteBytes(address, bytes);
         }
@@ -499,9 +472,9 @@ namespace WiiU.GeckoU
             {
                 Array.Reverse(bytes);
             }
-            catch (Exception Error)
+            catch (Exception error)
             {
-                MessageBox.Show(Error.Message);
+                MessageBox.Show(error.Message);
             }
             WriteBytes(address, bytes);
         }
@@ -518,13 +491,13 @@ namespace WiiU.GeckoU
             {
                 Array.Reverse(bytes);
             }
-            catch (ArgumentNullException Error)
+            catch (ArgumentNullException error)
             {
-                MessageBox.Show(Error.Message);
+                MessageBox.Show(error.Message);
             }
-            catch (RankException Error)
+            catch (RankException error)
             {
-                MessageBox.Show(Error.Message);
+                MessageBox.Show(error.Message);
             }
 
             WriteBytes(address, bytes);
@@ -542,13 +515,13 @@ namespace WiiU.GeckoU
             {
                 Array.Reverse(bytes);
             }
-            catch (ArgumentNullException Error)
+            catch (ArgumentNullException error)
             {
-                MessageBox.Show(Error.Message);
+                MessageBox.Show(error.Message);
             }
-            catch (RankException Error)
+            catch (RankException error)
             {
-                MessageBox.Show(Error.Message);
+                MessageBox.Show(error.Message);
             }
 
             WriteBytes(address, bytes);
@@ -566,9 +539,9 @@ namespace WiiU.GeckoU
             {
                 Array.Reverse(bytes);
             }
-            catch (Exception Error)
+            catch (Exception error)
             {
-                MessageBox.Show(Error.Message);
+                MessageBox.Show(error.Message);
             }
             WriteBytes(address, bytes);
         }
@@ -585,9 +558,9 @@ namespace WiiU.GeckoU
             {
                 Array.Reverse(bytes);
             }
-            catch (Exception Error)
+            catch (Exception error)
             {
-                MessageBox.Show(Error.Message);
+                MessageBox.Show(error.Message);
             }
             WriteBytes(address, bytes);
         }
@@ -723,15 +696,15 @@ namespace WiiU.GeckoU
 
         public string PeekString(int length, uint address)
         {
-            string peekedString = string.Empty;
+            var peekedString = string.Empty;
 
-            for (int i = 0; i < length; i += 4)
+            for (var i = 0; i < length; i += 4)
             {
                 peekedString += PeekUInt(address += (uint)i).ToString("X");
             }
 
-            byte[] ToUTF8 = StringUtils.StringToByteArray(peekedString);
-            return Encoding.UTF8.GetString(ToUTF8).Replace("\0", "");
+            var toUtf8 = StringUtils.StringToByteArray(peekedString);
+            return Encoding.UTF8.GetString(toUtf8).Replace("\0", "");
         }
 
         #endregion reading
@@ -745,9 +718,8 @@ namespace WiiU.GeckoU
         {
             SendCommand(GeckoUCommands.Command.COMMAND_GET_DATA_BUFFER_SIZE);
 
-            uint bytesRead = 0;
             var response = new byte[4];
-            GUC.Read(response, 4, ref bytesRead);
+            GUC.Read(response, 4, out _);
 
             Array.Reverse(response);
             var bufferSize = BitConverter.ToUInt32(response, 0);
@@ -763,9 +735,8 @@ namespace WiiU.GeckoU
         {
             SendCommand(GeckoUCommands.Command.COMMAND_GET_CODE_HANDLER_ADDRESS);
 
-            uint bytesRead = 0;
             var response = new byte[4];
-            GUC.Read(response, 4, ref bytesRead);
+            GUC.Read(response, 4, out _);
 
             Array.Reverse(response);
             var bufferSize = BitConverter.ToUInt32(response, 0);
@@ -781,9 +752,8 @@ namespace WiiU.GeckoU
         {
             SendCommand(GeckoUCommands.Command.COMMAND_ACCOUNT_IDENTIFIER);
 
-            uint bytesRead = 0;
             var response = new byte[4];
-            GUC.Read(response, 4, ref bytesRead);
+            GUC.Read(response, 4, out _);
 
             Array.Reverse(response);
             var bufferSize = BitConverter.ToUInt32(response, 0);
@@ -795,9 +765,8 @@ namespace WiiU.GeckoU
         {
             SendCommand(GeckoUCommands.Command.COMMAND_GET_VERSION_HASH);
 
-            uint bytesRead = 0;
             var response = new byte[4];
-            GUC.Read(response, 4, ref bytesRead);
+            GUC.Read(response, 4, out _);
 
             Array.Reverse(response);
             var versionHash = BitConverter.ToUInt32(response, 0);
@@ -823,13 +792,13 @@ namespace WiiU.GeckoU
         /// <summary>
         /// Fits in a value into the given value
         /// </summary>
-        /// <param name="baseval">The base value</param>
+        /// <param name="baseValue">The base value</param>
         /// <param name="val">The value to fit in</param>
         /// <returns></returns>
-        public uint Mix(uint baseval, decimal val)
+        public uint Mix(uint baseValue, decimal val)
         {
-            decimal d = 0x0 + val;
-            uint value = baseval;
+            var d = 0x0 + val;
+            var value = baseValue;
             value += (uint)d * 0x01;
 
             return value;
@@ -841,7 +810,7 @@ namespace WiiU.GeckoU
         /// <param name="buffer">The buffer to clear</param>
         public void ClearBuffer(byte[] buffer)
         {
-            for (int i = 0; i < buffer.Length; i++)
+            for (var i = 0; i < buffer.Length; i++)
             {
                 buffer[i] = 0;
             }
@@ -849,7 +818,7 @@ namespace WiiU.GeckoU
 
         public void ClearString(uint address)
         {
-            uint clearingAddress = address;
+            var clearingAddress = address;
 
             while (PeekUInt(clearingAddress) != 0x00000000)
             {
@@ -860,7 +829,7 @@ namespace WiiU.GeckoU
 
         public void ClearString(uint addressStart, uint addressEnd)
         {
-            uint clearingAddress = addressStart;
+            var clearingAddress = addressStart;
 
             while (PeekUInt(clearingAddress) != 0x00000000)
             {
@@ -873,14 +842,6 @@ namespace WiiU.GeckoU
             }
         }
 
-        /// <summary>
-        /// Checks if Gecko U is still connected to the Wii U
-        /// </summary>
-        /// <returns>Boolean</returns>
-        public bool GeckoUConnected()
-        {
-            return GUC.networkStream != null;
-        }
         #endregion misc
     }
 }

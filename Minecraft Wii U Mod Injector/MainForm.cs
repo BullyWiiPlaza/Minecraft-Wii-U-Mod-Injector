@@ -223,16 +223,16 @@ namespace Minecraft_Wii_U_Mod_Injector
             try
             {
                 if (discordRpcCheckBox.Checked)
-                {
-                    Settings.Write("DiscordRPC", "true", "Discord");
+                {                  
                     DiscordRP.Initialize();
                     DiscordRP.SetPresence(IsConnected ? "Connected" : "Disconnected", "Idle");
                 }
                 else
                 {
-                    Settings.Write("DiscordRPC", "false", "Discord");
                     DiscordRP.Deinitialize();
                 }
+
+                Settings.Write("DiscordRPC", discordRpcCheckBox.Checked.ToString(), "Discord");
             }
             catch (Exception error)
             {
@@ -278,6 +278,18 @@ namespace Minecraft_Wii_U_Mod_Injector
                     Settings.Write("ReleaseNotes", "all", "Display");
                 }
 
+            }
+            catch (Exception Error)
+            {
+                Exceptions.LogError(Error, "Failed to Toggle Release Notes", false, true);
+            }
+        }
+
+        private void CheckForPreReleaseToggled(object sender, EventArgs e)
+        {
+            try
+            {
+                Settings.Write("PrereleaseOptIn", CheckForPreRelease.Checked.ToString(), "Updates");
             }
             catch (Exception Error)
             {

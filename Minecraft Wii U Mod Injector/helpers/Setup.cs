@@ -1,7 +1,11 @@
 ﻿using MetroFramework;
 using Minecraft_Wii_U_Mod_Injector.Helpers.Files;
+using Minecraft_Wii_U_Mod_Injector.Helpers.Winforms;
+using Octokit;
 using System;
+using System.Collections.Generic;
 using System.Drawing;
+using System.Threading.Tasks;
 
 namespace Minecraft_Wii_U_Mod_Injector.Helpers
 {
@@ -9,7 +13,9 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
     {
         public static MainForm Injector = new MainForm();
 
-        public static string version = "v5.1.4";
+        public static string LocalVer = "v5.1.5";
+        public static string GitVer = string.Empty;
+        public static bool PreRelease = false;
 
         public Setup(MainForm window)
         {
@@ -20,9 +26,11 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
         {
             try
             {
+                RetrieveGitVersion();
+
                 Injector.buildNotesBox.Text = Properties.Resources.releaseNotes;
-                Injector.buildVerTitleLbl.Text = "Patch Notes for " + version;
-                Injector.buildTile.Text = version;
+                Injector.buildVerTitleLbl.Text = "Patch Notes for " + LocalVer;
+                Injector.buildTile.Text = LocalVer;
 
                 DiscordRP.Initialize();
 
@@ -40,6 +48,36 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
             }
         }
 
+        public static async Task RetrieveGitVersion()
+        {
+            try
+            {
+                GitHubClient VerChecker = new GitHubClient(new ProductHeaderValue("MCWiiUMIClient"));
+                IReadOnlyList<Release> Releases = await VerChecker.Repository.Release.GetAll("Kashiiera", "Minecraft-Wii-U-Mod-Injector");
+
+                GitVer = Releases[0].TagName;
+                PreRelease = Releases[0].Prerelease;
+
+                if (LocalVer != GitVer && !PreRelease)
+                {
+                    Messaging.Show("The current injector version " + LocalVer + " is outdated! Please download version " + GitVer + " at " +
+                        "https://github.com/Kashiiera/Minecraft-Wii-U-Mod-Injector/releases \nas it may contain feature updates, bug fixes and more.");
+                    Environment.Exit(0);
+                }
+                if (LocalVer != GitVer && Settings.EqualsTo("PrereleaseOptIn", "True", "Updates") && PreRelease)
+                {
+                    Messaging.Show("Thank you for being interested in testing pre-releases!\nThe current injector version " + LocalVer +
+                        " is outdated! Please download version " + GitVer + " at " + "https://github.com/Kashiiera/Minecraft-Wii-U-Mod-Injector/releases \nas it may contain feature updates, bug fixes and more.");
+                    Environment.Exit(0);
+                }
+            }
+            catch (Exception Error)
+            {
+                Exceptions.LogError(Error, "Something went wrong while retrieving the latest release, please try re-launching the Injector.\n" +
+                    "If this issue persist please contact the developers.", false, false);
+            }
+        }
+
         public static void SetupUserPrefs()
         {
             try
@@ -53,16 +91,13 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
                     Injector.colorsBox.Text = Settings.Read("Color", "Display");
 
                     Injector.MainTabs.SelectedIndex = Convert.ToInt32(Settings.Read("TabIndex", "Display"));
+
+                    Injector.CheckForPreRelease.Checked = Convert.ToBoolean(Settings.Read("PrereleaseOptIn", "Updates"));
+                    Injector.discordRpcCheckBox.Checked = Convert.ToBoolean(Settings.Read("DiscordRPC", "Discord"));
                 }
                 catch (Exception)
                 { }
-
-                if (Settings.EqualsTo("DiscordRPC", "true", "Discord"))
-                    Injector.discordRpcCheckBox.Checked = true;
-                else
-                    Injector.discordRpcCheckBox.Checked = false;
                 
-
                 if (Settings.EqualsTo("ReleaseNotes", "all", "Display"))
                 {
                     Injector.releaseNotesToggle.Checked = false;

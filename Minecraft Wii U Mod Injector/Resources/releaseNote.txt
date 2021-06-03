@@ -1,45 +1,22 @@
-[Release v5.1.4 (2nd of June, 2021)]
+[Release v5.1.5 (3rd of June, 2021)]
 
 [Information]
 If you are experiencing issues, please report them on the Github Issues page or by joining the official discord server.
 
-This update adds new mods, fixes mods, new features and a ton of bug fixes
+This update adds an automatic release checker and fixes a Gecko U connection bug
 
 [Changes]
 
-+ New mods:
-
-- Player Model Scale
-- God Mode (Self and All)
-- Splitscreen Field of View
-- Friction
-- Gamepad Splitscreen
-- Disable Teleport Command
-- Read NNID Name
-- Disable Gamepad Input (Debug Mode Only)
-- Gamepad Power Button turns off display (Debug Mode Only)
-
 + General Additions & Updates:
 
-- Added Frequently Asked Questions
-- Changed up the "Worlds / Blocks" tab to match others
-- UI Changes
-- Better and detailed error details
-- Errors are now automatically copied to your clipboard
-- Updated settings keys (WiiUHost -> WiiUIPv4, StyleTheme -> Theme, ColorTheme -> Color)
-- Debug Mode added (more info can be found at https://github.com/Kashiiera/Minecraft-Wii-U-Mod-Injector/wiki/Settings-File-(.ini))
-- Faster Discord RPC
-- When you launch the Injector you will now be on your last viewed tab
+- The Injector will check the GitHub repo automatically for a newer version
+- Interested in checking out pre-releases? You can now Opt-in within the Settings page
+- Settings Page renamed
+- Navigation buttons are now centered
 
 [Fixes]
 
-+ Fixed mods:
-
-- Climb Anywhere
-- Jump Height
-- Infinite Durability
-
 + General Fixes
 
-- Reported Errors that were not intended to be display are now hidden as intended
-- Discord Rich Presence will keep time elapsed the same
+- Disconnecting and reconnecting will now work as intended, previously reconnecting would result in no memory modifications
+- More UI Changes to fit the new wider tab pages

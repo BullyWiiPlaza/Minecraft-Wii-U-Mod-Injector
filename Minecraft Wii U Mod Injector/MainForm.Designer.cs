@@ -38,9 +38,6 @@
             this.MainTabs = new MetroFramework.Controls.MetroTabControl();
             this.mainTab = new MetroFramework.Controls.MetroTabPage();
             this.openFaqInfo = new MetroFramework.Controls.MetroButton();
-            this.githubRepoDesc = new MetroFramework.Controls.MetroLabel();
-            this.githubRepo = new MetroFramework.Controls.MetroLabel();
-            this.githubLogo = new MetroFramework.Controls.MetroPanel();
             this.buildNotesBox = new MetroFramework.Controls.MetroTextBox();
             this.buildVerTitleLbl = new MetroFramework.Controls.MetroLabel();
             this.creditsBtn = new MetroFramework.Controls.MetroButton();
@@ -186,9 +183,10 @@
             this.giveAmountBox = new MetroFramework.Controls.MetroTextBox();
             this.giveIDBox = new MetroFramework.Controls.MetroTextBox();
             this.settingsTab = new MetroFramework.Controls.MetroTabPage();
+            this.CheckForPreRelease = new MetroFramework.Controls.MetroCheckBox();
+            this.settingsLogo = new MetroFramework.Controls.MetroPanel();
             this.releaseNotesToggle = new MetroFramework.Controls.MetroCheckBox();
             this.resetConfigBtn = new MetroFramework.Controls.MetroButton();
-            this.settingsLogo = new MetroFramework.Controls.MetroPanel();
             this.discordRpcCheckBox = new MetroFramework.Controls.MetroCheckBox();
             this.colorsBox = new MetroFramework.Controls.MetroComboBox();
             this.ThemeLabel = new MetroFramework.Controls.MetroLabel();
@@ -332,7 +330,7 @@
             this.MainTabs.Location = new System.Drawing.Point(155, 61);
             this.MainTabs.Multiline = true;
             this.MainTabs.Name = "MainTabs";
-            this.MainTabs.SelectedIndex = 6;
+            this.MainTabs.SelectedIndex = 0;
             this.MainTabs.Size = new System.Drawing.Size(989, 545);
             this.MainTabs.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.MainTabs.TabIndex = 0;
@@ -341,9 +339,6 @@
             // mainTab
             // 
             this.mainTab.Controls.Add(this.openFaqInfo);
-            this.mainTab.Controls.Add(this.githubRepoDesc);
-            this.mainTab.Controls.Add(this.githubRepo);
-            this.mainTab.Controls.Add(this.githubLogo);
             this.mainTab.Controls.Add(this.buildNotesBox);
             this.mainTab.Controls.Add(this.buildVerTitleLbl);
             this.mainTab.Controls.Add(this.creditsBtn);
@@ -376,47 +371,6 @@
             this.ToolTipManager.SetToolTip(this.openFaqInfo, "View the credits for the Mod Injector");
             this.openFaqInfo.UseSelectable = true;
             this.openFaqInfo.Click += new System.EventHandler(this.openFaqInfoClicked);
-            // 
-            // githubRepoDesc
-            // 
-            this.githubRepoDesc.AutoSize = true;
-            this.githubRepoDesc.FontSize = MetroFramework.MetroLabelSize.Small;
-            this.githubRepoDesc.Location = new System.Drawing.Point(860, 262);
-            this.githubRepoDesc.Name = "githubRepoDesc";
-            this.githubRepoDesc.Size = new System.Drawing.Size(91, 30);
-            this.githubRepoDesc.TabIndex = 45;
-            this.githubRepoDesc.Text = "Check back often\r\nfor new releases!";
-            this.githubRepoDesc.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // githubRepo
-            // 
-            this.githubRepo.AutoSize = true;
-            this.githubRepo.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.githubRepo.Location = new System.Drawing.Point(851, 236);
-            this.githubRepo.Name = "githubRepo";
-            this.githubRepo.Size = new System.Drawing.Size(107, 25);
-            this.githubRepo.TabIndex = 44;
-            this.githubRepo.Text = "Github Repo";
-            this.githubRepo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // githubLogo
-            // 
-            this.githubLogo.BackColor = System.Drawing.Color.Transparent;
-            this.githubLogo.BackgroundImage = global::Minecraft_Wii_U_Mod_Injector.Properties.Resources.githubLogo;
-            this.githubLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.githubLogo.HorizontalScrollbarBarColor = true;
-            this.githubLogo.HorizontalScrollbarHighlightOnWheel = false;
-            this.githubLogo.HorizontalScrollbarSize = 10;
-            this.githubLogo.Location = new System.Drawing.Point(852, 133);
-            this.githubLogo.Name = "githubLogo";
-            this.githubLogo.Size = new System.Drawing.Size(104, 100);
-            this.githubLogo.TabIndex = 43;
-            this.ToolTipManager.SetToolTip(this.githubLogo, "Redirects you to the Github Repostery to download the source code or new releases" +
-        "");
-            this.githubLogo.VerticalScrollbarBarColor = true;
-            this.githubLogo.VerticalScrollbarHighlightOnWheel = false;
-            this.githubLogo.VerticalScrollbarSize = 10;
-            this.githubLogo.Click += new System.EventHandler(this.githubLogoClicked);
             // 
             // buildNotesBox
             // 
@@ -1890,10 +1844,10 @@
             // MapTextEditor
             // 
             this.MapTextEditor.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.MapTextEditor.Location = new System.Drawing.Point(508, 498);
+            this.MapTextEditor.Location = new System.Drawing.Point(509, 498);
             this.MapTextEditor.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.MapTextEditor.Name = "MapTextEditor";
-            this.MapTextEditor.Size = new System.Drawing.Size(450, 25);
+            this.MapTextEditor.Size = new System.Drawing.Size(465, 25);
             this.MapTextEditor.TabIndex = 20;
             this.MapTextEditor.Tag = "";
             this.MapTextEditor.Text = "Map Text Editor";
@@ -1930,10 +1884,10 @@
             // ExitGame
             // 
             this.ExitGame.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ExitGame.Location = new System.Drawing.Point(7, 498);
+            this.ExitGame.Location = new System.Drawing.Point(8, 498);
             this.ExitGame.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.ExitGame.Name = "ExitGame";
-            this.ExitGame.Size = new System.Drawing.Size(450, 25);
+            this.ExitGame.Size = new System.Drawing.Size(465, 25);
             this.ExitGame.TabIndex = 15;
             this.ExitGame.Tag = "";
             this.ExitGame.Text = "Exit Game";
@@ -2345,7 +2299,7 @@
             // 
             this.gamemodeCmdLbl.AutoSize = true;
             this.gamemodeCmdLbl.BackColor = System.Drawing.Color.Transparent;
-            this.gamemodeCmdLbl.Location = new System.Drawing.Point(11, 167);
+            this.gamemodeCmdLbl.Location = new System.Drawing.Point(33, 168);
             this.gamemodeCmdLbl.Name = "gamemodeCmdLbl";
             this.gamemodeCmdLbl.Size = new System.Drawing.Size(83, 19);
             this.gamemodeCmdLbl.TabIndex = 46;
@@ -2358,7 +2312,7 @@
             this.gamemodePanel.HorizontalScrollbarBarColor = true;
             this.gamemodePanel.HorizontalScrollbarHighlightOnWheel = false;
             this.gamemodePanel.HorizontalScrollbarSize = 10;
-            this.gamemodePanel.Location = new System.Drawing.Point(7, 177);
+            this.gamemodePanel.Location = new System.Drawing.Point(29, 178);
             this.gamemodePanel.Name = "gamemodePanel";
             this.gamemodePanel.Size = new System.Drawing.Size(180, 145);
             this.gamemodePanel.TabIndex = 45;
@@ -2381,7 +2335,7 @@
             // worldCmdLbl
             // 
             this.worldCmdLbl.AutoSize = true;
-            this.worldCmdLbl.Location = new System.Drawing.Point(755, 2);
+            this.worldCmdLbl.Location = new System.Drawing.Point(777, 3);
             this.worldCmdLbl.Name = "worldCmdLbl";
             this.worldCmdLbl.Size = new System.Drawing.Size(45, 19);
             this.worldCmdLbl.TabIndex = 44;
@@ -2395,7 +2349,7 @@
             this.worldPanel.HorizontalScrollbarBarColor = true;
             this.worldPanel.HorizontalScrollbarHighlightOnWheel = false;
             this.worldPanel.HorizontalScrollbarSize = 10;
-            this.worldPanel.Location = new System.Drawing.Point(751, 12);
+            this.worldPanel.Location = new System.Drawing.Point(773, 13);
             this.worldPanel.Name = "worldPanel";
             this.worldPanel.Size = new System.Drawing.Size(180, 145);
             this.worldPanel.TabIndex = 43;
@@ -2430,7 +2384,7 @@
             // playerCmdLbl
             // 
             this.playerCmdLbl.AutoSize = true;
-            this.playerCmdLbl.Location = new System.Drawing.Point(569, 2);
+            this.playerCmdLbl.Location = new System.Drawing.Point(591, 3);
             this.playerCmdLbl.Name = "playerCmdLbl";
             this.playerCmdLbl.Size = new System.Drawing.Size(45, 19);
             this.playerCmdLbl.TabIndex = 42;
@@ -2443,7 +2397,7 @@
             this.playerPanel.HorizontalScrollbarBarColor = true;
             this.playerPanel.HorizontalScrollbarHighlightOnWheel = false;
             this.playerPanel.HorizontalScrollbarSize = 10;
-            this.playerPanel.Location = new System.Drawing.Point(565, 12);
+            this.playerPanel.Location = new System.Drawing.Point(587, 13);
             this.playerPanel.Name = "playerPanel";
             this.playerPanel.Size = new System.Drawing.Size(180, 145);
             this.playerPanel.TabIndex = 41;
@@ -2466,7 +2420,7 @@
             // timeCmdLbl
             // 
             this.timeCmdLbl.AutoSize = true;
-            this.timeCmdLbl.Location = new System.Drawing.Point(383, 2);
+            this.timeCmdLbl.Location = new System.Drawing.Point(405, 3);
             this.timeCmdLbl.Name = "timeCmdLbl";
             this.timeCmdLbl.Size = new System.Drawing.Size(40, 19);
             this.timeCmdLbl.TabIndex = 40;
@@ -2480,7 +2434,7 @@
             this.timePanel.HorizontalScrollbarBarColor = true;
             this.timePanel.HorizontalScrollbarHighlightOnWheel = false;
             this.timePanel.HorizontalScrollbarSize = 10;
-            this.timePanel.Location = new System.Drawing.Point(379, 12);
+            this.timePanel.Location = new System.Drawing.Point(401, 13);
             this.timePanel.Name = "timePanel";
             this.timePanel.Size = new System.Drawing.Size(180, 145);
             this.timePanel.TabIndex = 39;
@@ -2536,7 +2490,7 @@
             // enchantCmdLbl
             // 
             this.enchantCmdLbl.AutoSize = true;
-            this.enchantCmdLbl.Location = new System.Drawing.Point(197, 2);
+            this.enchantCmdLbl.Location = new System.Drawing.Point(219, 3);
             this.enchantCmdLbl.Name = "enchantCmdLbl";
             this.enchantCmdLbl.Size = new System.Drawing.Size(59, 19);
             this.enchantCmdLbl.TabIndex = 38;
@@ -2551,7 +2505,7 @@
             this.enchantPanel.HorizontalScrollbarBarColor = true;
             this.enchantPanel.HorizontalScrollbarHighlightOnWheel = false;
             this.enchantPanel.HorizontalScrollbarSize = 10;
-            this.enchantPanel.Location = new System.Drawing.Point(193, 12);
+            this.enchantPanel.Location = new System.Drawing.Point(215, 13);
             this.enchantPanel.Name = "enchantPanel";
             this.enchantPanel.Size = new System.Drawing.Size(180, 145);
             this.enchantPanel.TabIndex = 37;
@@ -2652,7 +2606,7 @@
             // giveCmdLabel
             // 
             this.giveCmdLabel.AutoSize = true;
-            this.giveCmdLabel.Location = new System.Drawing.Point(11, 2);
+            this.giveCmdLabel.Location = new System.Drawing.Point(33, 3);
             this.giveCmdLabel.Name = "giveCmdLabel";
             this.giveCmdLabel.Size = new System.Drawing.Size(38, 19);
             this.giveCmdLabel.TabIndex = 36;
@@ -2669,7 +2623,7 @@
             this.giveCommandPanel.HorizontalScrollbarBarColor = true;
             this.giveCommandPanel.HorizontalScrollbarHighlightOnWheel = false;
             this.giveCommandPanel.HorizontalScrollbarSize = 10;
-            this.giveCommandPanel.Location = new System.Drawing.Point(7, 12);
+            this.giveCommandPanel.Location = new System.Drawing.Point(29, 13);
             this.giveCommandPanel.Name = "giveCommandPanel";
             this.giveCommandPanel.Size = new System.Drawing.Size(180, 145);
             this.giveCommandPanel.TabIndex = 35;
@@ -2805,6 +2759,7 @@
             // 
             // settingsTab
             // 
+            this.settingsTab.Controls.Add(this.CheckForPreRelease);
             this.settingsTab.Controls.Add(this.settingsLogo);
             this.settingsTab.Controls.Add(this.releaseNotesToggle);
             this.settingsTab.Controls.Add(this.resetConfigBtn);
@@ -2826,6 +2781,34 @@
             this.settingsTab.VerticalScrollbarBarColor = true;
             this.settingsTab.VerticalScrollbarHighlightOnWheel = false;
             this.settingsTab.VerticalScrollbarSize = 10;
+            // 
+            // CheckForPreRelease
+            // 
+            this.CheckForPreRelease.AutoSize = true;
+            this.CheckForPreRelease.Location = new System.Drawing.Point(421, 76);
+            this.CheckForPreRelease.Name = "CheckForPreRelease";
+            this.CheckForPreRelease.Size = new System.Drawing.Size(181, 15);
+            this.CheckForPreRelease.TabIndex = 47;
+            this.CheckForPreRelease.Text = "Check for pre-release versions";
+            this.ToolTipManager.SetToolTip(this.CheckForPreRelease, "Whether to only view the current release notes or all previous release notes");
+            this.CheckForPreRelease.UseSelectable = true;
+            this.CheckForPreRelease.CheckedChanged += new System.EventHandler(this.CheckForPreReleaseToggled);
+            // 
+            // settingsLogo
+            // 
+            this.settingsLogo.BackColor = System.Drawing.Color.Transparent;
+            this.settingsLogo.BackgroundImage = global::Minecraft_Wii_U_Mod_Injector.Properties.Resources.Icon;
+            this.settingsLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.settingsLogo.HorizontalScrollbarBarColor = true;
+            this.settingsLogo.HorizontalScrollbarHighlightOnWheel = false;
+            this.settingsLogo.HorizontalScrollbarSize = 10;
+            this.settingsLogo.Location = new System.Drawing.Point(65, 145);
+            this.settingsLogo.Name = "settingsLogo";
+            this.settingsLogo.Size = new System.Drawing.Size(909, 368);
+            this.settingsLogo.TabIndex = 44;
+            this.settingsLogo.VerticalScrollbarBarColor = true;
+            this.settingsLogo.VerticalScrollbarHighlightOnWheel = false;
+            this.settingsLogo.VerticalScrollbarSize = 10;
             // 
             // releaseNotesToggle
             // 
@@ -2851,22 +2834,6 @@
             this.ToolTipManager.SetToolTip(this.resetConfigBtn, "Resets the configuration file");
             this.resetConfigBtn.UseSelectable = true;
             this.resetConfigBtn.Click += new System.EventHandler(this.ResetConfigClicked);
-            // 
-            // settingsLogo
-            // 
-            this.settingsLogo.BackColor = System.Drawing.Color.Transparent;
-            this.settingsLogo.BackgroundImage = global::Minecraft_Wii_U_Mod_Injector.Properties.Resources.Icon;
-            this.settingsLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.settingsLogo.HorizontalScrollbarBarColor = true;
-            this.settingsLogo.HorizontalScrollbarHighlightOnWheel = false;
-            this.settingsLogo.HorizontalScrollbarSize = 10;
-            this.settingsLogo.Location = new System.Drawing.Point(65, 145);
-            this.settingsLogo.Name = "settingsLogo";
-            this.settingsLogo.Size = new System.Drawing.Size(909, 368);
-            this.settingsLogo.TabIndex = 44;
-            this.settingsLogo.VerticalScrollbarBarColor = true;
-            this.settingsLogo.VerticalScrollbarHighlightOnWheel = false;
-            this.settingsLogo.VerticalScrollbarSize = 10;
             // 
             // discordRpcCheckBox
             // 
@@ -3314,9 +3281,6 @@
         private MetroFramework.Controls.MetroButton GameModeCommandBtn;
         public MetroFramework.Controls.MetroCheckBox releaseNotesToggle;
         public MetroFramework.Controls.MetroTextBox buildNotesBox;
-        private MetroFramework.Controls.MetroPanel githubLogo;
-        public MetroFramework.Controls.MetroLabel githubRepo;
-        public MetroFramework.Controls.MetroLabel githubRepoDesc;
         public System.Windows.Forms.NumericUpDown playerModelScaleSlider;
         public MetroFramework.Controls.MetroLabel PlayerModelScale;
         public MetroFramework.Controls.MetroButton openFaqInfo;
@@ -3334,5 +3298,6 @@
         public System.Windows.Forms.NumericUpDown FrictionSlider;
         public MetroFramework.Controls.MetroLabel Friction;
         public MetroFramework.Controls.MetroCheckBox metroCheckBox1;
+        public MetroFramework.Controls.MetroCheckBox CheckForPreRelease;
     }
 }

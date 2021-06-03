@@ -1,17 +1,16 @@
 ﻿using System;
 using System.IO;
 using System.Net.Sockets;
-using System.Threading;
 
 namespace WiiU.GeckoU
 {
     public class GeckoUConnect
     {
-        TcpClient tcpClient = null;
-        public NetworkStream networkStream = null;
-
-        public string Host { get; private set; }
-        public int Port { get; private set; }
+        private TcpClient _tcpClient;
+        public NetworkStream NetworkStream;
+        
+        public string Host { get; }
+        public int Port { get; }
 
         public GeckoUConnect(string host, int port)
         {
@@ -24,23 +23,23 @@ namespace WiiU.GeckoU
         /// </summary>
         public void Connect()
         {
-            tcpClient = new TcpClient()
+            _tcpClient = new TcpClient()
             {
                 NoDelay = true
             };
 
-            IAsyncResult tcpAsyncResult = tcpClient.BeginConnect(Host, Port, null, null);
-            WaitHandle tcpWaitHandle = tcpAsyncResult.AsyncWaitHandle;
+            var tcpAsyncResult = _tcpClient.BeginConnect(Host, Port, null, null);
+            var tcpWaitHandle = tcpAsyncResult.AsyncWaitHandle;
 
             try
             {
                 if (!tcpAsyncResult.AsyncWaitHandle.WaitOne(TimeSpan.FromSeconds(5), false))
                 {
-                    tcpClient.Close();
+                    _tcpClient.Close();
                     throw new IOException("Unable to Connect to the Wii U, connection timed-out", new TimeoutException());
                 }
 
-                tcpClient.EndConnect(tcpAsyncResult);
+                _tcpClient.EndConnect(tcpAsyncResult);
                 tcpWaitHandle.Close();
             }
             catch
@@ -48,8 +47,8 @@ namespace WiiU.GeckoU
                 throw new IOException("Unable to connect to the Wii U, connection timed-out", new TimeoutException());
             }
 
-            networkStream = tcpClient.GetStream();
-            networkStream.ReadTimeout = networkStream.WriteTimeout = 10000;
+            NetworkStream = _tcpClient.GetStream();
+            NetworkStream.ReadTimeout = NetworkStream.WriteTimeout = 10000;
         }
 
         /// <summary>
@@ -59,13 +58,15 @@ namespace WiiU.GeckoU
         {
             try
             {
-                if(tcpClient != null)
+                if (_tcpClient == null)
                 {
-                    tcpClient.Close();
-                    tcpClient.Dispose();
-                    networkStream?.Close();
-                    networkStream?.Dispose();
+                    return;
                 }
+
+                _tcpClient.Close();
+                _tcpClient.Dispose();
+                NetworkStream?.Close();
+                NetworkStream?.Dispose();
             }
             catch (Exception)
             {
@@ -73,26 +74,8 @@ namespace WiiU.GeckoU
             }
             finally
             {
-                tcpClient = null;
-                networkStream = null;
-            }
-        }
-
-        /// <summary>
-        /// Flushes the NetworkStream
-        /// </summary>
-        public void Flush()
-        {
-            try
-            {
-                if(networkStream != null)
-                {
-                    networkStream.Flush();
-                }
-            }
-            catch(Exception)
-            {
-                throw new IOException("Unable to flush the Network Stream");
+                _tcpClient = null;
+                NetworkStream = null;
             }
         }
 
@@ -100,68 +83,29 @@ namespace WiiU.GeckoU
         /// Read from the Wii U from the buffer
         /// </summary>
         /// <param name="buffer">The Buffer</param>
-        /// <param name="nobytes">NoBytes</param>
+        /// <param name="byteCount">NoBytes</param>
         /// <param name="bytesRead">Amount of bytes read</param>
-        public void Read(byte[] buffer, uint nobytes, ref uint bytesRead)
+        public void Read(byte[] buffer, uint byteCount, ref uint bytesRead)
         {
             try
             {
-                if (networkStream != null)
+                if (NetworkStream == null)
                 {
-                    int offset = 0;
-                    bytesRead = 0;
-
-                    while (nobytes > 0)
-                    {
-                        int read = networkStream.Read(buffer, offset, (int)nobytes);
-
-                        if (read >= 0)
-                        {
-                            bytesRead += (uint)read;
-                            offset += read;
-                            nobytes -= (uint)read;
-                        }
-                        else
-                        {
-                            break;
-                        }
-                    }
-                }
-            }
-            catch (Exception e)
-            {
-                throw new IOException("Connection closed", e);
-            }
-        }
-
-        /// <summary>
-        /// Read from the Wii U from the buffer
-        /// </summary>
-        /// <param name="buffer">The Buffer</param>
-        /// <param name="nobytes">NoBytes</param>
-        /// <param name="bytesRead">Amount of bytes read</param>
-        public void Read(byte[] buffer, ulong nobytes, ref uint bytesRead)
-        {
-            try
-            {
-                int offset = 0;
-
-                if (networkStream == null)
-                {
-                    throw new IOException("The NetworkStream was null", new NullReferenceException());
+                    return;
                 }
 
+                var offset = 0;
                 bytesRead = 0;
 
-                while (nobytes > 0)
+                while (byteCount > 0)
                 {
-                    int read = networkStream.Read(buffer, offset, (int)nobytes);
+                    var read = NetworkStream.Read(buffer, offset, (int) byteCount);
 
                     if (read >= 0)
                     {
                         bytesRead += (uint)read;
                         offset += read;
-                        nobytes -= (uint)read;
+                        byteCount -= (uint)read;
                     }
                     else
                     {
@@ -169,9 +113,9 @@ namespace WiiU.GeckoU
                     }
                 }
             }
-            catch (Exception e)
+            catch (Exception exception)
             {
-                throw new IOException("Connection closed", e);
+                throw new IOException("Connection closed", exception);
             }
         }
 
@@ -179,33 +123,33 @@ namespace WiiU.GeckoU
         /// Write data to the Wii U from the Buffer
         /// </summary>
         /// <param name="buffer">The Buffer</param>
-        /// <param name="nobytes">NoBytes</param>
+        /// <param name="byteCount">NoBytes</param>
         /// <param name="bytesWritten">Amount of bytes written</param>
-        public void Write(byte[] buffer, int nobytes, ref uint bytesWritten)
+        public void Write(byte[] buffer, int byteCount, ref uint bytesWritten)
         {
             try
             {
-                if (networkStream == null)
+                if (NetworkStream == null)
                 {
                     throw new IOException("The NetworkStream was null", new NullReferenceException());
                 }
 
-                networkStream.Write(buffer, 0, nobytes);
+                NetworkStream.Write(buffer, 0, byteCount);
 
-                if (nobytes >= 0)
+                if (byteCount >= 0)
                 {
-                    bytesWritten = (uint)nobytes;
+                    bytesWritten = (uint)byteCount;
                 }
                 else
                 {
                     bytesWritten = 0;
                 }
 
-                networkStream.Flush();
+                NetworkStream.Flush();
             }
-            catch (Exception e)
+            catch (Exception exception)
             {
-                throw new IOException("Connection closed", e);
+                throw new IOException("Connection closed", exception);
             }
         }
     }

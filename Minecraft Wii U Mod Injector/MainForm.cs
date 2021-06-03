@@ -912,7 +912,7 @@ namespace Minecraft_Wii_U_Mod_Injector
         }
         private void vpadDisplaySwitchToggled(object sender, EventArgs e)
         {
-            GeckoU.RPCToggle(0x0112A9E4, 0x0112A9EC, 0x0, 0x0, vpadDisplaySwitch.Checked);
+            GeckoU.RpcToggle(0x0112A9E4, 0x0112A9EC, 0x0, 0x0, vpadDisplaySwitch.Checked);
         }
         #endregion
 

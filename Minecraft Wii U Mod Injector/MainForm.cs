@@ -22,24 +22,20 @@ namespace Minecraft_Wii_U_Mod_Injector
         public static GeckoUConnect GeckoUConnection;
 
         #endregion
-
+        
         #region bools
         private bool _isConnected;
-        public bool isConnected
+        public bool IsConnected
         {
-            get { return _isConnected; }
+            get => _isConnected;
             set
             {
                 _isConnected = value;
-
-                if (_isConnected)
-                    DiscordRP.SetPresence("Connected", MainTabs.SelectedTab.Text + " tab");
-                else
-                    DiscordRP.SetPresence("Disconnected", MainTabs.SelectedTab.Text + " tab");
+                DiscordRP.SetPresence(_isConnected ? "Connected" : "Disconnected", MainTabs.SelectedTab.Text + " tab");
             }
         }
 
-        private bool tooHighWarn = false;
+        private bool tooHighWarn;
         #endregion
 
         #region assembly
@@ -115,8 +111,8 @@ namespace Minecraft_Wii_U_Mod_Injector
             DiscordRP.Deinitialize();
             Settings.Write("TabIndex", MainTabs.SelectedIndex.ToString(), "Display");
         }
-
-        private void swapTab(object sender, EventArgs e)
+        
+        private void SwapTab(object sender, EventArgs e)
         {
             var tile = (MetroTile)sender;
 
@@ -125,17 +121,14 @@ namespace Minecraft_Wii_U_Mod_Injector
             else
                 return;
 
-            if (isConnected)
-                DiscordRP.SetPresence("Connected", MainTabs.SelectedTab.Text + " tab");
-            else
-                DiscordRP.SetPresence("Disconnected", MainTabs.SelectedTab.Text + " tab");
+            DiscordRP.SetPresence(IsConnected ? "Connected" : "Disconnected", MainTabs.SelectedTab.Text + " tab");
         }
 
         private void connectBtnClicked(object sender, EventArgs e)
         {
             try
             {
-                GeckoU = new GeckoUCore(wiiuIpv4Box.Text);
+                GeckoU ??= new GeckoUCore(wiiuIpv4Box.Text);
 
                 switch (States.currentState)
                 {
@@ -143,12 +136,12 @@ namespace Minecraft_Wii_U_Mod_Injector
                         States.SwapState(States.StatesIds.Connecting);
                         GeckoU.GUC.Connect();
                         States.SwapState(States.StatesIds.Connected);
-                        isConnected = true;
+                        IsConnected = true;
                         break;
 
                     case States.StatesIds.Connected:
                         GeckoU.GUC.Close();
-                        isConnected = false;
+                        IsConnected = false;
                         States.SwapState(States.StatesIds.Disconnected);
                         break;
                 }
@@ -224,8 +217,8 @@ namespace Minecraft_Wii_U_Mod_Injector
                 Exceptions.LogError(Error, "Failed to Change Injector Form Color", false, true);
             }
         }
-
-        private void discordRpcToggleChecked(object sender, EventArgs e)
+        
+        private void DiscordRpcToggleChecked(object sender, EventArgs e)
         {
             try
             {
@@ -233,11 +226,7 @@ namespace Minecraft_Wii_U_Mod_Injector
                 {
                     Settings.Write("DiscordRPC", "true", "Discord");
                     DiscordRP.Initialize();
-
-                    if (isConnected)
-                        DiscordRP.SetPresence("Connected", "Idle");
-                    else
-                        DiscordRP.SetPresence("Disconnected", "Idle");
+                    DiscordRP.SetPresence(IsConnected ? "Connected" : "Disconnected", "Idle");
                 }
                 else
                 {
@@ -245,13 +234,13 @@ namespace Minecraft_Wii_U_Mod_Injector
                     DiscordRP.Deinitialize();
                 }
             }
-            catch (Exception Error)
+            catch (Exception error)
             {
-                Exceptions.LogError(Error, "Failed to Toggle Discord RPC", false, true);
+                Exceptions.LogError(error, "Failed to Toggle Discord RPC", false, true);
             }
         }
-
-        private void resetConfigClicked(object sender, EventArgs e)
+        
+        private void ResetConfigClicked(object sender, EventArgs e)
         {
             try
             {
@@ -273,7 +262,8 @@ namespace Minecraft_Wii_U_Mod_Injector
                 Exceptions.LogError(Error, "Failed to Reset Config", false, true);
             }
         }
-        private void releaseNotesToggleClicked(object sender, EventArgs e)
+
+        private void ReleaseNotesToggleClicked(object sender, EventArgs e)
         {
             try
             {
@@ -331,10 +321,7 @@ namespace Minecraft_Wii_U_Mod_Injector
         }
         public static bool IsPointerLoaded()
         {
-            if (GeckoU.PeekUInt(GeckoU.PeekUInt(0x10A0A624) + 0x9C) == 0x0)
-                return false;
-            else
-                return true;
+            return GeckoU.PeekUInt(GeckoU.PeekUInt(0x10A0A624) + 0x9C) != 0x0;
         }
 
         #region memory editing

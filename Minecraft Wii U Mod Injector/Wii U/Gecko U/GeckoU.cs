@@ -13,7 +13,7 @@ namespace WiiU.GeckoU
         #region base vars
 
         public GeckoUConnect GUC;
-
+        
         private const int default_port = 7331;
         private const uint maximumMemoryChunkSize = 0x400;
 
@@ -41,11 +41,11 @@ namespace WiiU.GeckoU
         #region the magic
         protected FTDICommand GeckoURead(byte[] recbyte, uint nobytes)
         {
-            uint bytes_read = 0;
+            uint bytesRead;
 
             try
             {
-                GUC.Read(recbyte, nobytes, ref bytes_read);
+                GUC.Read(recbyte, nobytes, out bytesRead);
             }
             catch (IOException)
             {
@@ -53,16 +53,16 @@ namespace WiiU.GeckoU
                 return FTDICommand.CMD_FatalError;
             }
 
-            return bytes_read != nobytes ? FTDICommand.CMD_ResultError : FTDICommand.CMD_OK;
+            return bytesRead != nobytes ? FTDICommand.CMD_ResultError : FTDICommand.CMD_OK;
         }
 
         protected FTDICommand GeckoUWrite(byte[] sendbyte, int nobytes)
         {
-            uint bytes_written = 0;
+            uint bytesWritten;
 
             try
             {
-                GUC.Write(sendbyte, nobytes, ref bytes_written);
+                GUC.Write(sendbyte, nobytes, out bytesWritten);
             }
             catch (IOException)
             {
@@ -70,7 +70,7 @@ namespace WiiU.GeckoU
                 return FTDICommand.CMD_FatalError;
             }
 
-            return bytes_written != nobytes ? FTDICommand.CMD_ResultError : FTDICommand.CMD_OK;
+            return bytesWritten != nobytes ? FTDICommand.CMD_ResultError : FTDICommand.CMD_OK;
         }
 
         /// <summary>
@@ -89,8 +89,7 @@ namespace WiiU.GeckoU
         /// <param name="command">Command to send</param>
         private void SendCommand(GeckoUCommands.Command command)
         {
-            uint bytesWritten = 0;
-            GUC.Write(new[] { (byte)command }, 1, ref bytesWritten);
+            GUC.Write(new[] { (byte)command }, 1, out _);
         }
 
         /// <summary>
@@ -105,9 +104,8 @@ namespace WiiU.GeckoU
             {
                 RequestBytes(address, length);
 
-                uint bytesRead = 0;
                 var response = new byte[1];
-                GUC.Read(response, 1, ref bytesRead);
+                GUC.Read(response, 1, out _);
 
                 var ms = new MemoryStream();
 
@@ -127,8 +125,7 @@ namespace WiiU.GeckoU
                     }
 
                     var buffer = new byte[chunkSize];
-                    bytesRead = 0;
-                    GUC.Read(buffer, chunkSize, ref bytesRead);
+                    GUC.Read(buffer, chunkSize, out _);
 
                     ms.Write(buffer, 0, (int)chunkSize);
 
@@ -156,11 +153,10 @@ namespace WiiU.GeckoU
             {
                 SendCommand(GeckoUCommands.Command.COMMAND_READ_MEMORY);
 
-                uint bytesRead = 0;
                 var bytes = BitConverter.GetBytes(ByteSwap.Swap(address));
                 var bytes2 = BitConverter.GetBytes(ByteSwap.Swap(address + length));
-                GUC.Write(bytes, 4, ref bytesRead);
-                GUC.Write(bytes2, 4, ref bytesRead);
+                GUC.Write(bytes, 4, out _);
+                GUC.Write(bytes2, 4, out _);
             }
             catch (Exception)
             {
@@ -179,14 +175,13 @@ namespace WiiU.GeckoU
             var length = bytes.Length;
 
             var endAddress = address + (uint)bytes.Length;
-            uint bytesRead = 0;
-            GUC.Write(bytes, length, ref bytesRead);
+            GUC.Write(bytes, length, out _);
 
             return endAddress;
         }
 
         /// <summary>
-        /// Write Paritioned Bytes to the Wii U
+        /// Write paritioned bytes to the Wii U
         /// </summary>
         /// <param name="address">Address to write to</param>
         /// <param name="byteChunks">Partitioned Bytes to write</param>
@@ -199,12 +194,11 @@ namespace WiiU.GeckoU
             {
                 SendCommand(GeckoUCommands.Command.COMMAND_UPLOAD_MEMORY);
 
-                uint bytesRead = 0;
                 var start = BitConverter.GetBytes(ByteSwap.Swap(address));
                 var end = BitConverter.GetBytes(ByteSwap.Swap(address + length));
 
-                GUC.Write(start, 4, ref bytesRead);
-                GUC.Write(end, 4, ref bytesRead);
+                GUC.Write(start, 4, out _);
+                GUC.Write(end, 4, out _);
 
                 enumerable.Aggregate(address, UploadBytes);
             }
@@ -215,10 +209,10 @@ namespace WiiU.GeckoU
         }
 
         /// <summary>
-        /// Paritition the given Bytes
+        /// Paritition the given bytes
         /// </summary>
         /// <param name="bytes">Bytes to partition</param>
-        /// <param name="chunkSize">Size of the Chunk</param>
+        /// <param name="chunkSize">Size of the chunk</param>
         /// <returns></returns>
         private static IEnumerable<byte[]> Partition(byte[] bytes, uint chunkSize)
         {
@@ -238,9 +232,9 @@ namespace WiiU.GeckoU
         /// <summary>
         /// Copy a range of bytes
         /// </summary>
-        /// <param name="src">The Bytes to copy from</param>
+        /// <param name="src">The bytes to copy from</param>
         /// <param name="start">Start of the range</param>
-        /// <param name="end">End of the Range</param>
+        /// <param name="end">End of the range</param>
         /// <returns>Bytes</returns>
         private static byte[] CopyOfRange(byte[] src, long start, long end)
         {
@@ -255,7 +249,7 @@ namespace WiiU.GeckoU
         /// </summary>
         /// <param name="address">Address to write</param>
         /// <param name="bytes">Bytes to write</param>
-        public void WriteBytes(uint address, byte[] bytes) //Write bytes to the specified memory address
+        public void WriteBytes(uint address, byte[] bytes) // Write bytes to the specified memory address
         {
             var partitionedBytes = Partition(bytes, maximumMemoryChunkSize);
             WritePartitionedBytes(address, partitionedBytes);
@@ -724,9 +718,8 @@ namespace WiiU.GeckoU
         {
             SendCommand(GeckoUCommands.Command.COMMAND_GET_DATA_BUFFER_SIZE);
 
-            uint bytesRead = 0;
             var response = new byte[4];
-            GUC.Read(response, 4, ref bytesRead);
+            GUC.Read(response, 4, out _);
 
             Array.Reverse(response);
             var bufferSize = BitConverter.ToUInt32(response, 0);
@@ -742,9 +735,8 @@ namespace WiiU.GeckoU
         {
             SendCommand(GeckoUCommands.Command.COMMAND_GET_CODE_HANDLER_ADDRESS);
 
-            uint bytesRead = 0;
             var response = new byte[4];
-            GUC.Read(response, 4, ref bytesRead);
+            GUC.Read(response, 4, out _);
 
             Array.Reverse(response);
             var bufferSize = BitConverter.ToUInt32(response, 0);
@@ -760,9 +752,8 @@ namespace WiiU.GeckoU
         {
             SendCommand(GeckoUCommands.Command.COMMAND_ACCOUNT_IDENTIFIER);
 
-            uint bytesRead = 0;
             var response = new byte[4];
-            GUC.Read(response, 4, ref bytesRead);
+            GUC.Read(response, 4, out _);
 
             Array.Reverse(response);
             var bufferSize = BitConverter.ToUInt32(response, 0);
@@ -774,9 +765,8 @@ namespace WiiU.GeckoU
         {
             SendCommand(GeckoUCommands.Command.COMMAND_GET_VERSION_HASH);
 
-            uint bytesRead = 0;
             var response = new byte[4];
-            GUC.Read(response, 4, ref bytesRead);
+            GUC.Read(response, 4, out _);
 
             Array.Reverse(response);
             var versionHash = BitConverter.ToUInt32(response, 0);

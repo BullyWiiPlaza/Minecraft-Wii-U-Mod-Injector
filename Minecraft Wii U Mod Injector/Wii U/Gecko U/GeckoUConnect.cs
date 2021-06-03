@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Net.Sockets;
+using Minecraft_Wii_U_Mod_Injector.Helpers;
 
 namespace WiiU.GeckoU
 {
@@ -23,7 +24,9 @@ namespace WiiU.GeckoU
         /// </summary>
         public void Connect()
         {
-            _tcpClient = new TcpClient()
+            Console.WriteLine("Connecting...");
+
+            _tcpClient = new TcpClient
             {
                 NoDelay = true
             };
@@ -49,6 +52,8 @@ namespace WiiU.GeckoU
 
             NetworkStream = _tcpClient.GetStream();
             NetworkStream.ReadTimeout = NetworkStream.WriteTimeout = 10000;
+
+            Console.WriteLine("Connected successfully...");
         }
 
         /// <summary>
@@ -56,15 +61,12 @@ namespace WiiU.GeckoU
         /// </summary>
         public void Close()
         {
+            Console.WriteLine("Closing connection...");
+
             try
             {
-                if (_tcpClient == null)
-                {
-                    return;
-                }
-
-                _tcpClient.Close();
-                _tcpClient.Dispose();
+                _tcpClient?.Close();
+                _tcpClient?.Dispose();
                 NetworkStream?.Close();
                 NetworkStream?.Dispose();
             }
@@ -85,37 +87,27 @@ namespace WiiU.GeckoU
         /// <param name="buffer">The Buffer</param>
         /// <param name="byteCount">NoBytes</param>
         /// <param name="bytesRead">Amount of bytes read</param>
-        public void Read(byte[] buffer, uint byteCount, ref uint bytesRead)
+        public void Read(byte[] buffer, uint byteCount, out uint bytesRead)
         {
-            try
+            var offset = 0;
+            bytesRead = 0;
+
+            while (byteCount > 0)
             {
-                if (NetworkStream == null)
+                Console.WriteLine("Reading " + byteCount + " from the network stream...");
+                var read = NetworkStream.Read(buffer, offset, (int)byteCount);
+                Console.WriteLine("Read buffer: " + StringUtils.ByteArrayToString(buffer));
+
+                if (read >= 0)
                 {
-                    return;
+                    bytesRead += (uint)read;
+                    offset += read;
+                    byteCount -= (uint)read;
                 }
-
-                var offset = 0;
-                bytesRead = 0;
-
-                while (byteCount > 0)
+                else
                 {
-                    var read = NetworkStream.Read(buffer, offset, (int) byteCount);
-
-                    if (read >= 0)
-                    {
-                        bytesRead += (uint)read;
-                        offset += read;
-                        byteCount -= (uint)read;
-                    }
-                    else
-                    {
-                        break;
-                    }
+                    break;
                 }
-            }
-            catch (Exception exception)
-            {
-                throw new IOException("Connection closed", exception);
             }
         }
 
@@ -125,32 +117,22 @@ namespace WiiU.GeckoU
         /// <param name="buffer">The Buffer</param>
         /// <param name="byteCount">NoBytes</param>
         /// <param name="bytesWritten">Amount of bytes written</param>
-        public void Write(byte[] buffer, int byteCount, ref uint bytesWritten)
+        public void Write(byte[] buffer, int byteCount, out uint bytesWritten)
         {
-            try
+            Console.WriteLine("Writing to the network stream: " + StringUtils.ByteArrayToString(buffer));
+            NetworkStream.Write(buffer, 0, byteCount);
+
+            if (byteCount >= 0)
             {
-                if (NetworkStream == null)
-                {
-                    throw new IOException("The NetworkStream was null", new NullReferenceException());
-                }
-
-                NetworkStream.Write(buffer, 0, byteCount);
-
-                if (byteCount >= 0)
-                {
-                    bytesWritten = (uint)byteCount;
-                }
-                else
-                {
-                    bytesWritten = 0;
-                }
-
-                NetworkStream.Flush();
+                bytesWritten = (uint)byteCount;
             }
-            catch (Exception exception)
+            else
             {
-                throw new IOException("Connection closed", exception);
+                bytesWritten = 0;
             }
+
+            Console.WriteLine("Flushing network stream...");
+            NetworkStream.Flush();
         }
     }
 }

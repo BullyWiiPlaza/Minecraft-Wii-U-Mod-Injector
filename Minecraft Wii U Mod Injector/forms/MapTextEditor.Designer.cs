@@ -33,9 +33,9 @@
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.MapText = new MetroFramework.Controls.MetroTextBox();
             this.SetMapText = new MetroFramework.Controls.MetroButton();
-            this.StyleManager = new MetroFramework.Components.MetroStyleManager(this.components);
+            this.StyleMngr = new MetroFramework.Components.MetroStyleManager(this.components);
             this.variablesBtn = new MetroFramework.Controls.MetroButton();
-            ((System.ComponentModel.ISupportInitialize)(this.StyleManager)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.StyleMngr)).BeginInit();
             this.SuspendLayout();
             // 
             // metroLabel1
@@ -87,9 +87,9 @@
             this.SetMapText.UseSelectable = true;
             this.SetMapText.Click += new System.EventHandler(this.SetMapTextClicked);
             // 
-            // StyleManager
+            // StyleMngr
             // 
-            this.StyleManager.Owner = this;
+            this.StyleMngr.Owner = this;
             // 
             // variablesBtn
             // 
@@ -116,7 +116,7 @@
             this.Resizable = false;
             this.Text = "Map Text Editor";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Exiting);
-            ((System.ComponentModel.ISupportInitialize)(this.StyleManager)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.StyleMngr)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -127,7 +127,7 @@
         private MetroFramework.Controls.MetroLabel metroLabel1;
         private MetroFramework.Controls.MetroTextBox MapText;
         private MetroFramework.Controls.MetroButton SetMapText;
-        private MetroFramework.Components.MetroStyleManager StyleManager;
+        private MetroFramework.Components.MetroStyleManager StyleMngr;
         private MetroFramework.Controls.MetroButton variablesBtn;
     }
 }

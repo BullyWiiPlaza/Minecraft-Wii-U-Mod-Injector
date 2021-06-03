@@ -200,7 +200,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             try
             {
                 Theme = (MetroThemeStyle)Enum.Parse(typeof(MetroThemeStyle), themeBox.Text);
-                StyleManager.Theme = (MetroThemeStyle)Enum.Parse(typeof(MetroThemeStyle), themeBox.Text);
+                StyleMngr.Theme = (MetroThemeStyle)Enum.Parse(typeof(MetroThemeStyle), themeBox.Text);
                 Refresh();
                 Settings.Write("Theme", themeBox.Text, "Display");
             }
@@ -215,7 +215,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             try
             {
                 Style = (MetroColorStyle)Enum.Parse(typeof(MetroColorStyle), colorsBox.Text);
-                StyleManager.Style = (MetroColorStyle)Enum.Parse(typeof(MetroColorStyle), colorsBox.Text);
+                StyleMngr.Style = (MetroColorStyle)Enum.Parse(typeof(MetroColorStyle), colorsBox.Text);
                 Refresh();
                 Settings.Write("Color", colorsBox.Text, "Display");
             }

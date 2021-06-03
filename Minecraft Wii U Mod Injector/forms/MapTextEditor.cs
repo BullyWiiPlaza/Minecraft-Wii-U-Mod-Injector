@@ -14,8 +14,8 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms
         {
             InitializeComponent();
             IWindow = IW;
-            StyleManager.Style = Style = IWindow.StyleManager.Style;
-            StyleManager.Theme = Theme = IWindow.StyleManager.Theme;
+            StyleMngr.Style = Style = IWindow.StyleMngr.Style;
+            StyleMngr.Theme = Theme = IWindow.StyleMngr.Theme;
             DiscordRP.SetPresence("Connected", "Map Text Editor");
         }
 

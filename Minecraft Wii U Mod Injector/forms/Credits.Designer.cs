@@ -30,17 +30,17 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Credits));
-            this.StyleManager = new MetroFramework.Components.MetroStyleManager(this.components);
+            this.StyleMngr = new MetroFramework.Components.MetroStyleManager(this.components);
             this.kashiieraCredits = new MetroFramework.Controls.MetroLabel();
             this.bullywiiplazaCredits = new MetroFramework.Controls.MetroLabel();
             this.appIco = new MetroFramework.Controls.MetroPanel();
             this.vylrynaCredits = new MetroFramework.Controls.MetroLabel();
-            ((System.ComponentModel.ISupportInitialize)(this.StyleManager)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.StyleMngr)).BeginInit();
             this.SuspendLayout();
             // 
-            // StyleManager
+            // StyleMngr
             // 
-            this.StyleManager.Owner = this;
+            this.StyleMngr.Owner = this;
             // 
             // kashiieraCredits
             // 
@@ -104,14 +104,14 @@
             this.Style = MetroFramework.MetroColorStyle.Default;
             this.Text = "Credits";
             this.Theme = MetroFramework.MetroThemeStyle.Default;
-            ((System.ComponentModel.ISupportInitialize)(this.StyleManager)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.StyleMngr)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private MetroFramework.Components.MetroStyleManager StyleManager;
+        private MetroFramework.Components.MetroStyleManager StyleMngr;
         private MetroFramework.Controls.MetroLabel kashiieraCredits;
         private MetroFramework.Controls.MetroLabel bullywiiplazaCredits;
         private MetroFramework.Controls.MetroPanel appIco;

@@ -46,8 +46,8 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
             {
                 try
                 {
-                    Injector.Theme = Injector.StyleManager.Theme = (MetroThemeStyle)Enum.Parse(typeof(MetroThemeStyle), Settings.Read("Theme", "Display"));
-                    Injector.Style = Injector.StyleManager.Style = (MetroColorStyle)Enum.Parse(typeof(MetroColorStyle), Settings.Read("Color", "Display"));
+                    Injector.Theme = Injector.StyleMngr.Theme = (MetroThemeStyle)Enum.Parse(typeof(MetroThemeStyle), Settings.Read("Theme", "Display"));
+                    Injector.Style = Injector.StyleMngr.Style = (MetroColorStyle)Enum.Parse(typeof(MetroColorStyle), Settings.Read("Color", "Display"));
 
                     Injector.themeBox.Text = Settings.Read("Theme", "Display");
                     Injector.colorsBox.Text = Settings.Read("Color", "Display");

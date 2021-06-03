@@ -7,8 +7,8 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms
         public Credits(MainForm Injector)
         {
             InitializeComponent();
-            StyleManager.Style = this.Style = Injector.StyleManager.Style;
-            StyleManager.Theme = this.Theme = Injector.StyleManager.Theme;
+            StyleMngr.Style = this.Style = Injector.StyleMngr.Style;
+            StyleMngr.Theme = this.Theme = Injector.StyleMngr.Theme;
         }
     }
 }

@@ -200,7 +200,7 @@
             this.disableVPadInput = new MetroFramework.Controls.MetroCheckBox();
             this.wiiuDebugPanel = new MetroFramework.Controls.MetroPanel();
             this.homeTile = new MetroFramework.Controls.MetroTile();
-            this.StyleManager = new MetroFramework.Components.MetroStyleManager(this.components);
+            this.StyleMngr = new MetroFramework.Components.MetroStyleManager(this.components);
             this.StyleExtender = new MetroFramework.Components.MetroStyleExtender(this.components);
             this.ToolTipManager = new MetroFramework.Components.MetroToolTip();
             this.playersTile = new MetroFramework.Controls.MetroTile();
@@ -242,7 +242,7 @@
             this.giveCommandPanel.SuspendLayout();
             this.settingsTab.SuspendLayout();
             this.debugTab.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.StyleManager)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.StyleMngr)).BeginInit();
             this.SuspendLayout();
             // 
             // worldTile
@@ -255,6 +255,7 @@
             this.worldTile.TabIndex = 1;
             this.worldTile.Tag = "2";
             this.worldTile.Text = "World / Blocks";
+            this.worldTile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.worldTile.TileCount = 2;
             this.worldTile.UseSelectable = true;
             this.worldTile.Click += new System.EventHandler(this.swapTab);
@@ -269,6 +270,7 @@
             this.generalTile.TabIndex = 2;
             this.generalTile.Tag = "3";
             this.generalTile.Text = "General Game";
+            this.generalTile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.generalTile.TileCount = 3;
             this.generalTile.UseSelectable = true;
             this.generalTile.Click += new System.EventHandler(this.swapTab);
@@ -283,6 +285,7 @@
             this.minigamesTile.TabIndex = 3;
             this.minigamesTile.Tag = "4";
             this.minigamesTile.Text = "Minigames";
+            this.minigamesTile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.minigamesTile.TileCount = 4;
             this.minigamesTile.UseSelectable = true;
             this.minigamesTile.Click += new System.EventHandler(this.swapTab);
@@ -296,7 +299,8 @@
             this.settingsTile.Size = new System.Drawing.Size(160, 69);
             this.settingsTile.TabIndex = 5;
             this.settingsTile.Tag = "6";
-            this.settingsTile.Text = "Settings / Miscellaneous";
+            this.settingsTile.Text = "Settings";
+            this.settingsTile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.settingsTile.TileCount = 6;
             this.settingsTile.UseSelectable = true;
             this.settingsTile.Click += new System.EventHandler(this.swapTab);
@@ -307,9 +311,11 @@
             this.buildTile.Enabled = false;
             this.buildTile.Location = new System.Drawing.Point(0, 530);
             this.buildTile.Name = "buildTile";
+            this.buildTile.PaintTileCount = false;
             this.buildTile.Size = new System.Drawing.Size(160, 78);
             this.buildTile.TabIndex = 6;
             this.buildTile.Text = "VERSION";
+            this.buildTile.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.buildTile.UseSelectable = true;
             // 
             // MainTabs
@@ -326,7 +332,7 @@
             this.MainTabs.Location = new System.Drawing.Point(155, 61);
             this.MainTabs.Multiline = true;
             this.MainTabs.Name = "MainTabs";
-            this.MainTabs.SelectedIndex = 0;
+            this.MainTabs.SelectedIndex = 6;
             this.MainTabs.Size = new System.Drawing.Size(989, 545);
             this.MainTabs.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.MainTabs.TabIndex = 0;
@@ -607,10 +613,10 @@
             this.playersTab.HorizontalScrollbarBarColor = true;
             this.playersTab.HorizontalScrollbarHighlightOnWheel = false;
             this.playersTab.HorizontalScrollbarSize = 10;
-            this.playersTab.Location = new System.Drawing.Point(4, 9);
+            this.playersTab.Location = new System.Drawing.Point(4, 5);
             this.playersTab.Name = "playersTab";
             this.playersTab.Padding = new System.Windows.Forms.Padding(3);
-            this.playersTab.Size = new System.Drawing.Size(981, 532);
+            this.playersTab.Size = new System.Drawing.Size(981, 536);
             this.playersTab.TabIndex = 0;
             this.playersTab.Tag = "needsGeckoU";
             this.playersTab.Text = "Player(s)";
@@ -1662,10 +1668,10 @@
             this.worldTab.HorizontalScrollbarBarColor = true;
             this.worldTab.HorizontalScrollbarHighlightOnWheel = false;
             this.worldTab.HorizontalScrollbarSize = 10;
-            this.worldTab.Location = new System.Drawing.Point(4, 9);
+            this.worldTab.Location = new System.Drawing.Point(4, 5);
             this.worldTab.Name = "worldTab";
             this.worldTab.Padding = new System.Windows.Forms.Padding(3);
-            this.worldTab.Size = new System.Drawing.Size(981, 532);
+            this.worldTab.Size = new System.Drawing.Size(981, 536);
             this.worldTab.TabIndex = 1;
             this.worldTab.Tag = "needsGeckoU";
             this.worldTab.Text = "World";
@@ -1810,10 +1816,10 @@
             this.generalTab.HorizontalScrollbarBarColor = true;
             this.generalTab.HorizontalScrollbarHighlightOnWheel = false;
             this.generalTab.HorizontalScrollbarSize = 10;
-            this.generalTab.Location = new System.Drawing.Point(4, 9);
+            this.generalTab.Location = new System.Drawing.Point(4, 5);
             this.generalTab.Name = "generalTab";
             this.generalTab.Padding = new System.Windows.Forms.Padding(3);
-            this.generalTab.Size = new System.Drawing.Size(981, 532);
+            this.generalTab.Size = new System.Drawing.Size(981, 536);
             this.generalTab.TabIndex = 2;
             this.generalTab.Tag = "needsGeckoU";
             this.generalTab.Text = "General Game";
@@ -1940,10 +1946,10 @@
             this.minigamesTab.HorizontalScrollbarBarColor = true;
             this.minigamesTab.HorizontalScrollbarHighlightOnWheel = false;
             this.minigamesTab.HorizontalScrollbarSize = 10;
-            this.minigamesTab.Location = new System.Drawing.Point(4, 9);
+            this.minigamesTab.Location = new System.Drawing.Point(4, 5);
             this.minigamesTab.Name = "minigamesTab";
             this.minigamesTab.Padding = new System.Windows.Forms.Padding(3);
-            this.minigamesTab.Size = new System.Drawing.Size(981, 532);
+            this.minigamesTab.Size = new System.Drawing.Size(981, 536);
             this.minigamesTab.TabIndex = 3;
             this.minigamesTab.Tag = "GeckoUNeeded";
             this.minigamesTab.Text = "Minigames";
@@ -2245,7 +2251,7 @@
             0,
             0});
             this.ringScoreBlue.Name = "ringScoreBlue";
-            this.ringScoreBlue.Size = new System.Drawing.Size(776, 20);
+            this.ringScoreBlue.Size = new System.Drawing.Size(829, 20);
             this.ringScoreBlue.TabIndex = 36;
             this.ringScoreBlue.Tag = "";
             this.ToolTipManager.SetToolTip(this.ringScoreBlue, "How many score does this type of ring give?");
@@ -2273,7 +2279,7 @@
             0,
             0});
             this.ringScoreOrange.Name = "ringScoreOrange";
-            this.ringScoreOrange.Size = new System.Drawing.Size(776, 20);
+            this.ringScoreOrange.Size = new System.Drawing.Size(829, 20);
             this.ringScoreOrange.TabIndex = 34;
             this.ringScoreOrange.Tag = "";
             this.ToolTipManager.SetToolTip(this.ringScoreOrange, "How many score does this type of ring give?");
@@ -2302,7 +2308,7 @@
             0,
             0});
             this.ringScoreGreen.Name = "ringScoreGreen";
-            this.ringScoreGreen.Size = new System.Drawing.Size(776, 20);
+            this.ringScoreGreen.Size = new System.Drawing.Size(829, 20);
             this.ringScoreGreen.TabIndex = 32;
             this.ringScoreGreen.Tag = "";
             this.ToolTipManager.SetToolTip(this.ringScoreGreen, "How many score does this type of ring give?");
@@ -2325,9 +2331,9 @@
             this.commandsTab.HorizontalScrollbarBarColor = true;
             this.commandsTab.HorizontalScrollbarHighlightOnWheel = false;
             this.commandsTab.HorizontalScrollbarSize = 10;
-            this.commandsTab.Location = new System.Drawing.Point(4, 9);
+            this.commandsTab.Location = new System.Drawing.Point(4, 5);
             this.commandsTab.Name = "commandsTab";
-            this.commandsTab.Size = new System.Drawing.Size(981, 532);
+            this.commandsTab.Size = new System.Drawing.Size(981, 536);
             this.commandsTab.TabIndex = 7;
             this.commandsTab.Tag = "needsGeckoU";
             this.commandsTab.Text = "Commands";
@@ -2799,9 +2805,9 @@
             // 
             // settingsTab
             // 
+            this.settingsTab.Controls.Add(this.settingsLogo);
             this.settingsTab.Controls.Add(this.releaseNotesToggle);
             this.settingsTab.Controls.Add(this.resetConfigBtn);
-            this.settingsTab.Controls.Add(this.settingsLogo);
             this.settingsTab.Controls.Add(this.discordRpcCheckBox);
             this.settingsTab.Controls.Add(this.colorsBox);
             this.settingsTab.Controls.Add(this.ThemeLabel);
@@ -2810,10 +2816,10 @@
             this.settingsTab.HorizontalScrollbarBarColor = true;
             this.settingsTab.HorizontalScrollbarHighlightOnWheel = false;
             this.settingsTab.HorizontalScrollbarSize = 10;
-            this.settingsTab.Location = new System.Drawing.Point(4, 9);
+            this.settingsTab.Location = new System.Drawing.Point(4, 5);
             this.settingsTab.Name = "settingsTab";
             this.settingsTab.Padding = new System.Windows.Forms.Padding(3);
-            this.settingsTab.Size = new System.Drawing.Size(981, 532);
+            this.settingsTab.Size = new System.Drawing.Size(981, 536);
             this.settingsTab.TabIndex = 5;
             this.settingsTab.Tag = "";
             this.settingsTab.Text = "Settings";
@@ -2824,7 +2830,7 @@
             // releaseNotesToggle
             // 
             this.releaseNotesToggle.AutoSize = true;
-            this.releaseNotesToggle.Location = new System.Drawing.Point(208, 76);
+            this.releaseNotesToggle.Location = new System.Drawing.Point(215, 76);
             this.releaseNotesToggle.Name = "releaseNotesToggle";
             this.releaseNotesToggle.Size = new System.Drawing.Size(200, 15);
             this.releaseNotesToggle.TabIndex = 46;
@@ -2836,10 +2842,10 @@
             // resetConfigBtn
             // 
             this.resetConfigBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.resetConfigBtn.Location = new System.Drawing.Point(58, 100);
+            this.resetConfigBtn.Location = new System.Drawing.Point(65, 100);
             this.resetConfigBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.resetConfigBtn.Name = "resetConfigBtn";
-            this.resetConfigBtn.Size = new System.Drawing.Size(916, 36);
+            this.resetConfigBtn.Size = new System.Drawing.Size(909, 36);
             this.resetConfigBtn.TabIndex = 45;
             this.resetConfigBtn.Text = "Reset Configuration";
             this.ToolTipManager.SetToolTip(this.resetConfigBtn, "Resets the configuration file");
@@ -2854,9 +2860,9 @@
             this.settingsLogo.HorizontalScrollbarBarColor = true;
             this.settingsLogo.HorizontalScrollbarHighlightOnWheel = false;
             this.settingsLogo.HorizontalScrollbarSize = 10;
-            this.settingsLogo.Location = new System.Drawing.Point(58, 145);
+            this.settingsLogo.Location = new System.Drawing.Point(65, 145);
             this.settingsLogo.Name = "settingsLogo";
-            this.settingsLogo.Size = new System.Drawing.Size(916, 368);
+            this.settingsLogo.Size = new System.Drawing.Size(909, 368);
             this.settingsLogo.TabIndex = 44;
             this.settingsLogo.VerticalScrollbarBarColor = true;
             this.settingsLogo.VerticalScrollbarHighlightOnWheel = false;
@@ -2867,7 +2873,7 @@
             this.discordRpcCheckBox.AutoSize = true;
             this.discordRpcCheckBox.Checked = true;
             this.discordRpcCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.discordRpcCheckBox.Location = new System.Drawing.Point(58, 76);
+            this.discordRpcCheckBox.Location = new System.Drawing.Point(65, 76);
             this.discordRpcCheckBox.Name = "discordRpcCheckBox";
             this.discordRpcCheckBox.Size = new System.Drawing.Size(139, 15);
             this.discordRpcCheckBox.TabIndex = 43;
@@ -2895,9 +2901,9 @@
             "Teal",
             "White",
             "Yellow"});
-            this.colorsBox.Location = new System.Drawing.Point(58, 41);
+            this.colorsBox.Location = new System.Drawing.Point(65, 41);
             this.colorsBox.Name = "colorsBox";
-            this.colorsBox.Size = new System.Drawing.Size(917, 29);
+            this.colorsBox.Size = new System.Drawing.Size(910, 29);
             this.colorsBox.TabIndex = 37;
             this.colorsBox.UseSelectable = true;
             this.colorsBox.SelectedIndexChanged += new System.EventHandler(this.formColorSelected);
@@ -2905,7 +2911,7 @@
             // ThemeLabel
             // 
             this.ThemeLabel.AutoSize = true;
-            this.ThemeLabel.Location = new System.Drawing.Point(0, 6);
+            this.ThemeLabel.Location = new System.Drawing.Point(7, 6);
             this.ThemeLabel.Name = "ThemeLabel";
             this.ThemeLabel.Size = new System.Drawing.Size(52, 19);
             this.ThemeLabel.TabIndex = 30;
@@ -2914,7 +2920,7 @@
             // ColorLabel
             // 
             this.ColorLabel.AutoSize = true;
-            this.ColorLabel.Location = new System.Drawing.Point(0, 41);
+            this.ColorLabel.Location = new System.Drawing.Point(7, 41);
             this.ColorLabel.Name = "ColorLabel";
             this.ColorLabel.Size = new System.Drawing.Size(46, 19);
             this.ColorLabel.TabIndex = 36;
@@ -2927,9 +2933,9 @@
             this.themeBox.Items.AddRange(new object[] {
             "Dark",
             "Light"});
-            this.themeBox.Location = new System.Drawing.Point(58, 6);
+            this.themeBox.Location = new System.Drawing.Point(65, 6);
             this.themeBox.Name = "themeBox";
-            this.themeBox.Size = new System.Drawing.Size(917, 29);
+            this.themeBox.Size = new System.Drawing.Size(910, 29);
             this.themeBox.TabIndex = 35;
             this.themeBox.UseSelectable = true;
             this.themeBox.SelectedIndexChanged += new System.EventHandler(this.formThemeSelected);
@@ -2943,9 +2949,9 @@
             this.debugTab.HorizontalScrollbarBarColor = true;
             this.debugTab.HorizontalScrollbarHighlightOnWheel = false;
             this.debugTab.HorizontalScrollbarSize = 10;
-            this.debugTab.Location = new System.Drawing.Point(4, 9);
+            this.debugTab.Location = new System.Drawing.Point(4, 5);
             this.debugTab.Name = "debugTab";
-            this.debugTab.Size = new System.Drawing.Size(981, 532);
+            this.debugTab.Size = new System.Drawing.Size(981, 536);
             this.debugTab.TabIndex = 8;
             this.debugTab.Tag = "needsGeckoU";
             this.debugTab.Text = "Debug";
@@ -3012,14 +3018,14 @@
             this.homeTile.TabIndex = 8;
             this.homeTile.Tag = "0";
             this.homeTile.Text = "Home";
-            this.homeTile.TileImageAlign = System.Drawing.ContentAlignment.TopRight;
+            this.homeTile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.homeTile.UseSelectable = true;
             this.homeTile.UseTileImage = true;
             this.homeTile.Click += new System.EventHandler(this.swapTab);
             // 
-            // StyleManager
+            // StyleMngr
             // 
-            this.StyleManager.Owner = this;
+            this.StyleMngr.Owner = this;
             // 
             // ToolTipManager
             // 
@@ -3037,9 +3043,8 @@
             this.playersTile.TabIndex = 9;
             this.playersTile.Tag = "1";
             this.playersTile.Text = "Player(s)";
+            this.playersTile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.playersTile.TileCount = 1;
-            this.playersTile.TileImage = ((System.Drawing.Image)(resources.GetObject("playersTile.TileImage")));
-            this.playersTile.TileImageAlign = System.Drawing.ContentAlignment.TopRight;
             this.playersTile.UseSelectable = true;
             this.playersTile.UseTileImage = true;
             this.playersTile.Click += new System.EventHandler(this.swapTab);
@@ -3054,6 +3059,7 @@
             this.commandsTile.TabIndex = 10;
             this.commandsTile.Tag = "5";
             this.commandsTile.Text = "Commands";
+            this.commandsTile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.commandsTile.TileCount = 5;
             this.commandsTile.UseSelectable = true;
             this.commandsTile.Click += new System.EventHandler(this.swapTab);
@@ -3068,6 +3074,7 @@
             this.debugTile.TabIndex = 11;
             this.debugTile.Tag = "7";
             this.debugTile.Text = "Debug";
+            this.debugTile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.debugTile.TileCount = 7;
             this.debugTile.UseSelectable = true;
             this.debugTile.Click += new System.EventHandler(this.swapTab);
@@ -3144,7 +3151,7 @@
             this.settingsTab.PerformLayout();
             this.debugTab.ResumeLayout(false);
             this.debugTab.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.StyleManager)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.StyleMngr)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -3245,7 +3252,7 @@
         public MetroFramework.Controls.MetroCheckBox HostOptions;
         public MetroFramework.Controls.MetroCheckBox DisablePermanentKicks;
         public MetroFramework.Controls.MetroButton discordSrvBtn;
-        public MetroFramework.Components.MetroStyleManager StyleManager;
+        public MetroFramework.Components.MetroStyleManager StyleMngr;
         public MetroFramework.Controls.MetroButton NNIDEditorBtn;
         public MetroFramework.Controls.MetroComboBox colorsBox;
         public MetroFramework.Controls.MetroLabel ThemeLabel;

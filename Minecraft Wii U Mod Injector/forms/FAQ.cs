@@ -7,8 +7,8 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms
         public FAQ(MainForm Injector)
         {
             InitializeComponent();
-            StyleManager.Style = Style = Injector.StyleManager.Style;
-            StyleManager.Theme = Theme = Injector.StyleManager.Theme;
+            StyleMngr.Style = Style = Injector.StyleMngr.Style;
+            StyleMngr.Theme = Theme = Injector.StyleMngr.Theme;
         }
     }
 }

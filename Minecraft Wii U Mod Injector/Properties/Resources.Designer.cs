@@ -81,28 +81,26 @@ namespace Minecraft_Wii_U_Mod_Injector.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to [Release v5.1.3 (28th of May, 2021)]
+        ///   Looks up a localized string similar to [Release v5.1.4 (2nd of June, 2021)]
         ///
-        ///This update adds new mods and fixes some existing mods
+        ///[Information]
+        ///If you are experiencing issues, please report them on the Github Issues page or by joining the official discord server.
+        ///
+        ///This update adds new mods, fixes mods, new features and a ton of bug fixes
         ///
         ///[Changes]
         ///
-        ///• New mods:
+        ///+ New mods:
         ///
-        ///- Take Everything Anywhere
-        ///- Armor HUD
-        ///- Slow Motion
-        ///- Deadmau5 Mode
-        ///- Set World Spawn Command
-        ///- Game Mode Command (Survival only, for now)
-        ///
-        ///•General Additions &amp; Updates:
-        ///
-        ///- Updated Credits
-        ///- Updated Discord Rich Presence texts
-        ///- You can now clean the release notes by displaying only the current version changes (Settings tab)
-        ///- Help Button added for the /give command
-        ///- D [rest of string was truncated]&quot;;.
+        ///- Player Model Scale
+        ///- God Mode (Self and All)
+        ///- Splitscreen Field of View
+        ///- Friction
+        ///- Gamepad Splitscreen
+        ///- Disable Teleport Command
+        ///- Read NNID Name
+        ///- Disable Gamepad Input (Debug Mode Only)
+        ///- Gamepad Power Button tur [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string releaseNote {
             get {
@@ -111,28 +109,26 @@ namespace Minecraft_Wii_U_Mod_Injector.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to [Release v5.1.3 (28th of May, 2021)]
+        ///   Looks up a localized string similar to [Release v5.1.4 (2nd of June, 2021)]
         ///
-        ///This update adds new mods and fixes some existing mods
+        ///[Information]
+        ///If you are experiencing issues, please report them on the Github Issues page or by joining the official discord server.
+        ///
+        ///This update adds new mods, fixes mods, new features and a ton of bug fixes
         ///
         ///[Changes]
         ///
-        /// New mods:
+        ///+ New mods:
         ///
-        ///- Take Everything Anywhere
-        ///- Armor HUD
-        ///- Slow Motion
-        ///- Deadmau5 Mode
-        ///- Set World Spawn Command
-        ///- Game Mode Command (Survival only, for now)
-        ///
-        ///General Additions &amp; Updates:
-        ///
-        ///- Updated Credits
-        ///- Updated Discord Rich Presence texts
-        ///- You can now clean the release notes by displaying only the current version changes (Settings tab)
-        ///- Help Button added for the /give command
-        ///- D [rest of string was truncated]&quot;;.
+        ///- Player Model Scale
+        ///- God Mode (Self and All)
+        ///- Splitscreen Field of View
+        ///- Friction
+        ///- Gamepad Splitscreen
+        ///- Disable Teleport Command
+        ///- Read NNID Name
+        ///- Disable Gamepad Input (Debug Mode Only)
+        ///- Gamepad Power Button tur [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string releaseNotes {
             get {

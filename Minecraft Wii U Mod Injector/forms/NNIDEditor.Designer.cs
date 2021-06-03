@@ -33,11 +33,11 @@
             this.NNIDNameLbl = new MetroFramework.Controls.MetroLabel();
             this.NNIDNameBox = new MetroFramework.Controls.MetroTextBox();
             this.NNIDChangeBtn = new MetroFramework.Controls.MetroButton();
-            this.StyleManager = new MetroFramework.Components.MetroStyleManager(this.components);
+            this.StyleMngr = new MetroFramework.Components.MetroStyleManager(this.components);
             this.WarningLbl = new MetroFramework.Controls.MetroLabel();
             this.ToolTips = new MetroFramework.Components.MetroToolTip();
             this.readNameBtn = new MetroFramework.Controls.MetroButton();
-            ((System.ComponentModel.ISupportInitialize)(this.StyleManager)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.StyleMngr)).BeginInit();
             this.SuspendLayout();
             // 
             // NNIDNameLbl
@@ -91,9 +91,9 @@
             this.NNIDChangeBtn.UseSelectable = true;
             this.NNIDChangeBtn.Click += new System.EventHandler(this.NNIDChangeBtnClicked);
             // 
-            // StyleManager
+            // StyleMngr
             // 
-            this.StyleManager.Owner = this;
+            this.StyleMngr.Owner = this;
             // 
             // WarningLbl
             // 
@@ -142,7 +142,7 @@
             this.TopMost = true;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Exiting);
             this.Load += new System.EventHandler(this.Init);
-            ((System.ComponentModel.ISupportInitialize)(this.StyleManager)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.StyleMngr)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -153,7 +153,7 @@
         private MetroFramework.Controls.MetroLabel NNIDNameLbl;
         private MetroFramework.Controls.MetroTextBox NNIDNameBox;
         private MetroFramework.Controls.MetroButton NNIDChangeBtn;
-        private MetroFramework.Components.MetroStyleManager StyleManager;
+        private MetroFramework.Components.MetroStyleManager StyleMngr;
         private MetroFramework.Controls.MetroLabel WarningLbl;
         private MetroFramework.Components.MetroToolTip ToolTips;
         private MetroFramework.Controls.MetroButton readNameBtn;

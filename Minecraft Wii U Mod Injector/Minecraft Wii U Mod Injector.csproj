@@ -243,47 +243,47 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="forms\FAQ.cs">
+    <Compile Include="Forms\FAQ.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\FAQ.Designer.cs">
+    <Compile Include="Forms\FAQ.Designer.cs">
       <DependentUpon>FAQ.cs</DependentUpon>
     </Compile>
-    <Compile Include="wiiu\geckou\GeckoU.cs" />
-    <Compile Include="wiiu\geckou\GeckoUByteSwap.cs" />
-    <Compile Include="wiiu\geckou\GeckoUCommands.cs" />
-    <Compile Include="wiiu\geckou\GeckoUConnect.cs" />
-    <Compile Include="wiiu\geckou\GeckoUDump.cs" />
-    <Compile Include="wiiu\geckou\GeckoUException.cs" />
-    <Compile Include="wiiu\geckou\GeckoUMemAreas.cs" />
-    <Compile Include="forms\Credits.cs">
+    <Compile Include="Wii U\Gecko U\GeckoU.cs" />
+    <Compile Include="Wii U\Gecko U\GeckoUByteSwap.cs" />
+    <Compile Include="Wii U\Gecko U\GeckoUCommands.cs" />
+    <Compile Include="Wii U\Gecko U\GeckoUConnect.cs" />
+    <Compile Include="Wii U\Gecko U\GeckoUDump.cs" />
+    <Compile Include="Wii U\Gecko U\GeckoUException.cs" />
+    <Compile Include="Wii U\Gecko U\GeckoUMemAreas.cs" />
+    <Compile Include="Forms\Credits.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\Credits.Designer.cs">
+    <Compile Include="Forms\Credits.Designer.cs">
       <DependentUpon>Credits.cs</DependentUpon>
     </Compile>
-    <Compile Include="forms\MapTextEditor.cs">
+    <Compile Include="Forms\MapTextEditor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\MapTextEditor.Designer.cs">
+    <Compile Include="Forms\MapTextEditor.Designer.cs">
       <DependentUpon>MapTextEditor.cs</DependentUpon>
     </Compile>
-    <Compile Include="forms\NNIDEditor.cs">
+    <Compile Include="Forms\NNIDEditor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\NNIDEditor.Designer.cs">
+    <Compile Include="Forms\NNIDEditor.Designer.cs">
       <DependentUpon>NNIDEditor.cs</DependentUpon>
     </Compile>
-    <Compile Include="helpers\DiscordRP.cs" />
-    <Compile Include="helpers\files\Settings.cs" />
-    <Compile Include="helpers\files\Exceptions.cs" />
-    <Compile Include="helpers\files\INIFile.cs" />
-    <Compile Include="helpers\StringUtils.cs" />
-    <Compile Include="helpers\winforms\FlexibleMessageBox.cs" />
-    <Compile Include="helpers\winforms\Messaging.cs" />
-    <Compile Include="helpers\Miscellaneous.cs" />
-    <Compile Include="helpers\Setup.cs" />
-    <Compile Include="helpers\States.cs" />
+    <Compile Include="Helpers\DiscordRP.cs" />
+    <Compile Include="Helpers\Files\Settings.cs" />
+    <Compile Include="Helpers\Files\Exceptions.cs" />
+    <Compile Include="Helpers\Files\INIFile.cs" />
+    <Compile Include="Helpers\StringUtils.cs" />
+    <Compile Include="Helpers\Win Forms\FlexibleMessageBox.cs" />
+    <Compile Include="Helpers\Win Forms\Messaging.cs" />
+    <Compile Include="Helpers\Miscellaneous.cs" />
+    <Compile Include="Helpers\Setup.cs" />
+    <Compile Include="Helpers\States.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -292,16 +292,16 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="forms\FAQ.resx">
+    <EmbeddedResource Include="Forms\FAQ.resx">
       <DependentUpon>FAQ.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\Credits.resx">
+    <EmbeddedResource Include="Forms\Credits.resx">
       <DependentUpon>Credits.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\MapTextEditor.resx">
+    <EmbeddedResource Include="Forms\MapTextEditor.resx">
       <DependentUpon>MapTextEditor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\NNIDEditor.resx">
+    <EmbeddedResource Include="Forms\NNIDEditor.resx">
       <DependentUpon>NNIDEditor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">

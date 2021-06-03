@@ -11,8 +11,8 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms
         public NNIDEditor(MainForm Injector)
         {
             InitializeComponent();
-            StyleManager.Style = this.Style = Injector.StyleManager.Style;
-            StyleManager.Theme = this.Theme = Injector.StyleManager.Theme;
+            StyleMngr.Style = this.Style = Injector.StyleMngr.Style;
+            StyleMngr.Theme = this.Theme = Injector.StyleMngr.Theme;
         }
 
         private void Init(object sender, EventArgs e)

@@ -8,30 +8,30 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
     {
         public static MainForm Injector = new MainForm();
 
-        public Miscellaneous(MainForm IW)
+        public Miscellaneous(MainForm iw)
         {
-            Injector = IW;
+            Injector = iw;
         }
 
         public static List<Control> AllMetroControls()
         {
-            List<Control> Controls = new List<Control>();
+            List<Control> controls = new List<Control>();
 
-            foreach (Control C in Injector.Controls)
-                if (C is MetroButton || C is MetroLabel || C is MetroTextBox || C is MetroTile)
-                    Controls.Add(C);
+            foreach (Control c in Injector.Controls)
+                if (c is MetroButton || c is MetroLabel || c is MetroTextBox || c is MetroTile)
+                    controls.Add(c);
 
-            foreach (MetroTabPage Page in Injector.MainTabs.TabPages)
-                foreach (Control C in Page.Controls)
-                    if (C is MetroCheckBox || C is MetroLabel || C is MetroButton)
-                        Controls.Add(C);
+            foreach (MetroTabPage page in Injector.MainTabs.TabPages)
+                foreach (Control c in page.Controls)
+                    if (c is MetroCheckBox || c is MetroLabel || c is MetroButton)
+                        controls.Add(c);
 
-            foreach (MetroTabPage Page in Injector.MinigamesTabs.TabPages)
-                foreach (Control C in Page.Controls)
-                    if (C is MetroCheckBox || C is MetroLabel || C is MetroButton)
-                        Controls.Add(C);
+            foreach (MetroTabPage page in Injector.MinigamesTabs.TabPages)
+                foreach (Control c in page.Controls)
+                    if (c is MetroCheckBox || c is MetroLabel || c is MetroButton)
+                        controls.Add(c);
 
-            return Controls;
+            return controls;
         }
     }
 }

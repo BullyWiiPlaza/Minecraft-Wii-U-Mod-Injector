@@ -15,49 +15,49 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
             Error = 4
         }
 
-        public static StatesIds currentState = StatesIds.Disconnected;
+        public static StatesIds CurrentState = StatesIds.Disconnected;
 
-        public States(MainForm MainForm)
+        public States(MainForm mainForm)
         {
-            Injector = MainForm;
+            Injector = mainForm;
         }
 
-        public static void SwapState(StatesIds State)
+        public static void SwapState(StatesIds state)
         {
-            switch (State)
+            switch (state)
             {
                 case StatesIds.Disconnected:
-                    Injector.connectBtn.Text = "Connect";
-                    Injector.connectBtn.Enabled = true;
+                    Injector.ConnectBtn.Text = "Connect";
+                    Injector.ConnectBtn.Enabled = true;
                     SetupTabs(Injector, false);
-                    Injector.wiiuIpv4Box.Text = Settings.Read("WiiUIPv4", "Wii U");
-                    currentState = StatesIds.Disconnected;
+                    Injector.WiiUIpv4Box.Text = Settings.Read("WiiUIPv4", "Wii U");
+                    CurrentState = StatesIds.Disconnected;
                     break;
 
                 case StatesIds.Connected:
-                    Injector.connectBtn.Enabled = true;
-                    Injector.connectBtn.Text = "Disconnect";
+                    Injector.ConnectBtn.Enabled = true;
+                    Injector.ConnectBtn.Text = "Disconnect";
                     SetupTabs(Injector, true);
-                    Settings.Write("WiiUIPv4", Injector.wiiuIpv4Box.Text, "Wii U");
-                    currentState = StatesIds.Connected;
+                    Settings.Write("WiiUIPv4", Injector.WiiUIpv4Box.Text, "Wii U");
+                    CurrentState = StatesIds.Connected;
                     break;
 
                 case StatesIds.Connecting:
-                    Injector.connectBtn.Enabled = false;
-                    Injector.connectBtn.Text = "Connecting...";
+                    Injector.ConnectBtn.Enabled = false;
+                    Injector.ConnectBtn.Text = "Connecting...";
                     SetupTabs(Injector, false);
-                    currentState = StatesIds.Connecting;
+                    CurrentState = StatesIds.Connecting;
                     break;
             }
         }
 
-        public static void SetupTabs(MainForm Injector, bool enabled)
+        public static void SetupTabs(MainForm injector, bool enabled)
         {
-            foreach (MetroFramework.Controls.MetroTabPage Page in Injector.MainTabs.TabPages)
+            foreach (MetroFramework.Controls.MetroTabPage page in injector.MainTabs.TabPages)
             {
-                if ((string)Page.Tag == "needsGeckoU")
+                if ((string)page.Tag == "needsGeckoU")
                 {
-                    foreach (Control c in Page.Controls)
+                    foreach (Control c in page.Controls)
                     {
                         c.Enabled = enabled;
                     }

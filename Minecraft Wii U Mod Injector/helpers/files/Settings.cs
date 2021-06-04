@@ -2,26 +2,26 @@
 {
     public class Settings
     {
-        private static IniFile settingsFile = new IniFile();
+        private static IniFile _settingsFile = new IniFile();
 
         public static void Write(string key, string value, string section)
         {
-            settingsFile.Write(key, value, section);
+            _settingsFile.Write(key, value, section);
         }
 
         public static void Delete(string key, string section)
         {
-            settingsFile.DeleteKey(key, section);
+            _settingsFile.DeleteKey(key, section);
         }
 
         public static string Read(string key, string section)
         {
-            return settingsFile.Read(key, section);
+            return _settingsFile.Read(key, section);
         }
 
         public static bool EqualsTo(string key, string value, string section)
         {
-            if (settingsFile.Read(key, section) == value)
+            if (_settingsFile.Read(key, section) == value)
                 return true;
             else
                 return false;
@@ -29,7 +29,7 @@
 
         public static bool Exists(string key, string section)
         {
-            return settingsFile.KeyExists(key, section);
+            return _settingsFile.KeyExists(key, section);
         }
     }
 }

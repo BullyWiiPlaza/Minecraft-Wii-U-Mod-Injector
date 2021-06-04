@@ -30,21 +30,21 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            this.worldTile = new MetroFramework.Controls.MetroTile();
-            this.generalTile = new MetroFramework.Controls.MetroTile();
-            this.minigamesTile = new MetroFramework.Controls.MetroTile();
-            this.settingsTile = new MetroFramework.Controls.MetroTile();
-            this.buildTile = new MetroFramework.Controls.MetroTile();
+            this.WorldTile = new MetroFramework.Controls.MetroTile();
+            this.GeneralTile = new MetroFramework.Controls.MetroTile();
+            this.MinigamesTile = new MetroFramework.Controls.MetroTile();
+            this.SettingsTile = new MetroFramework.Controls.MetroTile();
+            this.BuildTile = new MetroFramework.Controls.MetroTile();
             this.MainTabs = new MetroFramework.Controls.MetroTabControl();
-            this.mainTab = new MetroFramework.Controls.MetroTabPage();
-            this.openFaqInfo = new MetroFramework.Controls.MetroButton();
-            this.buildNotesBox = new MetroFramework.Controls.MetroTextBox();
-            this.buildVerTitleLbl = new MetroFramework.Controls.MetroLabel();
-            this.creditsBtn = new MetroFramework.Controls.MetroButton();
-            this.connectBtn = new MetroFramework.Controls.MetroButton();
-            this.discordSrvBtn = new MetroFramework.Controls.MetroButton();
-            this.wiiuIpv4Box = new MetroFramework.Controls.MetroTextBox();
-            this.wiiuIpv4Lbl = new MetroFramework.Controls.MetroLabel();
+            this.MainTab = new MetroFramework.Controls.MetroTabPage();
+            this.FaqBtn = new MetroFramework.Controls.MetroButton();
+            this.BuildNotesBox = new MetroFramework.Controls.MetroTextBox();
+            this.BuildVerTitleLbl = new MetroFramework.Controls.MetroLabel();
+            this.CreditsBtn = new MetroFramework.Controls.MetroButton();
+            this.ConnectBtn = new MetroFramework.Controls.MetroButton();
+            this.DiscordSrvBtn = new MetroFramework.Controls.MetroButton();
+            this.WiiUIpv4Box = new MetroFramework.Controls.MetroTextBox();
+            this.WiiUIpv4Lbl = new MetroFramework.Controls.MetroLabel();
             this.playersTab = new MetroFramework.Controls.MetroTabPage();
             this.metroCheckBox1 = new MetroFramework.Controls.MetroCheckBox();
             this.FrictionSlider = new System.Windows.Forms.NumericUpDown();
@@ -69,7 +69,7 @@
             this.VisibleHitboxes = new MetroFramework.Controls.MetroCheckBox();
             this.SprintingSpeedScaleSlider = new System.Windows.Forms.NumericUpDown();
             this.SprintingSpeedScale = new MetroFramework.Controls.MetroLabel();
-            this.NNIDEditorBtn = new MetroFramework.Controls.MetroButton();
+            this.NnidEditorBtn = new MetroFramework.Controls.MetroButton();
             this.RiptideFlyingSpeedSlider = new System.Windows.Forms.NumericUpDown();
             this.RiptideFlyingSpeed = new MetroFramework.Controls.MetroLabel();
             this.ReachSlider = new System.Windows.Forms.NumericUpDown();
@@ -197,15 +197,15 @@
             this.wiiuDebugLbl = new MetroFramework.Controls.MetroLabel();
             this.disableVPadInput = new MetroFramework.Controls.MetroCheckBox();
             this.wiiuDebugPanel = new MetroFramework.Controls.MetroPanel();
-            this.homeTile = new MetroFramework.Controls.MetroTile();
+            this.HomeTile = new MetroFramework.Controls.MetroTile();
             this.StyleMngr = new MetroFramework.Components.MetroStyleManager(this.components);
             this.StyleExtender = new MetroFramework.Components.MetroStyleExtender(this.components);
             this.ToolTipManager = new MetroFramework.Components.MetroToolTip();
-            this.playersTile = new MetroFramework.Controls.MetroTile();
-            this.commandsTile = new MetroFramework.Controls.MetroTile();
-            this.debugTile = new MetroFramework.Controls.MetroTile();
+            this.PlayersTile = new MetroFramework.Controls.MetroTile();
+            this.CommandsTile = new MetroFramework.Controls.MetroTile();
+            this.DebugTile = new MetroFramework.Controls.MetroTile();
             this.MainTabs.SuspendLayout();
-            this.mainTab.SuspendLayout();
+            this.MainTab.SuspendLayout();
             this.playersTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.FrictionSlider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.FieldOfViewSplitSlider)).BeginInit();
@@ -243,82 +243,82 @@
             ((System.ComponentModel.ISupportInitialize)(this.StyleMngr)).BeginInit();
             this.SuspendLayout();
             // 
-            // worldTile
+            // WorldTile
             // 
-            this.worldTile.ActiveControl = null;
-            this.worldTile.Location = new System.Drawing.Point(0, 172);
-            this.worldTile.Name = "worldTile";
-            this.worldTile.PaintTileCount = false;
-            this.worldTile.Size = new System.Drawing.Size(160, 55);
-            this.worldTile.TabIndex = 1;
-            this.worldTile.Tag = "2";
-            this.worldTile.Text = "World / Blocks";
-            this.worldTile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.worldTile.TileCount = 2;
-            this.worldTile.UseSelectable = true;
-            this.worldTile.Click += new System.EventHandler(this.SwapTab);
+            this.WorldTile.ActiveControl = null;
+            this.WorldTile.Location = new System.Drawing.Point(0, 172);
+            this.WorldTile.Name = "WorldTile";
+            this.WorldTile.PaintTileCount = false;
+            this.WorldTile.Size = new System.Drawing.Size(160, 55);
+            this.WorldTile.TabIndex = 3;
+            this.WorldTile.Tag = "2";
+            this.WorldTile.Text = "World / Blocks";
+            this.WorldTile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.WorldTile.TileCount = 2;
+            this.WorldTile.UseSelectable = true;
+            this.WorldTile.Click += new System.EventHandler(this.SwapTab);
             // 
-            // generalTile
+            // GeneralTile
             // 
-            this.generalTile.ActiveControl = null;
-            this.generalTile.Location = new System.Drawing.Point(0, 227);
-            this.generalTile.Name = "generalTile";
-            this.generalTile.PaintTileCount = false;
-            this.generalTile.Size = new System.Drawing.Size(160, 55);
-            this.generalTile.TabIndex = 2;
-            this.generalTile.Tag = "3";
-            this.generalTile.Text = "General Game";
-            this.generalTile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.generalTile.TileCount = 3;
-            this.generalTile.UseSelectable = true;
-            this.generalTile.Click += new System.EventHandler(this.SwapTab);
+            this.GeneralTile.ActiveControl = null;
+            this.GeneralTile.Location = new System.Drawing.Point(0, 227);
+            this.GeneralTile.Name = "GeneralTile";
+            this.GeneralTile.PaintTileCount = false;
+            this.GeneralTile.Size = new System.Drawing.Size(160, 55);
+            this.GeneralTile.TabIndex = 4;
+            this.GeneralTile.Tag = "3";
+            this.GeneralTile.Text = "General Game";
+            this.GeneralTile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.GeneralTile.TileCount = 3;
+            this.GeneralTile.UseSelectable = true;
+            this.GeneralTile.Click += new System.EventHandler(this.SwapTab);
             // 
-            // minigamesTile
+            // MinigamesTile
             // 
-            this.minigamesTile.ActiveControl = null;
-            this.minigamesTile.Location = new System.Drawing.Point(0, 282);
-            this.minigamesTile.Name = "minigamesTile";
-            this.minigamesTile.PaintTileCount = false;
-            this.minigamesTile.Size = new System.Drawing.Size(160, 55);
-            this.minigamesTile.TabIndex = 3;
-            this.minigamesTile.Tag = "4";
-            this.minigamesTile.Text = "Minigames";
-            this.minigamesTile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.minigamesTile.TileCount = 4;
-            this.minigamesTile.UseSelectable = true;
-            this.minigamesTile.Click += new System.EventHandler(this.SwapTab);
+            this.MinigamesTile.ActiveControl = null;
+            this.MinigamesTile.Location = new System.Drawing.Point(0, 282);
+            this.MinigamesTile.Name = "MinigamesTile";
+            this.MinigamesTile.PaintTileCount = false;
+            this.MinigamesTile.Size = new System.Drawing.Size(160, 55);
+            this.MinigamesTile.TabIndex = 5;
+            this.MinigamesTile.Tag = "4";
+            this.MinigamesTile.Text = "Minigames";
+            this.MinigamesTile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.MinigamesTile.TileCount = 4;
+            this.MinigamesTile.UseSelectable = true;
+            this.MinigamesTile.Click += new System.EventHandler(this.SwapTab);
             // 
-            // settingsTile
+            // SettingsTile
             // 
-            this.settingsTile.ActiveControl = null;
-            this.settingsTile.Location = new System.Drawing.Point(0, 392);
-            this.settingsTile.Name = "settingsTile";
-            this.settingsTile.PaintTileCount = false;
-            this.settingsTile.Size = new System.Drawing.Size(160, 69);
-            this.settingsTile.TabIndex = 5;
-            this.settingsTile.Tag = "6";
-            this.settingsTile.Text = "Settings";
-            this.settingsTile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.settingsTile.TileCount = 6;
-            this.settingsTile.UseSelectable = true;
-            this.settingsTile.Click += new System.EventHandler(this.SwapTab);
+            this.SettingsTile.ActiveControl = null;
+            this.SettingsTile.Location = new System.Drawing.Point(0, 392);
+            this.SettingsTile.Name = "SettingsTile";
+            this.SettingsTile.PaintTileCount = false;
+            this.SettingsTile.Size = new System.Drawing.Size(160, 69);
+            this.SettingsTile.TabIndex = 7;
+            this.SettingsTile.Tag = "6";
+            this.SettingsTile.Text = "Settings";
+            this.SettingsTile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.SettingsTile.TileCount = 6;
+            this.SettingsTile.UseSelectable = true;
+            this.SettingsTile.Click += new System.EventHandler(this.SwapTab);
             // 
-            // buildTile
+            // BuildTile
             // 
-            this.buildTile.ActiveControl = null;
-            this.buildTile.Enabled = false;
-            this.buildTile.Location = new System.Drawing.Point(0, 530);
-            this.buildTile.Name = "buildTile";
-            this.buildTile.PaintTileCount = false;
-            this.buildTile.Size = new System.Drawing.Size(160, 78);
-            this.buildTile.TabIndex = 6;
-            this.buildTile.Text = "VERSION";
-            this.buildTile.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.buildTile.UseSelectable = true;
+            this.BuildTile.ActiveControl = null;
+            this.BuildTile.Enabled = false;
+            this.BuildTile.Location = new System.Drawing.Point(0, 530);
+            this.BuildTile.Name = "BuildTile";
+            this.BuildTile.PaintTileCount = false;
+            this.BuildTile.Size = new System.Drawing.Size(160, 78);
+            this.BuildTile.TabIndex = 6;
+            this.BuildTile.Text = "VERSION";
+            this.BuildTile.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.BuildTile.UseSelectable = true;
             // 
             // MainTabs
             // 
-            this.MainTabs.Controls.Add(this.mainTab);
+            this.MainTabs.Controls.Add(this.MainTab);
             this.MainTabs.Controls.Add(this.playersTab);
             this.MainTabs.Controls.Add(this.worldTab);
             this.MainTabs.Controls.Add(this.generalTab);
@@ -330,171 +330,171 @@
             this.MainTabs.Location = new System.Drawing.Point(155, 61);
             this.MainTabs.Multiline = true;
             this.MainTabs.Name = "MainTabs";
-            this.MainTabs.SelectedIndex = 0;
+            this.MainTabs.SelectedIndex = 1;
             this.MainTabs.Size = new System.Drawing.Size(989, 545);
             this.MainTabs.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.MainTabs.TabIndex = 0;
             this.MainTabs.UseSelectable = true;
             // 
-            // mainTab
+            // MainTab
             // 
-            this.mainTab.Controls.Add(this.openFaqInfo);
-            this.mainTab.Controls.Add(this.buildNotesBox);
-            this.mainTab.Controls.Add(this.buildVerTitleLbl);
-            this.mainTab.Controls.Add(this.creditsBtn);
-            this.mainTab.Controls.Add(this.connectBtn);
-            this.mainTab.Controls.Add(this.discordSrvBtn);
-            this.mainTab.Controls.Add(this.wiiuIpv4Box);
-            this.mainTab.Controls.Add(this.wiiuIpv4Lbl);
-            this.mainTab.HorizontalScrollbarBarColor = true;
-            this.mainTab.HorizontalScrollbarHighlightOnWheel = false;
-            this.mainTab.HorizontalScrollbarSize = 10;
-            this.mainTab.Location = new System.Drawing.Point(4, 5);
-            this.mainTab.Name = "mainTab";
-            this.mainTab.Padding = new System.Windows.Forms.Padding(3);
-            this.mainTab.Size = new System.Drawing.Size(981, 536);
-            this.mainTab.TabIndex = 6;
-            this.mainTab.Text = "Home";
-            this.mainTab.VerticalScrollbarBarColor = true;
-            this.mainTab.VerticalScrollbarHighlightOnWheel = false;
-            this.mainTab.VerticalScrollbarSize = 10;
+            this.MainTab.Controls.Add(this.FaqBtn);
+            this.MainTab.Controls.Add(this.BuildNotesBox);
+            this.MainTab.Controls.Add(this.BuildVerTitleLbl);
+            this.MainTab.Controls.Add(this.CreditsBtn);
+            this.MainTab.Controls.Add(this.ConnectBtn);
+            this.MainTab.Controls.Add(this.DiscordSrvBtn);
+            this.MainTab.Controls.Add(this.WiiUIpv4Box);
+            this.MainTab.Controls.Add(this.WiiUIpv4Lbl);
+            this.MainTab.HorizontalScrollbarBarColor = true;
+            this.MainTab.HorizontalScrollbarHighlightOnWheel = false;
+            this.MainTab.HorizontalScrollbarSize = 10;
+            this.MainTab.Location = new System.Drawing.Point(4, 9);
+            this.MainTab.Name = "MainTab";
+            this.MainTab.Padding = new System.Windows.Forms.Padding(3);
+            this.MainTab.Size = new System.Drawing.Size(981, 532);
+            this.MainTab.TabIndex = 6;
+            this.MainTab.Text = "Home";
+            this.MainTab.VerticalScrollbarBarColor = true;
+            this.MainTab.VerticalScrollbarHighlightOnWheel = false;
+            this.MainTab.VerticalScrollbarSize = 10;
             // 
-            // openFaqInfo
+            // FaqBtn
             // 
-            this.openFaqInfo.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.openFaqInfo.Location = new System.Drawing.Point(835, 31);
-            this.openFaqInfo.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.openFaqInfo.Name = "openFaqInfo";
-            this.openFaqInfo.Size = new System.Drawing.Size(139, 23);
-            this.openFaqInfo.TabIndex = 46;
-            this.openFaqInfo.Text = "FAQ - Information";
-            this.ToolTipManager.SetToolTip(this.openFaqInfo, "View the credits for the Mod Injector");
-            this.openFaqInfo.UseSelectable = true;
-            this.openFaqInfo.Click += new System.EventHandler(this.openFaqInfoClicked);
+            this.FaqBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.FaqBtn.Location = new System.Drawing.Point(835, 31);
+            this.FaqBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.FaqBtn.Name = "FaqBtn";
+            this.FaqBtn.Size = new System.Drawing.Size(139, 23);
+            this.FaqBtn.TabIndex = 46;
+            this.FaqBtn.Text = "FAQ - Information";
+            this.ToolTipManager.SetToolTip(this.FaqBtn, "View the credits for the Mod Injector");
+            this.FaqBtn.UseSelectable = true;
+            this.FaqBtn.Click += new System.EventHandler(this.OpenFaqInfoClicked);
             // 
-            // buildNotesBox
-            // 
-            // 
+            // BuildNotesBox
             // 
             // 
-            this.buildNotesBox.CustomButton.Image = null;
-            this.buildNotesBox.CustomButton.Location = new System.Drawing.Point(378, 1);
-            this.buildNotesBox.CustomButton.Name = "";
-            this.buildNotesBox.CustomButton.Size = new System.Drawing.Size(443, 443);
-            this.buildNotesBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.buildNotesBox.CustomButton.TabIndex = 1;
-            this.buildNotesBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.buildNotesBox.CustomButton.UseSelectable = true;
-            this.buildNotesBox.CustomButton.Visible = false;
-            this.buildNotesBox.Lines = new string[] {
+            // 
+            // 
+            this.BuildNotesBox.CustomButton.Image = null;
+            this.BuildNotesBox.CustomButton.Location = new System.Drawing.Point(378, 1);
+            this.BuildNotesBox.CustomButton.Name = "";
+            this.BuildNotesBox.CustomButton.Size = new System.Drawing.Size(443, 443);
+            this.BuildNotesBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.BuildNotesBox.CustomButton.TabIndex = 1;
+            this.BuildNotesBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.BuildNotesBox.CustomButton.UseSelectable = true;
+            this.BuildNotesBox.CustomButton.Visible = false;
+            this.BuildNotesBox.Lines = new string[] {
         "Fetching Patch Notes for VERSION"};
-            this.buildNotesBox.Location = new System.Drawing.Point(6, 31);
-            this.buildNotesBox.MaxLength = 32767;
-            this.buildNotesBox.Multiline = true;
-            this.buildNotesBox.Name = "buildNotesBox";
-            this.buildNotesBox.PasswordChar = '\0';
-            this.buildNotesBox.ReadOnly = true;
-            this.buildNotesBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.buildNotesBox.SelectedText = "";
-            this.buildNotesBox.SelectionLength = 0;
-            this.buildNotesBox.SelectionStart = 0;
-            this.buildNotesBox.ShortcutsEnabled = true;
-            this.buildNotesBox.Size = new System.Drawing.Size(822, 445);
-            this.buildNotesBox.TabIndex = 8;
-            this.buildNotesBox.Text = "Fetching Patch Notes for VERSION";
-            this.buildNotesBox.UseSelectable = true;
-            this.buildNotesBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.buildNotesBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.BuildNotesBox.Location = new System.Drawing.Point(6, 31);
+            this.BuildNotesBox.MaxLength = 32767;
+            this.BuildNotesBox.Multiline = true;
+            this.BuildNotesBox.Name = "BuildNotesBox";
+            this.BuildNotesBox.PasswordChar = '\0';
+            this.BuildNotesBox.ReadOnly = true;
+            this.BuildNotesBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.BuildNotesBox.SelectedText = "";
+            this.BuildNotesBox.SelectionLength = 0;
+            this.BuildNotesBox.SelectionStart = 0;
+            this.BuildNotesBox.ShortcutsEnabled = true;
+            this.BuildNotesBox.Size = new System.Drawing.Size(822, 445);
+            this.BuildNotesBox.TabIndex = 8;
+            this.BuildNotesBox.Text = "Fetching Patch Notes for VERSION";
+            this.BuildNotesBox.UseSelectable = true;
+            this.BuildNotesBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.BuildNotesBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
-            // buildVerTitleLbl
+            // BuildVerTitleLbl
             // 
-            this.buildVerTitleLbl.AutoSize = true;
-            this.buildVerTitleLbl.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.buildVerTitleLbl.Location = new System.Drawing.Point(3, 3);
-            this.buildVerTitleLbl.Name = "buildVerTitleLbl";
-            this.buildVerTitleLbl.Size = new System.Drawing.Size(203, 25);
-            this.buildVerTitleLbl.TabIndex = 6;
-            this.buildVerTitleLbl.Text = "Patch Notes for VERSION";
-            this.buildVerTitleLbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BuildVerTitleLbl.AutoSize = true;
+            this.BuildVerTitleLbl.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.BuildVerTitleLbl.Location = new System.Drawing.Point(3, 3);
+            this.BuildVerTitleLbl.Name = "BuildVerTitleLbl";
+            this.BuildVerTitleLbl.Size = new System.Drawing.Size(203, 25);
+            this.BuildVerTitleLbl.TabIndex = 6;
+            this.BuildVerTitleLbl.Text = "Patch Notes for VERSION";
+            this.BuildVerTitleLbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // creditsBtn
+            // CreditsBtn
             // 
-            this.creditsBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.creditsBtn.Location = new System.Drawing.Point(835, 66);
-            this.creditsBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.creditsBtn.Name = "creditsBtn";
-            this.creditsBtn.Size = new System.Drawing.Size(139, 23);
-            this.creditsBtn.TabIndex = 42;
-            this.creditsBtn.Text = "Credits";
-            this.ToolTipManager.SetToolTip(this.creditsBtn, "View the credits for the Mod Injector");
-            this.creditsBtn.UseSelectable = true;
-            this.creditsBtn.Click += new System.EventHandler(this.creditsBtnClicked);
+            this.CreditsBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.CreditsBtn.Location = new System.Drawing.Point(835, 66);
+            this.CreditsBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.CreditsBtn.Name = "CreditsBtn";
+            this.CreditsBtn.Size = new System.Drawing.Size(139, 23);
+            this.CreditsBtn.TabIndex = 42;
+            this.CreditsBtn.Text = "Credits";
+            this.ToolTipManager.SetToolTip(this.CreditsBtn, "View the credits for the Mod Injector");
+            this.CreditsBtn.UseSelectable = true;
+            this.CreditsBtn.Click += new System.EventHandler(this.CreditsBtnClicked);
             // 
-            // connectBtn
+            // ConnectBtn
             // 
-            this.connectBtn.Location = new System.Drawing.Point(834, 494);
-            this.connectBtn.Name = "connectBtn";
-            this.connectBtn.Size = new System.Drawing.Size(140, 23);
-            this.connectBtn.TabIndex = 4;
-            this.connectBtn.Text = "Connect";
-            this.connectBtn.UseSelectable = true;
-            this.connectBtn.Click += new System.EventHandler(this.connectBtnClicked);
+            this.ConnectBtn.Location = new System.Drawing.Point(834, 494);
+            this.ConnectBtn.Name = "ConnectBtn";
+            this.ConnectBtn.Size = new System.Drawing.Size(140, 23);
+            this.ConnectBtn.TabIndex = 4;
+            this.ConnectBtn.Text = "Connect";
+            this.ConnectBtn.UseSelectable = true;
+            this.ConnectBtn.Click += new System.EventHandler(this.ConnectBtnClicked);
             // 
-            // discordSrvBtn
+            // DiscordSrvBtn
             // 
-            this.discordSrvBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.discordSrvBtn.Location = new System.Drawing.Point(835, 101);
-            this.discordSrvBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.discordSrvBtn.Name = "discordSrvBtn";
-            this.discordSrvBtn.Size = new System.Drawing.Size(139, 23);
-            this.discordSrvBtn.TabIndex = 32;
-            this.discordSrvBtn.Text = "Discord Server";
-            this.ToolTipManager.SetToolTip(this.discordSrvBtn, "Will take you to the official Discord server for the Mod Injector");
-            this.discordSrvBtn.UseSelectable = true;
-            this.discordSrvBtn.Click += new System.EventHandler(this.discordSrvBtnClicked);
+            this.DiscordSrvBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.DiscordSrvBtn.Location = new System.Drawing.Point(835, 101);
+            this.DiscordSrvBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.DiscordSrvBtn.Name = "DiscordSrvBtn";
+            this.DiscordSrvBtn.Size = new System.Drawing.Size(139, 23);
+            this.DiscordSrvBtn.TabIndex = 32;
+            this.DiscordSrvBtn.Text = "Discord Server";
+            this.ToolTipManager.SetToolTip(this.DiscordSrvBtn, "Will take you to the official Discord server for the Mod Injector");
+            this.DiscordSrvBtn.UseSelectable = true;
+            this.DiscordSrvBtn.Click += new System.EventHandler(this.DiscordSrvBtnClicked);
             // 
-            // wiiuIpv4Box
-            // 
-            // 
+            // WiiUIpv4Box
             // 
             // 
-            this.wiiuIpv4Box.CustomButton.Image = null;
-            this.wiiuIpv4Box.CustomButton.Location = new System.Drawing.Point(722, 1);
-            this.wiiuIpv4Box.CustomButton.Name = "";
-            this.wiiuIpv4Box.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.wiiuIpv4Box.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.wiiuIpv4Box.CustomButton.TabIndex = 1;
-            this.wiiuIpv4Box.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.wiiuIpv4Box.CustomButton.UseSelectable = true;
-            this.wiiuIpv4Box.CustomButton.Visible = false;
-            this.wiiuIpv4Box.Lines = new string[0];
-            this.wiiuIpv4Box.Location = new System.Drawing.Point(84, 494);
-            this.wiiuIpv4Box.MaxLength = 32767;
-            this.wiiuIpv4Box.Name = "wiiuIpv4Box";
-            this.wiiuIpv4Box.PasswordChar = '\0';
-            this.wiiuIpv4Box.PromptText = "Your Wii U\'s IPv4 address (Seen in the TCP Gecko Installer)";
-            this.wiiuIpv4Box.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.wiiuIpv4Box.SelectedText = "";
-            this.wiiuIpv4Box.SelectionLength = 0;
-            this.wiiuIpv4Box.SelectionStart = 0;
-            this.wiiuIpv4Box.ShortcutsEnabled = true;
-            this.wiiuIpv4Box.Size = new System.Drawing.Size(744, 23);
-            this.wiiuIpv4Box.TabIndex = 3;
-            this.wiiuIpv4Box.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.wiiuIpv4Box.UseSelectable = true;
-            this.wiiuIpv4Box.WaterMark = "Your Wii U\'s IPv4 address (Seen in the TCP Gecko Installer)";
-            this.wiiuIpv4Box.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.wiiuIpv4Box.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.wiiuIpv4Box.TextChanged += new System.EventHandler(this.capturewiiuIpv4Box);
             // 
-            // wiiuIpv4Lbl
             // 
-            this.wiiuIpv4Lbl.AutoSize = true;
-            this.wiiuIpv4Lbl.Location = new System.Drawing.Point(6, 494);
-            this.wiiuIpv4Lbl.Name = "wiiuIpv4Lbl";
-            this.wiiuIpv4Lbl.Size = new System.Drawing.Size(72, 19);
-            this.wiiuIpv4Lbl.TabIndex = 2;
-            this.wiiuIpv4Lbl.Text = "Wii U IPv4:";
+            this.WiiUIpv4Box.CustomButton.Image = null;
+            this.WiiUIpv4Box.CustomButton.Location = new System.Drawing.Point(722, 1);
+            this.WiiUIpv4Box.CustomButton.Name = "";
+            this.WiiUIpv4Box.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.WiiUIpv4Box.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.WiiUIpv4Box.CustomButton.TabIndex = 1;
+            this.WiiUIpv4Box.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.WiiUIpv4Box.CustomButton.UseSelectable = true;
+            this.WiiUIpv4Box.CustomButton.Visible = false;
+            this.WiiUIpv4Box.Lines = new string[0];
+            this.WiiUIpv4Box.Location = new System.Drawing.Point(84, 494);
+            this.WiiUIpv4Box.MaxLength = 32767;
+            this.WiiUIpv4Box.Name = "WiiUIpv4Box";
+            this.WiiUIpv4Box.PasswordChar = '\0';
+            this.WiiUIpv4Box.PromptText = "Your Wii U\'s IPv4 address (Seen in the TCP Gecko Installer)";
+            this.WiiUIpv4Box.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.WiiUIpv4Box.SelectedText = "";
+            this.WiiUIpv4Box.SelectionLength = 0;
+            this.WiiUIpv4Box.SelectionStart = 0;
+            this.WiiUIpv4Box.ShortcutsEnabled = true;
+            this.WiiUIpv4Box.Size = new System.Drawing.Size(744, 23);
+            this.WiiUIpv4Box.TabIndex = 3;
+            this.WiiUIpv4Box.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.WiiUIpv4Box.UseSelectable = true;
+            this.WiiUIpv4Box.WaterMark = "Your Wii U\'s IPv4 address (Seen in the TCP Gecko Installer)";
+            this.WiiUIpv4Box.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.WiiUIpv4Box.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.WiiUIpv4Box.TextChanged += new System.EventHandler(this.CapturewiiuIpv4Box);
+            // 
+            // WiiUIpv4Lbl
+            // 
+            this.WiiUIpv4Lbl.AutoSize = true;
+            this.WiiUIpv4Lbl.Location = new System.Drawing.Point(6, 494);
+            this.WiiUIpv4Lbl.Name = "WiiUIpv4Lbl";
+            this.WiiUIpv4Lbl.Size = new System.Drawing.Size(72, 19);
+            this.WiiUIpv4Lbl.TabIndex = 2;
+            this.WiiUIpv4Lbl.Text = "Wii U IPv4:";
             // 
             // playersTab
             // 
@@ -521,7 +521,7 @@
             this.playersTab.Controls.Add(this.VisibleHitboxes);
             this.playersTab.Controls.Add(this.SprintingSpeedScaleSlider);
             this.playersTab.Controls.Add(this.SprintingSpeedScale);
-            this.playersTab.Controls.Add(this.NNIDEditorBtn);
+            this.playersTab.Controls.Add(this.NnidEditorBtn);
             this.playersTab.Controls.Add(this.RiptideFlyingSpeedSlider);
             this.playersTab.Controls.Add(this.RiptideFlyingSpeed);
             this.playersTab.Controls.Add(this.ReachSlider);
@@ -706,7 +706,7 @@
             0,
             0,
             262144});
-            this.playerModelScaleSlider.ValueChanged += new System.EventHandler(this.playerModelScaleSliderChanged);
+            this.playerModelScaleSlider.ValueChanged += new System.EventHandler(this.PlayerModelScaleSliderChanged);
             // 
             // PlayerModelScale
             // 
@@ -756,7 +756,7 @@
             this.ArmorHUD.Text = "Armor HUD";
             this.ToolTipManager.SetToolTip(this.ArmorHUD, "Whether to display a HUD Element which displays your currently equipped armor");
             this.ArmorHUD.UseSelectable = true;
-            this.ArmorHUD.CheckedChanged += new System.EventHandler(this.ArmorHUDToggled);
+            this.ArmorHUD.CheckedChanged += new System.EventHandler(this.ArmorHudToggled);
             // 
             // TakeEverythingAnywhere
             // 
@@ -967,16 +967,16 @@
             this.SprintingSpeedScale.Tag = "";
             this.SprintingSpeedScale.Text = "Sprinting Speed Scale:";
             // 
-            // NNIDEditorBtn
+            // NnidEditorBtn
             // 
-            this.NNIDEditorBtn.Location = new System.Drawing.Point(3, 342);
-            this.NNIDEditorBtn.Name = "NNIDEditorBtn";
-            this.NNIDEditorBtn.Size = new System.Drawing.Size(972, 23);
-            this.NNIDEditorBtn.TabIndex = 126;
-            this.NNIDEditorBtn.Tag = "";
-            this.NNIDEditorBtn.Text = "Nintendo Network Editor";
-            this.NNIDEditorBtn.UseSelectable = true;
-            this.NNIDEditorBtn.Click += new System.EventHandler(this.NNIDEditorBtnClicked);
+            this.NnidEditorBtn.Location = new System.Drawing.Point(3, 342);
+            this.NnidEditorBtn.Name = "NnidEditorBtn";
+            this.NnidEditorBtn.Size = new System.Drawing.Size(972, 23);
+            this.NnidEditorBtn.TabIndex = 126;
+            this.NnidEditorBtn.Tag = "";
+            this.NnidEditorBtn.Text = "Nintendo Network Editor";
+            this.NnidEditorBtn.UseSelectable = true;
+            this.NnidEditorBtn.Click += new System.EventHandler(this.NnidEditorBtnClicked);
             // 
             // RiptideFlyingSpeedSlider
             // 
@@ -1377,7 +1377,7 @@
             this.LargeXPDrops.Text = "Large XP Drops";
             this.ToolTipManager.SetToolTip(this.LargeXPDrops, "Whether XP dropped by Entities are insane");
             this.LargeXPDrops.UseSelectable = true;
-            this.LargeXPDrops.CheckedChanged += new System.EventHandler(this.LargeXPDropsToggled);
+            this.LargeXPDrops.CheckedChanged += new System.EventHandler(this.LargeXpDropsToggled);
             // 
             // WallClimbing
             // 
@@ -1622,10 +1622,10 @@
             this.worldTab.HorizontalScrollbarBarColor = true;
             this.worldTab.HorizontalScrollbarHighlightOnWheel = false;
             this.worldTab.HorizontalScrollbarSize = 10;
-            this.worldTab.Location = new System.Drawing.Point(4, 5);
+            this.worldTab.Location = new System.Drawing.Point(4, 9);
             this.worldTab.Name = "worldTab";
             this.worldTab.Padding = new System.Windows.Forms.Padding(3);
-            this.worldTab.Size = new System.Drawing.Size(981, 536);
+            this.worldTab.Size = new System.Drawing.Size(981, 532);
             this.worldTab.TabIndex = 1;
             this.worldTab.Tag = "needsGeckoU";
             this.worldTab.Text = "World";
@@ -1770,10 +1770,10 @@
             this.generalTab.HorizontalScrollbarBarColor = true;
             this.generalTab.HorizontalScrollbarHighlightOnWheel = false;
             this.generalTab.HorizontalScrollbarSize = 10;
-            this.generalTab.Location = new System.Drawing.Point(4, 5);
+            this.generalTab.Location = new System.Drawing.Point(4, 9);
             this.generalTab.Name = "generalTab";
             this.generalTab.Padding = new System.Windows.Forms.Padding(3);
-            this.generalTab.Size = new System.Drawing.Size(981, 536);
+            this.generalTab.Size = new System.Drawing.Size(981, 532);
             this.generalTab.TabIndex = 2;
             this.generalTab.Tag = "needsGeckoU";
             this.generalTab.Text = "General Game";
@@ -1879,7 +1879,7 @@
             this.AllDLCUnlocked.Text = "All DLC Unlocked";
             this.ToolTipManager.SetToolTip(this.AllDLCUnlocked, "Whether to have all DLC unlocked without needing to pay");
             this.AllDLCUnlocked.UseSelectable = true;
-            this.AllDLCUnlocked.CheckedChanged += new System.EventHandler(this.AllDLCUnlockedToggled);
+            this.AllDLCUnlocked.CheckedChanged += new System.EventHandler(this.AllDlcUnlockedToggled);
             // 
             // ExitGame
             // 
@@ -1900,10 +1900,10 @@
             this.minigamesTab.HorizontalScrollbarBarColor = true;
             this.minigamesTab.HorizontalScrollbarHighlightOnWheel = false;
             this.minigamesTab.HorizontalScrollbarSize = 10;
-            this.minigamesTab.Location = new System.Drawing.Point(4, 5);
+            this.minigamesTab.Location = new System.Drawing.Point(4, 9);
             this.minigamesTab.Name = "minigamesTab";
             this.minigamesTab.Padding = new System.Windows.Forms.Padding(3);
-            this.minigamesTab.Size = new System.Drawing.Size(981, 536);
+            this.minigamesTab.Size = new System.Drawing.Size(981, 532);
             this.minigamesTab.TabIndex = 3;
             this.minigamesTab.Tag = "GeckoUNeeded";
             this.minigamesTab.Text = "Minigames";
@@ -2001,7 +2001,7 @@
             this.TNTGriefing.Text = "TNT Griefing";
             this.ToolTipManager.SetToolTip(this.TNTGriefing, "Whether TNT is able to destroy blocks or not");
             this.TNTGriefing.UseSelectable = true;
-            this.TNTGriefing.CheckedChanged += new System.EventHandler(this.TNTGriefingToggled);
+            this.TNTGriefing.CheckedChanged += new System.EventHandler(this.TntGriefingToggled);
             // 
             // DisabledKillBarriers
             // 
@@ -2158,7 +2158,7 @@
             this.TumbleHUD.Text = "Tumble HUD";
             this.ToolTipManager.SetToolTip(this.TumbleHUD, "Whether to disable the HUD in Tumble");
             this.TumbleHUD.UseSelectable = true;
-            this.TumbleHUD.CheckedChanged += new System.EventHandler(this.TumbleHUDToggled);
+            this.TumbleHUD.CheckedChanged += new System.EventHandler(this.TumbleHudToggled);
             // 
             // Glide
             // 
@@ -2285,9 +2285,9 @@
             this.commandsTab.HorizontalScrollbarBarColor = true;
             this.commandsTab.HorizontalScrollbarHighlightOnWheel = false;
             this.commandsTab.HorizontalScrollbarSize = 10;
-            this.commandsTab.Location = new System.Drawing.Point(4, 5);
+            this.commandsTab.Location = new System.Drawing.Point(4, 9);
             this.commandsTab.Name = "commandsTab";
-            this.commandsTab.Size = new System.Drawing.Size(981, 536);
+            this.commandsTab.Size = new System.Drawing.Size(981, 532);
             this.commandsTab.TabIndex = 7;
             this.commandsTab.Tag = "needsGeckoU";
             this.commandsTab.Text = "Commands";
@@ -2379,7 +2379,7 @@
             this.downfallCommandBtn.Text = "/toggledownfall";
             this.ToolTipManager.SetToolTip(this.downfallCommandBtn, "Executes the /toggledownfall command");
             this.downfallCommandBtn.UseSelectable = true;
-            this.downfallCommandBtn.Click += new System.EventHandler(this.downfallCommandBtnClicked);
+            this.downfallCommandBtn.Click += new System.EventHandler(this.DownfallCommandBtnClicked);
             // 
             // playerCmdLbl
             // 
@@ -2415,7 +2415,7 @@
             this.killCommandBtn.Text = "/kill";
             this.ToolTipManager.SetToolTip(this.killCommandBtn, "Executes the /kill command, which kills you.");
             this.killCommandBtn.UseSelectable = true;
-            this.killCommandBtn.Click += new System.EventHandler(this.killCommandBtnClicked);
+            this.killCommandBtn.Click += new System.EventHandler(this.KillCommandBtnClicked);
             // 
             // timeCmdLbl
             // 
@@ -2452,7 +2452,7 @@
             this.timeCommandBtn.Text = "Execute /time";
             this.ToolTipManager.SetToolTip(this.timeCommandBtn, "Executes the /time command using the parameters entered above");
             this.timeCommandBtn.UseSelectable = true;
-            this.timeCommandBtn.Click += new System.EventHandler(this.timeCommandBtnClicked);
+            this.timeCommandBtn.Click += new System.EventHandler(this.TimeCommandBtnClicked);
             // 
             // timeAmountBox
             // 
@@ -2568,7 +2568,7 @@
             this.enchantCommandBtn.Text = "Execute /enchant";
             this.ToolTipManager.SetToolTip(this.enchantCommandBtn, "Executes the /enchant command using the parameters entered above");
             this.enchantCommandBtn.UseSelectable = true;
-            this.enchantCommandBtn.Click += new System.EventHandler(this.enchantCommandBtnClicked);
+            this.enchantCommandBtn.Click += new System.EventHandler(this.EnchantCommandBtnClicked);
             // 
             // enchantLevelBox
             // 
@@ -2641,7 +2641,7 @@
             this.itemIdHelpBtn.Text = "?";
             this.ToolTipManager.SetToolTip(this.itemIdHelpBtn, "Executes the /give command using the parameters entered above");
             this.itemIdHelpBtn.UseSelectable = true;
-            this.itemIdHelpBtn.Click += new System.EventHandler(this.itemIdHelpBtnClicked);
+            this.itemIdHelpBtn.Click += new System.EventHandler(this.ItemIdHelpBtnClicked);
             // 
             // giveCommandBtn
             // 
@@ -2653,7 +2653,7 @@
             this.giveCommandBtn.Text = "Execute /give";
             this.ToolTipManager.SetToolTip(this.giveCommandBtn, "Executes the /give command using the parameters entered above");
             this.giveCommandBtn.UseSelectable = true;
-            this.giveCommandBtn.Click += new System.EventHandler(this.giveCommandBtnClicked);
+            this.giveCommandBtn.Click += new System.EventHandler(this.GiveCommandBtnClicked);
             // 
             // giveDataBox
             // 
@@ -2771,10 +2771,10 @@
             this.settingsTab.HorizontalScrollbarBarColor = true;
             this.settingsTab.HorizontalScrollbarHighlightOnWheel = false;
             this.settingsTab.HorizontalScrollbarSize = 10;
-            this.settingsTab.Location = new System.Drawing.Point(4, 5);
+            this.settingsTab.Location = new System.Drawing.Point(4, 9);
             this.settingsTab.Name = "settingsTab";
             this.settingsTab.Padding = new System.Windows.Forms.Padding(3);
-            this.settingsTab.Size = new System.Drawing.Size(981, 536);
+            this.settingsTab.Size = new System.Drawing.Size(981, 532);
             this.settingsTab.TabIndex = 5;
             this.settingsTab.Tag = "";
             this.settingsTab.Text = "Settings";
@@ -2873,7 +2873,7 @@
             this.colorsBox.Size = new System.Drawing.Size(910, 29);
             this.colorsBox.TabIndex = 37;
             this.colorsBox.UseSelectable = true;
-            this.colorsBox.SelectedIndexChanged += new System.EventHandler(this.formColorSelected);
+            this.colorsBox.SelectedIndexChanged += new System.EventHandler(this.FormColorSelected);
             // 
             // ThemeLabel
             // 
@@ -2905,7 +2905,7 @@
             this.themeBox.Size = new System.Drawing.Size(910, 29);
             this.themeBox.TabIndex = 35;
             this.themeBox.UseSelectable = true;
-            this.themeBox.SelectedIndexChanged += new System.EventHandler(this.formThemeSelected);
+            this.themeBox.SelectedIndexChanged += new System.EventHandler(this.FormThemeSelected);
             // 
             // debugTab
             // 
@@ -2916,9 +2916,9 @@
             this.debugTab.HorizontalScrollbarBarColor = true;
             this.debugTab.HorizontalScrollbarHighlightOnWheel = false;
             this.debugTab.HorizontalScrollbarSize = 10;
-            this.debugTab.Location = new System.Drawing.Point(4, 5);
+            this.debugTab.Location = new System.Drawing.Point(4, 9);
             this.debugTab.Name = "debugTab";
-            this.debugTab.Size = new System.Drawing.Size(981, 536);
+            this.debugTab.Size = new System.Drawing.Size(981, 532);
             this.debugTab.TabIndex = 8;
             this.debugTab.Tag = "needsGeckoU";
             this.debugTab.Text = "Debug";
@@ -2937,7 +2937,7 @@
             this.ToolTipManager.SetToolTip(this.vpadDisplaySwitch, "Holding down the power button on the gamepad will turn off the screen, not consol" +
         "e");
             this.vpadDisplaySwitch.UseSelectable = true;
-            this.vpadDisplaySwitch.CheckedChanged += new System.EventHandler(this.vpadDisplaySwitchToggled);
+            this.vpadDisplaySwitch.CheckedChanged += new System.EventHandler(this.VpadDisplaySwitchToggled);
             // 
             // wiiuDebugLbl
             // 
@@ -2959,7 +2959,7 @@
             this.ToolTipManager.SetToolTip(this.disableVPadInput, "Disables all input from the Gamepad including the touch screen but excluding the " +
         "home button");
             this.disableVPadInput.UseSelectable = true;
-            this.disableVPadInput.CheckedChanged += new System.EventHandler(this.disableVPadInputToggled);
+            this.disableVPadInput.CheckedChanged += new System.EventHandler(this.DisableVPadInputToggled);
             // 
             // wiiuDebugPanel
             // 
@@ -2975,20 +2975,20 @@
             this.wiiuDebugPanel.VerticalScrollbarHighlightOnWheel = false;
             this.wiiuDebugPanel.VerticalScrollbarSize = 10;
             // 
-            // homeTile
+            // HomeTile
             // 
-            this.homeTile.ActiveControl = null;
-            this.homeTile.Location = new System.Drawing.Point(0, 63);
-            this.homeTile.Name = "homeTile";
-            this.homeTile.PaintTileCount = false;
-            this.homeTile.Size = new System.Drawing.Size(160, 55);
-            this.homeTile.TabIndex = 8;
-            this.homeTile.Tag = "0";
-            this.homeTile.Text = "Home";
-            this.homeTile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.homeTile.UseSelectable = true;
-            this.homeTile.UseTileImage = true;
-            this.homeTile.Click += new System.EventHandler(this.SwapTab);
+            this.HomeTile.ActiveControl = null;
+            this.HomeTile.Location = new System.Drawing.Point(0, 63);
+            this.HomeTile.Name = "HomeTile";
+            this.HomeTile.PaintTileCount = false;
+            this.HomeTile.Size = new System.Drawing.Size(160, 55);
+            this.HomeTile.TabIndex = 1;
+            this.HomeTile.Tag = "0";
+            this.HomeTile.Text = "Home";
+            this.HomeTile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.HomeTile.UseSelectable = true;
+            this.HomeTile.UseTileImage = true;
+            this.HomeTile.Click += new System.EventHandler(this.SwapTab);
             // 
             // StyleMngr
             // 
@@ -3000,66 +3000,66 @@
             this.ToolTipManager.StyleManager = null;
             this.ToolTipManager.Theme = MetroFramework.MetroThemeStyle.Default;
             // 
-            // playersTile
+            // PlayersTile
             // 
-            this.playersTile.ActiveControl = null;
-            this.playersTile.Location = new System.Drawing.Point(0, 117);
-            this.playersTile.Name = "playersTile";
-            this.playersTile.PaintTileCount = false;
-            this.playersTile.Size = new System.Drawing.Size(160, 55);
-            this.playersTile.TabIndex = 9;
-            this.playersTile.Tag = "1";
-            this.playersTile.Text = "Player(s)";
-            this.playersTile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.playersTile.TileCount = 1;
-            this.playersTile.UseSelectable = true;
-            this.playersTile.UseTileImage = true;
-            this.playersTile.Click += new System.EventHandler(this.SwapTab);
+            this.PlayersTile.ActiveControl = null;
+            this.PlayersTile.Location = new System.Drawing.Point(0, 117);
+            this.PlayersTile.Name = "PlayersTile";
+            this.PlayersTile.PaintTileCount = false;
+            this.PlayersTile.Size = new System.Drawing.Size(160, 55);
+            this.PlayersTile.TabIndex = 2;
+            this.PlayersTile.Tag = "1";
+            this.PlayersTile.Text = "Player(s)";
+            this.PlayersTile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.PlayersTile.TileCount = 1;
+            this.PlayersTile.UseSelectable = true;
+            this.PlayersTile.UseTileImage = true;
+            this.PlayersTile.Click += new System.EventHandler(this.SwapTab);
             // 
-            // commandsTile
+            // CommandsTile
             // 
-            this.commandsTile.ActiveControl = null;
-            this.commandsTile.Location = new System.Drawing.Point(0, 337);
-            this.commandsTile.Name = "commandsTile";
-            this.commandsTile.PaintTileCount = false;
-            this.commandsTile.Size = new System.Drawing.Size(160, 55);
-            this.commandsTile.TabIndex = 10;
-            this.commandsTile.Tag = "5";
-            this.commandsTile.Text = "Commands";
-            this.commandsTile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.commandsTile.TileCount = 5;
-            this.commandsTile.UseSelectable = true;
-            this.commandsTile.Click += new System.EventHandler(this.SwapTab);
+            this.CommandsTile.ActiveControl = null;
+            this.CommandsTile.Location = new System.Drawing.Point(0, 337);
+            this.CommandsTile.Name = "CommandsTile";
+            this.CommandsTile.PaintTileCount = false;
+            this.CommandsTile.Size = new System.Drawing.Size(160, 55);
+            this.CommandsTile.TabIndex = 6;
+            this.CommandsTile.Tag = "5";
+            this.CommandsTile.Text = "Commands";
+            this.CommandsTile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.CommandsTile.TileCount = 5;
+            this.CommandsTile.UseSelectable = true;
+            this.CommandsTile.Click += new System.EventHandler(this.SwapTab);
             // 
-            // debugTile
+            // DebugTile
             // 
-            this.debugTile.ActiveControl = null;
-            this.debugTile.Location = new System.Drawing.Point(0, 461);
-            this.debugTile.Name = "debugTile";
-            this.debugTile.PaintTileCount = false;
-            this.debugTile.Size = new System.Drawing.Size(160, 69);
-            this.debugTile.TabIndex = 11;
-            this.debugTile.Tag = "7";
-            this.debugTile.Text = "Debug";
-            this.debugTile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.debugTile.TileCount = 7;
-            this.debugTile.UseSelectable = true;
-            this.debugTile.Click += new System.EventHandler(this.SwapTab);
+            this.DebugTile.ActiveControl = null;
+            this.DebugTile.Location = new System.Drawing.Point(0, 461);
+            this.DebugTile.Name = "DebugTile";
+            this.DebugTile.PaintTileCount = false;
+            this.DebugTile.Size = new System.Drawing.Size(160, 69);
+            this.DebugTile.TabIndex = 8;
+            this.DebugTile.Tag = "7";
+            this.DebugTile.Text = "Debug";
+            this.DebugTile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.DebugTile.TileCount = 7;
+            this.DebugTile.UseSelectable = true;
+            this.DebugTile.Click += new System.EventHandler(this.SwapTab);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1141, 608);
-            this.Controls.Add(this.buildTile);
-            this.Controls.Add(this.settingsTile);
-            this.Controls.Add(this.debugTile);
-            this.Controls.Add(this.minigamesTile);
-            this.Controls.Add(this.generalTile);
-            this.Controls.Add(this.worldTile);
-            this.Controls.Add(this.commandsTile);
-            this.Controls.Add(this.playersTile);
-            this.Controls.Add(this.homeTile);
+            this.Controls.Add(this.BuildTile);
+            this.Controls.Add(this.SettingsTile);
+            this.Controls.Add(this.DebugTile);
+            this.Controls.Add(this.MinigamesTile);
+            this.Controls.Add(this.GeneralTile);
+            this.Controls.Add(this.WorldTile);
+            this.Controls.Add(this.CommandsTile);
+            this.Controls.Add(this.PlayersTile);
+            this.Controls.Add(this.HomeTile);
             this.Controls.Add(this.MainTabs);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -3072,8 +3072,8 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Exit);
             this.Load += new System.EventHandler(this.Init);
             this.MainTabs.ResumeLayout(false);
-            this.mainTab.ResumeLayout(false);
-            this.mainTab.PerformLayout();
+            this.MainTab.ResumeLayout(false);
+            this.MainTab.PerformLayout();
             this.playersTab.ResumeLayout(false);
             this.playersTab.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.FrictionSlider)).EndInit();
@@ -3125,23 +3125,23 @@
 
         #endregion
 
-        public MetroFramework.Controls.MetroTile worldTile;
-        public MetroFramework.Controls.MetroTile generalTile;
-        public MetroFramework.Controls.MetroTile minigamesTile;
-        public MetroFramework.Controls.MetroTile settingsTile;
-        public MetroFramework.Controls.MetroTile buildTile;
+        public MetroFramework.Controls.MetroTile WorldTile;
+        public MetroFramework.Controls.MetroTile GeneralTile;
+        public MetroFramework.Controls.MetroTile MinigamesTile;
+        public MetroFramework.Controls.MetroTile SettingsTile;
+        public MetroFramework.Controls.MetroTile BuildTile;
         public MetroFramework.Controls.MetroTabControl MainTabs;
         public MetroFramework.Controls.MetroTabPage playersTab;
         public MetroFramework.Controls.MetroTabPage worldTab;
         public MetroFramework.Controls.MetroTabPage generalTab;
         public MetroFramework.Controls.MetroTabPage minigamesTab;
         public MetroFramework.Controls.MetroTabPage settingsTab;
-        public MetroFramework.Controls.MetroTile homeTile;
-        public MetroFramework.Controls.MetroTabPage mainTab;
-        public MetroFramework.Controls.MetroLabel wiiuIpv4Lbl;
-        public MetroFramework.Controls.MetroTile playersTile;
-        public MetroFramework.Controls.MetroButton connectBtn;
-        public MetroFramework.Controls.MetroTextBox wiiuIpv4Box;
+        public MetroFramework.Controls.MetroTile HomeTile;
+        public MetroFramework.Controls.MetroTabPage MainTab;
+        public MetroFramework.Controls.MetroLabel WiiUIpv4Lbl;
+        public MetroFramework.Controls.MetroTile PlayersTile;
+        public MetroFramework.Controls.MetroButton ConnectBtn;
+        public MetroFramework.Controls.MetroTextBox WiiUIpv4Box;
         public MetroFramework.Controls.MetroCheckBox InsaneCriticalHits;
         public MetroFramework.Controls.MetroCheckBox AlwaysSwimming;
         public MetroFramework.Controls.MetroCheckBox InfiniteRiptide;
@@ -3218,16 +3218,16 @@
         public System.Windows.Forms.NumericUpDown ringScoreGreen;
         public MetroFramework.Controls.MetroCheckBox HostOptions;
         public MetroFramework.Controls.MetroCheckBox DisablePermanentKicks;
-        public MetroFramework.Controls.MetroButton discordSrvBtn;
+        public MetroFramework.Controls.MetroButton DiscordSrvBtn;
         public MetroFramework.Components.MetroStyleManager StyleMngr;
-        public MetroFramework.Controls.MetroButton NNIDEditorBtn;
+        public MetroFramework.Controls.MetroButton NnidEditorBtn;
         public MetroFramework.Controls.MetroComboBox colorsBox;
         public MetroFramework.Controls.MetroLabel ThemeLabel;
         public MetroFramework.Controls.MetroLabel ColorLabel;
         public MetroFramework.Controls.MetroComboBox themeBox;
-        public MetroFramework.Controls.MetroButton creditsBtn;
+        public MetroFramework.Controls.MetroButton CreditsBtn;
         private MetroFramework.Components.MetroStyleExtender StyleExtender;
-        public MetroFramework.Controls.MetroLabel buildVerTitleLbl;
+        public MetroFramework.Controls.MetroLabel BuildVerTitleLbl;
         private MetroFramework.Components.MetroToolTip ToolTipManager;
         public MetroFramework.Controls.MetroCheckBox VisibleHitboxes;
         public MetroFramework.Controls.MetroCheckBox discordRpcCheckBox;
@@ -3238,7 +3238,7 @@
         public MetroFramework.Controls.MetroLabel ringScoreO;
         public System.Windows.Forms.NumericUpDown ringScoreOrange;
         private MetroFramework.Controls.MetroTabPage commandsTab;
-        public MetroFramework.Controls.MetroTile commandsTile;
+        public MetroFramework.Controls.MetroTile CommandsTile;
         public MetroFramework.Controls.MetroButton resetConfigBtn;
         private MetroFramework.Controls.MetroLabel worldCmdLbl;
         private MetroFramework.Controls.MetroPanel worldPanel;
@@ -3280,11 +3280,11 @@
         private MetroFramework.Controls.MetroPanel gamemodePanel;
         private MetroFramework.Controls.MetroButton GameModeCommandBtn;
         public MetroFramework.Controls.MetroCheckBox releaseNotesToggle;
-        public MetroFramework.Controls.MetroTextBox buildNotesBox;
+        public MetroFramework.Controls.MetroTextBox BuildNotesBox;
         public System.Windows.Forms.NumericUpDown playerModelScaleSlider;
         public MetroFramework.Controls.MetroLabel PlayerModelScale;
-        public MetroFramework.Controls.MetroButton openFaqInfo;
-        public MetroFramework.Controls.MetroTile debugTile;
+        public MetroFramework.Controls.MetroButton FaqBtn;
+        public MetroFramework.Controls.MetroTile DebugTile;
         public MetroFramework.Controls.MetroTabPage debugTab;
         private MetroFramework.Controls.MetroLabel wiiuDebugLbl;
         private MetroFramework.Controls.MetroPanel wiiuDebugPanel;

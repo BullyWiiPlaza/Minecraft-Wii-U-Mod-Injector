@@ -4,80 +4,10 @@ using System.Drawing;
 using System.Globalization;
 using System.Linq;
 using System.Windows.Forms;
+using MetroFramework.Controls;
 
-namespace Minecraft_Wii_U_Mod_Injector.Helpers.Winforms
+namespace Minecraft_Wii_U_Mod_Injector.Helpers.Win_Forms
 {
-    /*  FlexibleMessageBox – A flexible replacement for the .NET MessageBox
-     * 
-     *  Author:         Jörg Reichert (public@jreichert.de)
-     *  Contributors:   Thanks to: David Hall, Roink
-     *  Version:        1.3
-     *  Published at:   http://www.codeproject.com/Articles/601900/FlexibleMessageBox
-     *  
-     ************************************************************************************************************
-     * Features:
-     *  - It can be simply used instead of MessageBox since all important static "Show"-Functions are supported
-     *  - It is small, only one source file, which could be added easily to each solution 
-     *  - It can be resized and the content is correctly word-wrapped
-     *  - It tries to auto-size the width to show the longest text row
-     *  - It never exceeds the current desktop working area
-     *  - It displays a vertical scrollbar when needed
-     *  - It does support hyperlinks in text
-     * 
-     *  Because the interface is identical to MessageBox, you can add this single source file to your project 
-     *  and use the FlexibleMessageBox almost everywhere you use a standard MessageBox. 
-     *  The goal was NOT to produce as many features as possible but to provide a simple replacement to fit my 
-     *  own needs. Feel free to add additional features on your own, but please left my credits in this class.
-     * 
-     ************************************************************************************************************
-     * Usage examples:
-     * 
-     *  FlexibleMessageBox.Show("Just a text");
-     * 
-     *  FlexibleMessageBox.Show("A text", 
-     *                          "A caption"); 
-     *  
-     *  FlexibleMessageBox.Show("Some text with a link: www.google.com", 
-     *                          "Some caption",
-     *                          MessageBoxButtons.AbortRetryIgnore, 
-     *                          MessageBoxIcon.Information,
-     *                          MessageBoxDefaultButton.Button2);
-     *  
-     *  var dialogResult = FlexibleMessageBox.Show("Do you know the answer to life the universe and everything?", 
-     *                                             "One short question",
-     *                                             MessageBoxButtons.YesNo);     
-     * 
-     ************************************************************************************************************
-     *  THE SOFTWARE IS PROVIDED BY THE AUTHOR "AS IS", WITHOUT WARRANTY
-     *  OF ANY KIND, EXPRESS OR IMPLIED. IN NO EVENT SHALL THE AUTHOR BE
-     *  LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY ARISING FROM,
-     *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OF THIS
-     *  SOFTWARE.
-     *  
-     ************************************************************************************************************
-     * History:
-     *  Version 1.3 - 19.Dezember 2014
-     *  - Added refactoring function GetButtonText()
-     *  - Used CurrentUICulture instead of InstalledUICulture
-     *  - Added more button localizations. Supported languages are now: ENGLISH, GERMAN, SPANISH, ITALIAN
-     *  - Added standard MessageBox handling for "copy to clipboard" with <Ctrl> + <C> and <Ctrl> + <Insert>
-     *  - Tab handling is now corrected (only tabbing over the visible buttons)
-     *  - Added standard MessageBox handling for ALT-Keyboard shortcuts
-     *  - SetDialogSizes: Refactored completely: Corrected sizing and added caption driven sizing
-     * 
-     *  Version 1.2 - 10.August 2013
-     *   - Do not ShowInTaskbar anymore (original MessageBox is also hidden in taskbar)
-     *   - Added handling for Escape-Button
-     *   - Adapted top right close button (red X) to behave like MessageBox (but hidden instead of deactivated)
-     * 
-     *  Version 1.1 - 14.June 2013
-     *   - Some Refactoring
-     *   - Added internal form class
-     *   - Added missing code comments, etc.
-     *  
-     *  Version 1.0 - 15.April 2013
-     *   - Initial Version
-    */
     public class FlexibleMessageBox
     {
         #region Public statics
@@ -91,7 +21,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers.Winforms
         /// 
         /// Default is: 70% of the working area width.
         /// </summary>
-        public static double MAX_WIDTH_FACTOR = 0.7;
+        public static double MaxWidthFactor = 0.7;
 
         /// <summary>
         /// Defines the maximum height for all FlexibleMessageBox instances in percent of the working area.
@@ -102,14 +32,14 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers.Winforms
         /// 
         /// Default is: 90% of the working area height.
         /// </summary>
-        public static double MAX_HEIGHT_FACTOR = 0.9;
+        public static double MaxHeightFactor = 0.9;
 
         /// <summary>
         /// Defines the font for all FlexibleMessageBox instances.
         /// 
         /// Default is: SystemFonts.MessageBoxFont
         /// </summary>
-        public static Font FONT = SystemFonts.MessageBoxFont;
+        public static Font Font = SystemFonts.MessageBoxFont;
 
         #endregion
 
@@ -255,7 +185,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers.Winforms
             /// <summary>
             /// Erforderliche Designervariable.
             /// </summary>
-            private System.ComponentModel.IContainer components = null;
+            private System.ComponentModel.IContainer components;
 
             /// <summary>
             /// Verwendete Ressourcen bereinigen.
@@ -276,162 +206,162 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers.Winforms
             /// </summary>
             private void InitializeComponent()
             {
-                this.components = new System.ComponentModel.Container();
-                this.button1 = new System.Windows.Forms.Button();
-                this.richTextBoxMessage = new System.Windows.Forms.RichTextBox();
-                this.FlexibleMessageBoxFormBindingSource = new System.Windows.Forms.BindingSource(this.components);
-                this.panel1 = new System.Windows.Forms.Panel();
-                this.pictureBoxForIcon = new System.Windows.Forms.PictureBox();
-                this.button2 = new System.Windows.Forms.Button();
-                this.button3 = new System.Windows.Forms.Button();
-                ((System.ComponentModel.ISupportInitialize)(this.FlexibleMessageBoxFormBindingSource)).BeginInit();
-                this.panel1.SuspendLayout();
-                ((System.ComponentModel.ISupportInitialize)(this.pictureBoxForIcon)).BeginInit();
-                this.SuspendLayout();
+                components = new System.ComponentModel.Container();
+                _button1 = new MetroButton();
+                _button2 = new MetroButton();
+                _button3 = new MetroButton();
+                _panel1 = new MetroPanel();
+                _pictureBoxForIcon = new PictureBox();
+                _richTextBoxMessage = new RichTextBox();
+                _flexibleMessageBoxFormBindingSource = new BindingSource(components);
+                ((System.ComponentModel.ISupportInitialize)(_flexibleMessageBoxFormBindingSource)).BeginInit();
+                _panel1.SuspendLayout();
+                ((System.ComponentModel.ISupportInitialize)(_pictureBoxForIcon)).BeginInit();
+                SuspendLayout();
                 // 
                 // button1
                 // 
-                this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-                this.button1.AutoSize = true;
-                this.button1.DialogResult = System.Windows.Forms.DialogResult.OK;
-                this.button1.Location = new System.Drawing.Point(11, 67);
-                this.button1.MinimumSize = new System.Drawing.Size(0, 24);
-                this.button1.Name = "button1";
-                this.button1.Size = new System.Drawing.Size(75, 24);
-                this.button1.TabIndex = 2;
-                this.button1.Text = "OK";
-                this.button1.UseVisualStyleBackColor = true;
-                this.button1.Visible = false;
+                _button1.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+                _button1.AutoSize = true;
+                _button1.DialogResult = DialogResult.OK;
+                _button1.Location = new Point(11, 67);
+                _button1.MinimumSize = new Size(0, 24);
+                _button1.Name = "_button1";
+                _button1.Size = new Size(75, 24);
+                _button1.TabIndex = 2;
+                _button1.Text = "OK";
+                _button1.UseVisualStyleBackColor = true;
+                _button1.Visible = false;
                 // 
                 // richTextBoxMessage
                 // 
-                this.richTextBoxMessage.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                | System.Windows.Forms.AnchorStyles.Left)
-                | System.Windows.Forms.AnchorStyles.Right)));
-                this.richTextBoxMessage.BackColor = System.Drawing.Color.White;
-                this.richTextBoxMessage.BorderStyle = System.Windows.Forms.BorderStyle.None;
-                this.richTextBoxMessage.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.FlexibleMessageBoxFormBindingSource, "MessageText", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-                this.richTextBoxMessage.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-                this.richTextBoxMessage.Location = new System.Drawing.Point(50, 26);
-                this.richTextBoxMessage.Margin = new System.Windows.Forms.Padding(0);
-                this.richTextBoxMessage.Name = "richTextBoxMessage";
-                this.richTextBoxMessage.ReadOnly = true;
-                this.richTextBoxMessage.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-                this.richTextBoxMessage.Size = new System.Drawing.Size(200, 20);
-                this.richTextBoxMessage.TabIndex = 0;
-                this.richTextBoxMessage.TabStop = false;
-                this.richTextBoxMessage.Text = "<Message>";
-                this.richTextBoxMessage.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.richTextBoxMessage_LinkClicked);
+                _richTextBoxMessage.Anchor = ((AnchorStyles.Top | AnchorStyles.Bottom)
+                                              | AnchorStyles.Left)
+                                             | AnchorStyles.Right;
+                _richTextBoxMessage.BackColor = Color.White;
+                _richTextBoxMessage.BorderStyle = BorderStyle.None;
+                _richTextBoxMessage.DataBindings.Add(new Binding("Text", _flexibleMessageBoxFormBindingSource, "MessageText", true, DataSourceUpdateMode.OnPropertyChanged));
+                _richTextBoxMessage.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+                _richTextBoxMessage.Location = new Point(50, 26);
+                _richTextBoxMessage.Margin = new Padding(0);
+                _richTextBoxMessage.Name = "_richTextBoxMessage";
+                _richTextBoxMessage.ReadOnly = true;
+                _richTextBoxMessage.ScrollBars = RichTextBoxScrollBars.Vertical;
+                _richTextBoxMessage.Size = new Size(200, 20);
+                _richTextBoxMessage.TabIndex = 0;
+                _richTextBoxMessage.TabStop = false;
+                _richTextBoxMessage.Text = "<Message>";
+                _richTextBoxMessage.LinkClicked += richTextBoxMessage_LinkClicked;
                 // 
                 // panel1
                 // 
-                this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                | System.Windows.Forms.AnchorStyles.Left)
-                | System.Windows.Forms.AnchorStyles.Right)));
-                this.panel1.BackColor = System.Drawing.Color.White;
-                this.panel1.Controls.Add(this.pictureBoxForIcon);
-                this.panel1.Controls.Add(this.richTextBoxMessage);
-                this.panel1.Location = new System.Drawing.Point(-3, -4);
-                this.panel1.Name = "panel1";
-                this.panel1.Size = new System.Drawing.Size(268, 59);
-                this.panel1.TabIndex = 1;
+                _panel1.Anchor = ((AnchorStyles.Top | AnchorStyles.Bottom)
+                                  | AnchorStyles.Left)
+                                 | AnchorStyles.Right;
+                _panel1.BackColor = Color.White;
+                _panel1.Controls.Add(_pictureBoxForIcon);
+                _panel1.Controls.Add(_richTextBoxMessage);
+                _panel1.Location = new Point(-3, -4);
+                _panel1.Name = "_panel1";
+                _panel1.Size = new Size(268, 59);
+                _panel1.TabIndex = 1;
                 // 
                 // pictureBoxForIcon
                 // 
-                this.pictureBoxForIcon.BackColor = System.Drawing.Color.Transparent;
-                this.pictureBoxForIcon.Location = new System.Drawing.Point(15, 19);
-                this.pictureBoxForIcon.Name = "pictureBoxForIcon";
-                this.pictureBoxForIcon.Size = new System.Drawing.Size(32, 32);
-                this.pictureBoxForIcon.TabIndex = 8;
-                this.pictureBoxForIcon.TabStop = false;
+                _pictureBoxForIcon.BackColor = Color.Transparent;
+                _pictureBoxForIcon.Location = new Point(15, 19);
+                _pictureBoxForIcon.Name = "_pictureBoxForIcon";
+                _pictureBoxForIcon.Size = new Size(32, 32);
+                _pictureBoxForIcon.TabIndex = 8;
+                _pictureBoxForIcon.TabStop = false;
                 // 
                 // button2
                 // 
-                this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-                this.button2.DialogResult = System.Windows.Forms.DialogResult.OK;
-                this.button2.Location = new System.Drawing.Point(92, 67);
-                this.button2.MinimumSize = new System.Drawing.Size(0, 24);
-                this.button2.Name = "button2";
-                this.button2.Size = new System.Drawing.Size(75, 24);
-                this.button2.TabIndex = 3;
-                this.button2.Text = "OK";
-                this.button2.UseVisualStyleBackColor = true;
-                this.button2.Visible = false;
+                _button2.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+                _button2.DialogResult = DialogResult.OK;
+                _button2.Location = new Point(92, 67);
+                _button2.MinimumSize = new Size(0, 24);
+                _button2.Name = "_button2";
+                _button2.Size = new Size(75, 24);
+                _button2.TabIndex = 3;
+                _button2.Text = "OK";
+                _button2.UseVisualStyleBackColor = true;
+                _button2.Visible = false;
                 // 
                 // button3
                 // 
-                this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-                this.button3.AutoSize = true;
-                this.button3.DialogResult = System.Windows.Forms.DialogResult.OK;
-                this.button3.Location = new System.Drawing.Point(173, 67);
-                this.button3.MinimumSize = new System.Drawing.Size(0, 24);
-                this.button3.Name = "button3";
-                this.button3.Size = new System.Drawing.Size(75, 24);
-                this.button3.TabIndex = 0;
-                this.button3.Text = "OK";
-                this.button3.UseVisualStyleBackColor = true;
-                this.button3.Visible = false;
+                _button3.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+                _button3.AutoSize = true;
+                _button3.DialogResult = DialogResult.OK;
+                _button3.Location = new Point(173, 67);
+                _button3.MinimumSize = new Size(0, 24);
+                _button3.Name = "_button3";
+                _button3.Size = new Size(75, 24);
+                _button3.TabIndex = 0;
+                _button3.Text = "OK";
+                _button3.UseVisualStyleBackColor = true;
+                _button3.Visible = false;
                 // 
                 // FlexibleMessageBoxForm
                 // 
-                this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-                this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-                this.ClientSize = new System.Drawing.Size(260, 102);
-                this.Controls.Add(this.button3);
-                this.Controls.Add(this.button2);
-                this.Controls.Add(this.panel1);
-                this.Controls.Add(this.button1);
-                this.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.FlexibleMessageBoxFormBindingSource, "CaptionText", true));
-                this.MaximizeBox = false;
-                this.MinimizeBox = false;
-                this.MinimumSize = new System.Drawing.Size(276, 140);
-                this.Name = "FlexibleMessageBoxForm";
-                this.ShowIcon = false;
-                this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
-                this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-                this.Text = "<Caption>";
-                this.Shown += new System.EventHandler(this.FlexibleMessageBoxForm_Shown);
-                ((System.ComponentModel.ISupportInitialize)(this.FlexibleMessageBoxFormBindingSource)).EndInit();
-                this.panel1.ResumeLayout(false);
-                ((System.ComponentModel.ISupportInitialize)(this.pictureBoxForIcon)).EndInit();
-                this.ResumeLayout(false);
-                this.PerformLayout();
+                AutoScaleDimensions = new SizeF(6F, 13F);
+                AutoScaleMode = AutoScaleMode.Font;
+                ClientSize = new Size(260, 102);
+                Controls.Add(_button3);
+                Controls.Add(_button2);
+                Controls.Add(_panel1);
+                Controls.Add(_button1);
+                DataBindings.Add(new Binding("Text", _flexibleMessageBoxFormBindingSource, "CaptionText", true));
+                MaximizeBox = false;
+                MinimizeBox = false;
+                MinimumSize = new Size(276, 140);
+                Name = "FlexibleMessageBoxForm";
+                ShowIcon = false;
+                SizeGripStyle = SizeGripStyle.Show;
+                StartPosition = FormStartPosition.CenterParent;
+                Text = "<Caption>";
+                Shown += FlexibleMessageBoxForm_Shown;
+                ((System.ComponentModel.ISupportInitialize)(_flexibleMessageBoxFormBindingSource)).EndInit();
+                _panel1.ResumeLayout(false);
+                ((System.ComponentModel.ISupportInitialize)(_pictureBoxForIcon)).EndInit();
+                ResumeLayout(false);
+                PerformLayout();
             }
 
-            private System.Windows.Forms.Button button1;
-            private System.Windows.Forms.BindingSource FlexibleMessageBoxFormBindingSource;
-            private System.Windows.Forms.RichTextBox richTextBoxMessage;
-            private System.Windows.Forms.Panel panel1;
-            private System.Windows.Forms.PictureBox pictureBoxForIcon;
-            private System.Windows.Forms.Button button2;
-            private System.Windows.Forms.Button button3;
+            private Button _button1;
+            private BindingSource _flexibleMessageBoxFormBindingSource;
+            private RichTextBox _richTextBoxMessage;
+            private Panel _panel1;
+            private PictureBox _pictureBoxForIcon;
+            private Button _button2;
+            private Button _button3;
 
             #endregion
 
             #region Private constants
 
             //These separators are used for the "copy to clipboard" standard operation, triggered by Ctrl + C (behavior and clipboard format is like in a standard MessageBox)
-            private static readonly String STANDARD_MESSAGEBOX_SEPARATOR_LINES = "---------------------------\n";
-            private static readonly String STANDARD_MESSAGEBOX_SEPARATOR_SPACES = "   ";
+            private static readonly String StandardMessageboxSeparatorLines = "---------------------------\n";
+            private static readonly String StandardMessageboxSeparatorSpaces = "   ";
 
             //These are the possible buttons (in a standard MessageBox)
-            private enum ButtonID { OK = 0, CANCEL, YES, NO, ABORT, RETRY, IGNORE };
+            private enum ButtonId { Ok = 0, Cancel, Yes, No, Abort, Retry, Ignore };
 
             //These are the buttons texts for different languages. 
             //If you want to add a new language, add it here and in the GetButtonText-Function
-            private enum TwoLetterISOLanguageID { en, de, es, it };
-            private static readonly String[] BUTTON_TEXTS_ENGLISH_EN = { "OK", "Cancel", "&Yes", "&No", "&Abort", "&Retry", "&Ignore" }; //Note: This is also the fallback language
-            private static readonly String[] BUTTON_TEXTS_GERMAN_DE = { "OK", "Abbrechen", "&Ja", "&Nein", "&Abbrechen", "&Wiederholen", "&Ignorieren" };
-            private static readonly String[] BUTTON_TEXTS_SPANISH_ES = { "Aceptar", "Cancelar", "&Sí", "&No", "&Abortar", "&Reintentar", "&Ignorar" };
-            private static readonly String[] BUTTON_TEXTS_ITALIAN_IT = { "OK", "Annulla", "&Sì", "&No", "&Interrompi", "&Riprova", "&Ignora" };
+            private enum TwoLetterIsoLanguageId { En, De, Es, It };
+            private static readonly String[] ButtonTextsEnglishEn = { "OK", "Cancel", "&Yes", "&No", "&Abort", "&Retry", "&Ignore" }; //Note: This is also the fallback language
+            private static readonly String[] ButtonTextsGermanDe = { "OK", "Abbrechen", "&Ja", "&Nein", "&Abbrechen", "&Wiederholen", "&Ignorieren" };
+            private static readonly String[] ButtonTextsSpanishEs = { "Aceptar", "Cancelar", "&Sí", "&No", "&Abortar", "&Reintentar", "&Ignorar" };
+            private static readonly String[] ButtonTextsItalianIt = { "OK", "Annulla", "&Sì", "&No", "&Interrompi", "&Riprova", "&Ignora" };
 
             #endregion
 
             #region Private members
 
-            private MessageBoxDefaultButton defaultButton;
-            private int visibleButtonsCount;
-            private TwoLetterISOLanguageID languageID = TwoLetterISOLanguageID.en;
+            private MessageBoxDefaultButton _defaultButton;
+            private int _visibleButtonsCount;
+            private TwoLetterIsoLanguageId _languageId = TwoLetterIsoLanguageId.En;
 
             #endregion
 
@@ -445,10 +375,10 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers.Winforms
                 InitializeComponent();
 
                 //Try to evaluate the language. If this fails, the fallback language English will be used
-                Enum.TryParse<TwoLetterISOLanguageID>(CultureInfo.CurrentUICulture.TwoLetterISOLanguageName, out this.languageID);
+                Enum.TryParse(CultureInfo.CurrentUICulture.TwoLetterISOLanguageName, out _languageId);
 
-                this.KeyPreview = true;
-                this.KeyUp += FlexibleMessageBoxForm_KeyUp;
+                KeyPreview = true;
+                KeyUp += FlexibleMessageBoxForm_KeyUp;
             }
 
             #endregion
@@ -464,7 +394,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers.Winforms
             {
                 if (string.IsNullOrEmpty(message)) return null;
 
-                var messageRows = message.Split(new char[] { '\n' }, StringSplitOptions.None);
+                var messageRows = message.Split(new[] { '\n' }, StringSplitOptions.None);
                 return messageRows;
             }
 
@@ -472,19 +402,19 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers.Winforms
             /// Gets the button text for the CurrentUICulture language.
             /// Note: The fallback language is English
             /// </summary>
-            /// <param name="buttonID">The ID of the button.</param>
+            /// <param name="buttonId">The ID of the button.</param>
             /// <returns>The button text</returns>
-            private string GetButtonText(ButtonID buttonID)
+            private string GetButtonText(ButtonId buttonId)
             {
-                var buttonTextArrayIndex = Convert.ToInt32(buttonID);
+                var buttonTextArrayIndex = Convert.ToInt32(buttonId);
 
-                switch (this.languageID)
+                switch (_languageId)
                 {
-                    case TwoLetterISOLanguageID.de: return BUTTON_TEXTS_GERMAN_DE[buttonTextArrayIndex];
-                    case TwoLetterISOLanguageID.es: return BUTTON_TEXTS_SPANISH_ES[buttonTextArrayIndex];
-                    case TwoLetterISOLanguageID.it: return BUTTON_TEXTS_ITALIAN_IT[buttonTextArrayIndex];
+                    case TwoLetterIsoLanguageId.De: return ButtonTextsGermanDe[buttonTextArrayIndex];
+                    case TwoLetterIsoLanguageId.Es: return ButtonTextsSpanishEs[buttonTextArrayIndex];
+                    case TwoLetterIsoLanguageId.It: return ButtonTextsItalianIt[buttonTextArrayIndex];
 
-                    default: return BUTTON_TEXTS_ENGLISH_EN[buttonTextArrayIndex];
+                    default: return ButtonTextsEnglishEn[buttonTextArrayIndex];
                 }
             }
 
@@ -498,11 +428,11 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers.Winforms
             /// <returns>The corrected given working area factor.</returns>
             private static double GetCorrectedWorkingAreaFactor(double workingAreaFactor)
             {
-                const double MIN_FACTOR = 0.2;
-                const double MAX_FACTOR = 1.0;
+                const double minFactor = 0.2;
+                const double maxFactor = 1.0;
 
-                if (workingAreaFactor < MIN_FACTOR) return MIN_FACTOR;
-                if (workingAreaFactor > MAX_FACTOR) return MAX_FACTOR;
+                if (workingAreaFactor < minFactor) return minFactor;
+                if (workingAreaFactor > maxFactor) return maxFactor;
 
                 return workingAreaFactor;
             }
@@ -535,25 +465,25 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers.Winforms
             private static void SetDialogSizes(FlexibleMessageBoxForm flexibleMessageBoxForm, string text, string caption)
             {
                 //First set the bounds for the maximum dialog size
-                flexibleMessageBoxForm.MaximumSize = new Size(Convert.ToInt32(SystemInformation.WorkingArea.Width * FlexibleMessageBoxForm.GetCorrectedWorkingAreaFactor(MAX_WIDTH_FACTOR)),
-                                                              Convert.ToInt32(SystemInformation.WorkingArea.Height * FlexibleMessageBoxForm.GetCorrectedWorkingAreaFactor(MAX_HEIGHT_FACTOR)));
+                flexibleMessageBoxForm.MaximumSize = new Size(Convert.ToInt32(SystemInformation.WorkingArea.Width * GetCorrectedWorkingAreaFactor(MaxWidthFactor)),
+                                                              Convert.ToInt32(SystemInformation.WorkingArea.Height * GetCorrectedWorkingAreaFactor(MaxHeightFactor)));
 
                 //Get rows. Exit if there are no rows to render...
                 var stringRows = GetStringRows(text);
                 if (stringRows == null) return;
 
                 //Calculate whole text height
-                var textHeight = TextRenderer.MeasureText(text, FONT).Height;
+                var textHeight = TextRenderer.MeasureText(text, FlexibleMessageBox.Font).Height;
 
                 //Calculate width for longest text line
-                const int SCROLLBAR_WIDTH_OFFSET = 15;
-                var longestTextRowWidth = stringRows.Max(textForRow => TextRenderer.MeasureText(textForRow, FONT).Width);
+                const int scrollbarWidthOffset = 15;
+                var longestTextRowWidth = stringRows.Max(textForRow => TextRenderer.MeasureText(textForRow, FlexibleMessageBox.Font).Width);
                 var captionWidth = TextRenderer.MeasureText(caption, SystemFonts.CaptionFont).Width;
-                var textWidth = Math.Max(longestTextRowWidth + SCROLLBAR_WIDTH_OFFSET, captionWidth);
+                var textWidth = Math.Max(longestTextRowWidth + scrollbarWidthOffset, captionWidth);
 
                 //Calculate margins
-                var marginWidth = flexibleMessageBoxForm.Width - flexibleMessageBoxForm.richTextBoxMessage.Width;
-                var marginHeight = flexibleMessageBoxForm.Height - flexibleMessageBoxForm.richTextBoxMessage.Height;
+                var marginWidth = flexibleMessageBoxForm.Width - flexibleMessageBoxForm._richTextBoxMessage.Width;
+                var marginHeight = flexibleMessageBoxForm.Height - flexibleMessageBoxForm._richTextBoxMessage.Height;
 
                 //Set calculated dialog size (if the calculated values exceed the maximums, they were cut by windows forms automatically)
                 flexibleMessageBoxForm.Size = new Size(textWidth + marginWidth,
@@ -571,22 +501,22 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers.Winforms
                 switch (icon)
                 {
                     case MessageBoxIcon.Information:
-                        flexibleMessageBoxForm.pictureBoxForIcon.Image = SystemIcons.Information.ToBitmap();
+                        flexibleMessageBoxForm._pictureBoxForIcon.Image = SystemIcons.Information.ToBitmap();
                         break;
                     case MessageBoxIcon.Warning:
-                        flexibleMessageBoxForm.pictureBoxForIcon.Image = SystemIcons.Warning.ToBitmap();
+                        flexibleMessageBoxForm._pictureBoxForIcon.Image = SystemIcons.Warning.ToBitmap();
                         break;
                     case MessageBoxIcon.Error:
-                        flexibleMessageBoxForm.pictureBoxForIcon.Image = SystemIcons.Error.ToBitmap();
+                        flexibleMessageBoxForm._pictureBoxForIcon.Image = SystemIcons.Error.ToBitmap();
                         break;
                     case MessageBoxIcon.Question:
-                        flexibleMessageBoxForm.pictureBoxForIcon.Image = SystemIcons.Question.ToBitmap();
+                        flexibleMessageBoxForm._pictureBoxForIcon.Image = SystemIcons.Question.ToBitmap();
                         break;
                     default:
                         //When no icon is used: Correct placement and width of rich text box.
-                        flexibleMessageBoxForm.pictureBoxForIcon.Visible = false;
-                        flexibleMessageBoxForm.richTextBoxMessage.Left -= flexibleMessageBoxForm.pictureBoxForIcon.Width;
-                        flexibleMessageBoxForm.richTextBoxMessage.Width += flexibleMessageBoxForm.pictureBoxForIcon.Width;
+                        flexibleMessageBoxForm._pictureBoxForIcon.Visible = false;
+                        flexibleMessageBoxForm._richTextBoxMessage.Left -= flexibleMessageBoxForm._pictureBoxForIcon.Width;
+                        flexibleMessageBoxForm._richTextBoxMessage.Width += flexibleMessageBoxForm._pictureBoxForIcon.Width;
                         break;
                 }
             }
@@ -604,96 +534,96 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers.Winforms
                 switch (buttons)
                 {
                     case MessageBoxButtons.AbortRetryIgnore:
-                        flexibleMessageBoxForm.visibleButtonsCount = 3;
+                        flexibleMessageBoxForm._visibleButtonsCount = 3;
 
-                        flexibleMessageBoxForm.button1.Visible = true;
-                        flexibleMessageBoxForm.button1.Text = flexibleMessageBoxForm.GetButtonText(ButtonID.ABORT);
-                        flexibleMessageBoxForm.button1.DialogResult = DialogResult.Abort;
+                        flexibleMessageBoxForm._button1.Visible = true;
+                        flexibleMessageBoxForm._button1.Text = flexibleMessageBoxForm.GetButtonText(ButtonId.Abort);
+                        flexibleMessageBoxForm._button1.DialogResult = DialogResult.Abort;
 
-                        flexibleMessageBoxForm.button2.Visible = true;
-                        flexibleMessageBoxForm.button2.Text = flexibleMessageBoxForm.GetButtonText(ButtonID.RETRY);
-                        flexibleMessageBoxForm.button2.DialogResult = DialogResult.Retry;
+                        flexibleMessageBoxForm._button2.Visible = true;
+                        flexibleMessageBoxForm._button2.Text = flexibleMessageBoxForm.GetButtonText(ButtonId.Retry);
+                        flexibleMessageBoxForm._button2.DialogResult = DialogResult.Retry;
 
-                        flexibleMessageBoxForm.button3.Visible = true;
-                        flexibleMessageBoxForm.button3.Text = flexibleMessageBoxForm.GetButtonText(ButtonID.IGNORE);
-                        flexibleMessageBoxForm.button3.DialogResult = DialogResult.Ignore;
+                        flexibleMessageBoxForm._button3.Visible = true;
+                        flexibleMessageBoxForm._button3.Text = flexibleMessageBoxForm.GetButtonText(ButtonId.Ignore);
+                        flexibleMessageBoxForm._button3.DialogResult = DialogResult.Ignore;
 
                         flexibleMessageBoxForm.ControlBox = false;
                         break;
 
                     case MessageBoxButtons.OKCancel:
-                        flexibleMessageBoxForm.visibleButtonsCount = 2;
+                        flexibleMessageBoxForm._visibleButtonsCount = 2;
 
-                        flexibleMessageBoxForm.button2.Visible = true;
-                        flexibleMessageBoxForm.button2.Text = flexibleMessageBoxForm.GetButtonText(ButtonID.OK);
-                        flexibleMessageBoxForm.button2.DialogResult = DialogResult.OK;
+                        flexibleMessageBoxForm._button2.Visible = true;
+                        flexibleMessageBoxForm._button2.Text = flexibleMessageBoxForm.GetButtonText(ButtonId.Ok);
+                        flexibleMessageBoxForm._button2.DialogResult = DialogResult.OK;
 
-                        flexibleMessageBoxForm.button3.Visible = true;
-                        flexibleMessageBoxForm.button3.Text = flexibleMessageBoxForm.GetButtonText(ButtonID.CANCEL);
-                        flexibleMessageBoxForm.button3.DialogResult = DialogResult.Cancel;
+                        flexibleMessageBoxForm._button3.Visible = true;
+                        flexibleMessageBoxForm._button3.Text = flexibleMessageBoxForm.GetButtonText(ButtonId.Cancel);
+                        flexibleMessageBoxForm._button3.DialogResult = DialogResult.Cancel;
 
-                        flexibleMessageBoxForm.CancelButton = flexibleMessageBoxForm.button3;
+                        flexibleMessageBoxForm.CancelButton = flexibleMessageBoxForm._button3;
                         break;
 
                     case MessageBoxButtons.RetryCancel:
-                        flexibleMessageBoxForm.visibleButtonsCount = 2;
+                        flexibleMessageBoxForm._visibleButtonsCount = 2;
 
-                        flexibleMessageBoxForm.button2.Visible = true;
-                        flexibleMessageBoxForm.button2.Text = flexibleMessageBoxForm.GetButtonText(ButtonID.RETRY);
-                        flexibleMessageBoxForm.button2.DialogResult = DialogResult.Retry;
+                        flexibleMessageBoxForm._button2.Visible = true;
+                        flexibleMessageBoxForm._button2.Text = flexibleMessageBoxForm.GetButtonText(ButtonId.Retry);
+                        flexibleMessageBoxForm._button2.DialogResult = DialogResult.Retry;
 
-                        flexibleMessageBoxForm.button3.Visible = true;
-                        flexibleMessageBoxForm.button3.Text = flexibleMessageBoxForm.GetButtonText(ButtonID.CANCEL);
-                        flexibleMessageBoxForm.button3.DialogResult = DialogResult.Cancel;
+                        flexibleMessageBoxForm._button3.Visible = true;
+                        flexibleMessageBoxForm._button3.Text = flexibleMessageBoxForm.GetButtonText(ButtonId.Cancel);
+                        flexibleMessageBoxForm._button3.DialogResult = DialogResult.Cancel;
 
-                        flexibleMessageBoxForm.CancelButton = flexibleMessageBoxForm.button3;
+                        flexibleMessageBoxForm.CancelButton = flexibleMessageBoxForm._button3;
                         break;
 
                     case MessageBoxButtons.YesNo:
-                        flexibleMessageBoxForm.visibleButtonsCount = 2;
+                        flexibleMessageBoxForm._visibleButtonsCount = 2;
 
-                        flexibleMessageBoxForm.button2.Visible = true;
-                        flexibleMessageBoxForm.button2.Text = flexibleMessageBoxForm.GetButtonText(ButtonID.YES);
-                        flexibleMessageBoxForm.button2.DialogResult = DialogResult.Yes;
+                        flexibleMessageBoxForm._button2.Visible = true;
+                        flexibleMessageBoxForm._button2.Text = flexibleMessageBoxForm.GetButtonText(ButtonId.Yes);
+                        flexibleMessageBoxForm._button2.DialogResult = DialogResult.Yes;
 
-                        flexibleMessageBoxForm.button3.Visible = true;
-                        flexibleMessageBoxForm.button3.Text = flexibleMessageBoxForm.GetButtonText(ButtonID.NO);
-                        flexibleMessageBoxForm.button3.DialogResult = DialogResult.No;
+                        flexibleMessageBoxForm._button3.Visible = true;
+                        flexibleMessageBoxForm._button3.Text = flexibleMessageBoxForm.GetButtonText(ButtonId.No);
+                        flexibleMessageBoxForm._button3.DialogResult = DialogResult.No;
 
                         flexibleMessageBoxForm.ControlBox = false;
                         break;
 
                     case MessageBoxButtons.YesNoCancel:
-                        flexibleMessageBoxForm.visibleButtonsCount = 3;
+                        flexibleMessageBoxForm._visibleButtonsCount = 3;
 
-                        flexibleMessageBoxForm.button1.Visible = true;
-                        flexibleMessageBoxForm.button1.Text = flexibleMessageBoxForm.GetButtonText(ButtonID.YES);
-                        flexibleMessageBoxForm.button1.DialogResult = DialogResult.Yes;
+                        flexibleMessageBoxForm._button1.Visible = true;
+                        flexibleMessageBoxForm._button1.Text = flexibleMessageBoxForm.GetButtonText(ButtonId.Yes);
+                        flexibleMessageBoxForm._button1.DialogResult = DialogResult.Yes;
 
-                        flexibleMessageBoxForm.button2.Visible = true;
-                        flexibleMessageBoxForm.button2.Text = flexibleMessageBoxForm.GetButtonText(ButtonID.NO);
-                        flexibleMessageBoxForm.button2.DialogResult = DialogResult.No;
+                        flexibleMessageBoxForm._button2.Visible = true;
+                        flexibleMessageBoxForm._button2.Text = flexibleMessageBoxForm.GetButtonText(ButtonId.No);
+                        flexibleMessageBoxForm._button2.DialogResult = DialogResult.No;
 
-                        flexibleMessageBoxForm.button3.Visible = true;
-                        flexibleMessageBoxForm.button3.Text = flexibleMessageBoxForm.GetButtonText(ButtonID.CANCEL);
-                        flexibleMessageBoxForm.button3.DialogResult = DialogResult.Cancel;
+                        flexibleMessageBoxForm._button3.Visible = true;
+                        flexibleMessageBoxForm._button3.Text = flexibleMessageBoxForm.GetButtonText(ButtonId.Cancel);
+                        flexibleMessageBoxForm._button3.DialogResult = DialogResult.Cancel;
 
-                        flexibleMessageBoxForm.CancelButton = flexibleMessageBoxForm.button3;
+                        flexibleMessageBoxForm.CancelButton = flexibleMessageBoxForm._button3;
                         break;
 
                     case MessageBoxButtons.OK:
                     default:
-                        flexibleMessageBoxForm.visibleButtonsCount = 1;
-                        flexibleMessageBoxForm.button3.Visible = true;
-                        flexibleMessageBoxForm.button3.Text = flexibleMessageBoxForm.GetButtonText(ButtonID.OK);
-                        flexibleMessageBoxForm.button3.DialogResult = DialogResult.OK;
+                        flexibleMessageBoxForm._visibleButtonsCount = 1;
+                        flexibleMessageBoxForm._button3.Visible = true;
+                        flexibleMessageBoxForm._button3.Text = flexibleMessageBoxForm.GetButtonText(ButtonId.Ok);
+                        flexibleMessageBoxForm._button3.DialogResult = DialogResult.OK;
 
-                        flexibleMessageBoxForm.CancelButton = flexibleMessageBoxForm.button3;
+                        flexibleMessageBoxForm.CancelButton = flexibleMessageBoxForm._button3;
                         break;
                 }
 
                 //Set default button (used in FlexibleMessageBoxForm_Shown)
-                flexibleMessageBoxForm.defaultButton = defaultButton;
+                flexibleMessageBoxForm._defaultButton = defaultButton;
             }
 
             #endregion
@@ -707,13 +637,12 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers.Winforms
             /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
             private void FlexibleMessageBoxForm_Shown(object sender, EventArgs e)
             {
-                int buttonIndexToFocus = 1;
+                int buttonIndexToFocus;
                 Button buttonToFocus;
 
                 //Set the default button...
-                switch (this.defaultButton)
+                switch (_defaultButton)
                 {
-                    case MessageBoxDefaultButton.Button1:
                     default:
                         buttonIndexToFocus = 1;
                         break;
@@ -725,19 +654,19 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers.Winforms
                         break;
                 }
 
-                if (buttonIndexToFocus > this.visibleButtonsCount) buttonIndexToFocus = this.visibleButtonsCount;
+                if (buttonIndexToFocus > _visibleButtonsCount) buttonIndexToFocus = _visibleButtonsCount;
 
                 if (buttonIndexToFocus == 3)
                 {
-                    buttonToFocus = this.button3;
+                    buttonToFocus = _button3;
                 }
                 else if (buttonIndexToFocus == 2)
                 {
-                    buttonToFocus = this.button2;
+                    buttonToFocus = _button2;
                 }
                 else
                 {
-                    buttonToFocus = this.button1;
+                    buttonToFocus = _button1;
                 }
 
                 buttonToFocus.Focus();
@@ -777,18 +706,18 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers.Winforms
                 //Handle standard key strikes for clipboard copy: "Ctrl + C" and "Ctrl + Insert"
                 if (e.Control && (e.KeyCode == Keys.C || e.KeyCode == Keys.Insert))
                 {
-                    var buttonsTextLine = (this.button1.Visible ? this.button1.Text + STANDARD_MESSAGEBOX_SEPARATOR_SPACES : string.Empty)
-                                        + (this.button2.Visible ? this.button2.Text + STANDARD_MESSAGEBOX_SEPARATOR_SPACES : string.Empty)
-                                        + (this.button3.Visible ? this.button3.Text + STANDARD_MESSAGEBOX_SEPARATOR_SPACES : string.Empty);
+                    var buttonsTextLine = (_button1.Visible ? _button1.Text + StandardMessageboxSeparatorSpaces : string.Empty)
+                                        + (_button2.Visible ? _button2.Text + StandardMessageboxSeparatorSpaces : string.Empty)
+                                        + (_button3.Visible ? _button3.Text + StandardMessageboxSeparatorSpaces : string.Empty);
 
                     //Build same clipboard text like the standard .Net MessageBox
-                    var textForClipboard = STANDARD_MESSAGEBOX_SEPARATOR_LINES
-                                         + this.Text + Environment.NewLine
-                                         + STANDARD_MESSAGEBOX_SEPARATOR_LINES
-                                         + this.richTextBoxMessage.Text + Environment.NewLine
-                                         + STANDARD_MESSAGEBOX_SEPARATOR_LINES
+                    var textForClipboard = StandardMessageboxSeparatorLines
+                                         + Text + Environment.NewLine
+                                         + StandardMessageboxSeparatorLines
+                                         + _richTextBoxMessage.Text + Environment.NewLine
+                                         + StandardMessageboxSeparatorLines
                                          + buttonsTextLine.Replace("&", string.Empty) + Environment.NewLine
-                                         + STANDARD_MESSAGEBOX_SEPARATOR_LINES;
+                                         + StandardMessageboxSeparatorLines;
 
                     //Set text in clipboard
                     Clipboard.SetText(textForClipboard);
@@ -832,7 +761,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers.Winforms
                 //Bind the caption and the message text
                 flexibleMessageBoxForm.CaptionText = caption;
                 flexibleMessageBoxForm.MessageText = text;
-                flexibleMessageBoxForm.FlexibleMessageBoxFormBindingSource.DataSource = flexibleMessageBoxForm;
+                flexibleMessageBoxForm._flexibleMessageBoxFormBindingSource.DataSource = flexibleMessageBoxForm;
 
                 //Set the buttons visibilities and texts. Also set a default button.
                 SetDialogButtons(flexibleMessageBoxForm, buttons, defaultButton);
@@ -841,8 +770,8 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers.Winforms
                 SetDialogIcon(flexibleMessageBoxForm, icon);
 
                 //Set the font for all controls
-                flexibleMessageBoxForm.Font = FONT;
-                flexibleMessageBoxForm.richTextBoxMessage.Font = FONT;
+                flexibleMessageBoxForm.Font = FlexibleMessageBox.Font;
+                flexibleMessageBoxForm._richTextBoxMessage.Font = FlexibleMessageBox.Font;
 
                 //Calculate the dialogs start size (Try to auto-size width to show longest text row). Also set the maximum dialog size. 
                 SetDialogSizes(flexibleMessageBoxForm, text, caption);

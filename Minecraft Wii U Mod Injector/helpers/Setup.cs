@@ -1,21 +1,21 @@
 ﻿using MetroFramework;
 using Minecraft_Wii_U_Mod_Injector.Helpers.Files;
-using Minecraft_Wii_U_Mod_Injector.Helpers.Winforms;
 using Octokit;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Threading.Tasks;
+using Minecraft_Wii_U_Mod_Injector.Helpers.Win_Forms;
 
 namespace Minecraft_Wii_U_Mod_Injector.Helpers
 {
     class Setup
     {
-        public static MainForm Injector = new MainForm();
+        public static MainForm Injector = new();
 
         public static string LocalVer = "v5.1.5";
         public static string GitVer = string.Empty;
-        public static bool PreRelease = false;
+        public static bool PreRelease;
 
         public Setup(MainForm window)
         {
@@ -28,22 +28,22 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
             {
                 RetrieveGitVersion();
 
-                Injector.buildNotesBox.Text = Properties.Resources.releaseNotes;
-                Injector.buildVerTitleLbl.Text = "Patch Notes for " + LocalVer;
-                Injector.buildTile.Text = LocalVer;
+                Injector.BuildNotesBox.Text = Properties.Resources.releaseNotes;
+                Injector.BuildVerTitleLbl.Text = "Patch Notes for " + LocalVer;
+                Injector.BuildTile.Text = LocalVer;
 
-                DiscordRP.Initialize();
+                DiscordRp.Initialize();
 
                 SetupUserPrefs();
                 DebugCheck();
 
-                DiscordRP.SetPresence("Disconnected", "Idle");
+                DiscordRp.SetPresence("Disconnected", "Idle");
                 States.SwapState(States.StatesIds.Disconnected);
             }
             catch (Exception error)
             {
                 Exceptions.LogError(error, "Failed to setup", false, true);
-                DiscordRP.Deinitialize();
+                DiscordRp.Deinitialize();
                 Environment.Exit(0);
             }
         }
@@ -52,11 +52,11 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
         {
             try
             {
-                GitHubClient VerChecker = new GitHubClient(new ProductHeaderValue("MCWiiUMIClient"));
-                IReadOnlyList<Release> Releases = await VerChecker.Repository.Release.GetAll("Kashiiera", "Minecraft-Wii-U-Mod-Injector");
+                GitHubClient verChecker = new GitHubClient(new ProductHeaderValue("MCWiiUMIClient"));
+                IReadOnlyList<Release> releases = await verChecker.Repository.Release.GetAll("Kashiiera", "Minecraft-Wii-U-Mod-Injector");
 
-                GitVer = Releases[0].TagName;
-                PreRelease = Releases[0].Prerelease;
+                GitVer = releases[0].TagName;
+                PreRelease = releases[0].Prerelease;
 
                 if (LocalVer != GitVer && !PreRelease)
                 {
@@ -71,9 +71,9 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
                     Environment.Exit(0);
                 }
             }
-            catch (Exception Error)
+            catch (Exception error)
             {
-                Exceptions.LogError(Error, "Something went wrong while retrieving the latest release, please try re-launching the Injector.\n" +
+                Exceptions.LogError(error, "Something went wrong while retrieving the latest release, please try re-launching the Injector.\n" +
                     "If this issue persist please contact the developers.", false, false);
             }
         }
@@ -84,29 +84,34 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
             {
                 try
                 {
-                    Injector.Theme = Injector.StyleMngr.Theme = (MetroThemeStyle)Enum.Parse(typeof(MetroThemeStyle), Settings.Read("Theme", "Display"));
-                    Injector.Style = Injector.StyleMngr.Style = (MetroColorStyle)Enum.Parse(typeof(MetroColorStyle), Settings.Read("Color", "Display"));
+                    Injector.Theme = Injector.StyleMngr.Theme =
+                        (MetroThemeStyle) Enum.Parse(typeof(MetroThemeStyle), Settings.Read("Theme", "Display"));
+                    Injector.Style = Injector.StyleMngr.Style =
+                        (MetroColorStyle) Enum.Parse(typeof(MetroColorStyle), Settings.Read("Color", "Display"));
 
                     Injector.themeBox.Text = Settings.Read("Theme", "Display");
                     Injector.colorsBox.Text = Settings.Read("Color", "Display");
 
                     Injector.MainTabs.SelectedIndex = Convert.ToInt32(Settings.Read("TabIndex", "Display"));
 
-                    Injector.CheckForPreRelease.Checked = Convert.ToBoolean(Settings.Read("PrereleaseOptIn", "Updates"));
+                    Injector.CheckForPreRelease.Checked =
+                        Convert.ToBoolean(Settings.Read("PrereleaseOptIn", "Updates"));
                     Injector.discordRpcCheckBox.Checked = Convert.ToBoolean(Settings.Read("DiscordRPC", "Discord"));
                 }
                 catch (Exception)
-                { }
+                {
+                    //Failing to set User Preferences isn't a big deal, so we ignore the exception if one happens
+                }
                 
                 if (Settings.EqualsTo("ReleaseNotes", "all", "Display"))
                 {
                     Injector.releaseNotesToggle.Checked = false;
-                    Injector.buildNotesBox.Text = Properties.Resources.releaseNotes;
+                    Injector.BuildNotesBox.Text = Properties.Resources.releaseNotes;
                 }
                 else if (Settings.EqualsTo("ReleaseNotes", "current", "Display"))
                 {
                     Injector.releaseNotesToggle.Checked = true;
-                    Injector.buildNotesBox.Text = Properties.Resources.releaseNote;
+                    Injector.BuildNotesBox.Text = Properties.Resources.releaseNote;
                 }
 
             }
@@ -126,15 +131,17 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
                     Size tabSize = new(140, 1);
                     Size verSize = new(160, 147);
                     Point verLoc = new(0, 461);
-                    Injector.debugTile.Visible = false;
+                    Injector.DebugTile.Visible = false;
                     Injector.MainTabs.HideTab(Injector.debugTab);
                     Injector.MainTabs.ItemSize = tabSize;
-                    Injector.buildTile.Size = verSize;
-                    Injector.buildTile.Location = verLoc;
+                    Injector.BuildTile.Size = verSize;
+                    Injector.BuildTile.Location = verLoc;
                 }
             }
-            catch(Exception)
-            { }
+            catch (Exception)
+            {
+                //Failing to check whether the user is running Debug Mode is not a big deal, so we ignore the exception
+            }
         }
     }
 }

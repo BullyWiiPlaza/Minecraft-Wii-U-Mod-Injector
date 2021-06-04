@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 
-namespace WiiU.GeckoU
+namespace Minecraft_Wii_U_Mod_Injector.Wii_U.Gecko_U
 {
     /// <summary>
     /// Add for sake of completness
@@ -20,11 +20,11 @@ namespace WiiU.GeckoU
 
         private void Construct(UInt32 theStartAddress, UInt32 theEndAddress, int theFileNumber)
         {
-            startAddress = theStartAddress;
-            endAddress = theEndAddress;
-            readCompletedAddress = theStartAddress;
-            mem = new Byte[endAddress - startAddress];
-            fileNumber = theFileNumber;
+            _startAddress = theStartAddress;
+            _endAddress = theEndAddress;
+            _readCompletedAddress = theStartAddress;
+            Mem = new Byte[_endAddress - _startAddress];
+            _fileNumber = theFileNumber;
         }
 
 
@@ -34,10 +34,10 @@ namespace WiiU.GeckoU
             //byte [] buffer = new byte[4];
 
             //dumpStream.Read(buffer, 0, 4);
-            if (addressToRead < startAddress) return 0;
-            if (addressToRead > endAddress - 4) return 0;
+            if (addressToRead < _startAddress) return 0;
+            if (addressToRead > _endAddress - 4) return 0;
             Byte[] buffer = new Byte[4];
-            Buffer.BlockCopy(mem, index(addressToRead), buffer, 0, 4);
+            Buffer.BlockCopy(Mem, Index(addressToRead), buffer, 0, 4);
             //GeckoApp.SubArray<byte> buffer = new GeckoApp.SubArray<byte>(mem, (int)(addressToRead - startAddress), 4);
 
             //Read buffer
@@ -47,18 +47,18 @@ namespace WiiU.GeckoU
             return ByteSwap.Swap(result);
         }
 
-        private int index(UInt32 addressToRead)
+        private int Index(UInt32 addressToRead)
         {
-            return (int)(addressToRead - startAddress);
+            return (int)(addressToRead - _startAddress);
         }
 
         public UInt32 ReadAddress(UInt32 addressToRead, int numBytes)
         {
-            if (addressToRead < startAddress) return 0;
-            if (addressToRead > endAddress - numBytes) return 0;
+            if (addressToRead < _startAddress) return 0;
+            if (addressToRead > _endAddress - numBytes) return 0;
 
             Byte[] buffer = new Byte[4];
-            Buffer.BlockCopy(mem, index(addressToRead), buffer, 0, numBytes);
+            Buffer.BlockCopy(Mem, Index(addressToRead), buffer, 0, numBytes);
 
             //Read buffer
             switch (numBytes)
@@ -87,7 +87,7 @@ namespace WiiU.GeckoU
             {
                 Directory.CreateDirectory(myDirectory);
             }
-            string myFile = myDirectory + "dump" + fileNumber.ToString() + ".dmp";
+            string myFile = myDirectory + "dump" + _fileNumber.ToString() + ".dmp";
 
             WriteStreamToDisk(myFile);
         }
@@ -95,7 +95,7 @@ namespace WiiU.GeckoU
         public void WriteStreamToDisk(string filepath)
         {
             FileStream foo = new FileStream(filepath, FileMode.Create);
-            foo.Write(mem, 0, (int)(endAddress - startAddress));
+            foo.Write(Mem, 0, (int)(_endAddress - _startAddress));
             foo.Close();
             foo.Dispose();
         }
@@ -107,23 +107,23 @@ namespace WiiU.GeckoU
              foo.Dispose();
          }*/
 
-        public Byte[] mem;
-        private UInt32 startAddress;
+        public Byte[] Mem;
+        private UInt32 _startAddress;
         public UInt32 StartAddress
         {
-            get { return startAddress; }
+            get { return _startAddress; }
         }
-        private UInt32 endAddress;
+        private UInt32 _endAddress;
         public UInt32 EndAddress
         {
-            get { return endAddress; }
+            get { return _endAddress; }
         }
-        private UInt32 readCompletedAddress;
+        private UInt32 _readCompletedAddress;
         public UInt32 ReadCompletedAddress
         {
-            get { return readCompletedAddress; }
-            set { readCompletedAddress = value; }
+            get { return _readCompletedAddress; }
+            set { _readCompletedAddress = value; }
         }
-        private int fileNumber;
+        private int _fileNumber;
     }
 }

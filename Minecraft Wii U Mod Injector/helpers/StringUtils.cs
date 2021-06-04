@@ -33,11 +33,11 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
 
         public static byte[] StringToByteArray(String hex)
         {
-            int NumberChars = hex.Length / 2;
-            byte[] bytes = new byte[NumberChars];
+            int numberChars = hex.Length / 2;
+            byte[] bytes = new byte[numberChars];
             using (var sr = new System.IO.StringReader(hex))
             {
-                for (int i = 0; i < NumberChars; i++)
+                for (int i = 0; i < numberChars; i++)
                     bytes[i] =
                       Convert.ToByte(new string(new char[2] { (char)sr.Read(), (char)sr.Read() }), 16);
             }
@@ -82,11 +82,11 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
             if (splitValues.Length != 4)
                 return false;
 
-            return splitValues.All(r => byte.TryParse(r, out byte tempForParsing));
+            return splitValues.All(r => byte.TryParse(r, out _));
         }
 
         #region StringEnum
-        public class StringValue : System.Attribute
+        public class StringValue : Attribute
         {
             private readonly string _value;
 
@@ -111,7 +111,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
             StringValue[] attrs =
                fi.GetCustomAttributes(typeof(StringValue),
                                        false) as StringValue[];
-            if (attrs.Length > 0)
+            if (attrs != null && attrs.Length > 0)
                 output = attrs[0].Value;
 
             return output;
@@ -134,12 +134,12 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
             string enumStringValue = null;
 
             if (!type.IsEnum)
-                throw new ArgumentException(String.Format("Supplied type must be an Enum.  Type was {0}", type.ToString()));
+                throw new ArgumentException(String.Format("Supplied type must be an Enum.  Type was {0}", type));
 
             foreach (FieldInfo fi in type.GetFields())
             {
                 StringValue[] attrs = fi.GetCustomAttributes(typeof(StringValue), false) as StringValue[];
-                if (attrs.Length > 0)
+                if (attrs != null && attrs.Length > 0)
                     enumStringValue = attrs[0].Value;
 
                 if (string.Compare(enumStringValue, stringValue, ignoreCase) == 0)

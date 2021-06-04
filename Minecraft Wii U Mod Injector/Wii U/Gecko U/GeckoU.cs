@@ -1,27 +1,27 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Windows.Forms;
-using System.Collections.Generic;
 using System.Text;
+using System.Windows.Forms;
 using Minecraft_Wii_U_Mod_Injector.Helpers;
 
-namespace WiiU.GeckoU
+namespace Minecraft_Wii_U_Mod_Injector.Wii_U.Gecko_U
 {
     public class GeckoUCore
     {
         #region base vars
 
-        public GeckoUConnect GUC;
+        public GeckoUConnect Guc;
         
-        private const int default_port = 7331;
-        private const uint maximumMemoryChunkSize = 0x400;
+        private const int cmd_defaultPort = 7331;
+        private const uint cmd_maximumMemoryChunkSize = 0x400;
 
-        public enum FTDICommand
+        public enum FtdiCommand
         {
-            CMD_ResultError,
-            CMD_FatalError,
-            CMD_OK
+            CmdResultError,
+            CmdFatalError,
+            CmdOk
         }
 
         #endregion base vars
@@ -33,44 +33,44 @@ namespace WiiU.GeckoU
         /// <param name="host">Wii U IP Address</param>
         public GeckoUCore(string host)
         {
-            GUC = new GeckoUConnect(host, default_port);
+            Guc = new GeckoUConnect(host, cmd_defaultPort);
         }
 
         #endregion connection
 
         #region the magic
-        protected FTDICommand GeckoURead(byte[] recbyte, uint nobytes)
+        protected FtdiCommand GeckoURead(byte[] recbyte, uint nobytes)
         {
             uint bytesRead;
 
             try
             {
-                GUC.Read(recbyte, nobytes, out bytesRead);
+                Guc.Read(recbyte, nobytes, out bytesRead);
             }
             catch (IOException)
             {
-                GUC.Close();
-                return FTDICommand.CMD_FatalError;
+                Guc.Close();
+                return FtdiCommand.CmdFatalError;
             }
 
-            return bytesRead != nobytes ? FTDICommand.CMD_ResultError : FTDICommand.CMD_OK;
+            return bytesRead != nobytes ? FtdiCommand.CmdResultError : FtdiCommand.CmdOk;
         }
 
-        protected FTDICommand GeckoUWrite(byte[] sendbyte, int nobytes)
+        protected FtdiCommand GeckoUWrite(byte[] sendbyte, int nobytes)
         {
             uint bytesWritten;
 
             try
             {
-                GUC.Write(sendbyte, nobytes, out bytesWritten);
+                Guc.Write(sendbyte, nobytes, out bytesWritten);
             }
             catch (IOException)
             {
-                GUC.Close();
-                return FTDICommand.CMD_FatalError;
+                Guc.Close();
+                return FtdiCommand.CmdFatalError;
             }
 
-            return bytesWritten != nobytes ? FTDICommand.CMD_ResultError : FTDICommand.CMD_OK;
+            return bytesWritten != nobytes ? FtdiCommand.CmdResultError : FtdiCommand.CmdOk;
         }
 
         /// <summary>
@@ -78,7 +78,7 @@ namespace WiiU.GeckoU
         /// </summary>
         /// <param name="id">The raw command id</param>
         /// <returns>FTDICommand</returns>
-        public FTDICommand RawCommand(byte id)
+        public FtdiCommand RawCommand(byte id)
         {
             return GeckoUWrite(BitConverter.GetBytes(id), 1);
         }
@@ -89,7 +89,7 @@ namespace WiiU.GeckoU
         /// <param name="command">Command to send</param>
         private void SendCommand(GeckoUCommands.Command command)
         {
-            GUC.Write(new[] { (byte)command }, 1, out _);
+            Guc.Write(new[] { (byte)command }, 1, out _);
         }
 
         /// <summary>
@@ -105,7 +105,7 @@ namespace WiiU.GeckoU
                 RequestBytes(address, length);
 
                 var response = new byte[1];
-                GUC.Read(response, 1, out _);
+                Guc.Read(response, 1, out _);
 
                 var ms = new MemoryStream();
 
@@ -119,13 +119,13 @@ namespace WiiU.GeckoU
                 {
                     var chunkSize = remainingBytesCount;
 
-                    if (chunkSize > maximumMemoryChunkSize)
+                    if (chunkSize > cmd_maximumMemoryChunkSize)
                     {
-                        chunkSize = maximumMemoryChunkSize;
+                        chunkSize = cmd_maximumMemoryChunkSize;
                     }
 
                     var buffer = new byte[chunkSize];
-                    GUC.Read(buffer, chunkSize, out _);
+                    Guc.Read(buffer, chunkSize, out _);
 
                     ms.Write(buffer, 0, (int)chunkSize);
 
@@ -151,12 +151,12 @@ namespace WiiU.GeckoU
         {
             try
             {
-                SendCommand(GeckoUCommands.Command.COMMAND_READ_MEMORY);
+                SendCommand(GeckoUCommands.Command.CommandReadMemory);
 
                 var bytes = BitConverter.GetBytes(ByteSwap.Swap(address));
                 var bytes2 = BitConverter.GetBytes(ByteSwap.Swap(address + length));
-                GUC.Write(bytes, 4, out _);
-                GUC.Write(bytes2, 4, out _);
+                Guc.Write(bytes, 4, out _);
+                Guc.Write(bytes2, 4, out _);
             }
             catch (Exception)
             {
@@ -175,7 +175,7 @@ namespace WiiU.GeckoU
             var length = bytes.Length;
 
             var endAddress = address + (uint)bytes.Length;
-            GUC.Write(bytes, length, out _);
+            Guc.Write(bytes, length, out _);
 
             return endAddress;
         }
@@ -192,13 +192,13 @@ namespace WiiU.GeckoU
 
             try
             {
-                SendCommand(GeckoUCommands.Command.COMMAND_UPLOAD_MEMORY);
+                SendCommand(GeckoUCommands.Command.CommandUploadMemory);
 
                 var start = BitConverter.GetBytes(ByteSwap.Swap(address));
                 var end = BitConverter.GetBytes(ByteSwap.Swap(address + length));
 
-                GUC.Write(start, 4, out _);
-                GUC.Write(end, 4, out _);
+                Guc.Write(start, 4, out _);
+                Guc.Write(end, 4, out _);
 
                 enumerable.Aggregate(address, UploadBytes);
             }
@@ -251,7 +251,7 @@ namespace WiiU.GeckoU
         /// <param name="bytes">Bytes to write</param>
         public void WriteBytes(uint address, byte[] bytes) // Write bytes to the specified memory address
         {
-            var partitionedBytes = Partition(bytes, maximumMemoryChunkSize);
+            var partitionedBytes = Partition(bytes, cmd_maximumMemoryChunkSize);
             WritePartitionedBytes(address, partitionedBytes);
         }
         #endregion the magic
@@ -331,14 +331,14 @@ namespace WiiU.GeckoU
                 }
             }
 
-            if (RawCommand(GeckoUCommands.cmd_rpc) != FTDICommand.CMD_OK)
-                throw new GeckoUException(GeckoUException.ETCPErrorCode.FTDICommandSendError);
+            if (RawCommand(GeckoUCommands.Rpc) != FtdiCommand.CmdOk)
+                throw new GeckoUException(GeckoUException.EtcpErrorCode.FtdiCommandSendError);
 
-            if (GeckoUWrite(buffer, buffer.Length) != FTDICommand.CMD_OK)
-                throw new GeckoUException(GeckoUException.ETCPErrorCode.FTDICommandSendError);
+            if (GeckoUWrite(buffer, buffer.Length) != FtdiCommand.CmdOk)
+                throw new GeckoUException(GeckoUException.EtcpErrorCode.FtdiCommandSendError);
 
-            if (GeckoURead(buffer, 8) != FTDICommand.CMD_OK)
-                throw new GeckoUException(GeckoUException.ETCPErrorCode.FTDICommandSendError);
+            if (GeckoURead(buffer, 8) != FtdiCommand.CmdOk)
+                throw new GeckoUException(GeckoUException.EtcpErrorCode.FtdiCommandSendError);
 
             return ByteSwap.Swap(BitConverter.ToUInt64(buffer, 0));
         }
@@ -710,22 +710,22 @@ namespace WiiU.GeckoU
         #endregion reading
 
         #region commands
-        /// <summary>
+        /*/// <summary>
         /// Reads the Data Buffer Size on the Wii U
         /// </summary>
         /// <returns>UInt</returns>
         private uint ReadDataBufferSize()
         {
-            SendCommand(GeckoUCommands.Command.COMMAND_GET_DATA_BUFFER_SIZE);
+            SendCommand(GeckoUCommands.Command.CommandGetDataBufferSize);
 
             var response = new byte[4];
-            GUC.Read(response, 4, out _);
+            Guc.Read(response, 4, out _);
 
             Array.Reverse(response);
             var bufferSize = BitConverter.ToUInt32(response, 0);
 
             return bufferSize;
-        }
+        }*/
 
         /// <summary>
         /// Reads the Code Handler Installation address
@@ -733,10 +733,10 @@ namespace WiiU.GeckoU
         /// <returns>UInt</returns>
         public uint ReadCodeHandlerAddress()
         {
-            SendCommand(GeckoUCommands.Command.COMMAND_GET_CODE_HANDLER_ADDRESS);
+            SendCommand(GeckoUCommands.Command.CommandGetCodeHandlerAddress);
 
             var response = new byte[4];
-            GUC.Read(response, 4, out _);
+            Guc.Read(response, 4, out _);
 
             Array.Reverse(response);
             var bufferSize = BitConverter.ToUInt32(response, 0);
@@ -750,10 +750,10 @@ namespace WiiU.GeckoU
         /// <returns>UInt</returns>
         public uint ReadAccountIdentifier()
         {
-            SendCommand(GeckoUCommands.Command.COMMAND_ACCOUNT_IDENTIFIER);
+            SendCommand(GeckoUCommands.Command.CommandAccountIdentifier);
 
             var response = new byte[4];
-            GUC.Read(response, 4, out _);
+            Guc.Read(response, 4, out _);
 
             Array.Reverse(response);
             var bufferSize = BitConverter.ToUInt32(response, 0);
@@ -763,10 +763,10 @@ namespace WiiU.GeckoU
 
         public uint ReadVersionHash()
         {
-            SendCommand(GeckoUCommands.Command.COMMAND_GET_VERSION_HASH);
+            SendCommand(GeckoUCommands.Command.CommandGetVersionHash);
 
             var response = new byte[4];
-            GUC.Read(response, 4, out _);
+            Guc.Read(response, 4, out _);
 
             Array.Reverse(response);
             var versionHash = BitConverter.ToUInt32(response, 0);

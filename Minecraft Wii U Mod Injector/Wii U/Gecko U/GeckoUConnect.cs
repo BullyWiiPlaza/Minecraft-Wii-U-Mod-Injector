@@ -3,7 +3,7 @@ using System.IO;
 using System.Net.Sockets;
 using Minecraft_Wii_U_Mod_Injector.Helpers;
 
-namespace WiiU.GeckoU
+namespace Minecraft_Wii_U_Mod_Injector.Wii_U.Gecko_U
 {
     public class GeckoUConnect
     {

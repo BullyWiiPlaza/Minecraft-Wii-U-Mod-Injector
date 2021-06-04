@@ -1,6 +1,6 @@
 ﻿namespace Minecraft_Wii_U_Mod_Injector.Forms
 {
-    partial class FAQ
+    partial class Faq
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FAQ));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Faq));
             this.StyleMngr = new MetroFramework.Components.MetroStyleManager(this.components);
             this.kashiieraCredits = new MetroFramework.Controls.MetroLabel();
             this.appIco = new MetroFramework.Controls.MetroPanel();
@@ -65,7 +65,7 @@
             this.appIco.VerticalScrollbarHighlightOnWheel = false;
             this.appIco.VerticalScrollbarSize = 10;
             // 
-            // FAQ
+            // Faq
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -74,7 +74,7 @@
             this.Controls.Add(this.kashiieraCredits);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.Name = "FAQ";
+            this.Name = "Faq";
             this.Resizable = false;
             this.Style = MetroFramework.MetroColorStyle.Default;
             this.Text = "Frequently Asked Questions";

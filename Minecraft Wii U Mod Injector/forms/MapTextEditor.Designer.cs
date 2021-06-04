@@ -99,7 +99,7 @@
             this.variablesBtn.TabIndex = 3;
             this.variablesBtn.Text = "Variables";
             this.variablesBtn.UseSelectable = true;
-            this.variablesBtn.Click += new System.EventHandler(this.variablesBtnClicked);
+            this.variablesBtn.Click += new System.EventHandler(this.VariablesBtnClicked);
             // 
             // MapTextEditor
             // 
@@ -116,6 +116,7 @@
             this.Resizable = false;
             this.Text = "Map Text Editor";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Exiting);
+            this.Load += new System.EventHandler(this.MapTextEditor_Load);
             ((System.ComponentModel.ISupportInitialize)(this.StyleMngr)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

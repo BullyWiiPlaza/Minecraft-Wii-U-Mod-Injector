@@ -2,13 +2,13 @@
 
 namespace Minecraft_Wii_U_Mod_Injector.Forms
 {
-    public partial class FAQ : MetroForm
+    public partial class Faq : MetroForm
     {
-        public FAQ(MainForm Injector)
+        public Faq(MainForm injector)
         {
             InitializeComponent();
-            StyleMngr.Style = Style = Injector.StyleMngr.Style;
-            StyleMngr.Theme = Theme = Injector.StyleMngr.Theme;
+            StyleMngr.Style = Style = injector.StyleMngr.Style;
+            StyleMngr.Theme = Theme = injector.StyleMngr.Theme;
         }
     }
 }

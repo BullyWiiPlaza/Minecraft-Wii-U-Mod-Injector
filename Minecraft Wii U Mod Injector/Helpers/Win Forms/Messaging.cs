@@ -1,6 +1,6 @@
 ﻿using System.Windows.Forms;
 
-namespace Minecraft_Wii_U_Mod_Injector.Helpers.Winforms
+namespace Minecraft_Wii_U_Mod_Injector.Helpers.Win_Forms
 {
     class Messaging
     {

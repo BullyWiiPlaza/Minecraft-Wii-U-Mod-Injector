@@ -277,7 +277,7 @@
     <Compile Include="Forms\NNIDEditor.Designer.cs">
       <DependentUpon>NNIDEditor.cs</DependentUpon>
     </Compile>
-    <Compile Include="Helpers\DiscordRP.cs" />
+    <Compile Include="Helpers\DiscordRp.cs" />
     <Compile Include="Helpers\Files\Settings.cs" />
     <Compile Include="Helpers\Files\Exceptions.cs" />
     <Compile Include="Helpers\Files\INIFile.cs" />

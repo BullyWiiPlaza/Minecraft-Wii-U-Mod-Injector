@@ -1,6 +1,6 @@
 ﻿namespace Minecraft_Wii_U_Mod_Injector.Forms
 {
-    partial class NNIDEditor
+    partial class NnidEditor
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NNIDEditor));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NnidEditor));
             this.NNIDNameLbl = new MetroFramework.Controls.MetroLabel();
             this.NNIDNameBox = new MetroFramework.Controls.MetroTextBox();
             this.NNIDChangeBtn = new MetroFramework.Controls.MetroButton();
@@ -89,7 +89,7 @@
             this.NNIDChangeBtn.Text = "Change";
             this.ToolTips.SetToolTip(this.NNIDChangeBtn, "Changes your name to the given one");
             this.NNIDChangeBtn.UseSelectable = true;
-            this.NNIDChangeBtn.Click += new System.EventHandler(this.NNIDChangeBtnClicked);
+            this.NNIDChangeBtn.Click += new System.EventHandler(this.NnidChangeBtnClicked);
             // 
             // StyleMngr
             // 
@@ -122,7 +122,7 @@
             this.readNameBtn.Text = "Read";
             this.ToolTips.SetToolTip(this.readNameBtn, "Changes your name to the given one");
             this.readNameBtn.UseSelectable = true;
-            this.readNameBtn.Click += new System.EventHandler(this.readNameBtnClicked);
+            this.readNameBtn.Click += new System.EventHandler(this.ReadNameBtnClicked);
             // 
             // NNIDEditor
             // 
@@ -136,7 +136,7 @@
             this.Controls.Add(this.NNIDNameLbl);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.Name = "NNIDEditor";
+            this.Name = "NnidEditor";
             this.Resizable = false;
             this.Text = "Nintendo Network Editor";
             this.TopMost = true;

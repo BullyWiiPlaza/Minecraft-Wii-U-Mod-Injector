@@ -1,46 +1,38 @@
 ﻿using DiscordRPC;
-using Minecraft_Wii_U_Mod_Injector.Helpers.Files;
 using System;
 
 namespace Minecraft_Wii_U_Mod_Injector.Helpers
 {
-    class DiscordRP
+    class DiscordRp
     {
-        public static DiscordRpcClient client;
-        public static DateTime startUpTime = DateTime.UtcNow;
+        public static DiscordRpcClient Client;
+        public static DateTime StartUpTime = DateTime.UtcNow;
 
         public static void Initialize()
         {
-            client = new DiscordRpcClient("839430556583854101");
-            client.Initialize();         
+            Client = new DiscordRpcClient("839430556583854101");
+            Client.Initialize();         
         }
 
         public static void SetPresence(string details, string state)
         {
-            if (client != null)
+            Client?.SetPresence(new RichPresence()
             {
-                client.SetPresence(new RichPresence()
+                Details = Setup.LocalVer + " - " + details,
+                State = state,
+                Timestamps = new Timestamps() { Start = StartUpTime },
+                Assets = new Assets()
                 {
-                    Details = Setup.LocalVer + " - " + details,
-                    State = state,
-                    Timestamps = new Timestamps() { Start = startUpTime },
-                    Assets = new Assets()
-                    {
-                        LargeImageKey = "icon_large",
-                        LargeImageText = "Minecraft Wii U Mod Injector",
-                    }
-                }); ;
-            }
-            else
-                return;
+                    LargeImageKey = "icon_large",
+                    LargeImageText = "Minecraft Wii U Mod Injector",
+                }
+            });
         }
 
         public static void Deinitialize()
         {
-            if(client != null)
-                client.Dispose();
-
-            client = null;
+            Client?.Dispose();
+            Client = null;
         }
     }
 }

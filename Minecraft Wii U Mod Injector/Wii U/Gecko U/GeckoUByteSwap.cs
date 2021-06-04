@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace WiiU.GeckoU
+namespace Minecraft_Wii_U_Mod_Injector.Wii_U.Gecko_U
 {
     public static class ByteSwap
     {

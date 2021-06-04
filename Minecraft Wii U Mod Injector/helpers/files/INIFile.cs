@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
+﻿using System.IO;
 using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -9,62 +7,43 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers.Files
 {
     class IniFile
     {
-        string Path;
-        string EXE = Assembly.GetExecutingAssembly().GetName().Name;
+        string _path;
+        string _exe = Assembly.GetExecutingAssembly().GetName().Name;
         [DllImport("kernel32", CharSet = CharSet.Unicode)]
-        static extern long WritePrivateProfileString(string Section, string Key, string Value, string FilePath);
+        static extern long WritePrivateProfileString(string section, string key, string value, string filePath);
         [DllImport("kernel32", CharSet = CharSet.Unicode)]
-        static extern int GetPrivateProfileString(string Section, string Key, string Default, StringBuilder RetVal, int Size, string FilePath);
-        [DllImport("kernel32.dll")]
-        private static extern int GetPrivateProfileSection(string lpAppName, byte[] lpszReturnBuffer, int nSize, string lpFileName);
+        static extern int GetPrivateProfileString(string section, string key, string @default, StringBuilder retVal, int size, string filePath);
 
-        public IniFile(string IniPath = null)
+        public IniFile(string iniPath = null)
         {
-            Path = new FileInfo(IniPath ?? EXE + ".ini").FullName.ToString();
+            _path = new FileInfo(iniPath ?? _exe + ".ini").FullName;
         }
 
-        public string Read(string Key, string Section = null)
+        public string Read(string key, string section = null)
         {
-            var RetVal = new StringBuilder(255);
-            GetPrivateProfileString(Section ?? EXE, Key, "", RetVal, 255, Path);
-            return RetVal.ToString();
+            var retVal = new StringBuilder(255);
+            GetPrivateProfileString(section ?? _exe, key, "", retVal, 255, _path);
+            return retVal.ToString();
         }
 
-        public List<string> ReadAllKeys(string Section)
+        public void Write(string key, string value, string section = null)
         {
-            byte[] buffer = new byte[2048];
-
-            GetPrivateProfileSection(Section, buffer, 2048, Path);
-            String[] tmp = Encoding.ASCII.GetString(buffer).Trim('\0').Split('\0');
-
-            List<string> result = new List<string>();
-
-            foreach (String entry in tmp)
-            {
-                result.Add(entry.Substring(0, entry.IndexOf("=")));
-            }
-
-            return result;
+            WritePrivateProfileString(section ?? _exe, key, value, _path);
         }
 
-        public void Write(string Key, string Value, string Section = null)
+        public void DeleteKey(string key, string section = null)
         {
-            WritePrivateProfileString(Section ?? EXE, Key, Value, Path);
+            Write(key, null, section ?? _exe);
         }
 
-        public void DeleteKey(string Key, string Section = null)
+        public void DeleteSection(string section = null)
         {
-            Write(Key, null, Section ?? EXE);
+            Write(null, null, section ?? _exe);
         }
 
-        public void DeleteSection(string Section = null)
+        public bool KeyExists(string key, string section = null)
         {
-            Write(null, null, Section ?? EXE);
-        }
-
-        public bool KeyExists(string Key, string Section = null)
-        {
-            return Read(Key, Section).Length > 0;
+            return Read(key, section).Length > 0;
         }
     }
 }

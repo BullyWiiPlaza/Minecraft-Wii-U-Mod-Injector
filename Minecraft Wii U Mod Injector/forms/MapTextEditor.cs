@@ -2,40 +2,45 @@
 using System.Windows.Forms;
 using MetroFramework.Forms;
 using Minecraft_Wii_U_Mod_Injector.Helpers;
-using Minecraft_Wii_U_Mod_Injector.Helpers.Winforms;
+using Minecraft_Wii_U_Mod_Injector.Helpers.Win_Forms;
 
 namespace Minecraft_Wii_U_Mod_Injector.Forms
 {
     public partial class MapTextEditor : MetroForm
     {
-        MainForm IWindow = new MainForm();
+        private MainForm IW;
 
-        public MapTextEditor(MainForm IW)
+        public MapTextEditor(MainForm iw)
         {
             InitializeComponent();
-            IWindow = IW;
-            StyleMngr.Style = Style = IWindow.StyleMngr.Style;
-            StyleMngr.Theme = Theme = IWindow.StyleMngr.Theme;
-            DiscordRP.SetPresence("Connected", "Map Text Editor");
+            IW = iw;
+            StyleMngr.Style = Style = IW.StyleMngr.Style;
+            StyleMngr.Theme = Theme = IW.StyleMngr.Theme;
+            DiscordRp.SetPresence("Connected", "Map Text Editor");
         }
 
         private void SetMapTextClicked(object sender, EventArgs e)
         {
-            uint TextStart = 0x108E2834;
-            string MapTextNew = "\0" + StringUtils.InsertStrings(MapText.Text, 1, "\0");
+            uint textStart = 0x108E2834;
+            string mapTextNew = "\0" + StringUtils.InsertStrings(MapText.Text, 1, "\0");
 
-            MainForm.GeckoU.ClearString(TextStart, 0x108E2858);
-            MainForm.GeckoU.WriteString(TextStart, MapTextNew);
+            MainForm.GeckoU.ClearString(textStart, 0x108E2858);
+            MainForm.GeckoU.WriteString(textStart, mapTextNew);
         }
 
-        private void variablesBtnClicked(object sender, EventArgs e)
+        private void VariablesBtnClicked(object sender, EventArgs e)
         {
             Messaging.Show("Map Text Variables:\n%i: Coordinate as an Integer\n%d: Coordinate as a decimal\n%f: Coordinate as a float\n%x: Coordinate as a Hexadecimal");
         }
 
         private void Exiting(object sender, FormClosingEventArgs e)
         {
-            DiscordRP.SetPresence("Connected", new MainForm().generalTab.Text);
+            DiscordRp.SetPresence("Connected", IW.generalTab.Text + " tab");
+        }
+
+        private void MapTextEditor_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

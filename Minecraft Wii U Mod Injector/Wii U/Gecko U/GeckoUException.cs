@@ -1,48 +1,48 @@
 ﻿using System;
 
-namespace WiiU.GeckoU
+namespace Minecraft_Wii_U_Mod_Injector.Wii_U.Gecko_U
 {
     public class GeckoUException : Exception
     {
-        public enum ETCPErrorCode
+        public enum EtcpErrorCode
         {
-            FTDIQueryError,
-            noFTDIDevicesFound,
-            noTCPGeckoFound,
-            FTDIResetError,
-            FTDIPurgeRxError,
-            FTDIPurgeTxError,
-            FTDITimeoutSetError,
-            FTDITransferSetError,
-            FTDICommandSendError,
-            FTDIReadDataError,
-            FTDIInvalidReply,
+            FtdiQueryError,
+            NoFtdiDevicesFound,
+            NoTcpGeckoFound,
+            FtdiResetError,
+            FtdiPurgeRxError,
+            FtdiPurgeTxError,
+            FtdiTimeoutSetError,
+            FtdiTransferSetError,
+            FtdiCommandSendError,
+            FtdiReadDataError,
+            FtdiInvalidReply,
             TooManyRetries,
-            REGStreamSizeInvalid,
+            RegStreamSizeInvalid,
             CheatStreamSizeInvalid
         }
 
-        private ETCPErrorCode PErrorCode;
+        private EtcpErrorCode _pErrorCode;
 
-        public ETCPErrorCode ErrorCode
+        public EtcpErrorCode ErrorCode
         {
             get
             {
-                return PErrorCode;
+                return _pErrorCode;
             }
         }
 
-        public GeckoUException(ETCPErrorCode code) : base()
+        public GeckoUException(EtcpErrorCode code)
         {
-            PErrorCode = code;
+            _pErrorCode = code;
         }
-        public GeckoUException(ETCPErrorCode code, string message) : base(message)
+        public GeckoUException(EtcpErrorCode code, string message) : base(message)
         {
-            PErrorCode = code;
+            _pErrorCode = code;
         }
-        public GeckoUException(ETCPErrorCode code, string message, Exception inner) : base(message, inner)
+        public GeckoUException(EtcpErrorCode code, string message, Exception inner) : base(message, inner)
         {
-            PErrorCode = code;
+            _pErrorCode = code;
         }
     }
 }

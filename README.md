@@ -23,9 +23,7 @@ You can report issues using the GitHub issue page or by joining the Discord Serv
 Credits can be found in the ``Credits`` Page on the Mod Injector.
 
 # Terms
-* You are free to recompile the Mod Injector with new additions or changed and re-release it as long as there is credit.
-* You are NOT allowed to re-release the Injector as paid access software.
-* You are NOT allowed to take mods, put them in a new Mod Injector and claim credit for them.
+Before downloading the Mod Injector or it's source code, you must agree to the [terms of use](LICENSE.md).
 
 # Support the Developers!
 

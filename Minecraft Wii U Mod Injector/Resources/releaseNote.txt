@@ -1,22 +1,36 @@
-[Release v5.1.5 (3rd of June, 2021)]
+[Release v5.1.6 (7th of June, 2021)]
 
 [Information]
 If you are experiencing issues, please report them on the Github Issues page or by joining the official discord server.
 
-This update adds an automatic release checker and fixes a Gecko U connection bug
+This update adds a ton of new mods with a small amount of additions/fixes
 
 [Changes]
 
++ New Mods
+
+- Players > Underwater Effects
+- Players > Hide Blocks
+- Players > Always in lava
+- Players > See through blocks
+- Players > Level X
+- Players > Always in water
+- Players > ESP
+- Players > No slowdowns
+- Entities / World > Supercharged Creepers
+- Entities / World > Ignited Creepers
+- Entities / World > Zombie Tower
+- Entities / World > Sun Proof Mobs
+- Generak Game > UI Color Picker 
+
+
 + General Additions & Updates:
 
-- The Injector will check the GitHub repo automatically for a newer version
-- Interested in checking out pre-releases? You can now Opt-in within the Settings page
-- Settings Page renamed
-- Navigation buttons are now centered
+- The Injector will now check whether you are runnning Minecraft, if not you'll get an error message
+- You can now add or remove decimal places on mods that use a slider (reach, jump height etc) by holding either CTRL or ALT while clicking on one of the sliders
 
 [Fixes]
 
 + General Fixes
 
-- Disconnecting and reconnecting will now work as intended, previously reconnecting would result in no memory modifications
-- More UI Changes to fit the new wider tab pages
+- Fixed some half displaying ToolTips

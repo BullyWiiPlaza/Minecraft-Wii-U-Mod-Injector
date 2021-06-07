@@ -12,7 +12,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Wii_U.Gecko_U
     {
         #region base vars
 
-        public GeckoUConnect Guc;
+        public GeckoUConnect Tcp;
         
         private const int cmd_defaultPort = 7331;
         private const uint cmd_maximumMemoryChunkSize = 0x400;
@@ -33,7 +33,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Wii_U.Gecko_U
         /// <param name="host">Wii U IP Address</param>
         public GeckoUCore(string host)
         {
-            Guc = new GeckoUConnect(host, cmd_defaultPort);
+            Tcp = new GeckoUConnect(host, cmd_defaultPort);
         }
 
         #endregion connection
@@ -45,11 +45,11 @@ namespace Minecraft_Wii_U_Mod_Injector.Wii_U.Gecko_U
 
             try
             {
-                Guc.Read(recbyte, nobytes, out bytesRead);
+                Tcp.Read(recbyte, nobytes, out bytesRead);
             }
             catch (IOException)
             {
-                Guc.Close();
+                Tcp.Close();
                 return FtdiCommand.CmdFatalError;
             }
 
@@ -62,11 +62,11 @@ namespace Minecraft_Wii_U_Mod_Injector.Wii_U.Gecko_U
 
             try
             {
-                Guc.Write(sendbyte, nobytes, out bytesWritten);
+                Tcp.Write(sendbyte, nobytes, out bytesWritten);
             }
             catch (IOException)
             {
-                Guc.Close();
+                Tcp.Close();
                 return FtdiCommand.CmdFatalError;
             }
 
@@ -89,7 +89,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Wii_U.Gecko_U
         /// <param name="command">Command to send</param>
         private void SendCommand(GeckoUCommands.Command command)
         {
-            Guc.Write(new[] { (byte)command }, 1, out _);
+            Tcp.Write(new[] { (byte)command }, 1, out _);
         }
 
         /// <summary>
@@ -105,7 +105,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Wii_U.Gecko_U
                 RequestBytes(address, length);
 
                 var response = new byte[1];
-                Guc.Read(response, 1, out _);
+                Tcp.Read(response, 1, out _);
 
                 var ms = new MemoryStream();
 
@@ -125,7 +125,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Wii_U.Gecko_U
                     }
 
                     var buffer = new byte[chunkSize];
-                    Guc.Read(buffer, chunkSize, out _);
+                    Tcp.Read(buffer, chunkSize, out _);
 
                     ms.Write(buffer, 0, (int)chunkSize);
 
@@ -155,8 +155,8 @@ namespace Minecraft_Wii_U_Mod_Injector.Wii_U.Gecko_U
 
                 var bytes = BitConverter.GetBytes(ByteSwap.Swap(address));
                 var bytes2 = BitConverter.GetBytes(ByteSwap.Swap(address + length));
-                Guc.Write(bytes, 4, out _);
-                Guc.Write(bytes2, 4, out _);
+                Tcp.Write(bytes, 4, out _);
+                Tcp.Write(bytes2, 4, out _);
             }
             catch (Exception)
             {
@@ -175,7 +175,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Wii_U.Gecko_U
             var length = bytes.Length;
 
             var endAddress = address + (uint)bytes.Length;
-            Guc.Write(bytes, length, out _);
+            Tcp.Write(bytes, length, out _);
 
             return endAddress;
         }
@@ -197,8 +197,8 @@ namespace Minecraft_Wii_U_Mod_Injector.Wii_U.Gecko_U
                 var start = BitConverter.GetBytes(ByteSwap.Swap(address));
                 var end = BitConverter.GetBytes(ByteSwap.Swap(address + length));
 
-                Guc.Write(start, 4, out _);
-                Guc.Write(end, 4, out _);
+                Tcp.Write(start, 4, out _);
+                Tcp.Write(end, 4, out _);
 
                 enumerable.Aggregate(address, UploadBytes);
             }
@@ -279,9 +279,9 @@ namespace Minecraft_Wii_U_Mod_Injector.Wii_U.Gecko_U
 
             uint bytesWritten = 0;
 
-            GUC.Write(new byte[] { (byte)Request.Length }, 0, ref bytesWritten);
-            GUC.Write(Request.ToArray(), 0, ref bytesWritten);
-            GUC.Write(new byte[] { 0 }, 0, ref bytesWritten);
+            Tcp.Write(new byte[] { (byte)Request.Length }, 0, ref bytesWritten);
+            Tcp.Write(Request.ToArray(), 0, ref bytesWritten);
+            Tcp.Write(new byte[] { 0 }, 0, ref bytesWritten);
             MessageBox.Show(Request.Length.ToString());
 
             address = readInteger();
@@ -365,7 +365,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Wii_U.Gecko_U
         /// <param name="address">Address to write to</param>
         /// <param name="value">Value to write to when toggled</param>
         /// <param name="originalValue">Value to write to when untoggled</param>
-        /// <param name="toggle">The toggle state</param>
+        /// <param name="toggle">Whether the addresses should be poked</param>
         public void WriteUIntToggle(uint address, uint value, uint originalValue, bool toggle)
         {
             switch(toggle)
@@ -386,7 +386,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Wii_U.Gecko_U
         /// <param name="address">Address to write to</param>
         /// <param name="value">Value to write to when toggled</param>
         /// <param name="originalValue">Value to write to when untoggled</param>
-        /// <param name="toggle">The toggle state</param>
+        /// <param name="toggle">Whether the addresses should be poked</param>
         public void WriteLongToggle(uint address, long value, long originalValue, bool toggle)
         {
             switch (toggle)
@@ -407,7 +407,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Wii_U.Gecko_U
         /// <param name="address">Address to write to</param>
         /// <param name="value">Value to write to when toggled</param>
         /// <param name="originalValue">Value to write to when Untoggled</param>
-        /// <param name="toggle">The toggle state</param>
+        /// <param name="toggle">Whether the addresses should be poked</param>
         public void WriteULongToggle(uint address, ulong value, ulong originalValue, bool toggle)
         {
             switch (toggle)
@@ -719,7 +719,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Wii_U.Gecko_U
             SendCommand(GeckoUCommands.Command.CommandGetDataBufferSize);
 
             var response = new byte[4];
-            Guc.Read(response, 4, out _);
+            Tcp.Read(response, 4, out _);
 
             Array.Reverse(response);
             var bufferSize = BitConverter.ToUInt32(response, 0);
@@ -736,7 +736,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Wii_U.Gecko_U
             SendCommand(GeckoUCommands.Command.CommandGetCodeHandlerAddress);
 
             var response = new byte[4];
-            Guc.Read(response, 4, out _);
+            Tcp.Read(response, 4, out _);
 
             Array.Reverse(response);
             var bufferSize = BitConverter.ToUInt32(response, 0);
@@ -753,7 +753,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Wii_U.Gecko_U
             SendCommand(GeckoUCommands.Command.CommandAccountIdentifier);
 
             var response = new byte[4];
-            Guc.Read(response, 4, out _);
+            Tcp.Read(response, 4, out _);
 
             Array.Reverse(response);
             var bufferSize = BitConverter.ToUInt32(response, 0);
@@ -766,7 +766,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Wii_U.Gecko_U
             SendCommand(GeckoUCommands.Command.CommandGetVersionHash);
 
             var response = new byte[4];
-            Guc.Read(response, 4, out _);
+            Tcp.Read(response, 4, out _);
 
             Array.Reverse(response);
             var versionHash = BitConverter.ToUInt32(response, 0);
@@ -784,6 +784,11 @@ namespace Minecraft_Wii_U_Mod_Injector.Wii_U.Gecko_U
         {
             CallFunction(0x0384E79C, address);
             return PeekString(4, address);
+        }
+
+        public string ReadTitleId()
+        {
+            return CallFunction64(0x0101F5CC).ToString("x8");
         }
         #endregion Commands
 

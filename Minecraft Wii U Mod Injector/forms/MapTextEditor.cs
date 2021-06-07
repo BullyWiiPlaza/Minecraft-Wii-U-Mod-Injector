@@ -8,14 +8,14 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms
 {
     public partial class MapTextEditor : MetroForm
     {
-        private MainForm IW;
+        private MainForm _iw;
 
         public MapTextEditor(MainForm iw)
         {
             InitializeComponent();
-            IW = iw;
-            StyleMngr.Style = Style = IW.StyleMngr.Style;
-            StyleMngr.Theme = Theme = IW.StyleMngr.Theme;
+            _iw = iw;
+            StyleMngr.Style = Style = _iw.StyleMngr.Style;
+            StyleMngr.Theme = Theme = _iw.StyleMngr.Theme;
             DiscordRp.SetPresence("Connected", "Map Text Editor");
         }
 
@@ -35,7 +35,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms
 
         private void Exiting(object sender, FormClosingEventArgs e)
         {
-            DiscordRp.SetPresence("Connected", IW.generalTab.Text + " tab");
+            DiscordRp.SetPresence("Connected", _iw.generalTab.Text + " tab");
         }
 
         private void MapTextEditor_Load(object sender, EventArgs e)

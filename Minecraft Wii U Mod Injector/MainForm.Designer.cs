@@ -46,7 +46,15 @@
             this.WiiUIpv4Box = new MetroFramework.Controls.MetroTextBox();
             this.WiiUIpv4Lbl = new MetroFramework.Controls.MetroLabel();
             this.playersTab = new MetroFramework.Controls.MetroTabPage();
-            this.metroCheckBox1 = new MetroFramework.Controls.MetroCheckBox();
+            this.NoSlowDowns = new MetroFramework.Controls.MetroCheckBox();
+            this.ESP = new MetroFramework.Controls.MetroCheckBox();
+            this.AlwaysInWater = new MetroFramework.Controls.MetroCheckBox();
+            this.LevelX = new MetroFramework.Controls.MetroCheckBox();
+            this.SeeThroughBlocks = new MetroFramework.Controls.MetroCheckBox();
+            this.AlwaysInLava = new MetroFramework.Controls.MetroCheckBox();
+            this.HideBlocks = new MetroFramework.Controls.MetroCheckBox();
+            this.UnderwaterEffects = new MetroFramework.Controls.MetroCheckBox();
+            this.GodModeAll = new MetroFramework.Controls.MetroCheckBox();
             this.FrictionSlider = new System.Windows.Forms.NumericUpDown();
             this.Friction = new MetroFramework.Controls.MetroLabel();
             this.FieldOfViewSplitSlider = new System.Windows.Forms.NumericUpDown();
@@ -113,16 +121,25 @@
             this.CraftAnything = new MetroFramework.Controls.MetroCheckBox();
             this.CreativeMode = new MetroFramework.Controls.MetroCheckBox();
             this.worldTab = new MetroFramework.Controls.MetroTabPage();
-            this.FreezingWorld = new MetroFramework.Controls.MetroCheckBox();
-            this.FoggyWeather = new MetroFramework.Controls.MetroCheckBox();
-            this.NoFog = new MetroFramework.Controls.MetroCheckBox();
-            this.StaticLiquidBlocks = new MetroFramework.Controls.MetroCheckBox();
+            this.Entities = new MetroFramework.Controls.MetroLabel();
+            this.entitiesPnl = new MetroFramework.Controls.MetroPanel();
+            this.SunProofMobs = new MetroFramework.Controls.MetroCheckBox();
+            this.ZombieTower = new MetroFramework.Controls.MetroCheckBox();
+            this.IgnitedCreepers = new MetroFramework.Controls.MetroCheckBox();
+            this.SuperchargedCreepers = new MetroFramework.Controls.MetroCheckBox();
             this.UncapEntitySpawnLimit = new MetroFramework.Controls.MetroCheckBox();
-            this.GenerateAmplifiedWorld = new MetroFramework.Controls.MetroCheckBox();
-            this.AcidLiquidBlocks = new MetroFramework.Controls.MetroCheckBox();
+            this.World = new MetroFramework.Controls.MetroLabel();
+            this.worldPnl = new MetroFramework.Controls.MetroPanel();
             this.DisableCreativeFlag = new MetroFramework.Controls.MetroCheckBox();
             this.GeneratePlainWorld = new MetroFramework.Controls.MetroCheckBox();
+            this.FreezingWorld = new MetroFramework.Controls.MetroCheckBox();
+            this.AcidLiquidBlocks = new MetroFramework.Controls.MetroCheckBox();
+            this.FoggyWeather = new MetroFramework.Controls.MetroCheckBox();
+            this.GenerateAmplifiedWorld = new MetroFramework.Controls.MetroCheckBox();
+            this.NoFog = new MetroFramework.Controls.MetroCheckBox();
+            this.StaticLiquidBlocks = new MetroFramework.Controls.MetroCheckBox();
             this.generalTab = new MetroFramework.Controls.MetroTabPage();
+            this.UIColorPickerBtn = new MetroFramework.Controls.MetroButton();
             this.DisableTeleporting = new MetroFramework.Controls.MetroCheckBox();
             this.GamepadSplitscreen = new MetroFramework.Controls.MetroCheckBox();
             this.BypassFriendsOnly = new MetroFramework.Controls.MetroCheckBox();
@@ -219,6 +236,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.JumpHeightSlider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.EnchantmentLevelSlider)).BeginInit();
             this.worldTab.SuspendLayout();
+            this.entitiesPnl.SuspendLayout();
+            this.worldPnl.SuspendLayout();
             this.generalTab.SuspendLayout();
             this.minigamesTab.SuspendLayout();
             this.MinigamesTabs.SuspendLayout();
@@ -251,8 +270,8 @@
             this.WorldTile.PaintTileCount = false;
             this.WorldTile.Size = new System.Drawing.Size(160, 55);
             this.WorldTile.TabIndex = 3;
-            this.WorldTile.Tag = "2";
-            this.WorldTile.Text = "World / Blocks";
+            this.WorldTile.Tag = "";
+            this.WorldTile.Text = "Entities / World";
             this.WorldTile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.WorldTile.TileCount = 2;
             this.WorldTile.UseSelectable = true;
@@ -266,7 +285,7 @@
             this.GeneralTile.PaintTileCount = false;
             this.GeneralTile.Size = new System.Drawing.Size(160, 55);
             this.GeneralTile.TabIndex = 4;
-            this.GeneralTile.Tag = "3";
+            this.GeneralTile.Tag = "";
             this.GeneralTile.Text = "General Game";
             this.GeneralTile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.GeneralTile.TileCount = 3;
@@ -281,7 +300,7 @@
             this.MinigamesTile.PaintTileCount = false;
             this.MinigamesTile.Size = new System.Drawing.Size(160, 55);
             this.MinigamesTile.TabIndex = 5;
-            this.MinigamesTile.Tag = "4";
+            this.MinigamesTile.Tag = "";
             this.MinigamesTile.Text = "Minigames";
             this.MinigamesTile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.MinigamesTile.TileCount = 4;
@@ -296,7 +315,7 @@
             this.SettingsTile.PaintTileCount = false;
             this.SettingsTile.Size = new System.Drawing.Size(160, 69);
             this.SettingsTile.TabIndex = 7;
-            this.SettingsTile.Tag = "6";
+            this.SettingsTile.Tag = "";
             this.SettingsTile.Text = "Settings";
             this.SettingsTile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.SettingsTile.TileCount = 6;
@@ -314,6 +333,7 @@
             this.BuildTile.TabIndex = 6;
             this.BuildTile.Text = "VERSION";
             this.BuildTile.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.BuildTile.TileCount = 8;
             this.BuildTile.UseSelectable = true;
             // 
             // MainTabs
@@ -330,7 +350,7 @@
             this.MainTabs.Location = new System.Drawing.Point(155, 61);
             this.MainTabs.Multiline = true;
             this.MainTabs.Name = "MainTabs";
-            this.MainTabs.SelectedIndex = 1;
+            this.MainTabs.SelectedIndex = 0;
             this.MainTabs.Size = new System.Drawing.Size(989, 545);
             this.MainTabs.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.MainTabs.TabIndex = 0;
@@ -349,10 +369,10 @@
             this.MainTab.HorizontalScrollbarBarColor = true;
             this.MainTab.HorizontalScrollbarHighlightOnWheel = false;
             this.MainTab.HorizontalScrollbarSize = 10;
-            this.MainTab.Location = new System.Drawing.Point(4, 9);
+            this.MainTab.Location = new System.Drawing.Point(4, 5);
             this.MainTab.Name = "MainTab";
             this.MainTab.Padding = new System.Windows.Forms.Padding(3);
-            this.MainTab.Size = new System.Drawing.Size(981, 532);
+            this.MainTab.Size = new System.Drawing.Size(981, 536);
             this.MainTab.TabIndex = 6;
             this.MainTab.Text = "Home";
             this.MainTab.VerticalScrollbarBarColor = true;
@@ -378,9 +398,9 @@
             // 
             // 
             this.BuildNotesBox.CustomButton.Image = null;
-            this.BuildNotesBox.CustomButton.Location = new System.Drawing.Point(378, 1);
+            this.BuildNotesBox.CustomButton.Location = new System.Drawing.Point(354, 2);
             this.BuildNotesBox.CustomButton.Name = "";
-            this.BuildNotesBox.CustomButton.Size = new System.Drawing.Size(443, 443);
+            this.BuildNotesBox.CustomButton.Size = new System.Drawing.Size(465, 465);
             this.BuildNotesBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.BuildNotesBox.CustomButton.TabIndex = 1;
             this.BuildNotesBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -399,7 +419,7 @@
             this.BuildNotesBox.SelectionLength = 0;
             this.BuildNotesBox.SelectionStart = 0;
             this.BuildNotesBox.ShortcutsEnabled = true;
-            this.BuildNotesBox.Size = new System.Drawing.Size(822, 445);
+            this.BuildNotesBox.Size = new System.Drawing.Size(822, 470);
             this.BuildNotesBox.TabIndex = 8;
             this.BuildNotesBox.Text = "Fetching Patch Notes for VERSION";
             this.BuildNotesBox.UseSelectable = true;
@@ -432,7 +452,7 @@
             // 
             // ConnectBtn
             // 
-            this.ConnectBtn.Location = new System.Drawing.Point(834, 494);
+            this.ConnectBtn.Location = new System.Drawing.Point(834, 507);
             this.ConnectBtn.Name = "ConnectBtn";
             this.ConnectBtn.Size = new System.Drawing.Size(140, 23);
             this.ConnectBtn.TabIndex = 4;
@@ -468,7 +488,7 @@
             this.WiiUIpv4Box.CustomButton.UseSelectable = true;
             this.WiiUIpv4Box.CustomButton.Visible = false;
             this.WiiUIpv4Box.Lines = new string[0];
-            this.WiiUIpv4Box.Location = new System.Drawing.Point(84, 494);
+            this.WiiUIpv4Box.Location = new System.Drawing.Point(84, 507);
             this.WiiUIpv4Box.MaxLength = 32767;
             this.WiiUIpv4Box.Name = "WiiUIpv4Box";
             this.WiiUIpv4Box.PasswordChar = '\0';
@@ -490,7 +510,7 @@
             // WiiUIpv4Lbl
             // 
             this.WiiUIpv4Lbl.AutoSize = true;
-            this.WiiUIpv4Lbl.Location = new System.Drawing.Point(6, 494);
+            this.WiiUIpv4Lbl.Location = new System.Drawing.Point(6, 507);
             this.WiiUIpv4Lbl.Name = "WiiUIpv4Lbl";
             this.WiiUIpv4Lbl.Size = new System.Drawing.Size(72, 19);
             this.WiiUIpv4Lbl.TabIndex = 2;
@@ -498,7 +518,15 @@
             // 
             // playersTab
             // 
-            this.playersTab.Controls.Add(this.metroCheckBox1);
+            this.playersTab.Controls.Add(this.NoSlowDowns);
+            this.playersTab.Controls.Add(this.ESP);
+            this.playersTab.Controls.Add(this.AlwaysInWater);
+            this.playersTab.Controls.Add(this.LevelX);
+            this.playersTab.Controls.Add(this.SeeThroughBlocks);
+            this.playersTab.Controls.Add(this.AlwaysInLava);
+            this.playersTab.Controls.Add(this.HideBlocks);
+            this.playersTab.Controls.Add(this.UnderwaterEffects);
+            this.playersTab.Controls.Add(this.GodModeAll);
             this.playersTab.Controls.Add(this.FrictionSlider);
             this.playersTab.Controls.Add(this.Friction);
             this.playersTab.Controls.Add(this.FieldOfViewSplitSlider);
@@ -578,18 +606,124 @@
             this.playersTab.VerticalScrollbarHighlightOnWheel = false;
             this.playersTab.VerticalScrollbarSize = 10;
             // 
-            // metroCheckBox1
+            // NoSlowDowns
             // 
-            this.metroCheckBox1.AutoSize = true;
-            this.metroCheckBox1.Location = new System.Drawing.Point(383, 216);
-            this.metroCheckBox1.Name = "metroCheckBox1";
-            this.metroCheckBox1.Size = new System.Drawing.Size(104, 15);
-            this.metroCheckBox1.TabIndex = 148;
-            this.metroCheckBox1.Tag = "";
-            this.metroCheckBox1.Text = "God Mode (All)";
-            this.ToolTipManager.SetToolTip(this.metroCheckBox1, "Whether to enable God Mode for everyone");
-            this.metroCheckBox1.UseSelectable = true;
-            this.metroCheckBox1.CheckedChanged += new System.EventHandler(this.GodModeAllToggled);
+            this.NoSlowDowns.AutoSize = true;
+            this.NoSlowDowns.Location = new System.Drawing.Point(570, 48);
+            this.NoSlowDowns.Name = "NoSlowDowns";
+            this.NoSlowDowns.Size = new System.Drawing.Size(101, 15);
+            this.NoSlowDowns.TabIndex = 155;
+            this.NoSlowDowns.Tag = "";
+            this.NoSlowDowns.Text = "No slowdowns";
+            this.ToolTipManager.SetToolTip(this.NoSlowDowns, "Whether no movement penaltities \r\nare applied such as:\r\n\r\nEating\r\nDrinking\r\nDrawi" +
+        "ng Bow\r\nDrawing Trident");
+            this.NoSlowDowns.UseSelectable = true;
+            this.NoSlowDowns.CheckedChanged += new System.EventHandler(this.NoSlowDownsToggled);
+            // 
+            // ESP
+            // 
+            this.ESP.AutoSize = true;
+            this.ESP.Location = new System.Drawing.Point(570, 27);
+            this.ESP.Name = "ESP";
+            this.ESP.Size = new System.Drawing.Size(42, 15);
+            this.ESP.TabIndex = 154;
+            this.ESP.Tag = "";
+            this.ESP.Text = "ESP";
+            this.ToolTipManager.SetToolTip(this.ESP, "Whether player name tags are\r\ncovering player models");
+            this.ESP.UseSelectable = true;
+            this.ESP.CheckedChanged += new System.EventHandler(this.EspToggled);
+            // 
+            // AlwaysInWater
+            // 
+            this.AlwaysInWater.AutoSize = true;
+            this.AlwaysInWater.Location = new System.Drawing.Point(570, 6);
+            this.AlwaysInWater.Name = "AlwaysInWater";
+            this.AlwaysInWater.Size = new System.Drawing.Size(107, 15);
+            this.AlwaysInWater.TabIndex = 153;
+            this.AlwaysInWater.Tag = "";
+            this.AlwaysInWater.Text = "Always in Water";
+            this.ToolTipManager.SetToolTip(this.AlwaysInWater, "Whether you\'ll always be considered\r\nin water");
+            this.AlwaysInWater.UseSelectable = true;
+            this.AlwaysInWater.CheckedChanged += new System.EventHandler(this.AlwaysInWaterToggled);
+            // 
+            // LevelX
+            // 
+            this.LevelX.AutoSize = true;
+            this.LevelX.Location = new System.Drawing.Point(383, 321);
+            this.LevelX.Name = "LevelX";
+            this.LevelX.Size = new System.Drawing.Size(60, 15);
+            this.LevelX.TabIndex = 152;
+            this.LevelX.Tag = "";
+            this.LevelX.Text = "Level X";
+            this.ToolTipManager.SetToolTip(this.LevelX, "Whether your XP Level will show\r\nas Level X");
+            this.LevelX.UseSelectable = true;
+            this.LevelX.CheckedChanged += new System.EventHandler(this.LevelXToggled);
+            // 
+            // SeeThroughBlocks
+            // 
+            this.SeeThroughBlocks.AutoSize = true;
+            this.SeeThroughBlocks.Location = new System.Drawing.Point(383, 300);
+            this.SeeThroughBlocks.Name = "SeeThroughBlocks";
+            this.SeeThroughBlocks.Size = new System.Drawing.Size(124, 15);
+            this.SeeThroughBlocks.TabIndex = 151;
+            this.SeeThroughBlocks.Tag = "";
+            this.SeeThroughBlocks.Text = "See through blocks";
+            this.ToolTipManager.SetToolTip(this.SeeThroughBlocks, "Whether you can see through blocks\r\n(instead of a fullscreen, 2d texure)");
+            this.SeeThroughBlocks.UseSelectable = true;
+            this.SeeThroughBlocks.CheckedChanged += new System.EventHandler(this.SeeThroughBlocksToggled);
+            // 
+            // AlwaysInLava
+            // 
+            this.AlwaysInLava.AutoSize = true;
+            this.AlwaysInLava.Location = new System.Drawing.Point(383, 279);
+            this.AlwaysInLava.Name = "AlwaysInLava";
+            this.AlwaysInLava.Size = new System.Drawing.Size(100, 15);
+            this.AlwaysInLava.TabIndex = 27;
+            this.AlwaysInLava.Tag = "";
+            this.AlwaysInLava.Text = "Always in Lava";
+            this.ToolTipManager.SetToolTip(this.AlwaysInLava, "Whether you\'ll always be considered\r\nin lava");
+            this.AlwaysInLava.UseSelectable = true;
+            this.AlwaysInLava.CheckedChanged += new System.EventHandler(this.AlwaysInLavaToggled);
+            // 
+            // HideBlocks
+            // 
+            this.HideBlocks.AutoSize = true;
+            this.HideBlocks.Location = new System.Drawing.Point(383, 258);
+            this.HideBlocks.Name = "HideBlocks";
+            this.HideBlocks.Size = new System.Drawing.Size(85, 15);
+            this.HideBlocks.TabIndex = 150;
+            this.HideBlocks.Tag = "";
+            this.HideBlocks.Text = "Hide Blocks";
+            this.ToolTipManager.SetToolTip(this.HideBlocks, "Whether to hide the majority of blocks \r\nexcluding chests, liquid and more");
+            this.HideBlocks.UseSelectable = true;
+            this.HideBlocks.CheckedChanged += new System.EventHandler(this.HideBlocksToggled);
+            // 
+            // UnderwaterEffects
+            // 
+            this.UnderwaterEffects.AutoSize = true;
+            this.UnderwaterEffects.Location = new System.Drawing.Point(383, 237);
+            this.UnderwaterEffects.Name = "UnderwaterEffects";
+            this.UnderwaterEffects.Size = new System.Drawing.Size(171, 15);
+            this.UnderwaterEffects.TabIndex = 149;
+            this.UnderwaterEffects.Tag = "";
+            this.UnderwaterEffects.Text = "Underwater Effects (Default)";
+            this.UnderwaterEffects.ThreeState = true;
+            this.ToolTipManager.SetToolTip(this.UnderwaterEffects, "Whether to enable or disable\r\nUnderwater Effects (or force them)");
+            this.UnderwaterEffects.UseSelectable = true;
+            this.UnderwaterEffects.CheckStateChanged += new System.EventHandler(this.UnderwaterEffectsToggled);
+            // 
+            // GodModeAll
+            // 
+            this.GodModeAll.AutoSize = true;
+            this.GodModeAll.Location = new System.Drawing.Point(383, 216);
+            this.GodModeAll.Name = "GodModeAll";
+            this.GodModeAll.Size = new System.Drawing.Size(104, 15);
+            this.GodModeAll.TabIndex = 148;
+            this.GodModeAll.Tag = "";
+            this.GodModeAll.Text = "God Mode (All)";
+            this.ToolTipManager.SetToolTip(this.GodModeAll, "Whether to enable God Mode for everyone");
+            this.GodModeAll.UseSelectable = true;
+            this.GodModeAll.CheckedChanged += new System.EventHandler(this.GodModeAllToggled);
             // 
             // FrictionSlider
             // 
@@ -612,13 +746,15 @@
             this.FrictionSlider.Size = new System.Drawing.Size(424, 20);
             this.FrictionSlider.TabIndex = 147;
             this.FrictionSlider.Tag = "";
-            this.ToolTipManager.SetToolTip(this.FrictionSlider, "How much friction do we have?");
+            this.ToolTipManager.SetToolTip(this.FrictionSlider, "How much friction do we have?\r\n\r\nCTRL + Click = Increase Decimal Places\r\nALT + Cl" +
+        "ick = Decrease Decimal Places");
             this.FrictionSlider.Value = new decimal(new int[] {
             91000003,
             0,
             0,
             524288});
             this.FrictionSlider.ValueChanged += new System.EventHandler(this.FrictionSliderChanged);
+            this.FrictionSlider.Click += new System.EventHandler(this.SliderClicked);
             // 
             // Friction
             // 
@@ -652,13 +788,15 @@
             this.FieldOfViewSplitSlider.Size = new System.Drawing.Size(300, 20);
             this.FieldOfViewSplitSlider.TabIndex = 145;
             this.FieldOfViewSplitSlider.Tag = "";
-            this.ToolTipManager.SetToolTip(this.FieldOfViewSplitSlider, "How high should our FOV in splitscreen be?");
+            this.ToolTipManager.SetToolTip(this.FieldOfViewSplitSlider, "How high should our FOV in splitscreen be?\r\n\r\nCTRL + Click = Increase Decimal Pla" +
+        "ces\r\nALT + Click = Decrease Decimal Places");
             this.FieldOfViewSplitSlider.Value = new decimal(new int[] {
             7,
             0,
             0,
             65536});
             this.FieldOfViewSplitSlider.ValueChanged += new System.EventHandler(this.FieldOfViewSplitSliderChanged);
+            this.FieldOfViewSplitSlider.Click += new System.EventHandler(this.SliderClicked);
             // 
             // FieldofViewSplitscreen
             // 
@@ -700,13 +838,15 @@
             this.playerModelScaleSlider.Size = new System.Drawing.Size(355, 20);
             this.playerModelScaleSlider.TabIndex = 142;
             this.playerModelScaleSlider.Tag = "";
-            this.ToolTipManager.SetToolTip(this.playerModelScaleSlider, "How big (or small) should our player be?");
+            this.ToolTipManager.SetToolTip(this.playerModelScaleSlider, "How big (or small) should our player be?\r\n\r\nCTRL + Click = Increase Decimal Place" +
+        "s\r\nALT + Click = Decrease Decimal Places");
             this.playerModelScaleSlider.Value = new decimal(new int[] {
             9375,
             0,
             0,
             262144});
             this.playerModelScaleSlider.ValueChanged += new System.EventHandler(this.PlayerModelScaleSliderChanged);
+            this.playerModelScaleSlider.Click += new System.EventHandler(this.SliderClicked);
             // 
             // PlayerModelScale
             // 
@@ -793,13 +933,15 @@
             this.FieldOfViewSlider.Size = new System.Drawing.Size(374, 20);
             this.FieldOfViewSlider.TabIndex = 137;
             this.FieldOfViewSlider.Tag = "";
-            this.ToolTipManager.SetToolTip(this.FieldOfViewSlider, "How high should our FOV be?");
+            this.ToolTipManager.SetToolTip(this.FieldOfViewSlider, "How high should our FOV be?\r\n\r\nCTRL + Click = Increase Decimal Places\r\nALT + Clic" +
+        "k = Decrease Decimal Places\r\n");
             this.FieldOfViewSlider.Value = new decimal(new int[] {
             1875,
             0,
             0,
             196608});
             this.FieldOfViewSlider.ValueChanged += new System.EventHandler(this.FieldOfViewSliderChanged);
+            this.FieldOfViewSlider.Click += new System.EventHandler(this.SliderClicked);
             // 
             // FieldOfView
             // 
@@ -821,8 +963,8 @@
             this.HiddenGameModesUnlocked.TabIndex = 135;
             this.HiddenGameModesUnlocked.Tag = "";
             this.HiddenGameModesUnlocked.Text = "Hidden Gamemodes Unlocked";
-            this.ToolTipManager.SetToolTip(this.HiddenGameModesUnlocked, "Whether to unlock hidden gamemodes, they can be switched in-game using host privi" +
-        "leges");
+            this.ToolTipManager.SetToolTip(this.HiddenGameModesUnlocked, "Whether to unlock hidden gamemodes \r\nThey can be switched in-game using host priv" +
+        "ileges\r\n");
             this.HiddenGameModesUnlocked.UseSelectable = true;
             this.HiddenGameModesUnlocked.CheckedChanged += new System.EventHandler(this.HiddenGameModesUnlockedToggled);
             // 
@@ -843,12 +985,14 @@
             this.HitBoxScaleSlider.Size = new System.Drawing.Size(377, 20);
             this.HitBoxScaleSlider.TabIndex = 134;
             this.HitBoxScaleSlider.Tag = "";
-            this.ToolTipManager.SetToolTip(this.HitBoxScaleSlider, "How big should entity hitboxes be? (disabled until fixed)");
+            this.ToolTipManager.SetToolTip(this.HitBoxScaleSlider, "How big should entity hitboxes be? (disabled until fixed)\r\n\r\nCTRL + Click = Incre" +
+        "ase Decimal Places\r\nALT + Click = Decrease Decimal Places");
             this.HitBoxScaleSlider.Value = new decimal(new int[] {
             5,
             0,
             0,
             65536});
+            this.HitBoxScaleSlider.Click += new System.EventHandler(this.SliderClicked);
             // 
             // HitBoxScale
             // 
@@ -895,13 +1039,15 @@
             this.WalkingSpeedScaleSlider.Size = new System.Drawing.Size(346, 20);
             this.WalkingSpeedScaleSlider.TabIndex = 131;
             this.WalkingSpeedScaleSlider.Tag = "";
-            this.ToolTipManager.SetToolTip(this.WalkingSpeedScaleSlider, "How fast can the player walk?");
+            this.ToolTipManager.SetToolTip(this.WalkingSpeedScaleSlider, "How fast can the player walk?\r\n\r\nCTRL + Click = Increase Decimal Places\r\nALT + Cl" +
+        "ick = Decrease Decimal Places");
             this.WalkingSpeedScaleSlider.Value = new decimal(new int[] {
             163,
             0,
             0,
             196608});
             this.WalkingSpeedScaleSlider.ValueChanged += new System.EventHandler(this.WalkingSpeedScaleChanged);
+            this.WalkingSpeedScaleSlider.Click += new System.EventHandler(this.SliderClicked);
             // 
             // WalkingSpeedScale
             // 
@@ -948,13 +1094,15 @@
             this.SprintingSpeedScaleSlider.Size = new System.Drawing.Size(340, 20);
             this.SprintingSpeedScaleSlider.TabIndex = 128;
             this.SprintingSpeedScaleSlider.Tag = "";
-            this.ToolTipManager.SetToolTip(this.SprintingSpeedScaleSlider, "How fast can the player sprint?");
+            this.ToolTipManager.SetToolTip(this.SprintingSpeedScaleSlider, "How fast can the player sprint?\r\n\r\nCTRL + Click = Increase Decimal Places\r\nALT + " +
+        "Click = Decrease Decimal Places");
             this.SprintingSpeedScaleSlider.Value = new decimal(new int[] {
             1875,
             0,
             0,
             196608});
             this.SprintingSpeedScaleSlider.ValueChanged += new System.EventHandler(this.SprintingSpeedScaleSliderChanged);
+            this.SprintingSpeedScaleSlider.Click += new System.EventHandler(this.SliderClicked);
             // 
             // SprintingSpeedScale
             // 
@@ -1004,13 +1152,15 @@
             this.RiptideFlyingSpeedSlider.Size = new System.Drawing.Size(342, 20);
             this.RiptideFlyingSpeedSlider.TabIndex = 125;
             this.RiptideFlyingSpeedSlider.Tag = "";
-            this.ToolTipManager.SetToolTip(this.RiptideFlyingSpeedSlider, "How fast should the Riptide Enchentment go?");
+            this.ToolTipManager.SetToolTip(this.RiptideFlyingSpeedSlider, "How fast should the Riptide Enchentment go?\r\n\r\nCTRL + Click = Increase Decimal Pl" +
+        "aces\r\nALT + Click = Decrease Decimal Places");
             this.RiptideFlyingSpeedSlider.Value = new decimal(new int[] {
             25,
             0,
             0,
             131072});
             this.RiptideFlyingSpeedSlider.ValueChanged += new System.EventHandler(this.RiptideFlyingSpeedSliderChanged);
+            this.RiptideFlyingSpeedSlider.Click += new System.EventHandler(this.SliderClicked);
             // 
             // RiptideFlyingSpeed
             // 
@@ -1049,13 +1199,15 @@
             this.ReachSlider.Size = new System.Drawing.Size(414, 20);
             this.ReachSlider.TabIndex = 121;
             this.ReachSlider.Tag = "";
-            this.ToolTipManager.SetToolTip(this.ReachSlider, "How far can the player reach?");
+            this.ToolTipManager.SetToolTip(this.ReachSlider, "How far can the player reach?\r\n\r\nCTRL + Click = Increase Decimal Places\r\nALT + Cl" +
+        "ick = Decrease Decimal Places");
             this.ReachSlider.Value = new decimal(new int[] {
             45,
             0,
             0,
             65536});
             this.ReachSlider.ValueChanged += new System.EventHandler(this.ReachSliderChanged);
+            this.ReachSlider.Click += new System.EventHandler(this.SliderClicked);
             // 
             // Reach
             // 
@@ -1094,13 +1246,15 @@
             this.JumpHeightSlider.Size = new System.Drawing.Size(375, 20);
             this.JumpHeightSlider.TabIndex = 119;
             this.JumpHeightSlider.Tag = "";
-            this.ToolTipManager.SetToolTip(this.JumpHeightSlider, "How high should the player jump?");
+            this.ToolTipManager.SetToolTip(this.JumpHeightSlider, "How high should the player jump?\r\n\r\nCTRL + Click = Increase Decimal Places\r\nALT +" +
+        " Click = Decrease Decimal Places");
             this.JumpHeightSlider.Value = new decimal(new int[] {
             420,
             0,
             0,
             196608});
             this.JumpHeightSlider.ValueChanged += new System.EventHandler(this.JumpHeightSliderChanged);
+            this.JumpHeightSlider.Click += new System.EventHandler(this.SliderClicked);
             // 
             // JumpHeight
             // 
@@ -1128,7 +1282,8 @@
             this.EnchantmentLevelSlider.Size = new System.Drawing.Size(340, 20);
             this.EnchantmentLevelSlider.TabIndex = 117;
             this.EnchantmentLevelSlider.Tag = "";
-            this.ToolTipManager.SetToolTip(this.EnchantmentLevelSlider, "What enchantment level should the currently held item have?");
+            this.ToolTipManager.SetToolTip(this.EnchantmentLevelSlider, "What enchantment level should the currently held item have?\r\n\r\nCTRL + Click = Inc" +
+        "rease Decimal Places\r\nALT + Click = Decrease Decimal Places");
             this.EnchantmentLevelSlider.ValueChanged += new System.EventHandler(this.EnchantmentLevelSliderChanged);
             // 
             // EnchantmentLevel
@@ -1610,88 +1765,108 @@
             // 
             // worldTab
             // 
-            this.worldTab.Controls.Add(this.FreezingWorld);
-            this.worldTab.Controls.Add(this.FoggyWeather);
-            this.worldTab.Controls.Add(this.NoFog);
-            this.worldTab.Controls.Add(this.StaticLiquidBlocks);
-            this.worldTab.Controls.Add(this.UncapEntitySpawnLimit);
-            this.worldTab.Controls.Add(this.GenerateAmplifiedWorld);
-            this.worldTab.Controls.Add(this.AcidLiquidBlocks);
-            this.worldTab.Controls.Add(this.DisableCreativeFlag);
-            this.worldTab.Controls.Add(this.GeneratePlainWorld);
+            this.worldTab.Controls.Add(this.Entities);
+            this.worldTab.Controls.Add(this.entitiesPnl);
+            this.worldTab.Controls.Add(this.World);
+            this.worldTab.Controls.Add(this.worldPnl);
             this.worldTab.HorizontalScrollbarBarColor = true;
             this.worldTab.HorizontalScrollbarHighlightOnWheel = false;
             this.worldTab.HorizontalScrollbarSize = 10;
-            this.worldTab.Location = new System.Drawing.Point(4, 9);
+            this.worldTab.Location = new System.Drawing.Point(4, 5);
             this.worldTab.Name = "worldTab";
             this.worldTab.Padding = new System.Windows.Forms.Padding(3);
-            this.worldTab.Size = new System.Drawing.Size(981, 532);
+            this.worldTab.Size = new System.Drawing.Size(981, 536);
             this.worldTab.TabIndex = 1;
             this.worldTab.Tag = "needsGeckoU";
-            this.worldTab.Text = "World";
+            this.worldTab.Text = "Entities / World";
             this.worldTab.VerticalScrollbarBarColor = true;
             this.worldTab.VerticalScrollbarHighlightOnWheel = false;
             this.worldTab.VerticalScrollbarSize = 10;
             // 
-            // FreezingWorld
+            // Entities
             // 
-            this.FreezingWorld.AutoSize = true;
-            this.FreezingWorld.BackColor = System.Drawing.Color.Transparent;
-            this.FreezingWorld.Location = new System.Drawing.Point(7, 6);
-            this.FreezingWorld.Name = "FreezingWorld";
-            this.FreezingWorld.Size = new System.Drawing.Size(102, 15);
-            this.FreezingWorld.TabIndex = 19;
-            this.FreezingWorld.Tag = "";
-            this.FreezingWorld.Text = "Freezing World";
-            this.ToolTipManager.SetToolTip(this.FreezingWorld, "Whether the world should freeze or not");
-            this.FreezingWorld.UseSelectable = true;
-            this.FreezingWorld.CheckedChanged += new System.EventHandler(this.FreezingWorldToggled);
+            this.Entities.AutoSize = true;
+            this.Entities.Location = new System.Drawing.Point(483, 6);
+            this.Entities.Name = "Entities";
+            this.Entities.Size = new System.Drawing.Size(49, 19);
+            this.Entities.TabIndex = 46;
+            this.Entities.Text = "Entities";
             // 
-            // FoggyWeather
+            // entitiesPnl
             // 
-            this.FoggyWeather.AutoSize = true;
-            this.FoggyWeather.Location = new System.Drawing.Point(7, 27);
-            this.FoggyWeather.Name = "FoggyWeather";
-            this.FoggyWeather.Size = new System.Drawing.Size(103, 15);
-            this.FoggyWeather.TabIndex = 24;
-            this.FoggyWeather.Tag = "";
-            this.FoggyWeather.Text = "Foggy Weather";
-            this.ToolTipManager.SetToolTip(this.FoggyWeather, "Whether to have a foggy view");
-            this.FoggyWeather.UseSelectable = true;
-            this.FoggyWeather.CheckedChanged += new System.EventHandler(this.FoggyWeatherToggled);
+            this.entitiesPnl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.entitiesPnl.Controls.Add(this.SunProofMobs);
+            this.entitiesPnl.Controls.Add(this.ZombieTower);
+            this.entitiesPnl.Controls.Add(this.IgnitedCreepers);
+            this.entitiesPnl.Controls.Add(this.SuperchargedCreepers);
+            this.entitiesPnl.Controls.Add(this.UncapEntitySpawnLimit);
+            this.entitiesPnl.HorizontalScrollbarBarColor = true;
+            this.entitiesPnl.HorizontalScrollbarHighlightOnWheel = false;
+            this.entitiesPnl.HorizontalScrollbarSize = 10;
+            this.entitiesPnl.Location = new System.Drawing.Point(479, 16);
+            this.entitiesPnl.Name = "entitiesPnl";
+            this.entitiesPnl.Size = new System.Drawing.Size(496, 514);
+            this.entitiesPnl.TabIndex = 45;
+            this.entitiesPnl.VerticalScrollbarBarColor = true;
+            this.entitiesPnl.VerticalScrollbarHighlightOnWheel = false;
+            this.entitiesPnl.VerticalScrollbarSize = 10;
             // 
-            // NoFog
+            // SunProofMobs
             // 
-            this.NoFog.AutoSize = true;
-            this.NoFog.BackColor = System.Drawing.Color.Transparent;
-            this.NoFog.Location = new System.Drawing.Point(7, 48);
-            this.NoFog.Name = "NoFog";
-            this.NoFog.Size = new System.Drawing.Size(62, 15);
-            this.NoFog.TabIndex = 26;
-            this.NoFog.Tag = "";
-            this.NoFog.Text = "No Fog";
-            this.ToolTipManager.SetToolTip(this.NoFog, "Whether to remove the fog in-game");
-            this.NoFog.UseSelectable = true;
-            this.NoFog.CheckedChanged += new System.EventHandler(this.NoFogToggled);
+            this.SunProofMobs.AutoSize = true;
+            this.SunProofMobs.Location = new System.Drawing.Point(3, 95);
+            this.SunProofMobs.Name = "SunProofMobs";
+            this.SunProofMobs.Size = new System.Drawing.Size(108, 15);
+            this.SunProofMobs.TabIndex = 21;
+            this.SunProofMobs.Tag = "";
+            this.SunProofMobs.Text = "Sun Proof Mobs";
+            this.ToolTipManager.SetToolTip(this.SunProofMobs, "Whether mobs that burn during daylight \r\nare immune to the sun");
+            this.SunProofMobs.UseSelectable = true;
+            this.SunProofMobs.CheckedChanged += new System.EventHandler(this.SunProofMobsToggled);
             // 
-            // StaticLiquidBlocks
+            // ZombieTower
             // 
-            this.StaticLiquidBlocks.AutoSize = true;
-            this.StaticLiquidBlocks.BackColor = System.Drawing.Color.Transparent;
-            this.StaticLiquidBlocks.Location = new System.Drawing.Point(7, 153);
-            this.StaticLiquidBlocks.Name = "StaticLiquidBlocks";
-            this.StaticLiquidBlocks.Size = new System.Drawing.Size(125, 15);
-            this.StaticLiquidBlocks.TabIndex = 25;
-            this.StaticLiquidBlocks.Tag = "";
-            this.StaticLiquidBlocks.Text = "Static Liquid Blocks";
-            this.ToolTipManager.SetToolTip(this.StaticLiquidBlocks, "Whether Liquid Blocks will not spread");
-            this.StaticLiquidBlocks.UseSelectable = true;
-            this.StaticLiquidBlocks.CheckedChanged += new System.EventHandler(this.StaticLiquidBlocksToggled);
+            this.ZombieTower.AutoSize = true;
+            this.ZombieTower.Location = new System.Drawing.Point(3, 74);
+            this.ZombieTower.Name = "ZombieTower";
+            this.ZombieTower.Size = new System.Drawing.Size(98, 15);
+            this.ZombieTower.TabIndex = 20;
+            this.ZombieTower.Tag = "";
+            this.ZombieTower.Text = "Zombie Tower";
+            this.ToolTipManager.SetToolTip(this.ZombieTower, "Whether Zombies will sit on the nearest entity");
+            this.ZombieTower.UseSelectable = true;
+            this.ZombieTower.CheckedChanged += new System.EventHandler(this.ZombieTowerToggled);
+            // 
+            // IgnitedCreepers
+            // 
+            this.IgnitedCreepers.AutoSize = true;
+            this.IgnitedCreepers.Location = new System.Drawing.Point(3, 53);
+            this.IgnitedCreepers.Name = "IgnitedCreepers";
+            this.IgnitedCreepers.Size = new System.Drawing.Size(109, 15);
+            this.IgnitedCreepers.TabIndex = 19;
+            this.IgnitedCreepers.Tag = "";
+            this.IgnitedCreepers.Text = "Ignited Creepers";
+            this.ToolTipManager.SetToolTip(this.IgnitedCreepers, "Whether creepers will always be ignited when spawned");
+            this.IgnitedCreepers.UseSelectable = true;
+            this.IgnitedCreepers.CheckedChanged += new System.EventHandler(this.IgnitedCreepersToggled);
+            // 
+            // SuperchargedCreepers
+            // 
+            this.SuperchargedCreepers.AutoSize = true;
+            this.SuperchargedCreepers.Location = new System.Drawing.Point(3, 32);
+            this.SuperchargedCreepers.Name = "SuperchargedCreepers";
+            this.SuperchargedCreepers.Size = new System.Drawing.Size(145, 15);
+            this.SuperchargedCreepers.TabIndex = 18;
+            this.SuperchargedCreepers.Tag = "";
+            this.SuperchargedCreepers.Text = "Supercharged Creepers";
+            this.ToolTipManager.SetToolTip(this.SuperchargedCreepers, "Whether creepers will always be supercharged");
+            this.SuperchargedCreepers.UseSelectable = true;
+            this.SuperchargedCreepers.CheckedChanged += new System.EventHandler(this.SuperchargedCreepersToggled);
             // 
             // UncapEntitySpawnLimit
             // 
             this.UncapEntitySpawnLimit.AutoSize = true;
-            this.UncapEntitySpawnLimit.Location = new System.Drawing.Point(7, 174);
+            this.UncapEntitySpawnLimit.Location = new System.Drawing.Point(3, 11);
             this.UncapEntitySpawnLimit.Name = "UncapEntitySpawnLimit";
             this.UncapEntitySpawnLimit.Size = new System.Drawing.Size(158, 15);
             this.UncapEntitySpawnLimit.TabIndex = 17;
@@ -1701,39 +1876,42 @@
             this.UncapEntitySpawnLimit.UseSelectable = true;
             this.UncapEntitySpawnLimit.CheckedChanged += new System.EventHandler(this.UncapEntitySpawnLimitToggled);
             // 
-            // GenerateAmplifiedWorld
+            // World
             // 
-            this.GenerateAmplifiedWorld.AutoSize = true;
-            this.GenerateAmplifiedWorld.BackColor = System.Drawing.Color.Transparent;
-            this.GenerateAmplifiedWorld.Location = new System.Drawing.Point(7, 69);
-            this.GenerateAmplifiedWorld.Name = "GenerateAmplifiedWorld";
-            this.GenerateAmplifiedWorld.Size = new System.Drawing.Size(160, 15);
-            this.GenerateAmplifiedWorld.TabIndex = 23;
-            this.GenerateAmplifiedWorld.Tag = "";
-            this.GenerateAmplifiedWorld.Text = "Generate Amplified World";
-            this.ToolTipManager.SetToolTip(this.GenerateAmplifiedWorld, "Whether the world generation will be amplified");
-            this.GenerateAmplifiedWorld.UseSelectable = true;
-            this.GenerateAmplifiedWorld.CheckedChanged += new System.EventHandler(this.GenerateAmplifiedWorldToggled);
+            this.World.AutoSize = true;
+            this.World.Location = new System.Drawing.Point(11, 6);
+            this.World.Name = "World";
+            this.World.Size = new System.Drawing.Size(45, 19);
+            this.World.TabIndex = 44;
+            this.World.Text = "World";
             // 
-            // AcidLiquidBlocks
+            // worldPnl
             // 
-            this.AcidLiquidBlocks.AutoSize = true;
-            this.AcidLiquidBlocks.BackColor = System.Drawing.Color.Transparent;
-            this.AcidLiquidBlocks.Location = new System.Drawing.Point(7, 132);
-            this.AcidLiquidBlocks.Name = "AcidLiquidBlocks";
-            this.AcidLiquidBlocks.Size = new System.Drawing.Size(120, 15);
-            this.AcidLiquidBlocks.TabIndex = 22;
-            this.AcidLiquidBlocks.Tag = "";
-            this.AcidLiquidBlocks.Text = "Acid Liquid Blocks";
-            this.ToolTipManager.SetToolTip(this.AcidLiquidBlocks, "Whether Liquid Blocks will destroy surrounding blocks");
-            this.AcidLiquidBlocks.UseSelectable = true;
-            this.AcidLiquidBlocks.CheckedChanged += new System.EventHandler(this.AcidLiquidBlocksToggled);
+            this.worldPnl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.worldPnl.Controls.Add(this.DisableCreativeFlag);
+            this.worldPnl.Controls.Add(this.GeneratePlainWorld);
+            this.worldPnl.Controls.Add(this.FreezingWorld);
+            this.worldPnl.Controls.Add(this.AcidLiquidBlocks);
+            this.worldPnl.Controls.Add(this.FoggyWeather);
+            this.worldPnl.Controls.Add(this.GenerateAmplifiedWorld);
+            this.worldPnl.Controls.Add(this.NoFog);
+            this.worldPnl.Controls.Add(this.StaticLiquidBlocks);
+            this.worldPnl.HorizontalScrollbarBarColor = true;
+            this.worldPnl.HorizontalScrollbarHighlightOnWheel = false;
+            this.worldPnl.HorizontalScrollbarSize = 10;
+            this.worldPnl.Location = new System.Drawing.Point(7, 16);
+            this.worldPnl.Name = "worldPnl";
+            this.worldPnl.Size = new System.Drawing.Size(466, 514);
+            this.worldPnl.TabIndex = 43;
+            this.worldPnl.VerticalScrollbarBarColor = true;
+            this.worldPnl.VerticalScrollbarHighlightOnWheel = false;
+            this.worldPnl.VerticalScrollbarSize = 10;
             // 
             // DisableCreativeFlag
             // 
             this.DisableCreativeFlag.AutoSize = true;
             this.DisableCreativeFlag.BackColor = System.Drawing.Color.Transparent;
-            this.DisableCreativeFlag.Location = new System.Drawing.Point(7, 111);
+            this.DisableCreativeFlag.Location = new System.Drawing.Point(3, 116);
             this.DisableCreativeFlag.Name = "DisableCreativeFlag";
             this.DisableCreativeFlag.Size = new System.Drawing.Size(132, 15);
             this.DisableCreativeFlag.TabIndex = 21;
@@ -1747,7 +1925,7 @@
             // 
             this.GeneratePlainWorld.AutoSize = true;
             this.GeneratePlainWorld.BackColor = System.Drawing.Color.Transparent;
-            this.GeneratePlainWorld.Location = new System.Drawing.Point(7, 90);
+            this.GeneratePlainWorld.Location = new System.Drawing.Point(3, 95);
             this.GeneratePlainWorld.Name = "GeneratePlainWorld";
             this.GeneratePlainWorld.Size = new System.Drawing.Size(134, 15);
             this.GeneratePlainWorld.TabIndex = 20;
@@ -1757,8 +1935,92 @@
             this.GeneratePlainWorld.UseSelectable = true;
             this.GeneratePlainWorld.CheckedChanged += new System.EventHandler(this.GeneratePlainWorldToggled);
             // 
+            // FreezingWorld
+            // 
+            this.FreezingWorld.AutoSize = true;
+            this.FreezingWorld.BackColor = System.Drawing.Color.Transparent;
+            this.FreezingWorld.Location = new System.Drawing.Point(3, 11);
+            this.FreezingWorld.Name = "FreezingWorld";
+            this.FreezingWorld.Size = new System.Drawing.Size(102, 15);
+            this.FreezingWorld.TabIndex = 19;
+            this.FreezingWorld.Tag = "";
+            this.FreezingWorld.Text = "Freezing World";
+            this.ToolTipManager.SetToolTip(this.FreezingWorld, "Whether the world should freeze or not");
+            this.FreezingWorld.UseSelectable = true;
+            this.FreezingWorld.CheckedChanged += new System.EventHandler(this.FreezingWorldToggled);
+            // 
+            // AcidLiquidBlocks
+            // 
+            this.AcidLiquidBlocks.AutoSize = true;
+            this.AcidLiquidBlocks.BackColor = System.Drawing.Color.Transparent;
+            this.AcidLiquidBlocks.Location = new System.Drawing.Point(3, 137);
+            this.AcidLiquidBlocks.Name = "AcidLiquidBlocks";
+            this.AcidLiquidBlocks.Size = new System.Drawing.Size(120, 15);
+            this.AcidLiquidBlocks.TabIndex = 22;
+            this.AcidLiquidBlocks.Tag = "";
+            this.AcidLiquidBlocks.Text = "Acid Liquid Blocks";
+            this.ToolTipManager.SetToolTip(this.AcidLiquidBlocks, "Whether Liquid Blocks will destroy surrounding blocks");
+            this.AcidLiquidBlocks.UseSelectable = true;
+            this.AcidLiquidBlocks.CheckedChanged += new System.EventHandler(this.AcidLiquidBlocksToggled);
+            // 
+            // FoggyWeather
+            // 
+            this.FoggyWeather.AutoSize = true;
+            this.FoggyWeather.Location = new System.Drawing.Point(3, 32);
+            this.FoggyWeather.Name = "FoggyWeather";
+            this.FoggyWeather.Size = new System.Drawing.Size(103, 15);
+            this.FoggyWeather.TabIndex = 24;
+            this.FoggyWeather.Tag = "";
+            this.FoggyWeather.Text = "Foggy Weather";
+            this.ToolTipManager.SetToolTip(this.FoggyWeather, "Whether to have a foggy view");
+            this.FoggyWeather.UseSelectable = true;
+            this.FoggyWeather.CheckedChanged += new System.EventHandler(this.FoggyWeatherToggled);
+            // 
+            // GenerateAmplifiedWorld
+            // 
+            this.GenerateAmplifiedWorld.AutoSize = true;
+            this.GenerateAmplifiedWorld.BackColor = System.Drawing.Color.Transparent;
+            this.GenerateAmplifiedWorld.Location = new System.Drawing.Point(3, 74);
+            this.GenerateAmplifiedWorld.Name = "GenerateAmplifiedWorld";
+            this.GenerateAmplifiedWorld.Size = new System.Drawing.Size(160, 15);
+            this.GenerateAmplifiedWorld.TabIndex = 23;
+            this.GenerateAmplifiedWorld.Tag = "";
+            this.GenerateAmplifiedWorld.Text = "Generate Amplified World";
+            this.ToolTipManager.SetToolTip(this.GenerateAmplifiedWorld, "Whether the world generation will be amplified");
+            this.GenerateAmplifiedWorld.UseSelectable = true;
+            this.GenerateAmplifiedWorld.CheckedChanged += new System.EventHandler(this.GenerateAmplifiedWorldToggled);
+            // 
+            // NoFog
+            // 
+            this.NoFog.AutoSize = true;
+            this.NoFog.BackColor = System.Drawing.Color.Transparent;
+            this.NoFog.Location = new System.Drawing.Point(3, 53);
+            this.NoFog.Name = "NoFog";
+            this.NoFog.Size = new System.Drawing.Size(62, 15);
+            this.NoFog.TabIndex = 26;
+            this.NoFog.Tag = "";
+            this.NoFog.Text = "No Fog";
+            this.ToolTipManager.SetToolTip(this.NoFog, "Whether to remove the fog in-game");
+            this.NoFog.UseSelectable = true;
+            this.NoFog.CheckedChanged += new System.EventHandler(this.NoFogToggled);
+            // 
+            // StaticLiquidBlocks
+            // 
+            this.StaticLiquidBlocks.AutoSize = true;
+            this.StaticLiquidBlocks.BackColor = System.Drawing.Color.Transparent;
+            this.StaticLiquidBlocks.Location = new System.Drawing.Point(3, 158);
+            this.StaticLiquidBlocks.Name = "StaticLiquidBlocks";
+            this.StaticLiquidBlocks.Size = new System.Drawing.Size(125, 15);
+            this.StaticLiquidBlocks.TabIndex = 25;
+            this.StaticLiquidBlocks.Tag = "";
+            this.StaticLiquidBlocks.Text = "Static Liquid Blocks";
+            this.ToolTipManager.SetToolTip(this.StaticLiquidBlocks, "Whether Liquid Blocks will not spread");
+            this.StaticLiquidBlocks.UseSelectable = true;
+            this.StaticLiquidBlocks.CheckedChanged += new System.EventHandler(this.StaticLiquidBlocksToggled);
+            // 
             // generalTab
             // 
+            this.generalTab.Controls.Add(this.UIColorPickerBtn);
             this.generalTab.Controls.Add(this.DisableTeleporting);
             this.generalTab.Controls.Add(this.GamepadSplitscreen);
             this.generalTab.Controls.Add(this.BypassFriendsOnly);
@@ -1770,16 +2032,30 @@
             this.generalTab.HorizontalScrollbarBarColor = true;
             this.generalTab.HorizontalScrollbarHighlightOnWheel = false;
             this.generalTab.HorizontalScrollbarSize = 10;
-            this.generalTab.Location = new System.Drawing.Point(4, 9);
+            this.generalTab.Location = new System.Drawing.Point(4, 5);
             this.generalTab.Name = "generalTab";
             this.generalTab.Padding = new System.Windows.Forms.Padding(3);
-            this.generalTab.Size = new System.Drawing.Size(981, 532);
+            this.generalTab.Size = new System.Drawing.Size(981, 536);
             this.generalTab.TabIndex = 2;
             this.generalTab.Tag = "needsGeckoU";
             this.generalTab.Text = "General Game";
             this.generalTab.VerticalScrollbarBarColor = true;
             this.generalTab.VerticalScrollbarHighlightOnWheel = false;
             this.generalTab.VerticalScrollbarSize = 10;
+            // 
+            // UIColorPickerBtn
+            // 
+            this.UIColorPickerBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.UIColorPickerBtn.Location = new System.Drawing.Point(260, 466);
+            this.UIColorPickerBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.UIColorPickerBtn.Name = "UIColorPickerBtn";
+            this.UIColorPickerBtn.Size = new System.Drawing.Size(465, 25);
+            this.UIColorPickerBtn.TabIndex = 32;
+            this.UIColorPickerBtn.Tag = "";
+            this.UIColorPickerBtn.Text = "UI Color Picker";
+            this.ToolTipManager.SetToolTip(this.UIColorPickerBtn, "Here you can change the game\'s UI colors \r\nto match your preferences");
+            this.UIColorPickerBtn.UseSelectable = true;
+            this.UIColorPickerBtn.Click += new System.EventHandler(this.UiColorPickerBtnClicked);
             // 
             // DisableTeleporting
             // 
@@ -1844,10 +2120,10 @@
             // MapTextEditor
             // 
             this.MapTextEditor.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.MapTextEditor.Location = new System.Drawing.Point(509, 498);
+            this.MapTextEditor.Location = new System.Drawing.Point(497, 502);
             this.MapTextEditor.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.MapTextEditor.Name = "MapTextEditor";
-            this.MapTextEditor.Size = new System.Drawing.Size(465, 25);
+            this.MapTextEditor.Size = new System.Drawing.Size(480, 25);
             this.MapTextEditor.TabIndex = 20;
             this.MapTextEditor.Tag = "";
             this.MapTextEditor.Text = "Map Text Editor";
@@ -1884,10 +2160,10 @@
             // ExitGame
             // 
             this.ExitGame.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ExitGame.Location = new System.Drawing.Point(8, 498);
+            this.ExitGame.Location = new System.Drawing.Point(7, 502);
             this.ExitGame.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.ExitGame.Name = "ExitGame";
-            this.ExitGame.Size = new System.Drawing.Size(465, 25);
+            this.ExitGame.Size = new System.Drawing.Size(480, 25);
             this.ExitGame.TabIndex = 15;
             this.ExitGame.Tag = "";
             this.ExitGame.Text = "Exit Game";
@@ -1900,10 +2176,10 @@
             this.minigamesTab.HorizontalScrollbarBarColor = true;
             this.minigamesTab.HorizontalScrollbarHighlightOnWheel = false;
             this.minigamesTab.HorizontalScrollbarSize = 10;
-            this.minigamesTab.Location = new System.Drawing.Point(4, 9);
+            this.minigamesTab.Location = new System.Drawing.Point(4, 5);
             this.minigamesTab.Name = "minigamesTab";
             this.minigamesTab.Padding = new System.Windows.Forms.Padding(3);
-            this.minigamesTab.Size = new System.Drawing.Size(981, 532);
+            this.minigamesTab.Size = new System.Drawing.Size(981, 536);
             this.minigamesTab.TabIndex = 3;
             this.minigamesTab.Tag = "GeckoUNeeded";
             this.minigamesTab.Text = "Minigames";
@@ -2285,9 +2561,9 @@
             this.commandsTab.HorizontalScrollbarBarColor = true;
             this.commandsTab.HorizontalScrollbarHighlightOnWheel = false;
             this.commandsTab.HorizontalScrollbarSize = 10;
-            this.commandsTab.Location = new System.Drawing.Point(4, 9);
+            this.commandsTab.Location = new System.Drawing.Point(4, 5);
             this.commandsTab.Name = "commandsTab";
-            this.commandsTab.Size = new System.Drawing.Size(981, 532);
+            this.commandsTab.Size = new System.Drawing.Size(981, 536);
             this.commandsTab.TabIndex = 7;
             this.commandsTab.Tag = "needsGeckoU";
             this.commandsTab.Text = "Commands";
@@ -2771,10 +3047,10 @@
             this.settingsTab.HorizontalScrollbarBarColor = true;
             this.settingsTab.HorizontalScrollbarHighlightOnWheel = false;
             this.settingsTab.HorizontalScrollbarSize = 10;
-            this.settingsTab.Location = new System.Drawing.Point(4, 9);
+            this.settingsTab.Location = new System.Drawing.Point(4, 5);
             this.settingsTab.Name = "settingsTab";
             this.settingsTab.Padding = new System.Windows.Forms.Padding(3);
-            this.settingsTab.Size = new System.Drawing.Size(981, 532);
+            this.settingsTab.Size = new System.Drawing.Size(981, 536);
             this.settingsTab.TabIndex = 5;
             this.settingsTab.Tag = "";
             this.settingsTab.Text = "Settings";
@@ -2916,9 +3192,9 @@
             this.debugTab.HorizontalScrollbarBarColor = true;
             this.debugTab.HorizontalScrollbarHighlightOnWheel = false;
             this.debugTab.HorizontalScrollbarSize = 10;
-            this.debugTab.Location = new System.Drawing.Point(4, 9);
+            this.debugTab.Location = new System.Drawing.Point(4, 5);
             this.debugTab.Name = "debugTab";
-            this.debugTab.Size = new System.Drawing.Size(981, 532);
+            this.debugTab.Size = new System.Drawing.Size(981, 536);
             this.debugTab.TabIndex = 8;
             this.debugTab.Tag = "needsGeckoU";
             this.debugTab.Text = "Debug";
@@ -2983,7 +3259,7 @@
             this.HomeTile.PaintTileCount = false;
             this.HomeTile.Size = new System.Drawing.Size(160, 55);
             this.HomeTile.TabIndex = 1;
-            this.HomeTile.Tag = "0";
+            this.HomeTile.Tag = "";
             this.HomeTile.Text = "Home";
             this.HomeTile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.HomeTile.UseSelectable = true;
@@ -3008,7 +3284,7 @@
             this.PlayersTile.PaintTileCount = false;
             this.PlayersTile.Size = new System.Drawing.Size(160, 55);
             this.PlayersTile.TabIndex = 2;
-            this.PlayersTile.Tag = "1";
+            this.PlayersTile.Tag = "";
             this.PlayersTile.Text = "Player(s)";
             this.PlayersTile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.PlayersTile.TileCount = 1;
@@ -3024,7 +3300,7 @@
             this.CommandsTile.PaintTileCount = false;
             this.CommandsTile.Size = new System.Drawing.Size(160, 55);
             this.CommandsTile.TabIndex = 6;
-            this.CommandsTile.Tag = "5";
+            this.CommandsTile.Tag = "";
             this.CommandsTile.Text = "Commands";
             this.CommandsTile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.CommandsTile.TileCount = 5;
@@ -3039,7 +3315,7 @@
             this.DebugTile.PaintTileCount = false;
             this.DebugTile.Size = new System.Drawing.Size(160, 69);
             this.DebugTile.TabIndex = 8;
-            this.DebugTile.Tag = "7";
+            this.DebugTile.Tag = "";
             this.DebugTile.Text = "Debug";
             this.DebugTile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.DebugTile.TileCount = 7;
@@ -3089,6 +3365,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.EnchantmentLevelSlider)).EndInit();
             this.worldTab.ResumeLayout(false);
             this.worldTab.PerformLayout();
+            this.entitiesPnl.ResumeLayout(false);
+            this.entitiesPnl.PerformLayout();
+            this.worldPnl.ResumeLayout(false);
+            this.worldPnl.PerformLayout();
             this.generalTab.ResumeLayout(false);
             this.generalTab.PerformLayout();
             this.minigamesTab.ResumeLayout(false);
@@ -3297,7 +3577,24 @@
         public MetroFramework.Controls.MetroLabel FieldofViewSplitscreen;
         public System.Windows.Forms.NumericUpDown FrictionSlider;
         public MetroFramework.Controls.MetroLabel Friction;
-        public MetroFramework.Controls.MetroCheckBox metroCheckBox1;
+        public MetroFramework.Controls.MetroCheckBox GodModeAll;
         public MetroFramework.Controls.MetroCheckBox CheckForPreRelease;
+        public MetroFramework.Controls.MetroCheckBox UnderwaterEffects;
+        public MetroFramework.Controls.MetroCheckBox HideBlocks;
+        public MetroFramework.Controls.MetroCheckBox AlwaysInLava;
+        public MetroFramework.Controls.MetroCheckBox SeeThroughBlocks;
+        public MetroFramework.Controls.MetroCheckBox LevelX;
+        public MetroFramework.Controls.MetroCheckBox AlwaysInWater;
+        public MetroFramework.Controls.MetroCheckBox ESP;
+        public MetroFramework.Controls.MetroCheckBox NoSlowDowns;
+        public MetroFramework.Controls.MetroButton UIColorPickerBtn;
+        private MetroFramework.Controls.MetroLabel Entities;
+        private MetroFramework.Controls.MetroPanel entitiesPnl;
+        public MetroFramework.Controls.MetroCheckBox SuperchargedCreepers;
+        private MetroFramework.Controls.MetroLabel World;
+        private MetroFramework.Controls.MetroPanel worldPnl;
+        public MetroFramework.Controls.MetroCheckBox IgnitedCreepers;
+        public MetroFramework.Controls.MetroCheckBox ZombieTower;
+        public MetroFramework.Controls.MetroCheckBox SunProofMobs;
     }
 }

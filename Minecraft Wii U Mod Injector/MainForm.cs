@@ -6,9 +6,11 @@ using Minecraft_Wii_U_Mod_Injector.Forms;
 using Minecraft_Wii_U_Mod_Injector.Helpers.Files;
 using System;
 using System.Diagnostics;
+using System.Linq;
 using System.Windows.Forms;
 using Minecraft_Wii_U_Mod_Injector.Helpers.Win_Forms;
 using Minecraft_Wii_U_Mod_Injector.Wii_U.Gecko_U;
+using static System.Windows.Forms.DialogResult;
 
 namespace Minecraft_Wii_U_Mod_Injector
 {
@@ -19,7 +21,6 @@ namespace Minecraft_Wii_U_Mod_Injector
         #region references
 
         public static GeckoUCore GeckoU;
-        public static GeckoUConnect GeckoUConnection;
 
         #endregion
         
@@ -33,6 +34,15 @@ namespace Minecraft_Wii_U_Mod_Injector
                 _isConnected = value;
                 DiscordRp.SetPresence(_isConnected ? "Connected" : "Disconnected", MainTabs.SelectedTab.Text + " tab");
             }
+        }
+        public bool IsMinecraft()
+        {
+            string[] mcIds = new[] { "50000101d7500", "50000101d9d00", "50000101dbe00" };
+
+            if (mcIds.Contains(GeckoU.ReadTitleId()))
+                return true;
+            else
+                return false;
         }
 
         private bool _tooHighWarn;
@@ -124,6 +134,20 @@ namespace Minecraft_Wii_U_Mod_Injector
             DiscordRp.SetPresence(IsConnected ? "Connected" : "Disconnected", MainTabs.SelectedTab.Text + " tab");
         }
 
+        private void SliderClicked(object sender, EventArgs e)
+        {
+            var slider = (NumericUpDown)sender;
+
+            if (ModifierKeys.HasFlag(Keys.Control))
+            {
+                slider.DecimalPlaces++;
+            }
+            else if (ModifierKeys.HasFlag(Keys.Alt))
+            {
+                slider.DecimalPlaces--;
+            }
+        }
+
         private void ConnectBtnClicked(object sender, EventArgs e)
         {
             try
@@ -134,13 +158,22 @@ namespace Minecraft_Wii_U_Mod_Injector
                 {
                     case States.StatesIds.Disconnected:
                         States.SwapState(States.StatesIds.Connecting);
-                        GeckoU.Guc.Connect();
+                        GeckoU.Tcp.Connect();
+
+                        if (!IsMinecraft())
+                        {
+                            Messaging.Show("This Mod Injector is intended to be used with Minecraft: Wii U Edition, please launch Minecraft and try again.");
+                            GeckoU.Tcp.Close();
+                            States.SwapState(States.StatesIds.Disconnected);
+                            break;
+                        }
+
                         States.SwapState(States.StatesIds.Connected);
                         IsConnected = true;
                         break;
 
                     case States.StatesIds.Connected:
-                        GeckoU.Guc.Close();
+                        GeckoU.Tcp.Close();
                         IsConnected = false;
                         States.SwapState(States.StatesIds.Disconnected);
                         break;
@@ -244,7 +277,7 @@ namespace Minecraft_Wii_U_Mod_Injector
         {
             try
             {
-                if (Messaging.Show("Resetting the configuration file will reset all your preferences, continue?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (Messaging.Show("Resetting the configuration file will reset all your preferences, continue?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == Yes)
                 {
                     if (System.IO.File.Exists(Application.StartupPath + "/Minecraft Wii U Mod Injector.ini"))
                         System.IO.File.Delete(Application.StartupPath + "/Minecraft Wii U Mod Injector.ini");
@@ -601,7 +634,7 @@ namespace Minecraft_Wii_U_Mod_Injector
         {
             DialogResult confirmCg = Messaging.Show("You're about to close the game, continue?", MessageBoxButtons.YesNo);
 
-            if (confirmCg == DialogResult.Yes)
+            if (confirmCg == Yes)
                 GeckoU.CallFunction64(0x02F50028, 0x00000000); //CConsoleMinecraftApp::ExitGame((void))
         }
 
@@ -690,6 +723,100 @@ namespace Minecraft_Wii_U_Mod_Injector
             GeckoU.WriteFloat(0x1066AAE8, (float)FrictionSlider.Value);
         }
 
+        private void UnderwaterEffectsToggled(object sender, EventArgs e)
+        {
+            switch (UnderwaterEffects.CheckState)
+            {
+                case CheckState.Unchecked:
+                    GeckoU.WriteUInt(0x0253C3CC, 0x88630011);
+                    UnderwaterEffects.Text = "Underwater Effects (Default)";
+                    break;
+
+                case CheckState.Checked:
+                    GeckoU.WriteUInt(0x0253C3CC, On);
+                    UnderwaterEffects.Text = "Underwater Effects (On)";
+                    break;
+
+                case CheckState.Indeterminate:
+                    GeckoU.WriteUInt(0x0253C3CC, Off);
+                    UnderwaterEffects.Text = "Underwater Effects (Off)";
+                    break;
+            }
+        }
+
+        private void HideBlocksToggled(object sender, EventArgs e)
+        {
+            GeckoU.WriteUIntToggle(0x02048160, On, Off, HideBlocks.Checked);
+        }
+
+        private void AlwaysInLavaToggled(object sender, EventArgs e)
+        {
+            GeckoU.WriteUIntToggle(0x0255F818, 0x38000001, 0x38000000, AlwaysInLava.Checked);
+        }
+
+        private void SeeThroughBlocksToggled(object sender, EventArgs e)
+        {
+            GeckoU.WriteUIntToggle(0x020E751C, 0x3BE00000, 0x3BE00001, SeeThroughBlocks.Checked);
+        }
+
+        private void LevelXToggled(object sender, EventArgs e)
+        {
+            GeckoU.WriteUIntToggle(0x02B47934, 0x2C1D0001, 0x2C1D0000, LevelX.Checked);
+        }
+
+        private void AlwaysInWaterToggled(object sender, EventArgs e)
+        {
+            GeckoU.WriteUIntToggle(0x0255E81C, 0x38000001, 0x38000000, AlwaysInWater.Checked);
+        }
+
+        private void EspToggled(object sender, EventArgs e)
+        {
+            if (!Wallhack.Checked)
+                GeckoU.WriteUIntToggle(0x031B2B4C, 0x38000001, 0x6CC08000, ESP.Checked);
+
+            GeckoU.WriteUIntToggle(0x030EA178, 0xFC80E890, 0xFC60E890, ESP.Checked);
+            GeckoU.WriteUIntToggle(0x030EA0E8, 0xFC80F890, 0xFC60F890, ESP.Checked);
+            GeckoU.WriteUIntToggle(0x030EA0E4, 0xFC80F890, 0xFC40F890, ESP.Checked);
+            GeckoU.WriteUIntToggle(0x030EA1C8, 0x6CC00000, 0x6CC08000, ESP.Checked);
+        }
+
+        private void NoSlowDownsToggled(object sender, EventArgs e)
+        {
+            GeckoU.WriteUIntToggle(0x108E0E60, 0x3F800000, 0x3E4CCCCD, NoSlowDowns.Checked);
+        }
+
+        private void UiColorPickerBtnClicked(object sender, EventArgs e)
+        {
+            ColorDialog colorDlg = new ColorDialog { AllowFullOpen = true, AnyColor = true };
+
+            if (colorDlg.ShowDialog() == OK)
+            {
+                GeckoU.WriteFloat(0x109C8E68, colorDlg.Color.R / 255.0F);
+                GeckoU.WriteFloat(0x109C8E6C, colorDlg.Color.G / 255.0F);
+                GeckoU.WriteFloat(0x109C8E70, colorDlg.Color.B / 255.0F);
+                GeckoU.WriteFloat(0x109C8E74, colorDlg.Color.A / 255.0F);
+            }
+        }
+
+        private void SuperchargedCreepersToggled(object sender, EventArgs e)
+        {
+            GeckoU.WriteUIntToggle(0x02275934, On, 0x8869000C, SuperchargedCreepers.Checked);
+        }
+
+        private void IgnitedCreepersToggled(object sender, EventArgs e)
+        {
+            GeckoU.WriteUIntToggle(0x02273030, On, 0x8869000C, IgnitedCreepers.Checked);
+        }
+
+        private void ZombieTowerToggled(object sender, EventArgs e)
+        {
+            GeckoU.WriteUIntToggle(0x02A3B77C, On, 0x88630740, ZombieTower.Checked);
+        }
+
+        private void SunProofMobsToggled(object sender, EventArgs e)
+        {
+            GeckoU.WriteUIntToggle(0x02A3D808, Off, On, SunProofMobs.Checked);
+        }
         #region commands
         private void GiveCommandBtnClicked(object sender, EventArgs e)
         {

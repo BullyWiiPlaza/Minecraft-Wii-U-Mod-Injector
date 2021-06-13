@@ -33,16 +33,5 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
 
             return controls;
         }
-
-        public static void SetDoubleBuffered(Control c)
-        {
-            System.Reflection.PropertyInfo aProp =
-                typeof(System.Windows.Forms.Control).GetProperty(
-                    "DoubleBuffered",
-                    System.Reflection.BindingFlags.NonPublic |
-                    System.Reflection.BindingFlags.Instance);
-
-            aProp.SetValue(c, true, null);
-        }
     }
 }

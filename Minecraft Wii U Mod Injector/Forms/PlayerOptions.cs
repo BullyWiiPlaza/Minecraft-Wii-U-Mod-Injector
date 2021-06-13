@@ -48,6 +48,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms
                 0x0); //Write the gamemode values to free memory space so we can pass them through RPC
             MainForm.GeckoU.WriteUInt((uint) 0x1B000004, 0x1);
             MainForm.GeckoU.WriteUInt((uint) 0x1B000008, 0x2);
+            //MainForm.GeckoU.WriteUInt((uint)0x1B00000C, 0x4);
 
             switch (GameModeBox.SelectedIndex)
             {
@@ -66,6 +67,10 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms
                 case 3:
                     MainForm.GeckoU.CallFunction(0x031F49B0, _localPlayer, 0x0);
                     break;
+
+               /* case 4:
+                    MainForm.GeckoU.CallFunction(0x031F49B0, _localPlayer, 0x1B00000C);
+                    break;*/
             }
         }
     }

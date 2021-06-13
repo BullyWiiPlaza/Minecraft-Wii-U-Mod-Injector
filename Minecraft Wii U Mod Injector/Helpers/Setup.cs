@@ -100,7 +100,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
                 }
                 catch (Exception)
                 {
-                    //Failing to set User Preferences isn't a big deal, so we ignore the exception if one happens
+                    //Failing to set User Preferences isn't a big deal, so we ignore the exception
                 }
                 
                 if (Settings.EqualsTo("ReleaseNotes", "all", "Display"))

@@ -1,36 +1,28 @@
-[Release v5.1.6 (7th of June, 2021)]
+[Release v5.1.7 (13th of June, 2021)]
 
 [Information]
 If you are experiencing issues, please report them on the Github Issues page or by joining the official discord server.
 
-This update adds a ton of new mods with a small amount of additions/fixes
+This update adds a few new mods
 
 [Changes]
 
 + New Mods
 
-- Players > Underwater Effects
-- Players > Hide Blocks
-- Players > Always in lava
-- Players > See through blocks
-- Players > Level X
-- Players > Always in water
-- Players > ESP
-- Players > No slowdowns
-- Entities / World > Supercharged Creepers
-- Entities / World > Ignited Creepers
-- Entities / World > Zombie Tower
-- Entities / World > Sun Proof Mobs
-- General Game > UI Color Picker 
-
+- Players > Potion Amplifier
+- Players > XP Level
+- Players > Player Options
+- Player Options > Game Mode
+- Player Options > Camera
+- Player Options > Open Scoreboard
+- Player Options > Close Container
 
 + General Additions & Updates:
 
-- The Injector will now check whether you are runnning Minecraft, if not you'll get an error message
-- You can now add or remove decimal places on mods that use a slider (reach, jump height etc) by holding either CTRL or ALT while clicking on one of the sliders
+- UI Performance increased in Credits and Frequently asked Questions Windows
 
 [Fixes]
 
 + General Fixes
 
-- Fixed some half displaying ToolTips
+- Release Notes v5.1.6 fixed typos

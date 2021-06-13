@@ -1,7 +1,33 @@
-[Release v5.1.6 (7th of June, 2021)]
+[Release v5.1.7 (13th of June, 2021)]
 
 [Information]
 If you are experiencing issues, please report them on the Github Issues page or by joining the official discord server.
+
+This update adds a few new mods
+
+[Changes]
+
++ New Mods
+
+- Players > Potion Amplifier
+- Players > XP Level
+- Players > Player Options
+- Player Options > Game Mode
+- Player Options > Camera
+- Player Options > Open Scoreboard
+- Player Options > Close Container
+
++ General Additions & Updates:
+
+- UI Performance increased in Credits and Frequently asked Questions Windows
+
+[Fixes]
+
++ General Fixes
+
+- Release Notes v5.1.6 fixed typos
+
+[Release v5.1.6 (7th of June, 2021)]
 
 This update adds a ton of new mods with a small amount of additions/fixes
 

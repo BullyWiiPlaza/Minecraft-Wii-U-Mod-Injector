@@ -17,7 +17,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms
             get
             {
                 CreateParams CP = base.CreateParams;
-                CP.ExStyle = CP.ExStyle | 0x02000000; // WS_EX_COMPOSITED
+                CP.ExStyle = CP.ExStyle | 0x02000000;
                 return CP;
             }
         }

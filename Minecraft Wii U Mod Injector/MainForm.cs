@@ -96,8 +96,11 @@ namespace Minecraft_Wii_U_Mod_Injector
         };
         #endregion
 
+        #region pointers
+        private uint _localPlayer;
         #endregion
 
+        #endregion
         public MainForm()
         {
             InitializeComponent();
@@ -110,12 +113,10 @@ namespace Minecraft_Wii_U_Mod_Injector
             new Setup(this);
 
             Setup.SetupInjector();
-            Miscellaneous.SetDoubleBuffered(BuildNotesBox);
-            Miscellaneous.SetDoubleBuffered(WiiUIpv4Box);
-            Miscellaneous.SetDoubleBuffered(MainTab);
-            Miscellaneous.SetDoubleBuffered(MainTabs);
+
             ValidateEnteredIpAddress();
         }
+
 
         private void Exit(object sender, FormClosingEventArgs e)
         {
@@ -281,8 +282,8 @@ namespace Minecraft_Wii_U_Mod_Injector
             {
                 if (Messaging.Show("Resetting the configuration file will reset all your preferences, continue?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == Yes)
                 {
-                    if (System.IO.File.Exists(Application.StartupPath + "/Minecraft Wii U Mod Injector.ini"))
-                        System.IO.File.Delete(Application.StartupPath + "/Minecraft Wii U Mod Injector.ini");
+                    if (File.Exists(Application.StartupPath + "/Minecraft Wii U Mod Injector.ini"))
+                        File.Delete(Application.StartupPath + "/Minecraft Wii U Mod Injector.ini");
                     else
                     {
                         Messaging.Show("Configuration File doesn't exist, nothing to reset.");
@@ -837,6 +838,14 @@ namespace Minecraft_Wii_U_Mod_Injector
             }
 
             GeckoU.WriteUInt(0x02692DF0, GeckoU.Mix(0x38600000, PotionAmplifierSlider.Value));
+        }
+
+        private void XpLevelSliderChanged(object sender, EventArgs e)
+        {
+            var level = (uint)XPLevelSlider.Value;
+            _localPlayer = GeckoU.PeekUInt(GeckoU.PeekUInt(0x10A0A648) + 0x2C);
+
+            GeckoU.CallFunction(0x031EA12C, _localPlayer, level, level, level);
         }
 
         #region commands

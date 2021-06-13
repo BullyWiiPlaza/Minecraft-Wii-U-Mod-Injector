@@ -8,7 +8,6 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms
     public partial class PlayerOptions : MetroForm
     {
         private readonly uint _localPlayer = MainForm.GeckoU.PeekUInt(MainForm.GeckoU.PeekUInt(0x10A0A648) + 0x2C);
-
         public PlayerOptions(MainForm injector)
         {
             InitializeComponent();
@@ -44,11 +43,11 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms
 
         private void GameModeBoxChanged(object sender, EventArgs e)
         {
-            MainForm.GeckoU.WriteUInt((uint) 0x1B000000,
+            MainForm.GeckoU.WriteUInt(0x1B000000,
                 0x0); //Write the gamemode values to free memory space so we can pass them through RPC
-            MainForm.GeckoU.WriteUInt((uint) 0x1B000004, 0x1);
-            MainForm.GeckoU.WriteUInt((uint) 0x1B000008, 0x2);
-            //MainForm.GeckoU.WriteUInt((uint)0x1B00000C, 0x4);
+            MainForm.GeckoU.WriteUInt(0x1B000004, 0x1);
+            MainForm.GeckoU.WriteUInt(0x1B000008, 0x2);
+            //MainForm.GeckoU.WriteUInt(0x1B00000C, 0x4); I don't see how this is different from survival or adventure...
 
             switch (GameModeBox.SelectedIndex)
             {

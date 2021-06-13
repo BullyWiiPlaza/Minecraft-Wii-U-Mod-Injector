@@ -71,6 +71,7 @@
             this.CloseContainersBtn.Size = new System.Drawing.Size(389, 23);
             this.CloseContainersBtn.TabIndex = 6;
             this.CloseContainersBtn.Text = "Close Container";
+            this.ToolTips.SetToolTip(this.CloseContainersBtn, "Closes out of any container such as:\r\n\r\nFurnace, chest, hopper, crafting etc...");
             this.CloseContainersBtn.UseSelectable = true;
             this.CloseContainersBtn.Click += new System.EventHandler(this.CloseContainersBtnClicked);
             // 
@@ -78,7 +79,7 @@
             // 
             this.CameraLbl.AutoSize = true;
             this.CameraLbl.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.CameraLbl.Location = new System.Drawing.Point(23, 123);
+            this.CameraLbl.Location = new System.Drawing.Point(19, 123);
             this.CameraLbl.Name = "CameraLbl";
             this.CameraLbl.Size = new System.Drawing.Size(75, 25);
             this.CameraLbl.TabIndex = 7;
@@ -98,6 +99,7 @@
             this.CameraBox.Name = "CameraBox";
             this.CameraBox.Size = new System.Drawing.Size(308, 29);
             this.CameraBox.TabIndex = 8;
+            this.ToolTips.SetToolTip(this.CameraBox, "What camera prespective should we be in?");
             this.CameraBox.UseSelectable = true;
             this.CameraBox.ValueMember = "1";
             this.CameraBox.SelectedIndexChanged += new System.EventHandler(this.CameraBoxChanged);
@@ -109,6 +111,7 @@
             this.OpenScoreboardBtn.Size = new System.Drawing.Size(389, 23);
             this.OpenScoreboardBtn.TabIndex = 9;
             this.OpenScoreboardBtn.Text = "Open Scoreboard";
+            this.ToolTips.SetToolTip(this.OpenScoreboardBtn, "Opens the scoreboard");
             this.OpenScoreboardBtn.UseSelectable = true;
             this.OpenScoreboardBtn.Click += new System.EventHandler(this.OpenScoreboardBtnClicked);
             // 
@@ -127,6 +130,7 @@
             this.GameModeBox.Name = "GameModeBox";
             this.GameModeBox.Size = new System.Drawing.Size(273, 29);
             this.GameModeBox.TabIndex = 11;
+            this.ToolTips.SetToolTip(this.GameModeBox, "What game mode should we be in?");
             this.GameModeBox.UseSelectable = true;
             this.GameModeBox.ValueMember = "0";
             this.GameModeBox.SelectedIndexChanged += new System.EventHandler(this.GameModeBoxChanged);
@@ -135,7 +139,7 @@
             // 
             this.GameModeLbl.AutoSize = true;
             this.GameModeLbl.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.GameModeLbl.Location = new System.Drawing.Point(23, 88);
+            this.GameModeLbl.Location = new System.Drawing.Point(19, 88);
             this.GameModeLbl.Name = "GameModeLbl";
             this.GameModeLbl.Size = new System.Drawing.Size(110, 25);
             this.GameModeLbl.TabIndex = 10;
@@ -145,7 +149,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(435, 229);
+            this.ClientSize = new System.Drawing.Size(435, 226);
             this.Controls.Add(this.GameModeBox);
             this.Controls.Add(this.GameModeLbl);
             this.Controls.Add(this.OpenScoreboardBtn);

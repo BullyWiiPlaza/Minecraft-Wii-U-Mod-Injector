@@ -656,8 +656,7 @@
             this.PotionAmplifierSlider.Size = new System.Drawing.Size(383, 20);
             this.PotionAmplifierSlider.TabIndex = 157;
             this.PotionAmplifierSlider.Tag = "";
-            this.ToolTipManager.SetToolTip(this.PotionAmplifierSlider, "How much friction do we have?\r\n\r\nCTRL + Click = Increase Decimal Places\r\nALT + Cl" +
-        "ick = Decrease Decimal Places");
+            this.ToolTipManager.SetToolTip(this.PotionAmplifierSlider, "How much should potion effects be amplified by?");
             this.PotionAmplifierSlider.ValueChanged += new System.EventHandler(this.PotionAmplifierSliderChanged);
             // 
             // PotionAmplifier

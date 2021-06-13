@@ -46,6 +46,9 @@
             this.WiiUIpv4Box = new MetroFramework.Controls.MetroTextBox();
             this.WiiUIpv4Lbl = new MetroFramework.Controls.MetroLabel();
             this.playersTab = new MetroFramework.Controls.MetroTabPage();
+            this.PlayerOptionsBtn = new MetroFramework.Controls.MetroButton();
+            this.PotionAmplifierSlider = new System.Windows.Forms.NumericUpDown();
+            this.PotionAmplifier = new MetroFramework.Controls.MetroLabel();
             this.NoSlowDowns = new MetroFramework.Controls.MetroCheckBox();
             this.ESP = new MetroFramework.Controls.MetroCheckBox();
             this.AlwaysInWater = new MetroFramework.Controls.MetroCheckBox();
@@ -54,38 +57,38 @@
             this.AlwaysInLava = new MetroFramework.Controls.MetroCheckBox();
             this.HideBlocks = new MetroFramework.Controls.MetroCheckBox();
             this.UnderwaterEffects = new MetroFramework.Controls.MetroCheckBox();
-            this.GodModeAll = new MetroFramework.Controls.MetroCheckBox();
             this.FrictionSlider = new System.Windows.Forms.NumericUpDown();
+            this.EnchantmentLevel = new MetroFramework.Controls.MetroLabel();
             this.Friction = new MetroFramework.Controls.MetroLabel();
-            this.FieldOfViewSplitSlider = new System.Windows.Forms.NumericUpDown();
-            this.FieldofViewSplitscreen = new MetroFramework.Controls.MetroLabel();
-            this.GodMode = new MetroFramework.Controls.MetroCheckBox();
+            this.GodModeAll = new MetroFramework.Controls.MetroCheckBox();
             this.playerModelScaleSlider = new System.Windows.Forms.NumericUpDown();
+            this.FieldofViewSplitscreen = new MetroFramework.Controls.MetroLabel();
+            this.RiptideFlyingSpeed = new MetroFramework.Controls.MetroLabel();
             this.PlayerModelScale = new MetroFramework.Controls.MetroLabel();
+            this.FieldOfViewSplitSlider = new System.Windows.Forms.NumericUpDown();
+            this.RiptideFlyingSpeedSlider = new System.Windows.Forms.NumericUpDown();
+            this.JumpHeight = new MetroFramework.Controls.MetroLabel();
+            this.SprintingSpeedScale = new MetroFramework.Controls.MetroLabel();
+            this.GodMode = new MetroFramework.Controls.MetroCheckBox();
+            this.SprintingSpeedScaleSlider = new System.Windows.Forms.NumericUpDown();
+            this.Reach = new MetroFramework.Controls.MetroLabel();
+            this.WalkingSpeedScale = new MetroFramework.Controls.MetroLabel();
+            this.EnchantmentLevelSlider = new System.Windows.Forms.NumericUpDown();
+            this.WalkingSpeedScaleSlider = new System.Windows.Forms.NumericUpDown();
+            this.ReachSlider = new System.Windows.Forms.NumericUpDown();
+            this.JumpHeightSlider = new System.Windows.Forms.NumericUpDown();
             this.DeadMauFiveMode = new MetroFramework.Controls.MetroCheckBox();
             this.SlowMotion = new MetroFramework.Controls.MetroCheckBox();
             this.ArmorHUD = new MetroFramework.Controls.MetroCheckBox();
             this.TakeEverythingAnywhere = new MetroFramework.Controls.MetroCheckBox();
-            this.FieldOfViewSlider = new System.Windows.Forms.NumericUpDown();
             this.FieldOfView = new MetroFramework.Controls.MetroLabel();
+            this.FieldOfViewSlider = new System.Windows.Forms.NumericUpDown();
             this.HiddenGameModesUnlocked = new MetroFramework.Controls.MetroCheckBox();
-            this.HitBoxScaleSlider = new System.Windows.Forms.NumericUpDown();
             this.HitBoxScale = new MetroFramework.Controls.MetroLabel();
             this.CraftingTableAnywhere = new MetroFramework.Controls.MetroCheckBox();
-            this.WalkingSpeedScaleSlider = new System.Windows.Forms.NumericUpDown();
-            this.WalkingSpeedScale = new MetroFramework.Controls.MetroLabel();
             this.VisibleHitboxes = new MetroFramework.Controls.MetroCheckBox();
-            this.SprintingSpeedScaleSlider = new System.Windows.Forms.NumericUpDown();
-            this.SprintingSpeedScale = new MetroFramework.Controls.MetroLabel();
+            this.HitBoxScaleSlider = new System.Windows.Forms.NumericUpDown();
             this.NnidEditorBtn = new MetroFramework.Controls.MetroButton();
-            this.RiptideFlyingSpeedSlider = new System.Windows.Forms.NumericUpDown();
-            this.RiptideFlyingSpeed = new MetroFramework.Controls.MetroLabel();
-            this.ReachSlider = new System.Windows.Forms.NumericUpDown();
-            this.Reach = new MetroFramework.Controls.MetroLabel();
-            this.JumpHeightSlider = new System.Windows.Forms.NumericUpDown();
-            this.JumpHeight = new MetroFramework.Controls.MetroLabel();
-            this.EnchantmentLevelSlider = new System.Windows.Forms.NumericUpDown();
-            this.EnchantmentLevel = new MetroFramework.Controls.MetroLabel();
             this.InsaneCriticalHits = new MetroFramework.Controls.MetroCheckBox();
             this.AlwaysSwimming = new MetroFramework.Controls.MetroCheckBox();
             this.InfiniteRiptide = new MetroFramework.Controls.MetroCheckBox();
@@ -221,20 +224,24 @@
             this.PlayersTile = new MetroFramework.Controls.MetroTile();
             this.CommandsTile = new MetroFramework.Controls.MetroTile();
             this.DebugTile = new MetroFramework.Controls.MetroTile();
+            this.RightClickMenu = new MetroFramework.Controls.MetroContextMenu(this.components);
+            this.IncreaseDecimalPlace = new System.Windows.Forms.ToolStripMenuItem();
+            this.DecreaseDecimalPlace = new System.Windows.Forms.ToolStripMenuItem();
             this.MainTabs.SuspendLayout();
             this.MainTab.SuspendLayout();
             this.playersTab.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PotionAmplifierSlider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.FrictionSlider)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.FieldOfViewSplitSlider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.playerModelScaleSlider)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.FieldOfViewSlider)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.HitBoxScaleSlider)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.WalkingSpeedScaleSlider)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SprintingSpeedScaleSlider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FieldOfViewSplitSlider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RiptideFlyingSpeedSlider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SprintingSpeedScaleSlider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.EnchantmentLevelSlider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.WalkingSpeedScaleSlider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ReachSlider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.JumpHeightSlider)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.EnchantmentLevelSlider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FieldOfViewSlider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.HitBoxScaleSlider)).BeginInit();
             this.worldTab.SuspendLayout();
             this.entitiesPnl.SuspendLayout();
             this.worldPnl.SuspendLayout();
@@ -260,6 +267,7 @@
             this.settingsTab.SuspendLayout();
             this.debugTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.StyleMngr)).BeginInit();
+            this.RightClickMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // WorldTile
@@ -274,6 +282,7 @@
             this.WorldTile.Text = "Entities / World";
             this.WorldTile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.WorldTile.TileCount = 2;
+            this.WorldTile.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
             this.WorldTile.UseSelectable = true;
             this.WorldTile.Click += new System.EventHandler(this.SwapTab);
             // 
@@ -289,6 +298,7 @@
             this.GeneralTile.Text = "General Game";
             this.GeneralTile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.GeneralTile.TileCount = 3;
+            this.GeneralTile.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
             this.GeneralTile.UseSelectable = true;
             this.GeneralTile.Click += new System.EventHandler(this.SwapTab);
             // 
@@ -304,6 +314,7 @@
             this.MinigamesTile.Text = "Minigames";
             this.MinigamesTile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.MinigamesTile.TileCount = 4;
+            this.MinigamesTile.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
             this.MinigamesTile.UseSelectable = true;
             this.MinigamesTile.Click += new System.EventHandler(this.SwapTab);
             // 
@@ -319,6 +330,7 @@
             this.SettingsTile.Text = "Settings";
             this.SettingsTile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.SettingsTile.TileCount = 6;
+            this.SettingsTile.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
             this.SettingsTile.UseSelectable = true;
             this.SettingsTile.Click += new System.EventHandler(this.SwapTab);
             // 
@@ -334,6 +346,7 @@
             this.BuildTile.Text = "VERSION";
             this.BuildTile.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.BuildTile.TileCount = 8;
+            this.BuildTile.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
             this.BuildTile.UseSelectable = true;
             // 
             // MainTabs
@@ -350,7 +363,7 @@
             this.MainTabs.Location = new System.Drawing.Point(155, 61);
             this.MainTabs.Multiline = true;
             this.MainTabs.Name = "MainTabs";
-            this.MainTabs.SelectedIndex = 0;
+            this.MainTabs.SelectedIndex = 1;
             this.MainTabs.Size = new System.Drawing.Size(989, 545);
             this.MainTabs.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.MainTabs.TabIndex = 0;
@@ -406,14 +419,14 @@
             this.BuildNotesBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.BuildNotesBox.CustomButton.UseSelectable = true;
             this.BuildNotesBox.CustomButton.Visible = false;
+            this.BuildNotesBox.FontWeight = MetroFramework.MetroTextBoxWeight.Light;
             this.BuildNotesBox.Lines = new string[] {
-        "Fetching Patch Notes for VERSION"};
+        "FETCHING PATCH NOTES FOR VERSION"};
             this.BuildNotesBox.Location = new System.Drawing.Point(6, 31);
             this.BuildNotesBox.MaxLength = 32767;
             this.BuildNotesBox.Multiline = true;
             this.BuildNotesBox.Name = "BuildNotesBox";
             this.BuildNotesBox.PasswordChar = '\0';
-            this.BuildNotesBox.ReadOnly = true;
             this.BuildNotesBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.BuildNotesBox.SelectedText = "";
             this.BuildNotesBox.SelectionLength = 0;
@@ -421,7 +434,7 @@
             this.BuildNotesBox.ShortcutsEnabled = true;
             this.BuildNotesBox.Size = new System.Drawing.Size(822, 470);
             this.BuildNotesBox.TabIndex = 8;
-            this.BuildNotesBox.Text = "Fetching Patch Notes for VERSION";
+            this.BuildNotesBox.Text = "FETCHING PATCH NOTES FOR VERSION";
             this.BuildNotesBox.UseSelectable = true;
             this.BuildNotesBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.BuildNotesBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -430,9 +443,10 @@
             // 
             this.BuildVerTitleLbl.AutoSize = true;
             this.BuildVerTitleLbl.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.BuildVerTitleLbl.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.BuildVerTitleLbl.Location = new System.Drawing.Point(3, 3);
             this.BuildVerTitleLbl.Name = "BuildVerTitleLbl";
-            this.BuildVerTitleLbl.Size = new System.Drawing.Size(203, 25);
+            this.BuildVerTitleLbl.Size = new System.Drawing.Size(212, 25);
             this.BuildVerTitleLbl.TabIndex = 6;
             this.BuildVerTitleLbl.Text = "Patch Notes for VERSION";
             this.BuildVerTitleLbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -510,14 +524,18 @@
             // WiiUIpv4Lbl
             // 
             this.WiiUIpv4Lbl.AutoSize = true;
+            this.WiiUIpv4Lbl.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.WiiUIpv4Lbl.Location = new System.Drawing.Point(6, 507);
             this.WiiUIpv4Lbl.Name = "WiiUIpv4Lbl";
-            this.WiiUIpv4Lbl.Size = new System.Drawing.Size(72, 19);
+            this.WiiUIpv4Lbl.Size = new System.Drawing.Size(76, 19);
             this.WiiUIpv4Lbl.TabIndex = 2;
             this.WiiUIpv4Lbl.Text = "Wii U IPv4:";
             // 
             // playersTab
             // 
+            this.playersTab.Controls.Add(this.PlayerOptionsBtn);
+            this.playersTab.Controls.Add(this.PotionAmplifierSlider);
+            this.playersTab.Controls.Add(this.PotionAmplifier);
             this.playersTab.Controls.Add(this.NoSlowDowns);
             this.playersTab.Controls.Add(this.ESP);
             this.playersTab.Controls.Add(this.AlwaysInWater);
@@ -526,38 +544,38 @@
             this.playersTab.Controls.Add(this.AlwaysInLava);
             this.playersTab.Controls.Add(this.HideBlocks);
             this.playersTab.Controls.Add(this.UnderwaterEffects);
-            this.playersTab.Controls.Add(this.GodModeAll);
             this.playersTab.Controls.Add(this.FrictionSlider);
+            this.playersTab.Controls.Add(this.EnchantmentLevel);
             this.playersTab.Controls.Add(this.Friction);
-            this.playersTab.Controls.Add(this.FieldOfViewSplitSlider);
-            this.playersTab.Controls.Add(this.FieldofViewSplitscreen);
-            this.playersTab.Controls.Add(this.GodMode);
+            this.playersTab.Controls.Add(this.GodModeAll);
             this.playersTab.Controls.Add(this.playerModelScaleSlider);
+            this.playersTab.Controls.Add(this.FieldofViewSplitscreen);
+            this.playersTab.Controls.Add(this.RiptideFlyingSpeed);
             this.playersTab.Controls.Add(this.PlayerModelScale);
+            this.playersTab.Controls.Add(this.FieldOfViewSplitSlider);
+            this.playersTab.Controls.Add(this.RiptideFlyingSpeedSlider);
+            this.playersTab.Controls.Add(this.JumpHeight);
+            this.playersTab.Controls.Add(this.SprintingSpeedScale);
+            this.playersTab.Controls.Add(this.GodMode);
+            this.playersTab.Controls.Add(this.SprintingSpeedScaleSlider);
+            this.playersTab.Controls.Add(this.Reach);
+            this.playersTab.Controls.Add(this.WalkingSpeedScale);
+            this.playersTab.Controls.Add(this.EnchantmentLevelSlider);
+            this.playersTab.Controls.Add(this.WalkingSpeedScaleSlider);
+            this.playersTab.Controls.Add(this.ReachSlider);
+            this.playersTab.Controls.Add(this.JumpHeightSlider);
             this.playersTab.Controls.Add(this.DeadMauFiveMode);
             this.playersTab.Controls.Add(this.SlowMotion);
             this.playersTab.Controls.Add(this.ArmorHUD);
             this.playersTab.Controls.Add(this.TakeEverythingAnywhere);
-            this.playersTab.Controls.Add(this.FieldOfViewSlider);
             this.playersTab.Controls.Add(this.FieldOfView);
+            this.playersTab.Controls.Add(this.FieldOfViewSlider);
             this.playersTab.Controls.Add(this.HiddenGameModesUnlocked);
-            this.playersTab.Controls.Add(this.HitBoxScaleSlider);
             this.playersTab.Controls.Add(this.HitBoxScale);
             this.playersTab.Controls.Add(this.CraftingTableAnywhere);
-            this.playersTab.Controls.Add(this.WalkingSpeedScaleSlider);
-            this.playersTab.Controls.Add(this.WalkingSpeedScale);
             this.playersTab.Controls.Add(this.VisibleHitboxes);
-            this.playersTab.Controls.Add(this.SprintingSpeedScaleSlider);
-            this.playersTab.Controls.Add(this.SprintingSpeedScale);
+            this.playersTab.Controls.Add(this.HitBoxScaleSlider);
             this.playersTab.Controls.Add(this.NnidEditorBtn);
-            this.playersTab.Controls.Add(this.RiptideFlyingSpeedSlider);
-            this.playersTab.Controls.Add(this.RiptideFlyingSpeed);
-            this.playersTab.Controls.Add(this.ReachSlider);
-            this.playersTab.Controls.Add(this.Reach);
-            this.playersTab.Controls.Add(this.JumpHeightSlider);
-            this.playersTab.Controls.Add(this.JumpHeight);
-            this.playersTab.Controls.Add(this.EnchantmentLevelSlider);
-            this.playersTab.Controls.Add(this.EnchantmentLevel);
             this.playersTab.Controls.Add(this.InsaneCriticalHits);
             this.playersTab.Controls.Add(this.AlwaysSwimming);
             this.playersTab.Controls.Add(this.InfiniteRiptide);
@@ -605,6 +623,54 @@
             this.playersTab.VerticalScrollbarBarColor = true;
             this.playersTab.VerticalScrollbarHighlightOnWheel = false;
             this.playersTab.VerticalScrollbarSize = 10;
+            // 
+            // PlayerOptionsBtn
+            // 
+            this.PlayerOptionsBtn.Location = new System.Drawing.Point(500, 342);
+            this.PlayerOptionsBtn.Name = "PlayerOptionsBtn";
+            this.PlayerOptionsBtn.Size = new System.Drawing.Size(475, 23);
+            this.PlayerOptionsBtn.TabIndex = 158;
+            this.PlayerOptionsBtn.Tag = "";
+            this.PlayerOptionsBtn.Text = "Player Options";
+            this.ToolTipManager.SetToolTip(this.PlayerOptionsBtn, "Opens the Player Options window \r\nwhere you can modify Player Options");
+            this.PlayerOptionsBtn.UseSelectable = true;
+            this.PlayerOptionsBtn.Click += new System.EventHandler(this.PlayerOptionsBtnClicked);
+            // 
+            // PotionAmplifierSlider
+            // 
+            this.StyleExtender.SetApplyMetroTheme(this.PotionAmplifierSlider, true);
+            this.PotionAmplifierSlider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.PotionAmplifierSlider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.PotionAmplifierSlider.Increment = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.PotionAmplifierSlider.Location = new System.Drawing.Point(592, 501);
+            this.PotionAmplifierSlider.Maximum = new decimal(new int[] {
+            9999,
+            0,
+            0,
+            0});
+            this.PotionAmplifierSlider.Name = "PotionAmplifierSlider";
+            this.PotionAmplifierSlider.Size = new System.Drawing.Size(383, 20);
+            this.PotionAmplifierSlider.TabIndex = 157;
+            this.PotionAmplifierSlider.Tag = "";
+            this.ToolTipManager.SetToolTip(this.PotionAmplifierSlider, "How much friction do we have?\r\n\r\nCTRL + Click = Increase Decimal Places\r\nALT + Cl" +
+        "ick = Decrease Decimal Places");
+            this.PotionAmplifierSlider.ValueChanged += new System.EventHandler(this.PotionAmplifierSliderChanged);
+            // 
+            // PotionAmplifier
+            // 
+            this.PotionAmplifier.AutoSize = true;
+            this.PotionAmplifier.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.PotionAmplifier.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.PotionAmplifier.Location = new System.Drawing.Point(477, 501);
+            this.PotionAmplifier.Name = "PotionAmplifier";
+            this.PotionAmplifier.Size = new System.Drawing.Size(109, 19);
+            this.PotionAmplifier.TabIndex = 156;
+            this.PotionAmplifier.Tag = "";
+            this.PotionAmplifier.Text = "Potion Amplifier:";
             // 
             // NoSlowDowns
             // 
@@ -712,6 +778,61 @@
             this.UnderwaterEffects.UseSelectable = true;
             this.UnderwaterEffects.CheckStateChanged += new System.EventHandler(this.UnderwaterEffectsToggled);
             // 
+            // FrictionSlider
+            // 
+            this.StyleExtender.SetApplyMetroTheme(this.FrictionSlider, true);
+            this.FrictionSlider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.FrictionSlider.DecimalPlaces = 8;
+            this.FrictionSlider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.FrictionSlider.Increment = new decimal(new int[] {
+            10000000,
+            0,
+            0,
+            524288});
+            this.FrictionSlider.Location = new System.Drawing.Point(540, 475);
+            this.FrictionSlider.Minimum = new decimal(new int[] {
+            100,
+            0,
+            0,
+            -2147483648});
+            this.FrictionSlider.Name = "FrictionSlider";
+            this.FrictionSlider.Size = new System.Drawing.Size(435, 20);
+            this.FrictionSlider.TabIndex = 147;
+            this.FrictionSlider.Tag = "";
+            this.ToolTipManager.SetToolTip(this.FrictionSlider, "How much friction do we have?\r\n\r\nCTRL + Click = Increase Decimal Places\r\nALT + Cl" +
+        "ick = Decrease Decimal Places");
+            this.FrictionSlider.Value = new decimal(new int[] {
+            91000003,
+            0,
+            0,
+            524288});
+            this.FrictionSlider.ValueChanged += new System.EventHandler(this.FrictionSliderChanged);
+            this.FrictionSlider.Click += new System.EventHandler(this.SliderClicked);
+            // 
+            // EnchantmentLevel
+            // 
+            this.EnchantmentLevel.AutoSize = true;
+            this.EnchantmentLevel.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.EnchantmentLevel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.EnchantmentLevel.Location = new System.Drawing.Point(4, 371);
+            this.EnchantmentLevel.Name = "EnchantmentLevel";
+            this.EnchantmentLevel.Size = new System.Drawing.Size(128, 19);
+            this.EnchantmentLevel.TabIndex = 116;
+            this.EnchantmentLevel.Tag = "";
+            this.EnchantmentLevel.Text = "Enchantment Level:";
+            // 
+            // Friction
+            // 
+            this.Friction.AutoSize = true;
+            this.Friction.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.Friction.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.Friction.Location = new System.Drawing.Point(477, 475);
+            this.Friction.Name = "Friction";
+            this.Friction.Size = new System.Drawing.Size(57, 19);
+            this.Friction.TabIndex = 146;
+            this.Friction.Tag = "";
+            this.Friction.Text = "Friction:";
+            // 
             // GodModeAll
             // 
             this.GodModeAll.AutoSize = true;
@@ -725,47 +846,67 @@
             this.GodModeAll.UseSelectable = true;
             this.GodModeAll.CheckedChanged += new System.EventHandler(this.GodModeAllToggled);
             // 
-            // FrictionSlider
+            // playerModelScaleSlider
             // 
-            this.StyleExtender.SetApplyMetroTheme(this.FrictionSlider, true);
-            this.FrictionSlider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.FrictionSlider.DecimalPlaces = 8;
-            this.FrictionSlider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.FrictionSlider.Increment = new decimal(new int[] {
-            10000000,
+            this.StyleExtender.SetApplyMetroTheme(this.playerModelScaleSlider, true);
+            this.playerModelScaleSlider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.playerModelScaleSlider.DecimalPlaces = 4;
+            this.playerModelScaleSlider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.playerModelScaleSlider.Increment = new decimal(new int[] {
+            1000,
             0,
             0,
-            524288});
-            this.FrictionSlider.Location = new System.Drawing.Point(551, 475);
-            this.FrictionSlider.Minimum = new decimal(new int[] {
-            100,
+            262144});
+            this.playerModelScaleSlider.Location = new System.Drawing.Point(609, 449);
+            this.playerModelScaleSlider.Name = "playerModelScaleSlider";
+            this.playerModelScaleSlider.Size = new System.Drawing.Size(366, 20);
+            this.playerModelScaleSlider.TabIndex = 142;
+            this.playerModelScaleSlider.Tag = "";
+            this.ToolTipManager.SetToolTip(this.playerModelScaleSlider, "How big (or small) should our player be?\r\n\r\nCTRL + Click = Increase Decimal Place" +
+        "s\r\nALT + Click = Decrease Decimal Places");
+            this.playerModelScaleSlider.Value = new decimal(new int[] {
+            9375,
             0,
             0,
-            -2147483648});
-            this.FrictionSlider.Name = "FrictionSlider";
-            this.FrictionSlider.Size = new System.Drawing.Size(424, 20);
-            this.FrictionSlider.TabIndex = 147;
-            this.FrictionSlider.Tag = "";
-            this.ToolTipManager.SetToolTip(this.FrictionSlider, "How much friction do we have?\r\n\r\nCTRL + Click = Increase Decimal Places\r\nALT + Cl" +
-        "ick = Decrease Decimal Places");
-            this.FrictionSlider.Value = new decimal(new int[] {
-            91000003,
-            0,
-            0,
-            524288});
-            this.FrictionSlider.ValueChanged += new System.EventHandler(this.FrictionSliderChanged);
-            this.FrictionSlider.Click += new System.EventHandler(this.SliderClicked);
+            262144});
+            this.playerModelScaleSlider.ValueChanged += new System.EventHandler(this.PlayerModelScaleSliderChanged);
+            this.playerModelScaleSlider.Click += new System.EventHandler(this.SliderClicked);
             // 
-            // Friction
+            // FieldofViewSplitscreen
             // 
-            this.Friction.AutoSize = true;
-            this.Friction.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.Friction.Location = new System.Drawing.Point(490, 476);
-            this.Friction.Name = "Friction";
-            this.Friction.Size = new System.Drawing.Size(55, 19);
-            this.Friction.TabIndex = 146;
-            this.Friction.Tag = "";
-            this.Friction.Text = "Friction:";
+            this.FieldofViewSplitscreen.AutoSize = true;
+            this.FieldofViewSplitscreen.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.FieldofViewSplitscreen.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.FieldofViewSplitscreen.Location = new System.Drawing.Point(3, 501);
+            this.FieldofViewSplitscreen.Name = "FieldofViewSplitscreen";
+            this.FieldofViewSplitscreen.Size = new System.Drawing.Size(166, 19);
+            this.FieldofViewSplitscreen.TabIndex = 144;
+            this.FieldofViewSplitscreen.Tag = "";
+            this.FieldofViewSplitscreen.Text = "Field of View (Splitscreen):";
+            // 
+            // RiptideFlyingSpeed
+            // 
+            this.RiptideFlyingSpeed.AutoSize = true;
+            this.RiptideFlyingSpeed.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.RiptideFlyingSpeed.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.RiptideFlyingSpeed.Location = new System.Drawing.Point(477, 371);
+            this.RiptideFlyingSpeed.Name = "RiptideFlyingSpeed";
+            this.RiptideFlyingSpeed.Size = new System.Drawing.Size(140, 19);
+            this.RiptideFlyingSpeed.TabIndex = 124;
+            this.RiptideFlyingSpeed.Tag = "";
+            this.RiptideFlyingSpeed.Text = "Riptide (flying) Speed:";
+            // 
+            // PlayerModelScale
+            // 
+            this.PlayerModelScale.AutoSize = true;
+            this.PlayerModelScale.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.PlayerModelScale.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.PlayerModelScale.Location = new System.Drawing.Point(477, 449);
+            this.PlayerModelScale.Name = "PlayerModelScale";
+            this.PlayerModelScale.Size = new System.Drawing.Size(126, 19);
+            this.PlayerModelScale.TabIndex = 141;
+            this.PlayerModelScale.Tag = "";
+            this.PlayerModelScale.Text = "Player Model Scale:";
             // 
             // FieldOfViewSplitSlider
             // 
@@ -774,18 +915,18 @@
             this.FieldOfViewSplitSlider.DecimalPlaces = 3;
             this.FieldOfViewSplitSlider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.FieldOfViewSplitSlider.Increment = new decimal(new int[] {
-            2571,
+            1,
             0,
             0,
-            196608});
-            this.FieldOfViewSplitSlider.Location = new System.Drawing.Point(170, 503);
+            65536});
+            this.FieldOfViewSplitSlider.Location = new System.Drawing.Point(175, 501);
             this.FieldOfViewSplitSlider.Maximum = new decimal(new int[] {
             4,
             0,
             0,
             0});
             this.FieldOfViewSplitSlider.Name = "FieldOfViewSplitSlider";
-            this.FieldOfViewSplitSlider.Size = new System.Drawing.Size(300, 20);
+            this.FieldOfViewSplitSlider.Size = new System.Drawing.Size(296, 20);
             this.FieldOfViewSplitSlider.TabIndex = 145;
             this.FieldOfViewSplitSlider.Tag = "";
             this.ToolTipManager.SetToolTip(this.FieldOfViewSplitSlider, "How high should our FOV in splitscreen be?\r\n\r\nCTRL + Click = Increase Decimal Pla" +
@@ -798,16 +939,65 @@
             this.FieldOfViewSplitSlider.ValueChanged += new System.EventHandler(this.FieldOfViewSplitSliderChanged);
             this.FieldOfViewSplitSlider.Click += new System.EventHandler(this.SliderClicked);
             // 
-            // FieldofViewSplitscreen
+            // RiptideFlyingSpeedSlider
             // 
-            this.FieldofViewSplitscreen.AutoSize = true;
-            this.FieldofViewSplitscreen.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.FieldofViewSplitscreen.Location = new System.Drawing.Point(3, 503);
-            this.FieldofViewSplitscreen.Name = "FieldofViewSplitscreen";
-            this.FieldofViewSplitscreen.Size = new System.Drawing.Size(161, 19);
-            this.FieldofViewSplitscreen.TabIndex = 144;
-            this.FieldofViewSplitscreen.Tag = "";
-            this.FieldofViewSplitscreen.Text = "Field of View (Splitscreen):";
+            this.StyleExtender.SetApplyMetroTheme(this.RiptideFlyingSpeedSlider, true);
+            this.RiptideFlyingSpeedSlider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.RiptideFlyingSpeedSlider.DecimalPlaces = 4;
+            this.RiptideFlyingSpeedSlider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.RiptideFlyingSpeedSlider.Increment = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            262144});
+            this.RiptideFlyingSpeedSlider.Location = new System.Drawing.Point(623, 371);
+            this.RiptideFlyingSpeedSlider.Maximum = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            this.RiptideFlyingSpeedSlider.Minimum = new decimal(new int[] {
+            5,
+            0,
+            0,
+            -2147483648});
+            this.RiptideFlyingSpeedSlider.Name = "RiptideFlyingSpeedSlider";
+            this.RiptideFlyingSpeedSlider.Size = new System.Drawing.Size(352, 20);
+            this.RiptideFlyingSpeedSlider.TabIndex = 125;
+            this.RiptideFlyingSpeedSlider.Tag = "";
+            this.ToolTipManager.SetToolTip(this.RiptideFlyingSpeedSlider, "How fast should the Riptide Enchentment go?\r\n\r\nCTRL + Click = Increase Decimal Pl" +
+        "aces\r\nALT + Click = Decrease Decimal Places");
+            this.RiptideFlyingSpeedSlider.Value = new decimal(new int[] {
+            25,
+            0,
+            0,
+            131072});
+            this.RiptideFlyingSpeedSlider.ValueChanged += new System.EventHandler(this.RiptideFlyingSpeedSliderChanged);
+            this.RiptideFlyingSpeedSlider.Click += new System.EventHandler(this.SliderClicked);
+            // 
+            // JumpHeight
+            // 
+            this.JumpHeight.AutoSize = true;
+            this.JumpHeight.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.JumpHeight.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.JumpHeight.Location = new System.Drawing.Point(3, 397);
+            this.JumpHeight.Name = "JumpHeight";
+            this.JumpHeight.Size = new System.Drawing.Size(90, 19);
+            this.JumpHeight.TabIndex = 118;
+            this.JumpHeight.Tag = "";
+            this.JumpHeight.Text = "Jump Height:";
+            // 
+            // SprintingSpeedScale
+            // 
+            this.SprintingSpeedScale.AutoSize = true;
+            this.SprintingSpeedScale.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.SprintingSpeedScale.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.SprintingSpeedScale.Location = new System.Drawing.Point(477, 397);
+            this.SprintingSpeedScale.Name = "SprintingSpeedScale";
+            this.SprintingSpeedScale.Size = new System.Drawing.Size(142, 19);
+            this.SprintingSpeedScale.TabIndex = 127;
+            this.SprintingSpeedScale.Tag = "";
+            this.SprintingSpeedScale.Text = "Sprinting Speed Scale:";
             // 
             // GodMode
             // 
@@ -822,42 +1012,182 @@
             this.GodMode.UseSelectable = true;
             this.GodMode.CheckedChanged += new System.EventHandler(this.GodModeToggled);
             // 
-            // playerModelScaleSlider
+            // SprintingSpeedScaleSlider
             // 
-            this.StyleExtender.SetApplyMetroTheme(this.playerModelScaleSlider, true);
-            this.playerModelScaleSlider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.playerModelScaleSlider.DecimalPlaces = 4;
-            this.playerModelScaleSlider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.playerModelScaleSlider.Increment = new decimal(new int[] {
+            this.StyleExtender.SetApplyMetroTheme(this.SprintingSpeedScaleSlider, true);
+            this.SprintingSpeedScaleSlider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.SprintingSpeedScaleSlider.DecimalPlaces = 3;
+            this.SprintingSpeedScaleSlider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.SprintingSpeedScaleSlider.Increment = new decimal(new int[] {
             1000,
             0,
             0,
             262144});
-            this.playerModelScaleSlider.Location = new System.Drawing.Point(620, 449);
-            this.playerModelScaleSlider.Name = "playerModelScaleSlider";
-            this.playerModelScaleSlider.Size = new System.Drawing.Size(355, 20);
-            this.playerModelScaleSlider.TabIndex = 142;
-            this.playerModelScaleSlider.Tag = "";
-            this.ToolTipManager.SetToolTip(this.playerModelScaleSlider, "How big (or small) should our player be?\r\n\r\nCTRL + Click = Increase Decimal Place" +
-        "s\r\nALT + Click = Decrease Decimal Places");
-            this.playerModelScaleSlider.Value = new decimal(new int[] {
-            9375,
+            this.SprintingSpeedScaleSlider.Location = new System.Drawing.Point(618, 423);
+            this.SprintingSpeedScaleSlider.Maximum = new decimal(new int[] {
+            4,
+            0,
+            0,
+            0});
+            this.SprintingSpeedScaleSlider.Name = "SprintingSpeedScaleSlider";
+            this.SprintingSpeedScaleSlider.Size = new System.Drawing.Size(357, 20);
+            this.SprintingSpeedScaleSlider.TabIndex = 128;
+            this.SprintingSpeedScaleSlider.Tag = "";
+            this.ToolTipManager.SetToolTip(this.SprintingSpeedScaleSlider, "How fast can the player sprint?\r\n\r\nCTRL + Click = Increase Decimal Places\r\nALT + " +
+        "Click = Decrease Decimal Places");
+            this.SprintingSpeedScaleSlider.Value = new decimal(new int[] {
+            1875,
+            0,
+            0,
+            196608});
+            this.SprintingSpeedScaleSlider.ValueChanged += new System.EventHandler(this.SprintingSpeedScaleSliderChanged);
+            this.SprintingSpeedScaleSlider.Click += new System.EventHandler(this.SliderClicked);
+            // 
+            // Reach
+            // 
+            this.Reach.AutoSize = true;
+            this.Reach.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.Reach.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.Reach.Location = new System.Drawing.Point(3, 423);
+            this.Reach.Name = "Reach";
+            this.Reach.Size = new System.Drawing.Size(48, 19);
+            this.Reach.TabIndex = 120;
+            this.Reach.Tag = "";
+            this.Reach.Text = "Reach:";
+            // 
+            // WalkingSpeedScale
+            // 
+            this.WalkingSpeedScale.AutoSize = true;
+            this.WalkingSpeedScale.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.WalkingSpeedScale.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.WalkingSpeedScale.Location = new System.Drawing.Point(477, 423);
+            this.WalkingSpeedScale.Name = "WalkingSpeedScale";
+            this.WalkingSpeedScale.Size = new System.Drawing.Size(135, 19);
+            this.WalkingSpeedScale.TabIndex = 130;
+            this.WalkingSpeedScale.Tag = "";
+            this.WalkingSpeedScale.Text = "Walking Speed Scale:";
+            // 
+            // EnchantmentLevelSlider
+            // 
+            this.StyleExtender.SetApplyMetroTheme(this.EnchantmentLevelSlider, true);
+            this.EnchantmentLevelSlider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.EnchantmentLevelSlider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.EnchantmentLevelSlider.Location = new System.Drawing.Point(138, 371);
+            this.EnchantmentLevelSlider.Maximum = new decimal(new int[] {
+            512,
+            0,
+            0,
+            0});
+            this.EnchantmentLevelSlider.Name = "EnchantmentLevelSlider";
+            this.EnchantmentLevelSlider.Size = new System.Drawing.Size(333, 20);
+            this.EnchantmentLevelSlider.TabIndex = 117;
+            this.EnchantmentLevelSlider.Tag = "";
+            this.ToolTipManager.SetToolTip(this.EnchantmentLevelSlider, "What enchantment level should the currently held item have?\r\n\r\nCTRL + Click = Inc" +
+        "rease Decimal Places\r\nALT + Click = Decrease Decimal Places");
+            this.EnchantmentLevelSlider.ValueChanged += new System.EventHandler(this.EnchantmentLevelSliderChanged);
+            // 
+            // WalkingSpeedScaleSlider
+            // 
+            this.StyleExtender.SetApplyMetroTheme(this.WalkingSpeedScaleSlider, true);
+            this.WalkingSpeedScaleSlider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.WalkingSpeedScaleSlider.DecimalPlaces = 3;
+            this.WalkingSpeedScaleSlider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.WalkingSpeedScaleSlider.Increment = new decimal(new int[] {
+            1000,
             0,
             0,
             262144});
-            this.playerModelScaleSlider.ValueChanged += new System.EventHandler(this.PlayerModelScaleSliderChanged);
-            this.playerModelScaleSlider.Click += new System.EventHandler(this.SliderClicked);
+            this.WalkingSpeedScaleSlider.Location = new System.Drawing.Point(623, 397);
+            this.WalkingSpeedScaleSlider.Maximum = new decimal(new int[] {
+            4,
+            0,
+            0,
+            0});
+            this.WalkingSpeedScaleSlider.Name = "WalkingSpeedScaleSlider";
+            this.WalkingSpeedScaleSlider.Size = new System.Drawing.Size(352, 20);
+            this.WalkingSpeedScaleSlider.TabIndex = 131;
+            this.WalkingSpeedScaleSlider.Tag = "";
+            this.ToolTipManager.SetToolTip(this.WalkingSpeedScaleSlider, "How fast can the player walk?\r\n\r\nCTRL + Click = Increase Decimal Places\r\nALT + Cl" +
+        "ick = Decrease Decimal Places");
+            this.WalkingSpeedScaleSlider.Value = new decimal(new int[] {
+            163,
+            0,
+            0,
+            196608});
+            this.WalkingSpeedScaleSlider.ValueChanged += new System.EventHandler(this.WalkingSpeedScaleChanged);
+            this.WalkingSpeedScaleSlider.Click += new System.EventHandler(this.SliderClicked);
             // 
-            // PlayerModelScale
+            // ReachSlider
             // 
-            this.PlayerModelScale.AutoSize = true;
-            this.PlayerModelScale.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.PlayerModelScale.Location = new System.Drawing.Point(490, 450);
-            this.PlayerModelScale.Name = "PlayerModelScale";
-            this.PlayerModelScale.Size = new System.Drawing.Size(124, 19);
-            this.PlayerModelScale.TabIndex = 141;
-            this.PlayerModelScale.Tag = "";
-            this.PlayerModelScale.Text = "Player Model Scale:";
+            this.StyleExtender.SetApplyMetroTheme(this.ReachSlider, true);
+            this.ReachSlider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.ReachSlider.DecimalPlaces = 1;
+            this.ReachSlider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.ReachSlider.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
+            this.ReachSlider.Location = new System.Drawing.Point(57, 423);
+            this.ReachSlider.Maximum = new decimal(new int[] {
+            512,
+            0,
+            0,
+            0});
+            this.ReachSlider.Minimum = new decimal(new int[] {
+            512,
+            0,
+            0,
+            -2147483648});
+            this.ReachSlider.Name = "ReachSlider";
+            this.ReachSlider.Size = new System.Drawing.Size(414, 20);
+            this.ReachSlider.TabIndex = 121;
+            this.ReachSlider.Tag = "";
+            this.ToolTipManager.SetToolTip(this.ReachSlider, "How far can the player reach?\r\n\r\nCTRL + Click = Increase Decimal Places\r\nALT + Cl" +
+        "ick = Decrease Decimal Places");
+            this.ReachSlider.Value = new decimal(new int[] {
+            45,
+            0,
+            0,
+            65536});
+            this.ReachSlider.ValueChanged += new System.EventHandler(this.ReachSliderChanged);
+            this.ReachSlider.Click += new System.EventHandler(this.SliderClicked);
+            // 
+            // JumpHeightSlider
+            // 
+            this.StyleExtender.SetApplyMetroTheme(this.JumpHeightSlider, true);
+            this.JumpHeightSlider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.JumpHeightSlider.DecimalPlaces = 3;
+            this.JumpHeightSlider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.JumpHeightSlider.Increment = new decimal(new int[] {
+            5,
+            0,
+            0,
+            196608});
+            this.JumpHeightSlider.Location = new System.Drawing.Point(99, 397);
+            this.JumpHeightSlider.Maximum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.JumpHeightSlider.Minimum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            -2147483648});
+            this.JumpHeightSlider.Name = "JumpHeightSlider";
+            this.JumpHeightSlider.Size = new System.Drawing.Size(372, 20);
+            this.JumpHeightSlider.TabIndex = 119;
+            this.JumpHeightSlider.Tag = "";
+            this.ToolTipManager.SetToolTip(this.JumpHeightSlider, "How high should the player jump?\r\n\r\nCTRL + Click = Increase Decimal Places\r\nALT +" +
+        " Click = Decrease Decimal Places");
+            this.JumpHeightSlider.Value = new decimal(new int[] {
+            420,
+            0,
+            0,
+            196608});
+            this.JumpHeightSlider.ValueChanged += new System.EventHandler(this.JumpHeightSliderChanged);
+            this.JumpHeightSlider.Click += new System.EventHandler(this.SliderClicked);
             // 
             // DeadMauFiveMode
             // 
@@ -912,6 +1242,18 @@
             this.TakeEverythingAnywhere.UseSelectable = true;
             this.TakeEverythingAnywhere.CheckedChanged += new System.EventHandler(this.TakeEverythingAnywhereToggled);
             // 
+            // FieldOfView
+            // 
+            this.FieldOfView.AutoSize = true;
+            this.FieldOfView.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.FieldOfView.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.FieldOfView.Location = new System.Drawing.Point(3, 475);
+            this.FieldOfView.Name = "FieldOfView";
+            this.FieldOfView.Size = new System.Drawing.Size(89, 19);
+            this.FieldOfView.TabIndex = 136;
+            this.FieldOfView.Tag = "";
+            this.FieldOfView.Text = "Field of View:";
+            // 
             // FieldOfViewSlider
             // 
             this.StyleExtender.SetApplyMetroTheme(this.FieldOfViewSlider, true);
@@ -919,18 +1261,18 @@
             this.FieldOfViewSlider.DecimalPlaces = 3;
             this.FieldOfViewSlider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.FieldOfViewSlider.Increment = new decimal(new int[] {
-            1000,
+            1,
             0,
             0,
-            262144});
-            this.FieldOfViewSlider.Location = new System.Drawing.Point(96, 477);
+            65536});
+            this.FieldOfViewSlider.Location = new System.Drawing.Point(98, 475);
             this.FieldOfViewSlider.Maximum = new decimal(new int[] {
             4,
             0,
             0,
             0});
             this.FieldOfViewSlider.Name = "FieldOfViewSlider";
-            this.FieldOfViewSlider.Size = new System.Drawing.Size(374, 20);
+            this.FieldOfViewSlider.Size = new System.Drawing.Size(373, 20);
             this.FieldOfViewSlider.TabIndex = 137;
             this.FieldOfViewSlider.Tag = "";
             this.ToolTipManager.SetToolTip(this.FieldOfViewSlider, "How high should our FOV be?\r\n\r\nCTRL + Click = Increase Decimal Places\r\nALT + Clic" +
@@ -942,17 +1284,6 @@
             196608});
             this.FieldOfViewSlider.ValueChanged += new System.EventHandler(this.FieldOfViewSliderChanged);
             this.FieldOfViewSlider.Click += new System.EventHandler(this.SliderClicked);
-            // 
-            // FieldOfView
-            // 
-            this.FieldOfView.AutoSize = true;
-            this.FieldOfView.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.FieldOfView.Location = new System.Drawing.Point(3, 477);
-            this.FieldOfView.Name = "FieldOfView";
-            this.FieldOfView.Size = new System.Drawing.Size(87, 19);
-            this.FieldOfView.TabIndex = 136;
-            this.FieldOfView.Tag = "";
-            this.FieldOfView.Text = "Field of View:";
             // 
             // HiddenGameModesUnlocked
             // 
@@ -968,39 +1299,14 @@
             this.HiddenGameModesUnlocked.UseSelectable = true;
             this.HiddenGameModesUnlocked.CheckedChanged += new System.EventHandler(this.HiddenGameModesUnlockedToggled);
             // 
-            // HitBoxScaleSlider
-            // 
-            this.StyleExtender.SetApplyMetroTheme(this.HitBoxScaleSlider, true);
-            this.HitBoxScaleSlider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.HitBoxScaleSlider.DecimalPlaces = 1;
-            this.HitBoxScaleSlider.Enabled = false;
-            this.HitBoxScaleSlider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.HitBoxScaleSlider.Increment = new decimal(new int[] {
-            1,
-            0,
-            0,
-            65536});
-            this.HitBoxScaleSlider.Location = new System.Drawing.Point(93, 451);
-            this.HitBoxScaleSlider.Name = "HitBoxScaleSlider";
-            this.HitBoxScaleSlider.Size = new System.Drawing.Size(377, 20);
-            this.HitBoxScaleSlider.TabIndex = 134;
-            this.HitBoxScaleSlider.Tag = "";
-            this.ToolTipManager.SetToolTip(this.HitBoxScaleSlider, "How big should entity hitboxes be? (disabled until fixed)\r\n\r\nCTRL + Click = Incre" +
-        "ase Decimal Places\r\nALT + Click = Decrease Decimal Places");
-            this.HitBoxScaleSlider.Value = new decimal(new int[] {
-            5,
-            0,
-            0,
-            65536});
-            this.HitBoxScaleSlider.Click += new System.EventHandler(this.SliderClicked);
-            // 
             // HitBoxScale
             // 
             this.HitBoxScale.AutoSize = true;
+            this.HitBoxScale.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.HitBoxScale.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.HitBoxScale.Location = new System.Drawing.Point(3, 451);
+            this.HitBoxScale.Location = new System.Drawing.Point(3, 449);
             this.HitBoxScale.Name = "HitBoxScale";
-            this.HitBoxScale.Size = new System.Drawing.Size(84, 19);
+            this.HitBoxScale.Size = new System.Drawing.Size(86, 19);
             this.HitBoxScale.TabIndex = 133;
             this.HitBoxScale.Tag = "";
             this.HitBoxScale.Text = "Hitbox Scale:";
@@ -1018,48 +1324,6 @@
             this.CraftingTableAnywhere.UseSelectable = true;
             this.CraftingTableAnywhere.CheckedChanged += new System.EventHandler(this.CraftingTableAnywhereToggled);
             // 
-            // WalkingSpeedScaleSlider
-            // 
-            this.StyleExtender.SetApplyMetroTheme(this.WalkingSpeedScaleSlider, true);
-            this.WalkingSpeedScaleSlider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.WalkingSpeedScaleSlider.DecimalPlaces = 3;
-            this.WalkingSpeedScaleSlider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.WalkingSpeedScaleSlider.Increment = new decimal(new int[] {
-            1000,
-            0,
-            0,
-            262144});
-            this.WalkingSpeedScaleSlider.Location = new System.Drawing.Point(629, 397);
-            this.WalkingSpeedScaleSlider.Maximum = new decimal(new int[] {
-            4,
-            0,
-            0,
-            0});
-            this.WalkingSpeedScaleSlider.Name = "WalkingSpeedScaleSlider";
-            this.WalkingSpeedScaleSlider.Size = new System.Drawing.Size(346, 20);
-            this.WalkingSpeedScaleSlider.TabIndex = 131;
-            this.WalkingSpeedScaleSlider.Tag = "";
-            this.ToolTipManager.SetToolTip(this.WalkingSpeedScaleSlider, "How fast can the player walk?\r\n\r\nCTRL + Click = Increase Decimal Places\r\nALT + Cl" +
-        "ick = Decrease Decimal Places");
-            this.WalkingSpeedScaleSlider.Value = new decimal(new int[] {
-            163,
-            0,
-            0,
-            196608});
-            this.WalkingSpeedScaleSlider.ValueChanged += new System.EventHandler(this.WalkingSpeedScaleChanged);
-            this.WalkingSpeedScaleSlider.Click += new System.EventHandler(this.SliderClicked);
-            // 
-            // WalkingSpeedScale
-            // 
-            this.WalkingSpeedScale.AutoSize = true;
-            this.WalkingSpeedScale.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.WalkingSpeedScale.Location = new System.Drawing.Point(490, 398);
-            this.WalkingSpeedScale.Name = "WalkingSpeedScale";
-            this.WalkingSpeedScale.Size = new System.Drawing.Size(133, 19);
-            this.WalkingSpeedScale.TabIndex = 130;
-            this.WalkingSpeedScale.Tag = "";
-            this.WalkingSpeedScale.Text = "Walking Speed Scale:";
-            // 
             // VisibleHitboxes
             // 
             this.VisibleHitboxes.AutoSize = true;
@@ -1073,229 +1337,42 @@
             this.VisibleHitboxes.UseSelectable = true;
             this.VisibleHitboxes.CheckedChanged += new System.EventHandler(this.VisibleHitboxesToggled);
             // 
-            // SprintingSpeedScaleSlider
+            // HitBoxScaleSlider
             // 
-            this.StyleExtender.SetApplyMetroTheme(this.SprintingSpeedScaleSlider, true);
-            this.SprintingSpeedScaleSlider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.SprintingSpeedScaleSlider.DecimalPlaces = 3;
-            this.SprintingSpeedScaleSlider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.SprintingSpeedScaleSlider.Increment = new decimal(new int[] {
-            1000,
+            this.StyleExtender.SetApplyMetroTheme(this.HitBoxScaleSlider, true);
+            this.HitBoxScaleSlider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.HitBoxScaleSlider.DecimalPlaces = 1;
+            this.HitBoxScaleSlider.Enabled = false;
+            this.HitBoxScaleSlider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.HitBoxScaleSlider.Increment = new decimal(new int[] {
+            1,
             0,
             0,
-            262144});
-            this.SprintingSpeedScaleSlider.Location = new System.Drawing.Point(635, 423);
-            this.SprintingSpeedScaleSlider.Maximum = new decimal(new int[] {
-            4,
+            65536});
+            this.HitBoxScaleSlider.Location = new System.Drawing.Point(95, 449);
+            this.HitBoxScaleSlider.Name = "HitBoxScaleSlider";
+            this.HitBoxScaleSlider.Size = new System.Drawing.Size(376, 20);
+            this.HitBoxScaleSlider.TabIndex = 134;
+            this.HitBoxScaleSlider.Tag = "";
+            this.ToolTipManager.SetToolTip(this.HitBoxScaleSlider, "How big should entity hitboxes be? (disabled until fixed)\r\n\r\nCTRL + Click = Incre" +
+        "ase Decimal Places\r\nALT + Click = Decrease Decimal Places");
+            this.HitBoxScaleSlider.Value = new decimal(new int[] {
+            5,
             0,
             0,
-            0});
-            this.SprintingSpeedScaleSlider.Name = "SprintingSpeedScaleSlider";
-            this.SprintingSpeedScaleSlider.Size = new System.Drawing.Size(340, 20);
-            this.SprintingSpeedScaleSlider.TabIndex = 128;
-            this.SprintingSpeedScaleSlider.Tag = "";
-            this.ToolTipManager.SetToolTip(this.SprintingSpeedScaleSlider, "How fast can the player sprint?\r\n\r\nCTRL + Click = Increase Decimal Places\r\nALT + " +
-        "Click = Decrease Decimal Places");
-            this.SprintingSpeedScaleSlider.Value = new decimal(new int[] {
-            1875,
-            0,
-            0,
-            196608});
-            this.SprintingSpeedScaleSlider.ValueChanged += new System.EventHandler(this.SprintingSpeedScaleSliderChanged);
-            this.SprintingSpeedScaleSlider.Click += new System.EventHandler(this.SliderClicked);
-            // 
-            // SprintingSpeedScale
-            // 
-            this.SprintingSpeedScale.AutoSize = true;
-            this.SprintingSpeedScale.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.SprintingSpeedScale.Location = new System.Drawing.Point(490, 424);
-            this.SprintingSpeedScale.Name = "SprintingSpeedScale";
-            this.SprintingSpeedScale.Size = new System.Drawing.Size(139, 19);
-            this.SprintingSpeedScale.TabIndex = 127;
-            this.SprintingSpeedScale.Tag = "";
-            this.SprintingSpeedScale.Text = "Sprinting Speed Scale:";
+            65536});
+            this.HitBoxScaleSlider.Click += new System.EventHandler(this.SliderClicked);
             // 
             // NnidEditorBtn
             // 
-            this.NnidEditorBtn.Location = new System.Drawing.Point(3, 342);
+            this.NnidEditorBtn.Location = new System.Drawing.Point(6, 342);
             this.NnidEditorBtn.Name = "NnidEditorBtn";
-            this.NnidEditorBtn.Size = new System.Drawing.Size(972, 23);
+            this.NnidEditorBtn.Size = new System.Drawing.Size(475, 23);
             this.NnidEditorBtn.TabIndex = 126;
             this.NnidEditorBtn.Tag = "";
             this.NnidEditorBtn.Text = "Nintendo Network Editor";
             this.NnidEditorBtn.UseSelectable = true;
             this.NnidEditorBtn.Click += new System.EventHandler(this.NnidEditorBtnClicked);
-            // 
-            // RiptideFlyingSpeedSlider
-            // 
-            this.StyleExtender.SetApplyMetroTheme(this.RiptideFlyingSpeedSlider, true);
-            this.RiptideFlyingSpeedSlider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.RiptideFlyingSpeedSlider.DecimalPlaces = 4;
-            this.RiptideFlyingSpeedSlider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.RiptideFlyingSpeedSlider.Increment = new decimal(new int[] {
-            1000,
-            0,
-            0,
-            262144});
-            this.RiptideFlyingSpeedSlider.Location = new System.Drawing.Point(633, 370);
-            this.RiptideFlyingSpeedSlider.Maximum = new decimal(new int[] {
-            5,
-            0,
-            0,
-            0});
-            this.RiptideFlyingSpeedSlider.Minimum = new decimal(new int[] {
-            5,
-            0,
-            0,
-            -2147483648});
-            this.RiptideFlyingSpeedSlider.Name = "RiptideFlyingSpeedSlider";
-            this.RiptideFlyingSpeedSlider.Size = new System.Drawing.Size(342, 20);
-            this.RiptideFlyingSpeedSlider.TabIndex = 125;
-            this.RiptideFlyingSpeedSlider.Tag = "";
-            this.ToolTipManager.SetToolTip(this.RiptideFlyingSpeedSlider, "How fast should the Riptide Enchentment go?\r\n\r\nCTRL + Click = Increase Decimal Pl" +
-        "aces\r\nALT + Click = Decrease Decimal Places");
-            this.RiptideFlyingSpeedSlider.Value = new decimal(new int[] {
-            25,
-            0,
-            0,
-            131072});
-            this.RiptideFlyingSpeedSlider.ValueChanged += new System.EventHandler(this.RiptideFlyingSpeedSliderChanged);
-            this.RiptideFlyingSpeedSlider.Click += new System.EventHandler(this.SliderClicked);
-            // 
-            // RiptideFlyingSpeed
-            // 
-            this.RiptideFlyingSpeed.AutoSize = true;
-            this.RiptideFlyingSpeed.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.RiptideFlyingSpeed.Location = new System.Drawing.Point(490, 371);
-            this.RiptideFlyingSpeed.Name = "RiptideFlyingSpeed";
-            this.RiptideFlyingSpeed.Size = new System.Drawing.Size(137, 19);
-            this.RiptideFlyingSpeed.TabIndex = 124;
-            this.RiptideFlyingSpeed.Tag = "";
-            this.RiptideFlyingSpeed.Text = "Riptide (flying) Speed:";
-            // 
-            // ReachSlider
-            // 
-            this.StyleExtender.SetApplyMetroTheme(this.ReachSlider, true);
-            this.ReachSlider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.ReachSlider.DecimalPlaces = 1;
-            this.ReachSlider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.ReachSlider.Increment = new decimal(new int[] {
-            1,
-            0,
-            0,
-            65536});
-            this.ReachSlider.Location = new System.Drawing.Point(56, 425);
-            this.ReachSlider.Maximum = new decimal(new int[] {
-            512,
-            0,
-            0,
-            0});
-            this.ReachSlider.Minimum = new decimal(new int[] {
-            512,
-            0,
-            0,
-            -2147483648});
-            this.ReachSlider.Name = "ReachSlider";
-            this.ReachSlider.Size = new System.Drawing.Size(414, 20);
-            this.ReachSlider.TabIndex = 121;
-            this.ReachSlider.Tag = "";
-            this.ToolTipManager.SetToolTip(this.ReachSlider, "How far can the player reach?\r\n\r\nCTRL + Click = Increase Decimal Places\r\nALT + Cl" +
-        "ick = Decrease Decimal Places");
-            this.ReachSlider.Value = new decimal(new int[] {
-            45,
-            0,
-            0,
-            65536});
-            this.ReachSlider.ValueChanged += new System.EventHandler(this.ReachSliderChanged);
-            this.ReachSlider.Click += new System.EventHandler(this.SliderClicked);
-            // 
-            // Reach
-            // 
-            this.Reach.AutoSize = true;
-            this.Reach.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.Reach.Location = new System.Drawing.Point(3, 423);
-            this.Reach.Name = "Reach";
-            this.Reach.Size = new System.Drawing.Size(47, 19);
-            this.Reach.TabIndex = 120;
-            this.Reach.Tag = "";
-            this.Reach.Text = "Reach:";
-            // 
-            // JumpHeightSlider
-            // 
-            this.StyleExtender.SetApplyMetroTheme(this.JumpHeightSlider, true);
-            this.JumpHeightSlider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.JumpHeightSlider.DecimalPlaces = 3;
-            this.JumpHeightSlider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.JumpHeightSlider.Increment = new decimal(new int[] {
-            5,
-            0,
-            0,
-            196608});
-            this.JumpHeightSlider.Location = new System.Drawing.Point(95, 399);
-            this.JumpHeightSlider.Maximum = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            this.JumpHeightSlider.Minimum = new decimal(new int[] {
-            10,
-            0,
-            0,
-            -2147483648});
-            this.JumpHeightSlider.Name = "JumpHeightSlider";
-            this.JumpHeightSlider.Size = new System.Drawing.Size(375, 20);
-            this.JumpHeightSlider.TabIndex = 119;
-            this.JumpHeightSlider.Tag = "";
-            this.ToolTipManager.SetToolTip(this.JumpHeightSlider, "How high should the player jump?\r\n\r\nCTRL + Click = Increase Decimal Places\r\nALT +" +
-        " Click = Decrease Decimal Places");
-            this.JumpHeightSlider.Value = new decimal(new int[] {
-            420,
-            0,
-            0,
-            196608});
-            this.JumpHeightSlider.ValueChanged += new System.EventHandler(this.JumpHeightSliderChanged);
-            this.JumpHeightSlider.Click += new System.EventHandler(this.SliderClicked);
-            // 
-            // JumpHeight
-            // 
-            this.JumpHeight.AutoSize = true;
-            this.JumpHeight.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.JumpHeight.Location = new System.Drawing.Point(3, 397);
-            this.JumpHeight.Name = "JumpHeight";
-            this.JumpHeight.Size = new System.Drawing.Size(86, 19);
-            this.JumpHeight.TabIndex = 118;
-            this.JumpHeight.Tag = "";
-            this.JumpHeight.Text = "Jump Height:";
-            // 
-            // EnchantmentLevelSlider
-            // 
-            this.StyleExtender.SetApplyMetroTheme(this.EnchantmentLevelSlider, true);
-            this.EnchantmentLevelSlider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.EnchantmentLevelSlider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.EnchantmentLevelSlider.Location = new System.Drawing.Point(130, 373);
-            this.EnchantmentLevelSlider.Maximum = new decimal(new int[] {
-            512,
-            0,
-            0,
-            0});
-            this.EnchantmentLevelSlider.Name = "EnchantmentLevelSlider";
-            this.EnchantmentLevelSlider.Size = new System.Drawing.Size(340, 20);
-            this.EnchantmentLevelSlider.TabIndex = 117;
-            this.EnchantmentLevelSlider.Tag = "";
-            this.ToolTipManager.SetToolTip(this.EnchantmentLevelSlider, "What enchantment level should the currently held item have?\r\n\r\nCTRL + Click = Inc" +
-        "rease Decimal Places\r\nALT + Click = Decrease Decimal Places");
-            this.EnchantmentLevelSlider.ValueChanged += new System.EventHandler(this.EnchantmentLevelSliderChanged);
-            // 
-            // EnchantmentLevel
-            // 
-            this.EnchantmentLevel.AutoSize = true;
-            this.EnchantmentLevel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.EnchantmentLevel.Location = new System.Drawing.Point(3, 371);
-            this.EnchantmentLevel.Name = "EnchantmentLevel";
-            this.EnchantmentLevel.Size = new System.Drawing.Size(120, 19);
-            this.EnchantmentLevel.TabIndex = 116;
-            this.EnchantmentLevel.Tag = "";
-            this.EnchantmentLevel.Text = "Enchantment Level:";
             // 
             // InsaneCriticalHits
             // 
@@ -1786,9 +1863,10 @@
             // Entities
             // 
             this.Entities.AutoSize = true;
+            this.Entities.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.Entities.Location = new System.Drawing.Point(483, 6);
             this.Entities.Name = "Entities";
-            this.Entities.Size = new System.Drawing.Size(49, 19);
+            this.Entities.Size = new System.Drawing.Size(53, 19);
             this.Entities.TabIndex = 46;
             this.Entities.Text = "Entities";
             // 
@@ -1879,6 +1957,7 @@
             // World
             // 
             this.World.AutoSize = true;
+            this.World.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.World.Location = new System.Drawing.Point(11, 6);
             this.World.Name = "World";
             this.World.Size = new System.Drawing.Size(45, 19);
@@ -2295,10 +2374,11 @@
             // RequiredPlayers
             // 
             this.RequiredPlayers.AutoSize = true;
+            this.RequiredPlayers.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.RequiredPlayers.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.RequiredPlayers.Location = new System.Drawing.Point(9, 459);
+            this.RequiredPlayers.Location = new System.Drawing.Point(3, 459);
             this.RequiredPlayers.Name = "RequiredPlayers";
-            this.RequiredPlayers.Size = new System.Drawing.Size(110, 19);
+            this.RequiredPlayers.Size = new System.Drawing.Size(113, 19);
             this.RequiredPlayers.TabIndex = 22;
             this.RequiredPlayers.Tag = "";
             this.RequiredPlayers.Text = "Required Players:";
@@ -2308,14 +2388,14 @@
             this.StyleExtender.SetApplyMetroTheme(this.RequiredPlayersSlider, true);
             this.RequiredPlayersSlider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.RequiredPlayersSlider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.RequiredPlayersSlider.Location = new System.Drawing.Point(125, 459);
+            this.RequiredPlayersSlider.Location = new System.Drawing.Point(122, 459);
             this.RequiredPlayersSlider.Maximum = new decimal(new int[] {
             512,
             0,
             0,
             0});
             this.RequiredPlayersSlider.Name = "RequiredPlayersSlider";
-            this.RequiredPlayersSlider.Size = new System.Drawing.Size(833, 20);
+            this.RequiredPlayersSlider.Size = new System.Drawing.Size(836, 20);
             this.RequiredPlayersSlider.TabIndex = 23;
             this.ToolTipManager.SetToolTip(this.RequiredPlayersSlider, "How many players do we need to start a match?");
             this.RequiredPlayersSlider.Value = new decimal(new int[] {
@@ -2363,10 +2443,11 @@
             // RefillInterval
             // 
             this.RefillInterval.AutoSize = true;
+            this.RefillInterval.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.RefillInterval.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.RefillInterval.Location = new System.Drawing.Point(4, 258);
+            this.RefillInterval.Location = new System.Drawing.Point(7, 261);
             this.RefillInterval.Name = "RefillInterval";
-            this.RefillInterval.Size = new System.Drawing.Size(123, 19);
+            this.RefillInterval.Size = new System.Drawing.Size(129, 19);
             this.RefillInterval.TabIndex = 28;
             this.RefillInterval.Tag = "";
             this.RefillInterval.Text = "Chest Refill Interval:";
@@ -2376,14 +2457,14 @@
             this.StyleExtender.SetApplyMetroTheme(this.RefillIntervalSlider, true);
             this.RefillIntervalSlider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.RefillIntervalSlider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.RefillIntervalSlider.Location = new System.Drawing.Point(133, 261);
+            this.RefillIntervalSlider.Location = new System.Drawing.Point(142, 261);
             this.RefillIntervalSlider.Maximum = new decimal(new int[] {
             120,
             0,
             0,
             0});
             this.RefillIntervalSlider.Name = "RefillIntervalSlider";
-            this.RefillIntervalSlider.Size = new System.Drawing.Size(824, 20);
+            this.RefillIntervalSlider.Size = new System.Drawing.Size(815, 20);
             this.RefillIntervalSlider.TabIndex = 29;
             this.ToolTipManager.SetToolTip(this.RefillIntervalSlider, "How long should chests take to refill? (in seconds)");
             this.RefillIntervalSlider.Value = new decimal(new int[] {
@@ -2461,10 +2542,11 @@
             // ringScoreB
             // 
             this.ringScoreB.AutoSize = true;
+            this.ringScoreB.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.ringScoreB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.ringScoreB.Location = new System.Drawing.Point(7, 55);
             this.ringScoreB.Name = "ringScoreB";
-            this.ringScoreB.Size = new System.Drawing.Size(112, 19);
+            this.ringScoreB.Size = new System.Drawing.Size(114, 19);
             this.ringScoreB.TabIndex = 35;
             this.ringScoreB.Tag = "";
             this.ringScoreB.Text = "Ring Score (Blue):";
@@ -2489,10 +2571,11 @@
             // ringScoreO
             // 
             this.ringScoreO.AutoSize = true;
+            this.ringScoreO.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.ringScoreO.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.ringScoreO.Location = new System.Drawing.Point(7, 29);
             this.ringScoreO.Name = "ringScoreO";
-            this.ringScoreO.Size = new System.Drawing.Size(132, 19);
+            this.ringScoreO.Size = new System.Drawing.Size(134, 19);
             this.ringScoreO.TabIndex = 33;
             this.ringScoreO.Tag = "";
             this.ringScoreO.Text = "Ring Score (Orange):";
@@ -2518,10 +2601,11 @@
             // ringScoreG
             // 
             this.ringScoreG.AutoSize = true;
+            this.ringScoreG.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.ringScoreG.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.ringScoreG.Location = new System.Drawing.Point(7, 3);
             this.ringScoreG.Name = "ringScoreG";
-            this.ringScoreG.Size = new System.Drawing.Size(122, 19);
+            this.ringScoreG.Size = new System.Drawing.Size(125, 19);
             this.ringScoreG.TabIndex = 31;
             this.ringScoreG.Tag = "";
             this.ringScoreG.Text = "Ring Score (Green):";
@@ -2575,6 +2659,7 @@
             // 
             this.gamemodeCmdLbl.AutoSize = true;
             this.gamemodeCmdLbl.BackColor = System.Drawing.Color.Transparent;
+            this.gamemodeCmdLbl.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.gamemodeCmdLbl.Location = new System.Drawing.Point(33, 168);
             this.gamemodeCmdLbl.Name = "gamemodeCmdLbl";
             this.gamemodeCmdLbl.Size = new System.Drawing.Size(83, 19);
@@ -2611,6 +2696,7 @@
             // worldCmdLbl
             // 
             this.worldCmdLbl.AutoSize = true;
+            this.worldCmdLbl.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.worldCmdLbl.Location = new System.Drawing.Point(777, 3);
             this.worldCmdLbl.Name = "worldCmdLbl";
             this.worldCmdLbl.Size = new System.Drawing.Size(45, 19);
@@ -2660,9 +2746,10 @@
             // playerCmdLbl
             // 
             this.playerCmdLbl.AutoSize = true;
+            this.playerCmdLbl.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.playerCmdLbl.Location = new System.Drawing.Point(591, 3);
             this.playerCmdLbl.Name = "playerCmdLbl";
-            this.playerCmdLbl.Size = new System.Drawing.Size(45, 19);
+            this.playerCmdLbl.Size = new System.Drawing.Size(46, 19);
             this.playerCmdLbl.TabIndex = 42;
             this.playerCmdLbl.Text = "Player";
             // 
@@ -2696,9 +2783,10 @@
             // timeCmdLbl
             // 
             this.timeCmdLbl.AutoSize = true;
+            this.timeCmdLbl.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.timeCmdLbl.Location = new System.Drawing.Point(405, 3);
             this.timeCmdLbl.Name = "timeCmdLbl";
-            this.timeCmdLbl.Size = new System.Drawing.Size(40, 19);
+            this.timeCmdLbl.Size = new System.Drawing.Size(41, 19);
             this.timeCmdLbl.TabIndex = 40;
             this.timeCmdLbl.Text = "/time";
             // 
@@ -2766,9 +2854,10 @@
             // enchantCmdLbl
             // 
             this.enchantCmdLbl.AutoSize = true;
+            this.enchantCmdLbl.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.enchantCmdLbl.Location = new System.Drawing.Point(219, 3);
             this.enchantCmdLbl.Name = "enchantCmdLbl";
-            this.enchantCmdLbl.Size = new System.Drawing.Size(59, 19);
+            this.enchantCmdLbl.Size = new System.Drawing.Size(63, 19);
             this.enchantCmdLbl.TabIndex = 38;
             this.enchantCmdLbl.Text = "/enchant";
             // 
@@ -2882,9 +2971,10 @@
             // giveCmdLabel
             // 
             this.giveCmdLabel.AutoSize = true;
+            this.giveCmdLabel.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.giveCmdLabel.Location = new System.Drawing.Point(33, 3);
             this.giveCmdLabel.Name = "giveCmdLabel";
-            this.giveCmdLabel.Size = new System.Drawing.Size(38, 19);
+            this.giveCmdLabel.Size = new System.Drawing.Size(39, 19);
             this.giveCmdLabel.TabIndex = 36;
             this.giveCmdLabel.Text = "/give";
             // 
@@ -3154,18 +3244,20 @@
             // ThemeLabel
             // 
             this.ThemeLabel.AutoSize = true;
-            this.ThemeLabel.Location = new System.Drawing.Point(7, 6);
+            this.ThemeLabel.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.ThemeLabel.Location = new System.Drawing.Point(6, 6);
             this.ThemeLabel.Name = "ThemeLabel";
-            this.ThemeLabel.Size = new System.Drawing.Size(52, 19);
+            this.ThemeLabel.Size = new System.Drawing.Size(53, 19);
             this.ThemeLabel.TabIndex = 30;
             this.ThemeLabel.Text = "Theme:";
             // 
             // ColorLabel
             // 
             this.ColorLabel.AutoSize = true;
+            this.ColorLabel.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.ColorLabel.Location = new System.Drawing.Point(7, 41);
             this.ColorLabel.Name = "ColorLabel";
-            this.ColorLabel.Size = new System.Drawing.Size(46, 19);
+            this.ColorLabel.Size = new System.Drawing.Size(45, 19);
             this.ColorLabel.TabIndex = 36;
             this.ColorLabel.Text = "Color:";
             // 
@@ -3262,6 +3354,7 @@
             this.HomeTile.Tag = "";
             this.HomeTile.Text = "Home";
             this.HomeTile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.HomeTile.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
             this.HomeTile.UseSelectable = true;
             this.HomeTile.UseTileImage = true;
             this.HomeTile.Click += new System.EventHandler(this.SwapTab);
@@ -3288,6 +3381,7 @@
             this.PlayersTile.Text = "Player(s)";
             this.PlayersTile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.PlayersTile.TileCount = 1;
+            this.PlayersTile.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
             this.PlayersTile.UseSelectable = true;
             this.PlayersTile.UseTileImage = true;
             this.PlayersTile.Click += new System.EventHandler(this.SwapTab);
@@ -3304,6 +3398,7 @@
             this.CommandsTile.Text = "Commands";
             this.CommandsTile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.CommandsTile.TileCount = 5;
+            this.CommandsTile.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
             this.CommandsTile.UseSelectable = true;
             this.CommandsTile.Click += new System.EventHandler(this.SwapTab);
             // 
@@ -3319,8 +3414,33 @@
             this.DebugTile.Text = "Debug";
             this.DebugTile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.DebugTile.TileCount = 7;
+            this.DebugTile.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
             this.DebugTile.UseSelectable = true;
             this.DebugTile.Click += new System.EventHandler(this.SwapTab);
+            // 
+            // RightClickMenu
+            // 
+            this.RightClickMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.IncreaseDecimalPlace,
+            this.DecreaseDecimalPlace});
+            this.RightClickMenu.Name = "RightClickMenu";
+            this.RightClickMenu.Size = new System.Drawing.Size(323, 48);
+            // 
+            // IncreaseDecimalPlace
+            // 
+            this.IncreaseDecimalPlace.Name = "IncreaseDecimalPlace";
+            this.IncreaseDecimalPlace.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
+            | System.Windows.Forms.Keys.Oemplus)));
+            this.IncreaseDecimalPlace.Size = new System.Drawing.Size(322, 22);
+            this.IncreaseDecimalPlace.Text = "Increase decimal place";
+            // 
+            // DecreaseDecimalPlace
+            // 
+            this.DecreaseDecimalPlace.Name = "DecreaseDecimalPlace";
+            this.DecreaseDecimalPlace.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
+            | System.Windows.Forms.Keys.OemMinus)));
+            this.DecreaseDecimalPlace.Size = new System.Drawing.Size(322, 22);
+            this.DecreaseDecimalPlace.Text = "Decrease decimal place";
             // 
             // MainForm
             // 
@@ -3342,7 +3462,7 @@
             this.Name = "MainForm";
             this.Resizable = false;
             this.Style = MetroFramework.MetroColorStyle.Default;
-            this.Text = "Minecraft Wii U Mod Injector";
+            this.Text = "Minecraft: Wii U Mod Injector";
             this.Theme = MetroFramework.MetroThemeStyle.Default;
             this.TransparencyKey = System.Drawing.Color.Empty;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Exit);
@@ -3352,17 +3472,18 @@
             this.MainTab.PerformLayout();
             this.playersTab.ResumeLayout(false);
             this.playersTab.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PotionAmplifierSlider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.FrictionSlider)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.FieldOfViewSplitSlider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.playerModelScaleSlider)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.FieldOfViewSlider)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.HitBoxScaleSlider)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.WalkingSpeedScaleSlider)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SprintingSpeedScaleSlider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FieldOfViewSplitSlider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.RiptideFlyingSpeedSlider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SprintingSpeedScaleSlider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.EnchantmentLevelSlider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.WalkingSpeedScaleSlider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ReachSlider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.JumpHeightSlider)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.EnchantmentLevelSlider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FieldOfViewSlider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.HitBoxScaleSlider)).EndInit();
             this.worldTab.ResumeLayout(false);
             this.worldTab.PerformLayout();
             this.entitiesPnl.ResumeLayout(false);
@@ -3399,6 +3520,7 @@
             this.debugTab.ResumeLayout(false);
             this.debugTab.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.StyleMngr)).EndInit();
+            this.RightClickMenu.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -3596,5 +3718,11 @@
         public MetroFramework.Controls.MetroCheckBox IgnitedCreepers;
         public MetroFramework.Controls.MetroCheckBox ZombieTower;
         public MetroFramework.Controls.MetroCheckBox SunProofMobs;
+        private MetroFramework.Controls.MetroContextMenu RightClickMenu;
+        private System.Windows.Forms.ToolStripMenuItem IncreaseDecimalPlace;
+        private System.Windows.Forms.ToolStripMenuItem DecreaseDecimalPlace;
+        public System.Windows.Forms.NumericUpDown PotionAmplifierSlider;
+        public MetroFramework.Controls.MetroLabel PotionAmplifier;
+        public MetroFramework.Controls.MetroButton PlayerOptionsBtn;
     }
 }

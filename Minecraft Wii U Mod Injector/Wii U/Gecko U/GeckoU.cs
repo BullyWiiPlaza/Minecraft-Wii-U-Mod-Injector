@@ -773,6 +773,22 @@ namespace Minecraft_Wii_U_Mod_Injector.Wii_U.Gecko_U
 
             return versionHash;
         }
+        /// <summary>
+        /// Reads the current Wii U firmware version
+        /// </summary>
+        /// <returns>Wii U Firmware version</returns>
+        public uint ReadOSVersion()
+        {
+            SendCommand(GeckoUCommands.Command.CommandGetOsVersion);
+
+            var response = new byte[4];
+            Tcp.Read(response, 4, out _);
+
+            Array.Reverse(response);
+            var osVer = BitConverter.ToUInt32(response, 0);
+
+            return osVer;
+        }
 
         public string ReadAccountName(uint address)
         {

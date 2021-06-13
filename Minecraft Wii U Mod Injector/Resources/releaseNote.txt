@@ -21,7 +21,7 @@ This update adds a ton of new mods with a small amount of additions/fixes
 - Entities / World > Ignited Creepers
 - Entities / World > Zombie Tower
 - Entities / World > Sun Proof Mobs
-- Generak Game > UI Color Picker 
+- General Game > UI Color Picker 
 
 
 + General Additions & Updates:

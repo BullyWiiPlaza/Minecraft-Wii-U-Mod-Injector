@@ -6,6 +6,7 @@ using Minecraft_Wii_U_Mod_Injector.Forms;
 using Minecraft_Wii_U_Mod_Injector.Helpers.Files;
 using System;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 using Minecraft_Wii_U_Mod_Injector.Helpers.Win_Forms;
@@ -39,10 +40,7 @@ namespace Minecraft_Wii_U_Mod_Injector
         {
             string[] mcIds = new[] { "50000101d7500", "50000101d9d00", "50000101dbe00" };
 
-            if (mcIds.Contains(GeckoU.ReadTitleId()))
-                return true;
-            else
-                return false;
+            return mcIds.Contains(GeckoU.ReadTitleId());
         }
 
         private bool _tooHighWarn;
@@ -112,7 +110,10 @@ namespace Minecraft_Wii_U_Mod_Injector
             new Setup(this);
 
             Setup.SetupInjector();
-
+            Miscellaneous.SetDoubleBuffered(BuildNotesBox);
+            Miscellaneous.SetDoubleBuffered(WiiUIpv4Box);
+            Miscellaneous.SetDoubleBuffered(MainTab);
+            Miscellaneous.SetDoubleBuffered(MainTabs);
             ValidateEnteredIpAddress();
         }
 
@@ -190,13 +191,14 @@ namespace Minecraft_Wii_U_Mod_Injector
                         break;
 
                     case TimeoutException:
-                        Messaging.Show(MessageBoxIcon.Error, "Couldn't connect to your Wii U, please check that:\nYou entered the correct IP Address\nTCPGecko is running from the Homebrew Launcher\nYour network connection might not be stable");
+                    case IOException:
+                        Messaging.Show(MessageBoxIcon.Error, "Couldn't connect to your Wii U, please check that:\nYou entered the correct IP Address\nTCPGecko is running from the Homebrew Launcher\nYour network connection might not be stable\nPlease do not report this as a bug, we cannot fix your internet.");
                         Exceptions.LogError(error, "Unable to Connect to the Wii U, connection timed-out", false, false);
                         States.SwapState(States.StatesIds.Disconnected);
                         break;
                 }
 
-                Exceptions.LogError(error, "Unable to Connect to the Wii U", false, true);
+                Exceptions.LogError(error, "Unable to Connect to the Wii U, unknown error", false, false);
                 States.SwapState(States.StatesIds.Disconnected);
             }
         }
@@ -350,6 +352,14 @@ namespace Minecraft_Wii_U_Mod_Injector
         private void NnidEditorBtnClicked(object sender, EventArgs e)
         {
             new NnidEditor(this).ShowDialog();
+        }
+
+        private void PlayerOptionsBtnClicked(object sender, EventArgs e)
+        {
+            if (IsPointerLoaded())
+                new PlayerOptions(this).Show();
+            else
+                Messaging.Show("Player not found, please load into a world before using Player Options.");
         }
 
         private void ItemIdHelpBtnClicked(object sender, EventArgs e)
@@ -817,6 +827,18 @@ namespace Minecraft_Wii_U_Mod_Injector
         {
             GeckoU.WriteUIntToggle(0x02A3D808, Off, On, SunProofMobs.Checked);
         }
+
+        private void PotionAmplifierSliderChanged(object sender, EventArgs e)
+        {
+            if (PotionAmplifierSlider.Value == 0)
+            {
+                GeckoU.WriteUInt(0x02692DF0, 0x80630008);
+                return;
+            }
+
+            GeckoU.WriteUInt(0x02692DF0, GeckoU.Mix(0x38600000, PotionAmplifierSlider.Value));
+        }
+
         #region commands
         private void GiveCommandBtnClicked(object sender, EventArgs e)
         {

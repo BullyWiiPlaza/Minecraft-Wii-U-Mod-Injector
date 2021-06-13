@@ -252,6 +252,12 @@
     <Compile Include="Forms\FAQ.Designer.cs">
       <DependentUpon>FAQ.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\PlayerOptions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PlayerOptions.Designer.cs">
+      <DependentUpon>PlayerOptions.cs</DependentUpon>
+    </Compile>
     <Compile Include="Wii U\Gecko U\GeckoU.cs" />
     <Compile Include="Wii U\Gecko U\GeckoUByteSwap.cs" />
     <Compile Include="Wii U\Gecko U\GeckoUCommands.cs" />
@@ -303,6 +309,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MapTextEditor.resx">
       <DependentUpon>MapTextEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PlayerOptions.resx">
+      <DependentUpon>PlayerOptions.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\NNIDEditor.resx">
       <DependentUpon>NNIDEditor.cs</DependentUpon>

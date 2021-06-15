@@ -13,7 +13,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
     {
         public static MainForm Injector = new();
 
-        public static string LocalVer = "v5.1.7";
+        public static string LocalVer = "v5.1.8";
         public static string GitVer = string.Empty;
         public static bool PreRelease;
 
@@ -26,7 +26,13 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
         {
             try
             {
+#if !DEBUG
                 RetrieveGitVersion();
+#endif
+
+#if DEBUG
+                LocalVer = LocalVer + " (Debugging)";
+#endif
 
                 Injector.BuildNotesBox.Text = Properties.Resources.releaseNotes;
                 Injector.BuildVerTitleLbl.Text = "Patch Notes for " + LocalVer;

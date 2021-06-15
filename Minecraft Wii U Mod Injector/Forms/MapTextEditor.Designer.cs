@@ -53,7 +53,7 @@
             // 
             // 
             this.MapText.CustomButton.Image = null;
-            this.MapText.CustomButton.Location = new System.Drawing.Point(245, 1);
+            this.MapText.CustomButton.Location = new System.Drawing.Point(437, 1);
             this.MapText.CustomButton.Name = "";
             this.MapText.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.MapText.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -71,7 +71,7 @@
             this.MapText.SelectionLength = 0;
             this.MapText.SelectionStart = 0;
             this.MapText.ShortcutsEnabled = true;
-            this.MapText.Size = new System.Drawing.Size(267, 23);
+            this.MapText.Size = new System.Drawing.Size(459, 23);
             this.MapText.TabIndex = 1;
             this.MapText.UseSelectable = true;
             this.MapText.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -81,7 +81,7 @@
             // 
             this.SetMapText.Location = new System.Drawing.Point(92, 99);
             this.SetMapText.Name = "SetMapText";
-            this.SetMapText.Size = new System.Drawing.Size(166, 23);
+            this.SetMapText.Size = new System.Drawing.Size(358, 23);
             this.SetMapText.TabIndex = 2;
             this.SetMapText.Text = "Set";
             this.SetMapText.UseSelectable = true;
@@ -93,7 +93,7 @@
             // 
             // variablesBtn
             // 
-            this.variablesBtn.Location = new System.Drawing.Point(264, 99);
+            this.variablesBtn.Location = new System.Drawing.Point(456, 99);
             this.variablesBtn.Name = "variablesBtn";
             this.variablesBtn.Size = new System.Drawing.Size(95, 23);
             this.variablesBtn.TabIndex = 3;
@@ -105,7 +105,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(368, 133);
+            this.ClientSize = new System.Drawing.Size(574, 133);
             this.Controls.Add(this.variablesBtn);
             this.Controls.Add(this.SetMapText);
             this.Controls.Add(this.MapText);
@@ -114,9 +114,8 @@
             this.MaximizeBox = false;
             this.Name = "MapTextEditor";
             this.Resizable = false;
-            this.Text = "Map Text Editor";
+            this.Text = "Minecraft: Wii U Mod Injector - Map Text Editor";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Exiting);
-            this.Load += new System.EventHandler(this.MapTextEditor_Load);
             ((System.ComponentModel.ISupportInitialize)(this.StyleMngr)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.IO;
 using System.Windows.Forms;
 using MetroFramework.Forms;
@@ -37,6 +38,13 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms
             if (!Directory.Exists(_langRootDir))
                 Directory.CreateDirectory(_langRootDir);
 
+            if (Settings.EqualsTo("SeenLangMngr", "False", "Display") || !Settings.Exists("SeenLangMngr", "Display"))
+                Messaging.Show(
+                    "Welcome to the language manager, here you can apply or create new language files for the Mod Injector!" +
+                    "\nYou are not limited to only making new languages, you can freely customize any text to your liking!");
+
+            Settings.Write("SeenLangMngr", "True", "Display");
+
             LoadInstalledLangs();
 
             DiscordRp.SetPresence(_iw.IsConnected ? "Connected" : "Disconnected", "Language Manager");
@@ -60,7 +68,8 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms
 
                         LanguagesList.Rows[index].Cells[0].Value = langFile.Read("name", "meta");
                         LanguagesList.Rows[index].Cells[1].Value = langFile.Read("description", "meta");
-                        LanguagesList.Rows[index].Cells[2].Value = file.FullName;
+                        LanguagesList.Rows[index].Cells[2].Value = langFile.Read("authors", "meta");
+                        LanguagesList.Rows[index].Cells[3].Value = file.FullName;
 
                         index++;
                     }
@@ -77,6 +86,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms
             var templateFile = new IniFile(_langRootDir + "template.ini");
 
             templateFile.Write("name", "Template Language", "meta");
+            templateFile.Write("authors", "Kashiiera", "meta");
             templateFile.Write("description", "Template Language file to start making a new language file", "meta");
 
             foreach (var c in Miscellaneous.AllMetroControls())
@@ -87,7 +97,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms
 
         private void ApplyLanguage(object sender, DataGridViewCellEventArgs e)
         {
-            var langFile = new IniFile(LanguagesList.Rows[e.RowIndex].Cells[2].Value.ToString());
+            var langFile = new IniFile(LanguagesList.Rows[e.RowIndex].Cells[3].Value.ToString());
 
             foreach (Control c in _iw.Controls)
             {
@@ -120,6 +130,26 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms
             }
 
             Messaging.Show("Succesfully changed language to \"" + langFile.Read("name", "meta") + "\"!");
+        }
+
+        private void DownloadTileClicked(object sender, EventArgs e)
+        {
+            Process.Start("https://github.com/Kashiiera/Minecraft-Wii-U-Mod-Injector-Languages");
+        }
+
+        private void RefreshTileClicked(object sender, EventArgs e)
+        {
+            if (LanguagesList.Rows.Count > 0)
+            {
+                LanguagesList.Rows.Clear();
+            }
+
+            LoadInstalledLangs();
+        }
+
+        private void Exiting(object sender, FormClosingEventArgs e)
+        {
+            DiscordRp.SetPresence(_iw.IsConnected ? "Connected" : "Disconnected", "Settings tab");
         }
     }
 }

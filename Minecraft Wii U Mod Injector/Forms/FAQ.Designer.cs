@@ -77,7 +77,7 @@
             this.Name = "Faq";
             this.Resizable = false;
             this.Style = MetroFramework.MetroColorStyle.Default;
-            this.Text = "Frequently Asked Questions";
+            this.Text = "Minecraft: Wii U Mod Injector - Frequently Asked Questions";
             this.Theme = MetroFramework.MetroThemeStyle.Default;
             ((System.ComponentModel.ISupportInitialize)(this.StyleMngr)).EndInit();
             this.ResumeLayout(false);

@@ -55,7 +55,7 @@
             // 
             // 
             this.NNIDNameBox.CustomButton.Image = null;
-            this.NNIDNameBox.CustomButton.Location = new System.Drawing.Point(318, 1);
+            this.NNIDNameBox.CustomButton.Location = new System.Drawing.Point(437, 1);
             this.NNIDNameBox.CustomButton.Name = "";
             this.NNIDNameBox.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.NNIDNameBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -64,7 +64,7 @@
             this.NNIDNameBox.CustomButton.UseSelectable = true;
             this.NNIDNameBox.CustomButton.Visible = false;
             this.NNIDNameBox.Lines = new string[0];
-            this.NNIDNameBox.Location = new System.Drawing.Point(91, 97);
+            this.NNIDNameBox.Location = new System.Drawing.Point(77, 97);
             this.NNIDNameBox.MaxLength = 32;
             this.NNIDNameBox.Name = "NNIDNameBox";
             this.NNIDNameBox.PasswordChar = '\0';
@@ -73,7 +73,7 @@
             this.NNIDNameBox.SelectionLength = 0;
             this.NNIDNameBox.SelectionStart = 0;
             this.NNIDNameBox.ShortcutsEnabled = true;
-            this.NNIDNameBox.Size = new System.Drawing.Size(340, 23);
+            this.NNIDNameBox.Size = new System.Drawing.Size(459, 23);
             this.NNIDNameBox.TabIndex = 1;
             this.ToolTips.SetToolTip(this.NNIDNameBox, "The name to set");
             this.NNIDNameBox.UseSelectable = true;
@@ -82,9 +82,9 @@
             // 
             // NNIDChangeBtn
             // 
-            this.NNIDChangeBtn.Location = new System.Drawing.Point(91, 126);
+            this.NNIDChangeBtn.Location = new System.Drawing.Point(77, 126);
             this.NNIDChangeBtn.Name = "NNIDChangeBtn";
-            this.NNIDChangeBtn.Size = new System.Drawing.Size(439, 23);
+            this.NNIDChangeBtn.Size = new System.Drawing.Size(558, 23);
             this.NNIDChangeBtn.TabIndex = 2;
             this.NNIDChangeBtn.Text = "Change";
             this.ToolTips.SetToolTip(this.NNIDChangeBtn, "Changes your name to the given one");
@@ -99,7 +99,7 @@
             // 
             this.WarningLbl.AutoSize = true;
             this.WarningLbl.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.WarningLbl.Location = new System.Drawing.Point(23, 60);
+            this.WarningLbl.Location = new System.Drawing.Point(80, 60);
             this.WarningLbl.Name = "WarningLbl";
             this.WarningLbl.Size = new System.Drawing.Size(507, 25);
             this.WarningLbl.Style = MetroFramework.MetroColorStyle.Red;
@@ -115,7 +115,7 @@
             // 
             // readNameBtn
             // 
-            this.readNameBtn.Location = new System.Drawing.Point(437, 97);
+            this.readNameBtn.Location = new System.Drawing.Point(542, 97);
             this.readNameBtn.Name = "readNameBtn";
             this.readNameBtn.Size = new System.Drawing.Size(93, 23);
             this.readNameBtn.TabIndex = 6;
@@ -124,11 +124,11 @@
             this.readNameBtn.UseSelectable = true;
             this.readNameBtn.Click += new System.EventHandler(this.ReadNameBtnClicked);
             // 
-            // NNIDEditor
+            // NnidEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(550, 168);
+            this.ClientSize = new System.Drawing.Size(658, 168);
             this.Controls.Add(this.readNameBtn);
             this.Controls.Add(this.WarningLbl);
             this.Controls.Add(this.NNIDChangeBtn);
@@ -138,7 +138,7 @@
             this.MaximizeBox = false;
             this.Name = "NnidEditor";
             this.Resizable = false;
-            this.Text = "Nintendo Network Editor";
+            this.Text = "Minecraft: Wii U Mod Injector - Nintendo Network Editor";
             this.TopMost = true;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Exiting);
             this.Load += new System.EventHandler(this.Init);

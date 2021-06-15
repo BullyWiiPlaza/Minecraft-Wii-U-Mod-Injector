@@ -34,56 +34,23 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LanguageMngr));
             this.StyleMngr = new MetroFramework.Components.MetroStyleManager(this.components);
-            this.MainTabs = new MetroFramework.Controls.MetroTabControl();
-            this.InstalledLangTab = new MetroFramework.Controls.MetroTabPage();
             this.LanguagesList = new MetroFramework.Controls.MetroGrid();
-            this.DownloadableLangTab = new MetroFramework.Controls.MetroTabPage();
-            this.metroTile1 = new MetroFramework.Controls.MetroTile();
-            this.metroTile2 = new MetroFramework.Controls.MetroTile();
-            this.ExportTemplateBtn = new MetroFramework.Controls.MetroButton();
-            this.metroButton1 = new MetroFramework.Controls.MetroButton();
-            this.FIlePathBox = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DescriptionBox = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DownloadTile = new MetroFramework.Controls.MetroTile();
+            this.ExportTile = new MetroFramework.Controls.MetroTile();
+            this.RefreshTile = new MetroFramework.Controls.MetroTile();
+            this.EmptyTile = new MetroFramework.Controls.MetroTile();
+            this.ToolTips = new MetroFramework.Components.MetroToolTip();
             this.NameBox = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DescriptionBox = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AuthorBox = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FIlePathBox = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.StyleMngr)).BeginInit();
-            this.MainTabs.SuspendLayout();
-            this.InstalledLangTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LanguagesList)).BeginInit();
             this.SuspendLayout();
             // 
             // StyleMngr
             // 
             this.StyleMngr.Owner = this;
-            // 
-            // MainTabs
-            // 
-            this.MainTabs.Alignment = System.Windows.Forms.TabAlignment.Bottom;
-            this.MainTabs.Controls.Add(this.InstalledLangTab);
-            this.MainTabs.Controls.Add(this.DownloadableLangTab);
-            this.MainTabs.ItemSize = new System.Drawing.Size(446, 1);
-            this.MainTabs.Location = new System.Drawing.Point(218, 63);
-            this.MainTabs.Name = "MainTabs";
-            this.MainTabs.SelectedIndex = 0;
-            this.MainTabs.Size = new System.Drawing.Size(907, 440);
-            this.MainTabs.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
-            this.MainTabs.TabIndex = 46;
-            this.MainTabs.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.MainTabs.UseSelectable = true;
-            // 
-            // InstalledLangTab
-            // 
-            this.InstalledLangTab.Controls.Add(this.LanguagesList);
-            this.InstalledLangTab.HorizontalScrollbarBarColor = true;
-            this.InstalledLangTab.HorizontalScrollbarHighlightOnWheel = false;
-            this.InstalledLangTab.HorizontalScrollbarSize = 10;
-            this.InstalledLangTab.Location = new System.Drawing.Point(4, 4);
-            this.InstalledLangTab.Name = "InstalledLangTab";
-            this.InstalledLangTab.Size = new System.Drawing.Size(899, 431);
-            this.InstalledLangTab.TabIndex = 0;
-            this.InstalledLangTab.Text = "Installed Language(\'s)";
-            this.InstalledLangTab.VerticalScrollbarBarColor = true;
-            this.InstalledLangTab.VerticalScrollbarHighlightOnWheel = false;
-            this.InstalledLangTab.VerticalScrollbarSize = 10;
             // 
             // LanguagesList
             // 
@@ -106,6 +73,7 @@
             this.LanguagesList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.NameBox,
             this.DescriptionBox,
+            this.AuthorBox,
             this.FIlePathBox});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -118,7 +86,7 @@
             this.LanguagesList.EnableHeadersVisualStyles = false;
             this.LanguagesList.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.LanguagesList.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.LanguagesList.Location = new System.Drawing.Point(0, 1);
+            this.LanguagesList.Location = new System.Drawing.Point(175, 67);
             this.LanguagesList.Name = "LanguagesList";
             this.LanguagesList.ReadOnly = true;
             this.LanguagesList.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -136,69 +104,81 @@
             this.LanguagesList.ShowCellErrors = false;
             this.LanguagesList.ShowEditingIcon = false;
             this.LanguagesList.ShowRowErrors = false;
-            this.LanguagesList.Size = new System.Drawing.Size(899, 431);
+            this.LanguagesList.Size = new System.Drawing.Size(946, 438);
             this.LanguagesList.TabIndex = 2;
-            this.LanguagesList.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ApplyLanguage);
+            this.LanguagesList.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ApplyLanguage);
             // 
-            // DownloadableLangTab
+            // DownloadTile
             // 
-            this.DownloadableLangTab.HorizontalScrollbarBarColor = true;
-            this.DownloadableLangTab.HorizontalScrollbarHighlightOnWheel = false;
-            this.DownloadableLangTab.HorizontalScrollbarSize = 10;
-            this.DownloadableLangTab.Location = new System.Drawing.Point(4, 4);
-            this.DownloadableLangTab.Name = "DownloadableLangTab";
-            this.DownloadableLangTab.Size = new System.Drawing.Size(899, 431);
-            this.DownloadableLangTab.TabIndex = 1;
-            this.DownloadableLangTab.Text = "Downloadable Language(\'s)";
-            this.DownloadableLangTab.VerticalScrollbarBarColor = true;
-            this.DownloadableLangTab.VerticalScrollbarHighlightOnWheel = false;
-            this.DownloadableLangTab.VerticalScrollbarSize = 10;
+            this.DownloadTile.ActiveControl = null;
+            this.DownloadTile.Location = new System.Drawing.Point(0, 67);
+            this.DownloadTile.Name = "DownloadTile";
+            this.DownloadTile.PaintTileCount = false;
+            this.DownloadTile.Size = new System.Drawing.Size(169, 60);
+            this.DownloadTile.TabIndex = 47;
+            this.DownloadTile.Text = "Download Languages";
+            this.DownloadTile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.DownloadTile.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
+            this.ToolTips.SetToolTip(this.DownloadTile, "Redirects you to the official repostiry for language files");
+            this.DownloadTile.UseSelectable = true;
+            this.DownloadTile.Click += new System.EventHandler(this.DownloadTileClicked);
             // 
-            // metroTile1
+            // ExportTile
             // 
-            this.metroTile1.ActiveControl = null;
-            this.metroTile1.Location = new System.Drawing.Point(23, 67);
-            this.metroTile1.Name = "metroTile1";
-            this.metroTile1.Size = new System.Drawing.Size(189, 60);
-            this.metroTile1.TabIndex = 47;
-            this.metroTile1.Text = "Installed Language(\'s)";
-            this.metroTile1.UseSelectable = true;
+            this.ExportTile.ActiveControl = null;
+            this.ExportTile.Location = new System.Drawing.Point(0, 127);
+            this.ExportTile.Name = "ExportTile";
+            this.ExportTile.PaintTileCount = false;
+            this.ExportTile.Size = new System.Drawing.Size(169, 60);
+            this.ExportTile.TabIndex = 52;
+            this.ExportTile.Text = "Export Template";
+            this.ExportTile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.ExportTile.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
+            this.ToolTips.SetToolTip(this.ExportTile, "Exports a file with all control texts so\r\nyou can make your own language file");
+            this.ExportTile.UseSelectable = true;
+            this.ExportTile.Click += new System.EventHandler(this.ExportTemplateBtnClicked);
             // 
-            // metroTile2
+            // RefreshTile
             // 
-            this.metroTile2.ActiveControl = null;
-            this.metroTile2.Location = new System.Drawing.Point(23, 133);
-            this.metroTile2.Name = "metroTile2";
-            this.metroTile2.Size = new System.Drawing.Size(189, 60);
-            this.metroTile2.TabIndex = 48;
-            this.metroTile2.Text = "Downloadable Language(\'s)";
-            this.metroTile2.UseSelectable = true;
+            this.RefreshTile.ActiveControl = null;
+            this.RefreshTile.Location = new System.Drawing.Point(0, 187);
+            this.RefreshTile.Name = "RefreshTile";
+            this.RefreshTile.PaintTileCount = false;
+            this.RefreshTile.Size = new System.Drawing.Size(169, 60);
+            this.RefreshTile.TabIndex = 53;
+            this.RefreshTile.Text = "Refresh";
+            this.RefreshTile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.RefreshTile.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
+            this.ToolTips.SetToolTip(this.RefreshTile, "Refreshes the Language List");
+            this.RefreshTile.UseSelectable = true;
+            this.RefreshTile.Click += new System.EventHandler(this.RefreshTileClicked);
             // 
-            // ExportTemplateBtn
+            // EmptyTile
             // 
-            this.ExportTemplateBtn.Location = new System.Drawing.Point(23, 199);
-            this.ExportTemplateBtn.Name = "ExportTemplateBtn";
-            this.ExportTemplateBtn.Size = new System.Drawing.Size(189, 23);
-            this.ExportTemplateBtn.TabIndex = 49;
-            this.ExportTemplateBtn.Text = "Export Template";
-            this.ExportTemplateBtn.UseSelectable = true;
-            this.ExportTemplateBtn.Click += new System.EventHandler(this.ExportTemplateBtnClicked);
+            this.EmptyTile.ActiveControl = null;
+            this.EmptyTile.Enabled = false;
+            this.EmptyTile.Location = new System.Drawing.Point(0, 247);
+            this.EmptyTile.Name = "EmptyTile";
+            this.EmptyTile.PaintTileCount = false;
+            this.EmptyTile.Size = new System.Drawing.Size(169, 258);
+            this.EmptyTile.TabIndex = 54;
+            this.EmptyTile.Text = "\r\n";
+            this.EmptyTile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.EmptyTile.UseSelectable = true;
             // 
-            // metroButton1
+            // ToolTips
             // 
-            this.metroButton1.Location = new System.Drawing.Point(23, 228);
-            this.metroButton1.Name = "metroButton1";
-            this.metroButton1.Size = new System.Drawing.Size(189, 23);
-            this.metroButton1.TabIndex = 50;
-            this.metroButton1.Text = "Refresh";
-            this.metroButton1.UseSelectable = true;
+            this.ToolTips.Style = MetroFramework.MetroColorStyle.Default;
+            this.ToolTips.StyleManager = null;
+            this.ToolTips.Theme = MetroFramework.MetroThemeStyle.Default;
             // 
-            // FIlePathBox
+            // NameBox
             // 
-            this.FIlePathBox.HeaderText = "File Path";
-            this.FIlePathBox.Name = "FIlePathBox";
-            this.FIlePathBox.ReadOnly = true;
-            this.FIlePathBox.Visible = false;
+            this.NameBox.HeaderText = "Name";
+            this.NameBox.Name = "NameBox";
+            this.NameBox.ReadOnly = true;
+            this.NameBox.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.NameBox.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // DescriptionBox
             // 
@@ -209,35 +189,40 @@
             this.DescriptionBox.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.DescriptionBox.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
-            // NameBox
+            // AuthorBox
             // 
-            this.NameBox.HeaderText = "Name";
-            this.NameBox.Name = "NameBox";
-            this.NameBox.ReadOnly = true;
-            this.NameBox.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.NameBox.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.AuthorBox.HeaderText = "Author(\'s)";
+            this.AuthorBox.Name = "AuthorBox";
+            this.AuthorBox.ReadOnly = true;
+            this.AuthorBox.Width = 200;
+            // 
+            // FIlePathBox
+            // 
+            this.FIlePathBox.HeaderText = "File Path";
+            this.FIlePathBox.Name = "FIlePathBox";
+            this.FIlePathBox.ReadOnly = true;
+            this.FIlePathBox.Visible = false;
             // 
             // LanguageMngr
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1120, 505);
-            this.Controls.Add(this.metroButton1);
-            this.Controls.Add(this.ExportTemplateBtn);
-            this.Controls.Add(this.metroTile2);
-            this.Controls.Add(this.metroTile1);
-            this.Controls.Add(this.MainTabs);
+            this.Controls.Add(this.EmptyTile);
+            this.Controls.Add(this.RefreshTile);
+            this.Controls.Add(this.ExportTile);
+            this.Controls.Add(this.LanguagesList);
+            this.Controls.Add(this.DownloadTile);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "LanguageMngr";
             this.Resizable = false;
             this.Style = MetroFramework.MetroColorStyle.Default;
-            this.Text = "Language Manager";
+            this.Text = "Minecraft: Wii U Mod Injector - Language Manager";
             this.Theme = MetroFramework.MetroThemeStyle.Default;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Exiting);
             this.Load += new System.EventHandler(this.Init);
             ((System.ComponentModel.ISupportInitialize)(this.StyleMngr)).EndInit();
-            this.MainTabs.ResumeLayout(false);
-            this.InstalledLangTab.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.LanguagesList)).EndInit();
             this.ResumeLayout(false);
 
@@ -245,16 +230,15 @@
 
         #endregion
         private MetroFramework.Components.MetroStyleManager StyleMngr;
-        private MetroFramework.Controls.MetroTile metroTile2;
-        private MetroFramework.Controls.MetroTile metroTile1;
-        private MetroFramework.Controls.MetroTabControl MainTabs;
-        private MetroFramework.Controls.MetroTabPage InstalledLangTab;
+        private MetroFramework.Controls.MetroTile DownloadTile;
         private MetroFramework.Controls.MetroGrid LanguagesList;
-        private MetroFramework.Controls.MetroTabPage DownloadableLangTab;
-        private MetroFramework.Controls.MetroButton ExportTemplateBtn;
-        private MetroFramework.Controls.MetroButton metroButton1;
+        private MetroFramework.Controls.MetroTile EmptyTile;
+        private MetroFramework.Controls.MetroTile RefreshTile;
+        private MetroFramework.Controls.MetroTile ExportTile;
+        private MetroFramework.Components.MetroToolTip ToolTips;
         private System.Windows.Forms.DataGridViewTextBoxColumn NameBox;
         private System.Windows.Forms.DataGridViewTextBoxColumn DescriptionBox;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AuthorBox;
         private System.Windows.Forms.DataGridViewTextBoxColumn FIlePathBox;
     }
 }

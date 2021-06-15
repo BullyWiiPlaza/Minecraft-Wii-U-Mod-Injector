@@ -34,7 +34,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms
 
         private void Exiting(object sender, FormClosingEventArgs e)
         {
-            DiscordRp.SetPresence("Connected", new MainForm().playersTab.Text + " tab");
+            DiscordRp.SetPresence("Connected", "Player('s) tab");
         }
     }
 }

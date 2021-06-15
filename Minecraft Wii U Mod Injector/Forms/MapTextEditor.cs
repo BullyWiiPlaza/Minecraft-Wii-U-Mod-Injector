@@ -37,10 +37,5 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms
         {
             DiscordRp.SetPresence("Connected", _iw.generalTab.Text + " tab");
         }
-
-        private void MapTextEditor_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

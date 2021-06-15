@@ -26,7 +26,7 @@ namespace Minecraft_Wii_U_Mod_Injector
         #endregion
         
         #region bools
-        private bool _isConnected;
+        public bool _isConnected;
         public bool IsConnected
         {
             get => _isConnected;
@@ -328,6 +328,11 @@ namespace Minecraft_Wii_U_Mod_Injector
             {
                 Exceptions.LogError(error, "Failed to Toggle Release Notes", false, true);
             }
+        }
+
+        private void OpenLangMngrBtnClicked(object sender, EventArgs e)
+        {
+            new LanguageMngr(this).ShowDialog();
         }
 
         private void OpenFaqInfoClicked(object sender, EventArgs e)
@@ -1066,10 +1071,5 @@ namespace Minecraft_Wii_U_Mod_Injector
         #endregion
 
         #endregion memory editing
-
-        private void OpenLangMngrBtnClicked(object sender, EventArgs e)
-        {
-            new LanguageMngr(this).ShowDialog();
-        }
     }
 }

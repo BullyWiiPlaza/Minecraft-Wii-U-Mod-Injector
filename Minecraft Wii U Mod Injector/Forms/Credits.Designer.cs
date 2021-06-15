@@ -102,7 +102,7 @@
             this.Name = "Credits";
             this.Resizable = false;
             this.Style = MetroFramework.MetroColorStyle.Default;
-            this.Text = "Credits";
+            this.Text = "Minecraft: Wii U Mod Injector - Credits";
             this.Theme = MetroFramework.MetroThemeStyle.Default;
             ((System.ComponentModel.ISupportInitialize)(this.StyleMngr)).EndInit();
             this.ResumeLayout(false);

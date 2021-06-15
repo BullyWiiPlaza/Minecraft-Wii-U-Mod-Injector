@@ -340,6 +340,11 @@ namespace Minecraft_Wii_U_Mod_Injector
             new Faq(this).ShowDialog();
         }
 
+        private void SetupTutorialBtnClicked(object sender, EventArgs e)
+        {
+            Process.Start("https://www.youtube.com/watch?v=be5fNSgxhrU");
+        }
+
         private void DiscordSrvBtnClicked(object sender, EventArgs e)
         {
             Process.Start("https://discord.gg/jrzZWaDc7a");

@@ -233,6 +233,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.RightClickMenu = new MetroFramework.Controls.MetroContextMenu(this.components);
             this.IncreaseDecimalPlace = new System.Windows.Forms.ToolStripMenuItem();
             this.DecreaseDecimalPlace = new System.Windows.Forms.ToolStripMenuItem();
+            this.SetupTutorialBtn = new MetroFramework.Controls.MetroButton();
             this.MainTabs.SuspendLayout();
             this.MainTab.SuspendLayout();
             this.playersTab.SuspendLayout();
@@ -378,6 +379,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             // 
             // MainTab
             // 
+            this.MainTab.Controls.Add(this.SetupTutorialBtn);
             this.MainTab.Controls.Add(this.FaqBtn);
             this.MainTab.Controls.Add(this.BuildNotesBox);
             this.MainTab.Controls.Add(this.BuildVerTitleLbl);
@@ -484,7 +486,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             // DiscordSrvBtn
             // 
             this.DiscordSrvBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.DiscordSrvBtn.Location = new System.Drawing.Point(835, 101);
+            this.DiscordSrvBtn.Location = new System.Drawing.Point(835, 136);
             this.DiscordSrvBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.DiscordSrvBtn.Name = "DiscordSrvBtn";
             this.DiscordSrvBtn.Size = new System.Drawing.Size(139, 23);
@@ -3494,6 +3496,19 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.DecreaseDecimalPlace.Size = new System.Drawing.Size(322, 22);
             this.DecreaseDecimalPlace.Text = "Decrease decimal place";
             // 
+            // SetupTutorialBtn
+            // 
+            this.SetupTutorialBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.SetupTutorialBtn.Location = new System.Drawing.Point(835, 101);
+            this.SetupTutorialBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.SetupTutorialBtn.Name = "SetupTutorialBtn";
+            this.SetupTutorialBtn.Size = new System.Drawing.Size(139, 23);
+            this.SetupTutorialBtn.TabIndex = 47;
+            this.SetupTutorialBtn.Text = "Setup Tutorial";
+            this.ToolTipManager.SetToolTip(this.SetupTutorialBtn, "View the credits for the Mod Injector");
+            this.SetupTutorialBtn.UseSelectable = true;
+            this.SetupTutorialBtn.Click += new System.EventHandler(this.SetupTutorialBtnClicked);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3780,5 +3795,6 @@ namespace Minecraft_Wii_U_Mod_Injector
         public MetroTextBox WiiUIpv4Box;
         public MetroTextBox BuildNotesBox;
         public MetroButton OpenLangMngrBtn;
+        public MetroButton SetupTutorialBtn;
     }
 }

@@ -232,6 +232,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.RightClickMenu = new MetroFramework.Controls.MetroContextMenu(this.components);
             this.IncreaseDecimalPlace = new System.Windows.Forms.ToolStripMenuItem();
             this.DecreaseDecimalPlace = new System.Windows.Forms.ToolStripMenuItem();
+            this.OpenLangMngrBtn = new MetroFramework.Controls.MetroButton();
             this.MainTabs.SuspendLayout();
             this.MainTab.SuspendLayout();
             this.playersTab.SuspendLayout();
@@ -3162,6 +3163,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             // 
             // settingsTab
             // 
+            this.settingsTab.Controls.Add(this.OpenLangMngrBtn);
             this.settingsTab.Controls.Add(this.CheckForPreRelease);
             this.settingsTab.Controls.Add(this.settingsLogo);
             this.settingsTab.Controls.Add(this.releaseNotesToggle);
@@ -3205,9 +3207,9 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.settingsLogo.HorizontalScrollbarBarColor = true;
             this.settingsLogo.HorizontalScrollbarHighlightOnWheel = false;
             this.settingsLogo.HorizontalScrollbarSize = 10;
-            this.settingsLogo.Location = new System.Drawing.Point(65, 145);
+            this.settingsLogo.Location = new System.Drawing.Point(65, 193);
             this.settingsLogo.Name = "settingsLogo";
-            this.settingsLogo.Size = new System.Drawing.Size(909, 368);
+            this.settingsLogo.Size = new System.Drawing.Size(909, 320);
             this.settingsLogo.TabIndex = 44;
             this.settingsLogo.VerticalScrollbarBarColor = true;
             this.settingsLogo.VerticalScrollbarHighlightOnWheel = false;
@@ -3228,7 +3230,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             // resetConfigBtn
             // 
             this.resetConfigBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.resetConfigBtn.Location = new System.Drawing.Point(65, 100);
+            this.resetConfigBtn.Location = new System.Drawing.Point(65, 148);
             this.resetConfigBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.resetConfigBtn.Name = "resetConfigBtn";
             this.resetConfigBtn.Size = new System.Drawing.Size(909, 36);
@@ -3273,7 +3275,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             "Yellow"});
             this.colorsBox.Location = new System.Drawing.Point(65, 41);
             this.colorsBox.Name = "colorsBox";
-            this.colorsBox.Size = new System.Drawing.Size(910, 29);
+            this.colorsBox.Size = new System.Drawing.Size(909, 29);
             this.colorsBox.TabIndex = 37;
             this.colorsBox.UseSelectable = true;
             this.colorsBox.SelectedIndexChanged += new System.EventHandler(this.FormColorSelected);
@@ -3307,7 +3309,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             "Light"});
             this.themeBox.Location = new System.Drawing.Point(65, 6);
             this.themeBox.Name = "themeBox";
-            this.themeBox.Size = new System.Drawing.Size(910, 29);
+            this.themeBox.Size = new System.Drawing.Size(909, 29);
             this.themeBox.TabIndex = 35;
             this.themeBox.UseSelectable = true;
             this.themeBox.SelectedIndexChanged += new System.EventHandler(this.FormThemeSelected);
@@ -3478,6 +3480,19 @@ namespace Minecraft_Wii_U_Mod_Injector
             | System.Windows.Forms.Keys.OemMinus)));
             this.DecreaseDecimalPlace.Size = new System.Drawing.Size(322, 22);
             this.DecreaseDecimalPlace.Text = "Decrease decimal place";
+            // 
+            // OpenLangMngrBtn
+            // 
+            this.OpenLangMngrBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.OpenLangMngrBtn.Location = new System.Drawing.Point(65, 100);
+            this.OpenLangMngrBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.OpenLangMngrBtn.Name = "OpenLangMngrBtn";
+            this.OpenLangMngrBtn.Size = new System.Drawing.Size(909, 36);
+            this.OpenLangMngrBtn.TabIndex = 48;
+            this.OpenLangMngrBtn.Text = "Languages";
+            this.ToolTipManager.SetToolTip(this.OpenLangMngrBtn, "Resets the configuration file");
+            this.OpenLangMngrBtn.UseSelectable = true;
+            this.OpenLangMngrBtn.Click += new System.EventHandler(this.OpenLangMngrBtnClicked);
             // 
             // MainForm
             // 
@@ -3764,5 +3779,6 @@ namespace Minecraft_Wii_U_Mod_Injector
         public System.Windows.Forms.NumericUpDown XPLevelSlider;
         public MetroTextBox WiiUIpv4Box;
         public MetroTextBox BuildNotesBox;
+        public MetroButton OpenLangMngrBtn;
     }
 }

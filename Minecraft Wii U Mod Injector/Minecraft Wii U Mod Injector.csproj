@@ -246,6 +246,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\LanguageMngr.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\LanguageMngr.Designer.cs">
+      <DependentUpon>LanguageMngr.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FAQ.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -301,6 +307,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\LanguageMngr.resx">
+      <DependentUpon>LanguageMngr.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FAQ.resx">
       <DependentUpon>FAQ.cs</DependentUpon>
     </EmbeddedResource>

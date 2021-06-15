@@ -1066,5 +1066,10 @@ namespace Minecraft_Wii_U_Mod_Injector
         #endregion
 
         #endregion memory editing
+
+        private void OpenLangMngrBtnClicked(object sender, EventArgs e)
+        {
+            new LanguageMngr(this).ShowDialog();
+        }
     }
 }

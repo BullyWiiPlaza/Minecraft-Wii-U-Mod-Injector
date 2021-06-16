@@ -3,8 +3,8 @@ using Minecraft_Wii_U_Mod_Injector.Helpers.Files;
 using Octokit;
 using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.Threading.Tasks;
+using Minecraft_Wii_U_Mod_Injector.Forms;
 using Minecraft_Wii_U_Mod_Injector.Helpers.Win_Forms;
 
 namespace Minecraft_Wii_U_Mod_Injector.Helpers
@@ -35,13 +35,12 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
 #endif
 
                 Injector.BuildNotesBox.Text = Properties.Resources.releaseNotes;
-                Injector.BuildVerTitleLbl.Text = "Patch Notes for " + LocalVer;
+                Injector.BuildVerTitleLbl.Text = @"Patch Notes for " + LocalVer;
                 Injector.BuildTile.Text = LocalVer;
 
                 DiscordRp.Initialize();
 
                 SetupUserPrefs();
-                DebugCheck();
 
                 DiscordRp.SetPresence("Disconnected", "Idle");
                 States.SwapState(States.StatesIds.Disconnected);
@@ -90,6 +89,11 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
             {
                 try
                 {
+                    if(!Settings.Exists("FirstLaunch", "Display"))
+                        Settings.Write("FirstLaunch", "True", "Display");
+
+                    var firstLaunch = Convert.ToBoolean(Settings.Read("FirstLaunch", "Display"));
+
                     Injector.Theme = Injector.StyleMngr.Theme =
                         (MetroThemeStyle) Enum.Parse(typeof(MetroThemeStyle), Settings.Read("Theme", "Display"));
                     Injector.Style = Injector.StyleMngr.Style =
@@ -102,13 +106,23 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
 
                     Injector.CheckForPreRelease.Checked =
                         Convert.ToBoolean(Settings.Read("PrereleaseOptIn", "Updates"));
+
                     Injector.discordRpcCheckBox.Checked = Convert.ToBoolean(Settings.Read("DiscordRPC", "Discord"));
+
+                    new LanguageMngr(Injector).ApplyLanguage(Settings.Read("Language", "Display"));
+
+                    if (firstLaunch)
+                        Messaging.Show("Welcome to the Minecraft: Wii U Mod Injector! the first and longest lasting Mod Injector for Minecraft: Wii U Edition!\n" +
+                                       "Before we get started, please take a look at the setup tutorial here: https://www.youtube.com/watch?v=be5fNSgxhrU. \nIf you enjoy my " +
+                                       "work then a sub on my YouTube channel is appreciated. Happy modding!");
+
+                    Settings.Write("FirstLaunch", "False", "Display");
                 }
                 catch (Exception)
                 {
                     //Failing to set User Preferences isn't a big deal, so we ignore the exception if one happens
                 }
-                
+
                 if (Settings.EqualsTo("ReleaseNotes", "all", "Display"))
                 {
                     Injector.releaseNotesToggle.Checked = false;
@@ -119,34 +133,11 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
                     Injector.releaseNotesToggle.Checked = true;
                     Injector.BuildNotesBox.Text = Properties.Resources.releaseNote;
                 }
-
             }
             catch (Exception error)
             {
                 Exceptions.LogError(error, "Exception in SetupUserPrefs()", false, true);
                 Environment.Exit(0);
-            }
-        }
-
-        public static void DebugCheck()
-        {
-            try
-            {
-                if (!Settings.Exists("debug", "Advanced") || Settings.EqualsTo("debug", "false", "Advanced"))
-                {
-                    Size tabSize = new(140, 1);
-                    Size verSize = new(160, 147);
-                    Point verLoc = new(0, 461);
-                    Injector.DebugTile.Visible = false;
-                    Injector.MainTabs.HideTab(Injector.debugTab);
-                    Injector.MainTabs.ItemSize = tabSize;
-                    Injector.BuildTile.Size = verSize;
-                    Injector.BuildTile.Location = verLoc;
-                }
-            }
-            catch (Exception)
-            {
-                //Failing to check whether the user is running Debug Mode is not a big deal, so we ignore the exception
             }
         }
     }

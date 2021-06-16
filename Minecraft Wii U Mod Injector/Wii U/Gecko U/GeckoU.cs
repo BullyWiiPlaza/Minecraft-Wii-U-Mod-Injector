@@ -777,7 +777,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Wii_U.Gecko_U
         /// Reads the current Wii U firmware version
         /// </summary>
         /// <returns>Wii U Firmware version</returns>
-        public uint ReadOSVersion()
+        public uint ReadOsVersion()
         {
             SendCommand(GeckoUCommands.Command.CommandGetOsVersion);
 

@@ -142,7 +142,8 @@ namespace Minecraft_Wii_U_Mod_Injector
 
             if (ModifierKeys.HasFlag(Keys.Control))
             {
-                slider.DecimalPlaces++;
+                if(slider.DecimalPlaces != 10)
+                    slider.DecimalPlaces++;
             }
             else if (ModifierKeys.HasFlag(Keys.Alt))
             {
@@ -1076,5 +1077,10 @@ namespace Minecraft_Wii_U_Mod_Injector
         #endregion
 
         #endregion memory editing
+
+        private void debugTab_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

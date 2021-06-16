@@ -13,7 +13,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
     {
         public static MainForm Injector = new();
 
-        public static string LocalVer = "v5.1.8";
+        public static string LocalVer = "v5.1.8.h1";
         public static string GitVer = string.Empty;
         public static bool PreRelease;
 
@@ -94,6 +94,13 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
 
                     var firstLaunch = Convert.ToBoolean(Settings.Read("FirstLaunch", "Display"));
 
+                    if (firstLaunch)
+                        Messaging.Show("Welcome to the Minecraft: Wii U Mod Injector! the first and longest lasting Mod Injector for Minecraft: Wii U Edition!\n" +
+                                       "Before we get started, please take a look at the setup tutorial here: https://www.youtube.com/watch?v=be5fNSgxhrU. \nIf you enjoy my " +
+                                       "work then a sub on my YouTube channel is appreciated. Happy modding!");
+
+                    Settings.Write("FirstLaunch", "False", "Display");
+
                     Injector.Theme = Injector.StyleMngr.Theme =
                         (MetroThemeStyle) Enum.Parse(typeof(MetroThemeStyle), Settings.Read("Theme", "Display"));
                     Injector.Style = Injector.StyleMngr.Style =
@@ -110,13 +117,6 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
                     Injector.discordRpcCheckBox.Checked = Convert.ToBoolean(Settings.Read("DiscordRPC", "Discord"));
 
                     new LanguageMngr(Injector).ApplyLanguage(Settings.Read("Language", "Display"));
-
-                    if (firstLaunch)
-                        Messaging.Show("Welcome to the Minecraft: Wii U Mod Injector! the first and longest lasting Mod Injector for Minecraft: Wii U Edition!\n" +
-                                       "Before we get started, please take a look at the setup tutorial here: https://www.youtube.com/watch?v=be5fNSgxhrU. \nIf you enjoy my " +
-                                       "work then a sub on my YouTube channel is appreciated. Happy modding!");
-
-                    Settings.Write("FirstLaunch", "False", "Display");
                 }
                 catch (Exception)
                 {

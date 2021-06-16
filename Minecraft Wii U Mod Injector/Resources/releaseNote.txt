@@ -1,4 +1,4 @@
-[Release v5.1.8 (16th of June, 2021)]
+[Release v5.1.8/v5.1.8.h1 (16th of June, 2021)]
 
 [Information]
 If you are experiencing issues, please report them on the Github Issues page or by joining the official discord server.

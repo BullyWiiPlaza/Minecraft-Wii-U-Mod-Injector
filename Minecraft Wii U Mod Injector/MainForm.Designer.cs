@@ -84,7 +84,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.ReachSlider = new System.Windows.Forms.NumericUpDown();
             this.JumpHeightSlider = new System.Windows.Forms.NumericUpDown();
             this.DeadMauFiveMode = new MetroFramework.Controls.MetroCheckBox();
-            this.SlowMotion = new MetroFramework.Controls.MetroCheckBox();
             this.ArmorHUD = new MetroFramework.Controls.MetroCheckBox();
             this.TakeEverythingAnywhere = new MetroFramework.Controls.MetroCheckBox();
             this.FieldOfView = new MetroFramework.Controls.MetroLabel();
@@ -130,42 +129,45 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.CraftAnything = new MetroFramework.Controls.MetroCheckBox();
             this.CreativeMode = new MetroFramework.Controls.MetroCheckBox();
             this.worldTab = new MetroFramework.Controls.MetroTabPage();
-            this.Entities = new MetroFramework.Controls.MetroLabel();
             this.SunProofMobs = new MetroFramework.Controls.MetroCheckBox();
+            this.DisableCreativeFlag = new MetroFramework.Controls.MetroCheckBox();
             this.ZombieTower = new MetroFramework.Controls.MetroCheckBox();
+            this.Entities = new MetroFramework.Controls.MetroLabel();
             this.IgnitedCreepers = new MetroFramework.Controls.MetroCheckBox();
+            this.GeneratePlainWorld = new MetroFramework.Controls.MetroCheckBox();
             this.SuperchargedCreepers = new MetroFramework.Controls.MetroCheckBox();
             this.UncapEntitySpawnLimit = new MetroFramework.Controls.MetroCheckBox();
-            this.World = new MetroFramework.Controls.MetroLabel();
-            this.worldPnl = new MetroFramework.Controls.MetroPanel();
-            this.DisableCreativeFlag = new MetroFramework.Controls.MetroCheckBox();
-            this.GeneratePlainWorld = new MetroFramework.Controls.MetroCheckBox();
             this.FreezingWorld = new MetroFramework.Controls.MetroCheckBox();
             this.AcidLiquidBlocks = new MetroFramework.Controls.MetroCheckBox();
+            this.World = new MetroFramework.Controls.MetroLabel();
             this.FoggyWeather = new MetroFramework.Controls.MetroCheckBox();
+            this.worldPnl = new MetroFramework.Controls.MetroPanel();
             this.GenerateAmplifiedWorld = new MetroFramework.Controls.MetroCheckBox();
-            this.NoFog = new MetroFramework.Controls.MetroCheckBox();
             this.StaticLiquidBlocks = new MetroFramework.Controls.MetroCheckBox();
+            this.NoFog = new MetroFramework.Controls.MetroCheckBox();
             this.generalTab = new MetroFramework.Controls.MetroTabPage();
+            this.vpadDisplaySwitch = new MetroFramework.Controls.MetroCheckBox();
             this.UIColorPickerBtn = new MetroFramework.Controls.MetroButton();
             this.DisableTeleporting = new MetroFramework.Controls.MetroCheckBox();
             this.GamepadSplitscreen = new MetroFramework.Controls.MetroCheckBox();
+            this.disableVPadInput = new MetroFramework.Controls.MetroCheckBox();
             this.BypassFriendsOnly = new MetroFramework.Controls.MetroCheckBox();
             this.DisablePermanentKicks = new MetroFramework.Controls.MetroCheckBox();
             this.MapTextEditor = new MetroFramework.Controls.MetroButton();
             this.HostOptions = new MetroFramework.Controls.MetroCheckBox();
+            this.SlowMotion = new MetroFramework.Controls.MetroCheckBox();
             this.AllDLCUnlocked = new MetroFramework.Controls.MetroCheckBox();
             this.ExitGame = new MetroFramework.Controls.MetroButton();
             this.minigamesTab = new MetroFramework.Controls.MetroTabPage();
             this.MinigamesTabs = new MetroFramework.Controls.MetroTabControl();
             this.GeneralMinigames = new MetroFramework.Controls.MetroTabPage();
             this.SqueakInfinitely = new MetroFramework.Controls.MetroCheckBox();
+            this.RequiredPlayersSlider = new System.Windows.Forms.NumericUpDown();
+            this.RequiredPlayers = new MetroFramework.Controls.MetroLabel();
             this.AllPermissions = new MetroFramework.Controls.MetroCheckBox();
             this.AlwaysDamaged = new MetroFramework.Controls.MetroCheckBox();
             this.TNTGriefing = new MetroFramework.Controls.MetroCheckBox();
             this.DisabledKillBarriers = new MetroFramework.Controls.MetroCheckBox();
-            this.RequiredPlayers = new MetroFramework.Controls.MetroLabel();
-            this.RequiredPlayersSlider = new System.Windows.Forms.NumericUpDown();
             this.Battle = new MetroFramework.Controls.MetroTabPage();
             this.EndGame = new MetroFramework.Controls.MetroButton();
             this.RefillInterval = new MetroFramework.Controls.MetroLabel();
@@ -218,8 +220,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.ThemeLabel = new MetroFramework.Controls.MetroLabel();
             this.ColorLabel = new MetroFramework.Controls.MetroLabel();
             this.themeBox = new MetroFramework.Controls.MetroComboBox();
-            this.vpadDisplaySwitch = new MetroFramework.Controls.MetroCheckBox();
-            this.disableVPadInput = new MetroFramework.Controls.MetroCheckBox();
             this.HomeTile = new MetroFramework.Controls.MetroTile();
             this.StyleMngr = new MetroFramework.Components.MetroStyleManager(this.components);
             this.StyleExtender = new MetroFramework.Components.MetroStyleExtender(this.components);
@@ -362,7 +362,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.MainTabs.Location = new System.Drawing.Point(155, 61);
             this.MainTabs.Multiline = true;
             this.MainTabs.Name = "MainTabs";
-            this.MainTabs.SelectedIndex = 2;
+            this.MainTabs.SelectedIndex = 4;
             this.MainTabs.Size = new System.Drawing.Size(1130, 639);
             this.MainTabs.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.MainTabs.TabIndex = 0;
@@ -425,9 +425,9 @@ namespace Minecraft_Wii_U_Mod_Injector
             // 
             // 
             this.BuildNotesBox.CustomButton.Image = null;
-            this.BuildNotesBox.CustomButton.Location = new System.Drawing.Point(354, 2);
+            this.BuildNotesBox.CustomButton.Location = new System.Drawing.Point(401, 2);
             this.BuildNotesBox.CustomButton.Name = "";
-            this.BuildNotesBox.CustomButton.Size = new System.Drawing.Size(465, 465);
+            this.BuildNotesBox.CustomButton.Size = new System.Drawing.Size(559, 559);
             this.BuildNotesBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.BuildNotesBox.CustomButton.TabIndex = 1;
             this.BuildNotesBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -508,7 +508,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             // 
             // 
             this.WiiUIpv4Box.CustomButton.Image = null;
-            this.WiiUIpv4Box.CustomButton.Location = new System.Drawing.Point(722, 1);
+            this.WiiUIpv4Box.CustomButton.Location = new System.Drawing.Point(863, 1);
             this.WiiUIpv4Box.CustomButton.Name = "";
             this.WiiUIpv4Box.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.WiiUIpv4Box.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -1247,19 +1247,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.DeadMauFiveMode.UseSelectable = true;
             this.DeadMauFiveMode.CheckedChanged += new System.EventHandler(this.DeadMauFiveModeToggled);
             // 
-            // SlowMotion
-            // 
-            this.SlowMotion.AutoSize = true;
-            this.SlowMotion.Location = new System.Drawing.Point(7, 174);
-            this.SlowMotion.Name = "SlowMotion";
-            this.SlowMotion.Size = new System.Drawing.Size(90, 15);
-            this.SlowMotion.TabIndex = 139;
-            this.SlowMotion.Tag = "";
-            this.SlowMotion.Text = "Slow Motion";
-            this.ToolTipManager.SetToolTip(this.SlowMotion, "Whether the game will be slowed down");
-            this.SlowMotion.UseSelectable = true;
-            this.SlowMotion.CheckedChanged += new System.EventHandler(this.SlowMotionToggled);
-            // 
             // ArmorHUD
             // 
             this.ArmorHUD.AutoSize = true;
@@ -1917,16 +1904,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.worldTab.VerticalScrollbarHighlightOnWheel = false;
             this.worldTab.VerticalScrollbarSize = 10;
             // 
-            // Entities
-            // 
-            this.Entities.AutoSize = true;
-            this.Entities.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.Entities.Location = new System.Drawing.Point(483, 6);
-            this.Entities.Name = "Entities";
-            this.Entities.Size = new System.Drawing.Size(53, 19);
-            this.Entities.TabIndex = 46;
-            this.Entities.Text = "Entities";
-            // 
             // SunProofMobs
             // 
             this.SunProofMobs.AutoSize = true;
@@ -1939,6 +1916,20 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.ToolTipManager.SetToolTip(this.SunProofMobs, "Whether mobs that burn during daylight \r\nare immune to the sun");
             this.SunProofMobs.UseSelectable = true;
             this.SunProofMobs.CheckedChanged += new System.EventHandler(this.SunProofMobsToggled);
+            // 
+            // DisableCreativeFlag
+            // 
+            this.DisableCreativeFlag.AutoSize = true;
+            this.DisableCreativeFlag.BackColor = System.Drawing.Color.Transparent;
+            this.DisableCreativeFlag.Location = new System.Drawing.Point(6, 130);
+            this.DisableCreativeFlag.Name = "DisableCreativeFlag";
+            this.DisableCreativeFlag.Size = new System.Drawing.Size(132, 15);
+            this.DisableCreativeFlag.TabIndex = 21;
+            this.DisableCreativeFlag.Tag = "";
+            this.DisableCreativeFlag.Text = "Disable Creative Flag";
+            this.ToolTipManager.SetToolTip(this.DisableCreativeFlag, "Whether to disable the \"Played in Creative\" notification");
+            this.DisableCreativeFlag.UseSelectable = true;
+            this.DisableCreativeFlag.CheckedChanged += new System.EventHandler(this.DisableCreativeFlagToggled);
             // 
             // ZombieTower
             // 
@@ -1953,6 +1944,16 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.ZombieTower.UseSelectable = true;
             this.ZombieTower.CheckedChanged += new System.EventHandler(this.ZombieTowerToggled);
             // 
+            // Entities
+            // 
+            this.Entities.AutoSize = true;
+            this.Entities.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.Entities.Location = new System.Drawing.Point(483, 6);
+            this.Entities.Name = "Entities";
+            this.Entities.Size = new System.Drawing.Size(53, 19);
+            this.Entities.TabIndex = 46;
+            this.Entities.Text = "Entities";
+            // 
             // IgnitedCreepers
             // 
             this.IgnitedCreepers.AutoSize = true;
@@ -1965,6 +1966,20 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.ToolTipManager.SetToolTip(this.IgnitedCreepers, "Whether creepers will always be ignited when spawned");
             this.IgnitedCreepers.UseSelectable = true;
             this.IgnitedCreepers.CheckedChanged += new System.EventHandler(this.IgnitedCreepersToggled);
+            // 
+            // GeneratePlainWorld
+            // 
+            this.GeneratePlainWorld.AutoSize = true;
+            this.GeneratePlainWorld.BackColor = System.Drawing.Color.Transparent;
+            this.GeneratePlainWorld.Location = new System.Drawing.Point(6, 109);
+            this.GeneratePlainWorld.Name = "GeneratePlainWorld";
+            this.GeneratePlainWorld.Size = new System.Drawing.Size(134, 15);
+            this.GeneratePlainWorld.TabIndex = 20;
+            this.GeneratePlainWorld.Tag = "";
+            this.GeneratePlainWorld.Text = "Generate Plain World";
+            this.ToolTipManager.SetToolTip(this.GeneratePlainWorld, "Whether worlds will generate with no trees or foliage");
+            this.GeneratePlainWorld.UseSelectable = true;
+            this.GeneratePlainWorld.CheckedChanged += new System.EventHandler(this.GeneratePlainWorldToggled);
             // 
             // SuperchargedCreepers
             // 
@@ -1991,58 +2006,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.ToolTipManager.SetToolTip(this.UncapEntitySpawnLimit, "Whether to uncap the entity spawn limit");
             this.UncapEntitySpawnLimit.UseSelectable = true;
             this.UncapEntitySpawnLimit.CheckedChanged += new System.EventHandler(this.UncapEntitySpawnLimitToggled);
-            // 
-            // World
-            // 
-            this.World.AutoSize = true;
-            this.World.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.World.Location = new System.Drawing.Point(11, 6);
-            this.World.Name = "World";
-            this.World.Size = new System.Drawing.Size(45, 19);
-            this.World.TabIndex = 44;
-            this.World.Text = "World";
-            // 
-            // worldPnl
-            // 
-            this.worldPnl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.worldPnl.HorizontalScrollbarBarColor = true;
-            this.worldPnl.HorizontalScrollbarHighlightOnWheel = false;
-            this.worldPnl.HorizontalScrollbarSize = 10;
-            this.worldPnl.Location = new System.Drawing.Point(7, 18);
-            this.worldPnl.Name = "worldPnl";
-            this.worldPnl.Size = new System.Drawing.Size(1116, 1);
-            this.worldPnl.TabIndex = 43;
-            this.worldPnl.VerticalScrollbarBarColor = true;
-            this.worldPnl.VerticalScrollbarHighlightOnWheel = false;
-            this.worldPnl.VerticalScrollbarSize = 10;
-            // 
-            // DisableCreativeFlag
-            // 
-            this.DisableCreativeFlag.AutoSize = true;
-            this.DisableCreativeFlag.BackColor = System.Drawing.Color.Transparent;
-            this.DisableCreativeFlag.Location = new System.Drawing.Point(6, 130);
-            this.DisableCreativeFlag.Name = "DisableCreativeFlag";
-            this.DisableCreativeFlag.Size = new System.Drawing.Size(132, 15);
-            this.DisableCreativeFlag.TabIndex = 21;
-            this.DisableCreativeFlag.Tag = "";
-            this.DisableCreativeFlag.Text = "Disable Creative Flag";
-            this.ToolTipManager.SetToolTip(this.DisableCreativeFlag, "Whether to disable the \"Played in Creative\" notification");
-            this.DisableCreativeFlag.UseSelectable = true;
-            this.DisableCreativeFlag.CheckedChanged += new System.EventHandler(this.DisableCreativeFlagToggled);
-            // 
-            // GeneratePlainWorld
-            // 
-            this.GeneratePlainWorld.AutoSize = true;
-            this.GeneratePlainWorld.BackColor = System.Drawing.Color.Transparent;
-            this.GeneratePlainWorld.Location = new System.Drawing.Point(6, 109);
-            this.GeneratePlainWorld.Name = "GeneratePlainWorld";
-            this.GeneratePlainWorld.Size = new System.Drawing.Size(134, 15);
-            this.GeneratePlainWorld.TabIndex = 20;
-            this.GeneratePlainWorld.Tag = "";
-            this.GeneratePlainWorld.Text = "Generate Plain World";
-            this.ToolTipManager.SetToolTip(this.GeneratePlainWorld, "Whether worlds will generate with no trees or foliage");
-            this.GeneratePlainWorld.UseSelectable = true;
-            this.GeneratePlainWorld.CheckedChanged += new System.EventHandler(this.GeneratePlainWorldToggled);
             // 
             // FreezingWorld
             // 
@@ -2072,6 +2035,16 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.AcidLiquidBlocks.UseSelectable = true;
             this.AcidLiquidBlocks.CheckedChanged += new System.EventHandler(this.AcidLiquidBlocksToggled);
             // 
+            // World
+            // 
+            this.World.AutoSize = true;
+            this.World.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.World.Location = new System.Drawing.Point(11, 6);
+            this.World.Name = "World";
+            this.World.Size = new System.Drawing.Size(45, 19);
+            this.World.TabIndex = 44;
+            this.World.Text = "World";
+            // 
             // FoggyWeather
             // 
             this.FoggyWeather.AutoSize = true;
@@ -2084,6 +2057,20 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.ToolTipManager.SetToolTip(this.FoggyWeather, "Whether to have a foggy view");
             this.FoggyWeather.UseSelectable = true;
             this.FoggyWeather.CheckedChanged += new System.EventHandler(this.FoggyWeatherToggled);
+            // 
+            // worldPnl
+            // 
+            this.worldPnl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.worldPnl.HorizontalScrollbarBarColor = true;
+            this.worldPnl.HorizontalScrollbarHighlightOnWheel = false;
+            this.worldPnl.HorizontalScrollbarSize = 10;
+            this.worldPnl.Location = new System.Drawing.Point(7, 18);
+            this.worldPnl.Name = "worldPnl";
+            this.worldPnl.Size = new System.Drawing.Size(1116, 1);
+            this.worldPnl.TabIndex = 43;
+            this.worldPnl.VerticalScrollbarBarColor = true;
+            this.worldPnl.VerticalScrollbarHighlightOnWheel = false;
+            this.worldPnl.VerticalScrollbarSize = 10;
             // 
             // GenerateAmplifiedWorld
             // 
@@ -2099,20 +2086,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.GenerateAmplifiedWorld.UseSelectable = true;
             this.GenerateAmplifiedWorld.CheckedChanged += new System.EventHandler(this.GenerateAmplifiedWorldToggled);
             // 
-            // NoFog
-            // 
-            this.NoFog.AutoSize = true;
-            this.NoFog.BackColor = System.Drawing.Color.Transparent;
-            this.NoFog.Location = new System.Drawing.Point(7, 67);
-            this.NoFog.Name = "NoFog";
-            this.NoFog.Size = new System.Drawing.Size(62, 15);
-            this.NoFog.TabIndex = 26;
-            this.NoFog.Tag = "";
-            this.NoFog.Text = "No Fog";
-            this.ToolTipManager.SetToolTip(this.NoFog, "Whether to remove the fog in-game");
-            this.NoFog.UseSelectable = true;
-            this.NoFog.CheckedChanged += new System.EventHandler(this.NoFogToggled);
-            // 
             // StaticLiquidBlocks
             // 
             this.StaticLiquidBlocks.AutoSize = true;
@@ -2126,6 +2099,20 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.ToolTipManager.SetToolTip(this.StaticLiquidBlocks, "Whether Liquid Blocks will not spread");
             this.StaticLiquidBlocks.UseSelectable = true;
             this.StaticLiquidBlocks.CheckedChanged += new System.EventHandler(this.StaticLiquidBlocksToggled);
+            // 
+            // NoFog
+            // 
+            this.NoFog.AutoSize = true;
+            this.NoFog.BackColor = System.Drawing.Color.Transparent;
+            this.NoFog.Location = new System.Drawing.Point(7, 67);
+            this.NoFog.Name = "NoFog";
+            this.NoFog.Size = new System.Drawing.Size(62, 15);
+            this.NoFog.TabIndex = 26;
+            this.NoFog.Tag = "";
+            this.NoFog.Text = "No Fog";
+            this.ToolTipManager.SetToolTip(this.NoFog, "Whether to remove the fog in-game");
+            this.NoFog.UseSelectable = true;
+            this.NoFog.CheckedChanged += new System.EventHandler(this.NoFogToggled);
             // 
             // generalTab
             // 
@@ -2154,6 +2141,19 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.generalTab.VerticalScrollbarBarColor = true;
             this.generalTab.VerticalScrollbarHighlightOnWheel = false;
             this.generalTab.VerticalScrollbarSize = 10;
+            // 
+            // vpadDisplaySwitch
+            // 
+            this.vpadDisplaySwitch.AutoSize = true;
+            this.vpadDisplaySwitch.Location = new System.Drawing.Point(7, 153);
+            this.vpadDisplaySwitch.Name = "vpadDisplaySwitch";
+            this.vpadDisplaySwitch.Size = new System.Drawing.Size(183, 15);
+            this.vpadDisplaySwitch.TabIndex = 3;
+            this.vpadDisplaySwitch.Text = "Power Button turns off display";
+            this.ToolTipManager.SetToolTip(this.vpadDisplaySwitch, "Holding down the power button on the gamepad will turn off the screen, not consol" +
+        "e");
+            this.vpadDisplaySwitch.UseSelectable = true;
+            this.vpadDisplaySwitch.CheckedChanged += new System.EventHandler(this.VpadDisplaySwitchToggled);
             // 
             // UIColorPickerBtn
             // 
@@ -2198,6 +2198,19 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.ToolTipManager.SetToolTip(this.GamepadSplitscreen, "Whether you can use splitscreen mode on the Gamepad");
             this.GamepadSplitscreen.UseSelectable = true;
             this.GamepadSplitscreen.CheckedChanged += new System.EventHandler(this.GamepadSplitscreenToggled);
+            // 
+            // disableVPadInput
+            // 
+            this.disableVPadInput.AutoSize = true;
+            this.disableVPadInput.Location = new System.Drawing.Point(7, 132);
+            this.disableVPadInput.Name = "disableVPadInput";
+            this.disableVPadInput.Size = new System.Drawing.Size(146, 15);
+            this.disableVPadInput.TabIndex = 2;
+            this.disableVPadInput.Text = "Disable Gamepad Input";
+            this.ToolTipManager.SetToolTip(this.disableVPadInput, "Disables all input from the Gamepad including the touch screen but excluding the " +
+        "home button");
+            this.disableVPadInput.UseSelectable = true;
+            this.disableVPadInput.CheckedChanged += new System.EventHandler(this.DisableVPadInputToggled);
             // 
             // BypassFriendsOnly
             // 
@@ -2256,6 +2269,19 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.HostOptions.UseSelectable = true;
             this.HostOptions.CheckedChanged += new System.EventHandler(this.HostOptionsToggled);
             // 
+            // SlowMotion
+            // 
+            this.SlowMotion.AutoSize = true;
+            this.SlowMotion.Location = new System.Drawing.Point(7, 174);
+            this.SlowMotion.Name = "SlowMotion";
+            this.SlowMotion.Size = new System.Drawing.Size(90, 15);
+            this.SlowMotion.TabIndex = 139;
+            this.SlowMotion.Tag = "";
+            this.SlowMotion.Text = "Slow Motion";
+            this.ToolTipManager.SetToolTip(this.SlowMotion, "Whether the game will be slowed down");
+            this.SlowMotion.UseSelectable = true;
+            this.SlowMotion.CheckedChanged += new System.EventHandler(this.SlowMotionToggled);
+            // 
             // AllDLCUnlocked
             // 
             this.AllDLCUnlocked.AutoSize = true;
@@ -2306,7 +2332,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.MinigamesTabs.Controls.Add(this.Tumble);
             this.MinigamesTabs.Controls.Add(this.Glide);
             this.MinigamesTabs.ItemSize = new System.Drawing.Size(280, 25);
-            this.MinigamesTabs.Location = new System.Drawing.Point(-3, -3);
+            this.MinigamesTabs.Location = new System.Drawing.Point(-3, 2);
             this.MinigamesTabs.Name = "MinigamesTabs";
             this.MinigamesTabs.SelectedIndex = 0;
             this.MinigamesTabs.Size = new System.Drawing.Size(1129, 633);
@@ -2351,6 +2377,40 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.ToolTipManager.SetToolTip(this.SqueakInfinitely, "Whether you will be able to squeak infinitely as a bat");
             this.SqueakInfinitely.UseSelectable = true;
             this.SqueakInfinitely.CheckedChanged += new System.EventHandler(this.SqueakInfinitelyToggled);
+            // 
+            // RequiredPlayersSlider
+            // 
+            this.StyleExtender.SetApplyMetroTheme(this.RequiredPlayersSlider, true);
+            this.RequiredPlayersSlider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.RequiredPlayersSlider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.RequiredPlayersSlider.Location = new System.Drawing.Point(124, 574);
+            this.RequiredPlayersSlider.Maximum = new decimal(new int[] {
+            512,
+            0,
+            0,
+            0});
+            this.RequiredPlayersSlider.Name = "RequiredPlayersSlider";
+            this.RequiredPlayersSlider.Size = new System.Drawing.Size(991, 20);
+            this.RequiredPlayersSlider.TabIndex = 23;
+            this.ToolTipManager.SetToolTip(this.RequiredPlayersSlider, "How many players do we need to start a match?");
+            this.RequiredPlayersSlider.Value = new decimal(new int[] {
+            2,
+            0,
+            0,
+            0});
+            this.RequiredPlayersSlider.ValueChanged += new System.EventHandler(this.RequiredPlayersSliderChanged);
+            // 
+            // RequiredPlayers
+            // 
+            this.RequiredPlayers.AutoSize = true;
+            this.RequiredPlayers.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.RequiredPlayers.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.RequiredPlayers.Location = new System.Drawing.Point(5, 574);
+            this.RequiredPlayers.Name = "RequiredPlayers";
+            this.RequiredPlayers.Size = new System.Drawing.Size(113, 19);
+            this.RequiredPlayers.TabIndex = 22;
+            this.RequiredPlayers.Tag = "";
+            this.RequiredPlayers.Text = "Required Players:";
             // 
             // AllPermissions
             // 
@@ -2403,40 +2463,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.ToolTipManager.SetToolTip(this.DisabledKillBarriers, "Whether Kill Barriers will be disabled");
             this.DisabledKillBarriers.UseSelectable = true;
             this.DisabledKillBarriers.CheckedChanged += new System.EventHandler(this.DisabledKillBarriersToggled);
-            // 
-            // RequiredPlayers
-            // 
-            this.RequiredPlayers.AutoSize = true;
-            this.RequiredPlayers.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.RequiredPlayers.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.RequiredPlayers.Location = new System.Drawing.Point(5, 574);
-            this.RequiredPlayers.Name = "RequiredPlayers";
-            this.RequiredPlayers.Size = new System.Drawing.Size(113, 19);
-            this.RequiredPlayers.TabIndex = 22;
-            this.RequiredPlayers.Tag = "";
-            this.RequiredPlayers.Text = "Required Players:";
-            // 
-            // RequiredPlayersSlider
-            // 
-            this.StyleExtender.SetApplyMetroTheme(this.RequiredPlayersSlider, true);
-            this.RequiredPlayersSlider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.RequiredPlayersSlider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.RequiredPlayersSlider.Location = new System.Drawing.Point(124, 574);
-            this.RequiredPlayersSlider.Maximum = new decimal(new int[] {
-            512,
-            0,
-            0,
-            0});
-            this.RequiredPlayersSlider.Name = "RequiredPlayersSlider";
-            this.RequiredPlayersSlider.Size = new System.Drawing.Size(991, 20);
-            this.RequiredPlayersSlider.TabIndex = 23;
-            this.ToolTipManager.SetToolTip(this.RequiredPlayersSlider, "How many players do we need to start a match?");
-            this.RequiredPlayersSlider.Value = new decimal(new int[] {
-            2,
-            0,
-            0,
-            0});
-            this.RequiredPlayersSlider.ValueChanged += new System.EventHandler(this.RequiredPlayersSliderChanged);
             // 
             // Battle
             // 
@@ -3321,32 +3347,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.themeBox.TabIndex = 35;
             this.themeBox.UseSelectable = true;
             this.themeBox.SelectedIndexChanged += new System.EventHandler(this.FormThemeSelected);
-            // 
-            // vpadDisplaySwitch
-            // 
-            this.vpadDisplaySwitch.AutoSize = true;
-            this.vpadDisplaySwitch.Location = new System.Drawing.Point(7, 153);
-            this.vpadDisplaySwitch.Name = "vpadDisplaySwitch";
-            this.vpadDisplaySwitch.Size = new System.Drawing.Size(183, 15);
-            this.vpadDisplaySwitch.TabIndex = 3;
-            this.vpadDisplaySwitch.Text = "Power Button turns off display";
-            this.ToolTipManager.SetToolTip(this.vpadDisplaySwitch, "Holding down the power button on the gamepad will turn off the screen, not consol" +
-        "e");
-            this.vpadDisplaySwitch.UseSelectable = true;
-            this.vpadDisplaySwitch.CheckedChanged += new System.EventHandler(this.VpadDisplaySwitchToggled);
-            // 
-            // disableVPadInput
-            // 
-            this.disableVPadInput.AutoSize = true;
-            this.disableVPadInput.Location = new System.Drawing.Point(7, 132);
-            this.disableVPadInput.Name = "disableVPadInput";
-            this.disableVPadInput.Size = new System.Drawing.Size(146, 15);
-            this.disableVPadInput.TabIndex = 2;
-            this.disableVPadInput.Text = "Disable Gamepad Input";
-            this.ToolTipManager.SetToolTip(this.disableVPadInput, "Disables all input from the Gamepad including the touch screen but excluding the " +
-        "home button");
-            this.disableVPadInput.UseSelectable = true;
-            this.disableVPadInput.CheckedChanged += new System.EventHandler(this.DisableVPadInputToggled);
             // 
             // HomeTile
             // 

@@ -3,7 +3,7 @@
 [Information]
 If you are experiencing issues, please report them on the Github Issues page or by joining the official discord server.
 
-This update re-adds the Language Manager from 2018 with more functionallity than before
+This update re-adds the Language Manager from 2018 with more functionality than before
 
 [Changes]
 

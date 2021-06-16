@@ -16,7 +16,12 @@
 
         public static string Read(string key, string section)
         {
-            return _settingsFile.Read(key, section);
+            if(Exists(key, section))
+                return _settingsFile.Read(key, section);
+            else
+            {
+                return "NOT FOUND";
+            }
         }
 
         public static bool EqualsTo(string key, string value, string section)

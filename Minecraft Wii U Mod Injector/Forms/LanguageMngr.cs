@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Diagnostics;
 using System.IO;
 using System.Windows.Forms;
@@ -27,8 +28,8 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms
         {
             get
             {
-                CreateParams cp = base.CreateParams;
-                cp.ExStyle = cp.ExStyle | 0x02000000;
+                var cp = base.CreateParams;
+                cp.ExStyle |= 0x02000000;
                 return cp;
             }
         }
@@ -57,22 +58,24 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms
             {
                 var files = Directory.GetFiles(_langRootDir);
 
-                if (files.Length > 0)
+                if (files.Length <= 0)
                 {
-                    LanguagesList.Rows.Add(files.Length);
+                    return;
+                }
 
-                    foreach (var t in files)
-                    {
-                        var file = new FileInfo(t);
-                        var langFile = new IniFile(_langRootDir + file.Name);
+                LanguagesList.Rows.Add(files.Length);
 
-                        LanguagesList.Rows[index].Cells[0].Value = langFile.Read("name", "meta");
-                        LanguagesList.Rows[index].Cells[1].Value = langFile.Read("description", "meta");
-                        LanguagesList.Rows[index].Cells[2].Value = langFile.Read("authors", "meta");
-                        LanguagesList.Rows[index].Cells[3].Value = file.FullName;
+                foreach (var t in files)
+                {
+                    var file = new FileInfo(t);
+                    var langFile = new IniFile(_langRootDir + file.Name);
 
-                        index++;
-                    }
+                    LanguagesList.Rows[index].Cells[0].Value = langFile.Read("name", "meta");
+                    LanguagesList.Rows[index].Cells[1].Value = langFile.Read("description", "meta");
+                    LanguagesList.Rows[index].Cells[2].Value = langFile.Read("authors", "meta");
+                    LanguagesList.Rows[index].Cells[3].Value = file.FullName;
+
+                    index++;
                 }
             }
             catch (Exception e)
@@ -95,41 +98,45 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms
             }
         }
 
-        private void ApplyLanguage(object sender, DataGridViewCellEventArgs e)
+        private IniFile GetLanguageFile(DataGridViewCellEventArgs e)
         {
-            var langFile = new IniFile(LanguagesList.Rows[e.RowIndex].Cells[3].Value.ToString());
+            return new(LanguagesList.Rows[e.RowIndex].Cells[3].Value.ToString());
+        }
 
-            foreach (Control c in _iw.Controls)
+        private void ApplyLanguage(IEnumerable controls, DataGridViewCellEventArgs e, bool excludeMetroTextBox = false)
+        {
+            var languageFile = GetLanguageFile(e);
+            
+            foreach (Control control in controls)
             {
-                if (c is MetroButton || c is MetroLabel || c is MetroTextBox || c is MetroTile)
+                if (excludeMetroTextBox && control is MetroTextBox)
                 {
-                    c.Text = langFile.Read(c.Name, "controls");
+                    continue;
+                }
+
+                if (control is MetroButton || control is MetroLabel || control is MetroTextBox || control is MetroTile)
+                {
+                    control.Text = languageFile.Read(control.Name, "controls");
                 }
             }
+        }
+
+        private void ApplyLanguage(object sender, DataGridViewCellEventArgs e)
+        {
+            ApplyLanguage(_iw.Controls, e);
 
             foreach (MetroTabPage page in _iw.MainTabs.TabPages)
             {
-                foreach (Control c in page.Controls)
-                {
-                    if (c is MetroCheckBox || c is MetroButton || c is MetroLabel)
-                    {
-                        c.Text = langFile.Read(c.Name, "controls");
-                    }
-                }
+                ApplyLanguage(page.Controls, e, true);
             }
 
             foreach (MetroTabPage page in _iw.MinigamesTabs.TabPages)
             {
-                foreach (Control c in page.Controls)
-                {
-                    if (c is MetroCheckBox || c is MetroLabel || c is MetroButton)
-                    {
-                        c.Text = langFile.Read(c.Name, "controls");
-                    }
-                }
+                ApplyLanguage(page.Controls, e);
             }
 
-            Messaging.Show("Succesfully changed language to \"" + langFile.Read("name", "meta") + "\"!");
+            var languageFile = GetLanguageFile(e);
+            Messaging.Show("Successfully changed language to \"" + languageFile.Read("name", "meta") + "\"!");
         }
 
         private void DownloadTileClicked(object sender, EventArgs e)

@@ -282,19 +282,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms
                                 Convert.ToInt32(languageFile.Read(control.Name + ".locationX", "controls.properties")),
                                 Convert.ToInt32(languageFile.Read(control.Name + ".locationY", "controls.properties")));
                 }
-
-                if (control is NumericUpDown && languageFile.KeyExists(control.Name, "controls.properties"))
-                {
-                    control.Size =
-                        new Size(Convert.ToInt32(languageFile.Read(control.Name + ".sizeWidth", "controls.properties")),
-                            control.Size.Height);
-                    control.Location = new Point(
-                        Convert.ToInt32(languageFile.Read(control.Name + ".locationX", "controls.properties")),
-                        Convert.ToInt32(languageFile.Read(control.Name + ".locationY", "controls.properties")));
-                }
             }
-
-            Settings.Write("Language", LanguagesList.Rows[e.RowIndex].Cells[3].Value.ToString(), "Display");
         }
 
         #endregion

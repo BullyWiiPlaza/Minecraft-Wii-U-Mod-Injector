@@ -146,6 +146,10 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.StaticLiquidBlocks = new MetroFramework.Controls.MetroCheckBox();
             this.NoFog = new MetroFramework.Controls.MetroCheckBox();
             this.generalTab = new MetroFramework.Controls.MetroTabPage();
+            this.DebugConsole = new MetroFramework.Controls.MetroCheckBox();
+            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
+            this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
             this.vpadDisplaySwitch = new MetroFramework.Controls.MetroCheckBox();
             this.UIColorPickerBtn = new MetroFramework.Controls.MetroButton();
             this.DisableTeleporting = new MetroFramework.Controls.MetroCheckBox();
@@ -362,7 +366,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.MainTabs.Location = new System.Drawing.Point(155, 61);
             this.MainTabs.Multiline = true;
             this.MainTabs.Name = "MainTabs";
-            this.MainTabs.SelectedIndex = 4;
+            this.MainTabs.SelectedIndex = 0;
             this.MainTabs.Size = new System.Drawing.Size(1130, 639);
             this.MainTabs.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.MainTabs.TabIndex = 0;
@@ -1893,10 +1897,10 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.worldTab.HorizontalScrollbarBarColor = true;
             this.worldTab.HorizontalScrollbarHighlightOnWheel = false;
             this.worldTab.HorizontalScrollbarSize = 10;
-            this.worldTab.Location = new System.Drawing.Point(4, 5);
+            this.worldTab.Location = new System.Drawing.Point(4, 29);
             this.worldTab.Name = "worldTab";
             this.worldTab.Padding = new System.Windows.Forms.Padding(3);
-            this.worldTab.Size = new System.Drawing.Size(1122, 630);
+            this.worldTab.Size = new System.Drawing.Size(1122, 606);
             this.worldTab.TabIndex = 1;
             this.worldTab.Tag = "needsGeckoU";
             this.worldTab.Text = "Entities / World";
@@ -1907,7 +1911,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             // SunProofMobs
             // 
             this.SunProofMobs.AutoSize = true;
-            this.SunProofMobs.Location = new System.Drawing.Point(483, 109);
+            this.SunProofMobs.Location = new System.Drawing.Point(475, 109);
             this.SunProofMobs.Name = "SunProofMobs";
             this.SunProofMobs.Size = new System.Drawing.Size(108, 15);
             this.SunProofMobs.TabIndex = 21;
@@ -1934,7 +1938,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             // ZombieTower
             // 
             this.ZombieTower.AutoSize = true;
-            this.ZombieTower.Location = new System.Drawing.Point(483, 88);
+            this.ZombieTower.Location = new System.Drawing.Point(475, 88);
             this.ZombieTower.Name = "ZombieTower";
             this.ZombieTower.Size = new System.Drawing.Size(98, 15);
             this.ZombieTower.TabIndex = 20;
@@ -1948,7 +1952,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             // 
             this.Entities.AutoSize = true;
             this.Entities.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.Entities.Location = new System.Drawing.Point(483, 6);
+            this.Entities.Location = new System.Drawing.Point(475, 3);
             this.Entities.Name = "Entities";
             this.Entities.Size = new System.Drawing.Size(53, 19);
             this.Entities.TabIndex = 46;
@@ -1957,7 +1961,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             // IgnitedCreepers
             // 
             this.IgnitedCreepers.AutoSize = true;
-            this.IgnitedCreepers.Location = new System.Drawing.Point(483, 67);
+            this.IgnitedCreepers.Location = new System.Drawing.Point(475, 67);
             this.IgnitedCreepers.Name = "IgnitedCreepers";
             this.IgnitedCreepers.Size = new System.Drawing.Size(109, 15);
             this.IgnitedCreepers.TabIndex = 19;
@@ -1984,7 +1988,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             // SuperchargedCreepers
             // 
             this.SuperchargedCreepers.AutoSize = true;
-            this.SuperchargedCreepers.Location = new System.Drawing.Point(483, 46);
+            this.SuperchargedCreepers.Location = new System.Drawing.Point(475, 46);
             this.SuperchargedCreepers.Name = "SuperchargedCreepers";
             this.SuperchargedCreepers.Size = new System.Drawing.Size(145, 15);
             this.SuperchargedCreepers.TabIndex = 18;
@@ -1997,7 +2001,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             // UncapEntitySpawnLimit
             // 
             this.UncapEntitySpawnLimit.AutoSize = true;
-            this.UncapEntitySpawnLimit.Location = new System.Drawing.Point(483, 25);
+            this.UncapEntitySpawnLimit.Location = new System.Drawing.Point(475, 25);
             this.UncapEntitySpawnLimit.Name = "UncapEntitySpawnLimit";
             this.UncapEntitySpawnLimit.Size = new System.Drawing.Size(158, 15);
             this.UncapEntitySpawnLimit.TabIndex = 17;
@@ -2039,7 +2043,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             // 
             this.World.AutoSize = true;
             this.World.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.World.Location = new System.Drawing.Point(11, 6);
+            this.World.Location = new System.Drawing.Point(3, 3);
             this.World.Name = "World";
             this.World.Size = new System.Drawing.Size(45, 19);
             this.World.TabIndex = 44;
@@ -2064,7 +2068,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.worldPnl.HorizontalScrollbarBarColor = true;
             this.worldPnl.HorizontalScrollbarHighlightOnWheel = false;
             this.worldPnl.HorizontalScrollbarSize = 10;
-            this.worldPnl.Location = new System.Drawing.Point(7, 18);
+            this.worldPnl.Location = new System.Drawing.Point(0, 15);
             this.worldPnl.Name = "worldPnl";
             this.worldPnl.Size = new System.Drawing.Size(1116, 1);
             this.worldPnl.TabIndex = 43;
@@ -2116,6 +2120,10 @@ namespace Minecraft_Wii_U_Mod_Injector
             // 
             // generalTab
             // 
+            this.generalTab.Controls.Add(this.DebugConsole);
+            this.generalTab.Controls.Add(this.metroLabel1);
+            this.generalTab.Controls.Add(this.metroLabel2);
+            this.generalTab.Controls.Add(this.metroPanel1);
             this.generalTab.Controls.Add(this.vpadDisplaySwitch);
             this.generalTab.Controls.Add(this.UIColorPickerBtn);
             this.generalTab.Controls.Add(this.DisableTeleporting);
@@ -2141,11 +2149,61 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.generalTab.VerticalScrollbarBarColor = true;
             this.generalTab.VerticalScrollbarHighlightOnWheel = false;
             this.generalTab.VerticalScrollbarSize = 10;
+            this.generalTab.Click += new System.EventHandler(this.generalTab_Click);
+            // 
+            // DebugConsole
+            // 
+            this.DebugConsole.AutoSize = true;
+            this.DebugConsole.BackColor = System.Drawing.Color.Transparent;
+            this.DebugConsole.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.DebugConsole.Location = new System.Drawing.Point(7, 46);
+            this.DebugConsole.Name = "DebugConsole";
+            this.DebugConsole.Size = new System.Drawing.Size(104, 15);
+            this.DebugConsole.TabIndex = 143;
+            this.DebugConsole.Tag = "";
+            this.DebugConsole.Text = "Debug Console";
+            this.ToolTipManager.SetToolTip(this.DebugConsole, "Whether to show the Debug Console");
+            this.DebugConsole.UseSelectable = true;
+            this.DebugConsole.CheckedChanged += new System.EventHandler(this.DebugConsoleToggled);
+            // 
+            // metroLabel1
+            // 
+            this.metroLabel1.AutoSize = true;
+            this.metroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel1.Location = new System.Drawing.Point(475, 3);
+            this.metroLabel1.Name = "metroLabel1";
+            this.metroLabel1.Size = new System.Drawing.Size(45, 19);
+            this.metroLabel1.TabIndex = 142;
+            this.metroLabel1.Text = "Game";
+            // 
+            // metroLabel2
+            // 
+            this.metroLabel2.AutoSize = true;
+            this.metroLabel2.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel2.Location = new System.Drawing.Point(3, 3);
+            this.metroLabel2.Name = "metroLabel2";
+            this.metroLabel2.Size = new System.Drawing.Size(120, 19);
+            this.metroLabel2.TabIndex = 141;
+            this.metroLabel2.Text = "UI (User Interface)";
+            // 
+            // metroPanel1
+            // 
+            this.metroPanel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.metroPanel1.HorizontalScrollbarBarColor = true;
+            this.metroPanel1.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroPanel1.HorizontalScrollbarSize = 10;
+            this.metroPanel1.Location = new System.Drawing.Point(0, 15);
+            this.metroPanel1.Name = "metroPanel1";
+            this.metroPanel1.Size = new System.Drawing.Size(1116, 1);
+            this.metroPanel1.TabIndex = 140;
+            this.metroPanel1.VerticalScrollbarBarColor = true;
+            this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
+            this.metroPanel1.VerticalScrollbarSize = 10;
             // 
             // vpadDisplaySwitch
             // 
             this.vpadDisplaySwitch.AutoSize = true;
-            this.vpadDisplaySwitch.Location = new System.Drawing.Point(7, 153);
+            this.vpadDisplaySwitch.Location = new System.Drawing.Point(475, 172);
             this.vpadDisplaySwitch.Name = "vpadDisplaySwitch";
             this.vpadDisplaySwitch.Size = new System.Drawing.Size(183, 15);
             this.vpadDisplaySwitch.TabIndex = 3;
@@ -2174,7 +2232,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.DisableTeleporting.AutoSize = true;
             this.DisableTeleporting.BackColor = System.Drawing.Color.Transparent;
             this.DisableTeleporting.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.DisableTeleporting.Location = new System.Drawing.Point(7, 111);
+            this.DisableTeleporting.Location = new System.Drawing.Point(475, 130);
             this.DisableTeleporting.Name = "DisableTeleporting";
             this.DisableTeleporting.Size = new System.Drawing.Size(123, 15);
             this.DisableTeleporting.TabIndex = 31;
@@ -2189,7 +2247,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.GamepadSplitscreen.AutoSize = true;
             this.GamepadSplitscreen.BackColor = System.Drawing.Color.Transparent;
             this.GamepadSplitscreen.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.GamepadSplitscreen.Location = new System.Drawing.Point(7, 90);
+            this.GamepadSplitscreen.Location = new System.Drawing.Point(7, 25);
             this.GamepadSplitscreen.Name = "GamepadSplitscreen";
             this.GamepadSplitscreen.Size = new System.Drawing.Size(134, 15);
             this.GamepadSplitscreen.TabIndex = 30;
@@ -2202,7 +2260,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             // disableVPadInput
             // 
             this.disableVPadInput.AutoSize = true;
-            this.disableVPadInput.Location = new System.Drawing.Point(7, 132);
+            this.disableVPadInput.Location = new System.Drawing.Point(475, 151);
             this.disableVPadInput.Name = "disableVPadInput";
             this.disableVPadInput.Size = new System.Drawing.Size(146, 15);
             this.disableVPadInput.TabIndex = 2;
@@ -2217,7 +2275,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.BypassFriendsOnly.AutoSize = true;
             this.BypassFriendsOnly.BackColor = System.Drawing.Color.Transparent;
             this.BypassFriendsOnly.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.BypassFriendsOnly.Location = new System.Drawing.Point(7, 69);
+            this.BypassFriendsOnly.Location = new System.Drawing.Point(475, 67);
             this.BypassFriendsOnly.Name = "BypassFriendsOnly";
             this.BypassFriendsOnly.Size = new System.Drawing.Size(128, 15);
             this.BypassFriendsOnly.TabIndex = 29;
@@ -2231,7 +2289,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             // 
             this.DisablePermanentKicks.AutoSize = true;
             this.DisablePermanentKicks.BackColor = System.Drawing.Color.Transparent;
-            this.DisablePermanentKicks.Location = new System.Drawing.Point(7, 48);
+            this.DisablePermanentKicks.Location = new System.Drawing.Point(475, 46);
             this.DisablePermanentKicks.Name = "DisablePermanentKicks";
             this.DisablePermanentKicks.Size = new System.Drawing.Size(152, 15);
             this.DisablePermanentKicks.TabIndex = 25;
@@ -2258,7 +2316,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             // HostOptions
             // 
             this.HostOptions.AutoSize = true;
-            this.HostOptions.Location = new System.Drawing.Point(7, 27);
+            this.HostOptions.Location = new System.Drawing.Point(475, 25);
             this.HostOptions.Name = "HostOptions";
             this.HostOptions.Size = new System.Drawing.Size(93, 15);
             this.HostOptions.TabIndex = 28;
@@ -2272,7 +2330,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             // SlowMotion
             // 
             this.SlowMotion.AutoSize = true;
-            this.SlowMotion.Location = new System.Drawing.Point(7, 174);
+            this.SlowMotion.Location = new System.Drawing.Point(475, 109);
             this.SlowMotion.Name = "SlowMotion";
             this.SlowMotion.Size = new System.Drawing.Size(90, 15);
             this.SlowMotion.TabIndex = 139;
@@ -2285,7 +2343,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             // AllDLCUnlocked
             // 
             this.AllDLCUnlocked.AutoSize = true;
-            this.AllDLCUnlocked.Location = new System.Drawing.Point(7, 6);
+            this.AllDLCUnlocked.Location = new System.Drawing.Point(475, 88);
             this.AllDLCUnlocked.Name = "AllDLCUnlocked";
             this.AllDLCUnlocked.Size = new System.Drawing.Size(115, 15);
             this.AllDLCUnlocked.TabIndex = 16;
@@ -2314,10 +2372,10 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.minigamesTab.HorizontalScrollbarBarColor = true;
             this.minigamesTab.HorizontalScrollbarHighlightOnWheel = false;
             this.minigamesTab.HorizontalScrollbarSize = 10;
-            this.minigamesTab.Location = new System.Drawing.Point(4, 5);
+            this.minigamesTab.Location = new System.Drawing.Point(4, 29);
             this.minigamesTab.Name = "minigamesTab";
             this.minigamesTab.Padding = new System.Windows.Forms.Padding(3);
-            this.minigamesTab.Size = new System.Drawing.Size(1122, 630);
+            this.minigamesTab.Size = new System.Drawing.Size(1122, 606);
             this.minigamesTab.TabIndex = 3;
             this.minigamesTab.Tag = "GeckoUNeeded";
             this.minigamesTab.Text = "Minigames";
@@ -2704,9 +2762,9 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.commandsTab.HorizontalScrollbarBarColor = true;
             this.commandsTab.HorizontalScrollbarHighlightOnWheel = false;
             this.commandsTab.HorizontalScrollbarSize = 10;
-            this.commandsTab.Location = new System.Drawing.Point(4, 5);
+            this.commandsTab.Location = new System.Drawing.Point(4, 29);
             this.commandsTab.Name = "commandsTab";
-            this.commandsTab.Size = new System.Drawing.Size(1122, 630);
+            this.commandsTab.Size = new System.Drawing.Size(1122, 606);
             this.commandsTab.TabIndex = 7;
             this.commandsTab.Tag = "needsGeckoU";
             this.commandsTab.Text = "Commands";
@@ -3197,10 +3255,10 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.settingsTab.HorizontalScrollbarBarColor = true;
             this.settingsTab.HorizontalScrollbarHighlightOnWheel = false;
             this.settingsTab.HorizontalScrollbarSize = 10;
-            this.settingsTab.Location = new System.Drawing.Point(4, 5);
+            this.settingsTab.Location = new System.Drawing.Point(4, 29);
             this.settingsTab.Name = "settingsTab";
             this.settingsTab.Padding = new System.Windows.Forms.Padding(3);
-            this.settingsTab.Size = new System.Drawing.Size(1122, 630);
+            this.settingsTab.Size = new System.Drawing.Size(1122, 606);
             this.settingsTab.TabIndex = 5;
             this.settingsTab.Tag = "";
             this.settingsTab.Text = "Settings";
@@ -3707,5 +3765,9 @@ namespace Minecraft_Wii_U_Mod_Injector
         public MetroTextBox BuildNotesBox;
         public MetroButton OpenLangMngrBtn;
         public MetroButton SetupTutorialBtn;
+        private MetroLabel metroLabel1;
+        private MetroLabel metroLabel2;
+        private MetroPanel metroPanel1;
+        public MetroCheckBox DebugConsole;
     }
 }

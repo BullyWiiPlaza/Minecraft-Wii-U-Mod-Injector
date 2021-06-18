@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Runtime.Serialization.Formatters;
 using System.Text;
 using System.Windows.Forms;
 using Minecraft_Wii_U_Mod_Injector.Helpers;
@@ -353,6 +354,20 @@ namespace Minecraft_Wii_U_Mod_Injector.Wii_U.Gecko_U
 
                 case false:
                     CallFunction64(address2, value2);
+                    break;
+            }
+        }
+
+        public void RpcToggle(uint address, uint classAddress, uint[] value, bool toggle, int indexOn, int indexOff)
+        {
+            switch (toggle)
+            {
+                case true:
+                    CallFunction64(address,classAddress, value[indexOn]);
+                    break;
+
+                case false:
+                    CallFunction64(address, classAddress, value[indexOff]);
                     break;
             }
         }

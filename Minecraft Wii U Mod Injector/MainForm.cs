@@ -8,10 +8,14 @@ using System;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Net.Sockets;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using Minecraft_Wii_U_Mod_Injector.Helpers.Win_Forms;
+using Minecraft_Wii_U_Mod_Injector.Properties;
 using Minecraft_Wii_U_Mod_Injector.Wii_U.Gecko_U;
 using static System.Windows.Forms.DialogResult;
+using Settings = Minecraft_Wii_U_Mod_Injector.Helpers.Files.Settings;
 
 namespace Minecraft_Wii_U_Mod_Injector
 {
@@ -151,6 +155,11 @@ namespace Minecraft_Wii_U_Mod_Injector
             }
         }
 
+        async Task PutTaskDelay(int sleep)
+        {
+            await Task.Delay(sleep);
+        }
+
         private void ConnectBtnClicked(object sender, EventArgs e)
         {
             try
@@ -165,7 +174,8 @@ namespace Minecraft_Wii_U_Mod_Injector
 
                         if (!IsMinecraft())
                         {
-                            Messaging.Show("This Mod Injector is intended to be used with Minecraft: Wii U Edition, please launch Minecraft and try again.");
+                            Messaging.Show(
+                                "This Mod Injector is intended to be used with Minecraft: Wii U Edition, please launch Minecraft and try again.");
                             GeckoU.Tcp.Close();
                             States.SwapState(States.StatesIds.Disconnected);
                             break;
@@ -186,16 +196,19 @@ namespace Minecraft_Wii_U_Mod_Injector
             {
                 switch (error)
                 {
-                    case System.Net.Sockets.SocketException:
-                        Messaging.Show(MessageBoxIcon.Error, "Couldn't detect TCPGecko running or IP Address is wrong.\nMake sure you have TCPGecko running and entered the correct IP Address for you Wii U");
+                    case SocketException:
+                        Messaging.Show(MessageBoxIcon.Error,
+                            "Couldn't detect TCPGecko running or IP Address is wrong.\nMake sure you have TCPGecko running and entered the correct IP Address for you Wii U");
                         Exceptions.LogError(error, "Wrong IP Address", false, false);
                         States.SwapState(States.StatesIds.Disconnected);
                         break;
 
                     case TimeoutException:
                     case IOException:
-                        Messaging.Show(MessageBoxIcon.Error, "Couldn't connect to your Wii U, please check that:\nYou entered the correct IP Address\nTCPGecko is running from the Homebrew Launcher\nYour network connection might not be stable\nPlease do not report this as a bug, we cannot fix your internet.");
-                        Exceptions.LogError(error, "Unable to Connect to the Wii U, connection timed-out", false, false);
+                        Messaging.Show(MessageBoxIcon.Error,
+                            "Couldn't connect to your Wii U, please check that:\nYou entered the correct IP Address\nTCPGecko is running from the Homebrew Launcher\nYour network connection might not be stable\nPlease do not report this as a bug, we cannot fix your internet.");
+                        Exceptions.LogError(error, "Unable to Connect to the Wii U, connection timed-out", false,
+                            false);
                         States.SwapState(States.StatesIds.Disconnected);
                         break;
                 }
@@ -229,8 +242,8 @@ namespace Minecraft_Wii_U_Mod_Injector
         {
             try
             {
-                Theme = (MetroThemeStyle)Enum.Parse(typeof(MetroThemeStyle), themeBox.Text);
-                StyleMngr.Theme = (MetroThemeStyle)Enum.Parse(typeof(MetroThemeStyle), themeBox.Text);
+                Theme = (MetroThemeStyle) Enum.Parse(typeof(MetroThemeStyle), themeBox.Text);
+                StyleMngr.Theme = (MetroThemeStyle) Enum.Parse(typeof(MetroThemeStyle), themeBox.Text);
                 Refresh();
                 Settings.Write("Theme", themeBox.Text, "Display");
             }
@@ -244,8 +257,8 @@ namespace Minecraft_Wii_U_Mod_Injector
         {
             try
             {
-                Style = (MetroColorStyle)Enum.Parse(typeof(MetroColorStyle), colorsBox.Text);
-                StyleMngr.Style = (MetroColorStyle)Enum.Parse(typeof(MetroColorStyle), colorsBox.Text);
+                Style = (MetroColorStyle) Enum.Parse(typeof(MetroColorStyle), colorsBox.Text);
+                StyleMngr.Style = (MetroColorStyle) Enum.Parse(typeof(MetroColorStyle), colorsBox.Text);
                 Refresh();
                 Settings.Write("Color", colorsBox.Text, "Display");
             }
@@ -254,15 +267,16 @@ namespace Minecraft_Wii_U_Mod_Injector
                 Exceptions.LogError(error, "Failed to Change Injector Form Color", false, true);
             }
         }
-        
+
         private void DiscordRpcToggleChecked(object sender, EventArgs e)
         {
             try
             {
                 if (discordRpcCheckBox.Checked)
-                {                  
+                {
                     DiscordRp.Initialize();
-                    DiscordRp.SetPresence(IsConnected ? "Connected" : "Disconnected", MainTabs.SelectedTab.Text + " tab");
+                    DiscordRp.SetPresence(IsConnected ? "Connected" : "Disconnected",
+                        MainTabs.SelectedTab.Text + " tab");
                 }
                 else
                 {
@@ -276,19 +290,18 @@ namespace Minecraft_Wii_U_Mod_Injector
                 Exceptions.LogError(error, "Failed to Toggle Discord RPC", false, true);
             }
         }
-        
+
         private void ResetConfigClicked(object sender, EventArgs e)
         {
             try
             {
-                if (Messaging.Show("Resetting the configuration file will reset all your preferences, continue?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == Yes)
+                if (Messaging.Show("Resetting the configuration file will reset all your preferences, continue?",
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Question) == Yes)
                 {
                     if (File.Exists(Application.StartupPath + "/Minecraft Wii U Mod Injector.ini"))
                         File.Delete(Application.StartupPath + "/Minecraft Wii U Mod Injector.ini");
                     else
-                    {
                         Messaging.Show("Configuration File doesn't exist, nothing to reset.");
-                    }
                 }
             }
             catch (Exception error)
@@ -303,15 +316,14 @@ namespace Minecraft_Wii_U_Mod_Injector
             {
                 if (releaseNotesToggle.Checked)
                 {
-                    BuildNotesBox.Text = Properties.Resources.releaseNote;
+                    BuildNotesBox.Text = Resources.releaseNote;
                     Settings.Write("ReleaseNotes", "current", "Display");
                 }
                 else
                 {
-                    BuildNotesBox.Text = Properties.Resources.releaseNotes;
+                    BuildNotesBox.Text = Resources.releaseNotes;
                     Settings.Write("ReleaseNotes", "all", "Display");
                 }
-
             }
             catch (Exception error)
             {
@@ -1065,7 +1077,6 @@ namespace Minecraft_Wii_U_Mod_Injector
         }
         #endregion
 
-        #region debug
         private void DisableVPadInputToggled(object sender, EventArgs e)
         {
             GeckoU.WriteUIntToggle(0x011293D0, Blr, 0x38E00001, disableVPadInput.Checked);
@@ -1074,11 +1085,21 @@ namespace Minecraft_Wii_U_Mod_Injector
         {
             GeckoU.RpcToggle(0x0112A9E4, 0x0112A9EC, 0x0, 0x0, vpadDisplaySwitch.Checked);
         }
-        #endregion
+
+        private async void DebugConsoleToggled(object sender, EventArgs e)
+        {
+            uint[] bools = {0x01, 0x00};
+
+            GeckoU.RpcToggle(0x02DABA0C, 0x109F95E0, bools, DebugConsole.Checked, 0, 1);
+
+            DebugConsole.Enabled = false;
+            await PutTaskDelay(1000);
+            DebugConsole.Enabled = true;
+        }
 
         #endregion memory editing
 
-        private void debugTab_Click(object sender, EventArgs e)
+        private void generalTab_Click(object sender, EventArgs e)
         {
 
         }

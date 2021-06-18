@@ -11,6 +11,7 @@ using MetroFramework.Controls;
 using Minecraft_Wii_U_Mod_Injector.Helpers.Win_Forms;
 using Octokit;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Net;
 using Application = System.Windows.Forms.Application;
 
@@ -88,7 +89,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms
             if (MainTabs.SelectedIndex != tile.TileCount)
                 MainTabs.SelectedIndex = tile.TileCount;
 
-            EmptyTile.Text = "Currently Viewing:\n" + MainTabs.SelectedTab.Text;
+            EmptyTile.Text = @"Currently Viewing:\n" + MainTabs.SelectedTab.Text;
         }
 
         public static async Task RetrieveServerLangs()
@@ -110,7 +111,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms
             {
                 Exceptions.LogError(error,
                     "Something went wrong while retrieving languages files.\n" +
-                    "If this issue persist please contact the developers.", false, false);
+                    "If this issue persist please contact the developers.", false, true);
             }
         }
 
@@ -189,6 +190,13 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms
                     templateFile.Write(c.Name + ".locationY", c.Location.Y.ToString(), "controls.properties");
                 }
 
+            foreach (var c in Miscellaneous.AllSliderControls())
+            {
+                templateFile.Write(c.Name + ".sizeWidth", c.Size.Width.ToString(), "controls.properties");
+                templateFile.Write(c.Name + ".locationX", c.Location.X.ToString(), "controls.properties");
+                templateFile.Write(c.Name + ".locationY", c.Location.Y.ToString(), "controls.properties");
+            }
+
             Messaging.Show("Template File has been created in:\n" + _langRootDir + "template.ini");
         }
 
@@ -211,6 +219,16 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms
                 if (excludeMetroTextBox && control is MetroTextBox) continue;
 
                 if (control.Name == "BuildTile" || control.Name == "BuildVerTitleLbl") continue;
+
+                if (control is NumericUpDown && languageFile.KeyExists(control.Name, "controls.properties"))
+                {
+                    control.Size =
+                        new Size(Convert.ToInt32(languageFile.Read(control.Name + ".sizeWidth", "controls.properties")),
+                            control.Size.Height);
+                    control.Location = new Point(
+                        Convert.ToInt32(languageFile.Read(control.Name + ".locationX", "controls.properties")),
+                        Convert.ToInt32(languageFile.Read(control.Name + ".locationY", "controls.properties")));
+                }
 
                 if (control is MetroButton || control is MetroLabel || control is MetroTextBox ||
                     control is MetroTile || control is MetroCheckBox)
@@ -245,8 +263,18 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms
 
                 if (control.Name == "BuildTile" || control.Name == "BuildVerTitleLbl") continue;
 
+                if (control is NumericUpDown)
+                {
+                    control.Size =
+                        new Size(Convert.ToInt32(languageFile.Read(control.Name + ".sizeWidth", "controls.properties")),
+                            control.Size.Height);
+                    control.Location = new Point(
+                        Convert.ToInt32(languageFile.Read(control.Name + ".locationX", "controls.properties")),
+                        Convert.ToInt32(languageFile.Read(control.Name + ".locationY", "controls.properties")));
+                }
+
                 if (control is MetroButton || control is MetroLabel || control is MetroTextBox ||
-                    control is MetroTile || control is MetroCheckBox)
+                    control is MetroTile || control is MetroCheckBox || control is NumericUpDown)
                 {
                     control.Text = languageFile.Read(control.Name, "controls");
 
@@ -285,11 +313,23 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms
             LoadInstalledLangs();
         }
 
+        private void ResetTileClicked(object sender, EventArgs e)
+        {
+            if (Settings.Exists("Language", "Display"))
+                Settings.Delete("Language", "Display");
+
+            Messaging.Show("Language Preferences reset, a restart of the Mod Injector is required.");
+
+            Process.Start(Application.ExecutablePath);
+
+            Environment.Exit(0);
+        }
+
         private void Exiting(object sender, FormClosingEventArgs e)
         {
             ServerNames.Clear();
             ServerUrls.Clear();
-            
+
             DiscordRp.SetPresence(_iw.IsConnected ? "Connected" : "Disconnected", "Settings tab");
         }
     }

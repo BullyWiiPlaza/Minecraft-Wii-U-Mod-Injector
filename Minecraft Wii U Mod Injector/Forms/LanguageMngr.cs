@@ -13,7 +13,9 @@ using Octokit;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
+using System.Text;
 using Application = System.Windows.Forms.Application;
+using System.Diagnostics;
 
 namespace Minecraft_Wii_U_Mod_Injector.Forms
 {
@@ -105,19 +107,34 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms
             if (MainTabs.SelectedIndex != tile.TileCount)
                 MainTabs.SelectedIndex = tile.TileCount;
 
-            EmptyTile.Text = @"Currently Viewing:\n" + MainTabs.SelectedTab.Text;
+            EmptyTile.Text = @"Currently Viewing:
+" + MainTabs.SelectedTab.Text;
         }
 
         private void ApplyLanguageBtnClicked(object sender, DataGridViewCellEventArgs e)
         {
+            string filePath = LanguagesList.Rows[e.RowIndex].Cells[3].Value.ToString();
+
+            if (!GetLanguageFile(e).KeyExists("version", "meta") || GetLanguageFile(e).Read("version", "meta") != Setup.LocalVer)
+            {
+                if (Messaging.Show(
+                    "This Language has last been modified for a different version of the Mod Injector, do you still want to apply?\n" +
+                    "(Some things may not be translated/have broken positioning",
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+                {
+                    return;
+                }
+            }
+
+            if (!Equals(Miscellaneous.GetEncoding(filePath), Encoding.Unicode)) 
+                Miscellaneous.ChangeEncoding(filePath, Encoding.Unicode);
+
             ApplyLanguage(_iw.Controls, e);
 
             foreach (MetroTabPage page in _iw.MainTabs.TabPages) ApplyLanguage(page.Controls, e);
-
             foreach (MetroTabPage page in _iw.MinigamesTabs.TabPages) ApplyLanguage(page.Controls, e);
 
-            var languageFile = GetLanguageFile(e);
-            Messaging.Show("Successfully changed language to \"" + languageFile.Read("name", "meta") + "\"!");
+            Messaging.Show("Language has been changed to " + LanguagesList.Rows[e.RowIndex].Cells[0].Value);
         }
 
         private void DownloadServerLang(object sender, DataGridViewCellEventArgs e)
@@ -127,7 +144,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms
             downloader.DownloadFile((string) ServerLanguageList.Rows[e.RowIndex].Cells[1].Value,
                 _langRootDir + (string) ServerLanguageList.Rows[e.RowIndex].Cells[0].Value);
 
-            Messaging.Show("Succesfully downloaded \"" + ServerLanguageList.Rows[e.RowIndex].Cells[0].Value + "\"!");
+            Messaging.Show(ServerLanguageList.Rows[e.RowIndex].Cells[0].Value + " has been downloaded.");
             downloader.Dispose();
         }
 
@@ -138,12 +155,13 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms
             templateFile.Write("name", "Template Language", "meta");
             templateFile.Write("authors", "Kashiiera", "meta");
             templateFile.Write("description", "Template Language file to start making a new language file", "meta");
+            templateFile.Write("version", Setup.LocalVer, "meta");
 
             foreach (var c in Miscellaneous.AllMetroControls()) templateFile.Write(c.Name, c.Text, "controls");
 
             if (Messaging.Show(
                 "Some controls might overlap if their text is longer than the default." +
-                "\nWould you like to export control size and locations too? (so you can fine tune them incase they don't fit)",
+                "\nWould you like to export control size and locations too? (so you can fine tune them in-case they don't fit)",
                 MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 foreach (var c in Miscellaneous.AllMetroControls())
                 {
@@ -170,6 +188,10 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms
             LoadInstalledLangs();
         }
 
+        private void OpenTileClicked(object sender, EventArgs e)
+        {
+            Process.Start(_langRootDir);
+        }
         #endregion
 
         #region language functions
@@ -205,7 +227,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms
             }
             catch (Exception e)
             {
-                Exceptions.LogError(e, "Failed to load Installed languages", false, true);
+                Exceptions.LogError(e, "Failed to load Installed languages", true);
             }
 
         }
@@ -229,7 +251,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms
             {
                 Exceptions.LogError(error,
                     "Something went wrong while retrieving languages files.\n" +
-                    "If this issue persist please contact the developers.", false, true);
+                    "If this issue persist please contact the developers.", true);
             }
         }
 

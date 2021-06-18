@@ -47,7 +47,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
             }
             catch (Exception error)
             {
-                Exceptions.LogError(error, "Failed to setup", false, true);
+                Exceptions.LogError(error, "Failed to setup", true);
                 DiscordRp.Deinitialize();
                 Environment.Exit(0);
             }
@@ -85,7 +85,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
             {
                 Exceptions.LogError(error,
                     "Something went wrong while retrieving the latest release, please try re-launching the Injector.\n" +
-                    "If this issue persist please contact the developers.", false, false);
+                    "If this issue persist please contact the developers.", true);
             }
         }
 
@@ -141,7 +141,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
             }
             catch (Exception error)
             {
-                Exceptions.LogError(error, "Exception in SetupUserPrefs()", false, true);
+                Exceptions.LogError(error, "Exception in SetupUserPrefs()", true);
                 Environment.Exit(0);
             }
         }

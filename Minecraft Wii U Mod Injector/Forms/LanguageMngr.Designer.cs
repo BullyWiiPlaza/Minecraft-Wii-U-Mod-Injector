@@ -54,6 +54,7 @@
             this.ServerLanguageList = new MetroFramework.Controls.MetroGrid();
             this.ServerNameBox = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ServerUrlBox = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.OpenTile = new MetroFramework.Controls.MetroTile();
             ((System.ComponentModel.ISupportInitialize)(this.StyleMngr)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LanguagesList)).BeginInit();
             this.MainTabs.SuspendLayout();
@@ -204,10 +205,10 @@
             // 
             this.EmptyTile.ActiveControl = null;
             this.EmptyTile.Enabled = false;
-            this.EmptyTile.Location = new System.Drawing.Point(0, 307);
+            this.EmptyTile.Location = new System.Drawing.Point(0, 369);
             this.EmptyTile.Name = "EmptyTile";
             this.EmptyTile.PaintTileCount = false;
-            this.EmptyTile.Size = new System.Drawing.Size(169, 198);
+            this.EmptyTile.Size = new System.Drawing.Size(169, 136);
             this.EmptyTile.TabIndex = 54;
             this.EmptyTile.Text = "Currently Viewing:\r\nInstalled Languages\r\n";
             this.EmptyTile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -348,11 +349,27 @@
             this.ServerUrlBox.ReadOnly = true;
             this.ServerUrlBox.Visible = false;
             // 
+            // OpenTile
+            // 
+            this.OpenTile.ActiveControl = null;
+            this.OpenTile.Location = new System.Drawing.Point(0, 309);
+            this.OpenTile.Name = "OpenTile";
+            this.OpenTile.PaintTileCount = false;
+            this.OpenTile.Size = new System.Drawing.Size(169, 60);
+            this.OpenTile.TabIndex = 57;
+            this.OpenTile.Text = "Open Directory";
+            this.OpenTile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.OpenTile.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
+            this.ToolTips.SetToolTip(this.OpenTile, "Refreshes the Language List");
+            this.OpenTile.UseSelectable = true;
+            this.OpenTile.Click += new System.EventHandler(this.OpenTileClicked);
+            // 
             // LanguageMngr
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1120, 505);
+            this.Controls.Add(this.OpenTile);
             this.Controls.Add(this.InstalledTile);
             this.Controls.Add(this.RefreshTile);
             this.Controls.Add(this.ExportTile);
@@ -397,5 +414,6 @@
         public MetroFramework.Controls.MetroTabPage InstalledLangsTab;
         public MetroFramework.Controls.MetroTabPage DownloadableLangsTab;
         public MetroFramework.Controls.MetroGrid ServerLanguageList;
+        public MetroFramework.Controls.MetroTile OpenTile;
     }
 }

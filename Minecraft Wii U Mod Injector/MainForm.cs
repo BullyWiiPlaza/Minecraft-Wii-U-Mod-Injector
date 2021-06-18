@@ -199,21 +199,19 @@ namespace Minecraft_Wii_U_Mod_Injector
                     case SocketException:
                         Messaging.Show(MessageBoxIcon.Error,
                             "Couldn't detect TCPGecko running or IP Address is wrong.\nMake sure you have TCPGecko running and entered the correct IP Address for you Wii U");
-                        Exceptions.LogError(error, "Wrong IP Address", false, false);
                         States.SwapState(States.StatesIds.Disconnected);
                         break;
 
                     case TimeoutException:
                     case IOException:
                         Messaging.Show(MessageBoxIcon.Error,
-                            "Couldn't connect to your Wii U, please check that:\nYou entered the correct IP Address\nTCPGecko is running from the Homebrew Launcher\nYour network connection might not be stable\nPlease do not report this as a bug, we cannot fix your internet.");
-                        Exceptions.LogError(error, "Unable to Connect to the Wii U, connection timed-out", false,
-                            false);
+                            "Couldn't connect to your Wii U, please check that:\nYou entered the correct IP Address\nTCPGecko is running from the Homebrew Launcher\n" +
+                            "Your network connection might not be stable\nPlease do not report this as a bug, we cannot fix your internet.");
                         States.SwapState(States.StatesIds.Disconnected);
                         break;
                 }
 
-                Exceptions.LogError(error, "Unable to Connect to the Wii U, unknown error", false, false);
+                Exceptions.LogError(error, "Unable to Connect to the Wii U, unknown error", false);
                 States.SwapState(States.StatesIds.Disconnected);
             }
         }
@@ -249,7 +247,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             }
             catch (Exception error)
             {
-                Exceptions.LogError(error, "Failed to Change Injector Form Theme", false, true);
+                Exceptions.LogError(error, "Failed to Change Injector Form Theme", true);
             }
         }
 
@@ -264,7 +262,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             }
             catch (Exception error)
             {
-                Exceptions.LogError(error, "Failed to Change Injector Form Color", false, true);
+                Exceptions.LogError(error, "Failed to Change Injector Form Color", true);
             }
         }
 
@@ -287,7 +285,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             }
             catch (Exception error)
             {
-                Exceptions.LogError(error, "Failed to Toggle Discord RPC", false, true);
+                Exceptions.LogError(error, "Failed to Toggle Discord RPC", true);
             }
         }
 
@@ -306,7 +304,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             }
             catch (Exception error)
             {
-                Exceptions.LogError(error, "Failed to Reset Config", false, true);
+                Exceptions.LogError(error, "Failed to Reset Config", true);
             }
         }
 
@@ -327,7 +325,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             }
             catch (Exception error)
             {
-                Exceptions.LogError(error, "Failed to Toggle Release Notes", false, true);
+                Exceptions.LogError(error, "Failed to Toggle Release Notes", true);
             }
         }
 
@@ -339,7 +337,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             }
             catch (Exception error)
             {
-                Exceptions.LogError(error, "Failed to Toggle Release Notes", false, true);
+                Exceptions.LogError(error, "Failed to Toggle Release Notes", true);
             }
         }
 

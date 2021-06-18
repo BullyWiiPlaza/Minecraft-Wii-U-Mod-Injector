@@ -3,7 +3,6 @@ using Minecraft_Wii_U_Mod_Injector.Helpers.Files;
 using Octokit;
 using System;
 using System.Threading.Tasks;
-using Minecraft_Wii_U_Mod_Injector.Forms;
 using Minecraft_Wii_U_Mod_Injector.Helpers.Win_Forms;
 using Minecraft_Wii_U_Mod_Injector.Properties;
 using Settings = Minecraft_Wii_U_Mod_Injector.Helpers.Files.Settings;
@@ -14,7 +13,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
     {
         public static MainForm Injector = new();
 
-        public static string LocalVer = "v5.1.8.h1";
+        public static string LocalVer = "v5.1.8.pr1";
         public static string GitVer = string.Empty;
         public static bool PreRelease;
 
@@ -123,8 +122,6 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
                         Convert.ToBoolean(Settings.Read("PrereleaseOptIn", "Updates"));
 
                     Injector.discordRpcCheckBox.Checked = Convert.ToBoolean(Settings.Read("DiscordRPC", "Discord"));
-
-                    new LanguageMngr(Injector).ApplyLanguage(Settings.Read("Language", "Display"));
                 }
                 catch (Exception)
                 {

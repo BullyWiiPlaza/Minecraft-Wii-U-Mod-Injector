@@ -11,7 +11,7 @@ using MetroFramework.Controls;
 using Minecraft_Wii_U_Mod_Injector.Helpers.Win_Forms;
 using Octokit;
 using System.Collections.Generic;
-using System.Diagnostics;
+using System.Linq;
 using System.Net;
 using Application = System.Windows.Forms.Application;
 
@@ -19,12 +19,17 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms
 {
     public partial class LanguageMngr : MetroForm
     {
+        #region references
         private readonly MainForm _iw;
         private readonly string _langRootDir = Application.StartupPath + @"\Languages\";
 
         public static List<string> ServerNames = new();
         public static List<string> ServerUrls = new();
 
+        public string[] BlackList = {"BuildTile", "BuildVerTitleLbl"};
+        #endregion
+
+        #region init
         public LanguageMngr(MainForm iw)
         {
             InitializeComponent();
@@ -82,6 +87,17 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms
             DiscordRp.SetPresence(_iw.IsConnected ? "Connected" : "Disconnected", "Language Manager");
         }
 
+        private void Exiting(object sender, FormClosingEventArgs e)
+        {
+            ServerNames.Clear();
+            ServerUrls.Clear();
+
+            DiscordRp.SetPresence(_iw.IsConnected ? "Connected" : "Disconnected", "Settings tab");
+        }
+        #endregion
+
+        #region control handlers
+
         private void SwapTab(object sender, EventArgs e)
         {
             var tile = (MetroTile) sender;
@@ -92,57 +108,16 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms
             EmptyTile.Text = @"Currently Viewing:\n" + MainTabs.SelectedTab.Text;
         }
 
-        public static async Task RetrieveServerLangs()
+        private void ApplyLanguageBtnClicked(object sender, DataGridViewCellEventArgs e)
         {
-            try
-            {
-                var gitClient = new GitHubClient(new ProductHeaderValue("MCWiiUMIClient"));
-                var contents = await gitClient.Repository.Content.GetAllContents(
-                    "Kashiiera",
-                    "Minecraft-Wii-U-Mod-Injector-Languages");
+            ApplyLanguage(_iw.Controls, e);
 
-                foreach (var t in contents)
-                {
-                    ServerNames.Add(t.Name);
-                    ServerUrls.Add(t.DownloadUrl);
-                }
-            }
-            catch (Exception error)
-            {
-                Exceptions.LogError(error,
-                    "Something went wrong while retrieving languages files.\n" +
-                    "If this issue persist please contact the developers.", false, true);
-            }
-        }
+            foreach (MetroTabPage page in _iw.MainTabs.TabPages) ApplyLanguage(page.Controls, e);
 
-        private void LoadInstalledLangs()
-        {
-            var index = 0;
-            try
-            {
-                var files = Directory.GetFiles(_langRootDir);
+            foreach (MetroTabPage page in _iw.MinigamesTabs.TabPages) ApplyLanguage(page.Controls, e);
 
-                if (files.Length <= 0) return;
-
-                LanguagesList.Rows.Add(files.Length);
-
-                foreach (var t in files)
-                {
-                    var file = new FileInfo(t);
-                    var langFile = new IniFile(_langRootDir + file.Name);
-
-                    LanguagesList.Rows[index].Cells[0].Value = langFile.Read("name", "meta");
-                    LanguagesList.Rows[index].Cells[1].Value = langFile.Read("description", "meta");
-                    LanguagesList.Rows[index].Cells[2].Value = langFile.Read("authors", "meta");
-                    LanguagesList.Rows[index].Cells[3].Value = file.FullName;
-
-                    index++;
-                }
-            }
-            catch (Exception e)
-            {
-                Exceptions.LogError(e, "Failed to load Installed languages", false, true);
-            }
+            var languageFile = GetLanguageFile(e);
+            Messaging.Show("Successfully changed language to \"" + languageFile.Read("name", "meta") + "\"!");
         }
 
         private void DownloadServerLang(object sender, DataGridViewCellEventArgs e)
@@ -154,18 +129,6 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms
 
             Messaging.Show("Succesfully downloaded \"" + ServerLanguageList.Rows[e.RowIndex].Cells[0].Value + "\"!");
             downloader.Dispose();
-        }
-
-        private void ApplyLanguageBtnClicked(object sender, DataGridViewCellEventArgs e)
-        {
-            ApplyLanguage(_iw.Controls, e);
-
-            foreach (MetroTabPage page in _iw.MainTabs.TabPages) ApplyLanguage(page.Controls, e, true);
-
-            foreach (MetroTabPage page in _iw.MinigamesTabs.TabPages) ApplyLanguage(page.Controls, e);
-
-            var languageFile = GetLanguageFile(e);
-            Messaging.Show("Successfully changed language to \"" + languageFile.Read("name", "meta") + "\"!");
         }
 
         private void ExportTemplateBtnClicked(object sender, EventArgs e)
@@ -200,25 +163,103 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms
             Messaging.Show("Template File has been created in:\n" + _langRootDir + "template.ini");
         }
 
+        private void RefreshTileClicked(object sender, EventArgs e)
+        {
+            if (LanguagesList.Rows.Count > 0) LanguagesList.Rows.Clear();
+
+            LoadInstalledLangs();
+        }
+
+        #endregion
+
+        #region language functions
+
         private IniFile GetLanguageFile(DataGridViewCellEventArgs e)
         {
             return new(LanguagesList.Rows[e.RowIndex].Cells[3].Value.ToString());
         }
 
-        private IniFile GetLanguageFile(string filePath)
+        private void LoadInstalledLangs()
         {
-            return new(filePath);
+            var index = 0;
+            try
+            {
+                var files = Directory.GetFiles(_langRootDir);
+
+                if (files.Length <= 0) return;
+
+                LanguagesList.Rows.Add(files.Length);
+
+                foreach (var t in files)
+                {
+                    var file = new FileInfo(t);
+                    var langFile = new IniFile(_langRootDir + file.Name);
+
+                    LanguagesList.Rows[index].Cells[0].Value = langFile.Read("name", "meta");
+                    LanguagesList.Rows[index].Cells[1].Value = langFile.Read("description", "meta");
+                    LanguagesList.Rows[index].Cells[2].Value = langFile.Read("authors", "meta");
+                    LanguagesList.Rows[index].Cells[3].Value = file.FullName;
+
+                    index++;
+                }
+            }
+            catch (Exception e)
+            {
+                Exceptions.LogError(e, "Failed to load Installed languages", false, true);
+            }
+
         }
 
-        public void ApplyLanguage(IEnumerable controls, DataGridViewCellEventArgs e, bool excludeMetroTextBox = false)
+        public static async Task RetrieveServerLangs()
+        {
+            try
+            {
+                var gitClient = new GitHubClient(new ProductHeaderValue("MCWiiUMIClient"));
+                var contents = await gitClient.Repository.Content.GetAllContents(
+                    "Kashiiera",
+                    "Minecraft-Wii-U-Mod-Injector-Languages");
+
+                foreach (var t in contents)
+                {
+                    ServerNames.Add(t.Name);
+                    ServerUrls.Add(t.DownloadUrl);
+                }
+            }
+            catch (Exception error)
+            {
+                Exceptions.LogError(error,
+                    "Something went wrong while retrieving languages files.\n" +
+                    "If this issue persist please contact the developers.", false, true);
+            }
+        }
+
+        public void ApplyLanguage(IEnumerable controls, DataGridViewCellEventArgs e)
         {
             var languageFile = GetLanguageFile(e);
 
             foreach (Control control in controls)
             {
-                if (excludeMetroTextBox && control is MetroTextBox) continue;
+                if (BlackList.Contains(control.Name)) continue;
 
-                if (control.Name == "BuildTile" || control.Name == "BuildVerTitleLbl") continue;
+                if (!languageFile.KeyExists(control.Name, "controls")) continue;
+
+                if (control is MetroButton || control is MetroLabel || control is MetroTile || control is MetroCheckBox)
+                {
+                    control.Text = languageFile.Read(control.Name, "controls");
+
+                    if (languageFile.KeyExists(control.Name + ".sizeWidth", "controls.properties"))
+                        control.Size =
+                            new Size(
+                                Convert.ToInt32(languageFile.Read(control.Name + ".sizeWidth", "controls.properties")),
+                                Convert.ToInt32(languageFile.Read(control.Name + ".sizeHeight",
+                                    "controls.properties")));
+
+                    if (languageFile.KeyExists(control.Name + ".locationX", "controls.properties"))
+                        control.Location =
+                            new Point(
+                                Convert.ToInt32(languageFile.Read(control.Name + ".locationX", "controls.properties")),
+                                Convert.ToInt32(languageFile.Read(control.Name + ".locationY", "controls.properties")));
+                }
 
                 if (control is NumericUpDown && languageFile.KeyExists(control.Name, "controls.properties"))
                 {
@@ -229,108 +270,11 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms
                         Convert.ToInt32(languageFile.Read(control.Name + ".locationX", "controls.properties")),
                         Convert.ToInt32(languageFile.Read(control.Name + ".locationY", "controls.properties")));
                 }
-
-                if (control is MetroButton || control is MetroLabel || control is MetroTextBox ||
-                    control is MetroTile || control is MetroCheckBox)
-                {
-                    control.Text = languageFile.Read(control.Name, "controls");
-
-                    if (languageFile.KeyExists(control.Name + ".sizeWidth", "controls.properties"))
-                        control.Size =
-                            new Size(
-                                Convert.ToInt32(languageFile.Read(control.Name + ".sizeWidth", "controls.properties")),
-                                Convert.ToInt32(languageFile.Read(control.Name + ".sizeHeight",
-                                    "controls.properties")));
-
-                    if (languageFile.KeyExists(control.Name + ".locationX", "controls.properties"))
-                        control.Location =
-                            new Point(
-                                Convert.ToInt32(languageFile.Read(control.Name + ".locationX", "controls.properties")),
-                                Convert.ToInt32(languageFile.Read(control.Name + ".locationY", "controls.properties")));
-                }
             }
 
             Settings.Write("Language", LanguagesList.Rows[e.RowIndex].Cells[3].Value.ToString(), "Display");
         }
 
-        public void ApplyLanguage(IEnumerable controls, string filePath, bool excludeMetroTextBox = false)
-        {
-            var languageFile = GetLanguageFile(filePath);
-
-            foreach (Control control in controls)
-            {
-                if (excludeMetroTextBox && control is MetroTextBox) continue;
-
-                if (control.Name == "BuildTile" || control.Name == "BuildVerTitleLbl") continue;
-
-                if (control is NumericUpDown)
-                {
-                    control.Size =
-                        new Size(Convert.ToInt32(languageFile.Read(control.Name + ".sizeWidth", "controls.properties")),
-                            control.Size.Height);
-                    control.Location = new Point(
-                        Convert.ToInt32(languageFile.Read(control.Name + ".locationX", "controls.properties")),
-                        Convert.ToInt32(languageFile.Read(control.Name + ".locationY", "controls.properties")));
-                }
-
-                if (control is MetroButton || control is MetroLabel || control is MetroTextBox ||
-                    control is MetroTile || control is MetroCheckBox || control is NumericUpDown)
-                {
-                    control.Text = languageFile.Read(control.Name, "controls");
-
-                    if (languageFile.KeyExists(control.Name + ".sizeWidth", "controls.properties"))
-                        control.Size =
-                            new Size(
-                                Convert.ToInt32(languageFile.Read(control.Name + ".sizeWidth", "controls.properties")),
-                                Convert.ToInt32(languageFile.Read(control.Name + ".sizeHeight",
-                                    "controls.properties")));
-
-                    if (languageFile.KeyExists(control.Name + ".locationX", "controls.properties"))
-                        control.Location =
-                            new Point(
-                                Convert.ToInt32(languageFile.Read(control.Name + ".locationX", "controls.properties")),
-                                Convert.ToInt32(languageFile.Read(control.Name + ".locationY", "controls.properties")));
-                }
-            }
-        }
-
-        public void ApplyLanguage(string filePath)
-        {
-            if (filePath == string.Empty || !File.Exists(filePath))
-                return;
-
-            ApplyLanguage(_iw.Controls, filePath);
-
-            foreach (MetroTabPage page in _iw.MainTabs.TabPages) ApplyLanguage(page.Controls, filePath);
-
-            foreach (MetroTabPage page in _iw.MinigamesTabs.TabPages) ApplyLanguage(page.Controls, filePath);
-        }
-
-        private void RefreshTileClicked(object sender, EventArgs e)
-        {
-            if (LanguagesList.Rows.Count > 0) LanguagesList.Rows.Clear();
-
-            LoadInstalledLangs();
-        }
-
-        private void ResetTileClicked(object sender, EventArgs e)
-        {
-            if (Settings.Exists("Language", "Display"))
-                Settings.Delete("Language", "Display");
-
-            Messaging.Show("Language Preferences reset, a restart of the Mod Injector is required.");
-
-            Process.Start(Application.ExecutablePath);
-
-            Environment.Exit(0);
-        }
-
-        private void Exiting(object sender, FormClosingEventArgs e)
-        {
-            ServerNames.Clear();
-            ServerUrls.Clear();
-
-            DiscordRp.SetPresence(_iw.IsConnected ? "Connected" : "Disconnected", "Settings tab");
-        }
+        #endregion
     }
 }

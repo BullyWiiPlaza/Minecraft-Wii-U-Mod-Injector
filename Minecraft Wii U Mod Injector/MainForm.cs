@@ -1098,10 +1098,5 @@ namespace Minecraft_Wii_U_Mod_Injector
         }
 
         #endregion memory editing
-
-        private void generalTab_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

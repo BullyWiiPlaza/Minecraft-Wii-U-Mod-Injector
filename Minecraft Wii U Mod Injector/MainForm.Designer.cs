@@ -147,8 +147,8 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.NoFog = new MetroFramework.Controls.MetroCheckBox();
             this.generalTab = new MetroFramework.Controls.MetroTabPage();
             this.DebugConsole = new MetroFramework.Controls.MetroCheckBox();
-            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
+            this.Game = new MetroFramework.Controls.MetroLabel();
+            this.UIUserInterface = new MetroFramework.Controls.MetroLabel();
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
             this.vpadDisplaySwitch = new MetroFramework.Controls.MetroCheckBox();
             this.UIColorPickerBtn = new MetroFramework.Controls.MetroButton();
@@ -366,7 +366,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.MainTabs.Location = new System.Drawing.Point(155, 61);
             this.MainTabs.Multiline = true;
             this.MainTabs.Name = "MainTabs";
-            this.MainTabs.SelectedIndex = 6;
+            this.MainTabs.SelectedIndex = 3;
             this.MainTabs.Size = new System.Drawing.Size(1130, 639);
             this.MainTabs.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.MainTabs.TabIndex = 0;
@@ -2121,8 +2121,8 @@ namespace Minecraft_Wii_U_Mod_Injector
             // generalTab
             // 
             this.generalTab.Controls.Add(this.DebugConsole);
-            this.generalTab.Controls.Add(this.metroLabel1);
-            this.generalTab.Controls.Add(this.metroLabel2);
+            this.generalTab.Controls.Add(this.Game);
+            this.generalTab.Controls.Add(this.UIUserInterface);
             this.generalTab.Controls.Add(this.metroPanel1);
             this.generalTab.Controls.Add(this.vpadDisplaySwitch);
             this.generalTab.Controls.Add(this.UIColorPickerBtn);
@@ -2165,25 +2165,25 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.DebugConsole.UseSelectable = true;
             this.DebugConsole.CheckedChanged += new System.EventHandler(this.DebugConsoleToggled);
             // 
-            // metroLabel1
+            // Game
             // 
-            this.metroLabel1.AutoSize = true;
-            this.metroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel1.Location = new System.Drawing.Point(475, 3);
-            this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(45, 19);
-            this.metroLabel1.TabIndex = 142;
-            this.metroLabel1.Text = "Game";
+            this.Game.AutoSize = true;
+            this.Game.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.Game.Location = new System.Drawing.Point(475, 3);
+            this.Game.Name = "Game";
+            this.Game.Size = new System.Drawing.Size(45, 19);
+            this.Game.TabIndex = 142;
+            this.Game.Text = "Game";
             // 
-            // metroLabel2
+            // UIUserInterface
             // 
-            this.metroLabel2.AutoSize = true;
-            this.metroLabel2.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel2.Location = new System.Drawing.Point(3, 3);
-            this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(120, 19);
-            this.metroLabel2.TabIndex = 141;
-            this.metroLabel2.Text = "UI (User Interface)";
+            this.UIUserInterface.AutoSize = true;
+            this.UIUserInterface.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.UIUserInterface.Location = new System.Drawing.Point(3, 3);
+            this.UIUserInterface.Name = "UIUserInterface";
+            this.UIUserInterface.Size = new System.Drawing.Size(120, 19);
+            this.UIUserInterface.TabIndex = 141;
+            this.UIUserInterface.Text = "UI (User Interface)";
             // 
             // metroPanel1
             // 
@@ -3764,8 +3764,8 @@ namespace Minecraft_Wii_U_Mod_Injector
         public MetroTextBox BuildNotesBox;
         public MetroButton OpenLangMngrBtn;
         public MetroButton SetupTutorialBtn;
-        private MetroLabel metroLabel1;
-        private MetroLabel metroLabel2;
+        private MetroLabel Game;
+        private MetroLabel UIUserInterface;
         private MetroPanel metroPanel1;
         public MetroCheckBox DebugConsole;
     }

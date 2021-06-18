@@ -264,6 +264,16 @@
     <Compile Include="Forms\PlayerOptions.Designer.cs">
       <DependentUpon>PlayerOptions.cs</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\DiscordRp.cs" />
+    <Compile Include="Helpers\Files\Exceptions.cs" />
+    <Compile Include="Helpers\Files\INIFile.cs" />
+    <Compile Include="Helpers\Files\Settings.cs" />
+    <Compile Include="Helpers\Miscellaneous.cs" />
+    <Compile Include="Helpers\Setup.cs" />
+    <Compile Include="Helpers\States.cs" />
+    <Compile Include="Helpers\StringUtils.cs" />
+    <Compile Include="Helpers\Win Forms\FlexibleMessageBox.cs" />
+    <Compile Include="Helpers\Win Forms\Messaging.cs" />
     <Compile Include="Wii U\Gecko U\GeckoU.cs" />
     <Compile Include="Wii U\Gecko U\GeckoUByteSwap.cs" />
     <Compile Include="Wii U\Gecko U\GeckoUCommands.cs" />

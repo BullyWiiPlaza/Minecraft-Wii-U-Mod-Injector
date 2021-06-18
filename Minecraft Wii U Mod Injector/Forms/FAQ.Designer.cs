@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Faq));
             this.StyleMngr = new MetroFramework.Components.MetroStyleManager(this.components);
-            this.kashiieraCredits = new MetroFramework.Controls.MetroLabel();
+            this.faqText = new MetroFramework.Controls.MetroLabel();
             this.appIco = new MetroFramework.Controls.MetroPanel();
             ((System.ComponentModel.ISupportInitialize)(this.StyleMngr)).BeginInit();
             this.SuspendLayout();
@@ -40,14 +40,14 @@
             // 
             this.StyleMngr.Owner = this;
             // 
-            // kashiieraCredits
+            // faqText
             // 
-            this.kashiieraCredits.AutoSize = true;
-            this.kashiieraCredits.Location = new System.Drawing.Point(23, 60);
-            this.kashiieraCredits.Name = "kashiieraCredits";
-            this.kashiieraCredits.Size = new System.Drawing.Size(757, 266);
-            this.kashiieraCredits.TabIndex = 0;
-            this.kashiieraCredits.Text = resources.GetString("kashiieraCredits.Text");
+            this.faqText.AutoSize = true;
+            this.faqText.Location = new System.Drawing.Point(23, 60);
+            this.faqText.Name = "faqText";
+            this.faqText.Size = new System.Drawing.Size(757, 323);
+            this.faqText.TabIndex = 0;
+            this.faqText.Text = resources.GetString("faqText.Text");
             // 
             // appIco
             // 
@@ -59,7 +59,7 @@
             this.appIco.HorizontalScrollbarSize = 10;
             this.appIco.Location = new System.Drawing.Point(774, 37);
             this.appIco.Name = "appIco";
-            this.appIco.Size = new System.Drawing.Size(255, 289);
+            this.appIco.Size = new System.Drawing.Size(255, 338);
             this.appIco.TabIndex = 45;
             this.appIco.VerticalScrollbarBarColor = true;
             this.appIco.VerticalScrollbarHighlightOnWheel = false;
@@ -69,9 +69,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1033, 338);
+            this.ClientSize = new System.Drawing.Size(1033, 398);
             this.Controls.Add(this.appIco);
-            this.Controls.Add(this.kashiieraCredits);
+            this.Controls.Add(this.faqText);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Faq";
@@ -87,7 +87,7 @@
 
         #endregion
         private MetroFramework.Components.MetroStyleManager StyleMngr;
-        private MetroFramework.Controls.MetroLabel kashiieraCredits;
+        private MetroFramework.Controls.MetroLabel faqText;
         private MetroFramework.Controls.MetroPanel appIco;
     }
 }

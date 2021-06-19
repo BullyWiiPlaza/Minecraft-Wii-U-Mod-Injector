@@ -552,10 +552,21 @@ namespace Minecraft_Wii_U_Mod_Injector
             // 
             // playersTab
             // 
-            this.playersTab.Controls.Add(this.XPLevel);
             this.playersTab.Controls.Add(this.XPLevelSlider);
-            this.playersTab.Controls.Add(this.PlayerOptionsBtn);
             this.playersTab.Controls.Add(this.PotionAmplifierSlider);
+            this.playersTab.Controls.Add(this.FrictionSlider);
+            this.playersTab.Controls.Add(this.playerModelScaleSlider);
+            this.playersTab.Controls.Add(this.FieldOfViewSplitSlider);
+            this.playersTab.Controls.Add(this.RiptideFlyingSpeedSlider);
+            this.playersTab.Controls.Add(this.SprintingSpeedScaleSlider);
+            this.playersTab.Controls.Add(this.EnchantmentLevelSlider);
+            this.playersTab.Controls.Add(this.WalkingSpeedScaleSlider);
+            this.playersTab.Controls.Add(this.ReachSlider);
+            this.playersTab.Controls.Add(this.JumpHeightSlider);
+            this.playersTab.Controls.Add(this.FieldOfViewSlider);
+            this.playersTab.Controls.Add(this.HitBoxScaleSlider);
+            this.playersTab.Controls.Add(this.XPLevel);
+            this.playersTab.Controls.Add(this.PlayerOptionsBtn);
             this.playersTab.Controls.Add(this.PotionAmplifier);
             this.playersTab.Controls.Add(this.NoSlowDowns);
             this.playersTab.Controls.Add(this.ESP);
@@ -565,36 +576,25 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.playersTab.Controls.Add(this.AlwaysInLava);
             this.playersTab.Controls.Add(this.HideBlocks);
             this.playersTab.Controls.Add(this.UnderwaterEffects);
-            this.playersTab.Controls.Add(this.FrictionSlider);
             this.playersTab.Controls.Add(this.EnchantmentLevel);
             this.playersTab.Controls.Add(this.Friction);
             this.playersTab.Controls.Add(this.GodModeAll);
-            this.playersTab.Controls.Add(this.playerModelScaleSlider);
             this.playersTab.Controls.Add(this.FieldofViewSplitscreen);
             this.playersTab.Controls.Add(this.RiptideFlyingSpeed);
             this.playersTab.Controls.Add(this.PlayerModelScale);
-            this.playersTab.Controls.Add(this.FieldOfViewSplitSlider);
-            this.playersTab.Controls.Add(this.RiptideFlyingSpeedSlider);
             this.playersTab.Controls.Add(this.JumpHeight);
             this.playersTab.Controls.Add(this.SprintingSpeedScale);
             this.playersTab.Controls.Add(this.GodMode);
-            this.playersTab.Controls.Add(this.SprintingSpeedScaleSlider);
             this.playersTab.Controls.Add(this.Reach);
             this.playersTab.Controls.Add(this.WalkingSpeedScale);
-            this.playersTab.Controls.Add(this.EnchantmentLevelSlider);
-            this.playersTab.Controls.Add(this.WalkingSpeedScaleSlider);
-            this.playersTab.Controls.Add(this.ReachSlider);
-            this.playersTab.Controls.Add(this.JumpHeightSlider);
             this.playersTab.Controls.Add(this.DeadMauFiveMode);
             this.playersTab.Controls.Add(this.ArmorHUD);
             this.playersTab.Controls.Add(this.TakeEverythingAnywhere);
             this.playersTab.Controls.Add(this.FieldOfView);
-            this.playersTab.Controls.Add(this.FieldOfViewSlider);
             this.playersTab.Controls.Add(this.HiddenGameModesUnlocked);
             this.playersTab.Controls.Add(this.HitBoxScale);
             this.playersTab.Controls.Add(this.CraftingTableAnywhere);
             this.playersTab.Controls.Add(this.VisibleHitboxes);
-            this.playersTab.Controls.Add(this.HitBoxScaleSlider);
             this.playersTab.Controls.Add(this.NnidEditorBtn);
             this.playersTab.Controls.Add(this.InsaneCriticalHits);
             this.playersTab.Controls.Add(this.AlwaysSwimming);
@@ -3293,8 +3293,8 @@ namespace Minecraft_Wii_U_Mod_Injector
             // settingsLogo
             // 
             this.settingsLogo.BackColor = System.Drawing.Color.Transparent;
-            this.settingsLogo.BackgroundImage = global::Minecraft_Wii_U_Mod_Injector.Properties.Resources.Icon;
-            this.settingsLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.settingsLogo.BackgroundImage = global::Minecraft_Wii_U_Mod_Injector.Properties.Resources.MinecraftWiiUModInjector;
+            this.settingsLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.settingsLogo.HorizontalScrollbarBarColor = true;
             this.settingsLogo.HorizontalScrollbarHighlightOnWheel = false;
             this.settingsLogo.HorizontalScrollbarSize = 10;

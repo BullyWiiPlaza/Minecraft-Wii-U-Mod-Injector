@@ -65,12 +65,12 @@
             // appIco
             // 
             this.appIco.BackColor = System.Drawing.Color.Transparent;
-            this.appIco.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("appIco.BackgroundImage")));
-            this.appIco.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.appIco.BackgroundImage = global::Minecraft_Wii_U_Mod_Injector.Properties.Resources.MinecraftWiiUModInjector;
+            this.appIco.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.appIco.HorizontalScrollbarBarColor = true;
             this.appIco.HorizontalScrollbarHighlightOnWheel = false;
             this.appIco.HorizontalScrollbarSize = 10;
-            this.appIco.Location = new System.Drawing.Point(382, 35);
+            this.appIco.Location = new System.Drawing.Point(443, 35);
             this.appIco.Name = "appIco";
             this.appIco.Size = new System.Drawing.Size(255, 245);
             this.appIco.TabIndex = 45;
@@ -92,11 +92,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(660, 288);
+            this.ClientSize = new System.Drawing.Size(721, 288);
             this.Controls.Add(this.vylrynaCredits);
-            this.Controls.Add(this.appIco);
             this.Controls.Add(this.bullywiiplazaCredits);
             this.Controls.Add(this.kashiieraCredits);
+            this.Controls.Add(this.appIco);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Credits";

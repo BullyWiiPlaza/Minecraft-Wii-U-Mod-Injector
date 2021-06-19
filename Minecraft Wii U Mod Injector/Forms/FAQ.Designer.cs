@@ -52,8 +52,8 @@
             // appIco
             // 
             this.appIco.BackColor = System.Drawing.Color.Transparent;
-            this.appIco.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("appIco.BackgroundImage")));
-            this.appIco.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.appIco.BackgroundImage = global::Minecraft_Wii_U_Mod_Injector.Properties.Resources.MinecraftWiiUModInjector;
+            this.appIco.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.appIco.HorizontalScrollbarBarColor = true;
             this.appIco.HorizontalScrollbarHighlightOnWheel = false;
             this.appIco.HorizontalScrollbarSize = 10;

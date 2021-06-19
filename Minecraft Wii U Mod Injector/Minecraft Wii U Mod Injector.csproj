@@ -356,7 +356,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Icon.ico" />
     <None Include="Resources\githubLogo.png" />
     <None Include="Resources\releaseNote.txt" />
     <None Include="Resources\Icon.png" />
@@ -374,7 +373,10 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Icon.ico" />
+    <None Include="Resources\MinecraftWiiUModInjector.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Fody.6.5.1\build\Fody.targets" Condition="Exists('..\packages\Fody.6.5.1\build\Fody.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

@@ -81,26 +81,33 @@ namespace Minecraft_Wii_U_Mod_Injector.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to [Release v5.1.4 (2nd of June, 2021)]
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap MinecraftWiiUModInjector {
+            get {
+                object obj = ResourceManager.GetObject("MinecraftWiiUModInjector", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to [Release v5.1.8.c2 (16th of June, 2021)]
         ///
         ///[Information]
         ///If you are experiencing issues, please report them on the Github Issues page or by joining the official discord server.
         ///
-        ///This update adds new mods, fixes mods, new features and a ton of bug fixes
+        ///This update has some improvements to the language manager and adds a new mod
         ///
         ///[Changes]
         ///
-        ///+ New mods:
+        ///+ New Mods
         ///
-        ///- Player Model Scale
-        ///- God Mode (Self and All)
-        ///- Splitscreen Field of View
-        ///- Friction
-        ///- Gamepad Splitscreen
-        ///- Disable Teleport Command
-        ///- Read NNID Name
-        ///- Disable Gamepad Input (Debug Mode Only)
-        ///- Gamepad Power Button tur [rest of string was truncated]&quot;;.
+        ///- General Game &gt; Debug Console
+        ///
+        ///+ General Additions &amp; Updates:
+        ///
+        ///- Language Manager &gt; can now re-position slider controls
+        ///- Language Manager &gt; can now check if a language file is made for an older version and warns you  [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string releaseNote {
             get {
@@ -109,26 +116,23 @@ namespace Minecraft_Wii_U_Mod_Injector.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to [Release v5.1.4 (2nd of June, 2021)]
+        ///   Looks up a localized string similar to [Release v5.1.8.c2 (16th of June, 2021)]
         ///
         ///[Information]
         ///If you are experiencing issues, please report them on the Github Issues page or by joining the official discord server.
         ///
-        ///This update adds new mods, fixes mods, new features and a ton of bug fixes
+        ///This update has some improvements to the language manager and adds a new mod
         ///
         ///[Changes]
         ///
-        ///+ New mods:
+        ///+ New Mods
         ///
-        ///- Player Model Scale
-        ///- God Mode (Self and All)
-        ///- Splitscreen Field of View
-        ///- Friction
-        ///- Gamepad Splitscreen
-        ///- Disable Teleport Command
-        ///- Read NNID Name
-        ///- Disable Gamepad Input (Debug Mode Only)
-        ///- Gamepad Power Button tur [rest of string was truncated]&quot;;.
+        ///- General Game &gt; Debug Console
+        ///
+        ///+ General Additions &amp; Updates:
+        ///
+        ///- Language Manager &gt; can now re-position slider controls
+        ///- Language Manager &gt; can now check if a language file is made for an older version and warns you  [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string releaseNotes {
             get {

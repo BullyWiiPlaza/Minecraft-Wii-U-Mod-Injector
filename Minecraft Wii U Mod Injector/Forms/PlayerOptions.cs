@@ -18,7 +18,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms
         private void Init(object sender, EventArgs e)
         {
             DiscordRp.SetPresence("Connected", "Player Options window");
-            Console.WriteLine("LocalPlayer: 0x" + _localPlayer.ToString("X4"));
+            Console.WriteLine(@"LocalPlayer: 0x" + _localPlayer.ToString("X4"));
         }
 
         private void CloseContainersBtnClicked(object sender, EventArgs e)

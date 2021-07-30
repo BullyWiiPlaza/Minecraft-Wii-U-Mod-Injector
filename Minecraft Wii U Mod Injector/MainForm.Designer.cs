@@ -50,10 +50,21 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.WiiUIpv4Box = new MetroFramework.Controls.MetroTextBox();
             this.WiiUIpv4Lbl = new MetroFramework.Controls.MetroLabel();
             this.playersTab = new MetroFramework.Controls.MetroTabPage();
-            this.XPLevel = new MetroFramework.Controls.MetroLabel();
             this.XPLevelSlider = new System.Windows.Forms.NumericUpDown();
-            this.PlayerOptionsBtn = new MetroFramework.Controls.MetroButton();
             this.PotionAmplifierSlider = new System.Windows.Forms.NumericUpDown();
+            this.FrictionSlider = new System.Windows.Forms.NumericUpDown();
+            this.playerModelScaleSlider = new System.Windows.Forms.NumericUpDown();
+            this.FieldOfViewSplitSlider = new System.Windows.Forms.NumericUpDown();
+            this.RiptideFlyingSpeedSlider = new System.Windows.Forms.NumericUpDown();
+            this.SprintingSpeedScaleSlider = new System.Windows.Forms.NumericUpDown();
+            this.EnchantmentLevelSlider = new System.Windows.Forms.NumericUpDown();
+            this.WalkingSpeedScaleSlider = new System.Windows.Forms.NumericUpDown();
+            this.ReachSlider = new System.Windows.Forms.NumericUpDown();
+            this.JumpHeightSlider = new System.Windows.Forms.NumericUpDown();
+            this.FieldOfViewSlider = new System.Windows.Forms.NumericUpDown();
+            this.HitBoxScaleSlider = new System.Windows.Forms.NumericUpDown();
+            this.XPLevel = new MetroFramework.Controls.MetroLabel();
+            this.PlayerOptionsBtn = new MetroFramework.Controls.MetroButton();
             this.PotionAmplifier = new MetroFramework.Controls.MetroLabel();
             this.NoSlowDowns = new MetroFramework.Controls.MetroCheckBox();
             this.ESP = new MetroFramework.Controls.MetroCheckBox();
@@ -63,36 +74,25 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.AlwaysInLava = new MetroFramework.Controls.MetroCheckBox();
             this.HideBlocks = new MetroFramework.Controls.MetroCheckBox();
             this.UnderwaterEffects = new MetroFramework.Controls.MetroCheckBox();
-            this.FrictionSlider = new System.Windows.Forms.NumericUpDown();
             this.EnchantmentLevel = new MetroFramework.Controls.MetroLabel();
             this.Friction = new MetroFramework.Controls.MetroLabel();
             this.GodModeAll = new MetroFramework.Controls.MetroCheckBox();
-            this.playerModelScaleSlider = new System.Windows.Forms.NumericUpDown();
             this.FieldofViewSplitscreen = new MetroFramework.Controls.MetroLabel();
             this.RiptideFlyingSpeed = new MetroFramework.Controls.MetroLabel();
             this.PlayerModelScale = new MetroFramework.Controls.MetroLabel();
-            this.FieldOfViewSplitSlider = new System.Windows.Forms.NumericUpDown();
-            this.RiptideFlyingSpeedSlider = new System.Windows.Forms.NumericUpDown();
             this.JumpHeight = new MetroFramework.Controls.MetroLabel();
             this.SprintingSpeedScale = new MetroFramework.Controls.MetroLabel();
             this.GodMode = new MetroFramework.Controls.MetroCheckBox();
-            this.SprintingSpeedScaleSlider = new System.Windows.Forms.NumericUpDown();
             this.Reach = new MetroFramework.Controls.MetroLabel();
             this.WalkingSpeedScale = new MetroFramework.Controls.MetroLabel();
-            this.EnchantmentLevelSlider = new System.Windows.Forms.NumericUpDown();
-            this.WalkingSpeedScaleSlider = new System.Windows.Forms.NumericUpDown();
-            this.ReachSlider = new System.Windows.Forms.NumericUpDown();
-            this.JumpHeightSlider = new System.Windows.Forms.NumericUpDown();
             this.DeadMauFiveMode = new MetroFramework.Controls.MetroCheckBox();
             this.ArmorHUD = new MetroFramework.Controls.MetroCheckBox();
             this.TakeEverythingAnywhere = new MetroFramework.Controls.MetroCheckBox();
             this.FieldOfView = new MetroFramework.Controls.MetroLabel();
-            this.FieldOfViewSlider = new System.Windows.Forms.NumericUpDown();
             this.HiddenGameModesUnlocked = new MetroFramework.Controls.MetroCheckBox();
             this.HitBoxScale = new MetroFramework.Controls.MetroLabel();
             this.CraftingTableAnywhere = new MetroFramework.Controls.MetroCheckBox();
             this.VisibleHitboxes = new MetroFramework.Controls.MetroCheckBox();
-            this.HitBoxScaleSlider = new System.Windows.Forms.NumericUpDown();
             this.NnidEditorBtn = new MetroFramework.Controls.MetroButton();
             this.InsaneCriticalHits = new MetroFramework.Controls.MetroCheckBox();
             this.AlwaysSwimming = new MetroFramework.Controls.MetroCheckBox();
@@ -233,6 +233,11 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.RightClickMenu = new MetroFramework.Controls.MetroContextMenu(this.components);
             this.IncreaseDecimalPlace = new System.Windows.Forms.ToolStripMenuItem();
             this.DecreaseDecimalPlace = new System.Windows.Forms.ToolStripMenuItem();
+            this.xpPanel = new MetroFramework.Controls.MetroPanel();
+            this.xpCmdLbl = new MetroFramework.Controls.MetroLabel();
+            this.giveXPLevels = new MetroFramework.Controls.MetroButton();
+            this.giveXPOrbs = new MetroFramework.Controls.MetroButton();
+            this.xpAmountBox = new MetroFramework.Controls.MetroTextBox();
             this.MainTabs.SuspendLayout();
             this.MainTab.SuspendLayout();
             this.playersTab.SuspendLayout();
@@ -272,6 +277,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.settingsTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.StyleMngr)).BeginInit();
             this.RightClickMenu.SuspendLayout();
+            this.xpPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // WorldTile
@@ -362,11 +368,11 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.MainTabs.Controls.Add(this.minigamesTab);
             this.MainTabs.Controls.Add(this.commandsTab);
             this.MainTabs.Controls.Add(this.settingsTab);
-            this.MainTabs.ItemSize = new System.Drawing.Size(160, 1);
+            this.MainTabs.ItemSize = new System.Drawing.Size(160, 10);
             this.MainTabs.Location = new System.Drawing.Point(155, 61);
             this.MainTabs.Multiline = true;
             this.MainTabs.Name = "MainTabs";
-            this.MainTabs.SelectedIndex = 1;
+            this.MainTabs.SelectedIndex = 5;
             this.MainTabs.Size = new System.Drawing.Size(1130, 639);
             this.MainTabs.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.MainTabs.TabIndex = 0;
@@ -464,7 +470,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.BuildVerTitleLbl.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.BuildVerTitleLbl.Location = new System.Drawing.Point(3, 3);
             this.BuildVerTitleLbl.Name = "BuildVerTitleLbl";
-            this.BuildVerTitleLbl.Size = new System.Drawing.Size(212, 25);
+            this.BuildVerTitleLbl.Size = new System.Drawing.Size(213, 25);
             this.BuildVerTitleLbl.TabIndex = 6;
             this.BuildVerTitleLbl.Text = "Patch Notes for VERSION";
             this.BuildVerTitleLbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -633,28 +639,16 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.playersTab.HorizontalScrollbarBarColor = true;
             this.playersTab.HorizontalScrollbarHighlightOnWheel = false;
             this.playersTab.HorizontalScrollbarSize = 10;
-            this.playersTab.Location = new System.Drawing.Point(4, 5);
+            this.playersTab.Location = new System.Drawing.Point(4, 14);
             this.playersTab.Name = "playersTab";
             this.playersTab.Padding = new System.Windows.Forms.Padding(3);
-            this.playersTab.Size = new System.Drawing.Size(1122, 630);
+            this.playersTab.Size = new System.Drawing.Size(1122, 621);
             this.playersTab.TabIndex = 0;
             this.playersTab.Tag = "needsGeckoU";
             this.playersTab.Text = "Player(s)";
             this.playersTab.VerticalScrollbarBarColor = true;
             this.playersTab.VerticalScrollbarHighlightOnWheel = false;
             this.playersTab.VerticalScrollbarSize = 10;
-            // 
-            // XPLevel
-            // 
-            this.XPLevel.AutoSize = true;
-            this.XPLevel.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.XPLevel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.XPLevel.Location = new System.Drawing.Point(554, 480);
-            this.XPLevel.Name = "XPLevel";
-            this.XPLevel.Size = new System.Drawing.Size(63, 19);
-            this.XPLevel.TabIndex = 159;
-            this.XPLevel.Tag = "";
-            this.XPLevel.Text = "XP Level:";
             // 
             // XPLevelSlider
             // 
@@ -673,18 +667,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.XPLevelSlider.Tag = "";
             this.ToolTipManager.SetToolTip(this.XPLevelSlider, "What Level should we be?\r\n\r\n(Affects newest player in splitscreen)");
             this.XPLevelSlider.ValueChanged += new System.EventHandler(this.XpLevelSliderChanged);
-            // 
-            // PlayerOptionsBtn
-            // 
-            this.PlayerOptionsBtn.Location = new System.Drawing.Point(566, 451);
-            this.PlayerOptionsBtn.Name = "PlayerOptionsBtn";
-            this.PlayerOptionsBtn.Size = new System.Drawing.Size(550, 25);
-            this.PlayerOptionsBtn.TabIndex = 158;
-            this.PlayerOptionsBtn.Tag = "";
-            this.PlayerOptionsBtn.Text = "Player Options";
-            this.ToolTipManager.SetToolTip(this.PlayerOptionsBtn, "Opens the Player Options window \r\nwhere you can modify Player Options");
-            this.PlayerOptionsBtn.UseSelectable = true;
-            this.PlayerOptionsBtn.Click += new System.EventHandler(this.PlayerOptionsBtnClicked);
             // 
             // PotionAmplifierSlider
             // 
@@ -708,124 +690,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.PotionAmplifierSlider.Tag = "";
             this.ToolTipManager.SetToolTip(this.PotionAmplifierSlider, "How much should potion effects be amplified by?");
             this.PotionAmplifierSlider.ValueChanged += new System.EventHandler(this.PotionAmplifierSliderChanged);
-            // 
-            // PotionAmplifier
-            // 
-            this.PotionAmplifier.AutoSize = true;
-            this.PotionAmplifier.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.PotionAmplifier.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.PotionAmplifier.Location = new System.Drawing.Point(292, 610);
-            this.PotionAmplifier.Name = "PotionAmplifier";
-            this.PotionAmplifier.Size = new System.Drawing.Size(109, 19);
-            this.PotionAmplifier.TabIndex = 156;
-            this.PotionAmplifier.Tag = "";
-            this.PotionAmplifier.Text = "Potion Amplifier:";
-            // 
-            // NoSlowDowns
-            // 
-            this.NoSlowDowns.AutoSize = true;
-            this.NoSlowDowns.Location = new System.Drawing.Point(383, 153);
-            this.NoSlowDowns.Name = "NoSlowDowns";
-            this.NoSlowDowns.Size = new System.Drawing.Size(101, 15);
-            this.NoSlowDowns.TabIndex = 155;
-            this.NoSlowDowns.Tag = "";
-            this.NoSlowDowns.Text = "No slowdowns";
-            this.ToolTipManager.SetToolTip(this.NoSlowDowns, "Whether no movement penaltities \r\nare applied such as:\r\n\r\nEating\r\nDrinking\r\nDrawi" +
-        "ng Bow\r\nDrawing Trident");
-            this.NoSlowDowns.UseSelectable = true;
-            this.NoSlowDowns.CheckedChanged += new System.EventHandler(this.NoSlowDownsToggled);
-            // 
-            // ESP
-            // 
-            this.ESP.AutoSize = true;
-            this.ESP.Location = new System.Drawing.Point(383, 132);
-            this.ESP.Name = "ESP";
-            this.ESP.Size = new System.Drawing.Size(42, 15);
-            this.ESP.TabIndex = 154;
-            this.ESP.Tag = "";
-            this.ESP.Text = "ESP";
-            this.ToolTipManager.SetToolTip(this.ESP, "Whether player name tags are\r\ncovering player models");
-            this.ESP.UseSelectable = true;
-            this.ESP.CheckedChanged += new System.EventHandler(this.EspToggled);
-            // 
-            // AlwaysInWater
-            // 
-            this.AlwaysInWater.AutoSize = true;
-            this.AlwaysInWater.Location = new System.Drawing.Point(383, 111);
-            this.AlwaysInWater.Name = "AlwaysInWater";
-            this.AlwaysInWater.Size = new System.Drawing.Size(107, 15);
-            this.AlwaysInWater.TabIndex = 153;
-            this.AlwaysInWater.Tag = "";
-            this.AlwaysInWater.Text = "Always in Water";
-            this.ToolTipManager.SetToolTip(this.AlwaysInWater, "Whether you\'ll always be considered\r\nin water");
-            this.AlwaysInWater.UseSelectable = true;
-            this.AlwaysInWater.CheckedChanged += new System.EventHandler(this.AlwaysInWaterToggled);
-            // 
-            // LevelX
-            // 
-            this.LevelX.AutoSize = true;
-            this.LevelX.Location = new System.Drawing.Point(383, 90);
-            this.LevelX.Name = "LevelX";
-            this.LevelX.Size = new System.Drawing.Size(60, 15);
-            this.LevelX.TabIndex = 152;
-            this.LevelX.Tag = "";
-            this.LevelX.Text = "Level X";
-            this.ToolTipManager.SetToolTip(this.LevelX, "Whether your XP Level will show\r\nas Level X");
-            this.LevelX.UseSelectable = true;
-            this.LevelX.CheckedChanged += new System.EventHandler(this.LevelXToggled);
-            // 
-            // SeeThroughBlocks
-            // 
-            this.SeeThroughBlocks.AutoSize = true;
-            this.SeeThroughBlocks.Location = new System.Drawing.Point(383, 69);
-            this.SeeThroughBlocks.Name = "SeeThroughBlocks";
-            this.SeeThroughBlocks.Size = new System.Drawing.Size(124, 15);
-            this.SeeThroughBlocks.TabIndex = 151;
-            this.SeeThroughBlocks.Tag = "";
-            this.SeeThroughBlocks.Text = "See through blocks";
-            this.ToolTipManager.SetToolTip(this.SeeThroughBlocks, "Whether you can see through blocks\r\n(instead of a fullscreen, 2d texure)");
-            this.SeeThroughBlocks.UseSelectable = true;
-            this.SeeThroughBlocks.CheckedChanged += new System.EventHandler(this.SeeThroughBlocksToggled);
-            // 
-            // AlwaysInLava
-            // 
-            this.AlwaysInLava.AutoSize = true;
-            this.AlwaysInLava.Location = new System.Drawing.Point(383, 48);
-            this.AlwaysInLava.Name = "AlwaysInLava";
-            this.AlwaysInLava.Size = new System.Drawing.Size(100, 15);
-            this.AlwaysInLava.TabIndex = 27;
-            this.AlwaysInLava.Tag = "";
-            this.AlwaysInLava.Text = "Always in Lava";
-            this.ToolTipManager.SetToolTip(this.AlwaysInLava, "Whether you\'ll always be considered\r\nin lava");
-            this.AlwaysInLava.UseSelectable = true;
-            this.AlwaysInLava.CheckedChanged += new System.EventHandler(this.AlwaysInLavaToggled);
-            // 
-            // HideBlocks
-            // 
-            this.HideBlocks.AutoSize = true;
-            this.HideBlocks.Location = new System.Drawing.Point(383, 27);
-            this.HideBlocks.Name = "HideBlocks";
-            this.HideBlocks.Size = new System.Drawing.Size(85, 15);
-            this.HideBlocks.TabIndex = 150;
-            this.HideBlocks.Tag = "";
-            this.HideBlocks.Text = "Hide Blocks";
-            this.ToolTipManager.SetToolTip(this.HideBlocks, "Whether to hide the majority of blocks \r\nexcluding chests, liquid and more");
-            this.HideBlocks.UseSelectable = true;
-            this.HideBlocks.CheckedChanged += new System.EventHandler(this.HideBlocksToggled);
-            // 
-            // UnderwaterEffects
-            // 
-            this.UnderwaterEffects.AutoSize = true;
-            this.UnderwaterEffects.Location = new System.Drawing.Point(383, 6);
-            this.UnderwaterEffects.Name = "UnderwaterEffects";
-            this.UnderwaterEffects.Size = new System.Drawing.Size(171, 15);
-            this.UnderwaterEffects.TabIndex = 149;
-            this.UnderwaterEffects.Tag = "";
-            this.UnderwaterEffects.Text = "Underwater Effects (Default)";
-            this.UnderwaterEffects.ThreeState = true;
-            this.ToolTipManager.SetToolTip(this.UnderwaterEffects, "Whether to enable or disable\r\nUnderwater Effects (or force them)");
-            this.UnderwaterEffects.UseSelectable = true;
-            this.UnderwaterEffects.CheckStateChanged += new System.EventHandler(this.UnderwaterEffectsToggled);
             // 
             // FrictionSlider
             // 
@@ -858,43 +722,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.FrictionSlider.ValueChanged += new System.EventHandler(this.FrictionSliderChanged);
             this.FrictionSlider.Click += new System.EventHandler(this.SliderClicked);
             // 
-            // EnchantmentLevel
-            // 
-            this.EnchantmentLevel.AutoSize = true;
-            this.EnchantmentLevel.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.EnchantmentLevel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.EnchantmentLevel.Location = new System.Drawing.Point(5, 480);
-            this.EnchantmentLevel.Name = "EnchantmentLevel";
-            this.EnchantmentLevel.Size = new System.Drawing.Size(128, 19);
-            this.EnchantmentLevel.TabIndex = 116;
-            this.EnchantmentLevel.Tag = "";
-            this.EnchantmentLevel.Text = "Enchantment Level:";
-            // 
-            // Friction
-            // 
-            this.Friction.AutoSize = true;
-            this.Friction.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.Friction.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.Friction.Location = new System.Drawing.Point(292, 584);
-            this.Friction.Name = "Friction";
-            this.Friction.Size = new System.Drawing.Size(57, 19);
-            this.Friction.TabIndex = 146;
-            this.Friction.Tag = "";
-            this.Friction.Text = "Friction:";
-            // 
-            // GodModeAll
-            // 
-            this.GodModeAll.AutoSize = true;
-            this.GodModeAll.Location = new System.Drawing.Point(192, 425);
-            this.GodModeAll.Name = "GodModeAll";
-            this.GodModeAll.Size = new System.Drawing.Size(104, 15);
-            this.GodModeAll.TabIndex = 148;
-            this.GodModeAll.Tag = "";
-            this.GodModeAll.Text = "God Mode (All)";
-            this.ToolTipManager.SetToolTip(this.GodModeAll, "Whether to enable God Mode for everyone");
-            this.GodModeAll.UseSelectable = true;
-            this.GodModeAll.CheckedChanged += new System.EventHandler(this.GodModeAllToggled);
-            // 
             // playerModelScaleSlider
             // 
             this.StyleExtender.SetApplyMetroTheme(this.playerModelScaleSlider, true);
@@ -920,42 +747,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             262144});
             this.playerModelScaleSlider.ValueChanged += new System.EventHandler(this.PlayerModelScaleSliderChanged);
             this.playerModelScaleSlider.Click += new System.EventHandler(this.SliderClicked);
-            // 
-            // FieldofViewSplitscreen
-            // 
-            this.FieldofViewSplitscreen.AutoSize = true;
-            this.FieldofViewSplitscreen.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.FieldofViewSplitscreen.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.FieldofViewSplitscreen.Location = new System.Drawing.Point(4, 610);
-            this.FieldofViewSplitscreen.Name = "FieldofViewSplitscreen";
-            this.FieldofViewSplitscreen.Size = new System.Drawing.Size(166, 19);
-            this.FieldofViewSplitscreen.TabIndex = 144;
-            this.FieldofViewSplitscreen.Tag = "";
-            this.FieldofViewSplitscreen.Text = "Field of View (Splitscreen):";
-            // 
-            // RiptideFlyingSpeed
-            // 
-            this.RiptideFlyingSpeed.AutoSize = true;
-            this.RiptideFlyingSpeed.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.RiptideFlyingSpeed.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.RiptideFlyingSpeed.Location = new System.Drawing.Point(292, 480);
-            this.RiptideFlyingSpeed.Name = "RiptideFlyingSpeed";
-            this.RiptideFlyingSpeed.Size = new System.Drawing.Size(140, 19);
-            this.RiptideFlyingSpeed.TabIndex = 124;
-            this.RiptideFlyingSpeed.Tag = "";
-            this.RiptideFlyingSpeed.Text = "Riptide (flying) Speed:";
-            // 
-            // PlayerModelScale
-            // 
-            this.PlayerModelScale.AutoSize = true;
-            this.PlayerModelScale.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.PlayerModelScale.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.PlayerModelScale.Location = new System.Drawing.Point(292, 558);
-            this.PlayerModelScale.Name = "PlayerModelScale";
-            this.PlayerModelScale.Size = new System.Drawing.Size(126, 19);
-            this.PlayerModelScale.TabIndex = 141;
-            this.PlayerModelScale.Tag = "";
-            this.PlayerModelScale.Text = "Player Model Scale:";
             // 
             // FieldOfViewSplitSlider
             // 
@@ -1024,43 +815,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.RiptideFlyingSpeedSlider.ValueChanged += new System.EventHandler(this.RiptideFlyingSpeedSliderChanged);
             this.RiptideFlyingSpeedSlider.Click += new System.EventHandler(this.SliderClicked);
             // 
-            // JumpHeight
-            // 
-            this.JumpHeight.AutoSize = true;
-            this.JumpHeight.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.JumpHeight.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.JumpHeight.Location = new System.Drawing.Point(4, 506);
-            this.JumpHeight.Name = "JumpHeight";
-            this.JumpHeight.Size = new System.Drawing.Size(90, 19);
-            this.JumpHeight.TabIndex = 118;
-            this.JumpHeight.Tag = "";
-            this.JumpHeight.Text = "Jump Height:";
-            // 
-            // SprintingSpeedScale
-            // 
-            this.SprintingSpeedScale.AutoSize = true;
-            this.SprintingSpeedScale.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.SprintingSpeedScale.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.SprintingSpeedScale.Location = new System.Drawing.Point(292, 506);
-            this.SprintingSpeedScale.Name = "SprintingSpeedScale";
-            this.SprintingSpeedScale.Size = new System.Drawing.Size(142, 19);
-            this.SprintingSpeedScale.TabIndex = 127;
-            this.SprintingSpeedScale.Tag = "";
-            this.SprintingSpeedScale.Text = "Sprinting Speed Scale:";
-            // 
-            // GodMode
-            // 
-            this.GodMode.AutoSize = true;
-            this.GodMode.Location = new System.Drawing.Point(192, 405);
-            this.GodMode.Name = "GodMode";
-            this.GodMode.Size = new System.Drawing.Size(109, 15);
-            this.GodMode.TabIndex = 143;
-            this.GodMode.Tag = "";
-            this.GodMode.Text = "God Mode (Self)";
-            this.ToolTipManager.SetToolTip(this.GodMode, "Whether to enable God Mode for local players only");
-            this.GodMode.UseSelectable = true;
-            this.GodMode.CheckedChanged += new System.EventHandler(this.GodModeToggled);
-            // 
             // SprintingSpeedScaleSlider
             // 
             this.StyleExtender.SetApplyMetroTheme(this.SprintingSpeedScaleSlider, true);
@@ -1091,30 +845,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             196608});
             this.SprintingSpeedScaleSlider.ValueChanged += new System.EventHandler(this.SprintingSpeedScaleSliderChanged);
             this.SprintingSpeedScaleSlider.Click += new System.EventHandler(this.SliderClicked);
-            // 
-            // Reach
-            // 
-            this.Reach.AutoSize = true;
-            this.Reach.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.Reach.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.Reach.Location = new System.Drawing.Point(4, 532);
-            this.Reach.Name = "Reach";
-            this.Reach.Size = new System.Drawing.Size(48, 19);
-            this.Reach.TabIndex = 120;
-            this.Reach.Tag = "";
-            this.Reach.Text = "Reach:";
-            // 
-            // WalkingSpeedScale
-            // 
-            this.WalkingSpeedScale.AutoSize = true;
-            this.WalkingSpeedScale.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.WalkingSpeedScale.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.WalkingSpeedScale.Location = new System.Drawing.Point(292, 532);
-            this.WalkingSpeedScale.Name = "WalkingSpeedScale";
-            this.WalkingSpeedScale.Size = new System.Drawing.Size(135, 19);
-            this.WalkingSpeedScale.TabIndex = 130;
-            this.WalkingSpeedScale.Tag = "";
-            this.WalkingSpeedScale.Text = "Walking Speed Scale:";
             // 
             // EnchantmentLevelSlider
             // 
@@ -1238,6 +968,339 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.JumpHeightSlider.ValueChanged += new System.EventHandler(this.JumpHeightSliderChanged);
             this.JumpHeightSlider.Click += new System.EventHandler(this.SliderClicked);
             // 
+            // FieldOfViewSlider
+            // 
+            this.StyleExtender.SetApplyMetroTheme(this.FieldOfViewSlider, true);
+            this.FieldOfViewSlider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.FieldOfViewSlider.DecimalPlaces = 3;
+            this.FieldOfViewSlider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.FieldOfViewSlider.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
+            this.FieldOfViewSlider.Location = new System.Drawing.Point(99, 584);
+            this.FieldOfViewSlider.Maximum = new decimal(new int[] {
+            4,
+            0,
+            0,
+            0});
+            this.FieldOfViewSlider.Name = "FieldOfViewSlider";
+            this.FieldOfViewSlider.Size = new System.Drawing.Size(187, 20);
+            this.FieldOfViewSlider.TabIndex = 137;
+            this.FieldOfViewSlider.Tag = "";
+            this.ToolTipManager.SetToolTip(this.FieldOfViewSlider, "How high should our FOV be?\r\n\r\nCTRL + Click = Increase Decimal Places\r\nALT + Clic" +
+        "k = Decrease Decimal Places\r\n");
+            this.FieldOfViewSlider.Value = new decimal(new int[] {
+            1875,
+            0,
+            0,
+            196608});
+            this.FieldOfViewSlider.ValueChanged += new System.EventHandler(this.FieldOfViewSliderChanged);
+            this.FieldOfViewSlider.Click += new System.EventHandler(this.SliderClicked);
+            // 
+            // HitBoxScaleSlider
+            // 
+            this.StyleExtender.SetApplyMetroTheme(this.HitBoxScaleSlider, true);
+            this.HitBoxScaleSlider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.HitBoxScaleSlider.DecimalPlaces = 1;
+            this.HitBoxScaleSlider.Enabled = false;
+            this.HitBoxScaleSlider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.HitBoxScaleSlider.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
+            this.HitBoxScaleSlider.Location = new System.Drawing.Point(96, 558);
+            this.HitBoxScaleSlider.Name = "HitBoxScaleSlider";
+            this.HitBoxScaleSlider.Size = new System.Drawing.Size(190, 20);
+            this.HitBoxScaleSlider.TabIndex = 134;
+            this.HitBoxScaleSlider.Tag = "";
+            this.ToolTipManager.SetToolTip(this.HitBoxScaleSlider, "How big should entity hitboxes be? (disabled until fixed)\r\n\r\nCTRL + Click = Incre" +
+        "ase Decimal Places\r\nALT + Click = Decrease Decimal Places");
+            this.HitBoxScaleSlider.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            65536});
+            this.HitBoxScaleSlider.Click += new System.EventHandler(this.SliderClicked);
+            // 
+            // XPLevel
+            // 
+            this.XPLevel.AutoSize = true;
+            this.XPLevel.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.XPLevel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.XPLevel.Location = new System.Drawing.Point(554, 480);
+            this.XPLevel.Name = "XPLevel";
+            this.XPLevel.Size = new System.Drawing.Size(63, 19);
+            this.XPLevel.TabIndex = 159;
+            this.XPLevel.Tag = "";
+            this.XPLevel.Text = "XP Level:";
+            // 
+            // PlayerOptionsBtn
+            // 
+            this.PlayerOptionsBtn.Location = new System.Drawing.Point(566, 451);
+            this.PlayerOptionsBtn.Name = "PlayerOptionsBtn";
+            this.PlayerOptionsBtn.Size = new System.Drawing.Size(550, 25);
+            this.PlayerOptionsBtn.TabIndex = 158;
+            this.PlayerOptionsBtn.Tag = "";
+            this.PlayerOptionsBtn.Text = "Player Options";
+            this.ToolTipManager.SetToolTip(this.PlayerOptionsBtn, "Opens the Player Options window \r\nwhere you can modify Player Options");
+            this.PlayerOptionsBtn.UseSelectable = true;
+            this.PlayerOptionsBtn.Click += new System.EventHandler(this.PlayerOptionsBtnClicked);
+            // 
+            // PotionAmplifier
+            // 
+            this.PotionAmplifier.AutoSize = true;
+            this.PotionAmplifier.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.PotionAmplifier.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.PotionAmplifier.Location = new System.Drawing.Point(292, 610);
+            this.PotionAmplifier.Name = "PotionAmplifier";
+            this.PotionAmplifier.Size = new System.Drawing.Size(110, 19);
+            this.PotionAmplifier.TabIndex = 156;
+            this.PotionAmplifier.Tag = "";
+            this.PotionAmplifier.Text = "Potion Amplifier:";
+            // 
+            // NoSlowDowns
+            // 
+            this.NoSlowDowns.AutoSize = true;
+            this.NoSlowDowns.Location = new System.Drawing.Point(383, 153);
+            this.NoSlowDowns.Name = "NoSlowDowns";
+            this.NoSlowDowns.Size = new System.Drawing.Size(102, 15);
+            this.NoSlowDowns.TabIndex = 155;
+            this.NoSlowDowns.Tag = "";
+            this.NoSlowDowns.Text = "No Slowdowns";
+            this.ToolTipManager.SetToolTip(this.NoSlowDowns, "Whether no movement penaltities \r\nare applied such as:\r\n\r\nEating\r\nDrinking\r\nDrawi" +
+        "ng Bow\r\nDrawing Trident");
+            this.NoSlowDowns.UseSelectable = true;
+            this.NoSlowDowns.CheckedChanged += new System.EventHandler(this.NoSlowDownsToggled);
+            // 
+            // ESP
+            // 
+            this.ESP.AutoSize = true;
+            this.ESP.Location = new System.Drawing.Point(383, 132);
+            this.ESP.Name = "ESP";
+            this.ESP.Size = new System.Drawing.Size(42, 15);
+            this.ESP.TabIndex = 154;
+            this.ESP.Tag = "";
+            this.ESP.Text = "ESP";
+            this.ToolTipManager.SetToolTip(this.ESP, "Whether player name tags are\r\ncovering player models");
+            this.ESP.UseSelectable = true;
+            this.ESP.CheckedChanged += new System.EventHandler(this.EspToggled);
+            // 
+            // AlwaysInWater
+            // 
+            this.AlwaysInWater.AutoSize = true;
+            this.AlwaysInWater.Location = new System.Drawing.Point(383, 111);
+            this.AlwaysInWater.Name = "AlwaysInWater";
+            this.AlwaysInWater.Size = new System.Drawing.Size(107, 15);
+            this.AlwaysInWater.TabIndex = 153;
+            this.AlwaysInWater.Tag = "";
+            this.AlwaysInWater.Text = "Always in Water";
+            this.ToolTipManager.SetToolTip(this.AlwaysInWater, "Whether you\'ll always be considered\r\nin water");
+            this.AlwaysInWater.UseSelectable = true;
+            this.AlwaysInWater.CheckedChanged += new System.EventHandler(this.AlwaysInWaterToggled);
+            // 
+            // LevelX
+            // 
+            this.LevelX.AutoSize = true;
+            this.LevelX.Location = new System.Drawing.Point(383, 90);
+            this.LevelX.Name = "LevelX";
+            this.LevelX.Size = new System.Drawing.Size(60, 15);
+            this.LevelX.TabIndex = 152;
+            this.LevelX.Tag = "";
+            this.LevelX.Text = "Level X";
+            this.ToolTipManager.SetToolTip(this.LevelX, "Whether your XP Level will show\r\nas Level X");
+            this.LevelX.UseSelectable = true;
+            this.LevelX.CheckedChanged += new System.EventHandler(this.LevelXToggled);
+            // 
+            // SeeThroughBlocks
+            // 
+            this.SeeThroughBlocks.AutoSize = true;
+            this.SeeThroughBlocks.Location = new System.Drawing.Point(383, 69);
+            this.SeeThroughBlocks.Name = "SeeThroughBlocks";
+            this.SeeThroughBlocks.Size = new System.Drawing.Size(127, 15);
+            this.SeeThroughBlocks.TabIndex = 151;
+            this.SeeThroughBlocks.Tag = "";
+            this.SeeThroughBlocks.Text = "See Through Blocks";
+            this.ToolTipManager.SetToolTip(this.SeeThroughBlocks, "Whether you can see through blocks\r\n(instead of a fullscreen, 2d texure)");
+            this.SeeThroughBlocks.UseSelectable = true;
+            this.SeeThroughBlocks.CheckedChanged += new System.EventHandler(this.SeeThroughBlocksToggled);
+            // 
+            // AlwaysInLava
+            // 
+            this.AlwaysInLava.AutoSize = true;
+            this.AlwaysInLava.Location = new System.Drawing.Point(383, 48);
+            this.AlwaysInLava.Name = "AlwaysInLava";
+            this.AlwaysInLava.Size = new System.Drawing.Size(100, 15);
+            this.AlwaysInLava.TabIndex = 27;
+            this.AlwaysInLava.Tag = "";
+            this.AlwaysInLava.Text = "Always in Lava";
+            this.ToolTipManager.SetToolTip(this.AlwaysInLava, "Whether you\'ll always be considered\r\nin lava");
+            this.AlwaysInLava.UseSelectable = true;
+            this.AlwaysInLava.CheckedChanged += new System.EventHandler(this.AlwaysInLavaToggled);
+            // 
+            // HideBlocks
+            // 
+            this.HideBlocks.AutoSize = true;
+            this.HideBlocks.Location = new System.Drawing.Point(383, 27);
+            this.HideBlocks.Name = "HideBlocks";
+            this.HideBlocks.Size = new System.Drawing.Size(85, 15);
+            this.HideBlocks.TabIndex = 150;
+            this.HideBlocks.Tag = "";
+            this.HideBlocks.Text = "Hide Blocks";
+            this.ToolTipManager.SetToolTip(this.HideBlocks, "Whether to hide the majority of blocks \r\nexcluding chests, liquid and more");
+            this.HideBlocks.UseSelectable = true;
+            this.HideBlocks.CheckedChanged += new System.EventHandler(this.HideBlocksToggled);
+            // 
+            // UnderwaterEffects
+            // 
+            this.UnderwaterEffects.AutoSize = true;
+            this.UnderwaterEffects.Location = new System.Drawing.Point(383, 6);
+            this.UnderwaterEffects.Name = "UnderwaterEffects";
+            this.UnderwaterEffects.Size = new System.Drawing.Size(171, 15);
+            this.UnderwaterEffects.TabIndex = 149;
+            this.UnderwaterEffects.Tag = "";
+            this.UnderwaterEffects.Text = "Underwater Effects (Default)";
+            this.UnderwaterEffects.ThreeState = true;
+            this.ToolTipManager.SetToolTip(this.UnderwaterEffects, "Whether to enable or disable\r\nUnderwater Effects (or force them)");
+            this.UnderwaterEffects.UseSelectable = true;
+            this.UnderwaterEffects.CheckStateChanged += new System.EventHandler(this.UnderwaterEffectsToggled);
+            // 
+            // EnchantmentLevel
+            // 
+            this.EnchantmentLevel.AutoSize = true;
+            this.EnchantmentLevel.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.EnchantmentLevel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.EnchantmentLevel.Location = new System.Drawing.Point(5, 480);
+            this.EnchantmentLevel.Name = "EnchantmentLevel";
+            this.EnchantmentLevel.Size = new System.Drawing.Size(128, 19);
+            this.EnchantmentLevel.TabIndex = 116;
+            this.EnchantmentLevel.Tag = "";
+            this.EnchantmentLevel.Text = "Enchantment Level:";
+            // 
+            // Friction
+            // 
+            this.Friction.AutoSize = true;
+            this.Friction.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.Friction.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.Friction.Location = new System.Drawing.Point(292, 584);
+            this.Friction.Name = "Friction";
+            this.Friction.Size = new System.Drawing.Size(57, 19);
+            this.Friction.TabIndex = 146;
+            this.Friction.Tag = "";
+            this.Friction.Text = "Friction:";
+            // 
+            // GodModeAll
+            // 
+            this.GodModeAll.AutoSize = true;
+            this.GodModeAll.Location = new System.Drawing.Point(192, 425);
+            this.GodModeAll.Name = "GodModeAll";
+            this.GodModeAll.Size = new System.Drawing.Size(104, 15);
+            this.GodModeAll.TabIndex = 148;
+            this.GodModeAll.Tag = "";
+            this.GodModeAll.Text = "God Mode (All)";
+            this.ToolTipManager.SetToolTip(this.GodModeAll, "Whether to enable God Mode for everyone");
+            this.GodModeAll.UseSelectable = true;
+            this.GodModeAll.CheckedChanged += new System.EventHandler(this.GodModeAllToggled);
+            // 
+            // FieldofViewSplitscreen
+            // 
+            this.FieldofViewSplitscreen.AutoSize = true;
+            this.FieldofViewSplitscreen.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.FieldofViewSplitscreen.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.FieldofViewSplitscreen.Location = new System.Drawing.Point(4, 610);
+            this.FieldofViewSplitscreen.Name = "FieldofViewSplitscreen";
+            this.FieldofViewSplitscreen.Size = new System.Drawing.Size(166, 19);
+            this.FieldofViewSplitscreen.TabIndex = 144;
+            this.FieldofViewSplitscreen.Tag = "";
+            this.FieldofViewSplitscreen.Text = "Field of View (Splitscreen):";
+            // 
+            // RiptideFlyingSpeed
+            // 
+            this.RiptideFlyingSpeed.AutoSize = true;
+            this.RiptideFlyingSpeed.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.RiptideFlyingSpeed.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.RiptideFlyingSpeed.Location = new System.Drawing.Point(292, 480);
+            this.RiptideFlyingSpeed.Name = "RiptideFlyingSpeed";
+            this.RiptideFlyingSpeed.Size = new System.Drawing.Size(140, 19);
+            this.RiptideFlyingSpeed.TabIndex = 124;
+            this.RiptideFlyingSpeed.Tag = "";
+            this.RiptideFlyingSpeed.Text = "Riptide (flying) Speed:";
+            // 
+            // PlayerModelScale
+            // 
+            this.PlayerModelScale.AutoSize = true;
+            this.PlayerModelScale.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.PlayerModelScale.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.PlayerModelScale.Location = new System.Drawing.Point(292, 558);
+            this.PlayerModelScale.Name = "PlayerModelScale";
+            this.PlayerModelScale.Size = new System.Drawing.Size(126, 19);
+            this.PlayerModelScale.TabIndex = 141;
+            this.PlayerModelScale.Tag = "";
+            this.PlayerModelScale.Text = "Player Model Scale:";
+            // 
+            // JumpHeight
+            // 
+            this.JumpHeight.AutoSize = true;
+            this.JumpHeight.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.JumpHeight.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.JumpHeight.Location = new System.Drawing.Point(4, 506);
+            this.JumpHeight.Name = "JumpHeight";
+            this.JumpHeight.Size = new System.Drawing.Size(90, 19);
+            this.JumpHeight.TabIndex = 118;
+            this.JumpHeight.Tag = "";
+            this.JumpHeight.Text = "Jump Height:";
+            // 
+            // SprintingSpeedScale
+            // 
+            this.SprintingSpeedScale.AutoSize = true;
+            this.SprintingSpeedScale.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.SprintingSpeedScale.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.SprintingSpeedScale.Location = new System.Drawing.Point(292, 506);
+            this.SprintingSpeedScale.Name = "SprintingSpeedScale";
+            this.SprintingSpeedScale.Size = new System.Drawing.Size(142, 19);
+            this.SprintingSpeedScale.TabIndex = 127;
+            this.SprintingSpeedScale.Tag = "";
+            this.SprintingSpeedScale.Text = "Sprinting Speed Scale:";
+            // 
+            // GodMode
+            // 
+            this.GodMode.AutoSize = true;
+            this.GodMode.Location = new System.Drawing.Point(192, 405);
+            this.GodMode.Name = "GodMode";
+            this.GodMode.Size = new System.Drawing.Size(109, 15);
+            this.GodMode.TabIndex = 143;
+            this.GodMode.Tag = "";
+            this.GodMode.Text = "God Mode (Self)";
+            this.ToolTipManager.SetToolTip(this.GodMode, "Whether to enable God Mode for local players only");
+            this.GodMode.UseSelectable = true;
+            this.GodMode.CheckedChanged += new System.EventHandler(this.GodModeToggled);
+            // 
+            // Reach
+            // 
+            this.Reach.AutoSize = true;
+            this.Reach.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.Reach.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.Reach.Location = new System.Drawing.Point(4, 532);
+            this.Reach.Name = "Reach";
+            this.Reach.Size = new System.Drawing.Size(48, 19);
+            this.Reach.TabIndex = 120;
+            this.Reach.Tag = "";
+            this.Reach.Text = "Reach:";
+            // 
+            // WalkingSpeedScale
+            // 
+            this.WalkingSpeedScale.AutoSize = true;
+            this.WalkingSpeedScale.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.WalkingSpeedScale.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.WalkingSpeedScale.Location = new System.Drawing.Point(292, 532);
+            this.WalkingSpeedScale.Name = "WalkingSpeedScale";
+            this.WalkingSpeedScale.Size = new System.Drawing.Size(136, 19);
+            this.WalkingSpeedScale.TabIndex = 130;
+            this.WalkingSpeedScale.Tag = "";
+            this.WalkingSpeedScale.Text = "Walking Speed Scale:";
+            // 
             // DeadMauFiveMode
             // 
             this.DeadMauFiveMode.AutoSize = true;
@@ -1269,7 +1332,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.TakeEverythingAnywhere.AutoSize = true;
             this.TakeEverythingAnywhere.Location = new System.Drawing.Point(192, 342);
             this.TakeEverythingAnywhere.Name = "TakeEverythingAnywhere";
-            this.TakeEverythingAnywhere.Size = new System.Drawing.Size(161, 15);
+            this.TakeEverythingAnywhere.Size = new System.Drawing.Size(163, 15);
             this.TakeEverythingAnywhere.TabIndex = 25;
             this.TakeEverythingAnywhere.Tag = "";
             this.TakeEverythingAnywhere.Text = "Take Everything Anywhere";
@@ -1289,37 +1352,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.FieldOfView.TabIndex = 136;
             this.FieldOfView.Tag = "";
             this.FieldOfView.Text = "Field of View:";
-            // 
-            // FieldOfViewSlider
-            // 
-            this.StyleExtender.SetApplyMetroTheme(this.FieldOfViewSlider, true);
-            this.FieldOfViewSlider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.FieldOfViewSlider.DecimalPlaces = 3;
-            this.FieldOfViewSlider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.FieldOfViewSlider.Increment = new decimal(new int[] {
-            1,
-            0,
-            0,
-            65536});
-            this.FieldOfViewSlider.Location = new System.Drawing.Point(99, 584);
-            this.FieldOfViewSlider.Maximum = new decimal(new int[] {
-            4,
-            0,
-            0,
-            0});
-            this.FieldOfViewSlider.Name = "FieldOfViewSlider";
-            this.FieldOfViewSlider.Size = new System.Drawing.Size(187, 20);
-            this.FieldOfViewSlider.TabIndex = 137;
-            this.FieldOfViewSlider.Tag = "";
-            this.ToolTipManager.SetToolTip(this.FieldOfViewSlider, "How high should our FOV be?\r\n\r\nCTRL + Click = Increase Decimal Places\r\nALT + Clic" +
-        "k = Decrease Decimal Places\r\n");
-            this.FieldOfViewSlider.Value = new decimal(new int[] {
-            1875,
-            0,
-            0,
-            196608});
-            this.FieldOfViewSlider.ValueChanged += new System.EventHandler(this.FieldOfViewSliderChanged);
-            this.FieldOfViewSlider.Click += new System.EventHandler(this.SliderClicked);
             // 
             // HiddenGameModesUnlocked
             // 
@@ -1352,7 +1384,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.CraftingTableAnywhere.AutoSize = true;
             this.CraftingTableAnywhere.Location = new System.Drawing.Point(192, 300);
             this.CraftingTableAnywhere.Name = "CraftingTableAnywhere";
-            this.CraftingTableAnywhere.Size = new System.Drawing.Size(152, 15);
+            this.CraftingTableAnywhere.Size = new System.Drawing.Size(154, 15);
             this.CraftingTableAnywhere.TabIndex = 132;
             this.CraftingTableAnywhere.Tag = "";
             this.CraftingTableAnywhere.Text = "Crafting Table Anywhere";
@@ -1365,39 +1397,13 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.VisibleHitboxes.AutoSize = true;
             this.VisibleHitboxes.Location = new System.Drawing.Point(192, 279);
             this.VisibleHitboxes.Name = "VisibleHitboxes";
-            this.VisibleHitboxes.Size = new System.Drawing.Size(107, 15);
+            this.VisibleHitboxes.Size = new System.Drawing.Size(106, 15);
             this.VisibleHitboxes.TabIndex = 129;
             this.VisibleHitboxes.Tag = "";
             this.VisibleHitboxes.Text = "Visible Hitboxes";
             this.ToolTipManager.SetToolTip(this.VisibleHitboxes, "Whether to show the hitboxes on Players and Mobs");
             this.VisibleHitboxes.UseSelectable = true;
             this.VisibleHitboxes.CheckedChanged += new System.EventHandler(this.VisibleHitboxesToggled);
-            // 
-            // HitBoxScaleSlider
-            // 
-            this.StyleExtender.SetApplyMetroTheme(this.HitBoxScaleSlider, true);
-            this.HitBoxScaleSlider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.HitBoxScaleSlider.DecimalPlaces = 1;
-            this.HitBoxScaleSlider.Enabled = false;
-            this.HitBoxScaleSlider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.HitBoxScaleSlider.Increment = new decimal(new int[] {
-            1,
-            0,
-            0,
-            65536});
-            this.HitBoxScaleSlider.Location = new System.Drawing.Point(96, 558);
-            this.HitBoxScaleSlider.Name = "HitBoxScaleSlider";
-            this.HitBoxScaleSlider.Size = new System.Drawing.Size(190, 20);
-            this.HitBoxScaleSlider.TabIndex = 134;
-            this.HitBoxScaleSlider.Tag = "";
-            this.ToolTipManager.SetToolTip(this.HitBoxScaleSlider, "How big should entity hitboxes be? (disabled until fixed)\r\n\r\nCTRL + Click = Incre" +
-        "ase Decimal Places\r\nALT + Click = Decrease Decimal Places");
-            this.HitBoxScaleSlider.Value = new decimal(new int[] {
-            5,
-            0,
-            0,
-            65536});
-            this.HitBoxScaleSlider.Click += new System.EventHandler(this.SliderClicked);
             // 
             // NnidEditorBtn
             // 
@@ -1737,7 +1743,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.SilkTouchAnything.BackColor = System.Drawing.Color.Transparent;
             this.SilkTouchAnything.Location = new System.Drawing.Point(7, 216);
             this.SilkTouchAnything.Name = "SilkTouchAnything";
-            this.SilkTouchAnything.Size = new System.Drawing.Size(128, 15);
+            this.SilkTouchAnything.Size = new System.Drawing.Size(130, 15);
             this.SilkTouchAnything.TabIndex = 87;
             this.SilkTouchAnything.Tag = "";
             this.SilkTouchAnything.Text = "Silk Touch Anything";
@@ -1897,10 +1903,10 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.worldTab.HorizontalScrollbarBarColor = true;
             this.worldTab.HorizontalScrollbarHighlightOnWheel = false;
             this.worldTab.HorizontalScrollbarSize = 10;
-            this.worldTab.Location = new System.Drawing.Point(4, 5);
+            this.worldTab.Location = new System.Drawing.Point(4, 14);
             this.worldTab.Name = "worldTab";
             this.worldTab.Padding = new System.Windows.Forms.Padding(3);
-            this.worldTab.Size = new System.Drawing.Size(1122, 630);
+            this.worldTab.Size = new System.Drawing.Size(1122, 621);
             this.worldTab.TabIndex = 1;
             this.worldTab.Tag = "needsGeckoU";
             this.worldTab.Text = "Entities / World";
@@ -1940,7 +1946,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.ZombieTower.AutoSize = true;
             this.ZombieTower.Location = new System.Drawing.Point(475, 88);
             this.ZombieTower.Name = "ZombieTower";
-            this.ZombieTower.Size = new System.Drawing.Size(98, 15);
+            this.ZombieTower.Size = new System.Drawing.Size(100, 15);
             this.ZombieTower.TabIndex = 20;
             this.ZombieTower.Tag = "";
             this.ZombieTower.Text = "Zombie Tower";
@@ -2045,7 +2051,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.World.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.World.Location = new System.Drawing.Point(3, 3);
             this.World.Name = "World";
-            this.World.Size = new System.Drawing.Size(45, 19);
+            this.World.Size = new System.Drawing.Size(46, 19);
             this.World.TabIndex = 44;
             this.World.Text = "World";
             // 
@@ -2139,10 +2145,10 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.generalTab.HorizontalScrollbarBarColor = true;
             this.generalTab.HorizontalScrollbarHighlightOnWheel = false;
             this.generalTab.HorizontalScrollbarSize = 10;
-            this.generalTab.Location = new System.Drawing.Point(4, 5);
+            this.generalTab.Location = new System.Drawing.Point(4, 14);
             this.generalTab.Name = "generalTab";
             this.generalTab.Padding = new System.Windows.Forms.Padding(3);
-            this.generalTab.Size = new System.Drawing.Size(1122, 630);
+            this.generalTab.Size = new System.Drawing.Size(1122, 621);
             this.generalTab.TabIndex = 2;
             this.generalTab.Tag = "needsGeckoU";
             this.generalTab.Text = "General Game";
@@ -2233,7 +2239,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.DisableTeleporting.ForeColor = System.Drawing.SystemColors.ControlText;
             this.DisableTeleporting.Location = new System.Drawing.Point(475, 130);
             this.DisableTeleporting.Name = "DisableTeleporting";
-            this.DisableTeleporting.Size = new System.Drawing.Size(123, 15);
+            this.DisableTeleporting.Size = new System.Drawing.Size(125, 15);
             this.DisableTeleporting.TabIndex = 31;
             this.DisableTeleporting.Tag = "";
             this.DisableTeleporting.Text = "Disable Teleporting";
@@ -2500,7 +2506,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.TNTGriefing.AutoSize = true;
             this.TNTGriefing.Location = new System.Drawing.Point(7, 27);
             this.TNTGriefing.Name = "TNTGriefing";
-            this.TNTGriefing.Size = new System.Drawing.Size(89, 15);
+            this.TNTGriefing.Size = new System.Drawing.Size(91, 15);
             this.TNTGriefing.TabIndex = 7;
             this.TNTGriefing.Tag = "";
             this.TNTGriefing.Text = "TNT Griefing";
@@ -2625,7 +2631,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.TumbleHUD.AutoSize = true;
             this.TumbleHUD.Location = new System.Drawing.Point(7, 6);
             this.TumbleHUD.Name = "TumbleHUD";
-            this.TumbleHUD.Size = new System.Drawing.Size(91, 15);
+            this.TumbleHUD.Size = new System.Drawing.Size(92, 15);
             this.TumbleHUD.TabIndex = 3;
             this.TumbleHUD.Tag = "";
             this.TumbleHUD.Text = "Tumble HUD";
@@ -2746,7 +2752,9 @@ namespace Minecraft_Wii_U_Mod_Injector
             // 
             // commandsTab
             // 
+            this.commandsTab.Controls.Add(this.xpCmdLbl);
             this.commandsTab.Controls.Add(this.gamemodeCmdLbl);
+            this.commandsTab.Controls.Add(this.xpPanel);
             this.commandsTab.Controls.Add(this.gamemodePanel);
             this.commandsTab.Controls.Add(this.worldCmdLbl);
             this.commandsTab.Controls.Add(this.worldPanel);
@@ -2761,9 +2769,9 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.commandsTab.HorizontalScrollbarBarColor = true;
             this.commandsTab.HorizontalScrollbarHighlightOnWheel = false;
             this.commandsTab.HorizontalScrollbarSize = 10;
-            this.commandsTab.Location = new System.Drawing.Point(4, 5);
+            this.commandsTab.Location = new System.Drawing.Point(4, 14);
             this.commandsTab.Name = "commandsTab";
-            this.commandsTab.Size = new System.Drawing.Size(1122, 630);
+            this.commandsTab.Size = new System.Drawing.Size(1122, 621);
             this.commandsTab.TabIndex = 7;
             this.commandsTab.Tag = "needsGeckoU";
             this.commandsTab.Text = "Commands";
@@ -2815,7 +2823,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.worldCmdLbl.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.worldCmdLbl.Location = new System.Drawing.Point(843, 9);
             this.worldCmdLbl.Name = "worldCmdLbl";
-            this.worldCmdLbl.Size = new System.Drawing.Size(45, 19);
+            this.worldCmdLbl.Size = new System.Drawing.Size(46, 19);
             this.worldCmdLbl.TabIndex = 44;
             this.worldCmdLbl.Text = "World";
             // 
@@ -3190,7 +3198,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.giveAmountBox.MaxLength = 5;
             this.giveAmountBox.Name = "giveAmountBox";
             this.giveAmountBox.PasswordChar = '\0';
-            this.giveAmountBox.PromptText = "Item Amount (Max 255)";
+            this.giveAmountBox.PromptText = "Item Amount (Max 32767)";
             this.giveAmountBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.giveAmountBox.SelectedText = "";
             this.giveAmountBox.SelectionLength = 0;
@@ -3201,7 +3209,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.giveAmountBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.ToolTipManager.SetToolTip(this.giveAmountBox, "How many of the items you want");
             this.giveAmountBox.UseSelectable = true;
-            this.giveAmountBox.WaterMark = "Item Amount (Max 255)";
+            this.giveAmountBox.WaterMark = "Item Amount (Max 32767)";
             this.giveAmountBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.giveAmountBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
@@ -3488,6 +3496,89 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.DecreaseDecimalPlace.Size = new System.Drawing.Size(322, 22);
             this.DecreaseDecimalPlace.Text = "Decrease decimal place";
             // 
+            // xpPanel
+            // 
+            this.xpPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.xpPanel.Controls.Add(this.giveXPLevels);
+            this.xpPanel.Controls.Add(this.giveXPOrbs);
+            this.xpPanel.Controls.Add(this.xpAmountBox);
+            this.xpPanel.HorizontalScrollbarBarColor = true;
+            this.xpPanel.HorizontalScrollbarHighlightOnWheel = false;
+            this.xpPanel.HorizontalScrollbarSize = 10;
+            this.xpPanel.Location = new System.Drawing.Point(281, 184);
+            this.xpPanel.Name = "xpPanel";
+            this.xpPanel.Size = new System.Drawing.Size(180, 145);
+            this.xpPanel.TabIndex = 45;
+            this.xpPanel.VerticalScrollbarBarColor = true;
+            this.xpPanel.VerticalScrollbarHighlightOnWheel = false;
+            this.xpPanel.VerticalScrollbarSize = 10;
+            // 
+            // xpCmdLbl
+            // 
+            this.xpCmdLbl.AutoSize = true;
+            this.xpCmdLbl.BackColor = System.Drawing.Color.Transparent;
+            this.xpCmdLbl.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.xpCmdLbl.Location = new System.Drawing.Point(285, 174);
+            this.xpCmdLbl.Name = "xpCmdLbl";
+            this.xpCmdLbl.Size = new System.Drawing.Size(28, 19);
+            this.xpCmdLbl.TabIndex = 46;
+            this.xpCmdLbl.Text = "/xp";
+            // 
+            // giveXPLevels
+            // 
+            this.giveXPLevels.FontWeight = MetroFramework.MetroButtonWeight.Regular;
+            this.giveXPLevels.Location = new System.Drawing.Point(3, 72);
+            this.giveXPLevels.Name = "giveXPLevels";
+            this.giveXPLevels.Size = new System.Drawing.Size(171, 23);
+            this.giveXPLevels.TabIndex = 18;
+            this.giveXPLevels.Text = "Give Levels";
+            this.giveXPLevels.UseSelectable = true;
+            this.giveXPLevels.Click += new System.EventHandler(this.XPLevelCommandBtnClicked);
+            // 
+            // giveXPOrbs
+            // 
+            this.giveXPOrbs.FontWeight = MetroFramework.MetroButtonWeight.Regular;
+            this.giveXPOrbs.Location = new System.Drawing.Point(3, 44);
+            this.giveXPOrbs.Name = "giveXPOrbs";
+            this.giveXPOrbs.Size = new System.Drawing.Size(171, 23);
+            this.giveXPOrbs.TabIndex = 19;
+            this.giveXPOrbs.Text = "Give XP";
+            this.giveXPOrbs.UseSelectable = true;
+            this.giveXPOrbs.Click += new System.EventHandler(this.XPOrbCommandBtnClicked);
+            // 
+            // xpAmountBox
+            // 
+            // 
+            // 
+            // 
+            this.xpAmountBox.CustomButton.Image = null;
+            this.xpAmountBox.CustomButton.Location = new System.Drawing.Point(150, 1);
+            this.xpAmountBox.CustomButton.Name = "";
+            this.xpAmountBox.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.xpAmountBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.xpAmountBox.CustomButton.TabIndex = 1;
+            this.xpAmountBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.xpAmountBox.CustomButton.UseSelectable = true;
+            this.xpAmountBox.CustomButton.Visible = false;
+            this.xpAmountBox.Lines = new string[0];
+            this.xpAmountBox.Location = new System.Drawing.Point(3, 16);
+            this.xpAmountBox.MaxLength = 11;
+            this.xpAmountBox.Name = "xpAmountBox";
+            this.xpAmountBox.PasswordChar = '\0';
+            this.xpAmountBox.PromptText = "Enter Amount...";
+            this.xpAmountBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.xpAmountBox.SelectedText = "";
+            this.xpAmountBox.SelectionLength = 0;
+            this.xpAmountBox.SelectionStart = 0;
+            this.xpAmountBox.ShortcutsEnabled = true;
+            this.xpAmountBox.Size = new System.Drawing.Size(172, 23);
+            this.xpAmountBox.TabIndex = 20;
+            this.xpAmountBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.xpAmountBox.UseSelectable = true;
+            this.xpAmountBox.WaterMark = "Enter Amount...";
+            this.xpAmountBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.xpAmountBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3562,6 +3653,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.settingsTab.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.StyleMngr)).EndInit();
             this.RightClickMenu.ResumeLayout(false);
+            this.xpPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -3768,5 +3860,10 @@ namespace Minecraft_Wii_U_Mod_Injector
         private MetroLabel UIUserInterface;
         private MetroPanel metroPanel1;
         public MetroCheckBox DebugConsole;
+        private MetroLabel xpCmdLbl;
+        private MetroPanel xpPanel;
+        private MetroButton giveXPLevels;
+        private MetroButton giveXPOrbs;
+        private MetroTextBox xpAmountBox;
     }
 }

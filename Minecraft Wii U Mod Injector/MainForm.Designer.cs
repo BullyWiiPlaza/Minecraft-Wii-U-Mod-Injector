@@ -151,6 +151,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.Game = new MetroFramework.Controls.MetroLabel();
             this.UIUserInterface = new MetroFramework.Controls.MetroLabel();
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
+            this.UnlockSignKeyboard = new MetroFramework.Controls.MetroCheckBox();
             this.vpadDisplaySwitch = new MetroFramework.Controls.MetroCheckBox();
             this.UIColorPickerBtn = new MetroFramework.Controls.MetroButton();
             this.DisableTeleporting = new MetroFramework.Controls.MetroCheckBox();
@@ -188,30 +189,8 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.ringScoreG = new MetroFramework.Controls.MetroLabel();
             this.ringScoreGreen = new System.Windows.Forms.NumericUpDown();
             this.commandsTab = new MetroFramework.Controls.MetroTabPage();
-            this.xpCmdLbl = new MetroFramework.Controls.MetroLabel();
-            this.gamemodeCmdLbl = new MetroFramework.Controls.MetroLabel();
-            this.xpPanel = new MetroFramework.Controls.MetroPanel();
-            this.giveXPLevels = new MetroFramework.Controls.MetroButton();
-            this.giveXPOrbs = new MetroFramework.Controls.MetroButton();
-            this.xpAmountBox = new MetroFramework.Controls.MetroTextBox();
-            this.gamemodePanel = new MetroFramework.Controls.MetroPanel();
-            this.GameModeCommandBtn = new MetroFramework.Controls.MetroButton();
-            this.worldCmdLbl = new MetroFramework.Controls.MetroLabel();
-            this.worldPanel = new MetroFramework.Controls.MetroPanel();
-            this.SetWorldSpawnBtn = new MetroFramework.Controls.MetroButton();
-            this.downfallCommandBtn = new MetroFramework.Controls.MetroButton();
-            this.playerCmdLbl = new MetroFramework.Controls.MetroLabel();
-            this.playerPanel = new MetroFramework.Controls.MetroPanel();
-            this.killCommandBtn = new MetroFramework.Controls.MetroButton();
-            this.timeCmdLbl = new MetroFramework.Controls.MetroLabel();
-            this.timePanel = new MetroFramework.Controls.MetroPanel();
-            this.timeCommandBtn = new MetroFramework.Controls.MetroButton();
-            this.timeAmountBox = new MetroFramework.Controls.MetroTextBox();
-            this.enchantCmdLbl = new MetroFramework.Controls.MetroLabel();
-            this.enchantPanel = new MetroFramework.Controls.MetroPanel();
-            this.enchantIDBox = new MetroFramework.Controls.MetroComboBox();
-            this.enchantCommandBtn = new MetroFramework.Controls.MetroButton();
-            this.enchantLevelBox = new MetroFramework.Controls.MetroTextBox();
+            this.commandsPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.giveCmdLabel = new MetroFramework.Controls.MetroLabel();
             this.giveCommandPanel = new MetroFramework.Controls.MetroPanel();
             this.itemIdHelpBtn = new MetroFramework.Controls.MetroButton();
@@ -219,6 +198,36 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.giveDataBox = new MetroFramework.Controls.MetroTextBox();
             this.giveAmountBox = new MetroFramework.Controls.MetroTextBox();
             this.giveIDBox = new MetroFramework.Controls.MetroTextBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.enchantCmdLbl = new MetroFramework.Controls.MetroLabel();
+            this.enchantPanel = new MetroFramework.Controls.MetroPanel();
+            this.enchantIDBox = new MetroFramework.Controls.MetroComboBox();
+            this.enchantCommandBtn = new MetroFramework.Controls.MetroButton();
+            this.enchantLevelBox = new MetroFramework.Controls.MetroTextBox();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.timeCmdLbl = new MetroFramework.Controls.MetroLabel();
+            this.timePanel = new MetroFramework.Controls.MetroPanel();
+            this.timeCommandBtn = new MetroFramework.Controls.MetroButton();
+            this.timeAmountBox = new MetroFramework.Controls.MetroTextBox();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.playerCmdLbl = new MetroFramework.Controls.MetroLabel();
+            this.playerPanel = new MetroFramework.Controls.MetroPanel();
+            this.killCommandBtn = new MetroFramework.Controls.MetroButton();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.worldCmdLbl = new MetroFramework.Controls.MetroLabel();
+            this.worldPanel = new MetroFramework.Controls.MetroPanel();
+            this.SetWorldSpawnBtn = new MetroFramework.Controls.MetroButton();
+            this.downfallCommandBtn = new MetroFramework.Controls.MetroButton();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.gamemodeCmdLbl = new MetroFramework.Controls.MetroLabel();
+            this.gamemodePanel = new MetroFramework.Controls.MetroPanel();
+            this.GameModeCommandBtn = new MetroFramework.Controls.MetroButton();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.xpCmdLbl = new MetroFramework.Controls.MetroLabel();
+            this.xpPanel = new MetroFramework.Controls.MetroPanel();
+            this.giveXPLevels = new MetroFramework.Controls.MetroButton();
+            this.giveXPOrbs = new MetroFramework.Controls.MetroButton();
+            this.xpAmountBox = new MetroFramework.Controls.MetroTextBox();
             this.settingsTab = new MetroFramework.Controls.MetroTabPage();
             this.OpenLangMngrBtn = new MetroFramework.Controls.MetroButton();
             this.CheckForPreRelease = new MetroFramework.Controls.MetroCheckBox();
@@ -239,15 +248,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.RightClickMenu = new MetroFramework.Controls.MetroContextMenu(this.components);
             this.IncreaseDecimalPlace = new System.Windows.Forms.ToolStripMenuItem();
             this.DecreaseDecimalPlace = new System.Windows.Forms.ToolStripMenuItem();
-            this.commandsPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.unlockSignKeyboard = new MetroFramework.Controls.MetroCheckBox();
             this.MainTabs.SuspendLayout();
             this.MainTab.SuspendLayout();
             this.playersTab.SuspendLayout();
@@ -279,24 +279,24 @@ namespace Minecraft_Wii_U_Mod_Injector
             ((System.ComponentModel.ISupportInitialize)(this.ringScoreOrange)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ringScoreGreen)).BeginInit();
             this.commandsTab.SuspendLayout();
-            this.xpPanel.SuspendLayout();
-            this.gamemodePanel.SuspendLayout();
-            this.worldPanel.SuspendLayout();
-            this.playerPanel.SuspendLayout();
-            this.timePanel.SuspendLayout();
-            this.enchantPanel.SuspendLayout();
+            this.commandsPanel.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.giveCommandPanel.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.enchantPanel.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.timePanel.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.playerPanel.SuspendLayout();
+            this.panel7.SuspendLayout();
+            this.worldPanel.SuspendLayout();
+            this.panel6.SuspendLayout();
+            this.gamemodePanel.SuspendLayout();
+            this.panel5.SuspendLayout();
+            this.xpPanel.SuspendLayout();
             this.settingsTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.StyleMngr)).BeginInit();
             this.RightClickMenu.SuspendLayout();
-            this.commandsPanel.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.panel4.SuspendLayout();
-            this.panel5.SuspendLayout();
-            this.panel6.SuspendLayout();
-            this.panel7.SuspendLayout();
             this.SuspendLayout();
             // 
             // WorldTile
@@ -625,10 +625,10 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.playersTab.HorizontalScrollbarBarColor = true;
             this.playersTab.HorizontalScrollbarHighlightOnWheel = false;
             this.playersTab.HorizontalScrollbarSize = 10;
-            this.playersTab.Location = new System.Drawing.Point(4, 24);
+            this.playersTab.Location = new System.Drawing.Point(4, 6);
             this.playersTab.Name = "playersTab";
             this.playersTab.Padding = new System.Windows.Forms.Padding(3);
-            this.playersTab.Size = new System.Drawing.Size(1100, 611);
+            this.playersTab.Size = new System.Drawing.Size(1100, 629);
             this.playersTab.TabIndex = 0;
             this.playersTab.Tag = "needsGeckoU";
             this.playersTab.Text = "Player(s)";
@@ -2029,10 +2029,10 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.worldTab.HorizontalScrollbarBarColor = true;
             this.worldTab.HorizontalScrollbarHighlightOnWheel = false;
             this.worldTab.HorizontalScrollbarSize = 10;
-            this.worldTab.Location = new System.Drawing.Point(4, 24);
+            this.worldTab.Location = new System.Drawing.Point(4, 6);
             this.worldTab.Name = "worldTab";
             this.worldTab.Padding = new System.Windows.Forms.Padding(3);
-            this.worldTab.Size = new System.Drawing.Size(1100, 611);
+            this.worldTab.Size = new System.Drawing.Size(1100, 629);
             this.worldTab.TabIndex = 1;
             this.worldTab.Tag = "needsGeckoU";
             this.worldTab.Text = "Entities / World";
@@ -2264,7 +2264,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.generalTab.Controls.Add(this.Game);
             this.generalTab.Controls.Add(this.UIUserInterface);
             this.generalTab.Controls.Add(this.metroPanel1);
-            this.generalTab.Controls.Add(this.unlockSignKeyboard);
+            this.generalTab.Controls.Add(this.UnlockSignKeyboard);
             this.generalTab.Controls.Add(this.vpadDisplaySwitch);
             this.generalTab.Controls.Add(this.UIColorPickerBtn);
             this.generalTab.Controls.Add(this.DisableTeleporting);
@@ -2280,10 +2280,10 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.generalTab.HorizontalScrollbarBarColor = true;
             this.generalTab.HorizontalScrollbarHighlightOnWheel = false;
             this.generalTab.HorizontalScrollbarSize = 10;
-            this.generalTab.Location = new System.Drawing.Point(4, 24);
+            this.generalTab.Location = new System.Drawing.Point(4, 6);
             this.generalTab.Name = "generalTab";
             this.generalTab.Padding = new System.Windows.Forms.Padding(3);
-            this.generalTab.Size = new System.Drawing.Size(1100, 611);
+            this.generalTab.Size = new System.Drawing.Size(1100, 629);
             this.generalTab.TabIndex = 2;
             this.generalTab.Tag = "needsGeckoU";
             this.generalTab.Text = "General Game";
@@ -2342,6 +2342,20 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.metroPanel1.VerticalScrollbarBarColor = true;
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel1.VerticalScrollbarSize = 10;
+            // 
+            // UnlockSignKeyboard
+            // 
+            this.UnlockSignKeyboard.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.UnlockSignKeyboard.AutoSize = true;
+            this.UnlockSignKeyboard.Location = new System.Drawing.Point(475, 193);
+            this.UnlockSignKeyboard.Name = "UnlockSignKeyboard";
+            this.UnlockSignKeyboard.Size = new System.Drawing.Size(139, 15);
+            this.UnlockSignKeyboard.TabIndex = 3;
+            this.UnlockSignKeyboard.Text = "Unlock Sign Keyboard";
+            this.ToolTipManager.SetToolTip(this.UnlockSignKeyboard, "You will be able to write the § symbol on signs and books. (This also unlocks all" +
+        " the other pages like SYMBOL or SPECIAL)");
+            this.UnlockSignKeyboard.UseSelectable = true;
+            this.UnlockSignKeyboard.CheckedChanged += new System.EventHandler(this.UnlockSignKeyboardToggled);
             // 
             // vpadDisplaySwitch
             // 
@@ -2523,10 +2537,10 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.minigamesTab.HorizontalScrollbarBarColor = true;
             this.minigamesTab.HorizontalScrollbarHighlightOnWheel = false;
             this.minigamesTab.HorizontalScrollbarSize = 10;
-            this.minigamesTab.Location = new System.Drawing.Point(4, 24);
+            this.minigamesTab.Location = new System.Drawing.Point(4, 6);
             this.minigamesTab.Name = "minigamesTab";
             this.minigamesTab.Padding = new System.Windows.Forms.Padding(3);
-            this.minigamesTab.Size = new System.Drawing.Size(1100, 611);
+            this.minigamesTab.Size = new System.Drawing.Size(1100, 629);
             this.minigamesTab.TabIndex = 3;
             this.minigamesTab.Tag = "GeckoUNeeded";
             this.minigamesTab.Text = "Minigames";
@@ -2911,9 +2925,9 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.commandsTab.HorizontalScrollbarBarColor = true;
             this.commandsTab.HorizontalScrollbarHighlightOnWheel = false;
             this.commandsTab.HorizontalScrollbarSize = 10;
-            this.commandsTab.Location = new System.Drawing.Point(4, 24);
+            this.commandsTab.Location = new System.Drawing.Point(4, 6);
             this.commandsTab.Name = "commandsTab";
-            this.commandsTab.Size = new System.Drawing.Size(1100, 611);
+            this.commandsTab.Size = new System.Drawing.Size(1100, 629);
             this.commandsTab.TabIndex = 7;
             this.commandsTab.Tag = "needsGeckoU";
             this.commandsTab.Text = "Commands";
@@ -2921,413 +2935,33 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.commandsTab.VerticalScrollbarHighlightOnWheel = false;
             this.commandsTab.VerticalScrollbarSize = 10;
             // 
-            // xpCmdLbl
+            // commandsPanel
             // 
-            this.xpCmdLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.xpCmdLbl.AutoSize = true;
-            this.xpCmdLbl.BackColor = System.Drawing.Color.Transparent;
-            this.xpCmdLbl.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.xpCmdLbl.Location = new System.Drawing.Point(7, 2);
-            this.xpCmdLbl.Name = "xpCmdLbl";
-            this.xpCmdLbl.Size = new System.Drawing.Size(28, 19);
-            this.xpCmdLbl.TabIndex = 46;
-            this.xpCmdLbl.Text = "/xp";
+            this.commandsPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.commandsPanel.BackColor = System.Drawing.Color.Transparent;
+            this.commandsPanel.Controls.Add(this.panel1);
+            this.commandsPanel.Controls.Add(this.panel2);
+            this.commandsPanel.Controls.Add(this.panel3);
+            this.commandsPanel.Controls.Add(this.panel4);
+            this.commandsPanel.Controls.Add(this.panel7);
+            this.commandsPanel.Controls.Add(this.panel6);
+            this.commandsPanel.Controls.Add(this.panel5);
+            this.commandsPanel.Location = new System.Drawing.Point(70, 3);
+            this.commandsPanel.Name = "commandsPanel";
+            this.commandsPanel.Size = new System.Drawing.Size(960, 605);
+            this.commandsPanel.TabIndex = 47;
             // 
-            // gamemodeCmdLbl
+            // panel1
             // 
-            this.gamemodeCmdLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.gamemodeCmdLbl.AutoSize = true;
-            this.gamemodeCmdLbl.BackColor = System.Drawing.Color.Transparent;
-            this.gamemodeCmdLbl.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.gamemodeCmdLbl.Location = new System.Drawing.Point(7, 2);
-            this.gamemodeCmdLbl.Name = "gamemodeCmdLbl";
-            this.gamemodeCmdLbl.Size = new System.Drawing.Size(83, 19);
-            this.gamemodeCmdLbl.TabIndex = 46;
-            this.gamemodeCmdLbl.Text = "/gamemode";
-            // 
-            // xpPanel
-            // 
-            this.xpPanel.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.xpPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.xpPanel.Controls.Add(this.giveXPLevels);
-            this.xpPanel.Controls.Add(this.giveXPOrbs);
-            this.xpPanel.Controls.Add(this.xpAmountBox);
-            this.xpPanel.HorizontalScrollbarBarColor = true;
-            this.xpPanel.HorizontalScrollbarHighlightOnWheel = false;
-            this.xpPanel.HorizontalScrollbarSize = 10;
-            this.xpPanel.Location = new System.Drawing.Point(3, 12);
-            this.xpPanel.Name = "xpPanel";
-            this.xpPanel.Size = new System.Drawing.Size(180, 145);
-            this.xpPanel.TabIndex = 45;
-            this.xpPanel.VerticalScrollbarBarColor = true;
-            this.xpPanel.VerticalScrollbarHighlightOnWheel = false;
-            this.xpPanel.VerticalScrollbarSize = 10;
-            // 
-            // giveXPLevels
-            // 
-            this.giveXPLevels.FontWeight = MetroFramework.MetroButtonWeight.Regular;
-            this.giveXPLevels.Location = new System.Drawing.Point(3, 72);
-            this.giveXPLevels.Name = "giveXPLevels";
-            this.giveXPLevels.Size = new System.Drawing.Size(171, 23);
-            this.giveXPLevels.TabIndex = 18;
-            this.giveXPLevels.Text = "Give Levels";
-            this.giveXPLevels.UseSelectable = true;
-            this.giveXPLevels.Click += new System.EventHandler(this.XPLevelCommandBtnClicked);
-            // 
-            // giveXPOrbs
-            // 
-            this.giveXPOrbs.FontWeight = MetroFramework.MetroButtonWeight.Regular;
-            this.giveXPOrbs.Location = new System.Drawing.Point(3, 44);
-            this.giveXPOrbs.Name = "giveXPOrbs";
-            this.giveXPOrbs.Size = new System.Drawing.Size(171, 23);
-            this.giveXPOrbs.TabIndex = 19;
-            this.giveXPOrbs.Text = "Give XP";
-            this.giveXPOrbs.UseSelectable = true;
-            this.giveXPOrbs.Click += new System.EventHandler(this.XPOrbCommandBtnClicked);
-            // 
-            // xpAmountBox
-            // 
-            // 
-            // 
-            // 
-            this.xpAmountBox.CustomButton.Image = null;
-            this.xpAmountBox.CustomButton.Location = new System.Drawing.Point(150, 1);
-            this.xpAmountBox.CustomButton.Name = "";
-            this.xpAmountBox.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.xpAmountBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.xpAmountBox.CustomButton.TabIndex = 1;
-            this.xpAmountBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.xpAmountBox.CustomButton.UseSelectable = true;
-            this.xpAmountBox.CustomButton.Visible = false;
-            this.xpAmountBox.Lines = new string[0];
-            this.xpAmountBox.Location = new System.Drawing.Point(3, 16);
-            this.xpAmountBox.MaxLength = 11;
-            this.xpAmountBox.Name = "xpAmountBox";
-            this.xpAmountBox.PasswordChar = '\0';
-            this.xpAmountBox.PromptText = "Enter Amount...";
-            this.xpAmountBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.xpAmountBox.SelectedText = "";
-            this.xpAmountBox.SelectionLength = 0;
-            this.xpAmountBox.SelectionStart = 0;
-            this.xpAmountBox.ShortcutsEnabled = true;
-            this.xpAmountBox.Size = new System.Drawing.Size(172, 23);
-            this.xpAmountBox.TabIndex = 20;
-            this.xpAmountBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.xpAmountBox.UseSelectable = true;
-            this.xpAmountBox.WaterMark = "Enter Amount...";
-            this.xpAmountBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.xpAmountBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
-            // gamemodePanel
-            // 
-            this.gamemodePanel.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.gamemodePanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.gamemodePanel.Controls.Add(this.GameModeCommandBtn);
-            this.gamemodePanel.HorizontalScrollbarBarColor = true;
-            this.gamemodePanel.HorizontalScrollbarHighlightOnWheel = false;
-            this.gamemodePanel.HorizontalScrollbarSize = 10;
-            this.gamemodePanel.Location = new System.Drawing.Point(3, 12);
-            this.gamemodePanel.Name = "gamemodePanel";
-            this.gamemodePanel.Size = new System.Drawing.Size(180, 145);
-            this.gamemodePanel.TabIndex = 45;
-            this.gamemodePanel.VerticalScrollbarBarColor = true;
-            this.gamemodePanel.VerticalScrollbarHighlightOnWheel = false;
-            this.gamemodePanel.VerticalScrollbarSize = 10;
-            // 
-            // GameModeCommandBtn
-            // 
-            this.GameModeCommandBtn.FontWeight = MetroFramework.MetroButtonWeight.Regular;
-            this.GameModeCommandBtn.Location = new System.Drawing.Point(3, 11);
-            this.GameModeCommandBtn.Name = "GameModeCommandBtn";
-            this.GameModeCommandBtn.Size = new System.Drawing.Size(172, 23);
-            this.GameModeCommandBtn.TabIndex = 17;
-            this.GameModeCommandBtn.Text = "Survival";
-            this.ToolTipManager.SetToolTip(this.GameModeCommandBtn, "Executes the /gamemode 0 command");
-            this.GameModeCommandBtn.UseSelectable = true;
-            this.GameModeCommandBtn.Click += new System.EventHandler(this.GameModeCommandBtnClicked);
-            // 
-            // worldCmdLbl
-            // 
-            this.worldCmdLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.worldCmdLbl.AutoSize = true;
-            this.worldCmdLbl.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.worldCmdLbl.Location = new System.Drawing.Point(7, 2);
-            this.worldCmdLbl.Name = "worldCmdLbl";
-            this.worldCmdLbl.Size = new System.Drawing.Size(46, 19);
-            this.worldCmdLbl.TabIndex = 44;
-            this.worldCmdLbl.Text = "World";
-            // 
-            // worldPanel
-            // 
-            this.worldPanel.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.worldPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.worldPanel.Controls.Add(this.SetWorldSpawnBtn);
-            this.worldPanel.Controls.Add(this.downfallCommandBtn);
-            this.worldPanel.HorizontalScrollbarBarColor = true;
-            this.worldPanel.HorizontalScrollbarHighlightOnWheel = false;
-            this.worldPanel.HorizontalScrollbarSize = 10;
-            this.worldPanel.Location = new System.Drawing.Point(3, 12);
-            this.worldPanel.Name = "worldPanel";
-            this.worldPanel.Size = new System.Drawing.Size(180, 145);
-            this.worldPanel.TabIndex = 43;
-            this.worldPanel.VerticalScrollbarBarColor = true;
-            this.worldPanel.VerticalScrollbarHighlightOnWheel = false;
-            this.worldPanel.VerticalScrollbarSize = 10;
-            // 
-            // SetWorldSpawnBtn
-            // 
-            this.SetWorldSpawnBtn.FontWeight = MetroFramework.MetroButtonWeight.Regular;
-            this.SetWorldSpawnBtn.Location = new System.Drawing.Point(3, 49);
-            this.SetWorldSpawnBtn.Name = "SetWorldSpawnBtn";
-            this.SetWorldSpawnBtn.Size = new System.Drawing.Size(172, 23);
-            this.SetWorldSpawnBtn.TabIndex = 18;
-            this.SetWorldSpawnBtn.Text = "/setworldspawn";
-            this.ToolTipManager.SetToolTip(this.SetWorldSpawnBtn, "Executes the /setworldspawn command");
-            this.SetWorldSpawnBtn.UseSelectable = true;
-            this.SetWorldSpawnBtn.Click += new System.EventHandler(this.SetWorldSpawnBtnClicked);
-            // 
-            // downfallCommandBtn
-            // 
-            this.downfallCommandBtn.FontWeight = MetroFramework.MetroButtonWeight.Regular;
-            this.downfallCommandBtn.Location = new System.Drawing.Point(3, 22);
-            this.downfallCommandBtn.Name = "downfallCommandBtn";
-            this.downfallCommandBtn.Size = new System.Drawing.Size(172, 23);
-            this.downfallCommandBtn.TabIndex = 17;
-            this.downfallCommandBtn.Text = "/toggledownfall";
-            this.ToolTipManager.SetToolTip(this.downfallCommandBtn, "Executes the /toggledownfall command");
-            this.downfallCommandBtn.UseSelectable = true;
-            this.downfallCommandBtn.Click += new System.EventHandler(this.DownfallCommandBtnClicked);
-            // 
-            // playerCmdLbl
-            // 
-            this.playerCmdLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.playerCmdLbl.AutoSize = true;
-            this.playerCmdLbl.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.playerCmdLbl.Location = new System.Drawing.Point(7, 2);
-            this.playerCmdLbl.Name = "playerCmdLbl";
-            this.playerCmdLbl.Size = new System.Drawing.Size(46, 19);
-            this.playerCmdLbl.TabIndex = 42;
-            this.playerCmdLbl.Text = "Player";
-            // 
-            // playerPanel
-            // 
-            this.playerPanel.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.playerPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.playerPanel.Controls.Add(this.killCommandBtn);
-            this.playerPanel.HorizontalScrollbarBarColor = true;
-            this.playerPanel.HorizontalScrollbarHighlightOnWheel = false;
-            this.playerPanel.HorizontalScrollbarSize = 10;
-            this.playerPanel.Location = new System.Drawing.Point(3, 12);
-            this.playerPanel.Name = "playerPanel";
-            this.playerPanel.Size = new System.Drawing.Size(180, 145);
-            this.playerPanel.TabIndex = 41;
-            this.playerPanel.VerticalScrollbarBarColor = true;
-            this.playerPanel.VerticalScrollbarHighlightOnWheel = false;
-            this.playerPanel.VerticalScrollbarSize = 10;
-            // 
-            // killCommandBtn
-            // 
-            this.killCommandBtn.FontWeight = MetroFramework.MetroButtonWeight.Regular;
-            this.killCommandBtn.Location = new System.Drawing.Point(3, 22);
-            this.killCommandBtn.Name = "killCommandBtn";
-            this.killCommandBtn.Size = new System.Drawing.Size(172, 23);
-            this.killCommandBtn.TabIndex = 17;
-            this.killCommandBtn.Text = "/kill";
-            this.ToolTipManager.SetToolTip(this.killCommandBtn, "Executes the /kill command, which kills you.");
-            this.killCommandBtn.UseSelectable = true;
-            this.killCommandBtn.Click += new System.EventHandler(this.KillCommandBtnClicked);
-            // 
-            // timeCmdLbl
-            // 
-            this.timeCmdLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.timeCmdLbl.AutoSize = true;
-            this.timeCmdLbl.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.timeCmdLbl.Location = new System.Drawing.Point(7, 2);
-            this.timeCmdLbl.Name = "timeCmdLbl";
-            this.timeCmdLbl.Size = new System.Drawing.Size(41, 19);
-            this.timeCmdLbl.TabIndex = 40;
-            this.timeCmdLbl.Text = "/time";
-            // 
-            // timePanel
-            // 
-            this.timePanel.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.timePanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.timePanel.Controls.Add(this.timeCommandBtn);
-            this.timePanel.Controls.Add(this.timeAmountBox);
-            this.timePanel.HorizontalScrollbarBarColor = true;
-            this.timePanel.HorizontalScrollbarHighlightOnWheel = false;
-            this.timePanel.HorizontalScrollbarSize = 10;
-            this.timePanel.Location = new System.Drawing.Point(3, 12);
-            this.timePanel.Name = "timePanel";
-            this.timePanel.Size = new System.Drawing.Size(180, 145);
-            this.timePanel.TabIndex = 39;
-            this.timePanel.VerticalScrollbarBarColor = true;
-            this.timePanel.VerticalScrollbarHighlightOnWheel = false;
-            this.timePanel.VerticalScrollbarSize = 10;
-            // 
-            // timeCommandBtn
-            // 
-            this.timeCommandBtn.FontWeight = MetroFramework.MetroButtonWeight.Regular;
-            this.timeCommandBtn.Location = new System.Drawing.Point(3, 107);
-            this.timeCommandBtn.Name = "timeCommandBtn";
-            this.timeCommandBtn.Size = new System.Drawing.Size(172, 23);
-            this.timeCommandBtn.TabIndex = 17;
-            this.timeCommandBtn.Text = " /time";
-            this.ToolTipManager.SetToolTip(this.timeCommandBtn, "Executes the /time command using the parameters entered above");
-            this.timeCommandBtn.UseSelectable = true;
-            this.timeCommandBtn.Click += new System.EventHandler(this.TimeCommandBtnClicked);
-            // 
-            // timeAmountBox
-            // 
-            // 
-            // 
-            // 
-            this.timeAmountBox.CustomButton.Image = null;
-            this.timeAmountBox.CustomButton.Location = new System.Drawing.Point(150, 1);
-            this.timeAmountBox.CustomButton.Name = "";
-            this.timeAmountBox.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.timeAmountBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.timeAmountBox.CustomButton.TabIndex = 1;
-            this.timeAmountBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.timeAmountBox.CustomButton.UseSelectable = true;
-            this.timeAmountBox.CustomButton.Visible = false;
-            this.timeAmountBox.Lines = new string[0];
-            this.timeAmountBox.Location = new System.Drawing.Point(3, 20);
-            this.timeAmountBox.MaxLength = 999;
-            this.timeAmountBox.Name = "timeAmountBox";
-            this.timeAmountBox.PasswordChar = '\0';
-            this.timeAmountBox.PromptText = "Enter Time...";
-            this.timeAmountBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.timeAmountBox.SelectedText = "";
-            this.timeAmountBox.SelectionLength = 0;
-            this.timeAmountBox.SelectionStart = 0;
-            this.timeAmountBox.ShortcutsEnabled = true;
-            this.timeAmountBox.Size = new System.Drawing.Size(172, 23);
-            this.timeAmountBox.TabIndex = 17;
-            this.timeAmountBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.timeAmountBox.UseSelectable = true;
-            this.timeAmountBox.WaterMark = "Enter Time...";
-            this.timeAmountBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.timeAmountBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
-            // enchantCmdLbl
-            // 
-            this.enchantCmdLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.enchantCmdLbl.AutoSize = true;
-            this.enchantCmdLbl.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.enchantCmdLbl.Location = new System.Drawing.Point(7, 2);
-            this.enchantCmdLbl.Name = "enchantCmdLbl";
-            this.enchantCmdLbl.Size = new System.Drawing.Size(63, 19);
-            this.enchantCmdLbl.TabIndex = 38;
-            this.enchantCmdLbl.Text = "/enchant";
-            // 
-            // enchantPanel
-            // 
-            this.enchantPanel.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.enchantPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.enchantPanel.Controls.Add(this.enchantIDBox);
-            this.enchantPanel.Controls.Add(this.enchantCommandBtn);
-            this.enchantPanel.Controls.Add(this.enchantLevelBox);
-            this.enchantPanel.HorizontalScrollbarBarColor = true;
-            this.enchantPanel.HorizontalScrollbarHighlightOnWheel = false;
-            this.enchantPanel.HorizontalScrollbarSize = 10;
-            this.enchantPanel.Location = new System.Drawing.Point(3, 12);
-            this.enchantPanel.Name = "enchantPanel";
-            this.enchantPanel.Size = new System.Drawing.Size(180, 145);
-            this.enchantPanel.TabIndex = 37;
-            this.enchantPanel.VerticalScrollbarBarColor = true;
-            this.enchantPanel.VerticalScrollbarHighlightOnWheel = false;
-            this.enchantPanel.VerticalScrollbarSize = 10;
-            // 
-            // enchantIDBox
-            // 
-            this.enchantIDBox.FontSize = MetroFramework.MetroComboBoxSize.Small;
-            this.enchantIDBox.FormattingEnabled = true;
-            this.enchantIDBox.ItemHeight = 19;
-            this.enchantIDBox.Items.AddRange(new object[] {
-            "Protection",
-            "Fire Protection",
-            "Feather Falling",
-            "Blast Protection",
-            "Projectile Protection",
-            "Respiration",
-            "Aqua Affinity",
-            "Thorns",
-            "Depth Strider",
-            "Frost Walker",
-            "Curse of Binding",
-            "Sharpness",
-            "Smite",
-            "Bane of Arthropods",
-            "Knockback",
-            "Fire Aspect",
-            "Looting",
-            "Efficiency",
-            "Silk Touch",
-            "Unbreaking",
-            "Fortune",
-            "Power",
-            "Punch",
-            "Flame",
-            "Infinity",
-            "Luck of the Sea",
-            "Lure",
-            "Mending",
-            "Curse of Vanishing",
-            "Impaling",
-            "Riptide",
-            "Loyalty",
-            "Channeling"});
-            this.enchantIDBox.Location = new System.Drawing.Point(3, 20);
-            this.enchantIDBox.Name = "enchantIDBox";
-            this.enchantIDBox.Size = new System.Drawing.Size(172, 25);
-            this.enchantIDBox.TabIndex = 17;
-            this.enchantIDBox.UseSelectable = true;
-            // 
-            // enchantCommandBtn
-            // 
-            this.enchantCommandBtn.FontWeight = MetroFramework.MetroButtonWeight.Regular;
-            this.enchantCommandBtn.Location = new System.Drawing.Point(3, 107);
-            this.enchantCommandBtn.Name = "enchantCommandBtn";
-            this.enchantCommandBtn.Size = new System.Drawing.Size(172, 23);
-            this.enchantCommandBtn.TabIndex = 17;
-            this.enchantCommandBtn.Text = "/enchant";
-            this.ToolTipManager.SetToolTip(this.enchantCommandBtn, "Executes the /enchant command using the parameters entered above");
-            this.enchantCommandBtn.UseSelectable = true;
-            this.enchantCommandBtn.Click += new System.EventHandler(this.EnchantCommandBtnClicked);
-            // 
-            // enchantLevelBox
-            // 
-            // 
-            // 
-            // 
-            this.enchantLevelBox.CustomButton.Image = null;
-            this.enchantLevelBox.CustomButton.Location = new System.Drawing.Point(150, 1);
-            this.enchantLevelBox.CustomButton.Name = "";
-            this.enchantLevelBox.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.enchantLevelBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.enchantLevelBox.CustomButton.TabIndex = 1;
-            this.enchantLevelBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.enchantLevelBox.CustomButton.UseSelectable = true;
-            this.enchantLevelBox.CustomButton.Visible = false;
-            this.enchantLevelBox.Lines = new string[0];
-            this.enchantLevelBox.Location = new System.Drawing.Point(3, 49);
-            this.enchantLevelBox.MaxLength = 5;
-            this.enchantLevelBox.Name = "enchantLevelBox";
-            this.enchantLevelBox.PasswordChar = '\0';
-            this.enchantLevelBox.PromptText = "Enchantment Level";
-            this.enchantLevelBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.enchantLevelBox.SelectedText = "";
-            this.enchantLevelBox.SelectionLength = 0;
-            this.enchantLevelBox.SelectionStart = 0;
-            this.enchantLevelBox.ShortcutsEnabled = true;
-            this.enchantLevelBox.Size = new System.Drawing.Size(172, 23);
-            this.enchantLevelBox.TabIndex = 17;
-            this.enchantLevelBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.enchantLevelBox.UseSelectable = true;
-            this.enchantLevelBox.WaterMark = "Enchantment Level";
-            this.enchantLevelBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.enchantLevelBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Controls.Add(this.giveCmdLabel);
+            this.panel1.Controls.Add(this.giveCommandPanel);
+            this.panel1.Location = new System.Drawing.Point(3, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(186, 160);
+            this.panel1.TabIndex = 48;
             // 
             // giveCmdLabel
             // 
@@ -3484,6 +3118,474 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.giveIDBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.giveIDBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Transparent;
+            this.panel2.Controls.Add(this.enchantCmdLbl);
+            this.panel2.Controls.Add(this.enchantPanel);
+            this.panel2.Location = new System.Drawing.Point(195, 3);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(186, 160);
+            this.panel2.TabIndex = 48;
+            // 
+            // enchantCmdLbl
+            // 
+            this.enchantCmdLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.enchantCmdLbl.AutoSize = true;
+            this.enchantCmdLbl.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.enchantCmdLbl.Location = new System.Drawing.Point(7, 2);
+            this.enchantCmdLbl.Name = "enchantCmdLbl";
+            this.enchantCmdLbl.Size = new System.Drawing.Size(63, 19);
+            this.enchantCmdLbl.TabIndex = 38;
+            this.enchantCmdLbl.Text = "/enchant";
+            // 
+            // enchantPanel
+            // 
+            this.enchantPanel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.enchantPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.enchantPanel.Controls.Add(this.enchantIDBox);
+            this.enchantPanel.Controls.Add(this.enchantCommandBtn);
+            this.enchantPanel.Controls.Add(this.enchantLevelBox);
+            this.enchantPanel.HorizontalScrollbarBarColor = true;
+            this.enchantPanel.HorizontalScrollbarHighlightOnWheel = false;
+            this.enchantPanel.HorizontalScrollbarSize = 10;
+            this.enchantPanel.Location = new System.Drawing.Point(3, 12);
+            this.enchantPanel.Name = "enchantPanel";
+            this.enchantPanel.Size = new System.Drawing.Size(180, 145);
+            this.enchantPanel.TabIndex = 37;
+            this.enchantPanel.VerticalScrollbarBarColor = true;
+            this.enchantPanel.VerticalScrollbarHighlightOnWheel = false;
+            this.enchantPanel.VerticalScrollbarSize = 10;
+            // 
+            // enchantIDBox
+            // 
+            this.enchantIDBox.FontSize = MetroFramework.MetroComboBoxSize.Small;
+            this.enchantIDBox.FormattingEnabled = true;
+            this.enchantIDBox.ItemHeight = 19;
+            this.enchantIDBox.Items.AddRange(new object[] {
+            "Protection",
+            "Fire Protection",
+            "Feather Falling",
+            "Blast Protection",
+            "Projectile Protection",
+            "Respiration",
+            "Aqua Affinity",
+            "Thorns",
+            "Depth Strider",
+            "Frost Walker",
+            "Curse of Binding",
+            "Sharpness",
+            "Smite",
+            "Bane of Arthropods",
+            "Knockback",
+            "Fire Aspect",
+            "Looting",
+            "Efficiency",
+            "Silk Touch",
+            "Unbreaking",
+            "Fortune",
+            "Power",
+            "Punch",
+            "Flame",
+            "Infinity",
+            "Luck of the Sea",
+            "Lure",
+            "Mending",
+            "Curse of Vanishing",
+            "Impaling",
+            "Riptide",
+            "Loyalty",
+            "Channeling"});
+            this.enchantIDBox.Location = new System.Drawing.Point(3, 20);
+            this.enchantIDBox.Name = "enchantIDBox";
+            this.enchantIDBox.Size = new System.Drawing.Size(172, 25);
+            this.enchantIDBox.TabIndex = 17;
+            this.enchantIDBox.UseSelectable = true;
+            // 
+            // enchantCommandBtn
+            // 
+            this.enchantCommandBtn.FontWeight = MetroFramework.MetroButtonWeight.Regular;
+            this.enchantCommandBtn.Location = new System.Drawing.Point(3, 107);
+            this.enchantCommandBtn.Name = "enchantCommandBtn";
+            this.enchantCommandBtn.Size = new System.Drawing.Size(172, 23);
+            this.enchantCommandBtn.TabIndex = 17;
+            this.enchantCommandBtn.Text = "/enchant";
+            this.ToolTipManager.SetToolTip(this.enchantCommandBtn, "Executes the /enchant command using the parameters entered above");
+            this.enchantCommandBtn.UseSelectable = true;
+            this.enchantCommandBtn.Click += new System.EventHandler(this.EnchantCommandBtnClicked);
+            // 
+            // enchantLevelBox
+            // 
+            // 
+            // 
+            // 
+            this.enchantLevelBox.CustomButton.Image = null;
+            this.enchantLevelBox.CustomButton.Location = new System.Drawing.Point(150, 1);
+            this.enchantLevelBox.CustomButton.Name = "";
+            this.enchantLevelBox.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.enchantLevelBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.enchantLevelBox.CustomButton.TabIndex = 1;
+            this.enchantLevelBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.enchantLevelBox.CustomButton.UseSelectable = true;
+            this.enchantLevelBox.CustomButton.Visible = false;
+            this.enchantLevelBox.Lines = new string[0];
+            this.enchantLevelBox.Location = new System.Drawing.Point(3, 49);
+            this.enchantLevelBox.MaxLength = 5;
+            this.enchantLevelBox.Name = "enchantLevelBox";
+            this.enchantLevelBox.PasswordChar = '\0';
+            this.enchantLevelBox.PromptText = "Enchantment Level";
+            this.enchantLevelBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.enchantLevelBox.SelectedText = "";
+            this.enchantLevelBox.SelectionLength = 0;
+            this.enchantLevelBox.SelectionStart = 0;
+            this.enchantLevelBox.ShortcutsEnabled = true;
+            this.enchantLevelBox.Size = new System.Drawing.Size(172, 23);
+            this.enchantLevelBox.TabIndex = 17;
+            this.enchantLevelBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.enchantLevelBox.UseSelectable = true;
+            this.enchantLevelBox.WaterMark = "Enchantment Level";
+            this.enchantLevelBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.enchantLevelBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.Transparent;
+            this.panel3.Controls.Add(this.timeCmdLbl);
+            this.panel3.Controls.Add(this.timePanel);
+            this.panel3.Location = new System.Drawing.Point(387, 3);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(186, 160);
+            this.panel3.TabIndex = 48;
+            // 
+            // timeCmdLbl
+            // 
+            this.timeCmdLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.timeCmdLbl.AutoSize = true;
+            this.timeCmdLbl.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.timeCmdLbl.Location = new System.Drawing.Point(7, 2);
+            this.timeCmdLbl.Name = "timeCmdLbl";
+            this.timeCmdLbl.Size = new System.Drawing.Size(41, 19);
+            this.timeCmdLbl.TabIndex = 40;
+            this.timeCmdLbl.Text = "/time";
+            // 
+            // timePanel
+            // 
+            this.timePanel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.timePanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.timePanel.Controls.Add(this.timeCommandBtn);
+            this.timePanel.Controls.Add(this.timeAmountBox);
+            this.timePanel.HorizontalScrollbarBarColor = true;
+            this.timePanel.HorizontalScrollbarHighlightOnWheel = false;
+            this.timePanel.HorizontalScrollbarSize = 10;
+            this.timePanel.Location = new System.Drawing.Point(3, 12);
+            this.timePanel.Name = "timePanel";
+            this.timePanel.Size = new System.Drawing.Size(180, 145);
+            this.timePanel.TabIndex = 39;
+            this.timePanel.VerticalScrollbarBarColor = true;
+            this.timePanel.VerticalScrollbarHighlightOnWheel = false;
+            this.timePanel.VerticalScrollbarSize = 10;
+            // 
+            // timeCommandBtn
+            // 
+            this.timeCommandBtn.FontWeight = MetroFramework.MetroButtonWeight.Regular;
+            this.timeCommandBtn.Location = new System.Drawing.Point(3, 107);
+            this.timeCommandBtn.Name = "timeCommandBtn";
+            this.timeCommandBtn.Size = new System.Drawing.Size(172, 23);
+            this.timeCommandBtn.TabIndex = 17;
+            this.timeCommandBtn.Text = " /time";
+            this.ToolTipManager.SetToolTip(this.timeCommandBtn, "Executes the /time command using the parameters entered above");
+            this.timeCommandBtn.UseSelectable = true;
+            this.timeCommandBtn.Click += new System.EventHandler(this.TimeCommandBtnClicked);
+            // 
+            // timeAmountBox
+            // 
+            // 
+            // 
+            // 
+            this.timeAmountBox.CustomButton.Image = null;
+            this.timeAmountBox.CustomButton.Location = new System.Drawing.Point(150, 1);
+            this.timeAmountBox.CustomButton.Name = "";
+            this.timeAmountBox.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.timeAmountBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.timeAmountBox.CustomButton.TabIndex = 1;
+            this.timeAmountBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.timeAmountBox.CustomButton.UseSelectable = true;
+            this.timeAmountBox.CustomButton.Visible = false;
+            this.timeAmountBox.Lines = new string[0];
+            this.timeAmountBox.Location = new System.Drawing.Point(3, 20);
+            this.timeAmountBox.MaxLength = 999;
+            this.timeAmountBox.Name = "timeAmountBox";
+            this.timeAmountBox.PasswordChar = '\0';
+            this.timeAmountBox.PromptText = "Enter Time...";
+            this.timeAmountBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.timeAmountBox.SelectedText = "";
+            this.timeAmountBox.SelectionLength = 0;
+            this.timeAmountBox.SelectionStart = 0;
+            this.timeAmountBox.ShortcutsEnabled = true;
+            this.timeAmountBox.Size = new System.Drawing.Size(172, 23);
+            this.timeAmountBox.TabIndex = 17;
+            this.timeAmountBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.timeAmountBox.UseSelectable = true;
+            this.timeAmountBox.WaterMark = "Enter Time...";
+            this.timeAmountBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.timeAmountBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.Transparent;
+            this.panel4.Controls.Add(this.playerCmdLbl);
+            this.panel4.Controls.Add(this.playerPanel);
+            this.panel4.Location = new System.Drawing.Point(579, 3);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(186, 160);
+            this.panel4.TabIndex = 48;
+            // 
+            // playerCmdLbl
+            // 
+            this.playerCmdLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.playerCmdLbl.AutoSize = true;
+            this.playerCmdLbl.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.playerCmdLbl.Location = new System.Drawing.Point(7, 2);
+            this.playerCmdLbl.Name = "playerCmdLbl";
+            this.playerCmdLbl.Size = new System.Drawing.Size(46, 19);
+            this.playerCmdLbl.TabIndex = 42;
+            this.playerCmdLbl.Text = "Player";
+            // 
+            // playerPanel
+            // 
+            this.playerPanel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.playerPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.playerPanel.Controls.Add(this.killCommandBtn);
+            this.playerPanel.HorizontalScrollbarBarColor = true;
+            this.playerPanel.HorizontalScrollbarHighlightOnWheel = false;
+            this.playerPanel.HorizontalScrollbarSize = 10;
+            this.playerPanel.Location = new System.Drawing.Point(3, 12);
+            this.playerPanel.Name = "playerPanel";
+            this.playerPanel.Size = new System.Drawing.Size(180, 145);
+            this.playerPanel.TabIndex = 41;
+            this.playerPanel.VerticalScrollbarBarColor = true;
+            this.playerPanel.VerticalScrollbarHighlightOnWheel = false;
+            this.playerPanel.VerticalScrollbarSize = 10;
+            // 
+            // killCommandBtn
+            // 
+            this.killCommandBtn.FontWeight = MetroFramework.MetroButtonWeight.Regular;
+            this.killCommandBtn.Location = new System.Drawing.Point(3, 22);
+            this.killCommandBtn.Name = "killCommandBtn";
+            this.killCommandBtn.Size = new System.Drawing.Size(172, 23);
+            this.killCommandBtn.TabIndex = 17;
+            this.killCommandBtn.Text = "/kill";
+            this.ToolTipManager.SetToolTip(this.killCommandBtn, "Executes the /kill command, which kills you.");
+            this.killCommandBtn.UseSelectable = true;
+            this.killCommandBtn.Click += new System.EventHandler(this.KillCommandBtnClicked);
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.Transparent;
+            this.panel7.Controls.Add(this.worldCmdLbl);
+            this.panel7.Controls.Add(this.worldPanel);
+            this.panel7.Location = new System.Drawing.Point(771, 3);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(186, 160);
+            this.panel7.TabIndex = 48;
+            // 
+            // worldCmdLbl
+            // 
+            this.worldCmdLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.worldCmdLbl.AutoSize = true;
+            this.worldCmdLbl.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.worldCmdLbl.Location = new System.Drawing.Point(7, 2);
+            this.worldCmdLbl.Name = "worldCmdLbl";
+            this.worldCmdLbl.Size = new System.Drawing.Size(46, 19);
+            this.worldCmdLbl.TabIndex = 44;
+            this.worldCmdLbl.Text = "World";
+            // 
+            // worldPanel
+            // 
+            this.worldPanel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.worldPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.worldPanel.Controls.Add(this.SetWorldSpawnBtn);
+            this.worldPanel.Controls.Add(this.downfallCommandBtn);
+            this.worldPanel.HorizontalScrollbarBarColor = true;
+            this.worldPanel.HorizontalScrollbarHighlightOnWheel = false;
+            this.worldPanel.HorizontalScrollbarSize = 10;
+            this.worldPanel.Location = new System.Drawing.Point(3, 12);
+            this.worldPanel.Name = "worldPanel";
+            this.worldPanel.Size = new System.Drawing.Size(180, 145);
+            this.worldPanel.TabIndex = 43;
+            this.worldPanel.VerticalScrollbarBarColor = true;
+            this.worldPanel.VerticalScrollbarHighlightOnWheel = false;
+            this.worldPanel.VerticalScrollbarSize = 10;
+            // 
+            // SetWorldSpawnBtn
+            // 
+            this.SetWorldSpawnBtn.FontWeight = MetroFramework.MetroButtonWeight.Regular;
+            this.SetWorldSpawnBtn.Location = new System.Drawing.Point(3, 49);
+            this.SetWorldSpawnBtn.Name = "SetWorldSpawnBtn";
+            this.SetWorldSpawnBtn.Size = new System.Drawing.Size(172, 23);
+            this.SetWorldSpawnBtn.TabIndex = 18;
+            this.SetWorldSpawnBtn.Text = "/setworldspawn";
+            this.ToolTipManager.SetToolTip(this.SetWorldSpawnBtn, "Executes the /setworldspawn command");
+            this.SetWorldSpawnBtn.UseSelectable = true;
+            this.SetWorldSpawnBtn.Click += new System.EventHandler(this.SetWorldSpawnBtnClicked);
+            // 
+            // downfallCommandBtn
+            // 
+            this.downfallCommandBtn.FontWeight = MetroFramework.MetroButtonWeight.Regular;
+            this.downfallCommandBtn.Location = new System.Drawing.Point(3, 22);
+            this.downfallCommandBtn.Name = "downfallCommandBtn";
+            this.downfallCommandBtn.Size = new System.Drawing.Size(172, 23);
+            this.downfallCommandBtn.TabIndex = 17;
+            this.downfallCommandBtn.Text = "/toggledownfall";
+            this.ToolTipManager.SetToolTip(this.downfallCommandBtn, "Executes the /toggledownfall command");
+            this.downfallCommandBtn.UseSelectable = true;
+            this.downfallCommandBtn.Click += new System.EventHandler(this.DownfallCommandBtnClicked);
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.Transparent;
+            this.panel6.Controls.Add(this.gamemodeCmdLbl);
+            this.panel6.Controls.Add(this.gamemodePanel);
+            this.panel6.Location = new System.Drawing.Point(3, 169);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(186, 160);
+            this.panel6.TabIndex = 48;
+            // 
+            // gamemodeCmdLbl
+            // 
+            this.gamemodeCmdLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.gamemodeCmdLbl.AutoSize = true;
+            this.gamemodeCmdLbl.BackColor = System.Drawing.Color.Transparent;
+            this.gamemodeCmdLbl.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.gamemodeCmdLbl.Location = new System.Drawing.Point(7, 2);
+            this.gamemodeCmdLbl.Name = "gamemodeCmdLbl";
+            this.gamemodeCmdLbl.Size = new System.Drawing.Size(83, 19);
+            this.gamemodeCmdLbl.TabIndex = 46;
+            this.gamemodeCmdLbl.Text = "/gamemode";
+            // 
+            // gamemodePanel
+            // 
+            this.gamemodePanel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.gamemodePanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.gamemodePanel.Controls.Add(this.GameModeCommandBtn);
+            this.gamemodePanel.HorizontalScrollbarBarColor = true;
+            this.gamemodePanel.HorizontalScrollbarHighlightOnWheel = false;
+            this.gamemodePanel.HorizontalScrollbarSize = 10;
+            this.gamemodePanel.Location = new System.Drawing.Point(3, 12);
+            this.gamemodePanel.Name = "gamemodePanel";
+            this.gamemodePanel.Size = new System.Drawing.Size(180, 145);
+            this.gamemodePanel.TabIndex = 45;
+            this.gamemodePanel.VerticalScrollbarBarColor = true;
+            this.gamemodePanel.VerticalScrollbarHighlightOnWheel = false;
+            this.gamemodePanel.VerticalScrollbarSize = 10;
+            // 
+            // GameModeCommandBtn
+            // 
+            this.GameModeCommandBtn.FontWeight = MetroFramework.MetroButtonWeight.Regular;
+            this.GameModeCommandBtn.Location = new System.Drawing.Point(3, 11);
+            this.GameModeCommandBtn.Name = "GameModeCommandBtn";
+            this.GameModeCommandBtn.Size = new System.Drawing.Size(172, 23);
+            this.GameModeCommandBtn.TabIndex = 17;
+            this.GameModeCommandBtn.Text = "Survival";
+            this.ToolTipManager.SetToolTip(this.GameModeCommandBtn, "Executes the /gamemode 0 command");
+            this.GameModeCommandBtn.UseSelectable = true;
+            this.GameModeCommandBtn.Click += new System.EventHandler(this.GameModeCommandBtnClicked);
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.Transparent;
+            this.panel5.Controls.Add(this.xpCmdLbl);
+            this.panel5.Controls.Add(this.xpPanel);
+            this.panel5.Location = new System.Drawing.Point(195, 169);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(186, 160);
+            this.panel5.TabIndex = 48;
+            // 
+            // xpCmdLbl
+            // 
+            this.xpCmdLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.xpCmdLbl.AutoSize = true;
+            this.xpCmdLbl.BackColor = System.Drawing.Color.Transparent;
+            this.xpCmdLbl.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.xpCmdLbl.Location = new System.Drawing.Point(7, 2);
+            this.xpCmdLbl.Name = "xpCmdLbl";
+            this.xpCmdLbl.Size = new System.Drawing.Size(28, 19);
+            this.xpCmdLbl.TabIndex = 46;
+            this.xpCmdLbl.Text = "/xp";
+            // 
+            // xpPanel
+            // 
+            this.xpPanel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.xpPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.xpPanel.Controls.Add(this.giveXPLevels);
+            this.xpPanel.Controls.Add(this.giveXPOrbs);
+            this.xpPanel.Controls.Add(this.xpAmountBox);
+            this.xpPanel.HorizontalScrollbarBarColor = true;
+            this.xpPanel.HorizontalScrollbarHighlightOnWheel = false;
+            this.xpPanel.HorizontalScrollbarSize = 10;
+            this.xpPanel.Location = new System.Drawing.Point(3, 12);
+            this.xpPanel.Name = "xpPanel";
+            this.xpPanel.Size = new System.Drawing.Size(180, 145);
+            this.xpPanel.TabIndex = 45;
+            this.xpPanel.VerticalScrollbarBarColor = true;
+            this.xpPanel.VerticalScrollbarHighlightOnWheel = false;
+            this.xpPanel.VerticalScrollbarSize = 10;
+            // 
+            // giveXPLevels
+            // 
+            this.giveXPLevels.FontWeight = MetroFramework.MetroButtonWeight.Regular;
+            this.giveXPLevels.Location = new System.Drawing.Point(3, 72);
+            this.giveXPLevels.Name = "giveXPLevels";
+            this.giveXPLevels.Size = new System.Drawing.Size(171, 23);
+            this.giveXPLevels.TabIndex = 18;
+            this.giveXPLevels.Text = "Give Levels";
+            this.giveXPLevels.UseSelectable = true;
+            this.giveXPLevels.Click += new System.EventHandler(this.XPLevelCommandBtnClicked);
+            // 
+            // giveXPOrbs
+            // 
+            this.giveXPOrbs.FontWeight = MetroFramework.MetroButtonWeight.Regular;
+            this.giveXPOrbs.Location = new System.Drawing.Point(3, 44);
+            this.giveXPOrbs.Name = "giveXPOrbs";
+            this.giveXPOrbs.Size = new System.Drawing.Size(171, 23);
+            this.giveXPOrbs.TabIndex = 19;
+            this.giveXPOrbs.Text = "Give XP";
+            this.giveXPOrbs.UseSelectable = true;
+            this.giveXPOrbs.Click += new System.EventHandler(this.XPOrbCommandBtnClicked);
+            // 
+            // xpAmountBox
+            // 
+            // 
+            // 
+            // 
+            this.xpAmountBox.CustomButton.Image = null;
+            this.xpAmountBox.CustomButton.Location = new System.Drawing.Point(150, 1);
+            this.xpAmountBox.CustomButton.Name = "";
+            this.xpAmountBox.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.xpAmountBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.xpAmountBox.CustomButton.TabIndex = 1;
+            this.xpAmountBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.xpAmountBox.CustomButton.UseSelectable = true;
+            this.xpAmountBox.CustomButton.Visible = false;
+            this.xpAmountBox.Lines = new string[0];
+            this.xpAmountBox.Location = new System.Drawing.Point(3, 16);
+            this.xpAmountBox.MaxLength = 11;
+            this.xpAmountBox.Name = "xpAmountBox";
+            this.xpAmountBox.PasswordChar = '\0';
+            this.xpAmountBox.PromptText = "Enter Amount...";
+            this.xpAmountBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.xpAmountBox.SelectedText = "";
+            this.xpAmountBox.SelectionLength = 0;
+            this.xpAmountBox.SelectionStart = 0;
+            this.xpAmountBox.ShortcutsEnabled = true;
+            this.xpAmountBox.Size = new System.Drawing.Size(172, 23);
+            this.xpAmountBox.TabIndex = 20;
+            this.xpAmountBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.xpAmountBox.UseSelectable = true;
+            this.xpAmountBox.WaterMark = "Enter Amount...";
+            this.xpAmountBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.xpAmountBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
             // settingsTab
             // 
             this.settingsTab.Controls.Add(this.OpenLangMngrBtn);
@@ -3499,10 +3601,10 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.settingsTab.HorizontalScrollbarBarColor = true;
             this.settingsTab.HorizontalScrollbarHighlightOnWheel = false;
             this.settingsTab.HorizontalScrollbarSize = 10;
-            this.settingsTab.Location = new System.Drawing.Point(4, 24);
+            this.settingsTab.Location = new System.Drawing.Point(4, 6);
             this.settingsTab.Name = "settingsTab";
             this.settingsTab.Padding = new System.Windows.Forms.Padding(3);
-            this.settingsTab.Size = new System.Drawing.Size(1100, 611);
+            this.settingsTab.Size = new System.Drawing.Size(1100, 629);
             this.settingsTab.TabIndex = 5;
             this.settingsTab.Tag = "";
             this.settingsTab.Text = "Settings";
@@ -3747,108 +3849,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.DecreaseDecimalPlace.Size = new System.Drawing.Size(322, 22);
             this.DecreaseDecimalPlace.Text = "Decrease decimal place";
             // 
-            // commandsPanel
-            // 
-            this.commandsPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.commandsPanel.BackColor = System.Drawing.Color.Transparent;
-            this.commandsPanel.Controls.Add(this.panel1);
-            this.commandsPanel.Controls.Add(this.panel2);
-            this.commandsPanel.Controls.Add(this.panel3);
-            this.commandsPanel.Controls.Add(this.panel4);
-            this.commandsPanel.Controls.Add(this.panel7);
-            this.commandsPanel.Controls.Add(this.panel6);
-            this.commandsPanel.Controls.Add(this.panel5);
-            this.commandsPanel.Location = new System.Drawing.Point(70, 3);
-            this.commandsPanel.Name = "commandsPanel";
-            this.commandsPanel.Size = new System.Drawing.Size(960, 605);
-            this.commandsPanel.TabIndex = 47;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.Controls.Add(this.giveCmdLabel);
-            this.panel1.Controls.Add(this.giveCommandPanel);
-            this.panel1.Location = new System.Drawing.Point(3, 3);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(186, 160);
-            this.panel1.TabIndex = 48;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.Transparent;
-            this.panel2.Controls.Add(this.enchantCmdLbl);
-            this.panel2.Controls.Add(this.enchantPanel);
-            this.panel2.Location = new System.Drawing.Point(195, 3);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(186, 160);
-            this.panel2.TabIndex = 48;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.Transparent;
-            this.panel3.Controls.Add(this.timeCmdLbl);
-            this.panel3.Controls.Add(this.timePanel);
-            this.panel3.Location = new System.Drawing.Point(387, 3);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(186, 160);
-            this.panel3.TabIndex = 48;
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.Transparent;
-            this.panel4.Controls.Add(this.playerCmdLbl);
-            this.panel4.Controls.Add(this.playerPanel);
-            this.panel4.Location = new System.Drawing.Point(579, 3);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(186, 160);
-            this.panel4.TabIndex = 48;
-            // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.Transparent;
-            this.panel5.Controls.Add(this.xpCmdLbl);
-            this.panel5.Controls.Add(this.xpPanel);
-            this.panel5.Location = new System.Drawing.Point(195, 169);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(186, 160);
-            this.panel5.TabIndex = 48;
-            // 
-            // panel6
-            // 
-            this.panel6.BackColor = System.Drawing.Color.Transparent;
-            this.panel6.Controls.Add(this.gamemodeCmdLbl);
-            this.panel6.Controls.Add(this.gamemodePanel);
-            this.panel6.Location = new System.Drawing.Point(3, 169);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(186, 160);
-            this.panel6.TabIndex = 48;
-            // 
-            // panel7
-            // 
-            this.panel7.BackColor = System.Drawing.Color.Transparent;
-            this.panel7.Controls.Add(this.worldCmdLbl);
-            this.panel7.Controls.Add(this.worldPanel);
-            this.panel7.Location = new System.Drawing.Point(771, 3);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(186, 160);
-            this.panel7.TabIndex = 48;
-            // 
-            // unlockSignKeyboard
-            // 
-            this.unlockSignKeyboard.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.unlockSignKeyboard.AutoSize = true;
-            this.unlockSignKeyboard.Location = new System.Drawing.Point(475, 193);
-            this.unlockSignKeyboard.Name = "unlockSignKeyboard";
-            this.unlockSignKeyboard.Size = new System.Drawing.Size(139, 15);
-            this.unlockSignKeyboard.TabIndex = 3;
-            this.unlockSignKeyboard.Text = "Unlock Sign Keyboard";
-            this.ToolTipManager.SetToolTip(this.unlockSignKeyboard, "You will be able to write the § symbol on signs and books. (This also unlocks all" +
-        " the other pages like SYMBOL or SPECIAL)");
-            this.unlockSignKeyboard.UseSelectable = true;
-            this.unlockSignKeyboard.CheckedChanged += new System.EventHandler(this.UnlockSignKeyboardToggled);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3914,32 +3914,32 @@ namespace Minecraft_Wii_U_Mod_Injector
             ((System.ComponentModel.ISupportInitialize)(this.ringScoreOrange)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ringScoreGreen)).EndInit();
             this.commandsTab.ResumeLayout(false);
-            this.xpPanel.ResumeLayout(false);
-            this.gamemodePanel.ResumeLayout(false);
-            this.worldPanel.ResumeLayout(false);
-            this.playerPanel.ResumeLayout(false);
-            this.timePanel.ResumeLayout(false);
-            this.enchantPanel.ResumeLayout(false);
+            this.commandsPanel.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.giveCommandPanel.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.enchantPanel.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            this.timePanel.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            this.playerPanel.ResumeLayout(false);
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
+            this.worldPanel.ResumeLayout(false);
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
+            this.gamemodePanel.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
+            this.xpPanel.ResumeLayout(false);
             this.settingsTab.ResumeLayout(false);
             this.settingsTab.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.StyleMngr)).EndInit();
             this.RightClickMenu.ResumeLayout(false);
-            this.commandsPanel.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
-            this.panel7.ResumeLayout(false);
-            this.panel7.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -4160,6 +4160,6 @@ namespace Minecraft_Wii_U_Mod_Injector
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel5;
-        private MetroCheckBox unlockSignKeyboard;
+        private MetroCheckBox UnlockSignKeyboard;
     }
 }

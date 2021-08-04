@@ -543,11 +543,11 @@ namespace Minecraft_Wii_U_Mod_Injector {
         }
 
         private void UnlockSignKeyboardToggled(object sender, EventArgs e) {
-            GeckoU.WriteUIntToggle(0x02F88110, 0x39400002, 0x39400003, unlockSignKeyboard.Checked);
-            GeckoU.WriteUIntToggle(0x02FAF4F0, 0x39400002, 0x39400003, unlockSignKeyboard.Checked);
-            GeckoU.WriteUIntToggle(0x02FAF560, 0x39400002, 0x39400003, unlockSignKeyboard.Checked);
-            GeckoU.WriteUIntToggle(0x02FAF5DC, 0x39400002, 0x39400003, unlockSignKeyboard.Checked);
-            GeckoU.WriteUIntToggle(0x02FAF64C, 0x39400002, 0x39400003, unlockSignKeyboard.Checked);
+            GeckoU.WriteUIntToggle(0x02F88110, 0x39400002, 0x39400003, UnlockSignKeyboard.Checked);
+            GeckoU.WriteUIntToggle(0x02FAF4F0, 0x39400002, 0x39400003, UnlockSignKeyboard.Checked);
+            GeckoU.WriteUIntToggle(0x02FAF560, 0x39400002, 0x39400003, UnlockSignKeyboard.Checked);
+            GeckoU.WriteUIntToggle(0x02FAF5DC, 0x39400002, 0x39400003, UnlockSignKeyboard.Checked);
+            GeckoU.WriteUIntToggle(0x02FAF64C, 0x39400002, 0x39400003, UnlockSignKeyboard.Checked);
         }
 
         private void BypassFriendsOnlyToggled(object sender, EventArgs e) {

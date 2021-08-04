@@ -38,7 +38,6 @@
             this.GameModeBox = new MetroFramework.Controls.MetroComboBox();
             this.CameraLbl = new MetroFramework.Controls.MetroLabel();
             this.GameModeLbl = new MetroFramework.Controls.MetroLabel();
-            this.DropStackBtn = new MetroFramework.Controls.MetroButton();
             ((System.ComponentModel.ISupportInitialize)(this.StyleMngr)).BeginInit();
             this.SuspendLayout();
             // 
@@ -59,8 +58,7 @@
             this.CloseContainersBtn.Size = new System.Drawing.Size(517, 23);
             this.CloseContainersBtn.TabIndex = 6;
             this.CloseContainersBtn.Text = "Close Container";
-            this.ToolTips.SetToolTip(this.CloseContainersBtn, "Closes out of any container such as:\r\n\r\nFurnaces, Chests, Hoppers, Crafting Table" +
-        "s, etc...");
+            this.ToolTips.SetToolTip(this.CloseContainersBtn, "Closes out of any container such as:\r\n\r\nFurnace, chest, hopper, crafting etc...");
             this.CloseContainersBtn.UseSelectable = true;
             this.CloseContainersBtn.Click += new System.EventHandler(this.CloseContainersBtnClicked);
             // 
@@ -90,7 +88,7 @@
             this.OpenScoreboardBtn.Size = new System.Drawing.Size(517, 23);
             this.OpenScoreboardBtn.TabIndex = 9;
             this.OpenScoreboardBtn.Text = "Open Scoreboard";
-            this.ToolTips.SetToolTip(this.OpenScoreboardBtn, "Opens the scoreboard/player list.");
+            this.ToolTips.SetToolTip(this.OpenScoreboardBtn, "Opens the scoreboard");
             this.OpenScoreboardBtn.UseSelectable = true;
             this.OpenScoreboardBtn.Click += new System.EventHandler(this.OpenScoreboardBtnClicked);
             // 
@@ -134,28 +132,16 @@
             this.GameModeLbl.TabIndex = 10;
             this.GameModeLbl.Text = "Game Mode:";
             // 
-            // DropStackBtn
-            // 
-            this.DropStackBtn.Location = new System.Drawing.Point(23, 191);
-            this.DropStackBtn.Name = "DropStackBtn";
-            this.DropStackBtn.Size = new System.Drawing.Size(517, 23);
-            this.DropStackBtn.TabIndex = 6;
-            this.DropStackBtn.Text = "Drop Stack of Items";
-            this.ToolTips.SetToolTip(this.DropStackBtn, "Drops the entire stack of items you are currently holding.");
-            this.DropStackBtn.UseSelectable = true;
-            this.DropStackBtn.Click += new System.EventHandler(this.DropStackBtnClicked);
-            // 
             // PlayerOptions
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(563, 225);
+            this.ClientSize = new System.Drawing.Size(563, 199);
             this.Controls.Add(this.GameModeBox);
             this.Controls.Add(this.GameModeLbl);
             this.Controls.Add(this.OpenScoreboardBtn);
             this.Controls.Add(this.CameraBox);
             this.Controls.Add(this.CameraLbl);
-            this.Controls.Add(this.DropStackBtn);
             this.Controls.Add(this.CloseContainersBtn);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -180,6 +166,5 @@
         private MetroFramework.Controls.MetroButton OpenScoreboardBtn;
         private MetroFramework.Controls.MetroComboBox GameModeBox;
         private MetroFramework.Controls.MetroLabel GameModeLbl;
-        private MetroFramework.Controls.MetroButton DropStackBtn;
     }
 }

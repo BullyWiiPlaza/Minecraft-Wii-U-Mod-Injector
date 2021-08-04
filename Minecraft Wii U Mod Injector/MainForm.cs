@@ -542,18 +542,9 @@ namespace Minecraft_Wii_U_Mod_Injector {
                 GeckoU.CallFunction64(0x02F50028, 0x00000000); //CConsoleMinecraftApp::ExitGame((void))
         }
 
-        private void UnlockSignKeyboardToggled(object sender, EventArgs e) {
-            GeckoU.WriteUIntToggle(0x02F88110, 0x39400002, 0x39400003, unlockSignKeyboard.Checked);
-            GeckoU.WriteUIntToggle(0x02FAF4F0, 0x39400002, 0x39400003, unlockSignKeyboard.Checked);
-            GeckoU.WriteUIntToggle(0x02FAF560, 0x39400002, 0x39400003, unlockSignKeyboard.Checked);
-            GeckoU.WriteUIntToggle(0x02FAF5DC, 0x39400002, 0x39400003, unlockSignKeyboard.Checked);
-            GeckoU.WriteUIntToggle(0x02FAF64C, 0x39400002, 0x39400003, unlockSignKeyboard.Checked);
-        }
-
         private void BypassFriendsOnlyToggled(object sender, EventArgs e) {
             GeckoU.WriteULongToggle(0x02D5731C, 0x386000014E800020, 0x7C0802A69421FFF0, BypassFriendsOnly.Checked); //CGameNetworkManager::IsInPublicJoinableGame((void))
         }
-
         private void WalkingSpeedScaleChanged(object sender, EventArgs e) {
             GeckoU.WriteFloat(0x1066ACC8, (float)WalkingSpeedScaleSlider.Value);
         }

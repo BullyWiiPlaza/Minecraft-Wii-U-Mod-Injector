@@ -11,7 +11,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
 {
     class Setup
     {
-        public static MainForm Injector = new MainForm();
+        public static MainForm Injector = new();
 
         public static string LocalVer = "v5.1.8.c2";
         public static string GitVer = string.Empty;

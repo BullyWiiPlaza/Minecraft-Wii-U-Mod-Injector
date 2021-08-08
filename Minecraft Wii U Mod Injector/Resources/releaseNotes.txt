@@ -1,3 +1,18 @@
+[Release v5.1.8.c3 (8th of August, 2021)]
+
+[Information]
+If you are experiencing issues, please report them on the Github Issues page or by joining the official discord server.
+
+This update adds some new mods
+
+[Changes]
+
++ New Mods
+
+- Player('s) > Player Options > Drop Stack
+- General Game > Unlock Sign Keyboard
+- Commands > /xp Command
+
 [Release v5.1.8.c2 (16th of June, 2021)]
 
 [Information]

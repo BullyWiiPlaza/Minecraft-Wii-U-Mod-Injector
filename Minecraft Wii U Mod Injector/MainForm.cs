@@ -868,6 +868,34 @@ namespace Minecraft_Wii_U_Mod_Injector
 
             GeckoU.CallFunction(0x031EA12C, _localPlayer, level, level, level);
         }
+        private void DisableVPadInputToggled(object sender, EventArgs e)
+        {
+            GeckoU.WriteUIntToggle(0x011293D0, Blr, 0x38E00001, disableVPadInput.Checked);
+        }
+        private void VpadDisplaySwitchToggled(object sender, EventArgs e)
+        {
+            GeckoU.RpcToggle(0x0112A9E4, 0x0112A9EC, 0x0, 0x0, vpadDisplaySwitch.Checked);
+        }
+
+        private async void DebugConsoleToggled(object sender, EventArgs e)
+        {
+            uint[] bools = { 0x01, 0x00 };
+
+            GeckoU.RpcToggle(0x02DABA0C, 0x109F95E0, bools, DebugConsole.Checked, 0, 1);
+
+            DebugConsole.Enabled = false;
+            await PutTaskDelay(1000);
+            DebugConsole.Enabled = true;
+        }
+
+        private void UnlockSignKeyboardToggled(object sender, EventArgs e)
+        {
+            GeckoU.WriteUIntToggle(0x02F88110, 0x39400002, 0x39400003, UnlockSignKeyboard.Checked);
+            GeckoU.WriteUIntToggle(0x02FAF4F0, 0x39400002, 0x39400003, UnlockSignKeyboard.Checked);
+            GeckoU.WriteUIntToggle(0x02FAF560, 0x39400002, 0x39400003, UnlockSignKeyboard.Checked);
+            GeckoU.WriteUIntToggle(0x02FAF5DC, 0x39400002, 0x39400003, UnlockSignKeyboard.Checked);
+            GeckoU.WriteUIntToggle(0x02FAF64C, 0x39400002, 0x39400003, UnlockSignKeyboard.Checked);
+        }
 
         #region commands
         private void GiveCommandBtnClicked(object sender, EventArgs e)
@@ -1008,6 +1036,62 @@ namespace Minecraft_Wii_U_Mod_Injector
             GeckoU.WriteBytes(0x03B30000, command);
             GeckoU.CallFunction(0x03B30000, new uint[1]);
         }
+
+        private void giveXPOrbsBtnClicked(object sender, EventArgs e)
+        {
+            if (!IsPointerLoaded())
+            {
+                Messaging.Show("Commands only work in-game, please load a world before executing a command");
+                return;
+            }
+            if (string.IsNullOrWhiteSpace(xpAmountBox.Text))
+            {
+                Messaging.Show("Make sure all fields are filled out before executing a command");
+                return;
+            }
+            try
+            {
+                var player_ptr = GeckoU.PeekUInt(GeckoU.PeekUInt(0x109CD8E4) + 0x34);
+                var amount = Convert.ToInt32(xpAmountBox.Text);
+                GeckoU.CallFunction(0x027250DC, player_ptr, unchecked((uint)amount));
+            }
+            catch (OverflowException)
+            {
+                Messaging.Show(MessageBoxIcon.Error, "Please input a value that is between -2147483648 and 2147483647.");
+            }
+            catch (Exception)
+            {
+                Messaging.Show(MessageBoxIcon.Error, "An unknown error has occurred.");
+            }
+        }
+
+        private void giveXPLevelsBtnClicked(object sender, EventArgs e)
+        {
+            if (!IsPointerLoaded())
+            {
+                Messaging.Show("Commands only work in-game, please load a world before executing a command");
+                return;
+            }
+            if (string.IsNullOrWhiteSpace(xpAmountBox.Text))
+            {
+                Messaging.Show("Make sure all fields are filled out before executing a command");
+                return;
+            }
+            try
+            {
+                var player_ptr = GeckoU.PeekUInt(GeckoU.PeekUInt(0x109CD8E4) + 0x34);
+                var amount = Convert.ToInt32(xpAmountBox.Text);
+                GeckoU.CallFunction(0x02725330, player_ptr, unchecked((uint)amount));
+            }
+            catch (OverflowException)
+            {
+                Messaging.Show(MessageBoxIcon.Error, "Please input a value that is between -2147483648 and 2147483647.");
+            }
+            catch (Exception)
+            {
+                Messaging.Show(MessageBoxIcon.Error, "An unknown error has occurred.");
+            }
+        }
         #endregion
 
         #region minigames
@@ -1074,26 +1158,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             GeckoU.WriteUIntToggle(0x031A2730, Blr, Mflr, SqueakInfinitely.Checked); //MultiPlayerGameMode::CanMakeSpectateSound((void))
         }
         #endregion
-
-        private void DisableVPadInputToggled(object sender, EventArgs e)
-        {
-            GeckoU.WriteUIntToggle(0x011293D0, Blr, 0x38E00001, disableVPadInput.Checked);
-        }
-        private void VpadDisplaySwitchToggled(object sender, EventArgs e)
-        {
-            GeckoU.RpcToggle(0x0112A9E4, 0x0112A9EC, 0x0, 0x0, vpadDisplaySwitch.Checked);
-        }
-
-        private async void DebugConsoleToggled(object sender, EventArgs e)
-        {
-            uint[] bools = {0x01, 0x00};
-
-            GeckoU.RpcToggle(0x02DABA0C, 0x109F95E0, bools, DebugConsole.Checked, 0, 1);
-
-            DebugConsole.Enabled = false;
-            await PutTaskDelay(1000);
-            DebugConsole.Enabled = true;
-        }
 
         #endregion memory editing
     }

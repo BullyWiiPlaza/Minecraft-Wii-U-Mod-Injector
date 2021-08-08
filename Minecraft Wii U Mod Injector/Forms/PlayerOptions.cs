@@ -72,5 +72,10 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms
                     break;*/
             }
         }
+
+        private void DropStackBtnClicked(object sender, EventArgs e)
+        {
+            MainForm.GeckoU.CallFunction(0x031E7534, _localPlayer, 0x0);
+        }
     }
 }

@@ -38,6 +38,7 @@
             this.GameModeBox = new MetroFramework.Controls.MetroComboBox();
             this.CameraLbl = new MetroFramework.Controls.MetroLabel();
             this.GameModeLbl = new MetroFramework.Controls.MetroLabel();
+            this.DropStackBtn = new MetroFramework.Controls.MetroButton();
             ((System.ComponentModel.ISupportInitialize)(this.StyleMngr)).BeginInit();
             this.SuspendLayout();
             // 
@@ -132,11 +133,23 @@
             this.GameModeLbl.TabIndex = 10;
             this.GameModeLbl.Text = "Game Mode:";
             // 
+            // DropStackBtn
+            // 
+            this.DropStackBtn.Location = new System.Drawing.Point(23, 191);
+            this.DropStackBtn.Name = "DropStackBtn";
+            this.DropStackBtn.Size = new System.Drawing.Size(517, 23);
+            this.DropStackBtn.TabIndex = 12;
+            this.DropStackBtn.Text = "Drop Stack";
+            this.ToolTips.SetToolTip(this.DropStackBtn, "Drops the entire stack of items you are currently holding.");
+            this.DropStackBtn.UseSelectable = true;
+            this.DropStackBtn.Click += new System.EventHandler(this.DropStackBtnClicked);
+            // 
             // PlayerOptions
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(563, 199);
+            this.ClientSize = new System.Drawing.Size(563, 227);
+            this.Controls.Add(this.DropStackBtn);
             this.Controls.Add(this.GameModeBox);
             this.Controls.Add(this.GameModeLbl);
             this.Controls.Add(this.OpenScoreboardBtn);
@@ -166,5 +179,6 @@
         private MetroFramework.Controls.MetroButton OpenScoreboardBtn;
         private MetroFramework.Controls.MetroComboBox GameModeBox;
         private MetroFramework.Controls.MetroLabel GameModeLbl;
+        private MetroFramework.Controls.MetroButton DropStackBtn;
     }
 }

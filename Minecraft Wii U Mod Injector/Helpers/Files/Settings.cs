@@ -19,9 +19,7 @@
             if(Exists(key, section))
                 return _settingsFile.Read(key, section);
             else
-            {
-                return "NOT FOUND";
-            }
+                return string.Empty;
         }
 
         public static bool EqualsTo(string key, string value, string section)

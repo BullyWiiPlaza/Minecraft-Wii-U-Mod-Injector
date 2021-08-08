@@ -1,22 +1,14 @@
-[Release v5.1.8.c2 (16th of June, 2021)]
+[Release v5.1.8.c3 (8th of August, 2021)]
 
 [Information]
 If you are experiencing issues, please report them on the Github Issues page or by joining the official discord server.
 
-This update has some improvements to the language manager and adds a new mod
+This update adds some new mods
 
 [Changes]
 
 + New Mods
 
-- General Game > Debug Console
-
-+ General Additions & Updates:
-
-- Language Manager > can now re-position slider controls
-- Language Manager > can now check if a language file is made for an older version and warns you before applying it
-- Language Manager > automatically changes file encoding to UTF-16 LE (Unicode), so no more buggy text
-- Language Manager > now has a button to open the language files directory
-- Language Manager > will no longer apply translations if a value for a control doesn't exist
-- Language Manager > will no longer be able to apply languages on start-up
-- Frequently asked Questions > Version letter explanation added
+- Player('s) > Player Options > Drop Stack
+- General Game > Unlock Sign Keyboard
+- Commands > /xp Command

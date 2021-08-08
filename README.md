@@ -12,6 +12,7 @@ You will need Visual Studio 2019 and .NET Framework 4.8 to compile the Mod Injec
 * Operating System: Windows 7, Windows 8.1 or Windows 10
 * .NET Framework : 4.8
 * System Memory (RAM): 2 GB
+* Screen Resolution: 1280x720 or higher, 1920x1080 is recommended.
 
 # Discord Server
 The new Discord Server can be found by clicking [here](https://discord.gg/jrzZWaDc7a)

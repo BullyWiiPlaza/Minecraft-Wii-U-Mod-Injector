@@ -48,13 +48,13 @@
             this.EmptyTile = new MetroFramework.Controls.MetroTile();
             this.ToolTips = new MetroFramework.Components.MetroToolTip();
             this.InstalledTile = new MetroFramework.Controls.MetroTile();
+            this.OpenTile = new MetroFramework.Controls.MetroTile();
             this.MainTabs = new MetroFramework.Controls.MetroTabControl();
             this.InstalledLangsTab = new MetroFramework.Controls.MetroTabPage();
             this.DownloadableLangsTab = new MetroFramework.Controls.MetroTabPage();
             this.ServerLanguageList = new MetroFramework.Controls.MetroGrid();
             this.ServerNameBox = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ServerUrlBox = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.OpenTile = new MetroFramework.Controls.MetroTile();
             ((System.ComponentModel.ISupportInitialize)(this.StyleMngr)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LanguagesList)).BeginInit();
             this.MainTabs.SuspendLayout();
@@ -235,6 +235,21 @@
             this.InstalledTile.UseSelectable = true;
             this.InstalledTile.Click += new System.EventHandler(this.SwapTab);
             // 
+            // OpenTile
+            // 
+            this.OpenTile.ActiveControl = null;
+            this.OpenTile.Location = new System.Drawing.Point(0, 309);
+            this.OpenTile.Name = "OpenTile";
+            this.OpenTile.PaintTileCount = false;
+            this.OpenTile.Size = new System.Drawing.Size(169, 60);
+            this.OpenTile.TabIndex = 57;
+            this.OpenTile.Text = "Open Directory";
+            this.OpenTile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.OpenTile.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
+            this.ToolTips.SetToolTip(this.OpenTile, "Opens the Language directory");
+            this.OpenTile.UseSelectable = true;
+            this.OpenTile.Click += new System.EventHandler(this.OpenTileClicked);
+            // 
             // MainTabs
             // 
             this.MainTabs.Controls.Add(this.InstalledLangsTab);
@@ -348,21 +363,6 @@
             this.ServerUrlBox.Name = "ServerUrlBox";
             this.ServerUrlBox.ReadOnly = true;
             this.ServerUrlBox.Visible = false;
-            // 
-            // OpenTile
-            // 
-            this.OpenTile.ActiveControl = null;
-            this.OpenTile.Location = new System.Drawing.Point(0, 309);
-            this.OpenTile.Name = "OpenTile";
-            this.OpenTile.PaintTileCount = false;
-            this.OpenTile.Size = new System.Drawing.Size(169, 60);
-            this.OpenTile.TabIndex = 57;
-            this.OpenTile.Text = "Open Directory";
-            this.OpenTile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.OpenTile.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
-            this.ToolTips.SetToolTip(this.OpenTile, "Refreshes the Language List");
-            this.OpenTile.UseSelectable = true;
-            this.OpenTile.Click += new System.EventHandler(this.OpenTileClicked);
             // 
             // LanguageMngr
             // 

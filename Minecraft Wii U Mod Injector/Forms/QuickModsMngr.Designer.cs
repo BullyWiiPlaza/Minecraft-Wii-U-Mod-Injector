@@ -201,7 +201,7 @@
             this.CreatorTile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.CreatorTile.TileCount = 1;
             this.CreatorTile.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
-            this.ToolTips.SetToolTip(this.CreatorTile, "Views currently available to download languages");
+            this.ToolTips.SetToolTip(this.CreatorTile, "Opens the Quick Mod Creator");
             this.CreatorTile.UseSelectable = true;
             this.CreatorTile.Click += new System.EventHandler(this.SwapTab);
             // 
@@ -216,7 +216,7 @@
             this.RefreshTile.Text = "Refresh";
             this.RefreshTile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.RefreshTile.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
-            this.ToolTips.SetToolTip(this.RefreshTile, "Refreshes the Language List");
+            this.ToolTips.SetToolTip(this.RefreshTile, "Refreshes the Quick Mods List");
             this.RefreshTile.UseSelectable = true;
             this.RefreshTile.Click += new System.EventHandler(this.RefreshTileClicked);
             // 
@@ -250,7 +250,7 @@
             this.InstalledTile.Text = "Available Quick Mods";
             this.InstalledTile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.InstalledTile.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
-            this.ToolTips.SetToolTip(this.InstalledTile, "Views currently installed languages");
+            this.ToolTips.SetToolTip(this.InstalledTile, "Views currently installed Quick Mods");
             this.InstalledTile.UseSelectable = true;
             this.InstalledTile.Click += new System.EventHandler(this.SwapTab);
             // 
@@ -265,7 +265,7 @@
             this.OpenTile.Text = "Open Directory";
             this.OpenTile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.OpenTile.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
-            this.ToolTips.SetToolTip(this.OpenTile, "Refreshes the Language List");
+            this.ToolTips.SetToolTip(this.OpenTile, "Opens the Quick Mods directory");
             this.OpenTile.UseSelectable = true;
             this.OpenTile.Click += new System.EventHandler(this.OpenTileClicked);
             // 
@@ -276,7 +276,7 @@
             this.MainTabs.ItemSize = new System.Drawing.Size(473, 1);
             this.MainTabs.Location = new System.Drawing.Point(175, 67);
             this.MainTabs.Name = "MainTabs";
-            this.MainTabs.SelectedIndex = 1;
+            this.MainTabs.SelectedIndex = 0;
             this.MainTabs.Size = new System.Drawing.Size(950, 438);
             this.MainTabs.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.MainTabs.TabIndex = 55;

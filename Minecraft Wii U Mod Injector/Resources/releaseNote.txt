@@ -1,14 +1,21 @@
-[Release v5.1.8.c3 (8th of August, 2021)]
+[Release v5.1.8.c4 (10th of August, 2021)]
 
 [Information]
 If you are experiencing issues, please report them on the Github Issues page or by joining the official discord server.
 
-This update adds some new mods
+The QMM (Quick Mods Manager) is still in beta and bugs are to be expected, please stress test this feature (enabling all mods at once etc) and make sure to report any bugs you may 
+encounter using this feature, thank you! :) <3
+
+This update adds the beta preview of the Quick Mods Manager
 
 [Changes]
 
-+ New Mods
++ General Additions & Updates:
 
-- Player('s) > Player Options > Drop Stack
-- General Game > Unlock Sign Keyboard
-- Commands > /xp Command
+- Quick Mods Manager, a way to create presets to enable a bunch of mods at once.
+
+[Fixes]
+
++ General Fixes
+
+- Release Notes can no longer be edited

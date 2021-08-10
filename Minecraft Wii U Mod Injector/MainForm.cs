@@ -112,9 +112,9 @@ namespace Minecraft_Wii_U_Mod_Injector
 
         private void Init(object sender, EventArgs e)
         {
-            new States(this);
-            new Messaging(this);
-            new Setup(this);
+            _ = new States(this);
+            _ = new Messaging(this);
+            _ = new Setup(this);
 
             Setup.SetupInjector();
 
@@ -344,6 +344,11 @@ namespace Minecraft_Wii_U_Mod_Injector
         private void OpenLangMngrBtnClicked(object sender, EventArgs e)
         {
             new LanguageMngr(this).ShowDialog();
+        }
+
+        private void QuickModsManagerBtnClicked(object sender, EventArgs e)
+        {
+            new QuickModsMngr(this).ShowDialog();
         }
 
         private void OpenFaqInfoClicked(object sender, EventArgs e)
@@ -1037,7 +1042,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             GeckoU.CallFunction(0x03B30000, new uint[1]);
         }
 
-        private void giveXPOrbsBtnClicked(object sender, EventArgs e)
+        private void GiveXpOrbsBtnClicked(object sender, EventArgs e)
         {
             if (!IsPointerLoaded())
             {
@@ -1051,9 +1056,9 @@ namespace Minecraft_Wii_U_Mod_Injector
             }
             try
             {
-                var player_ptr = GeckoU.PeekUInt(GeckoU.PeekUInt(0x109CD8E4) + 0x34);
+                var playerPtr = GeckoU.PeekUInt(GeckoU.PeekUInt(0x109CD8E4) + 0x34);
                 var amount = Convert.ToInt32(xpAmountBox.Text);
-                GeckoU.CallFunction(0x027250DC, player_ptr, unchecked((uint)amount));
+                GeckoU.CallFunction(0x027250DC, playerPtr, unchecked((uint)amount));
             }
             catch (OverflowException)
             {
@@ -1065,7 +1070,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             }
         }
 
-        private void giveXPLevelsBtnClicked(object sender, EventArgs e)
+        private void GiveXpLevelsBtnClicked(object sender, EventArgs e)
         {
             if (!IsPointerLoaded())
             {
@@ -1079,9 +1084,9 @@ namespace Minecraft_Wii_U_Mod_Injector
             }
             try
             {
-                var player_ptr = GeckoU.PeekUInt(GeckoU.PeekUInt(0x109CD8E4) + 0x34);
+                var playerPtr = GeckoU.PeekUInt(GeckoU.PeekUInt(0x109CD8E4) + 0x34);
                 var amount = Convert.ToInt32(xpAmountBox.Text);
-                GeckoU.CallFunction(0x02725330, player_ptr, unchecked((uint)amount));
+                GeckoU.CallFunction(0x02725330, playerPtr, unchecked((uint)amount));
             }
             catch (OverflowException)
             {

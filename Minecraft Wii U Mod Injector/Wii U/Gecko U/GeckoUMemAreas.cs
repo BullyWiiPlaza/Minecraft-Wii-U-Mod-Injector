@@ -10,7 +10,7 @@
 
     public static class ValidMemory
     {
-        private const bool cmd_addressDebug = false;
+        private const bool CmdAddressDebug = false;
 
         private static readonly AddressRange[] ValidAreas =
         {
@@ -58,7 +58,7 @@
 
         public static bool ValidAddress(uint address)
         {
-            return ValidAddress(address, cmd_addressDebug);
+            return ValidAddress(address, CmdAddressDebug);
         }
 
         private static bool ValidRange(uint low, uint high, bool debug)
@@ -73,7 +73,7 @@
 
         public static bool ValidRange(uint low, uint high)
         {
-            return ValidRange(low, high, cmd_addressDebug);
+            return ValidRange(low, high, CmdAddressDebug);
         }
     }
 

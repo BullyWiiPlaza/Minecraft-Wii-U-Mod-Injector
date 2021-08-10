@@ -220,6 +220,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.giveAmountBox = new MetroFramework.Controls.MetroTextBox();
             this.giveIDBox = new MetroFramework.Controls.MetroTextBox();
             this.settingsTab = new MetroFramework.Controls.MetroTabPage();
+            this.QuickModsManagerBtn = new MetroFramework.Controls.MetroButton();
             this.OpenLangMngrBtn = new MetroFramework.Controls.MetroButton();
             this.CheckForPreRelease = new MetroFramework.Controls.MetroCheckBox();
             this.settingsLogo = new MetroFramework.Controls.MetroPanel();
@@ -373,7 +374,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.MainTabs.Location = new System.Drawing.Point(155, 61);
             this.MainTabs.Multiline = true;
             this.MainTabs.Name = "MainTabs";
-            this.MainTabs.SelectedIndex = 5;
+            this.MainTabs.SelectedIndex = 0;
             this.MainTabs.Size = new System.Drawing.Size(1130, 639);
             this.MainTabs.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.MainTabs.TabIndex = 0;
@@ -452,6 +453,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.BuildNotesBox.Multiline = true;
             this.BuildNotesBox.Name = "BuildNotesBox";
             this.BuildNotesBox.PasswordChar = '\0';
+            this.BuildNotesBox.ReadOnly = true;
             this.BuildNotesBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.BuildNotesBox.SelectedText = "";
             this.BuildNotesBox.SelectionLength = 0;
@@ -2833,7 +2835,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.giveXPLevelsBtn.Text = "Give Levels";
             this.ToolTipManager.SetToolTip(this.giveXPLevelsBtn, "Gives you the amount of XP in Levels");
             this.giveXPLevelsBtn.UseSelectable = true;
-            this.giveXPLevelsBtn.Click += new System.EventHandler(this.giveXPLevelsBtnClicked);
+            this.giveXPLevelsBtn.Click += new System.EventHandler(this.GiveXpLevelsBtnClicked);
             // 
             // giveXPOrbsBtn
             // 
@@ -2845,7 +2847,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.giveXPOrbsBtn.Text = "Give XP";
             this.ToolTipManager.SetToolTip(this.giveXPOrbsBtn, "Gives you the amount of XP in Orbs");
             this.giveXPOrbsBtn.UseSelectable = true;
-            this.giveXPOrbsBtn.Click += new System.EventHandler(this.giveXPOrbsBtnClicked);
+            this.giveXPOrbsBtn.Click += new System.EventHandler(this.GiveXpOrbsBtnClicked);
             // 
             // xpAmountBox
             // 
@@ -3350,6 +3352,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             // 
             // settingsTab
             // 
+            this.settingsTab.Controls.Add(this.QuickModsManagerBtn);
             this.settingsTab.Controls.Add(this.OpenLangMngrBtn);
             this.settingsTab.Controls.Add(this.CheckForPreRelease);
             this.settingsTab.Controls.Add(this.settingsLogo);
@@ -3373,6 +3376,19 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.settingsTab.VerticalScrollbarBarColor = true;
             this.settingsTab.VerticalScrollbarHighlightOnWheel = false;
             this.settingsTab.VerticalScrollbarSize = 10;
+            // 
+            // QuickModsManagerBtn
+            // 
+            this.QuickModsManagerBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.QuickModsManagerBtn.Location = new System.Drawing.Point(65, 148);
+            this.QuickModsManagerBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.QuickModsManagerBtn.Name = "QuickModsManagerBtn";
+            this.QuickModsManagerBtn.Size = new System.Drawing.Size(1050, 36);
+            this.QuickModsManagerBtn.TabIndex = 49;
+            this.QuickModsManagerBtn.Text = "Quick Mods Manager";
+            this.ToolTipManager.SetToolTip(this.QuickModsManagerBtn, "Opens the Quick Mods Manager");
+            this.QuickModsManagerBtn.UseSelectable = true;
+            this.QuickModsManagerBtn.Click += new System.EventHandler(this.QuickModsManagerBtnClicked);
             // 
             // OpenLangMngrBtn
             // 
@@ -3407,9 +3423,9 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.settingsLogo.HorizontalScrollbarBarColor = true;
             this.settingsLogo.HorizontalScrollbarHighlightOnWheel = false;
             this.settingsLogo.HorizontalScrollbarSize = 10;
-            this.settingsLogo.Location = new System.Drawing.Point(65, 193);
+            this.settingsLogo.Location = new System.Drawing.Point(65, 241);
             this.settingsLogo.Name = "settingsLogo";
-            this.settingsLogo.Size = new System.Drawing.Size(1050, 431);
+            this.settingsLogo.Size = new System.Drawing.Size(1050, 383);
             this.settingsLogo.TabIndex = 44;
             this.settingsLogo.VerticalScrollbarBarColor = true;
             this.settingsLogo.VerticalScrollbarHighlightOnWheel = false;
@@ -3430,7 +3446,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             // resetConfigBtn
             // 
             this.resetConfigBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.resetConfigBtn.Location = new System.Drawing.Point(65, 148);
+            this.resetConfigBtn.Location = new System.Drawing.Point(65, 196);
             this.resetConfigBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.resetConfigBtn.Name = "resetConfigBtn";
             this.resetConfigBtn.Size = new System.Drawing.Size(1050, 36);
@@ -3884,5 +3900,6 @@ namespace Minecraft_Wii_U_Mod_Injector
         private MetroButton giveXPLevelsBtn;
         private MetroButton giveXPOrbsBtn;
         private MetroTextBox xpAmountBox;
+        public MetroButton QuickModsManagerBtn;
     }
 }

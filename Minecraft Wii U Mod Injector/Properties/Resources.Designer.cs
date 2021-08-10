@@ -63,6 +63,26 @@ namespace Minecraft_Wii_U_Mod_Injector.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap DeleteBtn {
+            get {
+                object obj = ResourceManager.GetObject("DeleteBtn", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap EditBtn {
+            get {
+                object obj = ResourceManager.GetObject("EditBtn", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap githubLogo {
             get {
                 object obj = ResourceManager.GetObject("githubLogo", resourceCulture);
@@ -91,23 +111,20 @@ namespace Minecraft_Wii_U_Mod_Injector.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to [Release v5.1.8.c2 (16th of June, 2021)]
+        ///   Looks up a localized string similar to [Release v5.1.8.c3 (8th of August, 2021)]
         ///
         ///[Information]
         ///If you are experiencing issues, please report them on the Github Issues page or by joining the official discord server.
         ///
-        ///This update has some improvements to the language manager and adds a new mod
+        ///This update adds some new mods
         ///
         ///[Changes]
         ///
         ///+ New Mods
         ///
-        ///- General Game &gt; Debug Console
-        ///
-        ///+ General Additions &amp; Updates:
-        ///
-        ///- Language Manager &gt; can now re-position slider controls
-        ///- Language Manager &gt; can now check if a language file is made for an older version and warns you  [rest of string was truncated]&quot;;.
+        ///- Player(&apos;s) &gt; Player Options &gt; Drop Stack
+        ///- General Game &gt; Unlock Sign Keyboard
+        ///- Commands &gt; /xp Command.
         /// </summary>
         internal static string releaseNote {
             get {
@@ -116,23 +133,25 @@ namespace Minecraft_Wii_U_Mod_Injector.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to [Release v5.1.8.c2 (16th of June, 2021)]
+        ///   Looks up a localized string similar to [Release v5.1.8.c3 (8th of August, 2021)]
         ///
         ///[Information]
         ///If you are experiencing issues, please report them on the Github Issues page or by joining the official discord server.
         ///
-        ///This update has some improvements to the language manager and adds a new mod
+        ///This update adds some new mods
         ///
         ///[Changes]
         ///
         ///+ New Mods
         ///
-        ///- General Game &gt; Debug Console
+        ///- Player(&apos;s) &gt; Player Options &gt; Drop Stack
+        ///- General Game &gt; Unlock Sign Keyboard
+        ///- Commands &gt; /xp Command
         ///
-        ///+ General Additions &amp; Updates:
+        ///[Release v5.1.8.c2 (16th of June, 2021)]
         ///
-        ///- Language Manager &gt; can now re-position slider controls
-        ///- Language Manager &gt; can now check if a language file is made for an older version and warns you  [rest of string was truncated]&quot;;.
+        ///[Information]
+        ///If you are experiencing issues, please report them on the Github Issues page or by joining the off [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string releaseNotes {
             get {

@@ -28,9 +28,11 @@ Before downloading the Mod Injector or it's source code, you must agree to the [
 
 # Support the Developers!
 
-Sloth@WiiPlaza (AKA Kashiiera):
+Kashiiera (AKA Sloth@WiiPlaza):
 * [Youtube (Kashiiera)](https://www.youtube.com/channel/UCoW_EFIY3kskjV2howbuXvw)
-* [YouTube (Sloth@WiiPlaza)](https://www.youtube.com/SlothWiiPlaza)
 
 Bully@WiiPlaza:
 * [YouTube](https://www.youtube.com/BullyWiiPlaza)
+
+Vylryna:
+* [YouTube](https://www.youtube.com/channel/UCfm8aU2z1k8XaJlW2W4MKSA)

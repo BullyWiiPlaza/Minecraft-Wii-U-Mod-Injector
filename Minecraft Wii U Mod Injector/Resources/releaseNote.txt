@@ -1,21 +1,31 @@
-[Release v5.1.8.c4 (10th of August, 2021)]
+[Release v5.1.8.c5 (11th of August, 2021)]
 
 [Information]
 If you are experiencing issues, please report them on the Github Issues page or by joining the official discord server.
 
-The QMM (Quick Mods Manager) is still in beta and bugs are to be expected, please stress test this feature (enabling all mods at once etc) and make sure to report any bugs you may 
-encounter using this feature, thank you! :) <3
-
-This update adds the beta preview of the Quick Mods Manager
+This update adds a few new mods and brings improvements to the Quick Mods Manager
 
 [Changes]
 
++ New mods
+
+- Player(s) > Invisible (This most likely only works when you are the host)
+- World / Entities > Leash any mob (Limitations apply, such as the Ender Dragon and I believe the Wither)
+- World / Entities > Loot Table Editor (You can swap mobs their Loot Tables! Because who doesn't want chickens to drop wet sponges)
+
 + General Additions & Updates:
 
-- Quick Mods Manager, a way to create presets to enable a bunch of mods at once.
+- Commands > Update "Give XP" tooltip
+- Quick Mods Manager > A little notification should show up once you open the Quick Mods Manager letting you know it's loading and not just frozen.
+- Quick Mods Manager > Text Boxes now have a Prompt Text when they're empty
+- Quick Mods Manager > Saving a quick mod now redirects you to the installed quick mods page
+- Quick Mods Manager > What quick mod you are making or editing now shows on Discord
+- Language Manager > Improved Discord RPC texts
+- Credits > Adjusted window size
+- FAQ > Adjusted window size
 
 [Fixes]
 
 + General Fixes
 
-- Release Notes can no longer be edited
+- Fix incorrect tooltips

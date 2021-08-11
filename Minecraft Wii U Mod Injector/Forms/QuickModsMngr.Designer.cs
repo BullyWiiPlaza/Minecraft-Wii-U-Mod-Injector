@@ -276,7 +276,7 @@
             this.MainTabs.ItemSize = new System.Drawing.Size(473, 1);
             this.MainTabs.Location = new System.Drawing.Point(175, 67);
             this.MainTabs.Name = "MainTabs";
-            this.MainTabs.SelectedIndex = 0;
+            this.MainTabs.SelectedIndex = 1;
             this.MainTabs.Size = new System.Drawing.Size(950, 438);
             this.MainTabs.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.MainTabs.TabIndex = 55;
@@ -369,6 +369,7 @@
             this.qmmDescBox.MaxLength = 32767;
             this.qmmDescBox.Name = "qmmDescBox";
             this.qmmDescBox.PasswordChar = '\0';
+            this.qmmDescBox.PromptText = "This is my awesome quick mod";
             this.qmmDescBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.qmmDescBox.SelectedText = "";
             this.qmmDescBox.SelectionLength = 0;
@@ -377,6 +378,7 @@
             this.qmmDescBox.Size = new System.Drawing.Size(832, 23);
             this.qmmDescBox.TabIndex = 7;
             this.qmmDescBox.UseSelectable = true;
+            this.qmmDescBox.WaterMark = "This is my awesome quick mod";
             this.qmmDescBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.qmmDescBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
@@ -408,6 +410,7 @@
             this.qmmAuthBox.MaxLength = 32767;
             this.qmmAuthBox.Name = "qmmAuthBox";
             this.qmmAuthBox.PasswordChar = '\0';
+            this.qmmAuthBox.PromptText = "Me";
             this.qmmAuthBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.qmmAuthBox.SelectedText = "";
             this.qmmAuthBox.SelectionLength = 0;
@@ -416,6 +419,7 @@
             this.qmmAuthBox.Size = new System.Drawing.Size(832, 23);
             this.qmmAuthBox.TabIndex = 5;
             this.qmmAuthBox.UseSelectable = true;
+            this.qmmAuthBox.WaterMark = "Me";
             this.qmmAuthBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.qmmAuthBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
@@ -447,6 +451,7 @@
             this.qmmNameBox.MaxLength = 32767;
             this.qmmNameBox.Name = "qmmNameBox";
             this.qmmNameBox.PasswordChar = '\0';
+            this.qmmNameBox.PromptText = "My awesome quick mod";
             this.qmmNameBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.qmmNameBox.SelectedText = "";
             this.qmmNameBox.SelectionLength = 0;
@@ -455,6 +460,7 @@
             this.qmmNameBox.Size = new System.Drawing.Size(832, 23);
             this.qmmNameBox.TabIndex = 3;
             this.qmmNameBox.UseSelectable = true;
+            this.qmmNameBox.WaterMark = "My awesome quick mod";
             this.qmmNameBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.qmmNameBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
@@ -483,7 +489,7 @@
             this.Name = "QuickModsMngr";
             this.Resizable = false;
             this.Style = MetroFramework.MetroColorStyle.Default;
-            this.Text = "Minecraft: Wii U Mod Injector - Quick Mods Manager [BETA]";
+            this.Text = "Minecraft: Wii U Mod Injector - Quick Mods Manager";
             this.Theme = MetroFramework.MetroThemeStyle.Default;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Exiting);
             this.Load += new System.EventHandler(this.Init);

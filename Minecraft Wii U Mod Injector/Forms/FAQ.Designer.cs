@@ -57,7 +57,7 @@
             this.appIco.HorizontalScrollbarBarColor = true;
             this.appIco.HorizontalScrollbarHighlightOnWheel = false;
             this.appIco.HorizontalScrollbarSize = 10;
-            this.appIco.Location = new System.Drawing.Point(774, 37);
+            this.appIco.Location = new System.Drawing.Point(786, 37);
             this.appIco.Name = "appIco";
             this.appIco.Size = new System.Drawing.Size(255, 338);
             this.appIco.TabIndex = 45;
@@ -69,7 +69,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1033, 398);
+            this.ClientSize = new System.Drawing.Size(1050, 400);
             this.Controls.Add(this.appIco);
             this.Controls.Add(this.faqText);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

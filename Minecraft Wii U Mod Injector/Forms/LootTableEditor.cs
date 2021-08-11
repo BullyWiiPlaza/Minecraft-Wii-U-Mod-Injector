@@ -2,6 +2,7 @@
 using Minecraft_Wii_U_Mod_Injector.Helpers;
 using System;
 using System.Windows.Forms;
+using Minecraft_Wii_U_Mod_Injector.Helpers.Win_Forms;
 
 namespace Minecraft_Wii_U_Mod_Injector.Forms
 {
@@ -50,6 +51,9 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms
         private void ApplyBtnClicked(object sender, EventArgs e)
         {
             MainForm.GeckoU.WriteUInt(_loottableAddr[replaceBox.SelectedIndex], MainForm.GeckoU.Mix(0x38630000, _loottableIds[withBox.SelectedIndex]));
+            Messaging.Show("Successfully swapped " + replaceBox.Text + "'s Loot Table with " + withBox.Text +
+                           "'s Loot Table!");
+            this.Close();
         }
     }
 }

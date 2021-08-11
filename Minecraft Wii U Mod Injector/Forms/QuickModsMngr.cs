@@ -54,8 +54,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms
             if (Settings.EqualsTo("SeenQmmMngr", "False", "Display") || !Settings.Exists("SeenQmmMngr", "Display"))
                 Messaging.Show(
                     "Welcome to the Quick Mods Manager [BETA]!\nQuick Mods are basically mod presets, you activate a quick mod and it activates a bunch of mods within that" +
-                    " preset.\nThis is useful for whenever you want to activate a large amount of mods at once.\nFor now this only supports CheckBox mods, sliders are still" +
-                    " being worked on and will be tested at a later date.\nHave fun!");
+                    " preset.\nThis is useful for whenever you want to activate a large amount of mods at once. Have fun!");
 
             Settings.Write("SeenQmmMngr", "True", "Display");
 
@@ -65,38 +64,14 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms
             {
                 if (page.Name == "settingsTab") continue;
 
-                foreach (Control c in page.Controls)
-                {
-                    if (c is MetroCheckBox)
-                    {
-                        MetroCheckBox toAdd = new MetroCheckBox();
-                        toAdd.Name = c.Name;
-                        toAdd.Text = c.Text;
-                        toAdd.AutoSize = true;
-                        toAdd.Theme = Theme;
-                        toAdd.Style = Style;
-                        qmmModsList.Controls.Add(toAdd);
-                    }
-                }
+                PopulateModsList(page);
             }
             foreach (MetroTabPage page in _iw.MinigamesTabs.TabPages)
             {
-                foreach (Control c in page.Controls)
-                {
-                    if (c is MetroCheckBox)
-                    {
-                        MetroCheckBox toAdd = new MetroCheckBox();
-                        toAdd.Name = c.Name;
-                        toAdd.Text = c.Text;
-                        toAdd.AutoSize = true;
-                        toAdd.Theme = Theme;
-                        toAdd.Style = Style;
-                        qmmModsList.Controls.Add(toAdd);
-                    }
-                }
+                PopulateModsList(page);
             }
 
-            DiscordRp.SetPresence(_iw.IsConnected ? "Connected" : "Disconnected", "Quick Mods Manager");
+            DiscordRp.SetPresence(_iw.IsConnected ? "Connected" : "Disconnected", "Quick Mods Manager - Browsing Quick Mods");
         }
 
         private void Exiting(object sender, FormClosingEventArgs e)
@@ -107,6 +82,23 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms
         #endregion
 
         #region control handlers
+
+        private void PopulateModsList(MetroTabPage page)
+        {
+            foreach (Control c in page.Controls)
+            {
+                if (c is MetroCheckBox)
+                {
+                    MetroCheckBox toAdd = new MetroCheckBox();
+                    toAdd.Name = c.Name;
+                    toAdd.Text = c.Text;
+                    toAdd.AutoSize = true;
+                    toAdd.Theme = Theme;
+                    toAdd.Style = Style;
+                    qmmModsList.Controls.Add(toAdd);
+                }
+            }
+        }
 
         private void SwapTab(object sender, EventArgs e)
         {
@@ -129,6 +121,14 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms
                 RefreshTileClicked(null, null);
             }
 
+            if (tile.TileCount == 0)
+            {
+                DiscordRp.SetPresence(_iw.IsConnected ? "Connected" : "Disconnected", "Quick Mods Manager - Browsing Quick Mods");
+            }
+            else
+            {
+                DiscordRp.SetPresence(_iw.IsConnected ? "Connected" : "Disconnected", "Quick Mods Manager - Making a new Quick Mod");
+            }
             EmptyTile.Text = @"Currently Viewing:
 " + MainTabs.SelectedTab.Text;
         }
@@ -233,6 +233,8 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms
                         quickMod.Write(c.Name, b.Checked.ToString(), "controls");
 
                 Messaging.Show("Successfully saved \"" + qmmNameBox.Text + "\"!");
+
+                SwapTab(InstalledTile, null);
             }
             catch (Exception exception)
             {
@@ -246,6 +248,8 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms
         private void Creator(IniFile file)
         {
             SwapTab(CreatorTile, null);
+
+            DiscordRp.SetPresence(_iw.IsConnected ? "Connected" : "Disconnected", "Quick Mods Manager - Editing " + file.Read("name", "meta"));
 
             qmmNameBox.Text = file.Read("name", "meta");
             qmmAuthBox.Text = file.Read("author", "meta");

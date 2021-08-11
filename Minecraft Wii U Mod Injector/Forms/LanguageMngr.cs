@@ -86,7 +86,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms
                 index++;
             }
 
-            DiscordRp.SetPresence(_iw.IsConnected ? "Connected" : "Disconnected", "Language Manager");
+            DiscordRp.SetPresence(_iw.IsConnected ? "Connected" : "Disconnected", "Language Manager - Browsing Installed Languages");
         }
 
         private void Exiting(object sender, FormClosingEventArgs e)
@@ -106,6 +106,16 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms
 
             if (MainTabs.SelectedIndex != tile.TileCount)
                 MainTabs.SelectedIndex = tile.TileCount;
+
+            switch (tile.TileCount)
+            {
+                case 0:
+                    DiscordRp.SetPresence(_iw.IsConnected ? "Connected" : "Disconnected", "Language Manager - Browsing Installed Languages");
+                    break;
+                case 1:
+                    DiscordRp.SetPresence(_iw.IsConnected ? "Connected" : "Disconnected", "Language Manager - Browsing Downloadable Languages");
+                    break;
+            }
 
             EmptyTile.Text = @"Currently Viewing:
 " + MainTabs.SelectedTab.Text;

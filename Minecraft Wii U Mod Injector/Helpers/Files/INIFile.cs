@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System.Collections.Generic;
+using System.IO;
 using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -9,10 +10,13 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers.Files
     {
         string _path;
         string _exe = Assembly.GetExecutingAssembly().GetName().Name;
+
         [DllImport("kernel32", CharSet = CharSet.Unicode)]
         static extern long WritePrivateProfileString(string section, string key, string value, string filePath);
         [DllImport("kernel32", CharSet = CharSet.Unicode)]
         static extern int GetPrivateProfileString(string section, string key, string @default, StringBuilder retVal, int size, string filePath);
+        [DllImport("kernel32.dll")]
+        static extern int GetPrivateProfileSection(string lpAppName, byte[] lpszReturnBuffer, int nSize, string lpFileName);
 
         public IniFile(string iniPath = null)
         {
@@ -44,6 +48,24 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers.Files
         public bool KeyExists(string key, string section = null)
         {
             return Read(key, section).Length > 0;
+        }
+
+        public List<string> GetKeys(string section)
+        {
+
+            byte[] buffer = new byte[2048];
+
+            GetPrivateProfileSection(section, buffer, 2048, _path);
+            string[] tmp = Encoding.ASCII.GetString(buffer).Trim('\0').Split('\0');
+
+            List<string> result = new List<string>();
+
+            foreach (string entry in tmp)
+            {
+                result.Add(entry.Substring(0, entry.IndexOf("=")));
+            }
+
+            return result;
         }
     }
 }

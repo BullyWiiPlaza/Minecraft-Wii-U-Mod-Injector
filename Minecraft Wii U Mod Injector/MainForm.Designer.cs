@@ -377,7 +377,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.MainTabs.Location = new System.Drawing.Point(155, 61);
             this.MainTabs.Multiline = true;
             this.MainTabs.Name = "MainTabs";
-            this.MainTabs.SelectedIndex = 0;
+            this.MainTabs.SelectedIndex = 5;
             this.MainTabs.Size = new System.Drawing.Size(1130, 639);
             this.MainTabs.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.MainTabs.TabIndex = 0;
@@ -2889,7 +2889,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.giveXPOrbsBtn.Size = new System.Drawing.Size(171, 23);
             this.giveXPOrbsBtn.TabIndex = 19;
             this.giveXPOrbsBtn.Text = "Give XP";
-            this.ToolTipManager.SetToolTip(this.giveXPOrbsBtn, "Gives you the amount of XP in Orbs");
+            this.ToolTipManager.SetToolTip(this.giveXPOrbsBtn, "Gives you the raw amount of XP");
             this.giveXPOrbsBtn.UseSelectable = true;
             this.giveXPOrbsBtn.Click += new System.EventHandler(this.GiveXpOrbsBtnClicked);
             // 

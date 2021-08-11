@@ -1165,5 +1165,29 @@ namespace Minecraft_Wii_U_Mod_Injector
         #endregion
 
         #endregion memory editing
+
+        private void InvisibleToggled(object sender, EventArgs e)
+        {
+            GeckoU.WriteUIntToggle(0x031E2F40, On, 0x57C3063E, Invisible.Checked);
+        }
+
+        private void LeashAnyMobsToggled(object sender, EventArgs e)
+        {
+            GeckoU.WriteUIntToggle(0x02078964, On, Off, LeashAnyMobs.Checked);
+            GeckoU.WriteUIntToggle(0x02078964, On, Off, LeashAnyMobs.Checked);
+            GeckoU.WriteUIntToggle(0x022D2FFC, On, Off, LeashAnyMobs.Checked);
+            GeckoU.WriteUIntToggle(0x0234A7B8, On, Off, LeashAnyMobs.Checked);
+            GeckoU.WriteUIntToggle(0x023CE0B8, On, Off, LeashAnyMobs.Checked);
+            GeckoU.WriteUIntToggle(0x02651494, On, 0x7FC3F378, LeashAnyMobs.Checked);
+            GeckoU.WriteUIntToggle(0x029D1BB4, On, 0x7FC3F378, LeashAnyMobs.Checked);
+            GeckoU.WriteUIntToggle(0x02A59DF4, On, Off, LeashAnyMobs.Checked);
+            GeckoU.WriteUIntToggle(0x02A7BBE4, On, Off, LeashAnyMobs.Checked);
+            GeckoU.WriteUIntToggle(0x02A884E0, On, 0x57E3063E, LeashAnyMobs.Checked);
+        }
+
+        private void LootTableEditorBtnClicked(object sender, EventArgs e)
+        {
+            new LootTableEditor(this).ShowDialog();
+        }
     }
 }

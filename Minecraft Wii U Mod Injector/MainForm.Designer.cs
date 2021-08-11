@@ -50,6 +50,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.WiiUIpv4Box = new MetroFramework.Controls.MetroTextBox();
             this.WiiUIpv4Lbl = new MetroFramework.Controls.MetroLabel();
             this.playersTab = new MetroFramework.Controls.MetroTabPage();
+            this.Invisible = new MetroFramework.Controls.MetroCheckBox();
             this.XPLevelSlider = new System.Windows.Forms.NumericUpDown();
             this.PotionAmplifierSlider = new System.Windows.Forms.NumericUpDown();
             this.FrictionSlider = new System.Windows.Forms.NumericUpDown();
@@ -129,6 +130,8 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.CraftAnything = new MetroFramework.Controls.MetroCheckBox();
             this.CreativeMode = new MetroFramework.Controls.MetroCheckBox();
             this.worldTab = new MetroFramework.Controls.MetroTabPage();
+            this.LootTableEditorBtn = new MetroFramework.Controls.MetroButton();
+            this.LeashAnyMobs = new MetroFramework.Controls.MetroCheckBox();
             this.SunProofMobs = new MetroFramework.Controls.MetroCheckBox();
             this.DisableCreativeFlag = new MetroFramework.Controls.MetroCheckBox();
             this.ZombieTower = new MetroFramework.Controls.MetroCheckBox();
@@ -561,6 +564,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             // 
             // playersTab
             // 
+            this.playersTab.Controls.Add(this.Invisible);
             this.playersTab.Controls.Add(this.XPLevelSlider);
             this.playersTab.Controls.Add(this.PotionAmplifierSlider);
             this.playersTab.Controls.Add(this.FrictionSlider);
@@ -652,6 +656,19 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.playersTab.VerticalScrollbarBarColor = true;
             this.playersTab.VerticalScrollbarHighlightOnWheel = false;
             this.playersTab.VerticalScrollbarSize = 10;
+            // 
+            // Invisible
+            // 
+            this.Invisible.AutoSize = true;
+            this.Invisible.Location = new System.Drawing.Point(383, 174);
+            this.Invisible.Name = "Invisible";
+            this.Invisible.Size = new System.Drawing.Size(66, 15);
+            this.Invisible.TabIndex = 161;
+            this.Invisible.Tag = "";
+            this.Invisible.Text = "Invisible";
+            this.ToolTipManager.SetToolTip(this.Invisible, "Whether you\'ll be invisible");
+            this.Invisible.UseSelectable = true;
+            this.Invisible.CheckedChanged += new System.EventHandler(this.InvisibleToggled);
             // 
             // XPLevelSlider
             // 
@@ -1887,6 +1904,8 @@ namespace Minecraft_Wii_U_Mod_Injector
             // 
             // worldTab
             // 
+            this.worldTab.Controls.Add(this.LootTableEditorBtn);
+            this.worldTab.Controls.Add(this.LeashAnyMobs);
             this.worldTab.Controls.Add(this.SunProofMobs);
             this.worldTab.Controls.Add(this.DisableCreativeFlag);
             this.worldTab.Controls.Add(this.ZombieTower);
@@ -1916,6 +1935,31 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.worldTab.VerticalScrollbarBarColor = true;
             this.worldTab.VerticalScrollbarHighlightOnWheel = false;
             this.worldTab.VerticalScrollbarSize = 10;
+            // 
+            // LootTableEditorBtn
+            // 
+            this.LootTableEditorBtn.Location = new System.Drawing.Point(7, 601);
+            this.LootTableEditorBtn.Name = "LootTableEditorBtn";
+            this.LootTableEditorBtn.Size = new System.Drawing.Size(1109, 23);
+            this.LootTableEditorBtn.TabIndex = 48;
+            this.LootTableEditorBtn.Text = "Loot Table Editor";
+            this.ToolTipManager.SetToolTip(this.LootTableEditorBtn, "Opens the Loot Table Editor, a mod which allows you to swap entity loot tables");
+            this.LootTableEditorBtn.UseSelectable = true;
+            this.LootTableEditorBtn.Click += new System.EventHandler(this.LootTableEditorBtnClicked);
+            // 
+            // LeashAnyMobs
+            // 
+            this.LeashAnyMobs.AutoSize = true;
+            this.LeashAnyMobs.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.LeashAnyMobs.Location = new System.Drawing.Point(475, 130);
+            this.LeashAnyMobs.Name = "LeashAnyMobs";
+            this.LeashAnyMobs.Size = new System.Drawing.Size(108, 15);
+            this.LeashAnyMobs.TabIndex = 47;
+            this.LeashAnyMobs.Tag = "";
+            this.LeashAnyMobs.Text = "Leash any mobs";
+            this.ToolTipManager.SetToolTip(this.LeashAnyMobs, "Whether you\'ll be able to leash any entity");
+            this.LeashAnyMobs.UseSelectable = true;
+            this.LeashAnyMobs.CheckedChanged += new System.EventHandler(this.LeashAnyMobsToggled);
             // 
             // SunProofMobs
             // 
@@ -3901,5 +3945,8 @@ namespace Minecraft_Wii_U_Mod_Injector
         private MetroButton giveXPOrbsBtn;
         private MetroTextBox xpAmountBox;
         public MetroButton QuickModsManagerBtn;
+        public MetroCheckBox Invisible;
+        public MetroCheckBox LeashAnyMobs;
+        private MetroButton LootTableEditorBtn;
     }
 }

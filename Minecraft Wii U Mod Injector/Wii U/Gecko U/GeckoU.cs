@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Runtime.Serialization.Formatters;
 using System.Text;
 using System.Windows.Forms;
 using Minecraft_Wii_U_Mod_Injector.Helpers;
@@ -454,6 +453,27 @@ namespace Minecraft_Wii_U_Mod_Injector.Wii_U.Gecko_U
                 MessageBox.Show(error.Message);
             }
             WriteBytes(address, bytes);
+        }
+
+        /// <summary>
+        /// Writes a unsigned interger to the given addresses
+        /// </summary>
+        /// <param name="addresses"></param>
+        /// <param name="value"></param>
+        public void WriteUInt(uint[] addresses, uint value)
+        {
+            var bytes = BitConverter.GetBytes(value);
+            try
+            {
+                Array.Reverse(bytes);
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show(error.Message);
+            }
+
+            foreach(uint address in addresses)
+                WriteBytes(address, bytes);
         }
 
         /// <summary>

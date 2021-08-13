@@ -111,20 +111,18 @@ namespace Minecraft_Wii_U_Mod_Injector.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to [Release v5.1.8.c3 (8th of August, 2021)]
+        ///   Looks up a localized string similar to [Release v5.1.8.h6 (13th of August, 2021)]
         ///
         ///[Information]
         ///If you are experiencing issues, please report them on the Github Issues page or by joining the official discord server.
         ///
-        ///This update adds some new mods
+        ///This update adds the ability to use the Enter key to connect to your Wii U
         ///
         ///[Changes]
         ///
-        ///+ New Mods
+        ///+ General Additions &amp; Updates:
         ///
-        ///- Player(&apos;s) &gt; Player Options &gt; Drop Stack
-        ///- General Game &gt; Unlock Sign Keyboard
-        ///- Commands &gt; /xp Command.
+        ///- The &quot;Enter&quot; key can now be used to connect to your Wii U.
         /// </summary>
         internal static string releaseNote {
             get {
@@ -133,29 +131,37 @@ namespace Minecraft_Wii_U_Mod_Injector.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to [Release v5.1.8.c3 (8th of August, 2021)]
+        ///   Looks up a localized string similar to [Release v5.1.8.h6 (13th of August, 2021)]
         ///
         ///[Information]
         ///If you are experiencing issues, please report them on the Github Issues page or by joining the official discord server.
         ///
-        ///This update adds some new mods
+        ///This update adds the ability to use the Enter key to connect to your Wii U
         ///
         ///[Changes]
         ///
-        ///+ New Mods
+        ///+ General Additions &amp; Updates:
         ///
-        ///- Player(&apos;s) &gt; Player Options &gt; Drop Stack
-        ///- General Game &gt; Unlock Sign Keyboard
-        ///- Commands &gt; /xp Command
+        ///- The &quot;Enter&quot; key can now be used to connect to your Wii U
         ///
-        ///[Release v5.1.8.c2 (16th of June, 2021)]
+        ///[Release v5.1.8.c5 (11th of August, 2021)]
         ///
         ///[Information]
-        ///If you are experiencing issues, please report them on the Github Issues page or by joining the off [rest of string was truncated]&quot;;.
+        ///If you are experiencing issues, please report them on the Github Issues page or  [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string releaseNotes {
             get {
                 return ResourceManager.GetString("releaseNotes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap UndoBtn {
+            get {
+                object obj = ResourceManager.GetObject("UndoBtn", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
     }

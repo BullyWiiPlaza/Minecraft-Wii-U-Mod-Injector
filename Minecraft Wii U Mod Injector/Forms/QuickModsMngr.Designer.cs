@@ -61,6 +61,7 @@
             this.qmmNameBox = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.StyleExt = new MetroFramework.Components.MetroStyleExtender(this.components);
+            this.undoQmmBtn = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.StyleMngr)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.QuickModsList)).BeginInit();
             this.qmmMenu.SuspendLayout();
@@ -169,9 +170,10 @@
             this.qmmMenu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.qmmMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.editQmmBtn,
-            this.deleteQmmBtn});
+            this.deleteQmmBtn,
+            this.undoQmmBtn});
             this.qmmMenu.Name = "qmmMenu";
-            this.qmmMenu.Size = new System.Drawing.Size(108, 48);
+            this.qmmMenu.Size = new System.Drawing.Size(181, 92);
             this.qmmMenu.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.QmmMenuHandler);
             // 
             // editQmmBtn
@@ -179,14 +181,14 @@
             this.editQmmBtn.Image = global::Minecraft_Wii_U_Mod_Injector.Properties.Resources.EditBtn;
             this.editQmmBtn.Name = "editQmmBtn";
             this.editQmmBtn.ShortcutKeyDisplayString = "";
-            this.editQmmBtn.Size = new System.Drawing.Size(107, 22);
+            this.editQmmBtn.Size = new System.Drawing.Size(180, 22);
             this.editQmmBtn.Text = "Edit";
             // 
             // deleteQmmBtn
             // 
             this.deleteQmmBtn.Image = global::Minecraft_Wii_U_Mod_Injector.Properties.Resources.DeleteBtn;
             this.deleteQmmBtn.Name = "deleteQmmBtn";
-            this.deleteQmmBtn.Size = new System.Drawing.Size(107, 22);
+            this.deleteQmmBtn.Size = new System.Drawing.Size(180, 22);
             this.deleteQmmBtn.Text = "Delete";
             // 
             // CreatorTile
@@ -276,7 +278,7 @@
             this.MainTabs.ItemSize = new System.Drawing.Size(473, 1);
             this.MainTabs.Location = new System.Drawing.Point(175, 67);
             this.MainTabs.Name = "MainTabs";
-            this.MainTabs.SelectedIndex = 1;
+            this.MainTabs.SelectedIndex = 0;
             this.MainTabs.Size = new System.Drawing.Size(950, 438);
             this.MainTabs.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.MainTabs.TabIndex = 55;
@@ -369,7 +371,7 @@
             this.qmmDescBox.MaxLength = 32767;
             this.qmmDescBox.Name = "qmmDescBox";
             this.qmmDescBox.PasswordChar = '\0';
-            this.qmmDescBox.WaterMark = "This is my awesome quick mod";
+            this.qmmDescBox.PromptText = "This is my awesome quick mod";
             this.qmmDescBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.qmmDescBox.SelectedText = "";
             this.qmmDescBox.SelectionLength = 0;
@@ -410,7 +412,7 @@
             this.qmmAuthBox.MaxLength = 32767;
             this.qmmAuthBox.Name = "qmmAuthBox";
             this.qmmAuthBox.PasswordChar = '\0';
-            this.qmmAuthBox.WaterMark = "Me";
+            this.qmmAuthBox.PromptText = "Me";
             this.qmmAuthBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.qmmAuthBox.SelectedText = "";
             this.qmmAuthBox.SelectionLength = 0;
@@ -451,7 +453,7 @@
             this.qmmNameBox.MaxLength = 32767;
             this.qmmNameBox.Name = "qmmNameBox";
             this.qmmNameBox.PasswordChar = '\0';
-            this.qmmNameBox.WaterMark = "My awesome quick mod";
+            this.qmmNameBox.PromptText = "My awesome quick mod";
             this.qmmNameBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.qmmNameBox.SelectedText = "";
             this.qmmNameBox.SelectionLength = 0;
@@ -472,6 +474,13 @@
             this.metroLabel1.Size = new System.Drawing.Size(48, 19);
             this.metroLabel1.TabIndex = 2;
             this.metroLabel1.Text = "Name:";
+            // 
+            // undoQmmBtn
+            // 
+            this.undoQmmBtn.Image = global::Minecraft_Wii_U_Mod_Injector.Properties.Resources.UndoBtn;
+            this.undoQmmBtn.Name = "undoQmmBtn";
+            this.undoQmmBtn.Size = new System.Drawing.Size(180, 22);
+            this.undoQmmBtn.Text = "Undo";
             // 
             // QuickModsMngr
             // 
@@ -533,5 +542,6 @@
         private MetroFramework.Controls.MetroContextMenu qmmMenu;
         private System.Windows.Forms.ToolStripMenuItem editQmmBtn;
         private System.Windows.Forms.ToolStripMenuItem deleteQmmBtn;
+        private System.Windows.Forms.ToolStripMenuItem undoQmmBtn;
     }
 }

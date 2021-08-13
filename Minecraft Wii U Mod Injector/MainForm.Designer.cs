@@ -243,6 +243,14 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.RightClickMenu = new MetroFramework.Controls.MetroContextMenu(this.components);
             this.IncreaseDecimalPlace = new System.Windows.Forms.ToolStripMenuItem();
             this.DecreaseDecimalPlace = new System.Windows.Forms.ToolStripMenuItem();
+            this.EnchantmentEditorBtn = new MetroFramework.Controls.MetroButton();
+            this.WaterLogAnything = new MetroFramework.Controls.MetroCheckBox();
+            this.UnlimitedEnchants = new MetroFramework.Controls.MetroCheckBox();
+            this.SuperFurnace = new MetroFramework.Controls.MetroCheckBox();
+            this.MaxStackSlider = new System.Windows.Forms.NumericUpDown();
+            this.MaxStack = new MetroFramework.Controls.MetroLabel();
+            this.LeftHanded = new MetroFramework.Controls.MetroCheckBox();
+            this.UnlimitedJumps = new MetroFramework.Controls.MetroCheckBox();
             this.MainTabs.SuspendLayout();
             this.MainTab.SuspendLayout();
             this.playersTab.SuspendLayout();
@@ -283,6 +291,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.settingsTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.StyleMngr)).BeginInit();
             this.RightClickMenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.MaxStackSlider)).BeginInit();
             this.SuspendLayout();
             // 
             // WorldTile
@@ -377,7 +386,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.MainTabs.Location = new System.Drawing.Point(155, 61);
             this.MainTabs.Multiline = true;
             this.MainTabs.Name = "MainTabs";
-            this.MainTabs.SelectedIndex = 6;
+            this.MainTabs.SelectedIndex = 0;
             this.MainTabs.Size = new System.Drawing.Size(1130, 639);
             this.MainTabs.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.MainTabs.TabIndex = 0;
@@ -565,6 +574,12 @@ namespace Minecraft_Wii_U_Mod_Injector
             // 
             // playersTab
             // 
+            this.playersTab.Controls.Add(this.UnlimitedJumps);
+            this.playersTab.Controls.Add(this.LeftHanded);
+            this.playersTab.Controls.Add(this.MaxStackSlider);
+            this.playersTab.Controls.Add(this.MaxStack);
+            this.playersTab.Controls.Add(this.UnlimitedEnchants);
+            this.playersTab.Controls.Add(this.EnchantmentEditorBtn);
             this.playersTab.Controls.Add(this.Invisible);
             this.playersTab.Controls.Add(this.XPLevelSlider);
             this.playersTab.Controls.Add(this.PotionAmplifierSlider);
@@ -683,7 +698,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             0,
             0});
             this.XPLevelSlider.Name = "XPLevelSlider";
-            this.XPLevelSlider.Size = new System.Drawing.Size(116, 20);
+            this.XPLevelSlider.Size = new System.Drawing.Size(127, 20);
             this.XPLevelSlider.TabIndex = 160;
             this.XPLevelSlider.Tag = "";
             this.ToolTipManager.SetToolTip(this.XPLevelSlider, "What Level should we be?\r\n\r\n(Affects newest player in splitscreen)");
@@ -1060,9 +1075,9 @@ namespace Minecraft_Wii_U_Mod_Injector
             // 
             // PlayerOptionsBtn
             // 
-            this.PlayerOptionsBtn.Location = new System.Drawing.Point(566, 451);
+            this.PlayerOptionsBtn.Location = new System.Drawing.Point(378, 451);
             this.PlayerOptionsBtn.Name = "PlayerOptionsBtn";
-            this.PlayerOptionsBtn.Size = new System.Drawing.Size(550, 25);
+            this.PlayerOptionsBtn.Size = new System.Drawing.Size(365, 25);
             this.PlayerOptionsBtn.TabIndex = 158;
             this.PlayerOptionsBtn.Tag = "";
             this.PlayerOptionsBtn.Text = "Player Options";
@@ -1430,10 +1445,11 @@ namespace Minecraft_Wii_U_Mod_Injector
             // 
             this.NnidEditorBtn.Location = new System.Drawing.Point(7, 451);
             this.NnidEditorBtn.Name = "NnidEditorBtn";
-            this.NnidEditorBtn.Size = new System.Drawing.Size(550, 25);
+            this.NnidEditorBtn.Size = new System.Drawing.Size(365, 25);
             this.NnidEditorBtn.TabIndex = 126;
             this.NnidEditorBtn.Tag = "";
             this.NnidEditorBtn.Text = "Nintendo Network Editor";
+            this.ToolTipManager.SetToolTip(this.NnidEditorBtn, "Opens the Nintedo Network Editor");
             this.NnidEditorBtn.UseSelectable = true;
             this.NnidEditorBtn.Click += new System.EventHandler(this.NnidEditorBtnClicked);
             // 
@@ -1905,6 +1921,8 @@ namespace Minecraft_Wii_U_Mod_Injector
             // 
             // worldTab
             // 
+            this.worldTab.Controls.Add(this.SuperFurnace);
+            this.worldTab.Controls.Add(this.WaterLogAnything);
             this.worldTab.Controls.Add(this.LootTableEditorBtn);
             this.worldTab.Controls.Add(this.LeashAnyMobs);
             this.worldTab.Controls.Add(this.SunProofMobs);
@@ -2099,9 +2117,9 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.World.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.World.Location = new System.Drawing.Point(3, 3);
             this.World.Name = "World";
-            this.World.Size = new System.Drawing.Size(45, 19);
+            this.World.Size = new System.Drawing.Size(96, 19);
             this.World.TabIndex = 44;
-            this.World.Text = "World";
+            this.World.Text = "World / Blocks";
             // 
             // FoggyWeather
             // 
@@ -3658,6 +3676,120 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.DecreaseDecimalPlace.Size = new System.Drawing.Size(322, 22);
             this.DecreaseDecimalPlace.Text = "Decrease decimal place";
             // 
+            // EnchantmentEditorBtn
+            // 
+            this.EnchantmentEditorBtn.Location = new System.Drawing.Point(749, 451);
+            this.EnchantmentEditorBtn.Name = "EnchantmentEditorBtn";
+            this.EnchantmentEditorBtn.Size = new System.Drawing.Size(365, 25);
+            this.EnchantmentEditorBtn.TabIndex = 166;
+            this.EnchantmentEditorBtn.Tag = "";
+            this.EnchantmentEditorBtn.Text = "Enchantment Editor";
+            this.ToolTipManager.SetToolTip(this.EnchantmentEditorBtn, "Opens the Enchantment Editor");
+            this.EnchantmentEditorBtn.UseSelectable = true;
+            this.EnchantmentEditorBtn.Click += new System.EventHandler(this.EnchantmentEditorBtnClicked);
+            // 
+            // WaterLogAnything
+            // 
+            this.WaterLogAnything.AutoSize = true;
+            this.WaterLogAnything.BackColor = System.Drawing.Color.Transparent;
+            this.WaterLogAnything.Location = new System.Drawing.Point(7, 193);
+            this.WaterLogAnything.Name = "WaterLogAnything";
+            this.WaterLogAnything.Size = new System.Drawing.Size(129, 15);
+            this.WaterLogAnything.TabIndex = 49;
+            this.WaterLogAnything.Tag = "";
+            this.WaterLogAnything.Text = "Water Log Anything";
+            this.ToolTipManager.SetToolTip(this.WaterLogAnything, "Whether you can water log anything (place liquid inside of blocks)");
+            this.WaterLogAnything.UseSelectable = true;
+            this.WaterLogAnything.CheckedChanged += new System.EventHandler(this.WaterLogAnythingChecked);
+            // 
+            // UnlimitedEnchants
+            // 
+            this.UnlimitedEnchants.AutoSize = true;
+            this.UnlimitedEnchants.Location = new System.Drawing.Point(383, 195);
+            this.UnlimitedEnchants.Name = "UnlimitedEnchants";
+            this.UnlimitedEnchants.Size = new System.Drawing.Size(126, 15);
+            this.UnlimitedEnchants.TabIndex = 167;
+            this.UnlimitedEnchants.Tag = "";
+            this.UnlimitedEnchants.Text = "Unlimited Enchants";
+            this.ToolTipManager.SetToolTip(this.UnlimitedEnchants, "Whether you can enchant an already enchanted item");
+            this.UnlimitedEnchants.UseSelectable = true;
+            this.UnlimitedEnchants.CheckedChanged += new System.EventHandler(this.UnlimitedEnchantsChanged);
+            // 
+            // SuperFurnace
+            // 
+            this.SuperFurnace.AutoSize = true;
+            this.SuperFurnace.BackColor = System.Drawing.Color.Transparent;
+            this.SuperFurnace.Location = new System.Drawing.Point(6, 214);
+            this.SuperFurnace.Name = "SuperFurnace";
+            this.SuperFurnace.Size = new System.Drawing.Size(98, 15);
+            this.SuperFurnace.TabIndex = 50;
+            this.SuperFurnace.Tag = "";
+            this.SuperFurnace.Text = "Super Furnace";
+            this.ToolTipManager.SetToolTip(this.SuperFurnace, "Whether furnaces smelt instantly");
+            this.SuperFurnace.UseSelectable = true;
+            this.SuperFurnace.CheckedChanged += new System.EventHandler(this.SuperFurnaceChecked);
+            // 
+            // MaxStackSlider
+            // 
+            this.StyleExtender.SetApplyMetroTheme(this.MaxStackSlider, true);
+            this.MaxStackSlider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.MaxStackSlider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.MaxStackSlider.Location = new System.Drawing.Point(634, 505);
+            this.MaxStackSlider.Maximum = new decimal(new int[] {
+            9999,
+            0,
+            0,
+            0});
+            this.MaxStackSlider.Name = "MaxStackSlider";
+            this.MaxStackSlider.Size = new System.Drawing.Size(116, 20);
+            this.MaxStackSlider.TabIndex = 169;
+            this.MaxStackSlider.Tag = "";
+            this.ToolTipManager.SetToolTip(this.MaxStackSlider, "How many items can we carry at once in a stack?");
+            this.MaxStackSlider.Value = new decimal(new int[] {
+            64,
+            0,
+            0,
+            0});
+            this.MaxStackSlider.ValueChanged += new System.EventHandler(this.MaxStackSliderChanged);
+            // 
+            // MaxStack
+            // 
+            this.MaxStack.AutoSize = true;
+            this.MaxStack.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.MaxStack.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.MaxStack.Location = new System.Drawing.Point(554, 506);
+            this.MaxStack.Name = "MaxStack";
+            this.MaxStack.Size = new System.Drawing.Size(74, 19);
+            this.MaxStack.TabIndex = 168;
+            this.MaxStack.Tag = "";
+            this.MaxStack.Text = "Max Stack:";
+            // 
+            // LeftHanded
+            // 
+            this.LeftHanded.AutoSize = true;
+            this.LeftHanded.Location = new System.Drawing.Point(383, 216);
+            this.LeftHanded.Name = "LeftHanded";
+            this.LeftHanded.Size = new System.Drawing.Size(88, 15);
+            this.LeftHanded.TabIndex = 170;
+            this.LeftHanded.Tag = "";
+            this.LeftHanded.Text = "Left Handed";
+            this.ToolTipManager.SetToolTip(this.LeftHanded, "Whether you\'ll be left handed");
+            this.LeftHanded.UseSelectable = true;
+            this.LeftHanded.CheckedChanged += new System.EventHandler(this.LeftHandedChecked);
+            // 
+            // UnlimitedJumps
+            // 
+            this.UnlimitedJumps.AutoSize = true;
+            this.UnlimitedJumps.Location = new System.Drawing.Point(383, 237);
+            this.UnlimitedJumps.Name = "UnlimitedJumps";
+            this.UnlimitedJumps.Size = new System.Drawing.Size(112, 15);
+            this.UnlimitedJumps.TabIndex = 171;
+            this.UnlimitedJumps.Tag = "";
+            this.UnlimitedJumps.Text = "Unlimited Jumps";
+            this.ToolTipManager.SetToolTip(this.UnlimitedJumps, "Whether you\'ll be able to jump however much you want");
+            this.UnlimitedJumps.UseSelectable = true;
+            this.UnlimitedJumps.CheckedChanged += new System.EventHandler(this.UnlimitedJumpsChecked);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -3733,6 +3865,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.settingsTab.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.StyleMngr)).EndInit();
             this.RightClickMenu.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.MaxStackSlider)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -3949,5 +4082,13 @@ namespace Minecraft_Wii_U_Mod_Injector
         public MetroCheckBox Invisible;
         public MetroCheckBox LeashAnyMobs;
         private MetroButton LootTableEditorBtn;
+        public MetroButton EnchantmentEditorBtn;
+        public MetroCheckBox WaterLogAnything;
+        public MetroCheckBox UnlimitedEnchants;
+        public MetroCheckBox SuperFurnace;
+        public System.Windows.Forms.NumericUpDown MaxStackSlider;
+        public MetroLabel MaxStack;
+        public MetroCheckBox LeftHanded;
+        public MetroCheckBox UnlimitedJumps;
     }
 }

@@ -1,12 +1,35 @@
-[Release v5.1.8.h6 (13th of August, 2021)]
+[Release v5.1.8.c7 (13th of August, 2021)]
 
 [Information]
 If you are experiencing issues, please report them on the Github Issues page or by joining the official discord server.
 
-This update adds the ability to use the Enter key to connect to your Wii U
+This update adds a the enchantment editor, new mods, and all around improvements
 
 [Changes]
 
++ New mods
+
+- Player(s) > Unlimited Enchants (You can now enchant an item as much as you want in an enchanting table/anvil, enchants will stack)
+- Player(s) > Left Handed (All items will now be in your left hand, off hand items will overlap, though)
+- Player(s) > Unlimited Jumps (You can jump on air as many times as you want)
+- Player(s) > Max Stack (You can change how many items can be in a stack, going above a certain number may cause issues and dissapearing though.)
+- Player(s) > Enchantment Editor (You can enable enchantments for any item, even your fist and adjust their levels up to Level 100)
+- Entities / World > Water Log Anything (You can place water inside any block with this)
+- Entities / World > Super Furnace (Furnaces now smelt items instantly)
+
 + General Additions & Updates:
 
-- The "Enter" key can now be used to connect to your Wii U
+- Quick Mods Manager > Improved loading times dramatically
+- Quick Mods Manager > Ability to undo quick mods (right click, must have activated them during the same session)
+- Home > You can now use the Enter key to connect to your Wii U, useful for when you have a resolution below 720p and the connect button is off-screen
+- Discord RPC > Instead of the application name being "Minecraft: Wii U Mod Injector by Sloth@WiiPlaza" it is now "Minecraft: Wii U Mod Injector by Kashiiera"
+- General > Renamed "Minecraft: Wii U Mod Injector by Sloth@WiiPlaza" to "Minecraft: Wii U Mod Injector by Kashiiera"
+
+[Fixes]
+
++ General Fixes
+
+- Quick Mods Manager > Fix incorrect string when applying a Quick Mod
+- Quick Mods Manager > Fixed an error when deleting and editing Quick Mods
+- Loot Table Editor > Fixed an issue where the form overlayed the closing Message Box
+- Fix incorrect tooltips

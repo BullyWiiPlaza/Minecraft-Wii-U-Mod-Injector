@@ -218,6 +218,15 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms
             }
         }
 
+        public void UndoQmm(IEnumerable controls)
+        {
+            foreach (Control control in controls)
+            {
+                if (control is MetroCheckBox c)
+                    c.Checked = false;
+            }
+        }
+
         private void SaveQm(object sender, EventArgs e)
         {
             try
@@ -297,6 +306,13 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms
 
                     RefreshTileClicked(null, null);
                 }
+
+            if (e.ClickedItem == undoQmmBtn)
+            {
+                foreach (MetroTabPage page in _iw.MainTabs.TabPages) UndoQmm(page.Controls);
+                foreach (MetroTabPage page in _iw.MinigamesTabs.TabPages) UndoQmm(page.Controls);
+                Messaging.Show("Quick Mod has been undone!");
+            }
         }
         #endregion
     }

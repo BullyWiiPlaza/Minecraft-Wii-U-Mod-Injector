@@ -250,6 +250,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\EnchantmentEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EnchantmentEditor.Designer.cs">
+      <DependentUpon>EnchantmentEditor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\LootTableEditor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -323,6 +329,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\EnchantmentEditor.resx">
+      <DependentUpon>EnchantmentEditor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\LootTableEditor.resx">
       <DependentUpon>LootTableEditor.cs</DependentUpon>
     </EmbeddedResource>
@@ -396,6 +405,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Icon.ico" />
+    <None Include="Resources\UndoBtn.png" />
     <None Include="Resources\DeleteBtn.png" />
     <None Include="Resources\EditBtn.png" />
     <None Include="Resources\MinecraftWiiUModInjector.png" />

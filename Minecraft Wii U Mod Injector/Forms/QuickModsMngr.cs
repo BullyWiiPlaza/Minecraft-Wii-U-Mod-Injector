@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.IO;
 using System.Windows.Forms;
 using MetroFramework.Forms;
@@ -85,19 +86,23 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms
 
         private void PopulateModsList(MetroTabPage page)
         {
+            var controlList = new List<Control>();
+
             foreach (Control c in page.Controls)
             {
+                var newBox = new MetroCheckBox();
                 if (c is MetroCheckBox)
                 {
-                    MetroCheckBox toAdd = new MetroCheckBox();
-                    toAdd.Name = c.Name;
-                    toAdd.Text = c.Text;
-                    toAdd.AutoSize = true;
-                    toAdd.Theme = Theme;
-                    toAdd.Style = Style;
-                    qmmModsList.Controls.Add(toAdd);
+                    newBox.Text = c.Text;
+                    newBox.Name = newBox.Name;
+                    newBox.AutoSize = true;
+                    newBox.Theme = Theme;
+                    newBox.Style = Style;
+                    controlList.Add(newBox);
                 }
             }
+
+            qmmModsList.Controls.AddRange(controlList.ToArray());
         }
 
         private void SwapTab(object sender, EventArgs e)

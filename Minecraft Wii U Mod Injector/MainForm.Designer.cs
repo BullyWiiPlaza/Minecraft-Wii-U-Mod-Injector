@@ -377,7 +377,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.MainTabs.Location = new System.Drawing.Point(155, 61);
             this.MainTabs.Multiline = true;
             this.MainTabs.Name = "MainTabs";
-            this.MainTabs.SelectedIndex = 5;
+            this.MainTabs.SelectedIndex = 0;
             this.MainTabs.Size = new System.Drawing.Size(1130, 639);
             this.MainTabs.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.MainTabs.TabIndex = 0;
@@ -551,6 +551,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.WiiUIpv4Box.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.WiiUIpv4Box.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             this.WiiUIpv4Box.TextChanged += new System.EventHandler(this.CapturewiiuIpv4Box);
+            this.WiiUIpv4Box.KeyDown += new System.Windows.Forms.KeyEventHandler(this.CaptureWiiUIpv4BoxInput);
             // 
             // WiiUIpv4Lbl
             // 
@@ -3672,6 +3673,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.Controls.Add(this.BuildTile);
             this.Controls.Add(this.MainTabs);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
             this.MaximizeBox = false;
             this.MinimumSize = new System.Drawing.Size(1141, 608);
             this.Name = "MainForm";

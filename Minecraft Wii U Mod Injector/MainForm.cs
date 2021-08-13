@@ -400,13 +400,12 @@ namespace Minecraft_Wii_U_Mod_Injector
         {
             Messaging.Show(MessageBoxIcon.Information, "Item IDs can be found at https://minecraft-ids.grahamedgecombe.com/ \nData Values are the numbers behind the : in the ID.\nFor example, if you want Birch Wood the ID would be 17 and the data value would be 2");
         }
+
+        #region memory editing
         public static bool IsPointerLoaded()
         {
             return GeckoU.PeekUInt(GeckoU.PeekUInt(0x10A0A624) + 0x9C) != 0x0;
         }
-
-        #region memory editing
-
         private void InsaneCriticalHitsToggled(object sender, EventArgs e)
         {
             GeckoU.WriteUIntToggle(0x106D0D4C, 0x43F00000, 0x3FC00000, InsaneCriticalHits.Checked);
@@ -1191,5 +1190,11 @@ namespace Minecraft_Wii_U_Mod_Injector
         #endregion
 
         #endregion memory editing
+
+        private void CaptureWiiUIpv4BoxInput(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+                ConnectBtnClicked(null, null);
+        }
     }
 }

@@ -1,31 +1,12 @@
-[Release v5.1.8.c5 (11th of August, 2021)]
+[Release v5.1.8.h6 (13th of August, 2021)]
 
 [Information]
 If you are experiencing issues, please report them on the Github Issues page or by joining the official discord server.
 
-This update adds a few new mods and brings improvements to the Quick Mods Manager
+This update adds the ability to use the Enter key to connect to your Wii U
 
 [Changes]
 
-+ New mods
-
-- Player(s) > Invisible (This most likely only works when you are the host)
-- World / Entities > Leash any mob (Limitations apply, such as the Ender Dragon and I believe the Wither)
-- World / Entities > Loot Table Editor (You can swap mobs their Loot Tables! Because who doesn't want chickens to drop wet sponges)
-
 + General Additions & Updates:
 
-- Commands > Update "Give XP" tooltip
-- Quick Mods Manager > A little notification should show up once you open the Quick Mods Manager letting you know it's loading and not just frozen.
-- Quick Mods Manager > Text Boxes now have a Prompt Text when they're empty
-- Quick Mods Manager > Saving a quick mod now redirects you to the installed quick mods page
-- Quick Mods Manager > What quick mod you are making or editing now shows on Discord
-- Language Manager > Improved Discord RPC texts
-- Credits > Adjusted window size
-- FAQ > Adjusted window size
-
-[Fixes]
-
-+ General Fixes
-
-- Fix incorrect tooltips
+- The "Enter" key can now be used to connect to your Wii U

@@ -67,12 +67,11 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms
 
                 PopulateModsList(page);
             }
-            foreach (MetroTabPage page in _iw.MinigamesTabs.TabPages)
-            {
-                PopulateModsList(page);
-            }
 
-            DiscordRp.SetPresence(_iw.IsConnected ? "Connected" : "Disconnected", "Quick Mods Manager - Browsing Quick Mods");
+            foreach (MetroTabPage page in _iw.MinigamesTabs.TabPages) PopulateModsList(page);
+
+            DiscordRp.SetPresence(_iw.IsConnected ? "Connected" : "Disconnected",
+                "Quick Mods Manager - Browsing Quick Mods");
         }
 
         private void Exiting(object sender, FormClosingEventArgs e)
@@ -118,29 +117,25 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms
                 qmmAuthBox.Text = string.Empty;
                 qmmDescBox.Text = string.Empty;
 
-                foreach (MetroCheckBox c in qmmModsList.Controls)
-                {
-                    c.Checked = false;
-                }
+                foreach (MetroCheckBox c in qmmModsList.Controls) c.Checked = false;
 
                 RefreshTileClicked(null, null);
             }
 
             if (tile.TileCount == 0)
-            {
-                DiscordRp.SetPresence(_iw.IsConnected ? "Connected" : "Disconnected", "Quick Mods Manager - Browsing Quick Mods");
-            }
+                DiscordRp.SetPresence(_iw.IsConnected ? "Connected" : "Disconnected",
+                    "Quick Mods Manager - Browsing Quick Mods");
             else
-            {
-                DiscordRp.SetPresence(_iw.IsConnected ? "Connected" : "Disconnected", "Quick Mods Manager - Making a new Quick Mod");
-            }
+                DiscordRp.SetPresence(_iw.IsConnected ? "Connected" : "Disconnected",
+                    "Quick Mods Manager - Making a new Quick Mod");
+
             EmptyTile.Text = @"Currently Viewing:
 " + MainTabs.SelectedTab.Text;
         }
 
         private void ApplyQmmBtnClicked(object sender, DataGridViewCellEventArgs e)
         {
-            string filePath = QuickModsList.Rows[e.RowIndex].Cells[3].Value.ToString();
+            var filePath = QuickModsList.Rows[e.RowIndex].Cells[3].Value.ToString();
 
             if (!_iw.IsConnected)
             {
@@ -155,7 +150,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms
             foreach (MetroTabPage page in _iw.MainTabs.TabPages) ApplyQmm(page.Controls, e);
             foreach (MetroTabPage page in _iw.MinigamesTabs.TabPages) ApplyQmm(page.Controls, e);
 
-            Messaging.Show("Language has been changed to " + QuickModsList.Rows[e.RowIndex].Cells[0].Value);
+            Messaging.Show("Successfully applied " + QuickModsList.Rows[e.RowIndex].Cells[0].Value + "!");
         }
 
         private void RefreshTileClicked(object sender, EventArgs e)
@@ -167,7 +162,8 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms
 
         private void OpenTileClicked(object sender, EventArgs e)
         {
-            Process.Start(_qmmRootDir);
+            if(Directory.Exists(_qmmRootDir))
+                Process.Start(_qmmRootDir);
         }
 
         #endregion

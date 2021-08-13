@@ -105,6 +105,7 @@ namespace Minecraft_Wii_U_Mod_Injector
         #endregion
 
         #endregion
+
         public MainForm()
         {
             InitializeComponent();
@@ -117,8 +118,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             _ = new Setup(this);
 
             Setup.SetupInjector();
-
-            ValidateEnteredIpAddress();
         }
 
 
@@ -127,10 +126,10 @@ namespace Minecraft_Wii_U_Mod_Injector
             DiscordRp.Deinitialize();
             Settings.Write("TabIndex", MainTabs.SelectedIndex.ToString(), "Display");
         }
-        
+
         private void SwapTab(object sender, EventArgs e)
         {
-            var tile = (MetroTile)sender;
+            var tile = (MetroTile) sender;
 
             if (MainTabs.SelectedIndex != tile.TileCount)
                 MainTabs.SelectedIndex = tile.TileCount;
@@ -142,11 +141,11 @@ namespace Minecraft_Wii_U_Mod_Injector
 
         private void SliderClicked(object sender, EventArgs e)
         {
-            var slider = (NumericUpDown)sender;
+            var slider = (NumericUpDown) sender;
 
             if (ModifierKeys.HasFlag(Keys.Control))
             {
-                if(slider.DecimalPlaces != 10)
+                if (slider.DecimalPlaces != 10)
                     slider.DecimalPlaces++;
             }
             else if (ModifierKeys.HasFlag(Keys.Alt))
@@ -155,7 +154,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             }
         }
 
-        async Task PutTaskDelay(int sleep)
+        private async Task PutTaskDelay(int sleep)
         {
             await Task.Delay(sleep);
         }
@@ -218,11 +217,6 @@ namespace Minecraft_Wii_U_Mod_Injector
 
         private void CapturewiiuIpv4Box(object sender, EventArgs e)
         {
-            ValidateEnteredIpAddress();
-        }
-
-        private void ValidateEnteredIpAddress()
-        {
             switch (StringUtils.ValidateIPv4(WiiUIpv4Box.Text))
             {
                 case true:
@@ -234,6 +228,12 @@ namespace Minecraft_Wii_U_Mod_Injector
                     ConnectBtn.Enabled = false;
                     break;
             }
+        }
+
+        private void CaptureWiiUIpv4BoxInput(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                ConnectBtnClicked(null, null);
         }
 
         private void FormThemeSelected(object sender, EventArgs e)
@@ -348,7 +348,8 @@ namespace Minecraft_Wii_U_Mod_Injector
 
         private async void QuickModsManagerBtnClicked(object sender, EventArgs e)
         {
-            ToolTipManager.Show("Loading the Quick Mods Manager, this shouldn't take long...", this, PointToClient(Cursor.Position));
+            ToolTipManager.Show("Loading the Quick Mods Manager, this shouldn't take long...", this,
+                PointToClient(Cursor.Position));
             await PutTaskDelay(200);
             new QuickModsMngr(this).ShowDialog();
         }
@@ -398,7 +399,8 @@ namespace Minecraft_Wii_U_Mod_Injector
 
         private void ItemIdHelpBtnClicked(object sender, EventArgs e)
         {
-            Messaging.Show(MessageBoxIcon.Information, "Item IDs can be found at https://minecraft-ids.grahamedgecombe.com/ \nData Values are the numbers behind the : in the ID.\nFor example, if you want Birch Wood the ID would be 17 and the data value would be 2");
+            Messaging.Show(MessageBoxIcon.Information,
+                "Item IDs can be found at https://minecraft-ids.grahamedgecombe.com/ \nData Values are the numbers behind the : in the ID.\nFor example, if you want Birch Wood the ID would be 17 and the data value would be 2");
         }
 
         #region memory editing
@@ -1190,11 +1192,5 @@ namespace Minecraft_Wii_U_Mod_Injector
         #endregion
 
         #endregion memory editing
-
-        private void CaptureWiiUIpv4BoxInput(object sender, KeyEventArgs e)
-        {
-            if(e.KeyCode == Keys.Enter)
-                ConnectBtnClicked(null, null);
-        }
     }
 }

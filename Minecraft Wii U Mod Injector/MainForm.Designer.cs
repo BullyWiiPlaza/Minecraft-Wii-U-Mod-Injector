@@ -288,7 +288,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             // WorldTile
             // 
             this.WorldTile.ActiveControl = null;
-            this.WorldTile.Location = new System.Drawing.Point(0, 172);
+            this.WorldTile.Location = new System.Drawing.Point(0, 173);
             this.WorldTile.Name = "WorldTile";
             this.WorldTile.PaintTileCount = false;
             this.WorldTile.Size = new System.Drawing.Size(160, 55);
@@ -304,7 +304,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             // GeneralTile
             // 
             this.GeneralTile.ActiveControl = null;
-            this.GeneralTile.Location = new System.Drawing.Point(0, 227);
+            this.GeneralTile.Location = new System.Drawing.Point(0, 228);
             this.GeneralTile.Name = "GeneralTile";
             this.GeneralTile.PaintTileCount = false;
             this.GeneralTile.Size = new System.Drawing.Size(160, 55);
@@ -320,7 +320,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             // MinigamesTile
             // 
             this.MinigamesTile.ActiveControl = null;
-            this.MinigamesTile.Location = new System.Drawing.Point(0, 282);
+            this.MinigamesTile.Location = new System.Drawing.Point(0, 283);
             this.MinigamesTile.Name = "MinigamesTile";
             this.MinigamesTile.PaintTileCount = false;
             this.MinigamesTile.Size = new System.Drawing.Size(160, 55);
@@ -336,7 +336,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             // SettingsTile
             // 
             this.SettingsTile.ActiveControl = null;
-            this.SettingsTile.Location = new System.Drawing.Point(0, 392);
+            this.SettingsTile.Location = new System.Drawing.Point(0, 393);
             this.SettingsTile.Name = "SettingsTile";
             this.SettingsTile.PaintTileCount = false;
             this.SettingsTile.Size = new System.Drawing.Size(160, 69);
@@ -353,10 +353,10 @@ namespace Minecraft_Wii_U_Mod_Injector
             // 
             this.BuildTile.ActiveControl = null;
             this.BuildTile.Enabled = false;
-            this.BuildTile.Location = new System.Drawing.Point(0, 453);
+            this.BuildTile.Location = new System.Drawing.Point(0, 462);
             this.BuildTile.Name = "BuildTile";
             this.BuildTile.PaintTileCount = false;
-            this.BuildTile.Size = new System.Drawing.Size(160, 247);
+            this.BuildTile.Size = new System.Drawing.Size(160, 238);
             this.BuildTile.TabIndex = 6;
             this.BuildTile.Text = "VERSION";
             this.BuildTile.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -377,7 +377,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.MainTabs.Location = new System.Drawing.Point(155, 61);
             this.MainTabs.Multiline = true;
             this.MainTabs.Name = "MainTabs";
-            this.MainTabs.SelectedIndex = 0;
+            this.MainTabs.SelectedIndex = 6;
             this.MainTabs.Size = new System.Drawing.Size(1130, 639);
             this.MainTabs.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.MainTabs.TabIndex = 0;
@@ -3604,7 +3604,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             // PlayersTile
             // 
             this.PlayersTile.ActiveControl = null;
-            this.PlayersTile.Location = new System.Drawing.Point(0, 117);
+            this.PlayersTile.Location = new System.Drawing.Point(0, 118);
             this.PlayersTile.Name = "PlayersTile";
             this.PlayersTile.PaintTileCount = false;
             this.PlayersTile.Size = new System.Drawing.Size(160, 55);
@@ -3621,7 +3621,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             // CommandsTile
             // 
             this.CommandsTile.ActiveControl = null;
-            this.CommandsTile.Location = new System.Drawing.Point(0, 337);
+            this.CommandsTile.Location = new System.Drawing.Point(0, 338);
             this.CommandsTile.Name = "CommandsTile";
             this.CommandsTile.PaintTileCount = false;
             this.CommandsTile.Size = new System.Drawing.Size(160, 55);
@@ -3660,8 +3660,8 @@ namespace Minecraft_Wii_U_Mod_Injector
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(1280, 700);
             this.Controls.Add(this.SettingsTile);
             this.Controls.Add(this.MinigamesTile);
@@ -3673,9 +3673,8 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.Controls.Add(this.BuildTile);
             this.Controls.Add(this.MainTabs);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.KeyPreview = true;
             this.MaximizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(1141, 608);
+            this.MinimumSize = new System.Drawing.Size(1280, 700);
             this.Name = "MainForm";
             this.Resizable = false;
             this.Style = MetroFramework.MetroColorStyle.Default;

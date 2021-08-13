@@ -369,7 +369,7 @@
             this.qmmDescBox.MaxLength = 32767;
             this.qmmDescBox.Name = "qmmDescBox";
             this.qmmDescBox.PasswordChar = '\0';
-            this.qmmDescBox.PromptText = "This is my awesome quick mod";
+            this.qmmDescBox.WaterMark = "This is my awesome quick mod";
             this.qmmDescBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.qmmDescBox.SelectedText = "";
             this.qmmDescBox.SelectionLength = 0;
@@ -410,7 +410,7 @@
             this.qmmAuthBox.MaxLength = 32767;
             this.qmmAuthBox.Name = "qmmAuthBox";
             this.qmmAuthBox.PasswordChar = '\0';
-            this.qmmAuthBox.PromptText = "Me";
+            this.qmmAuthBox.WaterMark = "Me";
             this.qmmAuthBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.qmmAuthBox.SelectedText = "";
             this.qmmAuthBox.SelectionLength = 0;
@@ -451,7 +451,7 @@
             this.qmmNameBox.MaxLength = 32767;
             this.qmmNameBox.Name = "qmmNameBox";
             this.qmmNameBox.PasswordChar = '\0';
-            this.qmmNameBox.PromptText = "My awesome quick mod";
+            this.qmmNameBox.WaterMark = "My awesome quick mod";
             this.qmmNameBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.qmmNameBox.SelectedText = "";
             this.qmmNameBox.SelectionLength = 0;

@@ -93,7 +93,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms
                 if (c is MetroCheckBox)
                 {
                     newBox.Text = c.Text;
-                    newBox.Name = newBox.Name;
+                    newBox.Name = c.Name;
                     newBox.AutoSize = true;
                     newBox.Theme = Theme;
                     newBox.Style = Style;
@@ -203,7 +203,6 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms
             {
                 Exceptions.LogError(e, "Failed to load Installed Quick Mods", true);
             }
-
         }
 
         public void ApplyQmm(IEnumerable controls, DataGridViewCellEventArgs e)
@@ -214,7 +213,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms
             {
                 if (!qmmFile.KeyExists(control.Name, "controls")) continue;
 
-                if(control is MetroCheckBox c) 
+                if (control is MetroCheckBox c)
                     c.Checked = Convert.ToBoolean(qmmFile.Read(control.Name, "controls"));
             }
         }
@@ -246,61 +245,58 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms
         #endregion
 
         #region right click menu
+
         private void Creator(IniFile file)
         {
             SwapTab(CreatorTile, null);
 
-            DiscordRp.SetPresence(_iw.IsConnected ? "Connected" : "Disconnected", "Quick Mods Manager - Editing " + file.Read("name", "meta"));
+            DiscordRp.SetPresence(_iw.IsConnected ? "Connected" : "Disconnected",
+                "Quick Mods Manager - Editing " + file.Read("name", "meta"));
 
             qmmNameBox.Text = file.Read("name", "meta");
             qmmAuthBox.Text = file.Read("author", "meta");
             qmmDescBox.Text = file.Read("desc", "meta");
 
             foreach (MetroCheckBox c in qmmModsList.Controls)
-            {
                 c.Checked = Convert.ToBoolean(file.Read(c.Name, "controls"));
-            }
         }
 
         private void OpenQmmMenu(object sender, DataGridViewCellMouseEventArgs e)
         {
             if (e.RowIndex != -1 && e.ColumnIndex != -1)
-            {
                 if (e.Button == MouseButtons.Right)
                 {
-                    DataGridViewCell clickedCell = (sender as DataGridView)?.Rows[e.RowIndex].Cells[e.ColumnIndex];
+                    var clickedCell = (sender as DataGridView)?.Rows[e.RowIndex].Cells[e.ColumnIndex];
 
                     QuickModsList.CurrentCell = clickedCell;
                     var relativeMousePosition = QuickModsList.PointToClient(Cursor.Position);
 
                     qmmMenu.Show(QuickModsList, relativeMousePosition);
                 }
-            }
         }
 
         private void QmmMenuHandler(object sender, ToolStripItemClickedEventArgs e)
         {
             if (e.ClickedItem == editQmmBtn)
-            {
                 if (QuickModsList.CurrentRow != null)
                 {
-                    IniFile qmmFile = new IniFile((string)QuickModsList.Rows[QuickModsList.CurrentRow.Index].Cells[3].Value);
+                    var qmmFile =
+                        new IniFile((string) QuickModsList.Rows[QuickModsList.CurrentRow.Index].Cells[3].Value);
                     Creator(qmmFile);
                 }
-            }
+
             if (e.ClickedItem == deleteQmmBtn)
-            {
                 if (QuickModsList.CurrentRow != null)
                 {
-                    DialogResult confirmation = Messaging.Show("Are you sure you want to delete this Quick Mod?", MessageBoxButtons.YesNo,
+                    var confirmation = Messaging.Show("Are you sure you want to delete this Quick Mod?",
+                        MessageBoxButtons.YesNo,
                         MessageBoxIcon.Question);
 
-                    if(confirmation == DialogResult.Yes)
-                        File.Delete((string)QuickModsList.Rows[QuickModsList.CurrentRow.Index].Cells[3].Value);
+                    if (confirmation == DialogResult.Yes)
+                        File.Delete((string) QuickModsList.Rows[QuickModsList.CurrentRow.Index].Cells[3].Value);
 
                     RefreshTileClicked(null, null);
                 }
-            }
         }
         #endregion
     }

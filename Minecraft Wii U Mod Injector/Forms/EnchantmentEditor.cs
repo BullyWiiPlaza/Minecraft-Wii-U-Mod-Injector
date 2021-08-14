@@ -13,7 +13,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms
             InitializeComponent();
             StyleMngr.Style = Style = injector.StyleMngr.Style;
             StyleMngr.Theme = Theme = injector.StyleMngr.Theme;
-            injector = _injector;
+            _injector = injector;
         }
 
         private void Init(object sender, EventArgs e)
@@ -167,7 +167,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms
 
         private void ChannelingBoxChecked(object sender, EventArgs e)
         {
-            if (VanishingCurseBox.Checked)
+            if (ChannelingBox.Checked)
                 MainForm.GeckoU.WriteBytes(0x022F5A08,
                     new byte[]
                     {

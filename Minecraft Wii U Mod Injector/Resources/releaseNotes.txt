@@ -1,3 +1,17 @@
+[Release v5.1.8.h8 (14th of August, 2021)]
+
+[Information]
+If you are experiencing issues, please report them on the Github Issues page or by joining the official discord server.
+
+This update fixes 2 small issues
+
+[Fixes]
+
++ General Fixes
+
+- Players > Enchantment Editor > Channeling should now work properly
+- Players > Enchantment Editor > Fix wrong Discord RPC when closing the enchantment editor
+
 [Release v5.1.8.c7 (13th of August, 2021)]
 
 [Information]

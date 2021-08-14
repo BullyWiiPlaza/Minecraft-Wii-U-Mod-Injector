@@ -13,7 +13,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
     {
         public static MainForm Injector = new();
 
-        public static string LocalVer = "v5.1.8.c7";
+        public static string LocalVer = "v5.1.8.h8";
         public static string GitVer = string.Empty;
         public static bool PreRelease;
 

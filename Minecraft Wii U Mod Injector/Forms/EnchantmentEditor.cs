@@ -7,12 +7,13 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms
 {
     public partial class EnchantmentEditor : MetroForm
     {
-
+        private MainForm _injector;
         public EnchantmentEditor(MainForm injector)
         {
             InitializeComponent();
             StyleMngr.Style = Style = injector.StyleMngr.Style;
             StyleMngr.Theme = Theme = injector.StyleMngr.Theme;
+            injector = _injector;
         }
 
         private void Init(object sender, EventArgs e)
@@ -22,7 +23,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms
 
         private void Exiting(object sender, FormClosingEventArgs e)
         {
-            DiscordRp.SetPresence("Connected", new MainForm().worldTab.Text + " tab");
+            DiscordRp.SetPresence("Connected", _injector.playersTab.Text + " tab");
         }
 
         private void FrostWalkerLvlSliderChanged(object sender, EventArgs e)

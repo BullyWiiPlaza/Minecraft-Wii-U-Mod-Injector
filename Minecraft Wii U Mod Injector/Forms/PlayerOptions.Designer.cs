@@ -36,9 +36,11 @@
             this.CameraBox = new MetroFramework.Controls.MetroComboBox();
             this.OpenScoreboardBtn = new MetroFramework.Controls.MetroButton();
             this.GameModeBox = new MetroFramework.Controls.MetroComboBox();
+            this.DropStackBtn = new MetroFramework.Controls.MetroButton();
             this.CameraLbl = new MetroFramework.Controls.MetroLabel();
             this.GameModeLbl = new MetroFramework.Controls.MetroLabel();
-            this.DropStackBtn = new MetroFramework.Controls.MetroButton();
+            this.CapeBox = new MetroFramework.Controls.MetroComboBox();
+            this.capeLbl = new MetroFramework.Controls.MetroLabel();
             ((System.ComponentModel.ISupportInitialize)(this.StyleMngr)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,7 +56,7 @@
             // 
             // CloseContainersBtn
             // 
-            this.CloseContainersBtn.Location = new System.Drawing.Point(23, 162);
+            this.CloseContainersBtn.Location = new System.Drawing.Point(23, 197);
             this.CloseContainersBtn.Name = "CloseContainersBtn";
             this.CloseContainersBtn.Size = new System.Drawing.Size(517, 23);
             this.CloseContainersBtn.TabIndex = 6;
@@ -84,7 +86,7 @@
             // 
             // OpenScoreboardBtn
             // 
-            this.OpenScoreboardBtn.Location = new System.Drawing.Point(23, 133);
+            this.OpenScoreboardBtn.Location = new System.Drawing.Point(23, 168);
             this.OpenScoreboardBtn.Name = "OpenScoreboardBtn";
             this.OpenScoreboardBtn.Size = new System.Drawing.Size(517, 23);
             this.OpenScoreboardBtn.TabIndex = 9;
@@ -113,6 +115,17 @@
             this.GameModeBox.ValueMember = "0";
             this.GameModeBox.SelectedIndexChanged += new System.EventHandler(this.GameModeBoxChanged);
             // 
+            // DropStackBtn
+            // 
+            this.DropStackBtn.Location = new System.Drawing.Point(23, 226);
+            this.DropStackBtn.Name = "DropStackBtn";
+            this.DropStackBtn.Size = new System.Drawing.Size(517, 23);
+            this.DropStackBtn.TabIndex = 12;
+            this.DropStackBtn.Text = "Drop Stack";
+            this.ToolTips.SetToolTip(this.DropStackBtn, "Drops the entire stack of items you are currently holding.");
+            this.DropStackBtn.UseSelectable = true;
+            this.DropStackBtn.Click += new System.EventHandler(this.DropStackBtnClicked);
+            // 
             // CameraLbl
             // 
             this.CameraLbl.AutoSize = true;
@@ -133,22 +146,72 @@
             this.GameModeLbl.TabIndex = 10;
             this.GameModeLbl.Text = "Game Mode:";
             // 
-            // DropStackBtn
+            // CapeBox
             // 
-            this.DropStackBtn.Location = new System.Drawing.Point(23, 191);
-            this.DropStackBtn.Name = "DropStackBtn";
-            this.DropStackBtn.Size = new System.Drawing.Size(517, 23);
-            this.DropStackBtn.TabIndex = 12;
-            this.DropStackBtn.Text = "Drop Stack";
-            this.ToolTips.SetToolTip(this.DropStackBtn, "Drops the entire stack of items you are currently holding.");
-            this.DropStackBtn.UseSelectable = true;
-            this.DropStackBtn.Click += new System.EventHandler(this.DropStackBtnClicked);
+            this.CapeBox.DisplayMember = "1";
+            this.CapeBox.FormattingEnabled = true;
+            this.CapeBox.ItemHeight = 23;
+            this.CapeBox.Items.AddRange(new object[] {
+            "Minecon 2011",
+            "Minecon 2012",
+            "Minecon 2013",
+            "Minecon 2015",
+            "Minecon 2016",
+            "Jeb Ponytail",
+            "The Grim Reaper",
+            "Devil",
+            "Dracula",
+            "Evil Wizard",
+            "Bride of Frankenstein",
+            "Wicked Witch",
+            "Senator Padmé Amidala",
+            "Senator Palpatine",
+            "Count Dooku",
+            "General Grievous",
+            "Erinyes",
+            "Dryad",
+            "Spartoi",
+            "Hephaestus",
+            "Prometheus",
+            "Heracles",
+            "Perseus",
+            "Zeus",
+            "Hades",
+            "Poseidon",
+            "Apollo",
+            "Artemis",
+            "Athena",
+            "Trojan Warrior",
+            "Atlanta",
+            "Cadmus",
+            "Drone"});
+            this.CapeBox.Location = new System.Drawing.Point(80, 133);
+            this.CapeBox.MaxDropDownItems = 3;
+            this.CapeBox.Name = "CapeBox";
+            this.CapeBox.Size = new System.Drawing.Size(460, 29);
+            this.CapeBox.TabIndex = 14;
+            this.ToolTips.SetToolTip(this.CapeBox, "What camera prespective should we be in?");
+            this.CapeBox.UseSelectable = true;
+            this.CapeBox.ValueMember = "1";
+            this.CapeBox.SelectedIndexChanged += new System.EventHandler(this.CapeBoxChanged);
+            // 
+            // capeLbl
+            // 
+            this.capeLbl.AutoSize = true;
+            this.capeLbl.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.capeLbl.Location = new System.Drawing.Point(19, 133);
+            this.capeLbl.Name = "capeLbl";
+            this.capeLbl.Size = new System.Drawing.Size(55, 25);
+            this.capeLbl.TabIndex = 13;
+            this.capeLbl.Text = "Cape:";
             // 
             // PlayerOptions
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(563, 227);
+            this.ClientSize = new System.Drawing.Size(563, 258);
+            this.Controls.Add(this.CapeBox);
+            this.Controls.Add(this.capeLbl);
             this.Controls.Add(this.DropStackBtn);
             this.Controls.Add(this.GameModeBox);
             this.Controls.Add(this.GameModeLbl);
@@ -180,5 +243,7 @@
         private MetroFramework.Controls.MetroComboBox GameModeBox;
         private MetroFramework.Controls.MetroLabel GameModeLbl;
         private MetroFramework.Controls.MetroButton DropStackBtn;
+        private MetroFramework.Controls.MetroComboBox CapeBox;
+        private MetroFramework.Controls.MetroLabel capeLbl;
     }
 }

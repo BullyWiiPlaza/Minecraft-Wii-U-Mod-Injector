@@ -267,7 +267,9 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms
             qmmDescBox.Text = file.Read("desc", "meta");
 
             foreach (MetroCheckBox c in qmmModsList.Controls)
-                c.Checked = Convert.ToBoolean(file.Read(c.Name, "controls"));
+                if (file.KeyExists(c.Name))
+                    c.Checked = Convert.ToBoolean(file.Read(c.Name, "controls"));
+                else c.Checked = false;
         }
 
         private void OpenQmmMenu(object sender, DataGridViewCellMouseEventArgs e)

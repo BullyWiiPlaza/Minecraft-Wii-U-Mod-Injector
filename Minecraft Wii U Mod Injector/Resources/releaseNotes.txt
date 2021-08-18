@@ -1,3 +1,28 @@
+[Release v5.1.9 (18th of August, 2021)]
+
+[Information]
+If you are experiencing issues, please report them on the Github Issues page or by joining the official discord server.
+
+This update adds a few new mods
+
+[Changes]
+
++ New mods
+
+- Player(s) > Break Anything (You can break any block including bottom and top bedrock in the overworld/nether)
+- Player(s) > Player Options > Cape (You can now apply any available cape on any skin you want!)
+- Entities / World > Sleeping doesn't clear weather (When you sleep, the weather won't reset)
+- Entities / World > Disable Falling Blocks (Blocks such as gravel and sand won't be affected by gravity anymore)
+- Entities / World > Entities Speed (This changes how fast entities are including their ai and movement speed)
+- Entities / World > Liquid Spread Time (You can now make water and lava spread almost instantly instead of waiting a few seconds)
+- Commands > /tellraw (You can now send custom messages! This only works when you're the host and the message is visible to everyone in game)
+
+[Fixes]
+
++ General Fixes
+
+- Quick Mods Manager > Quick Mods created using an older Injector version should no longer throw an error
+
 [Release v5.1.8.h8 (14th of August, 2021)]
 
 [Information]

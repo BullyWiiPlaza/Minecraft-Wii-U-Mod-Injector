@@ -9,6 +9,8 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Net.Sockets;
+using System.Runtime.InteropServices;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Minecraft_Wii_U_Mod_Injector.Helpers.Win_Forms;
@@ -51,6 +53,7 @@ namespace Minecraft_Wii_U_Mod_Injector
         }
 
         private bool _tooHighWarn;
+        private bool _invulEnWarn;
 
         #endregion
 
@@ -412,6 +415,15 @@ namespace Minecraft_Wii_U_Mod_Injector
         {
             Messaging.Show(MessageBoxIcon.Information,
                 "Item IDs can be found at https://minecraft-ids.grahamedgecombe.com/ \nData Values are the numbers behind the : in the ID.\nFor example, if you want Birch Wood the ID would be 17 and the data value would be 2");
+        }
+
+        private void IncompatibilityCheck(object sender, EventArgs e)
+        {
+            if (javaTellBox.Checked)
+                bedrockTellBox.Checked = false;
+
+            if (bedrockTellBox.Checked)
+                javaTellBox.Checked = false;
         }
 
         #region memory editing
@@ -987,17 +999,17 @@ namespace Minecraft_Wii_U_Mod_Injector
             GeckoU.WriteUIntToggle(0x02A884E0, On, 0x57E3063E, LeashAnyMobs.Checked);
         }
 
-        private void WaterLogAnythingChecked(object sender, EventArgs e)
+        private void WaterLogAnythingToggled(object sender, EventArgs e)
         {
             GeckoU.WriteUIntToggle(0x020E7624, On, 0x5463063E, WaterLogAnything.Checked);
         }
 
-        private void UnlimitedEnchantsChanged(object sender, EventArgs e)
+        private void UnlimitedEnchantsToggled(object sender, EventArgs e)
         {
             GeckoU.WriteUIntToggle(0x0249602C, On, Off, UnlimitedEnchants.Checked);
         }
 
-        private void SuperFurnaceChecked(object sender, EventArgs e)
+        private void SuperFurnaceToggled(object sender, EventArgs e)
         {
             GeckoU.WriteUIntToggle(0x0249602C, On, 0x386000C8, SuperFurnace.Checked);
         }
@@ -1016,14 +1028,61 @@ namespace Minecraft_Wii_U_Mod_Injector
             GeckoU.WriteUInt(stackFunctions, GeckoU.Mix(0x38600000, MaxStackSlider.Value));
         }
 
-        private void LeftHandedChecked(object sender, EventArgs e)
+        private void LeftHandedToggled(object sender, EventArgs e)
         {
             GeckoU.WriteUIntToggle(0x02728620, Off, 0x80630088, LeftHanded.Checked);
         }
 
-        private void UnlimitedJumpsChecked(object sender, EventArgs e)
+        private void UnlimitedJumpsToggled(object sender, EventArgs e)
         {
             GeckoU.WriteUIntToggle(0x0232F3A0, 0x38800001, 0x38800000, UnlimitedJumps.Checked);
+        }
+
+        private void EntitySpeedSliderChanged(object sender, EventArgs e)
+        {
+            GeckoU.WriteFloat(GeckoU.PeekUInt(GeckoU.PeekUInt(0x109CD8E4) + 0x20), (float)EntitySpeedSlider.Value);
+        }
+
+        private void SleepingDoesntClearWeatherToggled(object sender, EventArgs e)
+        {
+            GeckoU.WriteULongToggle(0x032AE7A4, 0x6000000060000000, 0x3D80032B398CE608,
+                SleepingDoesntClearWeather.Checked);
+        }
+
+        private void InvulnerableEntitiesToggled(object sender, EventArgs e)
+        {
+            if (!_invulEnWarn)
+            {
+                var warn = Messaging.Show(
+                    "Enabling this option can cause significant frame drops and potentially crash your game.\nAre you sure you want to enable?",
+                    MessageBoxButtons.YesNo);
+                _invulEnWarn = true;
+
+                if (warn == No)
+                {
+                    InvulnerableEntities.Checked = false;
+                    return;
+                }
+            }
+
+            GeckoU.WriteUIntToggle(0x0232B540, 0x39600000, 0x39600001, InvulnerableEntities.Checked);
+        }
+
+        private void BreakAnythingToggled(object sender, EventArgs e)
+        {
+            GeckoU.WriteUIntToggle(0x03197340, On, 0x5403063E, BreakAnything.Checked);
+        }
+
+        private void LiquidSpreadTimeSliderChanged(object sender, EventArgs e)
+        {
+            uint[] liquidAdrs = { 0x025AAB54, 0x025AAB9C, 0x025AABA8 };
+
+            GeckoU.WriteUInt(liquidAdrs, GeckoU.Mix(0x38600000, LiquidSpreadTimeSlider.Value));
+        }
+
+        private void DisableFallingBlocksToggled(object sender, EventArgs e)
+        {
+            GeckoU.WriteULongToggle(0x0235C624, 0x600000004E800020, 0x3D800236398CBDD8, DisableFallingBlocks.Checked);
         }
 
         #region commands
@@ -1363,6 +1422,30 @@ namespace Minecraft_Wii_U_Mod_Injector
             {
                 Messaging.Show(MessageBoxIcon.Error, "An unknown error has occurred.");
             }
+        }
+
+        private async void tellrawCmdBtnClicked(object sender, EventArgs e)
+        {
+            uint textStart = 0x107A097C;
+            uint textEnd = 0x107A0A7C;
+            string message = string.Empty;
+
+            if (bedrockTellBox.Checked)
+            {
+                javaTellBox.Checked = false;
+                message = "\0" + StringUtils.InsertStrings("<" + tellNameBox.Text + "> " + tellMsgBox.Text, 1, "\0");
+            }
+
+            if (javaTellBox.Checked)
+            {
+                bedrockTellBox.Checked = false;
+                message = "\0" + StringUtils.InsertStrings("[" + tellNameBox.Text + "] " + tellMsgBox.Text, 1, "\0");
+            }
+
+            GeckoU.ClearString(textStart, textEnd);
+            await PutTaskDelay(200);
+            GeckoU.WriteString(textStart, message);
+            DownfallCommandBtnClicked(null, null);
         }
 
         #endregion

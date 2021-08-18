@@ -3,7 +3,7 @@
 [Information]
 If you are experiencing issues, please report them on the Github Issues page or by joining the official discord server.
 
-This update adds a few new mods
+This update adds a few new mods and fixes a small Quick Mods Manager issue
 
 [Changes]
 

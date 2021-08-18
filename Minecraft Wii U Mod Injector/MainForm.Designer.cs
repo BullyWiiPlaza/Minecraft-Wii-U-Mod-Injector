@@ -137,6 +137,9 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.CraftAnything = new MetroFramework.Controls.MetroCheckBox();
             this.CreativeMode = new MetroFramework.Controls.MetroCheckBox();
             this.worldTab = new MetroFramework.Controls.MetroTabPage();
+            this.DisableFallingBlocks = new MetroFramework.Controls.MetroCheckBox();
+            this.LiquidSpreadTimeSlider = new System.Windows.Forms.NumericUpDown();
+            this.LiquidSpreadTime = new MetroFramework.Controls.MetroLabel();
             this.InvulnerableEntities = new MetroFramework.Controls.MetroCheckBox();
             this.SleepingDoesntClearWeather = new MetroFramework.Controls.MetroCheckBox();
             this.EntitySpeedSlider = new System.Windows.Forms.NumericUpDown();
@@ -264,9 +267,8 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.RightClickMenu = new MetroFramework.Controls.MetroContextMenu(this.components);
             this.IncreaseDecimalPlace = new System.Windows.Forms.ToolStripMenuItem();
             this.DecreaseDecimalPlace = new System.Windows.Forms.ToolStripMenuItem();
-            this.LiquidSpreadTimeSlider = new System.Windows.Forms.NumericUpDown();
-            this.LiquidSpreadTime = new MetroFramework.Controls.MetroLabel();
-            this.DisableFallingBlocks = new MetroFramework.Controls.MetroCheckBox();
+            this.CommandsInMinigames = new MetroFramework.Controls.MetroCheckBox();
+            this.commandsWarnLbl = new MetroFramework.Controls.MetroLabel();
             this.MainTabs.SuspendLayout();
             this.MainTab.SuspendLayout();
             this.playersTab.SuspendLayout();
@@ -285,6 +287,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             ((System.ComponentModel.ISupportInitialize)(this.FieldOfViewSlider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.HitBoxScaleSlider)).BeginInit();
             this.worldTab.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.LiquidSpreadTimeSlider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.EntitySpeedSlider)).BeginInit();
             this.generalTab.SuspendLayout();
             this.minigamesTab.SuspendLayout();
@@ -310,7 +313,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.settingsTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.StyleMngr)).BeginInit();
             this.RightClickMenu.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.LiquidSpreadTimeSlider)).BeginInit();
             this.SuspendLayout();
             // 
             // WorldTile
@@ -405,7 +407,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.MainTabs.Location = new System.Drawing.Point(155, 61);
             this.MainTabs.Multiline = true;
             this.MainTabs.Name = "MainTabs";
-            this.MainTabs.SelectedIndex = 0;
+            this.MainTabs.SelectedIndex = 5;
             this.MainTabs.Size = new System.Drawing.Size(1130, 639);
             this.MainTabs.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.MainTabs.TabIndex = 0;
@@ -2070,16 +2072,60 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.worldTab.HorizontalScrollbarBarColor = true;
             this.worldTab.HorizontalScrollbarHighlightOnWheel = false;
             this.worldTab.HorizontalScrollbarSize = 10;
-            this.worldTab.Location = new System.Drawing.Point(4, 9);
+            this.worldTab.Location = new System.Drawing.Point(4, 5);
             this.worldTab.Name = "worldTab";
             this.worldTab.Padding = new System.Windows.Forms.Padding(3);
-            this.worldTab.Size = new System.Drawing.Size(1122, 626);
+            this.worldTab.Size = new System.Drawing.Size(1122, 630);
             this.worldTab.TabIndex = 1;
             this.worldTab.Tag = "needsGeckoU";
             this.worldTab.Text = "Entities / World";
             this.worldTab.VerticalScrollbarBarColor = true;
             this.worldTab.VerticalScrollbarHighlightOnWheel = false;
             this.worldTab.VerticalScrollbarSize = 10;
+            // 
+            // DisableFallingBlocks
+            // 
+            this.DisableFallingBlocks.AutoSize = true;
+            this.DisableFallingBlocks.BackColor = System.Drawing.Color.Transparent;
+            this.DisableFallingBlocks.Location = new System.Drawing.Point(6, 256);
+            this.DisableFallingBlocks.Name = "DisableFallingBlocks";
+            this.DisableFallingBlocks.Size = new System.Drawing.Size(136, 15);
+            this.DisableFallingBlocks.TabIndex = 132;
+            this.DisableFallingBlocks.Tag = "";
+            this.DisableFallingBlocks.Text = "Disable Falling Blocks";
+            this.ToolTipManager.SetToolTip(this.DisableFallingBlocks, "Whether gravity affected blocks won\'t be affected by it");
+            this.DisableFallingBlocks.UseSelectable = true;
+            this.DisableFallingBlocks.CheckedChanged += new System.EventHandler(this.DisableFallingBlocksToggled);
+            // 
+            // LiquidSpreadTimeSlider
+            // 
+            this.StyleExtender.SetApplyMetroTheme(this.LiquidSpreadTimeSlider, true);
+            this.LiquidSpreadTimeSlider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.LiquidSpreadTimeSlider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.LiquidSpreadTimeSlider.Location = new System.Drawing.Point(140, 506);
+            this.LiquidSpreadTimeSlider.Maximum = new decimal(new int[] {
+            120,
+            0,
+            0,
+            0});
+            this.LiquidSpreadTimeSlider.Name = "LiquidSpreadTimeSlider";
+            this.LiquidSpreadTimeSlider.Size = new System.Drawing.Size(976, 20);
+            this.LiquidSpreadTimeSlider.TabIndex = 131;
+            this.LiquidSpreadTimeSlider.Tag = "";
+            this.ToolTipManager.SetToolTip(this.LiquidSpreadTimeSlider, "How fast should liquid blocks (water, lava) spread in ticks?");
+            this.LiquidSpreadTimeSlider.ValueChanged += new System.EventHandler(this.LiquidSpreadTimeSliderChanged);
+            // 
+            // LiquidSpreadTime
+            // 
+            this.LiquidSpreadTime.AutoSize = true;
+            this.LiquidSpreadTime.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.LiquidSpreadTime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.LiquidSpreadTime.Location = new System.Drawing.Point(5, 506);
+            this.LiquidSpreadTime.Name = "LiquidSpreadTime";
+            this.LiquidSpreadTime.Size = new System.Drawing.Size(128, 19);
+            this.LiquidSpreadTime.TabIndex = 130;
+            this.LiquidSpreadTime.Tag = "";
+            this.LiquidSpreadTime.Text = "Liquid Spread Time:";
             // 
             // InvulnerableEntities
             // 
@@ -2429,10 +2475,10 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.generalTab.HorizontalScrollbarBarColor = true;
             this.generalTab.HorizontalScrollbarHighlightOnWheel = false;
             this.generalTab.HorizontalScrollbarSize = 10;
-            this.generalTab.Location = new System.Drawing.Point(4, 9);
+            this.generalTab.Location = new System.Drawing.Point(4, 5);
             this.generalTab.Name = "generalTab";
             this.generalTab.Padding = new System.Windows.Forms.Padding(3);
-            this.generalTab.Size = new System.Drawing.Size(1122, 626);
+            this.generalTab.Size = new System.Drawing.Size(1122, 630);
             this.generalTab.TabIndex = 2;
             this.generalTab.Tag = "needsGeckoU";
             this.generalTab.Text = "General Game";
@@ -2673,10 +2719,10 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.minigamesTab.HorizontalScrollbarBarColor = true;
             this.minigamesTab.HorizontalScrollbarHighlightOnWheel = false;
             this.minigamesTab.HorizontalScrollbarSize = 10;
-            this.minigamesTab.Location = new System.Drawing.Point(4, 9);
+            this.minigamesTab.Location = new System.Drawing.Point(4, 5);
             this.minigamesTab.Name = "minigamesTab";
             this.minigamesTab.Padding = new System.Windows.Forms.Padding(3);
-            this.minigamesTab.Size = new System.Drawing.Size(1122, 626);
+            this.minigamesTab.Size = new System.Drawing.Size(1122, 630);
             this.minigamesTab.TabIndex = 3;
             this.minigamesTab.Tag = "GeckoUNeeded";
             this.minigamesTab.Text = "Minigames";
@@ -3048,6 +3094,8 @@ namespace Minecraft_Wii_U_Mod_Injector
             // 
             // commandsTab
             // 
+            this.commandsTab.Controls.Add(this.commandsWarnLbl);
+            this.commandsTab.Controls.Add(this.CommandsInMinigames);
             this.commandsTab.Controls.Add(this.tellrawLbl);
             this.commandsTab.Controls.Add(this.tellrawPanel);
             this.commandsTab.Controls.Add(this.xpCmdLbl);
@@ -3067,9 +3115,9 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.commandsTab.HorizontalScrollbarBarColor = true;
             this.commandsTab.HorizontalScrollbarHighlightOnWheel = false;
             this.commandsTab.HorizontalScrollbarSize = 10;
-            this.commandsTab.Location = new System.Drawing.Point(4, 9);
+            this.commandsTab.Location = new System.Drawing.Point(4, 5);
             this.commandsTab.Name = "commandsTab";
-            this.commandsTab.Size = new System.Drawing.Size(1122, 626);
+            this.commandsTab.Size = new System.Drawing.Size(1122, 630);
             this.commandsTab.TabIndex = 7;
             this.commandsTab.Tag = "needsGeckoU";
             this.commandsTab.Text = "Commands";
@@ -3799,10 +3847,10 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.settingsTab.HorizontalScrollbarBarColor = true;
             this.settingsTab.HorizontalScrollbarHighlightOnWheel = false;
             this.settingsTab.HorizontalScrollbarSize = 10;
-            this.settingsTab.Location = new System.Drawing.Point(4, 9);
+            this.settingsTab.Location = new System.Drawing.Point(4, 5);
             this.settingsTab.Name = "settingsTab";
             this.settingsTab.Padding = new System.Windows.Forms.Padding(3);
-            this.settingsTab.Size = new System.Drawing.Size(1122, 626);
+            this.settingsTab.Size = new System.Drawing.Size(1122, 630);
             this.settingsTab.TabIndex = 5;
             this.settingsTab.Tag = "";
             this.settingsTab.Text = "Settings";
@@ -4046,49 +4094,30 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.DecreaseDecimalPlace.Size = new System.Drawing.Size(322, 22);
             this.DecreaseDecimalPlace.Text = "Decrease decimal place";
             // 
-            // LiquidSpreadTimeSlider
+            // CommandsInMinigames
             // 
-            this.StyleExtender.SetApplyMetroTheme(this.LiquidSpreadTimeSlider, true);
-            this.LiquidSpreadTimeSlider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.LiquidSpreadTimeSlider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.LiquidSpreadTimeSlider.Location = new System.Drawing.Point(140, 506);
-            this.LiquidSpreadTimeSlider.Maximum = new decimal(new int[] {
-            120,
-            0,
-            0,
-            0});
-            this.LiquidSpreadTimeSlider.Name = "LiquidSpreadTimeSlider";
-            this.LiquidSpreadTimeSlider.Size = new System.Drawing.Size(976, 20);
-            this.LiquidSpreadTimeSlider.TabIndex = 131;
-            this.LiquidSpreadTimeSlider.Tag = "";
-            this.ToolTipManager.SetToolTip(this.LiquidSpreadTimeSlider, "How fast should liquid blocks (water, lava) spread in ticks?");
-            this.LiquidSpreadTimeSlider.ValueChanged += new System.EventHandler(this.LiquidSpreadTimeSliderChanged);
+            this.CommandsInMinigames.AutoSize = true;
+            this.CommandsInMinigames.Location = new System.Drawing.Point(95, 335);
+            this.CommandsInMinigames.Name = "CommandsInMinigames";
+            this.CommandsInMinigames.Size = new System.Drawing.Size(160, 15);
+            this.CommandsInMinigames.TabIndex = 51;
+            this.CommandsInMinigames.Text = "Commands in Minigames";
+            this.ToolTipManager.SetToolTip(this.CommandsInMinigames, "Whether to use Java style chat messages");
+            this.CommandsInMinigames.UseSelectable = true;
+            this.CommandsInMinigames.CheckedChanged += new System.EventHandler(this.CommandsInMinigamesToggled);
             // 
-            // LiquidSpreadTime
+            // commandsWarnLbl
             // 
-            this.LiquidSpreadTime.AutoSize = true;
-            this.LiquidSpreadTime.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.LiquidSpreadTime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.LiquidSpreadTime.Location = new System.Drawing.Point(5, 506);
-            this.LiquidSpreadTime.Name = "LiquidSpreadTime";
-            this.LiquidSpreadTime.Size = new System.Drawing.Size(128, 19);
-            this.LiquidSpreadTime.TabIndex = 130;
-            this.LiquidSpreadTime.Tag = "";
-            this.LiquidSpreadTime.Text = "Liquid Spread Time:";
-            // 
-            // DisableFallingBlocks
-            // 
-            this.DisableFallingBlocks.AutoSize = true;
-            this.DisableFallingBlocks.BackColor = System.Drawing.Color.Transparent;
-            this.DisableFallingBlocks.Location = new System.Drawing.Point(6, 256);
-            this.DisableFallingBlocks.Name = "DisableFallingBlocks";
-            this.DisableFallingBlocks.Size = new System.Drawing.Size(136, 15);
-            this.DisableFallingBlocks.TabIndex = 132;
-            this.DisableFallingBlocks.Tag = "";
-            this.DisableFallingBlocks.Text = "Disable Falling Blocks";
-            this.ToolTipManager.SetToolTip(this.DisableFallingBlocks, "Whether gravity affected blocks won\'t be affected by it");
-            this.DisableFallingBlocks.UseSelectable = true;
-            this.DisableFallingBlocks.CheckedChanged += new System.EventHandler(this.DisableFallingBlocksToggled);
+            this.commandsWarnLbl.AutoSize = true;
+            this.commandsWarnLbl.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.commandsWarnLbl.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.commandsWarnLbl.Location = new System.Drawing.Point(106, 443);
+            this.commandsWarnLbl.Name = "commandsWarnLbl";
+            this.commandsWarnLbl.Size = new System.Drawing.Size(912, 50);
+            this.commandsWarnLbl.TabIndex = 52;
+            this.commandsWarnLbl.Text = "Commands require you to be the host or a moderator. If you want to use commands i" +
+    "n minigames make sure to \r\nselect the \"Commands in Minigames\" option";
+            this.commandsWarnLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // MainForm
             // 
@@ -4136,6 +4165,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             ((System.ComponentModel.ISupportInitialize)(this.HitBoxScaleSlider)).EndInit();
             this.worldTab.ResumeLayout(false);
             this.worldTab.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.LiquidSpreadTimeSlider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.EntitySpeedSlider)).EndInit();
             this.generalTab.ResumeLayout(false);
             this.generalTab.PerformLayout();
@@ -4169,7 +4199,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.settingsTab.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.StyleMngr)).EndInit();
             this.RightClickMenu.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.LiquidSpreadTimeSlider)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -4410,5 +4439,7 @@ namespace Minecraft_Wii_U_Mod_Injector
         public System.Windows.Forms.NumericUpDown LiquidSpreadTimeSlider;
         public MetroLabel LiquidSpreadTime;
         public MetroCheckBox DisableFallingBlocks;
+        private MetroCheckBox CommandsInMinigames;
+        private MetroLabel commandsWarnLbl;
     }
 }

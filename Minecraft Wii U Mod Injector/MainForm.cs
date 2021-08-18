@@ -1448,6 +1448,15 @@ namespace Minecraft_Wii_U_Mod_Injector
             DownfallCommandBtnClicked(null, null);
         }
 
+        private void CommandsInMinigamesToggled(object sender, EventArgs e)
+        {
+            GeckoU.WriteUIntToggle(0x022F0774, 0x38600000, 0x38600002, CommandsInMinigames.Checked);
+            GeckoU.WriteUIntToggle(0x0245FC9C, 0x38600000, 0x38600002, CommandsInMinigames.Checked);
+            GeckoU.WriteUIntToggle(0x02520964, 0x38600000, 0x38600002, CommandsInMinigames.Checked);
+            GeckoU.WriteUIntToggle(0x029F8FE0, 0x38600000, 0x38600002, CommandsInMinigames.Checked);
+            GeckoU.WriteUIntToggle(0x029FFE60, 0x38600000, 0x38600002, CommandsInMinigames.Checked);
+        }
+
         #endregion
 
         #region minigames

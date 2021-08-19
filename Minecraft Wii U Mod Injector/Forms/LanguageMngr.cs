@@ -25,8 +25,8 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms
         private readonly MainForm _iw;
         private readonly string _langRootDir = Application.StartupPath + @"\Languages\";
 
-        public static List<string> ServerNames = new();
-        public static List<string> ServerUrls = new();
+        public static List<string> ServerNames = new List<string>();
+        public static List<string> ServerUrls = new List<string>();
 
         public string[] BlackList = {"BuildTile", "BuildVerTitleLbl"};
         #endregion
@@ -208,7 +208,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms
 
         private IniFile GetLanguageFile(DataGridViewCellEventArgs e)
         {
-            return new(LanguagesList.Rows[e.RowIndex].Cells[3].Value.ToString());
+            return new IniFile(LanguagesList.Rows[e.RowIndex].Cells[3].Value.ToString());
         }
 
         private void LoadInstalledLangs()

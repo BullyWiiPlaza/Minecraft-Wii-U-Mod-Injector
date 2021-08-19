@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LootTableEditor));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AchievementEditor));
             this.StyleMngr = new MetroFramework.Components.MetroStyleManager(this.components);
             this.ToolTips = new MetroFramework.Components.MetroToolTip();
             this.withBox = new MetroFramework.Controls.MetroComboBox();

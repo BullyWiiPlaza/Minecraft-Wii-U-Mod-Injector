@@ -121,6 +121,7 @@ namespace Minecraft_Wii_U_Mod_Injector
         public MainForm()
         {
             InitializeComponent();
+            MainTabs.ItemSize = new System.Drawing.Size(MainTabs.ItemSize.Width, 1);
         }
 
         private void Init(object sender, EventArgs e)
@@ -173,18 +174,15 @@ namespace Minecraft_Wii_U_Mod_Injector
 
         private void ConnectBtnClicked(object sender, EventArgs e)
         {
-            try
-            {
-                GeckoU ??= new GeckoUCore(WiiUIpv4Box.Text);
+            try {
+                GeckoU ??= new GeckoUCore(WiiUIPv4Box.Text);
 
-                switch (States.CurrentState)
-                {
+                switch (States.CurrentState) {
                     case States.StatesIds.Disconnected:
                         States.SwapState(States.StatesIds.Connecting);
                         GeckoU.Tcp.Connect();
 
-                        if (!IsMinecraft())
-                        {
+                        if (!IsMinecraft()) {
                             Messaging.Show(
                                 "This Mod Injector is intended to be used with Minecraft: Wii U Edition, please launch Minecraft and try again.");
                             GeckoU.Tcp.Close();
@@ -202,47 +200,34 @@ namespace Minecraft_Wii_U_Mod_Injector
                         States.SwapState(States.StatesIds.Disconnected);
                         break;
                 }
-            }
-            catch (Exception error)
-            {
-                switch (error)
-                {
-                    case SocketException:
-                        Messaging.Show(MessageBoxIcon.Error,
-                            "Couldn't detect TCPGecko running or IP Address is wrong.\nMake sure you have TCPGecko running and entered the correct IP Address for you Wii U");
-                        States.SwapState(States.StatesIds.Disconnected);
-                        break;
-
-                    case TimeoutException:
-                    case IOException:
-                        Messaging.Show(MessageBoxIcon.Error,
-                            "Couldn't connect to your Wii U, please check that:\nYou entered the correct IP Address\nTCPGecko is running from the Homebrew Launcher\n" +
-                            "Your network connection might not be stable\nPlease do not report this as a bug, we cannot fix your internet.");
-                        States.SwapState(States.StatesIds.Disconnected);
-                        break;
-                }
-
-                Exceptions.LogError(error, "Unable to Connect to the Wii U, unknown error", false);
+            } catch (SocketException) {
+                Messaging.Show(MessageBoxIcon.Error, "Couldn't detect TCPGecko running or IP Address is wrong.\nMake sure you have TCPGecko running and entered the correct IP Address for you Wii U");
+                States.SwapState(States.StatesIds.Disconnected);
+            } catch (IOException) {
+                Messaging.Show(MessageBoxIcon.Error, "Couldn't detect TCPGecko running or IP Address is wrong.\nMake sure you have TCPGecko running and entered the correct IP Address for you Wii U");
+                States.SwapState(States.StatesIds.Disconnected);
+            } catch (Exception err) {
+                Exceptions.LogError(err, "Unable to Connect to the Wii U, unknown error", false);
                 States.SwapState(States.StatesIds.Disconnected);
             }
         }
 
-        private void CapturewiiuIpv4Box(object sender, EventArgs e)
+        private void CaptureWiiUIPv4Box(object sender, EventArgs e)
         {
-            switch (StringUtils.ValidateIPv4(WiiUIpv4Box.Text))
+            switch (StringUtils.ValidateIPv4(WiiUIPv4Box.Text))
             {
                 case true:
-                    WiiUIpv4Box.Style = MetroColorStyle.Green;
+                    WiiUIPv4Box.Style = MetroColorStyle.Green;
                     ConnectBtn.Enabled = true;
                     break;
                 case false:
-                    WiiUIpv4Box.Style = MetroColorStyle.Red;
+                    WiiUIPv4Box.Style = MetroColorStyle.Red;
                     ConnectBtn.Enabled = false;
                     break;
             }
         }
 
-        private void CaptureWiiUIpv4BoxInput(object sender, KeyEventArgs e)
+        private void CaptureWiiUIPv4BoxInput(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
                 ConnectBtnClicked(null, null);
@@ -411,6 +396,11 @@ namespace Minecraft_Wii_U_Mod_Injector
             new EnchantmentEditor(this).ShowDialog();
         }
 
+        private void AchievementEditorClicked(object sender, EventArgs e)
+        {
+            new AchievementEditor(this).ShowDialog();
+        }
+
         private void ItemIdHelpBtnClicked(object sender, EventArgs e)
         {
             Messaging.Show(MessageBoxIcon.Information,
@@ -419,11 +409,8 @@ namespace Minecraft_Wii_U_Mod_Injector
 
         private void IncompatibilityCheck(object sender, EventArgs e)
         {
-            if (javaTellBox.Checked)
-                bedrockTellBox.Checked = false;
-
-            if (bedrockTellBox.Checked)
-                javaTellBox.Checked = false;
+            javaTellBox.Checked = !bedrockTellBox.Checked && javaTellBox.Checked;
+            bedrockTellBox.Checked = !javaTellBox.Checked && bedrockTellBox.Checked;
         }
 
         #region memory editing
@@ -431,6 +418,23 @@ namespace Minecraft_Wii_U_Mod_Injector
         public static bool IsPointerLoaded()
         {
             return GeckoU.PeekUInt(GeckoU.PeekUInt(0x10A0A624) + 0x9C) != 0x0;
+        }
+
+        private void SwimFastToggled(object sender, EventArgs e) {
+            GeckoU.WriteUIntToggle(0x1066879C, 0x3DA00000, 0x3CA3D70A, SwimFast.Checked);
+        }
+
+        private void BreakBedrockToggled(object sender, EventArgs e) {
+            var chk = sender as CheckBox;
+            if (!IsPointerLoaded()) {
+                Messaging.Show("Please load a world before toggling this mod");
+                chk.CheckedChanged -= BreakBedrockToggled;
+                chk.Checked = !chk.Checked;
+                chk.CheckedChanged += BreakBedrockToggled;
+                return;
+            }
+            var pointer = GeckoU.PeekUInt(GeckoU.PeekUInt(0x109C3720) + 0x3F8);
+            GeckoU.WriteULongToggle(pointer + 0x40, 0x3E88888900000000, 0x7F7FFFFF4B895440, BreakBedrock.Checked);
         }
 
         private void InsaneCriticalHitsToggled(object sender, EventArgs e)
@@ -663,8 +667,8 @@ namespace Minecraft_Wii_U_Mod_Injector
 
         private void DisableCreativeFlagToggled(object sender, EventArgs e)
         {
-            GeckoU.WriteUIntToggle(0x025BF44C, On, 0x886300A9,
-                DisableCreativeFlag.Checked); // labeled as "delete", so unsure if this still works
+            GeckoU.WriteUIntToggle(0x025C2B8C, On, 0x886300A9,
+                DisableCreativeFlag.Checked); // LevelData::getHasBeenInCreative((void))
         }
 
         private void GeneratePlainWorldToggled(object sender, EventArgs e)
@@ -1011,7 +1015,7 @@ namespace Minecraft_Wii_U_Mod_Injector
 
         private void SuperFurnaceToggled(object sender, EventArgs e)
         {
-            GeckoU.WriteUIntToggle(0x0249602C, On, 0x386000C8, SuperFurnace.Checked);
+            GeckoU.WriteUIntToggle(0x023F66A4, 0x38600001, 0x386000C8, SuperFurnace.Checked); //FurnaceBlockEntity::getTotalCookTime((not_null_ptr__tm__15_12ItemInstance))
         }
 
         private void MaxStackSliderChanged(object sender, EventArgs e)

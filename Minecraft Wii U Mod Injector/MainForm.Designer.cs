@@ -410,7 +410,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.MainTabs.Location = new System.Drawing.Point(155, 61);
             this.MainTabs.Multiline = true;
             this.MainTabs.Name = "MainTabs";
-            this.MainTabs.SelectedIndex = 3;
+            this.MainTabs.SelectedIndex = 1;
             this.MainTabs.Size = new System.Drawing.Size(1130, 639);
             this.MainTabs.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.MainTabs.TabIndex = 0;
@@ -509,7 +509,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.BuildVerTitleLbl.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.BuildVerTitleLbl.Location = new System.Drawing.Point(3, 3);
             this.BuildVerTitleLbl.Name = "BuildVerTitleLbl";
-            this.BuildVerTitleLbl.Size = new System.Drawing.Size(213, 25);
+            this.BuildVerTitleLbl.Size = new System.Drawing.Size(212, 25);
             this.BuildVerTitleLbl.TabIndex = 6;
             this.BuildVerTitleLbl.Text = "Patch Notes for VERSION";
             this.BuildVerTitleLbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -711,7 +711,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.BreakBedrock.Text = "Break Bedrock";
             this.ToolTipManager.SetToolTip(this.BreakBedrock, "Whether you can destroy bedrock in survival");
             this.BreakBedrock.UseSelectable = true;
-            this.BreakBedrock.CheckedChanged += new System.EventHandler(this.SwimFastToggled);
+            this.BreakBedrock.CheckedChanged += new System.EventHandler(this.BreakBedrockToggled);
             // 
             // SwimFast
             // 
@@ -1244,7 +1244,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.PotionAmplifier.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.PotionAmplifier.Location = new System.Drawing.Point(292, 610);
             this.PotionAmplifier.Name = "PotionAmplifier";
-            this.PotionAmplifier.Size = new System.Drawing.Size(110, 19);
+            this.PotionAmplifier.Size = new System.Drawing.Size(109, 19);
             this.PotionAmplifier.TabIndex = 156;
             this.PotionAmplifier.Tag = "";
             this.PotionAmplifier.Text = "Potion Amplifier:";
@@ -1484,7 +1484,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.WalkingSpeedScale.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.WalkingSpeedScale.Location = new System.Drawing.Point(292, 532);
             this.WalkingSpeedScale.Name = "WalkingSpeedScale";
-            this.WalkingSpeedScale.Size = new System.Drawing.Size(136, 19);
+            this.WalkingSpeedScale.Size = new System.Drawing.Size(135, 19);
             this.WalkingSpeedScale.TabIndex = 130;
             this.WalkingSpeedScale.Tag = "";
             this.WalkingSpeedScale.Text = "Walking Speed Scale:";
@@ -1520,7 +1520,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.TakeEverythingAnywhere.AutoSize = true;
             this.TakeEverythingAnywhere.Location = new System.Drawing.Point(192, 342);
             this.TakeEverythingAnywhere.Name = "TakeEverythingAnywhere";
-            this.TakeEverythingAnywhere.Size = new System.Drawing.Size(163, 15);
+            this.TakeEverythingAnywhere.Size = new System.Drawing.Size(161, 15);
             this.TakeEverythingAnywhere.TabIndex = 25;
             this.TakeEverythingAnywhere.Tag = "";
             this.TakeEverythingAnywhere.Text = "Take Everything Anywhere";
@@ -1572,7 +1572,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.CraftingTableAnywhere.AutoSize = true;
             this.CraftingTableAnywhere.Location = new System.Drawing.Point(192, 300);
             this.CraftingTableAnywhere.Name = "CraftingTableAnywhere";
-            this.CraftingTableAnywhere.Size = new System.Drawing.Size(154, 15);
+            this.CraftingTableAnywhere.Size = new System.Drawing.Size(152, 15);
             this.CraftingTableAnywhere.TabIndex = 132;
             this.CraftingTableAnywhere.Tag = "";
             this.CraftingTableAnywhere.Text = "Crafting Table Anywhere";
@@ -1585,7 +1585,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.VisibleHitboxes.AutoSize = true;
             this.VisibleHitboxes.Location = new System.Drawing.Point(192, 279);
             this.VisibleHitboxes.Name = "VisibleHitboxes";
-            this.VisibleHitboxes.Size = new System.Drawing.Size(106, 15);
+            this.VisibleHitboxes.Size = new System.Drawing.Size(107, 15);
             this.VisibleHitboxes.TabIndex = 129;
             this.VisibleHitboxes.Tag = "";
             this.VisibleHitboxes.Text = "Visible Hitboxes";
@@ -1932,7 +1932,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.SilkTouchAnything.BackColor = System.Drawing.Color.Transparent;
             this.SilkTouchAnything.Location = new System.Drawing.Point(7, 216);
             this.SilkTouchAnything.Name = "SilkTouchAnything";
-            this.SilkTouchAnything.Size = new System.Drawing.Size(130, 15);
+            this.SilkTouchAnything.Size = new System.Drawing.Size(128, 15);
             this.SilkTouchAnything.TabIndex = 87;
             this.SilkTouchAnything.Tag = "";
             this.SilkTouchAnything.Text = "Silk Touch Anything";
@@ -2306,7 +2306,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.ZombieTower.AutoSize = true;
             this.ZombieTower.Location = new System.Drawing.Point(475, 88);
             this.ZombieTower.Name = "ZombieTower";
-            this.ZombieTower.Size = new System.Drawing.Size(100, 15);
+            this.ZombieTower.Size = new System.Drawing.Size(98, 15);
             this.ZombieTower.TabIndex = 20;
             this.ZombieTower.Tag = "";
             this.ZombieTower.Text = "Zombie Tower";
@@ -2411,7 +2411,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.World.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.World.Location = new System.Drawing.Point(3, 3);
             this.World.Name = "World";
-            this.World.Size = new System.Drawing.Size(97, 19);
+            this.World.Size = new System.Drawing.Size(96, 19);
             this.World.TabIndex = 44;
             this.World.Text = "World / Blocks";
             // 
@@ -2624,7 +2624,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.DisableTeleporting.ForeColor = System.Drawing.SystemColors.ControlText;
             this.DisableTeleporting.Location = new System.Drawing.Point(475, 130);
             this.DisableTeleporting.Name = "DisableTeleporting";
-            this.DisableTeleporting.Size = new System.Drawing.Size(125, 15);
+            this.DisableTeleporting.Size = new System.Drawing.Size(123, 15);
             this.DisableTeleporting.TabIndex = 31;
             this.DisableTeleporting.Tag = "";
             this.DisableTeleporting.Text = "Disable Teleporting";
@@ -2891,7 +2891,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.TNTGriefing.AutoSize = true;
             this.TNTGriefing.Location = new System.Drawing.Point(7, 27);
             this.TNTGriefing.Name = "TNTGriefing";
-            this.TNTGriefing.Size = new System.Drawing.Size(91, 15);
+            this.TNTGriefing.Size = new System.Drawing.Size(89, 15);
             this.TNTGriefing.TabIndex = 7;
             this.TNTGriefing.Tag = "";
             this.TNTGriefing.Text = "TNT Griefing";
@@ -3016,7 +3016,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.TumbleHUD.AutoSize = true;
             this.TumbleHUD.Location = new System.Drawing.Point(7, 6);
             this.TumbleHUD.Name = "TumbleHUD";
-            this.TumbleHUD.Size = new System.Drawing.Size(92, 15);
+            this.TumbleHUD.Size = new System.Drawing.Size(91, 15);
             this.TumbleHUD.TabIndex = 3;
             this.TumbleHUD.Tag = "";
             this.TumbleHUD.Text = "Tumble HUD";
@@ -3475,7 +3475,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.worldCmdLbl.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.worldCmdLbl.Location = new System.Drawing.Point(843, 9);
             this.worldCmdLbl.Name = "worldCmdLbl";
-            this.worldCmdLbl.Size = new System.Drawing.Size(46, 19);
+            this.worldCmdLbl.Size = new System.Drawing.Size(45, 19);
             this.worldCmdLbl.TabIndex = 44;
             this.worldCmdLbl.Text = "World";
             // 

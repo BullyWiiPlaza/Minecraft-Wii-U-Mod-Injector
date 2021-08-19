@@ -610,6 +610,11 @@ namespace Minecraft_Wii_U_Mod_Injector.Wii_U.Gecko_U
             var bytes = Encoding.ASCII.GetBytes(value);
             WriteBytes(address, bytes);
         }
+        public void WriteString16(uint address, string value)
+        {
+            var bytes = Encoding.Unicode.GetBytes(value);
+            WriteBytes(address+1, bytes);
+        }
         #endregion Writing, Poking
 
         #region reading

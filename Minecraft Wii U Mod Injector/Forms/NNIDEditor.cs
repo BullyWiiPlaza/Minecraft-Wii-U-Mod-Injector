@@ -23,13 +23,13 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms
         private void NnidChangeBtnClicked(object sender, EventArgs e)
         {
             MainForm.GeckoU.ClearString(NnidNameAddress, NnidNameAddress + 0x44);
-            MainForm.GeckoU.WriteString(NnidNameAddress, NNIDNameBox.Text);
+            MainForm.GeckoU.WriteString16(NnidNameAddress, NNIDNameBox.Text);
             this.Close();
         }
 
         private void ReadNameBtnClicked(object sender, EventArgs e)
         {
-            NNIDNameBox.Text = MainForm.GeckoU.PeekString(0x44, NnidNameAddress); //This is a bit broken, last letter appears distorted
+            NNIDNameBox.Text = MainForm.GeckoU.PeekString(0x44, NnidNameAddress); //This should work properly now
         }
 
         private void Exiting(object sender, FormClosingEventArgs e)

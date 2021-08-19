@@ -37,6 +37,7 @@
             this.WarningLbl = new MetroFramework.Controls.MetroLabel();
             this.ToolTips = new MetroFramework.Components.MetroToolTip();
             this.readNameBtn = new MetroFramework.Controls.MetroButton();
+            this.NNIDResetBtn = new MetroFramework.Controls.MetroButton();
             ((System.ComponentModel.ISupportInitialize)(this.StyleMngr)).BeginInit();
             this.SuspendLayout();
             // 
@@ -82,6 +83,7 @@
             // 
             // NNIDChangeBtn
             // 
+            this.NNIDChangeBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.NNIDChangeBtn.Location = new System.Drawing.Point(77, 126);
             this.NNIDChangeBtn.Name = "NNIDChangeBtn";
             this.NNIDChangeBtn.Size = new System.Drawing.Size(558, 23);
@@ -124,11 +126,24 @@
             this.readNameBtn.UseSelectable = true;
             this.readNameBtn.Click += new System.EventHandler(this.ReadNameBtnClicked);
             // 
+            // NNIDResetBtn
+            // 
+            this.NNIDResetBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.NNIDResetBtn.Location = new System.Drawing.Point(77, 152);
+            this.NNIDResetBtn.Name = "NNIDResetBtn";
+            this.NNIDResetBtn.Size = new System.Drawing.Size(558, 23);
+            this.NNIDResetBtn.TabIndex = 7;
+            this.NNIDResetBtn.Text = "Reset";
+            this.ToolTips.SetToolTip(this.NNIDResetBtn, "Resets your name to your default NNID");
+            this.NNIDResetBtn.UseSelectable = true;
+            this.NNIDResetBtn.Click += new System.EventHandler(this.NNIDResetBtn_Click);
+            // 
             // NnidEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(658, 168);
+            this.ClientSize = new System.Drawing.Size(658, 198);
+            this.Controls.Add(this.NNIDResetBtn);
             this.Controls.Add(this.readNameBtn);
             this.Controls.Add(this.WarningLbl);
             this.Controls.Add(this.NNIDChangeBtn);
@@ -157,5 +172,6 @@
         private MetroFramework.Controls.MetroLabel WarningLbl;
         private MetroFramework.Components.MetroToolTip ToolTips;
         private MetroFramework.Controls.MetroButton readNameBtn;
+        private MetroFramework.Controls.MetroButton NNIDResetBtn;
     }
 }

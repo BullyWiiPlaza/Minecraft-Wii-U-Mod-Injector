@@ -36,5 +36,13 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms
         {
             DiscordRp.SetPresence("Connected", "Player('s) tab");
         }
+
+        private void NNIDResetBtn_Click(object sender, EventArgs e)
+        {
+            var defaultNNID = MainForm.GeckoU.PeekString(0x12, NnidNameAddress + 0x239);
+            MainForm.GeckoU.ClearString(NnidNameAddress, NnidNameAddress + 0x44);
+            MainForm.GeckoU.WriteString16(NnidNameAddress, defaultNNID);
+            this.Close();
+        }
     }
 }

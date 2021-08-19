@@ -731,15 +731,13 @@ namespace Minecraft_Wii_U_Mod_Injector.Wii_U.Gecko_U
 
         public string PeekString(int length, uint address)
         {
-            var peekedString = string.Empty;
-
-            for (var i = 0; i < length; i += 4)
-            {
-                peekedString += PeekUInt(address += (uint)i).ToString("X");
-            }
-
-            var toUtf8 = StringUtils.StringToByteArray(peekedString);
-            return Encoding.UTF8.GetString(toUtf8).Replace("\0", "");
+            var peekedString = ReadBytes(address, (uint)length);
+            return Encoding.UTF8.GetString(peekedString).Replace("\0", "");
+        }
+        public string PeekString16(int length, uint address)
+        {
+            var peekedString = ReadBytes(address, (uint)length);
+            return Encoding.Unicode.GetString(peekedString).Replace("\0", "");
         }
 
         #endregion reading

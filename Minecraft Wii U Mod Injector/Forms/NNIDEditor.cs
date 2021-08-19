@@ -29,7 +29,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms
 
         private void ReadNameBtnClicked(object sender, EventArgs e)
         {
-            NNIDNameBox.Text = MainForm.GeckoU.PeekString(0x44, NnidNameAddress); //This should work properly now
+            NNIDNameBox.Text = MainForm.GeckoU.PeekString16(0x44, NnidNameAddress); //This should work properly now
         }
 
         private void Exiting(object sender, FormClosingEventArgs e)

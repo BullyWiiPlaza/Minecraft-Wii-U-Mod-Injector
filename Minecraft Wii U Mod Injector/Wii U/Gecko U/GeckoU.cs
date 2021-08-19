@@ -599,6 +599,21 @@ namespace Minecraft_Wii_U_Mod_Injector.Wii_U.Gecko_U
             }
             WriteBytes(address, bytes);
         }
+        
+        /// <summary>
+        /// Writes a ushort to the given address
+        /// </summary>
+        /// <param name="address">Address to write to</param>
+        /// <param name="value">Value to write</param>
+        public void WriteUShort(uint address, ushort value) {
+            var bytes = BitConverter.GetBytes(value);
+            try {
+                Array.Reverse(bytes);
+            } catch (Exception error) {
+                MessageBox.Show(error.Message);
+            }
+            WriteBytes(address, bytes);
+        }
 
         /// <summary>
         /// Writes a String to the given address

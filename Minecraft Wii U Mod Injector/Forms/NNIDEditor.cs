@@ -7,7 +7,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms
 {
     public partial class NnidEditor : MetroForm
     {
-        public uint NnidNameAddress = MainForm.GeckoU.PeekUInt(0x109D1DDC) + 0xED8;
+        public uint NnidNameAddress = MainForm.GeckoU.PeekUInt(0x10AD1C58) + 0x50;
         public NnidEditor(MainForm injector)
         {
             InitializeComponent();
@@ -22,14 +22,14 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms
 
         private void NnidChangeBtnClicked(object sender, EventArgs e)
         {
-            MainForm.GeckoU.ClearString(NnidNameAddress, NnidNameAddress + 0x24);
+            MainForm.GeckoU.ClearString(NnidNameAddress, NnidNameAddress + 0x44);
             MainForm.GeckoU.WriteString(NnidNameAddress, NNIDNameBox.Text);
             this.Close();
         }
 
         private void ReadNameBtnClicked(object sender, EventArgs e)
         {
-            NNIDNameBox.Text = MainForm.GeckoU.PeekString(16, NnidNameAddress); //This is a bit broken, last letter appears distorted
+            NNIDNameBox.Text = MainForm.GeckoU.PeekString(0x44, NnidNameAddress); //This is a bit broken, last letter appears distorted
         }
 
         private void Exiting(object sender, FormClosingEventArgs e)

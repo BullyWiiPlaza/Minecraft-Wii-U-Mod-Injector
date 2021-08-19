@@ -741,7 +741,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Wii_U.Gecko_U
         }
         public string PeekString16(int length, uint address)
         {
-            var peekedString = ReadBytes(address, (uint)length);
+            var peekedString = ReadBytes(address+1, (uint)length);
             return Encoding.Unicode.GetString(peekedString).Replace("\0", "");
         }
 

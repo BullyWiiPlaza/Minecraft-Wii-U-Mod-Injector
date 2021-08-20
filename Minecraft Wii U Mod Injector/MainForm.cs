@@ -305,6 +305,10 @@ namespace Minecraft_Wii_U_Mod_Injector
             }
         }
 
+        private async void CheckUpdatesClicked(object sender, EventArgs e) {
+            await Setup.RetrieveGitVersion(false);
+        }
+
         private void ReleaseNotesToggleClicked(object sender, EventArgs e)
         {
             try

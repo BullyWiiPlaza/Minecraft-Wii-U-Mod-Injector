@@ -1546,5 +1546,9 @@ namespace Minecraft_Wii_U_Mod_Injector
         #endregion
 
         #endregion memory editing
+
+        private void CheckUpdatesClicked(object sender, EventArgs e) {
+            Setup.RetrieveGitVersion(false);
+        }
     }
 }

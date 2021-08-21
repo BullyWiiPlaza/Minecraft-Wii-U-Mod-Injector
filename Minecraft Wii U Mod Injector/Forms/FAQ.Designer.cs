@@ -39,6 +39,7 @@
             // StyleMngr
             // 
             this.StyleMngr.Owner = this;
+            this.StyleMngr.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // faqText
             // 
@@ -48,6 +49,7 @@
             this.faqText.Size = new System.Drawing.Size(757, 323);
             this.faqText.TabIndex = 0;
             this.faqText.Text = resources.GetString("faqText.Text");
+            this.faqText.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // appIco
             // 
@@ -78,7 +80,7 @@
             this.Resizable = false;
             this.Style = MetroFramework.MetroColorStyle.Default;
             this.Text = "Minecraft: Wii U Mod Injector - Frequently Asked Questions";
-            this.Theme = MetroFramework.MetroThemeStyle.Default;
+            this.Theme = MetroFramework.MetroThemeStyle.Dark;
             ((System.ComponentModel.ISupportInitialize)(this.StyleMngr)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

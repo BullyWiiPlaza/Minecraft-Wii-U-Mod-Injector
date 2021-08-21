@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AchievementEditor));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LootTableEditor));
             this.StyleMngr = new MetroFramework.Components.MetroStyleManager(this.components);
             this.ToolTips = new MetroFramework.Components.MetroToolTip();
             this.withBox = new MetroFramework.Controls.MetroComboBox();
@@ -43,6 +43,7 @@
             // StyleMngr
             // 
             this.StyleMngr.Owner = this;
+            this.StyleMngr.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // ToolTips
             // 
@@ -115,6 +116,7 @@
             this.withBox.Name = "withBox";
             this.withBox.Size = new System.Drawing.Size(468, 29);
             this.withBox.TabIndex = 8;
+            this.withBox.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.ToolTips.SetToolTip(this.withBox, "What loot table should said entity be replaced with?");
             this.withBox.UseSelectable = true;
             this.withBox.ValueMember = "1";
@@ -126,6 +128,7 @@
             this.ApplyBtn.Size = new System.Drawing.Size(517, 23);
             this.ApplyBtn.TabIndex = 9;
             this.ApplyBtn.Text = "Apply";
+            this.ApplyBtn.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.ToolTips.SetToolTip(this.ApplyBtn, "Applies the loot table");
             this.ApplyBtn.UseSelectable = true;
             this.ApplyBtn.Click += new System.EventHandler(this.ApplyBtnClicked);
@@ -195,6 +198,7 @@
             this.replaceBox.Name = "replaceBox";
             this.replaceBox.Size = new System.Drawing.Size(440, 29);
             this.replaceBox.TabIndex = 11;
+            this.replaceBox.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.ToolTips.SetToolTip(this.replaceBox, "What entity\'s loot table should be swapped?");
             this.replaceBox.UseSelectable = true;
             this.replaceBox.ValueMember = "0";
@@ -208,6 +212,7 @@
             this.withLbl.Size = new System.Drawing.Size(47, 25);
             this.withLbl.TabIndex = 7;
             this.withLbl.Text = "with:";
+            this.withLbl.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // replaceLbl
             // 
@@ -218,6 +223,7 @@
             this.replaceLbl.Size = new System.Drawing.Size(75, 25);
             this.replaceLbl.TabIndex = 10;
             this.replaceLbl.Text = "Replace:";
+            this.replaceLbl.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // LootTableEditor
             // 
@@ -234,6 +240,7 @@
             this.Name = "LootTableEditor";
             this.Resizable = false;
             this.Text = "Minecraft: Wii U Mod Injector - Loot Table Editor";
+            this.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.TopMost = true;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Exiting);
             this.Load += new System.EventHandler(this.Init);

@@ -42,6 +42,7 @@
             this.qmmMenu = new MetroFramework.Controls.MetroContextMenu(this.components);
             this.editQmmBtn = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteQmmBtn = new System.Windows.Forms.ToolStripMenuItem();
+            this.undoQmmBtn = new System.Windows.Forms.ToolStripMenuItem();
             this.CreatorTile = new MetroFramework.Controls.MetroTile();
             this.RefreshTile = new MetroFramework.Controls.MetroTile();
             this.EmptyTile = new MetroFramework.Controls.MetroTile();
@@ -61,7 +62,6 @@
             this.qmmNameBox = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.StyleExt = new MetroFramework.Components.MetroStyleExtender(this.components);
-            this.undoQmmBtn = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.StyleMngr)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.QuickModsList)).BeginInit();
             this.qmmMenu.SuspendLayout();
@@ -73,20 +73,21 @@
             // StyleMngr
             // 
             this.StyleMngr.Owner = this;
+            this.StyleMngr.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // QuickModsList
             // 
             this.QuickModsList.AllowUserToAddRows = false;
             this.QuickModsList.AllowUserToDeleteRows = false;
             this.QuickModsList.AllowUserToResizeRows = false;
-            this.QuickModsList.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.QuickModsList.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.QuickModsList.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.QuickModsList.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.QuickModsList.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
@@ -99,16 +100,16 @@
             this.FIlePathBox});
             this.QuickModsList.ContextMenuStrip = this.qmmMenu;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.QuickModsList.DefaultCellStyle = dataGridViewCellStyle2;
             this.QuickModsList.EnableHeadersVisualStyles = false;
             this.QuickModsList.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.QuickModsList.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.QuickModsList.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.QuickModsList.Location = new System.Drawing.Point(-2, 1);
             this.QuickModsList.Name = "QuickModsList";
             this.QuickModsList.ReadOnly = true;
@@ -116,7 +117,7 @@
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
@@ -129,6 +130,7 @@
             this.QuickModsList.ShowRowErrors = false;
             this.QuickModsList.Size = new System.Drawing.Size(942, 432);
             this.QuickModsList.TabIndex = 2;
+            this.QuickModsList.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.QuickModsList.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ApplyQmmBtnClicked);
             this.QuickModsList.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.OpenQmmMenu);
             // 
@@ -166,14 +168,15 @@
             // 
             // qmmMenu
             // 
-            this.qmmMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.qmmMenu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.qmmMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.qmmMenu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
             this.qmmMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.editQmmBtn,
             this.deleteQmmBtn,
             this.undoQmmBtn});
             this.qmmMenu.Name = "qmmMenu";
-            this.qmmMenu.Size = new System.Drawing.Size(181, 92);
+            this.qmmMenu.Size = new System.Drawing.Size(108, 70);
+            this.qmmMenu.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.qmmMenu.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.QmmMenuHandler);
             // 
             // editQmmBtn
@@ -181,15 +184,22 @@
             this.editQmmBtn.Image = global::Minecraft_Wii_U_Mod_Injector.Properties.Resources.EditBtn;
             this.editQmmBtn.Name = "editQmmBtn";
             this.editQmmBtn.ShortcutKeyDisplayString = "";
-            this.editQmmBtn.Size = new System.Drawing.Size(180, 22);
+            this.editQmmBtn.Size = new System.Drawing.Size(107, 22);
             this.editQmmBtn.Text = "Edit";
             // 
             // deleteQmmBtn
             // 
             this.deleteQmmBtn.Image = global::Minecraft_Wii_U_Mod_Injector.Properties.Resources.DeleteBtn;
             this.deleteQmmBtn.Name = "deleteQmmBtn";
-            this.deleteQmmBtn.Size = new System.Drawing.Size(180, 22);
+            this.deleteQmmBtn.Size = new System.Drawing.Size(107, 22);
             this.deleteQmmBtn.Text = "Delete";
+            // 
+            // undoQmmBtn
+            // 
+            this.undoQmmBtn.Image = global::Minecraft_Wii_U_Mod_Injector.Properties.Resources.UndoBtn;
+            this.undoQmmBtn.Name = "undoQmmBtn";
+            this.undoQmmBtn.Size = new System.Drawing.Size(107, 22);
+            this.undoQmmBtn.Text = "Undo";
             // 
             // CreatorTile
             // 
@@ -201,6 +211,7 @@
             this.CreatorTile.TabIndex = 47;
             this.CreatorTile.Text = "Quick Mod Creator";
             this.CreatorTile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.CreatorTile.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.CreatorTile.TileCount = 1;
             this.CreatorTile.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
             this.ToolTips.SetToolTip(this.CreatorTile, "Opens the Quick Mod Creator");
@@ -217,6 +228,7 @@
             this.RefreshTile.TabIndex = 53;
             this.RefreshTile.Text = "Refresh";
             this.RefreshTile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.RefreshTile.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.RefreshTile.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
             this.ToolTips.SetToolTip(this.RefreshTile, "Refreshes the Quick Mods List");
             this.RefreshTile.UseSelectable = true;
@@ -233,6 +245,7 @@
             this.EmptyTile.TabIndex = 54;
             this.EmptyTile.Text = "Currently Viewing:\r\nAvailable Quick Mods\r\n\r\n";
             this.EmptyTile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.EmptyTile.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.EmptyTile.UseSelectable = true;
             // 
             // ToolTips
@@ -251,6 +264,7 @@
             this.InstalledTile.TabIndex = 56;
             this.InstalledTile.Text = "Available Quick Mods";
             this.InstalledTile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.InstalledTile.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.InstalledTile.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
             this.ToolTips.SetToolTip(this.InstalledTile, "Views currently installed Quick Mods");
             this.InstalledTile.UseSelectable = true;
@@ -266,6 +280,7 @@
             this.OpenTile.TabIndex = 57;
             this.OpenTile.Text = "Open Directory";
             this.OpenTile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.OpenTile.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.OpenTile.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
             this.ToolTips.SetToolTip(this.OpenTile, "Opens the Quick Mods directory");
             this.OpenTile.UseSelectable = true;
@@ -283,6 +298,7 @@
             this.MainTabs.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.MainTabs.TabIndex = 55;
             this.MainTabs.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.MainTabs.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.MainTabs.UseSelectable = true;
             // 
             // QuickModsTab
@@ -296,6 +312,7 @@
             this.QuickModsTab.Size = new System.Drawing.Size(942, 429);
             this.QuickModsTab.TabIndex = 0;
             this.QuickModsTab.Text = "Available Quick Mods";
+            this.QuickModsTab.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.QuickModsTab.VerticalScrollbarBarColor = true;
             this.QuickModsTab.VerticalScrollbarHighlightOnWheel = false;
             this.QuickModsTab.VerticalScrollbarSize = 10;
@@ -319,6 +336,7 @@
             this.CreatorTab.Size = new System.Drawing.Size(942, 429);
             this.CreatorTab.TabIndex = 1;
             this.CreatorTab.Text = "Quick Mod Creator";
+            this.CreatorTab.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.CreatorTab.VerticalScrollbarBarColor = true;
             this.CreatorTab.VerticalScrollbarHighlightOnWheel = false;
             this.CreatorTab.VerticalScrollbarSize = 10;
@@ -331,6 +349,7 @@
             this.SaveQMBtn.Size = new System.Drawing.Size(832, 35);
             this.SaveQMBtn.TabIndex = 10;
             this.SaveQMBtn.Text = "Save";
+            this.SaveQMBtn.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.SaveQMBtn.UseSelectable = true;
             this.SaveQMBtn.Click += new System.EventHandler(this.SaveQm);
             // 
@@ -338,6 +357,8 @@
             // 
             this.StyleExt.SetApplyMetroTheme(this.qmmModsList, true);
             this.qmmModsList.AutoScroll = true;
+            this.qmmModsList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.qmmModsList.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
             this.qmmModsList.Location = new System.Drawing.Point(86, 97);
             this.qmmModsList.Name = "qmmModsList";
             this.qmmModsList.Size = new System.Drawing.Size(832, 288);
@@ -351,6 +372,7 @@
             this.metroLabel4.Size = new System.Drawing.Size(45, 19);
             this.metroLabel4.TabIndex = 8;
             this.metroLabel4.Text = "Mods:";
+            this.metroLabel4.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // qmmDescBox
             // 
@@ -379,6 +401,7 @@
             this.qmmDescBox.ShortcutsEnabled = true;
             this.qmmDescBox.Size = new System.Drawing.Size(832, 23);
             this.qmmDescBox.TabIndex = 7;
+            this.qmmDescBox.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.qmmDescBox.UseSelectable = true;
             this.qmmDescBox.WaterMark = "This is my awesome quick mod";
             this.qmmDescBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -392,6 +415,7 @@
             this.metroLabel3.Size = new System.Drawing.Size(77, 19);
             this.metroLabel3.TabIndex = 6;
             this.metroLabel3.Text = "Description:";
+            this.metroLabel3.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // qmmAuthBox
             // 
@@ -420,6 +444,7 @@
             this.qmmAuthBox.ShortcutsEnabled = true;
             this.qmmAuthBox.Size = new System.Drawing.Size(832, 23);
             this.qmmAuthBox.TabIndex = 5;
+            this.qmmAuthBox.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.qmmAuthBox.UseSelectable = true;
             this.qmmAuthBox.WaterMark = "Me";
             this.qmmAuthBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -433,6 +458,7 @@
             this.metroLabel2.Size = new System.Drawing.Size(53, 19);
             this.metroLabel2.TabIndex = 4;
             this.metroLabel2.Text = "Author:";
+            this.metroLabel2.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // qmmNameBox
             // 
@@ -461,6 +487,7 @@
             this.qmmNameBox.ShortcutsEnabled = true;
             this.qmmNameBox.Size = new System.Drawing.Size(832, 23);
             this.qmmNameBox.TabIndex = 3;
+            this.qmmNameBox.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.qmmNameBox.UseSelectable = true;
             this.qmmNameBox.WaterMark = "My awesome quick mod";
             this.qmmNameBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -474,13 +501,11 @@
             this.metroLabel1.Size = new System.Drawing.Size(48, 19);
             this.metroLabel1.TabIndex = 2;
             this.metroLabel1.Text = "Name:";
+            this.metroLabel1.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
-            // undoQmmBtn
+            // StyleExt
             // 
-            this.undoQmmBtn.Image = global::Minecraft_Wii_U_Mod_Injector.Properties.Resources.UndoBtn;
-            this.undoQmmBtn.Name = "undoQmmBtn";
-            this.undoQmmBtn.Size = new System.Drawing.Size(180, 22);
-            this.undoQmmBtn.Text = "Undo";
+            this.StyleExt.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // QuickModsMngr
             // 
@@ -499,7 +524,7 @@
             this.Resizable = false;
             this.Style = MetroFramework.MetroColorStyle.Default;
             this.Text = "Minecraft: Wii U Mod Injector - Quick Mods Manager";
-            this.Theme = MetroFramework.MetroThemeStyle.Default;
+            this.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Exiting);
             this.Load += new System.EventHandler(this.Init);
             ((System.ComponentModel.ISupportInitialize)(this.StyleMngr)).EndInit();

@@ -3,7 +3,7 @@
 [Information]
 If you are experiencing issues, please report them on the Github Issues page or by joining the official discord server.
 
-This update adds a few new mods and adds the ability to auto update
+This update adds a a few new mods, fixes a few old ones and improves the updating system
 
 [Changes]
 

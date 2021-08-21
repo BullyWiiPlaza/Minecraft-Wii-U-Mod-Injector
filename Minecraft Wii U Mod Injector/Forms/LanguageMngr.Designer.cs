@@ -66,20 +66,21 @@
             // StyleMngr
             // 
             this.StyleMngr.Owner = this;
+            this.StyleMngr.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // LanguagesList
             // 
             this.LanguagesList.AllowUserToAddRows = false;
             this.LanguagesList.AllowUserToDeleteRows = false;
             this.LanguagesList.AllowUserToResizeRows = false;
-            this.LanguagesList.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.LanguagesList.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.LanguagesList.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.LanguagesList.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.LanguagesList.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
@@ -91,16 +92,16 @@
             this.AuthorBox,
             this.FIlePathBox});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.LanguagesList.DefaultCellStyle = dataGridViewCellStyle2;
             this.LanguagesList.EnableHeadersVisualStyles = false;
             this.LanguagesList.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.LanguagesList.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.LanguagesList.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.LanguagesList.Location = new System.Drawing.Point(-2, 1);
             this.LanguagesList.Name = "LanguagesList";
             this.LanguagesList.ReadOnly = true;
@@ -108,7 +109,7 @@
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
@@ -121,6 +122,7 @@
             this.LanguagesList.ShowRowErrors = false;
             this.LanguagesList.Size = new System.Drawing.Size(942, 432);
             this.LanguagesList.TabIndex = 2;
+            this.LanguagesList.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.LanguagesList.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ApplyLanguageBtnClicked);
             // 
             // NameBox
@@ -165,6 +167,7 @@
             this.DownloadTile.TabIndex = 47;
             this.DownloadTile.Text = "Download Languages";
             this.DownloadTile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.DownloadTile.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.DownloadTile.TileCount = 1;
             this.DownloadTile.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
             this.ToolTips.SetToolTip(this.DownloadTile, "Views currently available to download languages");
@@ -181,6 +184,7 @@
             this.ExportTile.TabIndex = 52;
             this.ExportTile.Text = "Export Template";
             this.ExportTile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.ExportTile.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.ExportTile.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
             this.ToolTips.SetToolTip(this.ExportTile, "Exports a file with all control texts so\r\nyou can make your own language file");
             this.ExportTile.UseSelectable = true;
@@ -196,6 +200,7 @@
             this.RefreshTile.TabIndex = 53;
             this.RefreshTile.Text = "Refresh";
             this.RefreshTile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.RefreshTile.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.RefreshTile.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
             this.ToolTips.SetToolTip(this.RefreshTile, "Refreshes the Language List");
             this.RefreshTile.UseSelectable = true;
@@ -212,6 +217,7 @@
             this.EmptyTile.TabIndex = 54;
             this.EmptyTile.Text = "Currently Viewing:\r\nInstalled Languages\r\n";
             this.EmptyTile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.EmptyTile.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.EmptyTile.UseSelectable = true;
             // 
             // ToolTips
@@ -230,6 +236,7 @@
             this.InstalledTile.TabIndex = 56;
             this.InstalledTile.Text = "Installed Languages";
             this.InstalledTile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.InstalledTile.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.InstalledTile.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
             this.ToolTips.SetToolTip(this.InstalledTile, "Views currently installed languages");
             this.InstalledTile.UseSelectable = true;
@@ -245,6 +252,7 @@
             this.OpenTile.TabIndex = 57;
             this.OpenTile.Text = "Open Directory";
             this.OpenTile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.OpenTile.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.OpenTile.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
             this.ToolTips.SetToolTip(this.OpenTile, "Opens the Language directory");
             this.OpenTile.UseSelectable = true;
@@ -257,11 +265,12 @@
             this.MainTabs.ItemSize = new System.Drawing.Size(473, 1);
             this.MainTabs.Location = new System.Drawing.Point(175, 67);
             this.MainTabs.Name = "MainTabs";
-            this.MainTabs.SelectedIndex = 0;
+            this.MainTabs.SelectedIndex = 1;
             this.MainTabs.Size = new System.Drawing.Size(950, 438);
             this.MainTabs.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.MainTabs.TabIndex = 55;
             this.MainTabs.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.MainTabs.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.MainTabs.UseSelectable = true;
             // 
             // InstalledLangsTab
@@ -275,6 +284,7 @@
             this.InstalledLangsTab.Size = new System.Drawing.Size(942, 429);
             this.InstalledLangsTab.TabIndex = 0;
             this.InstalledLangsTab.Text = "Installed Languages";
+            this.InstalledLangsTab.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.InstalledLangsTab.VerticalScrollbarBarColor = true;
             this.InstalledLangsTab.VerticalScrollbarHighlightOnWheel = false;
             this.InstalledLangsTab.VerticalScrollbarSize = 10;
@@ -290,6 +300,7 @@
             this.DownloadableLangsTab.Size = new System.Drawing.Size(942, 429);
             this.DownloadableLangsTab.TabIndex = 1;
             this.DownloadableLangsTab.Text = "Downloadable Languages";
+            this.DownloadableLangsTab.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.DownloadableLangsTab.VerticalScrollbarBarColor = true;
             this.DownloadableLangsTab.VerticalScrollbarHighlightOnWheel = false;
             this.DownloadableLangsTab.VerticalScrollbarSize = 10;
@@ -299,14 +310,14 @@
             this.ServerLanguageList.AllowUserToAddRows = false;
             this.ServerLanguageList.AllowUserToDeleteRows = false;
             this.ServerLanguageList.AllowUserToResizeRows = false;
-            this.ServerLanguageList.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.ServerLanguageList.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.ServerLanguageList.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.ServerLanguageList.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.ServerLanguageList.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
@@ -316,16 +327,16 @@
             this.ServerNameBox,
             this.ServerUrlBox});
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.ServerLanguageList.DefaultCellStyle = dataGridViewCellStyle5;
             this.ServerLanguageList.EnableHeadersVisualStyles = false;
             this.ServerLanguageList.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.ServerLanguageList.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.ServerLanguageList.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.ServerLanguageList.Location = new System.Drawing.Point(-2, 1);
             this.ServerLanguageList.Name = "ServerLanguageList";
             this.ServerLanguageList.ReadOnly = true;
@@ -333,7 +344,7 @@
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
             dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
             dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
@@ -346,6 +357,7 @@
             this.ServerLanguageList.ShowRowErrors = false;
             this.ServerLanguageList.Size = new System.Drawing.Size(942, 432);
             this.ServerLanguageList.TabIndex = 3;
+            this.ServerLanguageList.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.ServerLanguageList.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DownloadServerLang);
             // 
             // ServerNameBox
@@ -382,7 +394,7 @@
             this.Resizable = false;
             this.Style = MetroFramework.MetroColorStyle.Default;
             this.Text = "Minecraft: Wii U Mod Injector - Language Manager";
-            this.Theme = MetroFramework.MetroThemeStyle.Default;
+            this.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Exiting);
             this.Load += new System.EventHandler(this.Init);
             ((System.ComponentModel.ISupportInitialize)(this.StyleMngr)).EndInit();

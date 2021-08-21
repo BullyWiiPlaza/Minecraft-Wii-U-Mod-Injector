@@ -37,9 +37,9 @@
             this.OpenScoreboardBtn = new MetroFramework.Controls.MetroButton();
             this.GameModeBox = new MetroFramework.Controls.MetroComboBox();
             this.DropStackBtn = new MetroFramework.Controls.MetroButton();
+            this.CapeBox = new MetroFramework.Controls.MetroComboBox();
             this.CameraLbl = new MetroFramework.Controls.MetroLabel();
             this.GameModeLbl = new MetroFramework.Controls.MetroLabel();
-            this.CapeBox = new MetroFramework.Controls.MetroComboBox();
             this.capeLbl = new MetroFramework.Controls.MetroLabel();
             ((System.ComponentModel.ISupportInitialize)(this.StyleMngr)).BeginInit();
             this.SuspendLayout();
@@ -47,6 +47,7 @@
             // StyleMngr
             // 
             this.StyleMngr.Owner = this;
+            this.StyleMngr.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // ToolTips
             // 
@@ -61,6 +62,7 @@
             this.CloseContainersBtn.Size = new System.Drawing.Size(517, 23);
             this.CloseContainersBtn.TabIndex = 6;
             this.CloseContainersBtn.Text = "Close Container";
+            this.CloseContainersBtn.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.ToolTips.SetToolTip(this.CloseContainersBtn, "Closes out of any container such as:\r\n\r\nFurnace, chest, hopper, crafting etc...");
             this.CloseContainersBtn.UseSelectable = true;
             this.CloseContainersBtn.Click += new System.EventHandler(this.CloseContainersBtnClicked);
@@ -79,6 +81,7 @@
             this.CameraBox.Name = "CameraBox";
             this.CameraBox.Size = new System.Drawing.Size(436, 29);
             this.CameraBox.TabIndex = 8;
+            this.CameraBox.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.ToolTips.SetToolTip(this.CameraBox, "What camera prespective should we be in?");
             this.CameraBox.UseSelectable = true;
             this.CameraBox.ValueMember = "1";
@@ -91,6 +94,7 @@
             this.OpenScoreboardBtn.Size = new System.Drawing.Size(517, 23);
             this.OpenScoreboardBtn.TabIndex = 9;
             this.OpenScoreboardBtn.Text = "Open Scoreboard";
+            this.OpenScoreboardBtn.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.ToolTips.SetToolTip(this.OpenScoreboardBtn, "Opens the scoreboard");
             this.OpenScoreboardBtn.UseSelectable = true;
             this.OpenScoreboardBtn.Click += new System.EventHandler(this.OpenScoreboardBtnClicked);
@@ -110,6 +114,7 @@
             this.GameModeBox.Name = "GameModeBox";
             this.GameModeBox.Size = new System.Drawing.Size(401, 29);
             this.GameModeBox.TabIndex = 11;
+            this.GameModeBox.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.ToolTips.SetToolTip(this.GameModeBox, "What game mode should we be in?");
             this.GameModeBox.UseSelectable = true;
             this.GameModeBox.ValueMember = "0";
@@ -122,29 +127,10 @@
             this.DropStackBtn.Size = new System.Drawing.Size(517, 23);
             this.DropStackBtn.TabIndex = 12;
             this.DropStackBtn.Text = "Drop Stack";
+            this.DropStackBtn.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.ToolTips.SetToolTip(this.DropStackBtn, "Drops the entire stack of items you are currently holding.");
             this.DropStackBtn.UseSelectable = true;
             this.DropStackBtn.Click += new System.EventHandler(this.DropStackBtnClicked);
-            // 
-            // CameraLbl
-            // 
-            this.CameraLbl.AutoSize = true;
-            this.CameraLbl.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.CameraLbl.Location = new System.Drawing.Point(19, 98);
-            this.CameraLbl.Name = "CameraLbl";
-            this.CameraLbl.Size = new System.Drawing.Size(75, 25);
-            this.CameraLbl.TabIndex = 7;
-            this.CameraLbl.Text = "Camera:";
-            // 
-            // GameModeLbl
-            // 
-            this.GameModeLbl.AutoSize = true;
-            this.GameModeLbl.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.GameModeLbl.Location = new System.Drawing.Point(19, 63);
-            this.GameModeLbl.Name = "GameModeLbl";
-            this.GameModeLbl.Size = new System.Drawing.Size(110, 25);
-            this.GameModeLbl.TabIndex = 10;
-            this.GameModeLbl.Text = "Game Mode:";
             // 
             // CapeBox
             // 
@@ -190,10 +176,33 @@
             this.CapeBox.Name = "CapeBox";
             this.CapeBox.Size = new System.Drawing.Size(460, 29);
             this.CapeBox.TabIndex = 14;
+            this.CapeBox.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.ToolTips.SetToolTip(this.CapeBox, "What camera prespective should we be in?");
             this.CapeBox.UseSelectable = true;
             this.CapeBox.ValueMember = "1";
             this.CapeBox.SelectedIndexChanged += new System.EventHandler(this.CapeBoxChanged);
+            // 
+            // CameraLbl
+            // 
+            this.CameraLbl.AutoSize = true;
+            this.CameraLbl.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.CameraLbl.Location = new System.Drawing.Point(19, 98);
+            this.CameraLbl.Name = "CameraLbl";
+            this.CameraLbl.Size = new System.Drawing.Size(75, 25);
+            this.CameraLbl.TabIndex = 7;
+            this.CameraLbl.Text = "Camera:";
+            this.CameraLbl.Theme = MetroFramework.MetroThemeStyle.Dark;
+            // 
+            // GameModeLbl
+            // 
+            this.GameModeLbl.AutoSize = true;
+            this.GameModeLbl.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.GameModeLbl.Location = new System.Drawing.Point(19, 63);
+            this.GameModeLbl.Name = "GameModeLbl";
+            this.GameModeLbl.Size = new System.Drawing.Size(110, 25);
+            this.GameModeLbl.TabIndex = 10;
+            this.GameModeLbl.Text = "Game Mode:";
+            this.GameModeLbl.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // capeLbl
             // 
@@ -204,6 +213,7 @@
             this.capeLbl.Size = new System.Drawing.Size(55, 25);
             this.capeLbl.TabIndex = 13;
             this.capeLbl.Text = "Cape:";
+            this.capeLbl.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // PlayerOptions
             // 
@@ -224,6 +234,7 @@
             this.Name = "PlayerOptions";
             this.Resizable = false;
             this.Text = "Minecraft: Wii U Mod Injector - Player Options";
+            this.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.TopMost = true;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Exiting);
             this.Load += new System.EventHandler(this.Init);

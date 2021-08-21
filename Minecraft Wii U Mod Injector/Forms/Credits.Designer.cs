@@ -41,6 +41,7 @@
             // StyleMngr
             // 
             this.StyleMngr.Owner = this;
+            this.StyleMngr.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // kashiieraCredits
             // 
@@ -51,6 +52,7 @@
             this.kashiieraCredits.TabIndex = 0;
             this.kashiieraCredits.Text = "Kashiiera AKA Sloth@WiiPlaza: \r\n- Creating/Programming the Minecraft Wii U Mod In" +
     "jector\r\n- Creating most mods";
+            this.kashiieraCredits.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // bullywiiplazaCredits
             // 
@@ -61,6 +63,7 @@
             this.bullywiiplazaCredits.TabIndex = 2;
             this.bullywiiplazaCredits.Text = "Bully@WiiPlaza: \r\n- Help with late development\r\n- Creating some mods\r\n- Hosting t" +
     "he Minecraft Wii U Mod Injector";
+            this.bullywiiplazaCredits.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // appIco
             // 
@@ -87,6 +90,7 @@
             this.vylrynaCredits.TabIndex = 46;
             this.vylrynaCredits.Text = "vylryna: \r\n- Creating a handful of mods (most notably, commands)\r\n- Helping me un" +
     "derstand how commands work";
+            this.vylrynaCredits.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // Credits
             // 
@@ -103,7 +107,7 @@
             this.Resizable = false;
             this.Style = MetroFramework.MetroColorStyle.Default;
             this.Text = "Minecraft: Wii U Mod Injector - Credits";
-            this.Theme = MetroFramework.MetroThemeStyle.Default;
+            this.Theme = MetroFramework.MetroThemeStyle.Dark;
             ((System.ComponentModel.ISupportInitialize)(this.StyleMngr)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

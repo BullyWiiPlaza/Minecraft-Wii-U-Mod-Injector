@@ -49,6 +49,7 @@
             this.NNIDNameLbl.Size = new System.Drawing.Size(48, 19);
             this.NNIDNameLbl.TabIndex = 0;
             this.NNIDNameLbl.Text = "Name:";
+            this.NNIDNameLbl.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // NNIDNameBox
             // 
@@ -76,6 +77,7 @@
             this.NNIDNameBox.ShortcutsEnabled = true;
             this.NNIDNameBox.Size = new System.Drawing.Size(459, 23);
             this.NNIDNameBox.TabIndex = 1;
+            this.NNIDNameBox.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.ToolTips.SetToolTip(this.NNIDNameBox, "The name to set");
             this.NNIDNameBox.UseSelectable = true;
             this.NNIDNameBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -89,6 +91,7 @@
             this.NNIDChangeBtn.Size = new System.Drawing.Size(558, 23);
             this.NNIDChangeBtn.TabIndex = 2;
             this.NNIDChangeBtn.Text = "Change";
+            this.NNIDChangeBtn.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.ToolTips.SetToolTip(this.NNIDChangeBtn, "Changes your name to the given one");
             this.NNIDChangeBtn.UseSelectable = true;
             this.NNIDChangeBtn.Click += new System.EventHandler(this.NnidChangeBtnClicked);
@@ -96,6 +99,7 @@
             // StyleMngr
             // 
             this.StyleMngr.Owner = this;
+            this.StyleMngr.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // WarningLbl
             // 
@@ -107,6 +111,7 @@
             this.WarningLbl.Style = MetroFramework.MetroColorStyle.Red;
             this.WarningLbl.TabIndex = 5;
             this.WarningLbl.Text = "You won\'t see changes and other people won\'t unless they rejoin!";
+            this.WarningLbl.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.WarningLbl.UseStyleColors = true;
             // 
             // ToolTips
@@ -122,6 +127,7 @@
             this.readNameBtn.Size = new System.Drawing.Size(93, 23);
             this.readNameBtn.TabIndex = 6;
             this.readNameBtn.Text = "Read";
+            this.readNameBtn.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.ToolTips.SetToolTip(this.readNameBtn, "Changes your name to the given one");
             this.readNameBtn.UseSelectable = true;
             this.readNameBtn.Click += new System.EventHandler(this.ReadNameBtnClicked);
@@ -134,6 +140,7 @@
             this.NNIDResetBtn.Size = new System.Drawing.Size(558, 23);
             this.NNIDResetBtn.TabIndex = 7;
             this.NNIDResetBtn.Text = "Reset";
+            this.NNIDResetBtn.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.ToolTips.SetToolTip(this.NNIDResetBtn, "Resets your name to your default NNID");
             this.NNIDResetBtn.UseSelectable = true;
             this.NNIDResetBtn.Click += new System.EventHandler(this.NNIDResetBtn_Click);
@@ -154,6 +161,7 @@
             this.Name = "NnidEditor";
             this.Resizable = false;
             this.Text = "Minecraft: Wii U Mod Injector - Nintendo Network Editor";
+            this.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.TopMost = true;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Exiting);
             this.Load += new System.EventHandler(this.Init);

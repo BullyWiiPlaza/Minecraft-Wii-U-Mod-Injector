@@ -46,6 +46,7 @@
             this.metroLabel1.Size = new System.Drawing.Size(65, 19);
             this.metroLabel1.TabIndex = 0;
             this.metroLabel1.Text = "Map Text:";
+            this.metroLabel1.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // MapText
             // 
@@ -73,6 +74,7 @@
             this.MapText.ShortcutsEnabled = true;
             this.MapText.Size = new System.Drawing.Size(459, 23);
             this.MapText.TabIndex = 1;
+            this.MapText.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.MapText.UseSelectable = true;
             this.MapText.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.MapText.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -84,12 +86,14 @@
             this.SetMapText.Size = new System.Drawing.Size(358, 23);
             this.SetMapText.TabIndex = 2;
             this.SetMapText.Text = "Set";
+            this.SetMapText.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.SetMapText.UseSelectable = true;
             this.SetMapText.Click += new System.EventHandler(this.SetMapTextClicked);
             // 
             // StyleMngr
             // 
             this.StyleMngr.Owner = this;
+            this.StyleMngr.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // variablesBtn
             // 
@@ -98,6 +102,7 @@
             this.variablesBtn.Size = new System.Drawing.Size(95, 23);
             this.variablesBtn.TabIndex = 3;
             this.variablesBtn.Text = "Variables";
+            this.variablesBtn.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.variablesBtn.UseSelectable = true;
             this.variablesBtn.Click += new System.EventHandler(this.VariablesBtnClicked);
             // 
@@ -115,6 +120,7 @@
             this.Name = "MapTextEditor";
             this.Resizable = false;
             this.Text = "Minecraft: Wii U Mod Injector - Map Text Editor";
+            this.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Exiting);
             ((System.ComponentModel.ISupportInitialize)(this.StyleMngr)).EndInit();
             this.ResumeLayout(false);

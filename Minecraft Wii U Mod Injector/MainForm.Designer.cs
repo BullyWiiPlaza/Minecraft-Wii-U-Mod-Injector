@@ -786,8 +786,8 @@ namespace Minecraft_Wii_U_Mod_Injector
             // MaxStackSlider
             // 
             this.StyleExtender.SetApplyMetroTheme(this.MaxStackSlider, true);
-            this.MaxStackSlider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.MaxStackSlider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.MaxStackSlider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.MaxStackSlider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
             this.MaxStackSlider.Location = new System.Drawing.Point(634, 505);
             this.MaxStackSlider.Maximum = new decimal(new int[] {
             9999,
@@ -863,8 +863,8 @@ namespace Minecraft_Wii_U_Mod_Injector
             // XPLevelSlider
             // 
             this.StyleExtender.SetApplyMetroTheme(this.XPLevelSlider, true);
-            this.XPLevelSlider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.XPLevelSlider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.XPLevelSlider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.XPLevelSlider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
             this.XPLevelSlider.Location = new System.Drawing.Point(623, 479);
             this.XPLevelSlider.Maximum = new decimal(new int[] {
             99999999,
@@ -881,8 +881,8 @@ namespace Minecraft_Wii_U_Mod_Injector
             // PotionAmplifierSlider
             // 
             this.StyleExtender.SetApplyMetroTheme(this.PotionAmplifierSlider, true);
-            this.PotionAmplifierSlider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.PotionAmplifierSlider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.PotionAmplifierSlider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.PotionAmplifierSlider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
             this.PotionAmplifierSlider.Increment = new decimal(new int[] {
             0,
             0,
@@ -904,9 +904,9 @@ namespace Minecraft_Wii_U_Mod_Injector
             // FrictionSlider
             // 
             this.StyleExtender.SetApplyMetroTheme(this.FrictionSlider, true);
-            this.FrictionSlider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.FrictionSlider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.FrictionSlider.DecimalPlaces = 8;
-            this.FrictionSlider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.FrictionSlider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
             this.FrictionSlider.Increment = new decimal(new int[] {
             10000000,
             0,
@@ -935,9 +935,9 @@ namespace Minecraft_Wii_U_Mod_Injector
             // playerModelScaleSlider
             // 
             this.StyleExtender.SetApplyMetroTheme(this.playerModelScaleSlider, true);
-            this.playerModelScaleSlider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.playerModelScaleSlider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.playerModelScaleSlider.DecimalPlaces = 4;
-            this.playerModelScaleSlider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.playerModelScaleSlider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
             this.playerModelScaleSlider.Increment = new decimal(new int[] {
             1000,
             0,
@@ -961,9 +961,9 @@ namespace Minecraft_Wii_U_Mod_Injector
             // FieldOfViewSplitSlider
             // 
             this.StyleExtender.SetApplyMetroTheme(this.FieldOfViewSplitSlider, true);
-            this.FieldOfViewSplitSlider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.FieldOfViewSplitSlider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.FieldOfViewSplitSlider.DecimalPlaces = 3;
-            this.FieldOfViewSplitSlider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.FieldOfViewSplitSlider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
             this.FieldOfViewSplitSlider.Increment = new decimal(new int[] {
             1,
             0,
@@ -992,9 +992,9 @@ namespace Minecraft_Wii_U_Mod_Injector
             // RiptideFlyingSpeedSlider
             // 
             this.StyleExtender.SetApplyMetroTheme(this.RiptideFlyingSpeedSlider, true);
-            this.RiptideFlyingSpeedSlider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.RiptideFlyingSpeedSlider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.RiptideFlyingSpeedSlider.DecimalPlaces = 4;
-            this.RiptideFlyingSpeedSlider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.RiptideFlyingSpeedSlider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
             this.RiptideFlyingSpeedSlider.Increment = new decimal(new int[] {
             1000,
             0,
@@ -1028,9 +1028,9 @@ namespace Minecraft_Wii_U_Mod_Injector
             // SprintingSpeedScaleSlider
             // 
             this.StyleExtender.SetApplyMetroTheme(this.SprintingSpeedScaleSlider, true);
-            this.SprintingSpeedScaleSlider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.SprintingSpeedScaleSlider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.SprintingSpeedScaleSlider.DecimalPlaces = 3;
-            this.SprintingSpeedScaleSlider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.SprintingSpeedScaleSlider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
             this.SprintingSpeedScaleSlider.Increment = new decimal(new int[] {
             1000,
             0,
@@ -1059,8 +1059,8 @@ namespace Minecraft_Wii_U_Mod_Injector
             // EnchantmentLevelSlider
             // 
             this.StyleExtender.SetApplyMetroTheme(this.EnchantmentLevelSlider, true);
-            this.EnchantmentLevelSlider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.EnchantmentLevelSlider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.EnchantmentLevelSlider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.EnchantmentLevelSlider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
             this.EnchantmentLevelSlider.Location = new System.Drawing.Point(139, 480);
             this.EnchantmentLevelSlider.Maximum = new decimal(new int[] {
             512,
@@ -1078,9 +1078,9 @@ namespace Minecraft_Wii_U_Mod_Injector
             // WalkingSpeedScaleSlider
             // 
             this.StyleExtender.SetApplyMetroTheme(this.WalkingSpeedScaleSlider, true);
-            this.WalkingSpeedScaleSlider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.WalkingSpeedScaleSlider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.WalkingSpeedScaleSlider.DecimalPlaces = 3;
-            this.WalkingSpeedScaleSlider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.WalkingSpeedScaleSlider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
             this.WalkingSpeedScaleSlider.Increment = new decimal(new int[] {
             1000,
             0,
@@ -1109,9 +1109,9 @@ namespace Minecraft_Wii_U_Mod_Injector
             // ReachSlider
             // 
             this.StyleExtender.SetApplyMetroTheme(this.ReachSlider, true);
-            this.ReachSlider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.ReachSlider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.ReachSlider.DecimalPlaces = 1;
-            this.ReachSlider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.ReachSlider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
             this.ReachSlider.Increment = new decimal(new int[] {
             1,
             0,
@@ -1145,9 +1145,9 @@ namespace Minecraft_Wii_U_Mod_Injector
             // JumpHeightSlider
             // 
             this.StyleExtender.SetApplyMetroTheme(this.JumpHeightSlider, true);
-            this.JumpHeightSlider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.JumpHeightSlider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.JumpHeightSlider.DecimalPlaces = 3;
-            this.JumpHeightSlider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.JumpHeightSlider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
             this.JumpHeightSlider.Increment = new decimal(new int[] {
             5,
             0,
@@ -1181,9 +1181,9 @@ namespace Minecraft_Wii_U_Mod_Injector
             // FieldOfViewSlider
             // 
             this.StyleExtender.SetApplyMetroTheme(this.FieldOfViewSlider, true);
-            this.FieldOfViewSlider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.FieldOfViewSlider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.FieldOfViewSlider.DecimalPlaces = 3;
-            this.FieldOfViewSlider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.FieldOfViewSlider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
             this.FieldOfViewSlider.Increment = new decimal(new int[] {
             1,
             0,
@@ -1212,10 +1212,10 @@ namespace Minecraft_Wii_U_Mod_Injector
             // HitBoxScaleSlider
             // 
             this.StyleExtender.SetApplyMetroTheme(this.HitBoxScaleSlider, true);
-            this.HitBoxScaleSlider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.HitBoxScaleSlider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.HitBoxScaleSlider.DecimalPlaces = 1;
             this.HitBoxScaleSlider.Enabled = false;
-            this.HitBoxScaleSlider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.HitBoxScaleSlider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
             this.HitBoxScaleSlider.Increment = new decimal(new int[] {
             1,
             0,
@@ -2220,8 +2220,8 @@ namespace Minecraft_Wii_U_Mod_Injector
             // LiquidSpreadTimeSlider
             // 
             this.StyleExtender.SetApplyMetroTheme(this.LiquidSpreadTimeSlider, true);
-            this.LiquidSpreadTimeSlider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.LiquidSpreadTimeSlider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.LiquidSpreadTimeSlider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.LiquidSpreadTimeSlider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
             this.LiquidSpreadTimeSlider.Location = new System.Drawing.Point(140, 506);
             this.LiquidSpreadTimeSlider.Maximum = new decimal(new int[] {
             120,
@@ -2281,8 +2281,8 @@ namespace Minecraft_Wii_U_Mod_Injector
             // EntitySpeedSlider
             // 
             this.StyleExtender.SetApplyMetroTheme(this.EntitySpeedSlider, true);
-            this.EntitySpeedSlider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.EntitySpeedSlider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.EntitySpeedSlider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.EntitySpeedSlider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
             this.EntitySpeedSlider.Location = new System.Drawing.Point(108, 480);
             this.EntitySpeedSlider.Maximum = new decimal(new int[] {
             120,
@@ -2964,8 +2964,8 @@ namespace Minecraft_Wii_U_Mod_Injector
             // RequiredPlayersSlider
             // 
             this.StyleExtender.SetApplyMetroTheme(this.RequiredPlayersSlider, true);
-            this.RequiredPlayersSlider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.RequiredPlayersSlider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.RequiredPlayersSlider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.RequiredPlayersSlider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
             this.RequiredPlayersSlider.Location = new System.Drawing.Point(124, 574);
             this.RequiredPlayersSlider.Maximum = new decimal(new int[] {
             512,
@@ -3105,8 +3105,8 @@ namespace Minecraft_Wii_U_Mod_Injector
             // RefillIntervalSlider
             // 
             this.StyleExtender.SetApplyMetroTheme(this.RefillIntervalSlider, true);
-            this.RefillIntervalSlider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.RefillIntervalSlider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.RefillIntervalSlider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.RefillIntervalSlider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
             this.RefillIntervalSlider.Location = new System.Drawing.Point(140, 574);
             this.RefillIntervalSlider.Maximum = new decimal(new int[] {
             120,
@@ -3209,8 +3209,8 @@ namespace Minecraft_Wii_U_Mod_Injector
             // ringScoreBlue
             // 
             this.StyleExtender.SetApplyMetroTheme(this.ringScoreBlue, true);
-            this.ringScoreBlue.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.ringScoreBlue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.ringScoreBlue.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.ringScoreBlue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
             this.ringScoreBlue.Location = new System.Drawing.Point(145, 55);
             this.ringScoreBlue.Maximum = new decimal(new int[] {
             10000,
@@ -3239,8 +3239,8 @@ namespace Minecraft_Wii_U_Mod_Injector
             // ringScoreOrange
             // 
             this.StyleExtender.SetApplyMetroTheme(this.ringScoreOrange, true);
-            this.ringScoreOrange.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.ringScoreOrange.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.ringScoreOrange.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.ringScoreOrange.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
             this.ringScoreOrange.Location = new System.Drawing.Point(145, 29);
             this.ringScoreOrange.Maximum = new decimal(new int[] {
             10000,
@@ -3270,8 +3270,8 @@ namespace Minecraft_Wii_U_Mod_Injector
             // ringScoreGreen
             // 
             this.StyleExtender.SetApplyMetroTheme(this.ringScoreGreen, true);
-            this.ringScoreGreen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.ringScoreGreen.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.ringScoreGreen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.ringScoreGreen.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
             this.ringScoreGreen.Location = new System.Drawing.Point(145, 3);
             this.ringScoreGreen.Maximum = new decimal(new int[] {
             10000,
@@ -4315,12 +4315,17 @@ namespace Minecraft_Wii_U_Mod_Injector
             // StyleMngr
             // 
             this.StyleMngr.Owner = this;
+            this.StyleMngr.Theme = MetroFramework.MetroThemeStyle.Dark;
+            // 
+            // StyleExtender
+            // 
+            this.StyleExtender.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // ToolTipManager
             // 
             this.ToolTipManager.Style = MetroFramework.MetroColorStyle.Default;
             this.ToolTipManager.StyleManager = null;
-            this.ToolTipManager.Theme = MetroFramework.MetroThemeStyle.Default;
+            this.ToolTipManager.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // PlayersTile
             // 
@@ -4361,7 +4366,8 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.IncreaseDecimalPlace,
             this.DecreaseDecimalPlace});
             this.RightClickMenu.Name = "RightClickMenu";
-            this.RightClickMenu.Size = new System.Drawing.Size(323, 48);
+            this.RightClickMenu.Size = new System.Drawing.Size(323, 70);
+            this.RightClickMenu.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // IncreaseDecimalPlace
             // 

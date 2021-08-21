@@ -35,7 +35,7 @@
             this.bullywiiplazaCredits = new MetroFramework.Controls.MetroLabel();
             this.appIco = new MetroFramework.Controls.MetroPanel();
             this.vylrynaCredits = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
+            this.nessieHaxCredits = new MetroFramework.Controls.MetroLabel();
             ((System.ComponentModel.ISupportInitialize)(this.StyleMngr)).BeginInit();
             this.SuspendLayout();
             // 
@@ -92,22 +92,22 @@
     "ommands)\r\n- Helping me understand how commands work";
             this.vylrynaCredits.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
-            // metroLabel1
+            // nessieHaxCredits
             // 
-            this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(23, 302);
-            this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(154, 38);
-            this.metroLabel1.TabIndex = 47;
-            this.metroLabel1.Text = "NessieHax: \r\n- Help with development";
-            this.metroLabel1.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.nessieHaxCredits.AutoSize = true;
+            this.nessieHaxCredits.Location = new System.Drawing.Point(23, 302);
+            this.nessieHaxCredits.Name = "nessieHaxCredits";
+            this.nessieHaxCredits.Size = new System.Drawing.Size(154, 38);
+            this.nessieHaxCredits.TabIndex = 47;
+            this.nessieHaxCredits.Text = "NessieHax: \r\n- Help with development";
+            this.nessieHaxCredits.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // Credits
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(720, 369);
-            this.Controls.Add(this.metroLabel1);
+            this.Controls.Add(this.nessieHaxCredits);
             this.Controls.Add(this.vylrynaCredits);
             this.Controls.Add(this.bullywiiplazaCredits);
             this.Controls.Add(this.kashiieraCredits);
@@ -131,6 +131,6 @@
         private MetroFramework.Controls.MetroLabel bullywiiplazaCredits;
         private MetroFramework.Controls.MetroPanel appIco;
         private MetroFramework.Controls.MetroLabel vylrynaCredits;
-        private MetroFramework.Controls.MetroLabel metroLabel1;
+        private MetroFramework.Controls.MetroLabel nessieHaxCredits;
     }
 }

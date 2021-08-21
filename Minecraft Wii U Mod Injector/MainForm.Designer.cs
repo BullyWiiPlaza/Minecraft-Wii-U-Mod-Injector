@@ -47,9 +47,11 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.CreditsBtn = new MetroFramework.Controls.MetroButton();
             this.ConnectBtn = new MetroFramework.Controls.MetroButton();
             this.DiscordSrvBtn = new MetroFramework.Controls.MetroButton();
-            this.WiiUIpv4Box = new MetroFramework.Controls.MetroTextBox();
+            this.WiiUIPv4Box = new MetroFramework.Controls.MetroTextBox();
             this.WiiUIpv4Lbl = new MetroFramework.Controls.MetroLabel();
             this.playersTab = new MetroFramework.Controls.MetroTabPage();
+            this.BreakBedrock = new MetroFramework.Controls.MetroCheckBox();
+            this.SwimFast = new MetroFramework.Controls.MetroCheckBox();
             this.BreakAnything = new MetroFramework.Controls.MetroCheckBox();
             this.UnlimitedJumps = new MetroFramework.Controls.MetroCheckBox();
             this.LeftHanded = new MetroFramework.Controls.MetroCheckBox();
@@ -165,6 +167,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.StaticLiquidBlocks = new MetroFramework.Controls.MetroCheckBox();
             this.NoFog = new MetroFramework.Controls.MetroCheckBox();
             this.generalTab = new MetroFramework.Controls.MetroTabPage();
+            this.AchievementEditor = new MetroFramework.Controls.MetroButton();
             this.UnlockSignKeyboard = new MetroFramework.Controls.MetroCheckBox();
             this.DebugConsole = new MetroFramework.Controls.MetroCheckBox();
             this.Game = new MetroFramework.Controls.MetroLabel();
@@ -207,6 +210,8 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.ringScoreG = new MetroFramework.Controls.MetroLabel();
             this.ringScoreGreen = new System.Windows.Forms.NumericUpDown();
             this.commandsTab = new MetroFramework.Controls.MetroTabPage();
+            this.commandsWarnLbl = new MetroFramework.Controls.MetroLabel();
+            this.CommandsInMinigames = new MetroFramework.Controls.MetroCheckBox();
             this.tellrawLbl = new MetroFramework.Controls.MetroLabel();
             this.tellrawPanel = new MetroFramework.Controls.MetroPanel();
             this.tellStyleLbl = new MetroFramework.Controls.MetroLabel();
@@ -267,8 +272,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.RightClickMenu = new MetroFramework.Controls.MetroContextMenu(this.components);
             this.IncreaseDecimalPlace = new System.Windows.Forms.ToolStripMenuItem();
             this.DecreaseDecimalPlace = new System.Windows.Forms.ToolStripMenuItem();
-            this.CommandsInMinigames = new MetroFramework.Controls.MetroCheckBox();
-            this.commandsWarnLbl = new MetroFramework.Controls.MetroLabel();
+            this.updateBtn = new MetroFramework.Controls.MetroButton();
             this.MainTabs.SuspendLayout();
             this.MainTab.SuspendLayout();
             this.playersTab.SuspendLayout();
@@ -403,11 +407,11 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.MainTabs.Controls.Add(this.minigamesTab);
             this.MainTabs.Controls.Add(this.commandsTab);
             this.MainTabs.Controls.Add(this.settingsTab);
-            this.MainTabs.ItemSize = new System.Drawing.Size(160, 1);
+            this.MainTabs.ItemSize = new System.Drawing.Size(160, 10);
             this.MainTabs.Location = new System.Drawing.Point(155, 61);
             this.MainTabs.Multiline = true;
             this.MainTabs.Name = "MainTabs";
-            this.MainTabs.SelectedIndex = 5;
+            this.MainTabs.SelectedIndex = 6;
             this.MainTabs.Size = new System.Drawing.Size(1130, 639);
             this.MainTabs.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.MainTabs.TabIndex = 0;
@@ -423,15 +427,15 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.MainTab.Controls.Add(this.CreditsBtn);
             this.MainTab.Controls.Add(this.ConnectBtn);
             this.MainTab.Controls.Add(this.DiscordSrvBtn);
-            this.MainTab.Controls.Add(this.WiiUIpv4Box);
+            this.MainTab.Controls.Add(this.WiiUIPv4Box);
             this.MainTab.Controls.Add(this.WiiUIpv4Lbl);
             this.MainTab.HorizontalScrollbarBarColor = true;
             this.MainTab.HorizontalScrollbarHighlightOnWheel = false;
             this.MainTab.HorizontalScrollbarSize = 10;
-            this.MainTab.Location = new System.Drawing.Point(4, 5);
+            this.MainTab.Location = new System.Drawing.Point(4, 14);
             this.MainTab.Name = "MainTab";
             this.MainTab.Padding = new System.Windows.Forms.Padding(3);
-            this.MainTab.Size = new System.Drawing.Size(1122, 630);
+            this.MainTab.Size = new System.Drawing.Size(1122, 621);
             this.MainTab.TabIndex = 6;
             this.MainTab.Text = "Home";
             this.MainTab.VerticalScrollbarBarColor = true;
@@ -506,7 +510,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.BuildVerTitleLbl.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.BuildVerTitleLbl.Location = new System.Drawing.Point(3, 3);
             this.BuildVerTitleLbl.Name = "BuildVerTitleLbl";
-            this.BuildVerTitleLbl.Size = new System.Drawing.Size(212, 25);
+            this.BuildVerTitleLbl.Size = new System.Drawing.Size(213, 25);
             this.BuildVerTitleLbl.TabIndex = 6;
             this.BuildVerTitleLbl.Text = "Patch Notes for VERSION";
             this.BuildVerTitleLbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -548,40 +552,40 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.DiscordSrvBtn.UseSelectable = true;
             this.DiscordSrvBtn.Click += new System.EventHandler(this.DiscordSrvBtnClicked);
             // 
-            // WiiUIpv4Box
+            // WiiUIPv4Box
             // 
             // 
             // 
             // 
-            this.WiiUIpv4Box.CustomButton.Image = null;
-            this.WiiUIpv4Box.CustomButton.Location = new System.Drawing.Point(863, 1);
-            this.WiiUIpv4Box.CustomButton.Name = "";
-            this.WiiUIpv4Box.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.WiiUIpv4Box.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.WiiUIpv4Box.CustomButton.TabIndex = 1;
-            this.WiiUIpv4Box.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.WiiUIpv4Box.CustomButton.UseSelectable = true;
-            this.WiiUIpv4Box.CustomButton.Visible = false;
-            this.WiiUIpv4Box.Lines = new string[0];
-            this.WiiUIpv4Box.Location = new System.Drawing.Point(84, 601);
-            this.WiiUIpv4Box.MaxLength = 32767;
-            this.WiiUIpv4Box.Name = "WiiUIpv4Box";
-            this.WiiUIpv4Box.PasswordChar = '\0';
-            this.WiiUIpv4Box.PromptText = "Your Wii U\'s IPv4 address (Seen in the TCP Gecko Installer)";
-            this.WiiUIpv4Box.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.WiiUIpv4Box.SelectedText = "";
-            this.WiiUIpv4Box.SelectionLength = 0;
-            this.WiiUIpv4Box.SelectionStart = 0;
-            this.WiiUIpv4Box.ShortcutsEnabled = true;
-            this.WiiUIpv4Box.Size = new System.Drawing.Size(885, 23);
-            this.WiiUIpv4Box.TabIndex = 3;
-            this.WiiUIpv4Box.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.WiiUIpv4Box.UseSelectable = true;
-            this.WiiUIpv4Box.WaterMark = "Your Wii U\'s IPv4 address (Seen in the TCP Gecko Installer)";
-            this.WiiUIpv4Box.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.WiiUIpv4Box.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.WiiUIpv4Box.TextChanged += new System.EventHandler(this.CapturewiiuIpv4Box);
-            this.WiiUIpv4Box.KeyDown += new System.Windows.Forms.KeyEventHandler(this.CaptureWiiUIpv4BoxInput);
+            this.WiiUIPv4Box.CustomButton.Image = null;
+            this.WiiUIPv4Box.CustomButton.Location = new System.Drawing.Point(863, 1);
+            this.WiiUIPv4Box.CustomButton.Name = "";
+            this.WiiUIPv4Box.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.WiiUIPv4Box.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.WiiUIPv4Box.CustomButton.TabIndex = 1;
+            this.WiiUIPv4Box.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.WiiUIPv4Box.CustomButton.UseSelectable = true;
+            this.WiiUIPv4Box.CustomButton.Visible = false;
+            this.WiiUIPv4Box.Lines = new string[0];
+            this.WiiUIPv4Box.Location = new System.Drawing.Point(84, 601);
+            this.WiiUIPv4Box.MaxLength = 32767;
+            this.WiiUIPv4Box.Name = "WiiUIPv4Box";
+            this.WiiUIPv4Box.PasswordChar = '\0';
+            this.WiiUIPv4Box.PromptText = "Your Wii U\'s IPv4 address (Seen in the TCP Gecko Installer)";
+            this.WiiUIPv4Box.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.WiiUIPv4Box.SelectedText = "";
+            this.WiiUIPv4Box.SelectionLength = 0;
+            this.WiiUIPv4Box.SelectionStart = 0;
+            this.WiiUIPv4Box.ShortcutsEnabled = true;
+            this.WiiUIPv4Box.Size = new System.Drawing.Size(885, 23);
+            this.WiiUIPv4Box.TabIndex = 3;
+            this.WiiUIPv4Box.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.WiiUIPv4Box.UseSelectable = true;
+            this.WiiUIPv4Box.WaterMark = "Your Wii U\'s IPv4 address (Seen in the TCP Gecko Installer)";
+            this.WiiUIPv4Box.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.WiiUIPv4Box.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.WiiUIPv4Box.TextChanged += new System.EventHandler(this.CaptureWiiUIPv4Box);
+            this.WiiUIPv4Box.KeyDown += new System.Windows.Forms.KeyEventHandler(this.CaptureWiiUIPv4BoxInput);
             // 
             // WiiUIpv4Lbl
             // 
@@ -595,6 +599,8 @@ namespace Minecraft_Wii_U_Mod_Injector
             // 
             // playersTab
             // 
+            this.playersTab.Controls.Add(this.BreakBedrock);
+            this.playersTab.Controls.Add(this.SwimFast);
             this.playersTab.Controls.Add(this.BreakAnything);
             this.playersTab.Controls.Add(this.UnlimitedJumps);
             this.playersTab.Controls.Add(this.LeftHanded);
@@ -684,16 +690,42 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.playersTab.HorizontalScrollbarBarColor = true;
             this.playersTab.HorizontalScrollbarHighlightOnWheel = false;
             this.playersTab.HorizontalScrollbarSize = 10;
-            this.playersTab.Location = new System.Drawing.Point(4, 5);
+            this.playersTab.Location = new System.Drawing.Point(4, 14);
             this.playersTab.Name = "playersTab";
             this.playersTab.Padding = new System.Windows.Forms.Padding(3);
-            this.playersTab.Size = new System.Drawing.Size(1122, 630);
+            this.playersTab.Size = new System.Drawing.Size(1122, 621);
             this.playersTab.TabIndex = 0;
             this.playersTab.Tag = "needsGeckoU";
             this.playersTab.Text = "Player(s)";
             this.playersTab.VerticalScrollbarBarColor = true;
             this.playersTab.VerticalScrollbarHighlightOnWheel = false;
             this.playersTab.VerticalScrollbarSize = 10;
+            // 
+            // BreakBedrock
+            // 
+            this.BreakBedrock.AutoSize = true;
+            this.BreakBedrock.Location = new System.Drawing.Point(383, 300);
+            this.BreakBedrock.Name = "BreakBedrock";
+            this.BreakBedrock.Size = new System.Drawing.Size(98, 15);
+            this.BreakBedrock.TabIndex = 172;
+            this.BreakBedrock.Tag = "";
+            this.BreakBedrock.Text = "Break Bedrock";
+            this.ToolTipManager.SetToolTip(this.BreakBedrock, "Whether you can destroy bedrock in survival");
+            this.BreakBedrock.UseSelectable = true;
+            this.BreakBedrock.CheckedChanged += new System.EventHandler(this.BreakBedrockToggled);
+            // 
+            // SwimFast
+            // 
+            this.SwimFast.AutoSize = true;
+            this.SwimFast.Location = new System.Drawing.Point(383, 279);
+            this.SwimFast.Name = "SwimFast";
+            this.SwimFast.Size = new System.Drawing.Size(76, 15);
+            this.SwimFast.TabIndex = 172;
+            this.SwimFast.Tag = "";
+            this.SwimFast.Text = "Swim Fast";
+            this.ToolTipManager.SetToolTip(this.SwimFast, "Whether you will swim faster or not");
+            this.SwimFast.UseSelectable = true;
+            this.SwimFast.CheckedChanged += new System.EventHandler(this.SwimFastToggled);
             // 
             // BreakAnything
             // 
@@ -1213,7 +1245,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.PotionAmplifier.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.PotionAmplifier.Location = new System.Drawing.Point(292, 610);
             this.PotionAmplifier.Name = "PotionAmplifier";
-            this.PotionAmplifier.Size = new System.Drawing.Size(109, 19);
+            this.PotionAmplifier.Size = new System.Drawing.Size(110, 19);
             this.PotionAmplifier.TabIndex = 156;
             this.PotionAmplifier.Tag = "";
             this.PotionAmplifier.Text = "Potion Amplifier:";
@@ -1453,7 +1485,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.WalkingSpeedScale.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.WalkingSpeedScale.Location = new System.Drawing.Point(292, 532);
             this.WalkingSpeedScale.Name = "WalkingSpeedScale";
-            this.WalkingSpeedScale.Size = new System.Drawing.Size(135, 19);
+            this.WalkingSpeedScale.Size = new System.Drawing.Size(136, 19);
             this.WalkingSpeedScale.TabIndex = 130;
             this.WalkingSpeedScale.Tag = "";
             this.WalkingSpeedScale.Text = "Walking Speed Scale:";
@@ -1489,7 +1521,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.TakeEverythingAnywhere.AutoSize = true;
             this.TakeEverythingAnywhere.Location = new System.Drawing.Point(192, 342);
             this.TakeEverythingAnywhere.Name = "TakeEverythingAnywhere";
-            this.TakeEverythingAnywhere.Size = new System.Drawing.Size(161, 15);
+            this.TakeEverythingAnywhere.Size = new System.Drawing.Size(163, 15);
             this.TakeEverythingAnywhere.TabIndex = 25;
             this.TakeEverythingAnywhere.Tag = "";
             this.TakeEverythingAnywhere.Text = "Take Everything Anywhere";
@@ -1541,7 +1573,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.CraftingTableAnywhere.AutoSize = true;
             this.CraftingTableAnywhere.Location = new System.Drawing.Point(192, 300);
             this.CraftingTableAnywhere.Name = "CraftingTableAnywhere";
-            this.CraftingTableAnywhere.Size = new System.Drawing.Size(152, 15);
+            this.CraftingTableAnywhere.Size = new System.Drawing.Size(154, 15);
             this.CraftingTableAnywhere.TabIndex = 132;
             this.CraftingTableAnywhere.Tag = "";
             this.CraftingTableAnywhere.Text = "Crafting Table Anywhere";
@@ -1554,7 +1586,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.VisibleHitboxes.AutoSize = true;
             this.VisibleHitboxes.Location = new System.Drawing.Point(192, 279);
             this.VisibleHitboxes.Name = "VisibleHitboxes";
-            this.VisibleHitboxes.Size = new System.Drawing.Size(107, 15);
+            this.VisibleHitboxes.Size = new System.Drawing.Size(106, 15);
             this.VisibleHitboxes.TabIndex = 129;
             this.VisibleHitboxes.Tag = "";
             this.VisibleHitboxes.Text = "Visible Hitboxes";
@@ -1901,7 +1933,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.SilkTouchAnything.BackColor = System.Drawing.Color.Transparent;
             this.SilkTouchAnything.Location = new System.Drawing.Point(7, 216);
             this.SilkTouchAnything.Name = "SilkTouchAnything";
-            this.SilkTouchAnything.Size = new System.Drawing.Size(128, 15);
+            this.SilkTouchAnything.Size = new System.Drawing.Size(130, 15);
             this.SilkTouchAnything.TabIndex = 87;
             this.SilkTouchAnything.Tag = "";
             this.SilkTouchAnything.Text = "Silk Touch Anything";
@@ -2072,10 +2104,10 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.worldTab.HorizontalScrollbarBarColor = true;
             this.worldTab.HorizontalScrollbarHighlightOnWheel = false;
             this.worldTab.HorizontalScrollbarSize = 10;
-            this.worldTab.Location = new System.Drawing.Point(4, 5);
+            this.worldTab.Location = new System.Drawing.Point(4, 14);
             this.worldTab.Name = "worldTab";
             this.worldTab.Padding = new System.Windows.Forms.Padding(3);
-            this.worldTab.Size = new System.Drawing.Size(1122, 630);
+            this.worldTab.Size = new System.Drawing.Size(1122, 621);
             this.worldTab.TabIndex = 1;
             this.worldTab.Tag = "needsGeckoU";
             this.worldTab.Text = "Entities / World";
@@ -2275,7 +2307,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.ZombieTower.AutoSize = true;
             this.ZombieTower.Location = new System.Drawing.Point(475, 88);
             this.ZombieTower.Name = "ZombieTower";
-            this.ZombieTower.Size = new System.Drawing.Size(98, 15);
+            this.ZombieTower.Size = new System.Drawing.Size(100, 15);
             this.ZombieTower.TabIndex = 20;
             this.ZombieTower.Tag = "";
             this.ZombieTower.Text = "Zombie Tower";
@@ -2380,7 +2412,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.World.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.World.Location = new System.Drawing.Point(3, 3);
             this.World.Name = "World";
-            this.World.Size = new System.Drawing.Size(96, 19);
+            this.World.Size = new System.Drawing.Size(97, 19);
             this.World.TabIndex = 44;
             this.World.Text = "World / Blocks";
             // 
@@ -2455,6 +2487,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             // 
             // generalTab
             // 
+            this.generalTab.Controls.Add(this.AchievementEditor);
             this.generalTab.Controls.Add(this.UnlockSignKeyboard);
             this.generalTab.Controls.Add(this.DebugConsole);
             this.generalTab.Controls.Add(this.Game);
@@ -2475,16 +2508,27 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.generalTab.HorizontalScrollbarBarColor = true;
             this.generalTab.HorizontalScrollbarHighlightOnWheel = false;
             this.generalTab.HorizontalScrollbarSize = 10;
-            this.generalTab.Location = new System.Drawing.Point(4, 5);
+            this.generalTab.Location = new System.Drawing.Point(4, 14);
             this.generalTab.Name = "generalTab";
             this.generalTab.Padding = new System.Windows.Forms.Padding(3);
-            this.generalTab.Size = new System.Drawing.Size(1122, 630);
+            this.generalTab.Size = new System.Drawing.Size(1122, 621);
             this.generalTab.TabIndex = 2;
             this.generalTab.Tag = "needsGeckoU";
             this.generalTab.Text = "General Game";
             this.generalTab.VerticalScrollbarBarColor = true;
             this.generalTab.VerticalScrollbarHighlightOnWheel = false;
             this.generalTab.VerticalScrollbarSize = 10;
+            // 
+            // AchievementEditor
+            // 
+            this.AchievementEditor.Location = new System.Drawing.Point(6, 487);
+            this.AchievementEditor.Name = "AchievementEditor";
+            this.AchievementEditor.Size = new System.Drawing.Size(1109, 23);
+            this.AchievementEditor.TabIndex = 145;
+            this.AchievementEditor.Text = "Achievement Editor";
+            this.ToolTipManager.SetToolTip(this.AchievementEditor, "Opens the Achievement Editor, allowing you to swap achievements.");
+            this.AchievementEditor.UseSelectable = true;
+            this.AchievementEditor.Click += new System.EventHandler(this.AchievementEditorClicked);
             // 
             // UnlockSignKeyboard
             // 
@@ -2581,7 +2625,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.DisableTeleporting.ForeColor = System.Drawing.SystemColors.ControlText;
             this.DisableTeleporting.Location = new System.Drawing.Point(475, 130);
             this.DisableTeleporting.Name = "DisableTeleporting";
-            this.DisableTeleporting.Size = new System.Drawing.Size(123, 15);
+            this.DisableTeleporting.Size = new System.Drawing.Size(125, 15);
             this.DisableTeleporting.TabIndex = 31;
             this.DisableTeleporting.Tag = "";
             this.DisableTeleporting.Text = "Disable Teleporting";
@@ -2719,10 +2763,10 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.minigamesTab.HorizontalScrollbarBarColor = true;
             this.minigamesTab.HorizontalScrollbarHighlightOnWheel = false;
             this.minigamesTab.HorizontalScrollbarSize = 10;
-            this.minigamesTab.Location = new System.Drawing.Point(4, 5);
+            this.minigamesTab.Location = new System.Drawing.Point(4, 14);
             this.minigamesTab.Name = "minigamesTab";
             this.minigamesTab.Padding = new System.Windows.Forms.Padding(3);
-            this.minigamesTab.Size = new System.Drawing.Size(1122, 630);
+            this.minigamesTab.Size = new System.Drawing.Size(1122, 621);
             this.minigamesTab.TabIndex = 3;
             this.minigamesTab.Tag = "GeckoUNeeded";
             this.minigamesTab.Text = "Minigames";
@@ -2848,7 +2892,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.TNTGriefing.AutoSize = true;
             this.TNTGriefing.Location = new System.Drawing.Point(7, 27);
             this.TNTGriefing.Name = "TNTGriefing";
-            this.TNTGriefing.Size = new System.Drawing.Size(89, 15);
+            this.TNTGriefing.Size = new System.Drawing.Size(91, 15);
             this.TNTGriefing.TabIndex = 7;
             this.TNTGriefing.Tag = "";
             this.TNTGriefing.Text = "TNT Griefing";
@@ -2973,7 +3017,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.TumbleHUD.AutoSize = true;
             this.TumbleHUD.Location = new System.Drawing.Point(7, 6);
             this.TumbleHUD.Name = "TumbleHUD";
-            this.TumbleHUD.Size = new System.Drawing.Size(91, 15);
+            this.TumbleHUD.Size = new System.Drawing.Size(92, 15);
             this.TumbleHUD.TabIndex = 3;
             this.TumbleHUD.Tag = "";
             this.TumbleHUD.Text = "Tumble HUD";
@@ -3115,15 +3159,40 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.commandsTab.HorizontalScrollbarBarColor = true;
             this.commandsTab.HorizontalScrollbarHighlightOnWheel = false;
             this.commandsTab.HorizontalScrollbarSize = 10;
-            this.commandsTab.Location = new System.Drawing.Point(4, 5);
+            this.commandsTab.Location = new System.Drawing.Point(4, 14);
             this.commandsTab.Name = "commandsTab";
-            this.commandsTab.Size = new System.Drawing.Size(1122, 630);
+            this.commandsTab.Size = new System.Drawing.Size(1122, 621);
             this.commandsTab.TabIndex = 7;
             this.commandsTab.Tag = "needsGeckoU";
             this.commandsTab.Text = "Commands";
             this.commandsTab.VerticalScrollbarBarColor = true;
             this.commandsTab.VerticalScrollbarHighlightOnWheel = false;
             this.commandsTab.VerticalScrollbarSize = 10;
+            // 
+            // commandsWarnLbl
+            // 
+            this.commandsWarnLbl.AutoSize = true;
+            this.commandsWarnLbl.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.commandsWarnLbl.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.commandsWarnLbl.Location = new System.Drawing.Point(106, 443);
+            this.commandsWarnLbl.Name = "commandsWarnLbl";
+            this.commandsWarnLbl.Size = new System.Drawing.Size(912, 50);
+            this.commandsWarnLbl.TabIndex = 52;
+            this.commandsWarnLbl.Text = "Commands require you to be the host or a moderator. If you want to use commands i" +
+    "n minigames make sure to \r\nselect the \"Commands in Minigames\" option";
+            this.commandsWarnLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // CommandsInMinigames
+            // 
+            this.CommandsInMinigames.AutoSize = true;
+            this.CommandsInMinigames.Location = new System.Drawing.Point(95, 335);
+            this.CommandsInMinigames.Name = "CommandsInMinigames";
+            this.CommandsInMinigames.Size = new System.Drawing.Size(160, 15);
+            this.CommandsInMinigames.TabIndex = 51;
+            this.CommandsInMinigames.Text = "Commands in Minigames";
+            this.ToolTipManager.SetToolTip(this.CommandsInMinigames, "Whether to use Java style chat messages");
+            this.CommandsInMinigames.UseSelectable = true;
+            this.CommandsInMinigames.CheckedChanged += new System.EventHandler(this.CommandsInMinigamesToggled);
             // 
             // tellrawLbl
             // 
@@ -3407,7 +3476,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.worldCmdLbl.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.worldCmdLbl.Location = new System.Drawing.Point(843, 9);
             this.worldCmdLbl.Name = "worldCmdLbl";
-            this.worldCmdLbl.Size = new System.Drawing.Size(45, 19);
+            this.worldCmdLbl.Size = new System.Drawing.Size(46, 19);
             this.worldCmdLbl.TabIndex = 44;
             this.worldCmdLbl.Text = "World";
             // 
@@ -3838,6 +3907,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.settingsTab.Controls.Add(this.CheckForPreRelease);
             this.settingsTab.Controls.Add(this.settingsLogo);
             this.settingsTab.Controls.Add(this.releaseNotesToggle);
+            this.settingsTab.Controls.Add(this.updateBtn);
             this.settingsTab.Controls.Add(this.resetConfigBtn);
             this.settingsTab.Controls.Add(this.discordRpcCheckBox);
             this.settingsTab.Controls.Add(this.colorsBox);
@@ -3847,10 +3917,10 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.settingsTab.HorizontalScrollbarBarColor = true;
             this.settingsTab.HorizontalScrollbarHighlightOnWheel = false;
             this.settingsTab.HorizontalScrollbarSize = 10;
-            this.settingsTab.Location = new System.Drawing.Point(4, 5);
+            this.settingsTab.Location = new System.Drawing.Point(4, 14);
             this.settingsTab.Name = "settingsTab";
             this.settingsTab.Padding = new System.Windows.Forms.Padding(3);
-            this.settingsTab.Size = new System.Drawing.Size(1122, 630);
+            this.settingsTab.Size = new System.Drawing.Size(1122, 621);
             this.settingsTab.TabIndex = 5;
             this.settingsTab.Tag = "";
             this.settingsTab.Text = "Settings";
@@ -3904,9 +3974,9 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.settingsLogo.HorizontalScrollbarBarColor = true;
             this.settingsLogo.HorizontalScrollbarHighlightOnWheel = false;
             this.settingsLogo.HorizontalScrollbarSize = 10;
-            this.settingsLogo.Location = new System.Drawing.Point(65, 241);
+            this.settingsLogo.Location = new System.Drawing.Point(65, 289);
             this.settingsLogo.Name = "settingsLogo";
-            this.settingsLogo.Size = new System.Drawing.Size(1050, 383);
+            this.settingsLogo.Size = new System.Drawing.Size(1050, 335);
             this.settingsLogo.TabIndex = 44;
             this.settingsLogo.VerticalScrollbarBarColor = true;
             this.settingsLogo.VerticalScrollbarHighlightOnWheel = false;
@@ -4094,30 +4164,17 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.DecreaseDecimalPlace.Size = new System.Drawing.Size(322, 22);
             this.DecreaseDecimalPlace.Text = "Decrease decimal place";
             // 
-            // CommandsInMinigames
+            // updateBtn
             // 
-            this.CommandsInMinigames.AutoSize = true;
-            this.CommandsInMinigames.Location = new System.Drawing.Point(95, 335);
-            this.CommandsInMinigames.Name = "CommandsInMinigames";
-            this.CommandsInMinigames.Size = new System.Drawing.Size(160, 15);
-            this.CommandsInMinigames.TabIndex = 51;
-            this.CommandsInMinigames.Text = "Commands in Minigames";
-            this.ToolTipManager.SetToolTip(this.CommandsInMinigames, "Whether to use Java style chat messages");
-            this.CommandsInMinigames.UseSelectable = true;
-            this.CommandsInMinigames.CheckedChanged += new System.EventHandler(this.CommandsInMinigamesToggled);
-            // 
-            // commandsWarnLbl
-            // 
-            this.commandsWarnLbl.AutoSize = true;
-            this.commandsWarnLbl.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.commandsWarnLbl.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.commandsWarnLbl.Location = new System.Drawing.Point(106, 443);
-            this.commandsWarnLbl.Name = "commandsWarnLbl";
-            this.commandsWarnLbl.Size = new System.Drawing.Size(912, 50);
-            this.commandsWarnLbl.TabIndex = 52;
-            this.commandsWarnLbl.Text = "Commands require you to be the host or a moderator. If you want to use commands i" +
-    "n minigames make sure to \r\nselect the \"Commands in Minigames\" option";
-            this.commandsWarnLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.updateBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.updateBtn.Location = new System.Drawing.Point(65, 244);
+            this.updateBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.updateBtn.Name = "updateBtn";
+            this.updateBtn.Size = new System.Drawing.Size(1050, 36);
+            this.updateBtn.TabIndex = 45;
+            this.updateBtn.Text = "Check for Updates";
+            this.updateBtn.UseSelectable = true;
+            this.updateBtn.Click += new System.EventHandler(this.CheckUpdatesClicked);
             // 
             // MainForm
             // 
@@ -4397,7 +4454,7 @@ namespace Minecraft_Wii_U_Mod_Injector
         public MetroFramework.Controls.MetroButton PlayerOptionsBtn;
         public MetroFramework.Controls.MetroLabel XPLevel;
         public System.Windows.Forms.NumericUpDown XPLevelSlider;
-        public MetroTextBox WiiUIpv4Box;
+        public MetroTextBox WiiUIPv4Box;
         public MetroTextBox BuildNotesBox;
         public MetroButton OpenLangMngrBtn;
         public MetroButton SetupTutorialBtn;
@@ -4441,5 +4498,9 @@ namespace Minecraft_Wii_U_Mod_Injector
         public MetroCheckBox DisableFallingBlocks;
         private MetroCheckBox CommandsInMinigames;
         private MetroLabel commandsWarnLbl;
+        private MetroButton AchievementEditor;
+        public MetroCheckBox SwimFast;
+        public MetroCheckBox BreakBedrock;
+        public MetroButton updateBtn;
     }
 }

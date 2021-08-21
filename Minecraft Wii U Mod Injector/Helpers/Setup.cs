@@ -6,15 +6,20 @@ using System.Threading.Tasks;
 using Minecraft_Wii_U_Mod_Injector.Helpers.Win_Forms;
 using Minecraft_Wii_U_Mod_Injector.Properties;
 using Settings = Minecraft_Wii_U_Mod_Injector.Helpers.Files.Settings;
+using System.Net;
+using System.Windows;
+using System.Windows.Forms;
+using System.Diagnostics;
 
 namespace Minecraft_Wii_U_Mod_Injector.Helpers
 {
     class Setup
     {
-        public static MainForm Injector = new();
+        public static MainForm Injector = new MainForm();
 
         public static string LocalVer = "v5.1.9";
         public static string GitVer = string.Empty;
+        public static string updaterPath = $@"{System.Windows.Forms.Application.StartupPath}\Minecraft.Wii.U.Mod.Injector.Updater.exe";
         public static bool PreRelease;
 
         public Setup(MainForm window)
@@ -22,12 +27,12 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
             Injector = window;
         }
 
-        public static void SetupInjector()
+        public static async void SetupInjector()
         {
             try
             {
 #if !DEBUG
-                RetrieveGitVersion();
+                await RetrieveGitVersion();
 #endif
 
 #if DEBUG
@@ -53,36 +58,46 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
             }
         }
 
-        public static async Task RetrieveGitVersion()
+        public static async Task RetrieveGitVersion(bool auto = true)
         {
             try
             {
+                ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12; //To avoid that error that I always get
                 var verChecker = new GitHubClient(new ProductHeaderValue("MCWiiUMIClient"));
                 var releases = await verChecker.Repository.Release.GetAll("Kashiiera", "Minecraft-Wii-U-Mod-Injector");
 
                 GitVer = releases[0].TagName;
                 PreRelease = releases[0].Prerelease;
-
-                if (LocalVer != GitVer && !PreRelease)
+                Console.WriteLine(GitVer);
+                Console.WriteLine(LocalVer);
+                if (LocalVer != GitVer)
                 {
-                    Messaging.Show("The current injector version " + LocalVer +
-                                   " is outdated! Please download version " + GitVer + " at " +
-                                   "https://github.com/Kashiiera/Minecraft-Wii-U-Mod-Injector/releases \nas it may contain feature updates, bug fixes and more.");
-                    Environment.Exit(0);
-                }
-
-                if (LocalVer != GitVer && Settings.EqualsTo("PrereleaseOptIn", "True", "Updates") && PreRelease)
-                {
-                    Messaging.Show(
-                        "Thank you for being interested in testing pre-releases!\nThe current injector version " +
-                        LocalVer +
-                        " is outdated! Please download version " + GitVer + " at " +
-                        "https://github.com/Kashiiera/Minecraft-Wii-U-Mod-Injector/releases \nas it may contain feature updates, bug fixes and more.");
-                    Environment.Exit(0);
+                    if (!PreRelease) {
+                        if (Messaging.Show($"A new injector version [{GitVer}] is avaliable! Would you like to automatically launch the updater?", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes) {
+                            using (var wc = new WebClient()) {
+                                wc.DownloadFile("https://github.com/vylryna/MCUModInjector-Updater/releases/latest/download/Minecraft.Wii.U.Mod.Injector.Updater.exe", updaterPath);
+                            };
+                            Process.Start(updaterPath);
+                            System.Windows.Forms.Application.Exit();
+                        }
+                    } else if (Settings.EqualsTo("PrereleaseOptIn", "True", "Updates") && PreRelease) {
+                        if (Messaging.Show($"A new pre-release injector version [{GitVer}] is avaliable! Would you like to automatically launch the updater?", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes) {
+                            using (var wc = new WebClient()) {
+                                wc.DownloadFile("https://github.com/vylryna/MCUModInjector-Updater/releases/latest/download/Minecraft.Wii.U.Mod.Injector.Updater.exe", updaterPath);
+                            };
+                            Process.Start(updaterPath);
+                            System.Windows.Forms.Application.Exit();
+                        }
+                    }
+                } else {
+                    if (!auto) {
+                        Messaging.Show(MessageBoxIcon.Information, "No new updates found.");
+                    }
                 }
             }
             catch (Exception error)
             {
+                Console.WriteLine(error);
                 Exceptions.LogError(error,
                     "Something went wrong while retrieving the latest release, please try re-launching the Injector.\n" +
                     "If this issue persist please contact the developers.", true);

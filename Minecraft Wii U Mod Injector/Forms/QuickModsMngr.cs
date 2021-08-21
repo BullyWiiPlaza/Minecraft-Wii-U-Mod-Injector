@@ -172,7 +172,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms
 
         private IniFile GetQmmFile(DataGridViewCellEventArgs e)
         {
-            return new(QuickModsList.Rows[e.RowIndex].Cells[3].Value.ToString());
+            return new IniFile(QuickModsList.Rows[e.RowIndex].Cells[3].Value.ToString());
         }
 
         private void LoadInstalledQmms()

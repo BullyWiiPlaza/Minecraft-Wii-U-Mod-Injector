@@ -1,3 +1,53 @@
+[Release v5.2.0 (21st of August, 2021)]
+
+[Information]
+If you are experiencing issues, please report them on the Github Issues page or by joining the official discord server.
+
+This update adds a few new mods and adds the ability to auto update
+
+[Changes]
+
++ New mods
+
+- Player(s) > Swim Fast (You can now swim faster)
+- Player(s) > Break Bedrock (You can now break Bedrock in survival mode)
+- Player(s) > Water Sink Strength (Controls how fast you sink while crouching)
+- Player(s) > Breathing Mode (You can now select what gives you oxygen. Air, Lava, Blocks, Water or all 4!)
+- Player(s) > Nintendo Network Editor > You can now read your name
+- Player(s) > Player Options > Skin (You can now easily swap skins using the Mod Injector! This also works with Custom Skins)
+- Entities / World > Increased Buried Treasure Spawn (Spawns a buried chest in every chunk)
+- Entities / World > Increased Mineshaft Spawn (Spawns a mineshaft in every chunk)
+- Entities / World > Increased Ocean Monument Spawn (Spawns a Ocean Monument in every chunk)
+- Entities / World > Increased Ocean Ruins Spawn (Spawns a Ocean Ruin in every chunk)
+- Entities / World > Increased Structures Spawn (Spawns a biome-specific structure in every chunk within that biome)
+- Entities / World > Increased Shipwreck Spawn (Spawns a Shipwreck in every chunk)
+- Entities / World > Increased Stronghold Spawn (Spawns a Stronghold in every chunk)
+- Entities / World > Increased Village Spawn (Spawns a village in every chunk)
+- Entities / World > Increased Woodland Mansion Spawn (Spawns a Woodland Mansion in every chunk)
+- Entities / World > Collision (Disables the collision on entities so they cannot be pushed, including players)
+- General Game > Mute Microphone (You can now completely disable your microphone)
+- General Game > Achievement Editor (You can edit/replace achievements with one another)
+- Commands > Commands in minigames (You can now use commands in minigames, you still need to be the host though.)
+
++ General Additions & Updates:
+
+- The Mod Injector now automatically updates using the new Updater (made by vylryna)
+- Theme selection is no longer a thing, the default Injector theme will now always be Dark
+- You can now check for updates in the Settings tab
+- Updated Credits
+
+[Fixes]
+
++ Mod Fixes
+
+- Entities / World > Disable Creative Flag should now work properly
+- Entities / World > Super Furnace should now work properly
+- Minigames > Batle > End game should now work properly
+
++ General Fixes
+
+- Fixed incorrect tooltips
+
 [Release v5.1.9 (18th of August, 2021)]
 
 [Information]

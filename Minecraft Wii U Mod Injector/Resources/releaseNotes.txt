@@ -42,7 +42,7 @@ This update adds a a few new mods, fixes a few old ones and improves the updatin
 
 - Entities / World > Disable Creative Flag should now work properly
 - Entities / World > Super Furnace should now work properly
-- Minigames > Batle > End game should now work properly
+- Minigames > Battle > End game should now work properly
 
 + General Fixes
 

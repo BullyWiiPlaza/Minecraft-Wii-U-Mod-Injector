@@ -273,6 +273,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.RightClickMenu = new MetroFramework.Controls.MetroContextMenu(this.components);
             this.IncreaseDecimalPlace = new System.Windows.Forms.ToolStripMenuItem();
             this.DecreaseDecimalPlace = new System.Windows.Forms.ToolStripMenuItem();
+            this.NoPosLock = new MetroFramework.Controls.MetroCheckBox();
             this.MainTabs.SuspendLayout();
             this.MainTab.SuspendLayout();
             this.playersTab.SuspendLayout();
@@ -411,7 +412,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.MainTabs.Location = new System.Drawing.Point(155, 61);
             this.MainTabs.Multiline = true;
             this.MainTabs.Name = "MainTabs";
-            this.MainTabs.SelectedIndex = 0;
+            this.MainTabs.SelectedIndex = 4;
             this.MainTabs.Size = new System.Drawing.Size(1130, 639);
             this.MainTabs.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.MainTabs.TabIndex = 0;
@@ -2926,6 +2927,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             // GeneralMinigames
             // 
             this.GeneralMinigames.BackColor = System.Drawing.Color.White;
+            this.GeneralMinigames.Controls.Add(this.NoPosLock);
             this.GeneralMinigames.Controls.Add(this.SqueakInfinitely);
             this.GeneralMinigames.Controls.Add(this.RequiredPlayersSlider);
             this.GeneralMinigames.Controls.Add(this.RequiredPlayers);
@@ -4366,7 +4368,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.IncreaseDecimalPlace,
             this.DecreaseDecimalPlace});
             this.RightClickMenu.Name = "RightClickMenu";
-            this.RightClickMenu.Size = new System.Drawing.Size(323, 70);
+            this.RightClickMenu.Size = new System.Drawing.Size(323, 48);
             this.RightClickMenu.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // IncreaseDecimalPlace
@@ -4384,6 +4386,19 @@ namespace Minecraft_Wii_U_Mod_Injector
             | System.Windows.Forms.Keys.OemMinus)));
             this.DecreaseDecimalPlace.Size = new System.Drawing.Size(322, 22);
             this.DecreaseDecimalPlace.Text = "Decrease decimal place";
+            // 
+            // NoPosLock
+            // 
+            this.NoPosLock.AutoSize = true;
+            this.NoPosLock.Location = new System.Drawing.Point(7, 112);
+            this.NoPosLock.Name = "NoPosLock";
+            this.NoPosLock.Size = new System.Drawing.Size(113, 15);
+            this.NoPosLock.TabIndex = 25;
+            this.NoPosLock.Text = "No Position Lock";
+            this.NoPosLock.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.ToolTipManager.SetToolTip(this.NoPosLock, "Removes the Position Lock when a Mini Game starts");
+            this.NoPosLock.UseSelectable = true;
+            this.NoPosLock.CheckedChanged += new System.EventHandler(this.NoPosLock_CheckedChanged);
             // 
             // MainForm
             // 
@@ -4711,5 +4726,6 @@ namespace Minecraft_Wii_U_Mod_Injector
         public MetroCheckBox SwimFast;
         public MetroCheckBox BreakBedrock;
         public MetroButton updateBtn;
+        public MetroCheckBox NoPosLock;
     }
 }

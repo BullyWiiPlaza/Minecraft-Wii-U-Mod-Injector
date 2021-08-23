@@ -1546,9 +1546,18 @@ namespace Minecraft_Wii_U_Mod_Injector
             GeckoU.WriteUIntToggle(0x031A2730, Blr, Mflr,
                 SqueakInfinitely.Checked); //MultiPlayerGameMode::CanMakeSpectateSound((void))
         }
+        private void NoPosLock_CheckedChanged(object sender, EventArgs e)
+        {
+            GeckoU.WriteUIntToggle(0x027CD4B0, Off, 0x88630814, NoPosLock.Checked);
+            GeckoU.WriteUIntToggle(0x02CDF9B0, Off, 0x88630814, NoPosLock.Checked);
+            GeckoU.WriteUIntToggle(0x02FC804C, Off, 0x88630814, NoPosLock.Checked);
+            GeckoU.WriteUIntToggle(0x0323F7F8, Off, 0x88630814, NoPosLock.Checked);
+            GeckoU.WriteUIntToggle(0x0332d270, Off, 0x88630814, NoPosLock.Checked);
+        }
 
         #endregion
 
         #endregion memory editing
+
     }
 }

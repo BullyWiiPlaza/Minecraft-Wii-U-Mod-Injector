@@ -1,4 +1,6 @@
-﻿namespace Minecraft_Wii_U_Mod_Injector.Helpers.Files
+﻿using System.Collections.Generic;
+
+namespace Minecraft_Wii_U_Mod_Injector.Helpers.Files
 {
     public class Settings
     {
@@ -33,6 +35,11 @@
         public static bool Exists(string key, string section)
         {
             return _settingsFile.KeyExists(key, section);
+        }
+
+        public static List<string> Keys(string section)
+        {
+            return _settingsFile.GetKeys(section);
         }
     }
 }

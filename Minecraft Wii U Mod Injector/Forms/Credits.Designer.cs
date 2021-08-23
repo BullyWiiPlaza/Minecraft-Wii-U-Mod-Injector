@@ -35,6 +35,7 @@
             this.bullywiiplazaCredits = new MetroFramework.Controls.MetroLabel();
             this.appIco = new MetroFramework.Controls.MetroPanel();
             this.vylrynaCredits = new MetroFramework.Controls.MetroLabel();
+            this.nessieHaxCredits = new MetroFramework.Controls.MetroLabel();
             ((System.ComponentModel.ISupportInitialize)(this.StyleMngr)).BeginInit();
             this.SuspendLayout();
             // 
@@ -59,10 +60,9 @@
             this.bullywiiplazaCredits.AutoSize = true;
             this.bullywiiplazaCredits.Location = new System.Drawing.Point(23, 132);
             this.bullywiiplazaCredits.Name = "bullywiiplazaCredits";
-            this.bullywiiplazaCredits.Size = new System.Drawing.Size(259, 76);
+            this.bullywiiplazaCredits.Size = new System.Drawing.Size(179, 57);
             this.bullywiiplazaCredits.TabIndex = 2;
-            this.bullywiiplazaCredits.Text = "Bully@WiiPlaza: \r\n- Help with late development\r\n- Creating some mods\r\n- Hosting t" +
-    "he Minecraft Wii U Mod Injector";
+            this.bullywiiplazaCredits.Text = "Bully@WiiPlaza: \r\n- Help with late development\r\n- Creating some mods";
             this.bullywiiplazaCredits.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // appIco
@@ -75,7 +75,7 @@
             this.appIco.HorizontalScrollbarSize = 10;
             this.appIco.Location = new System.Drawing.Point(443, 35);
             this.appIco.Name = "appIco";
-            this.appIco.Size = new System.Drawing.Size(255, 245);
+            this.appIco.Size = new System.Drawing.Size(255, 311);
             this.appIco.TabIndex = 45;
             this.appIco.VerticalScrollbarBarColor = true;
             this.appIco.VerticalScrollbarHighlightOnWheel = false;
@@ -84,19 +84,30 @@
             // vylrynaCredits
             // 
             this.vylrynaCredits.AutoSize = true;
-            this.vylrynaCredits.Location = new System.Drawing.Point(23, 223);
+            this.vylrynaCredits.Location = new System.Drawing.Point(23, 210);
             this.vylrynaCredits.Name = "vylrynaCredits";
-            this.vylrynaCredits.Size = new System.Drawing.Size(339, 57);
+            this.vylrynaCredits.Size = new System.Drawing.Size(339, 76);
             this.vylrynaCredits.TabIndex = 46;
-            this.vylrynaCredits.Text = "vylryna: \r\n- Creating a handful of mods (most notably, commands)\r\n- Helping me un" +
-    "derstand how commands work";
+            this.vylrynaCredits.Text = "vylryna: \r\n- Help with development\r\n- Creating a handful of mods (most notably, c" +
+    "ommands)\r\n- Helping me understand how commands work";
             this.vylrynaCredits.Theme = MetroFramework.MetroThemeStyle.Dark;
+            // 
+            // nessieHaxCredits
+            // 
+            this.nessieHaxCredits.AutoSize = true;
+            this.nessieHaxCredits.Location = new System.Drawing.Point(23, 302);
+            this.nessieHaxCredits.Name = "nessieHaxCredits";
+            this.nessieHaxCredits.Size = new System.Drawing.Size(154, 38);
+            this.nessieHaxCredits.TabIndex = 47;
+            this.nessieHaxCredits.Text = "NessieHax: \r\n- Help with development";
+            this.nessieHaxCredits.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // Credits
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(720, 285);
+            this.ClientSize = new System.Drawing.Size(720, 369);
+            this.Controls.Add(this.nessieHaxCredits);
             this.Controls.Add(this.vylrynaCredits);
             this.Controls.Add(this.bullywiiplazaCredits);
             this.Controls.Add(this.kashiieraCredits);
@@ -120,5 +131,6 @@
         private MetroFramework.Controls.MetroLabel bullywiiplazaCredits;
         private MetroFramework.Controls.MetroPanel appIco;
         private MetroFramework.Controls.MetroLabel vylrynaCredits;
+        private MetroFramework.Controls.MetroLabel nessieHaxCredits;
     }
 }

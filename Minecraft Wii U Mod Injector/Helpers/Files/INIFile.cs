@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
 using System.Runtime.InteropServices;
@@ -52,17 +53,15 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers.Files
 
         public List<string> GetKeys(string section)
         {
-
+            List<string> result = new List<string>();
             byte[] buffer = new byte[2048];
-
             GetPrivateProfileSection(section, buffer, 2048, _path);
             string[] tmp = Encoding.ASCII.GetString(buffer).Trim('\0').Split('\0');
 
-            List<string> result = new List<string>();
-
             foreach (string entry in tmp)
             {
-                result.Add(entry.Substring(0, entry.IndexOf("=")));
+                if (entry.Length > 0)
+                    result.Add(entry.Substring(0, entry.IndexOf("=", StringComparison.Ordinal)));
             }
 
             return result;

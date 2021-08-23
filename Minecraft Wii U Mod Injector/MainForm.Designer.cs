@@ -274,6 +274,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.IncreaseDecimalPlace = new System.Windows.Forms.ToolStripMenuItem();
             this.DecreaseDecimalPlace = new System.Windows.Forms.ToolStripMenuItem();
             this.NoPosLock = new MetroFramework.Controls.MetroCheckBox();
+            this.DisableCamaraAnimation = new MetroFramework.Controls.MetroCheckBox();
             this.MainTabs.SuspendLayout();
             this.MainTab.SuspendLayout();
             this.playersTab.SuspendLayout();
@@ -2915,7 +2916,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.MinigamesTabs.ItemSize = new System.Drawing.Size(280, 25);
             this.MinigamesTabs.Location = new System.Drawing.Point(-3, 2);
             this.MinigamesTabs.Name = "MinigamesTabs";
-            this.MinigamesTabs.SelectedIndex = 0;
+            this.MinigamesTabs.SelectedIndex = 2;
             this.MinigamesTabs.Size = new System.Drawing.Size(1129, 633);
             this.MinigamesTabs.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.MinigamesTabs.TabIndex = 2;
@@ -3143,6 +3144,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             // Tumble
             // 
             this.Tumble.BackColor = System.Drawing.Color.White;
+            this.Tumble.Controls.Add(this.DisableCamaraAnimation);
             this.Tumble.Controls.Add(this.TumbleHUD);
             this.Tumble.HorizontalScrollbarBarColor = true;
             this.Tumble.HorizontalScrollbarHighlightOnWheel = false;
@@ -4400,6 +4402,19 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.NoPosLock.UseSelectable = true;
             this.NoPosLock.CheckedChanged += new System.EventHandler(this.NoPosLock_CheckedChanged);
             // 
+            // DisableCamaraAnimation
+            // 
+            this.DisableCamaraAnimation.AutoSize = true;
+            this.DisableCamaraAnimation.Location = new System.Drawing.Point(7, 28);
+            this.DisableCamaraAnimation.Name = "DisableCamaraAnimation";
+            this.DisableCamaraAnimation.Size = new System.Drawing.Size(164, 15);
+            this.DisableCamaraAnimation.TabIndex = 4;
+            this.DisableCamaraAnimation.Text = "Disable Camara Animation";
+            this.DisableCamaraAnimation.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.ToolTipManager.SetToolTip(this.DisableCamaraAnimation, "Disables the Camara Animation upon start");
+            this.DisableCamaraAnimation.UseSelectable = true;
+            this.DisableCamaraAnimation.CheckedChanged += new System.EventHandler(this.DisableCamaraAnimation_CheckedChanged);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -4727,5 +4742,6 @@ namespace Minecraft_Wii_U_Mod_Injector
         public MetroCheckBox BreakBedrock;
         public MetroButton updateBtn;
         public MetroCheckBox NoPosLock;
+        private MetroCheckBox DisableCamaraAnimation;
     }
 }

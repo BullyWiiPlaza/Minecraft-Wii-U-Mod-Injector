@@ -217,6 +217,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.RefillIntervalSlider = new System.Windows.Forms.NumericUpDown();
             this.AntiEndGame = new MetroFramework.Controls.MetroCheckBox();
             this.Tumble = new MetroFramework.Controls.MetroTabPage();
+            this.DisableCamaraAnimation = new MetroFramework.Controls.MetroCheckBox();
             this.TumbleHUD = new MetroFramework.Controls.MetroCheckBox();
             this.Glide = new MetroFramework.Controls.MetroTabPage();
             this.ringScoreB = new MetroFramework.Controls.MetroLabel();
@@ -287,7 +288,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.RightClickMenu = new MetroFramework.Controls.MetroContextMenu(this.components);
             this.IncreaseDecimalPlace = new System.Windows.Forms.ToolStripMenuItem();
             this.DecreaseDecimalPlace = new System.Windows.Forms.ToolStripMenuItem();
-            this.DisableCamaraAnimation = new MetroFramework.Controls.MetroCheckBox();
+            this.UnlockInventory = new MetroFramework.Controls.MetroCheckBox();
             this.MainTabs.SuspendLayout();
             this.MainTab.SuspendLayout();
             this.playersTab.SuspendLayout();
@@ -3423,6 +3424,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             // Tumble
             // 
             this.Tumble.BackColor = System.Drawing.Color.White;
+            this.Tumble.Controls.Add(this.UnlockInventory);
             this.Tumble.Controls.Add(this.DisableCamaraAnimation);
             this.Tumble.Controls.Add(this.TumbleHUD);
             this.Tumble.HorizontalScrollbarBarColor = true;
@@ -3438,6 +3440,19 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.Tumble.VerticalScrollbarBarColor = true;
             this.Tumble.VerticalScrollbarHighlightOnWheel = false;
             this.Tumble.VerticalScrollbarSize = 10;
+            // 
+            // DisableCamaraAnimation
+            // 
+            this.DisableCamaraAnimation.AutoSize = true;
+            this.DisableCamaraAnimation.Location = new System.Drawing.Point(7, 28);
+            this.DisableCamaraAnimation.Name = "DisableCamaraAnimation";
+            this.DisableCamaraAnimation.Size = new System.Drawing.Size(164, 15);
+            this.DisableCamaraAnimation.TabIndex = 4;
+            this.DisableCamaraAnimation.Text = "Disable Camara Animation";
+            this.DisableCamaraAnimation.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.ToolTipManager.SetToolTip(this.DisableCamaraAnimation, "Disables the Camara Animation upon start");
+            this.DisableCamaraAnimation.UseSelectable = true;
+            this.DisableCamaraAnimation.CheckedChanged += new System.EventHandler(this.DisableCamaraAnimation_CheckedChanged);
             // 
             // TumbleHUD
             // 
@@ -4641,18 +4656,18 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.DecreaseDecimalPlace.Size = new System.Drawing.Size(322, 22);
             this.DecreaseDecimalPlace.Text = "Decrease decimal place";
             // 
-            // DisableCamaraAnimation
+            // UnlockInventory
             // 
-            this.DisableCamaraAnimation.AutoSize = true;
-            this.DisableCamaraAnimation.Location = new System.Drawing.Point(7, 28);
-            this.DisableCamaraAnimation.Name = "DisableCamaraAnimation";
-            this.DisableCamaraAnimation.Size = new System.Drawing.Size(164, 15);
-            this.DisableCamaraAnimation.TabIndex = 4;
-            this.DisableCamaraAnimation.Text = "Disable Camara Animation";
-            this.DisableCamaraAnimation.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.DisableCamaraAnimation, "Disables the Camara Animation upon start");
-            this.DisableCamaraAnimation.UseSelectable = true;
-            this.DisableCamaraAnimation.CheckedChanged += new System.EventHandler(this.DisableCamaraAnimation_CheckedChanged);
+            this.UnlockInventory.AutoSize = true;
+            this.UnlockInventory.Location = new System.Drawing.Point(7, 50);
+            this.UnlockInventory.Name = "UnlockInventory";
+            this.UnlockInventory.Size = new System.Drawing.Size(113, 15);
+            this.UnlockInventory.TabIndex = 5;
+            this.UnlockInventory.Text = "Unlock Inventory";
+            this.UnlockInventory.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.ToolTipManager.SetToolTip(this.UnlockInventory, "Unlocks the Inventory");
+            this.UnlockInventory.UseSelectable = true;
+            this.UnlockInventory.CheckedChanged += new System.EventHandler(this.UnlockInventory_CheckedChanged);
             // 
             // MainForm
             // 
@@ -4996,5 +5011,6 @@ namespace Minecraft_Wii_U_Mod_Injector
         public MetroLabel WaterDownStrength;
         private MetroCheckBox NoPosLock;
         private MetroCheckBox DisableCamaraAnimation;
+        private MetroCheckBox UnlockInventory;
     }
 }

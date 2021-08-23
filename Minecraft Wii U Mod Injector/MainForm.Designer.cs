@@ -203,6 +203,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.minigamesTab = new MetroFramework.Controls.MetroTabPage();
             this.MinigamesTabs = new MetroFramework.Controls.MetroTabControl();
             this.GeneralMinigames = new MetroFramework.Controls.MetroTabPage();
+            this.NoPosLock = new MetroFramework.Controls.MetroCheckBox();
             this.SqueakInfinitely = new MetroFramework.Controls.MetroCheckBox();
             this.RequiredPlayersSlider = new System.Windows.Forms.NumericUpDown();
             this.RequiredPlayers = new MetroFramework.Controls.MetroLabel();
@@ -286,6 +287,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.RightClickMenu = new MetroFramework.Controls.MetroContextMenu(this.components);
             this.IncreaseDecimalPlace = new System.Windows.Forms.ToolStripMenuItem();
             this.DecreaseDecimalPlace = new System.Windows.Forms.ToolStripMenuItem();
+            this.DisableCamaraAnimation = new MetroFramework.Controls.MetroCheckBox();
             this.MainTabs.SuspendLayout();
             this.MainTab.SuspendLayout();
             this.playersTab.SuspendLayout();
@@ -425,7 +427,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.MainTabs.Location = new System.Drawing.Point(155, 61);
             this.MainTabs.Multiline = true;
             this.MainTabs.Name = "MainTabs";
-            this.MainTabs.SelectedIndex = 6;
+            this.MainTabs.SelectedIndex = 4;
             this.MainTabs.Size = new System.Drawing.Size(1130, 639);
             this.MainTabs.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.MainTabs.TabIndex = 0;
@@ -3181,7 +3183,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.MinigamesTabs.ItemSize = new System.Drawing.Size(280, 25);
             this.MinigamesTabs.Location = new System.Drawing.Point(-3, 2);
             this.MinigamesTabs.Name = "MinigamesTabs";
-            this.MinigamesTabs.SelectedIndex = 0;
+            this.MinigamesTabs.SelectedIndex = 2;
             this.MinigamesTabs.Size = new System.Drawing.Size(1129, 633);
             this.MinigamesTabs.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.MinigamesTabs.TabIndex = 2;
@@ -3193,6 +3195,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             // GeneralMinigames
             // 
             this.GeneralMinigames.BackColor = System.Drawing.Color.White;
+            this.GeneralMinigames.Controls.Add(this.NoPosLock);
             this.GeneralMinigames.Controls.Add(this.SqueakInfinitely);
             this.GeneralMinigames.Controls.Add(this.RequiredPlayersSlider);
             this.GeneralMinigames.Controls.Add(this.RequiredPlayers);
@@ -3213,6 +3216,18 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.GeneralMinigames.VerticalScrollbarBarColor = true;
             this.GeneralMinigames.VerticalScrollbarHighlightOnWheel = false;
             this.GeneralMinigames.VerticalScrollbarSize = 10;
+            // 
+            // NoPosLock
+            // 
+            this.NoPosLock.AutoSize = true;
+            this.NoPosLock.Location = new System.Drawing.Point(7, 112);
+            this.NoPosLock.Name = "NoPosLock";
+            this.NoPosLock.Size = new System.Drawing.Size(113, 15);
+            this.NoPosLock.TabIndex = 25;
+            this.NoPosLock.Text = "No Position Lock";
+            this.NoPosLock.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.NoPosLock.UseSelectable = true;
+            this.NoPosLock.CheckedChanged += new System.EventHandler(this.NoPosLock_CheckedChanged);
             // 
             // SqueakInfinitely
             // 
@@ -3408,6 +3423,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             // Tumble
             // 
             this.Tumble.BackColor = System.Drawing.Color.White;
+            this.Tumble.Controls.Add(this.DisableCamaraAnimation);
             this.Tumble.Controls.Add(this.TumbleHUD);
             this.Tumble.HorizontalScrollbarBarColor = true;
             this.Tumble.HorizontalScrollbarHighlightOnWheel = false;
@@ -4625,6 +4641,19 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.DecreaseDecimalPlace.Size = new System.Drawing.Size(322, 22);
             this.DecreaseDecimalPlace.Text = "Decrease decimal place";
             // 
+            // DisableCamaraAnimation
+            // 
+            this.DisableCamaraAnimation.AutoSize = true;
+            this.DisableCamaraAnimation.Location = new System.Drawing.Point(7, 28);
+            this.DisableCamaraAnimation.Name = "DisableCamaraAnimation";
+            this.DisableCamaraAnimation.Size = new System.Drawing.Size(164, 15);
+            this.DisableCamaraAnimation.TabIndex = 4;
+            this.DisableCamaraAnimation.Text = "Disable Camara Animation";
+            this.DisableCamaraAnimation.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.ToolTipManager.SetToolTip(this.DisableCamaraAnimation, "Disables the Camara Animation upon start");
+            this.DisableCamaraAnimation.UseSelectable = true;
+            this.DisableCamaraAnimation.CheckedChanged += new System.EventHandler(this.DisableCamaraAnimation_CheckedChanged);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -4965,5 +4994,7 @@ namespace Minecraft_Wii_U_Mod_Injector
         public MetroCheckBox Collision;
         public System.Windows.Forms.NumericUpDown WaterDownStrengthSlider;
         public MetroLabel WaterDownStrength;
+        private MetroCheckBox NoPosLock;
+        private MetroCheckBox DisableCamaraAnimation;
     }
 }

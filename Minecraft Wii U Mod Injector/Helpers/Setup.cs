@@ -81,7 +81,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
                         }
 
                         Process.Start(UpdaterPath);
-                        Application.Exit();
+                        Environment.Exit(0);
                     }
                     else if (Settings.EqualsTo("PrereleaseOptIn", "True", "Updates") && PreRelease)
                     {
@@ -93,7 +93,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
                         }
 
                         Process.Start(UpdaterPath);
-                        Application.Exit();
+                        Environment.Exit(0);
                     }
                 }
                 else
@@ -109,6 +109,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
                 Exceptions.LogError(error,
                     "Something went wrong while retrieving the latest release, please try re-launching the Injector.\n" +
                     "If this issue persist please contact the developers.", true);
+                Environment.Exit(0);
             }
         }
 

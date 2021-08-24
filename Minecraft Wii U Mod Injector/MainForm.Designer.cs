@@ -50,6 +50,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.WiiUIPv4Box = new MetroFramework.Controls.MetroTextBox();
             this.WiiUIpv4Lbl = new MetroFramework.Controls.MetroLabel();
             this.playersTab = new MetroFramework.Controls.MetroTabPage();
+            this.NoDamage = new MetroFramework.Controls.MetroCheckBox();
             this.WaterDownStrengthSlider = new System.Windows.Forms.NumericUpDown();
             this.WaterDownStrength = new MetroFramework.Controls.MetroLabel();
             this.breatheBox = new MetroFramework.Controls.MetroComboBox();
@@ -278,7 +279,9 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.RightClickMenu = new MetroFramework.Controls.MetroContextMenu(this.components);
             this.IncreaseDecimalPlace = new System.Windows.Forms.ToolStripMenuItem();
             this.DecreaseDecimalPlace = new System.Windows.Forms.ToolStripMenuItem();
-            this.NoDamage = new MetroFramework.Controls.MetroCheckBox();
+            this.NoPosLock = new MetroFramework.Controls.MetroCheckBox();
+            this.UnlockInventoty = new MetroFramework.Controls.MetroCheckBox();
+            this.DisableCamaraAnimation = new MetroFramework.Controls.MetroCheckBox();
             this.MainTabs.SuspendLayout();
             this.MainTab.SuspendLayout();
             this.playersTab.SuspendLayout();
@@ -418,7 +421,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.MainTabs.Location = new System.Drawing.Point(155, 61);
             this.MainTabs.Multiline = true;
             this.MainTabs.Name = "MainTabs";
-            this.MainTabs.SelectedIndex = 2;
+            this.MainTabs.SelectedIndex = 4;
             this.MainTabs.Size = new System.Drawing.Size(1130, 639);
             this.MainTabs.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.MainTabs.TabIndex = 0;
@@ -724,6 +727,20 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.playersTab.VerticalScrollbarBarColor = true;
             this.playersTab.VerticalScrollbarHighlightOnWheel = false;
             this.playersTab.VerticalScrollbarSize = 10;
+            // 
+            // NoDamage
+            // 
+            this.NoDamage.AutoSize = true;
+            this.NoDamage.Location = new System.Drawing.Point(383, 321);
+            this.NoDamage.Name = "NoDamage";
+            this.NoDamage.Size = new System.Drawing.Size(86, 15);
+            this.NoDamage.TabIndex = 178;
+            this.NoDamage.Tag = "";
+            this.NoDamage.Text = "No Damage";
+            this.NoDamage.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.ToolTipManager.SetToolTip(this.NoDamage, "Whether players cannot take any damage");
+            this.NoDamage.UseSelectable = true;
+            this.NoDamage.CheckedChanged += new System.EventHandler(this.NoDamageToggled);
             // 
             // WaterDownStrengthSlider
             // 
@@ -3044,7 +3061,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.MinigamesTabs.ItemSize = new System.Drawing.Size(280, 25);
             this.MinigamesTabs.Location = new System.Drawing.Point(-3, 2);
             this.MinigamesTabs.Name = "MinigamesTabs";
-            this.MinigamesTabs.SelectedIndex = 0;
+            this.MinigamesTabs.SelectedIndex = 2;
             this.MinigamesTabs.Size = new System.Drawing.Size(1129, 633);
             this.MinigamesTabs.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.MinigamesTabs.TabIndex = 2;
@@ -3056,6 +3073,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             // GeneralMinigames
             // 
             this.GeneralMinigames.BackColor = System.Drawing.Color.White;
+            this.GeneralMinigames.Controls.Add(this.NoPosLock);
             this.GeneralMinigames.Controls.Add(this.SqueakInfinitely);
             this.GeneralMinigames.Controls.Add(this.RequiredPlayersSlider);
             this.GeneralMinigames.Controls.Add(this.RequiredPlayers);
@@ -3271,6 +3289,8 @@ namespace Minecraft_Wii_U_Mod_Injector
             // Tumble
             // 
             this.Tumble.BackColor = System.Drawing.Color.White;
+            this.Tumble.Controls.Add(this.DisableCamaraAnimation);
+            this.Tumble.Controls.Add(this.UnlockInventoty);
             this.Tumble.Controls.Add(this.TumbleHUD);
             this.Tumble.HorizontalScrollbarBarColor = true;
             this.Tumble.HorizontalScrollbarHighlightOnWheel = false;
@@ -4488,19 +4508,44 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.DecreaseDecimalPlace.Size = new System.Drawing.Size(322, 22);
             this.DecreaseDecimalPlace.Text = "Decrease decimal place";
             // 
-            // NoDamage
+            // NoPosLock
             // 
-            this.NoDamage.AutoSize = true;
-            this.NoDamage.Location = new System.Drawing.Point(383, 321);
-            this.NoDamage.Name = "NoDamage";
-            this.NoDamage.Size = new System.Drawing.Size(86, 15);
-            this.NoDamage.TabIndex = 178;
-            this.NoDamage.Tag = "";
-            this.NoDamage.Text = "No Damage";
-            this.NoDamage.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.NoDamage, "Whether players cannot take any damage");
-            this.NoDamage.UseSelectable = true;
-            this.NoDamage.CheckedChanged += new System.EventHandler(this.NoDamageToggled);
+            this.NoPosLock.AutoSize = true;
+            this.NoPosLock.Location = new System.Drawing.Point(7, 112);
+            this.NoPosLock.Name = "NoPosLock";
+            this.NoPosLock.Size = new System.Drawing.Size(113, 15);
+            this.NoPosLock.TabIndex = 25;
+            this.NoPosLock.Text = "No Position Lock";
+            this.NoPosLock.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.ToolTipManager.SetToolTip(this.NoPosLock, "Bypasses any move restriction upon minigame start");
+            this.NoPosLock.UseSelectable = true;
+            this.NoPosLock.CheckedChanged += new System.EventHandler(this.NoPosLock_CheckedChanged);
+            // 
+            // UnlockInventoty
+            // 
+            this.UnlockInventoty.AutoSize = true;
+            this.UnlockInventoty.Location = new System.Drawing.Point(7, 28);
+            this.UnlockInventoty.Name = "UnlockInventoty";
+            this.UnlockInventoty.Size = new System.Drawing.Size(113, 15);
+            this.UnlockInventoty.TabIndex = 4;
+            this.UnlockInventoty.Text = "Unlock Inventoty";
+            this.UnlockInventoty.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.ToolTipManager.SetToolTip(this.UnlockInventoty, "Allows you to open the inventory in Tumble");
+            this.UnlockInventoty.UseSelectable = true;
+            this.UnlockInventoty.CheckedChanged += new System.EventHandler(this.UnlockInventoty_CheckedChanged);
+            // 
+            // DisableCamaraAnimation
+            // 
+            this.DisableCamaraAnimation.AutoSize = true;
+            this.DisableCamaraAnimation.Location = new System.Drawing.Point(7, 50);
+            this.DisableCamaraAnimation.Name = "DisableCamaraAnimation";
+            this.DisableCamaraAnimation.Size = new System.Drawing.Size(164, 15);
+            this.DisableCamaraAnimation.TabIndex = 5;
+            this.DisableCamaraAnimation.Text = "Disable Camara Animation";
+            this.DisableCamaraAnimation.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.ToolTipManager.SetToolTip(this.DisableCamaraAnimation, "Disables the Camara Animation on the start of a Tumble Game");
+            this.DisableCamaraAnimation.UseSelectable = true;
+            this.DisableCamaraAnimation.CheckedChanged += new System.EventHandler(this.DisableCamaraAnimation_CheckedChanged);
             // 
             // MainForm
             // 
@@ -4835,5 +4880,8 @@ namespace Minecraft_Wii_U_Mod_Injector
         public MetroCheckBox ThunderMode;
         private MetroCheckBox AchievementsEverywhere;
         public MetroCheckBox NoDamage;
+        private MetroCheckBox NoPosLock;
+        private MetroCheckBox UnlockInventoty;
+        private MetroCheckBox DisableCamaraAnimation;
     }
 }

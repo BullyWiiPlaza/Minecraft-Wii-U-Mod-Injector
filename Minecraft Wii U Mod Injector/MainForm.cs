@@ -57,11 +57,11 @@ namespace Minecraft_Wii_U_Mod_Injector
 
         #region assembly
 
-        public uint On = 0x38600001;
-        public uint Off = 0x38600000;
+        public static uint On = 0x38600001;
+        public static uint Off = 0x38600000;
         public uint On2 = 0x3BE00001;
         public uint Off2 = 0x3BE00000;
-        public uint Blr = 0x4E800020;
+        public static uint Blr = 0x4E800020;
         public uint Mflr = 0x7C0802A6;
         public uint Nop = 0x60000000;
 
@@ -389,6 +389,11 @@ namespace Minecraft_Wii_U_Mod_Injector
             new LootTableEditor(this).ShowDialog();
         }
 
+        private void WorldGenerationOptsBtnClicked(object sender, EventArgs e)
+        {
+            new WorldGenerationEditor(this).ShowDialog(this);
+        }
+
         private void EnchantmentEditorBtnClicked(object sender, EventArgs e)
         {
             new EnchantmentEditor(this).ShowDialog();
@@ -652,11 +657,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             GeckoU.WriteUIntToggle(0x031C06A4, On, Off, FoggyWeather.Checked); //isInCloud__13LevelRendererFdN21f
         }
 
-        private void GenerateAmplifiedWorldToggled(object sender, EventArgs e)
-        {
-            GeckoU.WriteUIntToggle(0x106CB93C, 0x4000000, 0x3DCCCCCD, GenerateAmplifiedWorld.Checked);
-        }
-
         private void AcidLiquidBlocksToggled(object sender, EventArgs e)
         {
             GeckoU.WriteUIntToggle(0x022B8EC4, On, 0x57E3063E,
@@ -668,18 +668,6 @@ namespace Minecraft_Wii_U_Mod_Injector
         {
             GeckoU.WriteUIntToggle(0x025C2B8C, On, 0x886300A9,
                 DisableCreativeFlag.Checked); // LevelData::getHasBeenInCreative((void))
-        }
-
-        private void GeneratePlainWorldToggled(object sender, EventArgs e)
-        {
-            GeckoU.WriteUIntToggle(0x0214DB38, Blr, 0x9421FD80,
-                GeneratePlainWorld.Checked); //BiomeDecorator::decorate((Biome *, Level *, Random *))
-        }
-
-        private void FreezingWorldToggled(object sender, EventArgs e)
-        {
-            GeckoU.WriteUIntToggle(0x0253C71C, On, Off,
-                FreezingWorld.Checked); //Level::shouldFreeze((BlockPos const &, bool))
         }
 
         private void UncapEntitySpawnLimitToggled(object sender, EventArgs e)
@@ -1088,54 +1076,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             GeckoU.WriteULongToggle(0x0235C624, 0x600000004E800020, 0x3D800236398CBDD8, DisableFallingBlocks.Checked);
         }
 
-        private void IncreasedBuriedTreasureSpawnToggled(object sender, EventArgs e)
-        {
-            GeckoU.WriteUIntToggle(0x02190808, On, 0x7FE3FB78, IncreasedBuriedTreasureSpawn.Checked);
-        }
-
-        private void IncreasedMineshaftSpawnToggled(object sender, EventArgs e)
-        {
-            GeckoU.WriteUIntToggle(0x02190808, 0x3B600001, 0x3B600000, IncreasedMineshaftSpawn.Checked);
-        }
-
-        private void IncreasedOceanMonumentSpawnToggled(object sender, EventArgs e)
-        {
-            GeckoU.WriteUIntToggle(0x026DF2F4, On, 0x7FE3FB78, IncreasedOceanMonumentSpawn.Checked);
-            GeckoU.WriteUIntToggle(0x026DF30C, On, Off, IncreasedOceanMonumentSpawn.Checked);
-        }
-
-        private void IncreasedOceanRuinsSpawnToggled(object sender, EventArgs e)
-        {
-            GeckoU.WriteUIntToggle(0x0274EEC4, On, Off, IncreasedOceanRuinsSpawn.Checked);
-        }
-
-        private void IncreasedStructuresSpawnToggled(object sender, EventArgs e)
-        {
-            GeckoU.WriteUIntToggle(0x02832C84, On, Off, IncreasedStructuresSpawn.Checked);
-        }
-
-        private void IncreasedShipwreckSpawnToggled(object sender, EventArgs e)
-        {
-            GeckoU.WriteUIntToggle(0x02896394, On, 0x7FE3FB78, IncreasedShipwreckSpawn.Checked);
-            GeckoU.WriteUIntToggle(0x02895824, On, Off, IncreasedShipwreckSpawn.Checked);
-        }
-
-        private void IncreasedStrongholdSpawnToggled(object sender, EventArgs e)
-        {
-            GeckoU.WriteUIntToggle(0x029651E0, On, Off, IncreasedStrongholdSpawn.Checked);
-        }
-
-        private void IncreasedVillageSpawnToggled(object sender, EventArgs e)
-        {
-            GeckoU.WriteUIntToggle(0x02A8CD34, On, Off, IncreasedVillageSpawn.Checked);
-        }
-
-        private void IncreasedWoodlandMansionSpawnToggled(object sender, EventArgs e)
-        {
-            GeckoU.WriteUIntToggle(0x02AB9CB4, On, 0x7FC3F378, IncreasedWoodlandMansionSpawn.Checked);
-            GeckoU.WriteUIntToggle(0x02AB9CCC, On, Off, IncreasedWoodlandMansionSpawn.Checked);
-        }
-
         private void BreatheBoxChanged(object sender, EventArgs e)
         {
             switch (breatheBox.SelectedIndex)
@@ -1186,7 +1126,7 @@ namespace Minecraft_Wii_U_Mod_Injector
 
         private void MuteMicrophoneToggled(object sender, EventArgs e)
         {
-            GeckoU.WriteUIntToggle(0x10997EA8, 0x30000000, 0x3F000000, IncreasedWoodlandMansionSpawn.Checked);
+            GeckoU.WriteUIntToggle(0x10997EA8, 0x30000000, 0x3F000000, MuteMicrophone.Checked);
         }
 
         private void CollisionToggled(object sender, EventArgs e)
@@ -1197,6 +1137,61 @@ namespace Minecraft_Wii_U_Mod_Injector
         private void WaterDownStrengthSliderChanged(object sender, EventArgs e)
         {
             GeckoU.WriteFloat(0x1066AAE0, (float)WaterDownStrengthSlider.Value);
+        }
+
+        private void RainModeToggled(object sender, EventArgs e)
+        {
+            switch (RainMode.CheckState)
+            {
+                case CheckState.Unchecked:
+                    GeckoU.WriteUInt(0x025C2AC4, 0x8863006C);
+                    RainMode.Text = @"Rain Mode (Default)";
+                    break;
+
+                case CheckState.Checked:
+                    GeckoU.WriteUInt(0x025C2AC4, On);
+                    RainMode.Text = @"Rain Mode (Always)";
+                    break;
+
+                case CheckState.Indeterminate:
+                    GeckoU.WriteUInt(0x025C2AC4, Off);
+                    RainMode.Text = @"Rain Mode (Never)";
+                    break;
+            }
+        }
+
+        private void ThunderModeToggled(object sender, EventArgs e)
+        {
+            switch (ThunderMode.CheckState)
+            {
+                case CheckState.Unchecked:
+                    GeckoU.WriteUInt(0x025C2AA4, 0x88630074);
+                    RainMode.CheckState = CheckState.Unchecked;
+                    ThunderMode.Text = @"Thunder Mode (Default)";
+                    break;
+
+                case CheckState.Checked:
+                    GeckoU.WriteUInt(0x025C2AA4, On);
+                    RainMode.CheckState = CheckState.Checked;
+                    ThunderMode.Text = @"Thunder Mode (Always)";
+                    break;
+
+                case CheckState.Indeterminate:
+                    GeckoU.WriteUInt(0x025C2AA4, Off);
+                    RainMode.CheckState = CheckState.Indeterminate;
+                    ThunderMode.Text = @"Thunder Mode (Never)";
+                    break;
+            }
+        }
+
+        private void AchievementsEverywhereToggled(object sender, EventArgs e)
+        {
+            GeckoU.WriteUIntToggle(0x02F66274, 0x3B800001, 0x3B800000, AchievementsEverywhere.Checked);
+        }
+
+        private void NoDamageToggled(object sender, EventArgs e)
+        {
+            GeckoU.WriteUIntToggle(0x0271AA90, Blr, 0x9421FF90, NoDamage.Checked);
         }
 
         #region commands

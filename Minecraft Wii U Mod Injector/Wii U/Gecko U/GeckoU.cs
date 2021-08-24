@@ -256,43 +256,6 @@ namespace Minecraft_Wii_U_Mod_Injector.Wii_U.Gecko_U
         #endregion the magic
 
         #region rpc
-
-        /*public uint GetSymbol(string rplName, string symbolName, bool isData, bool isPointer)
-        {
-            uint address = 0x000000;
-            SendCommand(GeckoUCommands.Command.COMMAND_GET_SYMBOL);
-
-            MemoryStream Request = new MemoryStream();
-            BinaryWriter writer = new BinaryWriter(Request);
-
-            writer.Write(new byte[] { 0x00, 0x00, 0x00, 0x08 });
-
-            int length = rplName.Length + 9;
-
-            writer.Write(new byte[] { (byte)((length >> 24) & 0xFF), (byte)((length >> 16) & 0xFF), (byte)((length >> 8) & 0xFF), (byte)(length & 0xFF) });
-
-            writer.Write(Encoding.UTF8.GetBytes(rplName));
-            writer.Write(0);
-            writer.Write(Encoding.UTF8.GetBytes(symbolName));
-            writer.Write(0);
-
-            uint bytesWritten = 0;
-
-            Tcp.Write(new byte[] { (byte)Request.Length }, 0, ref bytesWritten);
-            Tcp.Write(Request.ToArray(), 0, ref bytesWritten);
-            Tcp.Write(new byte[] { 0 }, 0, ref bytesWritten);
-            MessageBox.Show(Request.Length.ToString());
-
-            address = readInteger();
-
-            if (!isPointer)
-            {
-                address = PeekUInt(address);
-            }
-
-            return address;
-        }*/
-
         /// <summary>
         /// Call a function from an RPL/RPX
         /// </summary>

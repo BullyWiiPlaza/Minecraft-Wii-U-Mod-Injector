@@ -2,13 +2,14 @@
 using System.Windows.Forms;
 using MetroFramework.Forms;
 using Minecraft_Wii_U_Mod_Injector.Helpers;
+using Minecraft_Wii_U_Mod_Injector.Helpers.Files;
 using Minecraft_Wii_U_Mod_Injector.Helpers.Win_Forms;
 
 namespace Minecraft_Wii_U_Mod_Injector.Forms
 {
     public partial class MapTextEditor : MetroForm
     {
-        private MainForm _iw;
+        private readonly MainForm _iw;
 
         public MapTextEditor(MainForm iw)
         {
@@ -17,20 +18,24 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms
             StyleMngr.Style = Style = _iw.StyleMngr.Style;
             StyleMngr.Theme = Theme = _iw.StyleMngr.Theme;
             DiscordRp.SetPresence("Connected", "Map Text Editor");
+
+            foreach (var saved in Settings.Keys("MapTextEditor"))
+                MapText.AutoCompleteCustomSource.Add(Settings.Read(saved, "MapTextEditor"));
         }
 
         private void SetMapTextClicked(object sender, EventArgs e)
         {
             uint textStart = 0x108E2834;
-            string mapTextNew = "\0" + StringUtils.InsertStrings(MapText.Text, 1, "\0");
 
-            MainForm.GeckoU.ClearString(textStart, 0x108E2858);
-            MainForm.GeckoU.WriteString(textStart, mapTextNew);
+            MainForm.GeckoU.ClearString(textStart, 0x108E2984);
+            MainForm.GeckoU.WriteString16(textStart, MapText.Text);
+            Settings.Write("SavedText" + Settings.Keys("MapTextEditor").Count + 1, MapText.Text, "MapTextEditor");
         }
 
         private void VariablesBtnClicked(object sender, EventArgs e)
         {
-            Messaging.Show("Map Text Variables:\n%i: Coordinate as an Integer\n%d: Coordinate as a decimal\n%f: Coordinate as a float\n%x: Coordinate as a Hexadecimal");
+            Messaging.Show(
+                "Map Text Variables:\n%i: Coordinate as an Integer\n%d: Coordinate as a decimal\n%f: Coordinate as a float\n%x: Coordinate as a Hexadecimal");
         }
 
         private void Exiting(object sender, FormClosingEventArgs e)

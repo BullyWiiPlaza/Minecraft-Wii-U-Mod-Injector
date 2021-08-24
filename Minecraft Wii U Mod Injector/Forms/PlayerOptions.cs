@@ -3,6 +3,7 @@ using Minecraft_Wii_U_Mod_Injector.Helpers;
 using System;
 using System.Globalization;
 using System.Text.RegularExpressions;
+using System.Threading;
 using System.Windows.Forms;
 using Minecraft_Wii_U_Mod_Injector.Helpers.Files;
 using Minecraft_Wii_U_Mod_Injector.Helpers.Win_Forms;
@@ -125,6 +126,16 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms
         private void GetSkinIDBtnClicked(object sender, EventArgs e)
         {
             SkinIDBox.Value = MainForm.GeckoU.CallFunction(0x02F70178, 0);
+        }
+
+        private void LoopSkinsToggled(object sender, EventArgs e)
+        {
+            SkinLoopTimer.Enabled = LoopSkins.Checked;
+        }
+
+        private void SkinLooper(object sender, EventArgs e)
+        {
+            SkinList.SelectedIndex = new Random().Next(0, SkinList.Items.Count);
         }
     }
 }

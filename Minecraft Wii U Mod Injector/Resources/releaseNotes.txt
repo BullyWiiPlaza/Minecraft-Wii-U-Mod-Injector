@@ -1,3 +1,40 @@
+[Release v5.2.0.c1 (24th of August, 2021)]
+
+[Information]
+If you are experiencing issues, please report them on the Github Issues page or by joining the official discord server.
+
+This update adds a a few new mods, fixes a few old ones and improves the Map Text Editor
+
+[Changes]
+
++ New mods
+
+- Player(s) > No Damage (Players will no longer take damage)
+- Player(s) > Player Options > Skin Loop (You can loop through all saved skins)
+- Entities / World > Rain Mode (Changes the weather to rain or clear)
+- Entities / World > Thunder Mode (Changes the weather to rain with thunderstorms or clear)
+- Entities / World > World Generation Editor (A collection of mods which alter your world's generation from Amplified worlds to Infinite Worlds)
+- Entities / World > World Generation Editor > Stone World (No grass will be generated in the world)
+- Entities / World > World Generation Editor > No Terrain (No blocks except for structures and ice will be generated)
+- Entities / World > World Generation Editor > World Size (You can now finally expand/shrink your worlds by increasing/decreasing the world size)
+- Entities / World > World Generation Editor > Nether Size (Same as the World Size mod, but for the nether)
+- General Game > Achievements Everywhere (This mod lets you earn achievements in Creative)
+
++ General Additions & Updates:
+
+- The Map Text Editor now supports upto 123 characters
+- Some windows can now be extended such as the Map Text Editor or Player Options
+
+[Fixes]
+
++ Mod Fixes
+
+- General Game > Mute Microphone should now work correctly
+
++ General Fixes
+
+- Fixed incorrect tooltips
+
 [Release v5.2.0 (21st of August, 2021)]
 
 [Information]

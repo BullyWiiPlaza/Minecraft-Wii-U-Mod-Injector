@@ -38,18 +38,20 @@
             this.GameModeBox = new MetroFramework.Controls.MetroComboBox();
             this.DropStackBtn = new MetroFramework.Controls.MetroButton();
             this.CapeBox = new MetroFramework.Controls.MetroComboBox();
+            this.AddSkinBtn = new MetroFramework.Controls.MetroButton();
+            this.SkinIDBox = new System.Windows.Forms.NumericUpDown();
+            this.SkinList = new MetroFramework.Controls.MetroComboBox();
+            this.SkinNameBox = new MetroFramework.Controls.MetroTextBox();
+            this.GetSkinIDBtn = new MetroFramework.Controls.MetroButton();
             this.CameraLbl = new MetroFramework.Controls.MetroLabel();
             this.GameModeLbl = new MetroFramework.Controls.MetroLabel();
             this.capeLbl = new MetroFramework.Controls.MetroLabel();
             this.SkinIDLbl = new MetroFramework.Controls.MetroLabel();
-            this.AddSkinBtn = new MetroFramework.Controls.MetroButton();
-            this.SkinIDBox = new System.Windows.Forms.NumericUpDown();
             this.StyleExt = new MetroFramework.Components.MetroStyleExtender(this.components);
-            this.SkinList = new MetroFramework.Controls.MetroComboBox();
             this.SkinLbl = new MetroFramework.Controls.MetroLabel();
-            this.SkinNameBox = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
-            this.GetSkinIDBtn = new MetroFramework.Controls.MetroButton();
+            this.LoopSkins = new MetroFramework.Controls.MetroCheckBox();
+            this.SkinLoopTimer = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.StyleMngr)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SkinIDBox)).BeginInit();
             this.SuspendLayout();
@@ -67,9 +69,11 @@
             // 
             // CloseContainersBtn
             // 
-            this.CloseContainersBtn.Location = new System.Drawing.Point(23, 317);
+            this.CloseContainersBtn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.CloseContainersBtn.Location = new System.Drawing.Point(23, 344);
             this.CloseContainersBtn.Name = "CloseContainersBtn";
-            this.CloseContainersBtn.Size = new System.Drawing.Size(517, 23);
+            this.CloseContainersBtn.Size = new System.Drawing.Size(519, 23);
             this.CloseContainersBtn.TabIndex = 6;
             this.CloseContainersBtn.Text = "Close Container";
             this.CloseContainersBtn.Theme = MetroFramework.MetroThemeStyle.Dark;
@@ -79,6 +83,8 @@
             // 
             // CameraBox
             // 
+            this.CameraBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.CameraBox.DisplayMember = "1";
             this.CameraBox.FormattingEnabled = true;
             this.CameraBox.ItemHeight = 23;
@@ -89,7 +95,7 @@
             this.CameraBox.Location = new System.Drawing.Point(104, 98);
             this.CameraBox.MaxDropDownItems = 3;
             this.CameraBox.Name = "CameraBox";
-            this.CameraBox.Size = new System.Drawing.Size(436, 29);
+            this.CameraBox.Size = new System.Drawing.Size(438, 29);
             this.CameraBox.TabIndex = 8;
             this.CameraBox.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.ToolTips.SetToolTip(this.CameraBox, "What camera prespective should we be in?");
@@ -99,9 +105,11 @@
             // 
             // OpenScoreboardBtn
             // 
-            this.OpenScoreboardBtn.Location = new System.Drawing.Point(23, 288);
+            this.OpenScoreboardBtn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.OpenScoreboardBtn.Location = new System.Drawing.Point(23, 315);
             this.OpenScoreboardBtn.Name = "OpenScoreboardBtn";
-            this.OpenScoreboardBtn.Size = new System.Drawing.Size(517, 23);
+            this.OpenScoreboardBtn.Size = new System.Drawing.Size(519, 23);
             this.OpenScoreboardBtn.TabIndex = 9;
             this.OpenScoreboardBtn.Text = "Open Scoreboard";
             this.OpenScoreboardBtn.Theme = MetroFramework.MetroThemeStyle.Dark;
@@ -111,6 +119,8 @@
             // 
             // GameModeBox
             // 
+            this.GameModeBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.GameModeBox.DisplayMember = "1";
             this.GameModeBox.FormattingEnabled = true;
             this.GameModeBox.ItemHeight = 23;
@@ -122,7 +132,7 @@
             this.GameModeBox.Location = new System.Drawing.Point(139, 63);
             this.GameModeBox.MaxDropDownItems = 3;
             this.GameModeBox.Name = "GameModeBox";
-            this.GameModeBox.Size = new System.Drawing.Size(401, 29);
+            this.GameModeBox.Size = new System.Drawing.Size(403, 29);
             this.GameModeBox.TabIndex = 11;
             this.GameModeBox.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.ToolTips.SetToolTip(this.GameModeBox, "What game mode should we be in?");
@@ -132,9 +142,11 @@
             // 
             // DropStackBtn
             // 
-            this.DropStackBtn.Location = new System.Drawing.Point(23, 346);
+            this.DropStackBtn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.DropStackBtn.Location = new System.Drawing.Point(23, 373);
             this.DropStackBtn.Name = "DropStackBtn";
-            this.DropStackBtn.Size = new System.Drawing.Size(517, 23);
+            this.DropStackBtn.Size = new System.Drawing.Size(519, 23);
             this.DropStackBtn.TabIndex = 12;
             this.DropStackBtn.Text = "Drop Stack";
             this.DropStackBtn.Theme = MetroFramework.MetroThemeStyle.Dark;
@@ -144,6 +156,8 @@
             // 
             // CapeBox
             // 
+            this.CapeBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.CapeBox.DisplayMember = "1";
             this.CapeBox.FormattingEnabled = true;
             this.CapeBox.ItemHeight = 23;
@@ -181,16 +195,113 @@
             "Atlanta",
             "Cadmus",
             "Drone"});
-            this.CapeBox.Location = new System.Drawing.Point(80, 253);
+            this.CapeBox.Location = new System.Drawing.Point(80, 280);
             this.CapeBox.MaxDropDownItems = 3;
             this.CapeBox.Name = "CapeBox";
-            this.CapeBox.Size = new System.Drawing.Size(460, 29);
+            this.CapeBox.Size = new System.Drawing.Size(462, 29);
             this.CapeBox.TabIndex = 14;
             this.CapeBox.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.ToolTips.SetToolTip(this.CapeBox, "What camera prespective should we be in?");
             this.CapeBox.UseSelectable = true;
             this.CapeBox.ValueMember = "1";
             this.CapeBox.SelectedIndexChanged += new System.EventHandler(this.CapeBoxChanged);
+            // 
+            // AddSkinBtn
+            // 
+            this.AddSkinBtn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.AddSkinBtn.Location = new System.Drawing.Point(176, 225);
+            this.AddSkinBtn.Name = "AddSkinBtn";
+            this.AddSkinBtn.Size = new System.Drawing.Size(366, 23);
+            this.AddSkinBtn.TabIndex = 17;
+            this.AddSkinBtn.Text = "Add to List";
+            this.AddSkinBtn.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.ToolTips.SetToolTip(this.AddSkinBtn, "Adds and saves the skin to the Skin List");
+            this.AddSkinBtn.UseSelectable = true;
+            this.AddSkinBtn.Click += new System.EventHandler(this.AddSkinBtnClicked);
+            // 
+            // SkinIDBox
+            // 
+            this.SkinIDBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.StyleExt.SetApplyMetroTheme(this.SkinIDBox, true);
+            this.SkinIDBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.SkinIDBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
+            this.SkinIDBox.Location = new System.Drawing.Point(146, 170);
+            this.SkinIDBox.Maximum = new decimal(new int[] {
+            1661992959,
+            1808227885,
+            5,
+            0});
+            this.SkinIDBox.Name = "SkinIDBox";
+            this.SkinIDBox.Size = new System.Drawing.Size(290, 20);
+            this.SkinIDBox.TabIndex = 18;
+            this.ToolTips.SetToolTip(this.SkinIDBox, "The ID of the skin you want to apply");
+            // 
+            // SkinList
+            // 
+            this.SkinList.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.SkinList.DisplayMember = "1";
+            this.SkinList.FormattingEnabled = true;
+            this.SkinList.ItemHeight = 23;
+            this.SkinList.Location = new System.Drawing.Point(72, 133);
+            this.SkinList.MaxDropDownItems = 3;
+            this.SkinList.Name = "SkinList";
+            this.SkinList.Size = new System.Drawing.Size(470, 29);
+            this.SkinList.TabIndex = 20;
+            this.SkinList.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.ToolTips.SetToolTip(this.SkinList, "Your saved skins");
+            this.SkinList.UseSelectable = true;
+            this.SkinList.ValueMember = "1";
+            this.SkinList.SelectedIndexChanged += new System.EventHandler(this.SkinListChanged);
+            // 
+            // SkinNameBox
+            // 
+            this.SkinNameBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            // 
+            // 
+            // 
+            this.SkinNameBox.CustomButton.Image = null;
+            this.SkinNameBox.CustomButton.Location = new System.Drawing.Point(344, 1);
+            this.SkinNameBox.CustomButton.Name = "";
+            this.SkinNameBox.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.SkinNameBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.SkinNameBox.CustomButton.TabIndex = 1;
+            this.SkinNameBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.SkinNameBox.CustomButton.UseSelectable = true;
+            this.SkinNameBox.CustomButton.Visible = false;
+            this.SkinNameBox.Lines = new string[0];
+            this.SkinNameBox.Location = new System.Drawing.Point(176, 196);
+            this.SkinNameBox.MaxLength = 32767;
+            this.SkinNameBox.Name = "SkinNameBox";
+            this.SkinNameBox.PasswordChar = '\0';
+            this.SkinNameBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.SkinNameBox.SelectedText = "";
+            this.SkinNameBox.SelectionLength = 0;
+            this.SkinNameBox.SelectionStart = 0;
+            this.SkinNameBox.ShortcutsEnabled = true;
+            this.SkinNameBox.Size = new System.Drawing.Size(366, 23);
+            this.SkinNameBox.TabIndex = 21;
+            this.SkinNameBox.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.ToolTips.SetToolTip(this.SkinNameBox, "The name of the skin you wanna save");
+            this.SkinNameBox.UseSelectable = true;
+            this.SkinNameBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.SkinNameBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // GetSkinIDBtn
+            // 
+            this.GetSkinIDBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.GetSkinIDBtn.Location = new System.Drawing.Point(442, 168);
+            this.GetSkinIDBtn.Name = "GetSkinIDBtn";
+            this.GetSkinIDBtn.Size = new System.Drawing.Size(100, 23);
+            this.GetSkinIDBtn.TabIndex = 23;
+            this.GetSkinIDBtn.Text = "Get";
+            this.GetSkinIDBtn.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.ToolTips.SetToolTip(this.GetSkinIDBtn, "Gets the currently equipped Skin\'s ID");
+            this.GetSkinIDBtn.UseSelectable = true;
+            this.GetSkinIDBtn.Click += new System.EventHandler(this.GetSkinIDBtnClicked);
             // 
             // CameraLbl
             // 
@@ -218,7 +329,7 @@
             // 
             this.capeLbl.AutoSize = true;
             this.capeLbl.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.capeLbl.Location = new System.Drawing.Point(19, 253);
+            this.capeLbl.Location = new System.Drawing.Point(19, 280);
             this.capeLbl.Name = "capeLbl";
             this.capeLbl.Size = new System.Drawing.Size(55, 25);
             this.capeLbl.TabIndex = 13;
@@ -236,51 +347,9 @@
             this.SkinIDLbl.Text = "Skin ID:";
             this.SkinIDLbl.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
-            // AddSkinBtn
-            // 
-            this.AddSkinBtn.Location = new System.Drawing.Point(176, 225);
-            this.AddSkinBtn.Name = "AddSkinBtn";
-            this.AddSkinBtn.Size = new System.Drawing.Size(364, 23);
-            this.AddSkinBtn.TabIndex = 17;
-            this.AddSkinBtn.Text = "Add to List";
-            this.AddSkinBtn.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTips.SetToolTip(this.AddSkinBtn, "Adds and saves the skin to the Skin List");
-            this.AddSkinBtn.UseSelectable = true;
-            this.AddSkinBtn.Click += new System.EventHandler(this.AddSkinBtnClicked);
-            // 
-            // SkinIDBox
-            // 
-            this.StyleExt.SetApplyMetroTheme(this.SkinIDBox, true);
-            this.SkinIDBox.Location = new System.Drawing.Point(146, 170);
-            this.SkinIDBox.Maximum = new decimal(new int[] {
-            1661992959,
-            1808227885,
-            5,
-            0});
-            this.SkinIDBox.Name = "SkinIDBox";
-            this.SkinIDBox.Size = new System.Drawing.Size(290, 20);
-            this.SkinIDBox.TabIndex = 18;
-            this.ToolTips.SetToolTip(this.SkinIDBox, "The ID of the skin you want to apply");
-            // 
             // StyleExt
             // 
             this.StyleExt.Theme = MetroFramework.MetroThemeStyle.Dark;
-            // 
-            // SkinList
-            // 
-            this.SkinList.DisplayMember = "1";
-            this.SkinList.FormattingEnabled = true;
-            this.SkinList.ItemHeight = 23;
-            this.SkinList.Location = new System.Drawing.Point(72, 133);
-            this.SkinList.MaxDropDownItems = 3;
-            this.SkinList.Name = "SkinList";
-            this.SkinList.Size = new System.Drawing.Size(468, 29);
-            this.SkinList.TabIndex = 20;
-            this.SkinList.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTips.SetToolTip(this.SkinList, "Your saved skins");
-            this.SkinList.UseSelectable = true;
-            this.SkinList.ValueMember = "1";
-            this.SkinList.SelectedIndexChanged += new System.EventHandler(this.SkinListChanged);
             // 
             // SkinLbl
             // 
@@ -293,37 +362,6 @@
             this.SkinLbl.Text = "Skin:";
             this.SkinLbl.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
-            // SkinNameBox
-            // 
-            // 
-            // 
-            // 
-            this.SkinNameBox.CustomButton.Image = null;
-            this.SkinNameBox.CustomButton.Location = new System.Drawing.Point(342, 1);
-            this.SkinNameBox.CustomButton.Name = "";
-            this.SkinNameBox.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.SkinNameBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.SkinNameBox.CustomButton.TabIndex = 1;
-            this.SkinNameBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.SkinNameBox.CustomButton.UseSelectable = true;
-            this.SkinNameBox.CustomButton.Visible = false;
-            this.SkinNameBox.Lines = new string[0];
-            this.SkinNameBox.Location = new System.Drawing.Point(176, 196);
-            this.SkinNameBox.MaxLength = 32767;
-            this.SkinNameBox.Name = "SkinNameBox";
-            this.SkinNameBox.PasswordChar = '\0';
-            this.SkinNameBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.SkinNameBox.SelectedText = "";
-            this.SkinNameBox.SelectionLength = 0;
-            this.SkinNameBox.SelectionStart = 0;
-            this.SkinNameBox.ShortcutsEnabled = true;
-            this.SkinNameBox.Size = new System.Drawing.Size(364, 23);
-            this.SkinNameBox.TabIndex = 21;
-            this.ToolTips.SetToolTip(this.SkinNameBox, "The name of the skin you wanna save");
-            this.SkinNameBox.UseSelectable = true;
-            this.SkinNameBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.SkinNameBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
             // metroLabel2
             // 
             this.metroLabel2.AutoSize = true;
@@ -335,23 +373,30 @@
             this.metroLabel2.Text = "Skin Name:";
             this.metroLabel2.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
-            // GetSkinIDBtn
+            // LoopSkins
             // 
-            this.GetSkinIDBtn.Location = new System.Drawing.Point(442, 168);
-            this.GetSkinIDBtn.Name = "GetSkinIDBtn";
-            this.GetSkinIDBtn.Size = new System.Drawing.Size(98, 23);
-            this.GetSkinIDBtn.TabIndex = 23;
-            this.GetSkinIDBtn.Text = "Get";
-            this.GetSkinIDBtn.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTips.SetToolTip(this.GetSkinIDBtn, "Gets the currently equipped Skin\'s ID");
-            this.GetSkinIDBtn.UseSelectable = true;
-            this.GetSkinIDBtn.Click += new System.EventHandler(this.GetSkinIDBtnClicked);
+            this.LoopSkins.AutoSize = true;
+            this.LoopSkins.Location = new System.Drawing.Point(176, 254);
+            this.LoopSkins.Name = "LoopSkins";
+            this.LoopSkins.Size = new System.Drawing.Size(80, 15);
+            this.LoopSkins.TabIndex = 24;
+            this.LoopSkins.Text = "Loop Skins";
+            this.LoopSkins.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.ToolTips.SetToolTip(this.LoopSkins, "Whether to loop all saved skins every 500ms");
+            this.LoopSkins.UseSelectable = true;
+            this.LoopSkins.CheckedChanged += new System.EventHandler(this.LoopSkinsToggled);
+            // 
+            // SkinLoopTimer
+            // 
+            this.SkinLoopTimer.Interval = 500;
+            this.SkinLoopTimer.Tick += new System.EventHandler(this.SkinLooper);
             // 
             // PlayerOptions
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(563, 383);
+            this.ClientSize = new System.Drawing.Size(565, 420);
+            this.Controls.Add(this.LoopSkins);
             this.Controls.Add(this.GetSkinIDBtn);
             this.Controls.Add(this.metroLabel2);
             this.Controls.Add(this.SkinNameBox);
@@ -371,8 +416,9 @@
             this.Controls.Add(this.CloseContainersBtn);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(3840, 420);
+            this.MinimumSize = new System.Drawing.Size(565, 420);
             this.Name = "PlayerOptions";
-            this.Resizable = false;
             this.Text = "Minecraft: Wii U Mod Injector - Player Options";
             this.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.TopMost = true;
@@ -406,5 +452,7 @@
         private MetroFramework.Controls.MetroTextBox SkinNameBox;
         private MetroFramework.Controls.MetroComboBox SkinList;
         private MetroFramework.Controls.MetroLabel SkinLbl;
+        private MetroFramework.Controls.MetroCheckBox LoopSkins;
+        private System.Windows.Forms.Timer SkinLoopTimer;
     }
 }

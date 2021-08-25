@@ -1649,8 +1649,27 @@ namespace Minecraft_Wii_U_Mod_Injector
                 SqueakInfinitely.Checked); //MultiPlayerGameMode::CanMakeSpectateSound((void))
         }
 
+        private void NoPosLock_CheckedChanged(object sender, EventArgs e)
+        {
+            GeckoU.WriteUIntToggle(0x027CD4B0, Off, 0x88630814, NoPosLock.Checked);
+            GeckoU.WriteUIntToggle(0x02CDF9B0, Off, 0x88630814, NoPosLock.Checked);
+            GeckoU.WriteUIntToggle(0x02FC804C, Off, 0x88630814, NoPosLock.Checked);
+            GeckoU.WriteUIntToggle(0x0323F7F8, Off, 0x88630814, NoPosLock.Checked);
+            GeckoU.WriteUIntToggle(0x0332d270, Off, 0x88630814, NoPosLock.Checked);
+        }
+
+        private void UnlockInventoty_CheckedChanged(object sender, EventArgs e)
+        {
+            GeckoU.WriteUIntToggle(0x02C57EBC, Off, 0x8863012A, UnlockInventoty.Checked);
+        }
+
+        private void DisableCamaraAnimation_CheckedChanged(object sender, EventArgs e)
+        {
+            GeckoU.WriteUIntToggle(0x02C5F808, Off, 0x5403D97E, DisableCamaraAnimation.Checked);
+        }
         #endregion
 
         #endregion memory editing
+
     }
 }

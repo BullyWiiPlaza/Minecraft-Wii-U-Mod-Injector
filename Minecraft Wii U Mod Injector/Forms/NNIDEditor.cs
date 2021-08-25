@@ -29,12 +29,12 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms
 
         private void ReadNameBtnClicked(object sender, EventArgs e)
         {
-            NNIDNameBox.Text = MainForm.GeckoU.PeekString16(0x44, NnidNameAddress); //This should work properly now
+            NNIDNameBox.Text = MainForm.GeckoU.PeekString16(0x44, NnidNameAddress);
         }
 
         private void Exiting(object sender, FormClosingEventArgs e)
         {
-            DiscordRp.SetPresence("Connected", "Player('s) tab");
+            DiscordRp.SetPresence("Connected", new MainForm().MainTabs.SelectedTab.Text + " tab");
         }
 
         private void NNIDResetBtn_Click(object sender, EventArgs e)

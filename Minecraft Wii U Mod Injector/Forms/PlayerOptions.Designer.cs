@@ -43,6 +43,7 @@
             this.SkinList = new MetroFramework.Controls.MetroComboBox();
             this.SkinNameBox = new MetroFramework.Controls.MetroTextBox();
             this.GetSkinIDBtn = new MetroFramework.Controls.MetroButton();
+            this.LoopSkins = new MetroFramework.Controls.MetroCheckBox();
             this.CameraLbl = new MetroFramework.Controls.MetroLabel();
             this.GameModeLbl = new MetroFramework.Controls.MetroLabel();
             this.capeLbl = new MetroFramework.Controls.MetroLabel();
@@ -50,8 +51,8 @@
             this.StyleExt = new MetroFramework.Components.MetroStyleExtender(this.components);
             this.SkinLbl = new MetroFramework.Controls.MetroLabel();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
-            this.LoopSkins = new MetroFramework.Controls.MetroCheckBox();
             this.SkinLoopTimer = new System.Windows.Forms.Timer(this.components);
+            this.DeleteSkinBtn = new MetroFramework.Controls.MetroButton();
             ((System.ComponentModel.ISupportInitialize)(this.StyleMngr)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SkinIDBox)).BeginInit();
             this.SuspendLayout();
@@ -212,7 +213,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.AddSkinBtn.Location = new System.Drawing.Point(176, 225);
             this.AddSkinBtn.Name = "AddSkinBtn";
-            this.AddSkinBtn.Size = new System.Drawing.Size(366, 23);
+            this.AddSkinBtn.Size = new System.Drawing.Size(180, 23);
             this.AddSkinBtn.TabIndex = 17;
             this.AddSkinBtn.Text = "Add to List";
             this.AddSkinBtn.Theme = MetroFramework.MetroThemeStyle.Dark;
@@ -301,7 +302,20 @@
             this.GetSkinIDBtn.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.ToolTips.SetToolTip(this.GetSkinIDBtn, "Gets the currently equipped Skin\'s ID");
             this.GetSkinIDBtn.UseSelectable = true;
-            this.GetSkinIDBtn.Click += new System.EventHandler(this.GetSkinIDBtnClicked);
+            this.GetSkinIDBtn.Click += new System.EventHandler(this.GetSkinIdBtnClicked);
+            // 
+            // LoopSkins
+            // 
+            this.LoopSkins.AutoSize = true;
+            this.LoopSkins.Location = new System.Drawing.Point(176, 254);
+            this.LoopSkins.Name = "LoopSkins";
+            this.LoopSkins.Size = new System.Drawing.Size(80, 15);
+            this.LoopSkins.TabIndex = 24;
+            this.LoopSkins.Text = "Loop Skins";
+            this.LoopSkins.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.ToolTips.SetToolTip(this.LoopSkins, "Whether to loop all saved skins every 500ms");
+            this.LoopSkins.UseSelectable = true;
+            this.LoopSkins.CheckedChanged += new System.EventHandler(this.LoopSkinsToggled);
             // 
             // CameraLbl
             // 
@@ -373,29 +387,31 @@
             this.metroLabel2.Text = "Skin Name:";
             this.metroLabel2.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
-            // LoopSkins
-            // 
-            this.LoopSkins.AutoSize = true;
-            this.LoopSkins.Location = new System.Drawing.Point(176, 254);
-            this.LoopSkins.Name = "LoopSkins";
-            this.LoopSkins.Size = new System.Drawing.Size(80, 15);
-            this.LoopSkins.TabIndex = 24;
-            this.LoopSkins.Text = "Loop Skins";
-            this.LoopSkins.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTips.SetToolTip(this.LoopSkins, "Whether to loop all saved skins every 500ms");
-            this.LoopSkins.UseSelectable = true;
-            this.LoopSkins.CheckedChanged += new System.EventHandler(this.LoopSkinsToggled);
-            // 
             // SkinLoopTimer
             // 
             this.SkinLoopTimer.Interval = 500;
             this.SkinLoopTimer.Tick += new System.EventHandler(this.SkinLooper);
+            // 
+            // DeleteSkinBtn
+            // 
+            this.DeleteSkinBtn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.DeleteSkinBtn.Location = new System.Drawing.Point(362, 225);
+            this.DeleteSkinBtn.Name = "DeleteSkinBtn";
+            this.DeleteSkinBtn.Size = new System.Drawing.Size(180, 23);
+            this.DeleteSkinBtn.TabIndex = 25;
+            this.DeleteSkinBtn.Text = "Delete from List";
+            this.DeleteSkinBtn.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.ToolTips.SetToolTip(this.DeleteSkinBtn, "Deletes the skin from the list");
+            this.DeleteSkinBtn.UseSelectable = true;
+            this.DeleteSkinBtn.Click += new System.EventHandler(this.DeleteSkinBtnClicked);
             // 
             // PlayerOptions
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(565, 420);
+            this.Controls.Add(this.DeleteSkinBtn);
             this.Controls.Add(this.LoopSkins);
             this.Controls.Add(this.GetSkinIDBtn);
             this.Controls.Add(this.metroLabel2);
@@ -454,5 +470,6 @@
         private MetroFramework.Controls.MetroLabel SkinLbl;
         private MetroFramework.Controls.MetroCheckBox LoopSkins;
         private System.Windows.Forms.Timer SkinLoopTimer;
+        private MetroFramework.Controls.MetroButton DeleteSkinBtn;
     }
 }

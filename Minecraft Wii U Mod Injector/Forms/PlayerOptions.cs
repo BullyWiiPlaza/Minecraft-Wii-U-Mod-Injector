@@ -3,15 +3,16 @@ using Minecraft_Wii_U_Mod_Injector.Helpers;
 using System;
 using System.Globalization;
 using System.Text.RegularExpressions;
-using System.Threading;
 using System.Windows.Forms;
 using Minecraft_Wii_U_Mod_Injector.Helpers.Files;
-using Minecraft_Wii_U_Mod_Injector.Helpers.Win_Forms;
 
 namespace Minecraft_Wii_U_Mod_Injector.Forms
 {
     public partial class PlayerOptions : MetroForm
     {
+        private readonly IniFile _savedData = new IniFile(Application.StartupPath + @"\Saved\Data\Minecraft.Wii.U.Mod.Injector.Data.ini");
+        private readonly string _savedDataDir = Application.StartupPath + @"\Saved\Data\";
+
         private readonly uint _localPlayer = MainForm.GeckoU.PeekUInt(MainForm.GeckoU.PeekUInt(0x10A0A648) + 0x2C);
 
         private readonly uint[] _capeIdTable =
@@ -40,20 +41,30 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms
 #if DEBUG
             Console.WriteLine(@"LocalPlayer: 0x" + _localPlayer.ToString("X4"));
 #endif
-            foreach (string skin in Settings.Keys("Skins"))
-            {
-                SkinList.Items.Add(Settings.Read(skin, "Skins") + " | " + skin);
-            }
+            if (!System.IO.Directory.Exists(_savedDataDir))
+                System.IO.Directory.CreateDirectory(_savedDataDir);
+
+            foreach (string skin in _savedData.GetKeys("Skins"))
+                SkinList.Items.Add(_savedData.Read(skin, "Skins") + " | " + skin);
+        }
+
+        private void Exiting(object sender, FormClosingEventArgs e)
+        {
+            DiscordRp.SetPresence("Connected", new MainForm().MainTabs.SelectedTab.Text + " tab");
+        }
+
+        private string GetIDFromList(string skinId)
+        {
+            var skinIdString = skinId;
+            skinIdString = skinIdString.Substring(skinIdString.IndexOf('|') + 1);
+            skinIdString = Regex.Replace(skinIdString, @"\s+", "");
+
+            return skinIdString;
         }
 
         private void CloseContainersBtnClicked(object sender, EventArgs e)
         {
             MainForm.GeckoU.CallFunction(0x031E8710, _localPlayer, 0x0);
-        }
-
-        private void Exiting(object sender, FormClosingEventArgs e)
-        {
-            DiscordRp.SetPresence("Connected", new MainForm().playersTab.Text + " tab");
         }
 
         private void CameraBoxChanged(object sender, EventArgs e)
@@ -100,34 +111,37 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms
         private void CapeBoxChanged(object sender, EventArgs e)
         {
             var capeId = _capeIdTable[CapeBox.SelectedIndex];
-            MainForm.GeckoU.CallFunction(0x02F6FC2C, 0, capeId,
-                0); //static GameSettings::SetPlayerCape(int, unsigned int, bool)
+            MainForm.GeckoU.CallFunction(0x02F6FC2C, 0, capeId, 0);
         }
 
+        #region skins
         private void AddSkinBtnClicked(object sender, EventArgs e)
         {
             var skinId = Convert.ToString(SkinIDBox.Value, CultureInfo.InvariantCulture);
 
-            Settings.Write(skinId, SkinNameBox.Text, "Skins");
+            _savedData.Write(skinId, SkinNameBox.Text, "Skins");
 
             SkinList.Items.Add(SkinNameBox.Text + " | " + skinId);
         }
 
-        private void SkinListChanged(object sender, EventArgs e)
+        private void DeleteSkinBtnClicked(object sender, EventArgs e)
         {
-            //this can be cleaned up but yeah I am lazy lmao
-            var skinIdString = SkinList.Text;
-            skinIdString = skinIdString.Substring(skinIdString.IndexOf('|') + 1);
-            skinIdString = Regex.Replace(skinIdString, @"\s+", "");
-
-            MainForm.GeckoU.CallFunction(0x02F70028, 0, Convert.ToUInt32(skinIdString), 0);
+            _savedData.DeleteKey(GetIDFromList(SkinList.Text), "Skins");
+            SkinList.Items.RemoveAt(SkinList.SelectedIndex);
         }
 
-        private void GetSkinIDBtnClicked(object sender, EventArgs e)
+        private void SkinListChanged(object sender, EventArgs e)
+        {
+            MainForm.GeckoU.CallFunction(0x02F70028, 0, Convert.ToUInt32(GetIDFromList(SkinList.Text)), 0);
+        }
+
+        private void GetSkinIdBtnClicked(object sender, EventArgs e)
         {
             SkinIDBox.Value = MainForm.GeckoU.CallFunction(0x02F70178, 0);
         }
+        #endregion
 
+        #region skin loop
         private void LoopSkinsToggled(object sender, EventArgs e)
         {
             SkinLoopTimer.Enabled = LoopSkins.Checked;
@@ -137,5 +151,6 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms
         {
             SkinList.SelectedIndex = new Random().Next(0, SkinList.Items.Count);
         }
+        #endregion
     }
 }

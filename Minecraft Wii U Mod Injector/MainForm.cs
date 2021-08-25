@@ -15,7 +15,6 @@ using Minecraft_Wii_U_Mod_Injector.Helpers.Win_Forms;
 using Minecraft_Wii_U_Mod_Injector.Properties;
 using Minecraft_Wii_U_Mod_Injector.Wii_U.Gecko_U;
 using static System.Windows.Forms.DialogResult;
-using Settings = Minecraft_Wii_U_Mod_Injector.Helpers.Files.Settings;
 
 namespace Minecraft_Wii_U_Mod_Injector
 {
@@ -135,7 +134,9 @@ namespace Minecraft_Wii_U_Mod_Injector
         private void Exit(object sender, FormClosingEventArgs e)
         {
             DiscordRp.Deinitialize();
-            Settings.Write("TabIndex", MainTabs.SelectedIndex.ToString(), "Display");
+            Settings.Default.TabIndex = MainTabs.SelectedIndex;
+            Settings.Default.Save();
+            Settings.Default.Upgrade();
         }
 
         private void SwapTab(object sender, EventArgs e)
@@ -249,7 +250,7 @@ namespace Minecraft_Wii_U_Mod_Injector
                 Style = (MetroColorStyle) Enum.Parse(typeof(MetroColorStyle), colorsBox.Text);
                 StyleMngr.Style = (MetroColorStyle) Enum.Parse(typeof(MetroColorStyle), colorsBox.Text);
                 Refresh();
-                Settings.Write("Color", colorsBox.Text, "Display");
+                Settings.Default.Style = Style;
             }
             catch (Exception error)
             {
@@ -272,7 +273,7 @@ namespace Minecraft_Wii_U_Mod_Injector
                     DiscordRp.Deinitialize();
                 }
 
-                Settings.Write("DiscordRPC", discordRpcCheckBox.Checked.ToString(), "Discord");
+                Settings.Default.DiscordRPC = discordRpcCheckBox.Checked;
             }
             catch (Exception error)
             {
@@ -280,27 +281,13 @@ namespace Minecraft_Wii_U_Mod_Injector
             }
         }
 
-        private void ResetConfigClicked(object sender, EventArgs e)
+        private async void CheckUpdatesClicked(object sender, EventArgs e)
         {
-            try
-            {
-                if (Messaging.Show("Resetting the configuration file will reset all your preferences, continue?",
-                    MessageBoxButtons.YesNo, MessageBoxIcon.Question) == Yes)
-                {
-                    if (File.Exists(Application.StartupPath + "/Minecraft Wii U Mod Injector.ini"))
-                        File.Delete(Application.StartupPath + "/Minecraft Wii U Mod Injector.ini");
-                    else
-                        Messaging.Show("Configuration File doesn't exist, nothing to reset.");
-                }
-            }
-            catch (Exception error)
-            {
-                Exceptions.LogError(error, "Failed to Reset Config", true);
-            }
-        }
-
-        private async void CheckUpdatesClicked(object sender, EventArgs e) {
+            updateBtn.Enabled = false;
+            updateBtn.Text = @"Checking for Updates...";
             await Setup.RetrieveGitVersion(false);
+            updateBtn.Text = @"Check for Updates";
+            updateBtn.Enabled = true;
         }
 
         private void ReleaseNotesToggleClicked(object sender, EventArgs e)
@@ -310,12 +297,12 @@ namespace Minecraft_Wii_U_Mod_Injector
                 if (releaseNotesToggle.Checked)
                 {
                     BuildNotesBox.Text = Resources.releaseNote;
-                    Settings.Write("ReleaseNotes", "current", "Display");
+                    Settings.Default.ReleaseNotes = "Current";
                 }
                 else
                 {
                     BuildNotesBox.Text = Resources.releaseNotes;
-                    Settings.Write("ReleaseNotes", "all", "Display");
+                    Settings.Default.ReleaseNotes = "All";
                 }
             }
             catch (Exception error)
@@ -328,7 +315,7 @@ namespace Minecraft_Wii_U_Mod_Injector
         {
             try
             {
-                Settings.Write("PrereleaseOptIn", CheckForPreRelease.Checked.ToString(), "Updates");
+                Settings.Default.PrereleaseOptIn = CheckForPreRelease.Checked;
             }
             catch (Exception error)
             {
@@ -1649,7 +1636,7 @@ namespace Minecraft_Wii_U_Mod_Injector
                 SqueakInfinitely.Checked); //MultiPlayerGameMode::CanMakeSpectateSound((void))
         }
 
-        private void NoPosLock_CheckedChanged(object sender, EventArgs e)
+        private void NoPositionLockToggled(object sender, EventArgs e)
         {
             GeckoU.WriteUIntToggle(0x027CD4B0, Off, 0x88630814, NoPosLock.Checked);
             GeckoU.WriteUIntToggle(0x02CDF9B0, Off, 0x88630814, NoPosLock.Checked);
@@ -1658,18 +1645,16 @@ namespace Minecraft_Wii_U_Mod_Injector
             GeckoU.WriteUIntToggle(0x0332d270, Off, 0x88630814, NoPosLock.Checked);
         }
 
-        private void UnlockInventoty_CheckedChanged(object sender, EventArgs e)
+        private void UnlockInventoryToggled(object sender, EventArgs e)
         {
             GeckoU.WriteUIntToggle(0x02C57EBC, Off, 0x8863012A, UnlockInventoty.Checked);
         }
 
-        private void DisableCamaraAnimation_CheckedChanged(object sender, EventArgs e)
+        private void DisableCameraAnimationToggled(object sender, EventArgs e)
         {
-            GeckoU.WriteUIntToggle(0x02C5F808, Off, 0x5403D97E, DisableCamaraAnimation.Checked);
+            GeckoU.WriteUIntToggle(0x02C5F808, Off, 0x5403D97E, DisableCameraAnimation.Checked);
         }
         #endregion
-
         #endregion memory editing
-
     }
 }

@@ -9,18 +9,21 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms
 {
     public partial class MapTextEditor : MetroForm
     {
-        private readonly MainForm _iw;
+        private readonly IniFile _savedData = new IniFile(Application.StartupPath + @"\Saved\Data\Minecraft.Wii.U.Mod.Injector.Data.ini");
+        private readonly string _savedDataDir = Application.StartupPath + @"\Saved\Data\";
 
         public MapTextEditor(MainForm iw)
         {
             InitializeComponent();
-            _iw = iw;
-            StyleMngr.Style = Style = _iw.StyleMngr.Style;
-            StyleMngr.Theme = Theme = _iw.StyleMngr.Theme;
+            StyleMngr.Style = Style = iw.StyleMngr.Style;
+            StyleMngr.Theme = Theme = iw.StyleMngr.Theme;
             DiscordRp.SetPresence("Connected", "Map Text Editor");
 
-            foreach (var saved in Settings.Keys("MapTextEditor"))
-                MapText.AutoCompleteCustomSource.Add(Settings.Read(saved, "MapTextEditor"));
+            if (!System.IO.Directory.Exists(_savedDataDir))
+                System.IO.Directory.CreateDirectory(_savedDataDir);
+
+            foreach (var saved in _savedData.GetKeys("MapTextEditor"))
+                MapText.AutoCompleteCustomSource.Add(_savedData.Read(saved, "MapTextEditor"));
         }
 
         private void SetMapTextClicked(object sender, EventArgs e)
@@ -29,7 +32,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms
 
             MainForm.GeckoU.ClearString(textStart, 0x108E2984);
             MainForm.GeckoU.WriteString16(textStart, MapText.Text);
-            Settings.Write("SavedText" + Settings.Keys("MapTextEditor").Count + 1, MapText.Text, "MapTextEditor");
+            _savedData.Write("SavedText" + _savedData.GetKeys("MapTextEditor").Count, MapText.Text, "MapTextEditor");
         }
 
         private void VariablesBtnClicked(object sender, EventArgs e)
@@ -40,7 +43,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms
 
         private void Exiting(object sender, FormClosingEventArgs e)
         {
-            DiscordRp.SetPresence("Connected", _iw.generalTab.Text + " tab");
+            DiscordRp.SetPresence("Connected", new MainForm().MainTabs.SelectedTab.Text + " tab");
         }
     }
 }

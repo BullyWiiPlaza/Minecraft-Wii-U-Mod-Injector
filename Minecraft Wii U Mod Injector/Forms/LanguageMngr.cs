@@ -16,6 +16,7 @@ using System.Net;
 using System.Text;
 using Application = System.Windows.Forms.Application;
 using System.Diagnostics;
+using Minecraft_Wii_U_Mod_Injector.Properties;
 
 namespace Minecraft_Wii_U_Mod_Injector.Forms
 {
@@ -23,7 +24,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms
     {
         #region references
         private readonly MainForm _iw;
-        private readonly string _langRootDir = Application.StartupPath + @"\Languages\";
+        private readonly string _langRootDir = Application.StartupPath + @"\Saved\Languages\";
 
         public static List<string> ServerNames = new List<string>();
         public static List<string> ServerUrls = new List<string>();
@@ -57,13 +58,13 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms
             if (!Directory.Exists(_langRootDir))
                 Directory.CreateDirectory(_langRootDir);
 
-            if (Settings.EqualsTo("SeenLangMngr", "False", "Display") || !Settings.Exists("SeenLangMngr", "Display"))
+            if (!Settings.Default.SeenLangMngr)
                 Messaging.Show(
                     "Welcome to the language manager, here you can apply or create new language files for the Mod Injector!" +
                     "\nYou are not limited to only making new languages, you can freely customize any text to your liking as-well as edit control" +
                     "\nproperties such as size and location!");
 
-            Settings.Write("SeenLangMngr", "True", "Display");
+            Settings.Default.SeenLangMngr = true;
 
             LoadInstalledLangs();
 
@@ -94,7 +95,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms
             ServerNames.Clear();
             ServerUrls.Clear();
 
-            DiscordRp.SetPresence(_iw.IsConnected ? "Connected" : "Disconnected", "Settings tab");
+            DiscordRp.SetPresence(_iw.IsConnected ? "Connected" : "Disconnected",  _iw.MainTabs.SelectedTab.Text + " tab");
         }
         #endregion
 
@@ -160,7 +161,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms
 
         private void ExportTemplateBtnClicked(object sender, EventArgs e)
         {
-            var templateFile = new IniFile(_langRootDir + "template.ini");
+            var templateFile = new IniFile(_langRootDir + "Template.ini");
 
             templateFile.Write("name", "Template Language", "meta");
             templateFile.Write("authors", "Kashiiera", "meta");
@@ -188,7 +189,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms
                 templateFile.Write(c.Name + ".locationY", c.Location.Y.ToString(), "controls.properties");
             }
 
-            Messaging.Show("Template File has been created in:\n" + _langRootDir + "template.ini");
+            Messaging.Show("Template File has been created in:\n" + _langRootDir + "Template.ini");
         }
 
         private void RefreshTileClicked(object sender, EventArgs e)

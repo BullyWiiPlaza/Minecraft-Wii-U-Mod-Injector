@@ -1,3 +1,36 @@
+[Release v5.2.0.c2 (25th of August, 2021)]
+
+[Information]
+If you are experiencing issues, please report them on the Github Issues page or by joining the official discord server.
+
+This update adds 3 new minigame mods and has a few general additions and fixes
+
+[Changes]
+
++ New mods
+
+- Minigames > General > No Position Lock (You can move around before the countdown ends)
+- Minigames > Tumble > Unlocked Inventory (You can now access the inventory in Tumble)
+- Minigames > Tumble > Disable Camera Animation (Disables the animation at the start of a Tumble match)
+
++ General Additions & Updates:
+
+- Players > Player Options > Saved Skins are now saved in \Saved\Data\
+- Players > Player Options > Delete from List (You can now delete saved skins)
+- General Game > Map Text Editor > Saved History is now saved in \Saved\Data\
+- Settings > Language has been changed to Languages Manager
+- Languages Manager > Languages are now stored in \Saved\Languages\
+- Quick Mods Manager > Quick Mods are now stored in \Saved\QuickMods\
+- Added the ability to resize all windows (except for the main Injector, Credits and FAQ)
+- Settings are no longer stored in a .ini but instead use the official .NET Settings File embedded within the executable
+
+[Fixes]
+
++ General Fixes
+
+- Tab Pages should be properly disabled when not connected anymore (caused by a hotfix deployed with debug code enabled when v5.2.0.c1 released)
+- Fixed typos
+
 [Release v5.2.0.c1 (24th of August, 2021)]
 
 [Information]

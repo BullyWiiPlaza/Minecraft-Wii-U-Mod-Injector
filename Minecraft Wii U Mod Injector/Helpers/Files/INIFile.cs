@@ -54,8 +54,8 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers.Files
         public List<string> GetKeys(string section)
         {
             List<string> result = new List<string>();
-            byte[] buffer = new byte[2048];
-            GetPrivateProfileSection(section, buffer, 2048, _path);
+            byte[] buffer = new byte[12048];
+            GetPrivateProfileSection(section, buffer, 12048, _path);
             string[] tmp = Encoding.ASCII.GetString(buffer).Trim('\0').Split('\0');
 
             foreach (string entry in tmp)

@@ -53,6 +53,8 @@
             // 
             // withBox
             // 
+            this.withBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.withBox.DisplayMember = "1";
             this.withBox.FormattingEnabled = true;
             this.withBox.ItemHeight = 23;
@@ -123,6 +125,8 @@
             // 
             // ApplyBtn
             // 
+            this.ApplyBtn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.ApplyBtn.Location = new System.Drawing.Point(23, 133);
             this.ApplyBtn.Name = "ApplyBtn";
             this.ApplyBtn.Size = new System.Drawing.Size(517, 23);
@@ -135,6 +139,8 @@
             // 
             // replaceBox
             // 
+            this.replaceBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.replaceBox.DisplayMember = "1";
             this.replaceBox.FormattingEnabled = true;
             this.replaceBox.ItemHeight = 23;
@@ -229,7 +235,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(563, 173);
+            this.ClientSize = new System.Drawing.Size(565, 175);
             this.Controls.Add(this.replaceBox);
             this.Controls.Add(this.replaceLbl);
             this.Controls.Add(this.ApplyBtn);
@@ -237,8 +243,9 @@
             this.Controls.Add(this.withLbl);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(3840, 175);
+            this.MinimumSize = new System.Drawing.Size(565, 175);
             this.Name = "LootTableEditor";
-            this.Resizable = false;
             this.Text = "Minecraft: Wii U Mod Injector - Loot Table Editor";
             this.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.TopMost = true;

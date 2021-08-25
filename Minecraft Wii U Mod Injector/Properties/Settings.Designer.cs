@@ -22,5 +22,113 @@ namespace Minecraft_Wii_U_Mod_Injector.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Default")]
+        public global::MetroFramework.MetroColorStyle Style {
+            get {
+                return ((global::MetroFramework.MetroColorStyle)(this["Style"]));
+            }
+            set {
+                this["Style"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool DiscordRPC {
+            get {
+                return ((bool)(this["DiscordRPC"]));
+            }
+            set {
+                this["DiscordRPC"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Current")]
+        public string ReleaseNotes {
+            get {
+                return ((string)(this["ReleaseNotes"]));
+            }
+            set {
+                this["ReleaseNotes"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool PrereleaseOptIn {
+            get {
+                return ((bool)(this["PrereleaseOptIn"]));
+            }
+            set {
+                this["PrereleaseOptIn"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int TabIndex {
+            get {
+                return ((int)(this["TabIndex"]));
+            }
+            set {
+                this["TabIndex"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string WiiUIPv4 {
+            get {
+                return ((string)(this["WiiUIPv4"]));
+            }
+            set {
+                this["WiiUIPv4"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool FirstLaunch {
+            get {
+                return ((bool)(this["FirstLaunch"]));
+            }
+            set {
+                this["FirstLaunch"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool SeenLangMngr {
+            get {
+                return ((bool)(this["SeenLangMngr"]));
+            }
+            set {
+                this["SeenLangMngr"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool SeenQmmMngr {
+            get {
+                return ((bool)(this["SeenQmmMngr"]));
+            }
+            set {
+                this["SeenQmmMngr"] = value;
+            }
+        }
     }
 }

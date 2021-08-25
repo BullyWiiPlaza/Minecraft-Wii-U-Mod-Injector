@@ -73,6 +73,8 @@
             this.LanguagesList.AllowUserToAddRows = false;
             this.LanguagesList.AllowUserToDeleteRows = false;
             this.LanguagesList.AllowUserToResizeRows = false;
+            this.LanguagesList.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.LanguagesList.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.LanguagesList.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.LanguagesList.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
@@ -132,7 +134,7 @@
             this.NameBox.ReadOnly = true;
             this.NameBox.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.NameBox.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.NameBox.Width = 200;
+            this.NameBox.Width = 300;
             // 
             // DescriptionBox
             // 
@@ -148,7 +150,7 @@
             this.AuthorBox.HeaderText = "Author(\'s)";
             this.AuthorBox.Name = "AuthorBox";
             this.AuthorBox.ReadOnly = true;
-            this.AuthorBox.Width = 200;
+            this.AuthorBox.Width = 300;
             // 
             // FIlePathBox
             // 
@@ -260,13 +262,15 @@
             // 
             // MainTabs
             // 
+            this.MainTabs.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.MainTabs.Controls.Add(this.InstalledLangsTab);
             this.MainTabs.Controls.Add(this.DownloadableLangsTab);
             this.MainTabs.ItemSize = new System.Drawing.Size(473, 1);
             this.MainTabs.Location = new System.Drawing.Point(175, 67);
             this.MainTabs.Name = "MainTabs";
-            this.MainTabs.SelectedIndex = 1;
-            this.MainTabs.Size = new System.Drawing.Size(950, 438);
+            this.MainTabs.SelectedIndex = 0;
+            this.MainTabs.Size = new System.Drawing.Size(950, 415);
             this.MainTabs.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.MainTabs.TabIndex = 55;
             this.MainTabs.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -281,7 +285,7 @@
             this.InstalledLangsTab.HorizontalScrollbarSize = 10;
             this.InstalledLangsTab.Location = new System.Drawing.Point(4, 5);
             this.InstalledLangsTab.Name = "InstalledLangsTab";
-            this.InstalledLangsTab.Size = new System.Drawing.Size(942, 429);
+            this.InstalledLangsTab.Size = new System.Drawing.Size(942, 406);
             this.InstalledLangsTab.TabIndex = 0;
             this.InstalledLangsTab.Text = "Installed Languages";
             this.InstalledLangsTab.Theme = MetroFramework.MetroThemeStyle.Dark;
@@ -297,7 +301,7 @@
             this.DownloadableLangsTab.HorizontalScrollbarSize = 10;
             this.DownloadableLangsTab.Location = new System.Drawing.Point(4, 5);
             this.DownloadableLangsTab.Name = "DownloadableLangsTab";
-            this.DownloadableLangsTab.Size = new System.Drawing.Size(942, 429);
+            this.DownloadableLangsTab.Size = new System.Drawing.Size(942, 406);
             this.DownloadableLangsTab.TabIndex = 1;
             this.DownloadableLangsTab.Text = "Downloadable Languages";
             this.DownloadableLangsTab.Theme = MetroFramework.MetroThemeStyle.Dark;
@@ -310,6 +314,8 @@
             this.ServerLanguageList.AllowUserToAddRows = false;
             this.ServerLanguageList.AllowUserToDeleteRows = false;
             this.ServerLanguageList.AllowUserToResizeRows = false;
+            this.ServerLanguageList.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.ServerLanguageList.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.ServerLanguageList.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.ServerLanguageList.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
@@ -390,8 +396,9 @@
             this.Controls.Add(this.EmptyTile);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(3840, 505);
+            this.MinimumSize = new System.Drawing.Size(1120, 505);
             this.Name = "LanguageMngr";
-            this.Resizable = false;
             this.Style = MetroFramework.MetroColorStyle.Default;
             this.Text = "Minecraft: Wii U Mod Injector - Language Manager";
             this.Theme = MetroFramework.MetroThemeStyle.Dark;

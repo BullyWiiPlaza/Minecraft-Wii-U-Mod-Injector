@@ -80,6 +80,8 @@
             this.QuickModsList.AllowUserToAddRows = false;
             this.QuickModsList.AllowUserToDeleteRows = false;
             this.QuickModsList.AllowUserToResizeRows = false;
+            this.QuickModsList.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.QuickModsList.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.QuickModsList.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.QuickModsList.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
@@ -288,13 +290,15 @@
             // 
             // MainTabs
             // 
+            this.MainTabs.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.MainTabs.Controls.Add(this.QuickModsTab);
             this.MainTabs.Controls.Add(this.CreatorTab);
             this.MainTabs.ItemSize = new System.Drawing.Size(473, 1);
             this.MainTabs.Location = new System.Drawing.Point(175, 67);
             this.MainTabs.Name = "MainTabs";
             this.MainTabs.SelectedIndex = 0;
-            this.MainTabs.Size = new System.Drawing.Size(950, 438);
+            this.MainTabs.Size = new System.Drawing.Size(950, 415);
             this.MainTabs.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.MainTabs.TabIndex = 55;
             this.MainTabs.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -309,7 +313,7 @@
             this.QuickModsTab.HorizontalScrollbarSize = 10;
             this.QuickModsTab.Location = new System.Drawing.Point(4, 5);
             this.QuickModsTab.Name = "QuickModsTab";
-            this.QuickModsTab.Size = new System.Drawing.Size(942, 429);
+            this.QuickModsTab.Size = new System.Drawing.Size(942, 406);
             this.QuickModsTab.TabIndex = 0;
             this.QuickModsTab.Text = "Available Quick Mods";
             this.QuickModsTab.Theme = MetroFramework.MetroThemeStyle.Dark;
@@ -333,7 +337,7 @@
             this.CreatorTab.HorizontalScrollbarSize = 10;
             this.CreatorTab.Location = new System.Drawing.Point(4, 5);
             this.CreatorTab.Name = "CreatorTab";
-            this.CreatorTab.Size = new System.Drawing.Size(942, 429);
+            this.CreatorTab.Size = new System.Drawing.Size(942, 406);
             this.CreatorTab.TabIndex = 1;
             this.CreatorTab.Text = "Quick Mod Creator";
             this.CreatorTab.Theme = MetroFramework.MetroThemeStyle.Dark;
@@ -343,8 +347,10 @@
             // 
             // SaveQMBtn
             // 
+            this.SaveQMBtn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.SaveQMBtn.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.SaveQMBtn.Location = new System.Drawing.Point(86, 391);
+            this.SaveQMBtn.Location = new System.Drawing.Point(86, 366);
             this.SaveQMBtn.Name = "SaveQMBtn";
             this.SaveQMBtn.Size = new System.Drawing.Size(832, 35);
             this.SaveQMBtn.TabIndex = 10;
@@ -355,13 +361,15 @@
             // 
             // qmmModsList
             // 
+            this.qmmModsList.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.StyleExt.SetApplyMetroTheme(this.qmmModsList, true);
             this.qmmModsList.AutoScroll = true;
             this.qmmModsList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.qmmModsList.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
             this.qmmModsList.Location = new System.Drawing.Point(86, 97);
             this.qmmModsList.Name = "qmmModsList";
-            this.qmmModsList.Size = new System.Drawing.Size(832, 288);
+            this.qmmModsList.Size = new System.Drawing.Size(832, 263);
             this.qmmModsList.TabIndex = 9;
             // 
             // metroLabel4
@@ -376,6 +384,8 @@
             // 
             // qmmDescBox
             // 
+            this.qmmDescBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             // 
             // 
             // 
@@ -419,6 +429,8 @@
             // 
             // qmmAuthBox
             // 
+            this.qmmAuthBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             // 
             // 
             // 
@@ -462,6 +474,8 @@
             // 
             // qmmNameBox
             // 
+            this.qmmNameBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             // 
             // 
             // 
@@ -520,8 +534,9 @@
             this.Controls.Add(this.EmptyTile);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(3840, 505);
+            this.MinimumSize = new System.Drawing.Size(1120, 505);
             this.Name = "QuickModsMngr";
-            this.Resizable = false;
             this.Style = MetroFramework.MetroColorStyle.Default;
             this.Text = "Minecraft: Wii U Mod Injector - Quick Mods Manager";
             this.Theme = MetroFramework.MetroThemeStyle.Dark;

@@ -196,6 +196,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.minigamesTab = new MetroFramework.Controls.MetroTabPage();
             this.MinigamesTabs = new MetroFramework.Controls.MetroTabControl();
             this.GeneralMinigames = new MetroFramework.Controls.MetroTabPage();
+            this.NoPosLock = new MetroFramework.Controls.MetroCheckBox();
             this.SqueakInfinitely = new MetroFramework.Controls.MetroCheckBox();
             this.RequiredPlayersSlider = new System.Windows.Forms.NumericUpDown();
             this.RequiredPlayers = new MetroFramework.Controls.MetroLabel();
@@ -209,6 +210,8 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.RefillIntervalSlider = new System.Windows.Forms.NumericUpDown();
             this.AntiEndGame = new MetroFramework.Controls.MetroCheckBox();
             this.Tumble = new MetroFramework.Controls.MetroTabPage();
+            this.DisableCameraAnimation = new MetroFramework.Controls.MetroCheckBox();
+            this.UnlockInventoty = new MetroFramework.Controls.MetroCheckBox();
             this.TumbleHUD = new MetroFramework.Controls.MetroCheckBox();
             this.Glide = new MetroFramework.Controls.MetroTabPage();
             this.ringScoreB = new MetroFramework.Controls.MetroLabel();
@@ -266,7 +269,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.settingsLogo = new MetroFramework.Controls.MetroPanel();
             this.releaseNotesToggle = new MetroFramework.Controls.MetroCheckBox();
             this.updateBtn = new MetroFramework.Controls.MetroButton();
-            this.resetConfigBtn = new MetroFramework.Controls.MetroButton();
             this.discordRpcCheckBox = new MetroFramework.Controls.MetroCheckBox();
             this.colorsBox = new MetroFramework.Controls.MetroComboBox();
             this.ColorLabel = new MetroFramework.Controls.MetroLabel();
@@ -279,9 +281,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.RightClickMenu = new MetroFramework.Controls.MetroContextMenu(this.components);
             this.IncreaseDecimalPlace = new System.Windows.Forms.ToolStripMenuItem();
             this.DecreaseDecimalPlace = new System.Windows.Forms.ToolStripMenuItem();
-            this.NoPosLock = new MetroFramework.Controls.MetroCheckBox();
-            this.UnlockInventoty = new MetroFramework.Controls.MetroCheckBox();
-            this.DisableCamaraAnimation = new MetroFramework.Controls.MetroCheckBox();
             this.MainTabs.SuspendLayout();
             this.MainTab.SuspendLayout();
             this.playersTab.SuspendLayout();
@@ -421,7 +420,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.MainTabs.Location = new System.Drawing.Point(155, 61);
             this.MainTabs.Multiline = true;
             this.MainTabs.Name = "MainTabs";
-            this.MainTabs.SelectedIndex = 4;
+            this.MainTabs.SelectedIndex = 0;
             this.MainTabs.Size = new System.Drawing.Size(1130, 639);
             this.MainTabs.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.MainTabs.TabIndex = 0;
@@ -3061,7 +3060,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.MinigamesTabs.ItemSize = new System.Drawing.Size(280, 25);
             this.MinigamesTabs.Location = new System.Drawing.Point(-3, 2);
             this.MinigamesTabs.Name = "MinigamesTabs";
-            this.MinigamesTabs.SelectedIndex = 2;
+            this.MinigamesTabs.SelectedIndex = 0;
             this.MinigamesTabs.Size = new System.Drawing.Size(1129, 633);
             this.MinigamesTabs.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.MinigamesTabs.TabIndex = 2;
@@ -3094,6 +3093,19 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.GeneralMinigames.VerticalScrollbarBarColor = true;
             this.GeneralMinigames.VerticalScrollbarHighlightOnWheel = false;
             this.GeneralMinigames.VerticalScrollbarSize = 10;
+            // 
+            // NoPosLock
+            // 
+            this.NoPosLock.AutoSize = true;
+            this.NoPosLock.Location = new System.Drawing.Point(7, 112);
+            this.NoPosLock.Name = "NoPosLock";
+            this.NoPosLock.Size = new System.Drawing.Size(113, 15);
+            this.NoPosLock.TabIndex = 25;
+            this.NoPosLock.Text = "No Position Lock";
+            this.NoPosLock.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.ToolTipManager.SetToolTip(this.NoPosLock, "Whether you can move during countdowns");
+            this.NoPosLock.UseSelectable = true;
+            this.NoPosLock.CheckedChanged += new System.EventHandler(this.NoPositionLockToggled);
             // 
             // SqueakInfinitely
             // 
@@ -3289,7 +3301,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             // Tumble
             // 
             this.Tumble.BackColor = System.Drawing.Color.White;
-            this.Tumble.Controls.Add(this.DisableCamaraAnimation);
+            this.Tumble.Controls.Add(this.DisableCameraAnimation);
             this.Tumble.Controls.Add(this.UnlockInventoty);
             this.Tumble.Controls.Add(this.TumbleHUD);
             this.Tumble.HorizontalScrollbarBarColor = true;
@@ -3305,6 +3317,32 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.Tumble.VerticalScrollbarBarColor = true;
             this.Tumble.VerticalScrollbarHighlightOnWheel = false;
             this.Tumble.VerticalScrollbarSize = 10;
+            // 
+            // DisableCameraAnimation
+            // 
+            this.DisableCameraAnimation.AutoSize = true;
+            this.DisableCameraAnimation.Location = new System.Drawing.Point(7, 50);
+            this.DisableCameraAnimation.Name = "DisableCameraAnimation";
+            this.DisableCameraAnimation.Size = new System.Drawing.Size(164, 15);
+            this.DisableCameraAnimation.TabIndex = 5;
+            this.DisableCameraAnimation.Text = "Disable Camera Animation";
+            this.DisableCameraAnimation.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.ToolTipManager.SetToolTip(this.DisableCameraAnimation, "Whether to disable the start animation in Tumble");
+            this.DisableCameraAnimation.UseSelectable = true;
+            this.DisableCameraAnimation.CheckedChanged += new System.EventHandler(this.DisableCameraAnimationToggled);
+            // 
+            // UnlockInventoty
+            // 
+            this.UnlockInventoty.AutoSize = true;
+            this.UnlockInventoty.Location = new System.Drawing.Point(7, 28);
+            this.UnlockInventoty.Name = "UnlockInventoty";
+            this.UnlockInventoty.Size = new System.Drawing.Size(113, 15);
+            this.UnlockInventoty.TabIndex = 4;
+            this.UnlockInventoty.Text = "Unlock Inventory";
+            this.UnlockInventoty.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.ToolTipManager.SetToolTip(this.UnlockInventoty, "Whether you can open the Inventory in Tumble");
+            this.UnlockInventoty.UseSelectable = true;
+            this.UnlockInventoty.CheckedChanged += new System.EventHandler(this.UnlockInventoryToggled);
             // 
             // TumbleHUD
             // 
@@ -4249,7 +4287,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.settingsTab.Controls.Add(this.settingsLogo);
             this.settingsTab.Controls.Add(this.releaseNotesToggle);
             this.settingsTab.Controls.Add(this.updateBtn);
-            this.settingsTab.Controls.Add(this.resetConfigBtn);
             this.settingsTab.Controls.Add(this.discordRpcCheckBox);
             this.settingsTab.Controls.Add(this.colorsBox);
             this.settingsTab.Controls.Add(this.ColorLabel);
@@ -4290,7 +4327,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.OpenLangMngrBtn.Name = "OpenLangMngrBtn";
             this.OpenLangMngrBtn.Size = new System.Drawing.Size(1050, 36);
             this.OpenLangMngrBtn.TabIndex = 48;
-            this.OpenLangMngrBtn.Text = "Languages";
+            this.OpenLangMngrBtn.Text = "Languages Manager";
             this.OpenLangMngrBtn.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.ToolTipManager.SetToolTip(this.OpenLangMngrBtn, "Opens the Language Manager");
             this.OpenLangMngrBtn.UseSelectable = true;
@@ -4317,9 +4354,9 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.settingsLogo.HorizontalScrollbarBarColor = true;
             this.settingsLogo.HorizontalScrollbarHighlightOnWheel = false;
             this.settingsLogo.HorizontalScrollbarSize = 10;
-            this.settingsLogo.Location = new System.Drawing.Point(65, 251);
+            this.settingsLogo.Location = new System.Drawing.Point(65, 203);
             this.settingsLogo.Name = "settingsLogo";
-            this.settingsLogo.Size = new System.Drawing.Size(1050, 369);
+            this.settingsLogo.Size = new System.Drawing.Size(1050, 417);
             this.settingsLogo.TabIndex = 44;
             this.settingsLogo.VerticalScrollbarBarColor = true;
             this.settingsLogo.VerticalScrollbarHighlightOnWheel = false;
@@ -4341,7 +4378,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             // updateBtn
             // 
             this.updateBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.updateBtn.Location = new System.Drawing.Point(65, 206);
+            this.updateBtn.Location = new System.Drawing.Point(65, 158);
             this.updateBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.updateBtn.Name = "updateBtn";
             this.updateBtn.Size = new System.Drawing.Size(1050, 36);
@@ -4351,20 +4388,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.ToolTipManager.SetToolTip(this.updateBtn, "Checks for a new update");
             this.updateBtn.UseSelectable = true;
             this.updateBtn.Click += new System.EventHandler(this.CheckUpdatesClicked);
-            // 
-            // resetConfigBtn
-            // 
-            this.resetConfigBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.resetConfigBtn.Location = new System.Drawing.Point(65, 158);
-            this.resetConfigBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.resetConfigBtn.Name = "resetConfigBtn";
-            this.resetConfigBtn.Size = new System.Drawing.Size(1050, 36);
-            this.resetConfigBtn.TabIndex = 45;
-            this.resetConfigBtn.Text = "Reset Configuration";
-            this.resetConfigBtn.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.resetConfigBtn, "Resets the configuration file");
-            this.resetConfigBtn.UseSelectable = true;
-            this.resetConfigBtn.Click += new System.EventHandler(this.ResetConfigClicked);
             // 
             // discordRpcCheckBox
             // 
@@ -4507,45 +4530,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             | System.Windows.Forms.Keys.OemMinus)));
             this.DecreaseDecimalPlace.Size = new System.Drawing.Size(322, 22);
             this.DecreaseDecimalPlace.Text = "Decrease decimal place";
-            // 
-            // NoPosLock
-            // 
-            this.NoPosLock.AutoSize = true;
-            this.NoPosLock.Location = new System.Drawing.Point(7, 112);
-            this.NoPosLock.Name = "NoPosLock";
-            this.NoPosLock.Size = new System.Drawing.Size(113, 15);
-            this.NoPosLock.TabIndex = 25;
-            this.NoPosLock.Text = "No Position Lock";
-            this.NoPosLock.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.NoPosLock, "Bypasses any move restriction upon minigame start");
-            this.NoPosLock.UseSelectable = true;
-            this.NoPosLock.CheckedChanged += new System.EventHandler(this.NoPosLock_CheckedChanged);
-            // 
-            // UnlockInventoty
-            // 
-            this.UnlockInventoty.AutoSize = true;
-            this.UnlockInventoty.Location = new System.Drawing.Point(7, 28);
-            this.UnlockInventoty.Name = "UnlockInventoty";
-            this.UnlockInventoty.Size = new System.Drawing.Size(113, 15);
-            this.UnlockInventoty.TabIndex = 4;
-            this.UnlockInventoty.Text = "Unlock Inventoty";
-            this.UnlockInventoty.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.UnlockInventoty, "Allows you to open the inventory in Tumble");
-            this.UnlockInventoty.UseSelectable = true;
-            this.UnlockInventoty.CheckedChanged += new System.EventHandler(this.UnlockInventoty_CheckedChanged);
-            // 
-            // DisableCamaraAnimation
-            // 
-            this.DisableCamaraAnimation.AutoSize = true;
-            this.DisableCamaraAnimation.Location = new System.Drawing.Point(7, 50);
-            this.DisableCamaraAnimation.Name = "DisableCamaraAnimation";
-            this.DisableCamaraAnimation.Size = new System.Drawing.Size(164, 15);
-            this.DisableCamaraAnimation.TabIndex = 5;
-            this.DisableCamaraAnimation.Text = "Disable Camara Animation";
-            this.DisableCamaraAnimation.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.DisableCamaraAnimation, "Disables the Camara Animation on the start of a Tumble Game");
-            this.DisableCamaraAnimation.UseSelectable = true;
-            this.DisableCamaraAnimation.CheckedChanged += new System.EventHandler(this.DisableCamaraAnimation_CheckedChanged);
             // 
             // MainForm
             // 
@@ -4742,7 +4726,6 @@ namespace Minecraft_Wii_U_Mod_Injector
         public System.Windows.Forms.NumericUpDown ringScoreOrange;
         private MetroFramework.Controls.MetroTabPage commandsTab;
         public MetroFramework.Controls.MetroTile CommandsTile;
-        public MetroFramework.Controls.MetroButton resetConfigBtn;
         private MetroFramework.Controls.MetroLabel worldCmdLbl;
         private MetroFramework.Controls.MetroPanel worldPanel;
         private MetroFramework.Controls.MetroButton downfallCommandBtn;
@@ -4882,6 +4865,6 @@ namespace Minecraft_Wii_U_Mod_Injector
         public MetroCheckBox NoDamage;
         private MetroCheckBox NoPosLock;
         private MetroCheckBox UnlockInventoty;
-        private MetroCheckBox DisableCamaraAnimation;
+        private MetroCheckBox DisableCameraAnimation;
     }
 }

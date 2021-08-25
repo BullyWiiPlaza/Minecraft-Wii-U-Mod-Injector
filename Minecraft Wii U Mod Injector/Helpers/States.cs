@@ -1,5 +1,5 @@
-﻿using Minecraft_Wii_U_Mod_Injector.Helpers.Files;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
+using Minecraft_Wii_U_Mod_Injector.Properties;
 
 namespace Minecraft_Wii_U_Mod_Injector.Helpers
 {
@@ -11,8 +11,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
         {
             Disconnected = 1,
             Connecting = 2,
-            Connected = 3,
-            Error = 4
+            Connected = 3
         }
 
         public static StatesIds CurrentState = StatesIds.Disconnected;
@@ -27,24 +26,24 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
             switch (state)
             {
                 case StatesIds.Disconnected:
-                    Injector.ConnectBtn.Text = "Connect";
+                    Injector.ConnectBtn.Text = @"Connect";
                     Injector.ConnectBtn.Enabled = true;
                     SetupTabs(Injector, false);
-                    Injector.WiiUIPv4Box.Text = Settings.Read("WiiUIPv4", "Wii U");
+                    Injector.WiiUIPv4Box.Text = Settings.Default.WiiUIPv4;
                     CurrentState = StatesIds.Disconnected;
                     break;
 
                 case StatesIds.Connected:
                     Injector.ConnectBtn.Enabled = true;
-                    Injector.ConnectBtn.Text = "Disconnect";
+                    Injector.ConnectBtn.Text = @"Disconnect";
                     SetupTabs(Injector, true);
-                    Settings.Write("WiiUIPv4", Injector.WiiUIPv4Box.Text, "Wii U");
+                    Settings.Default.WiiUIPv4 = Injector.WiiUIPv4Box.Text;
                     CurrentState = StatesIds.Connected;
                     break;
 
                 case StatesIds.Connecting:
                     Injector.ConnectBtn.Enabled = false;
-                    Injector.ConnectBtn.Text = "Connecting...";
+                    Injector.ConnectBtn.Text = @"Connecting...";
                     SetupTabs(Injector, false);
                     CurrentState = StatesIds.Connecting;
                     break;
@@ -59,7 +58,8 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
                 {
                     foreach (Control c in page.Controls)
                     {
-                        c.Enabled = enabled;
+                        if(c.Enabled != enabled)
+                            c.Enabled = enabled;
                     }
                 }
             }

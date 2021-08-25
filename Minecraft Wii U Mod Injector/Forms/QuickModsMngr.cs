@@ -11,6 +11,7 @@ using Minecraft_Wii_U_Mod_Injector.Helpers.Win_Forms;
 using System.Text;
 using Application = System.Windows.Forms.Application;
 using System.Diagnostics;
+using Minecraft_Wii_U_Mod_Injector.Properties;
 
 namespace Minecraft_Wii_U_Mod_Injector.Forms
 {
@@ -23,7 +24,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms
         #region references
 
         private readonly MainForm _iw;
-        private readonly string _qmmRootDir = Application.StartupPath + @"\QuickMods\";
+        private readonly string _qmmRootDir = Application.StartupPath + @"\Saved\QuickMods\";
 
         #endregion
 
@@ -52,12 +53,12 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms
             if (!Directory.Exists(_qmmRootDir))
                 Directory.CreateDirectory(_qmmRootDir);
 
-            if (Settings.EqualsTo("SeenQmmMngr", "False", "Display") || !Settings.Exists("SeenQmmMngr", "Display"))
+            if (!Settings.Default.SeenQmmMngr)
                 Messaging.Show(
-                    "Welcome to the Quick Mods Manager [BETA]!\nQuick Mods are basically mod presets, you activate a quick mod and it activates a bunch of mods within that" +
+                    "Welcome to the Quick Mods Manager!\nQuick Mods are basically mod presets, you activate a quick mod and it activates a bunch of mods within that" +
                     " preset.\nThis is useful for whenever you want to activate a large amount of mods at once. Have fun!");
 
-            Settings.Write("SeenQmmMngr", "True", "Display");
+            Settings.Default.SeenQmmMngr = true;
 
             LoadInstalledQmms();
 
@@ -76,7 +77,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms
 
         private void Exiting(object sender, FormClosingEventArgs e)
         {
-            DiscordRp.SetPresence(_iw.IsConnected ? "Connected" : "Disconnected", "Settings tab");
+            DiscordRp.SetPresence(_iw.IsConnected ? "Connected" : "Disconnected", _iw.MainTabs.SelectedTab.Text + " tab");
         }
 
         #endregion

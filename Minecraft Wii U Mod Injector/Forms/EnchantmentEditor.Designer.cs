@@ -207,7 +207,7 @@
             // BindingCurseBox
             // 
             this.BindingCurseBox.AutoSize = true;
-            this.BindingCurseBox.Location = new System.Drawing.Point(3, 11);
+            this.BindingCurseBox.Location = new System.Drawing.Point(7, 11);
             this.BindingCurseBox.Name = "BindingCurseBox";
             this.BindingCurseBox.Size = new System.Drawing.Size(111, 15);
             this.BindingCurseBox.TabIndex = 176;
@@ -233,7 +233,7 @@
             // VanishingCurseBox
             // 
             this.VanishingCurseBox.AutoSize = true;
-            this.VanishingCurseBox.Location = new System.Drawing.Point(3, 32);
+            this.VanishingCurseBox.Location = new System.Drawing.Point(7, 32);
             this.VanishingCurseBox.Name = "VanishingCurseBox";
             this.VanishingCurseBox.Size = new System.Drawing.Size(121, 15);
             this.VanishingCurseBox.TabIndex = 177;
@@ -284,6 +284,8 @@
             // 
             // ArmorLbl
             // 
+            this.ArmorLbl.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.ArmorLbl.AutoSize = true;
             this.ArmorLbl.BackColor = System.Drawing.Color.Transparent;
             this.ArmorLbl.FontWeight = MetroFramework.MetroLabelWeight.Regular;
@@ -296,6 +298,8 @@
             // 
             // armorPanel
             // 
+            this.armorPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.armorPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.armorPanel.Controls.Add(this.AquaInfinityBox);
             this.armorPanel.Controls.Add(this.RespirationSlider);
@@ -331,6 +335,8 @@
             // 
             // ToolsLbl
             // 
+            this.ToolsLbl.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.ToolsLbl.AutoSize = true;
             this.ToolsLbl.BackColor = System.Drawing.Color.Transparent;
             this.ToolsLbl.FontWeight = MetroFramework.MetroLabelWeight.Regular;
@@ -343,6 +349,8 @@
             // 
             // toolsPanel
             // 
+            this.toolsPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.toolsPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.toolsPanel.Controls.Add(this.ChannelingBox);
             this.toolsPanel.Controls.Add(this.KnockbackSlider);
@@ -449,6 +457,7 @@
             // 
             // cursesLbl
             // 
+            this.cursesLbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cursesLbl.AutoSize = true;
             this.cursesLbl.BackColor = System.Drawing.Color.Transparent;
             this.cursesLbl.FontWeight = MetroFramework.MetroLabelWeight.Regular;
@@ -461,6 +470,7 @@
             // 
             // cursesPanel
             // 
+            this.cursesPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cursesPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.cursesPanel.Controls.Add(this.VanishingCurseBox);
             this.cursesPanel.Controls.Add(this.BindingCurseBox);
@@ -469,7 +479,7 @@
             this.cursesPanel.HorizontalScrollbarSize = 10;
             this.cursesPanel.Location = new System.Drawing.Point(283, 63);
             this.cursesPanel.Name = "cursesPanel";
-            this.cursesPanel.Size = new System.Drawing.Size(310, 313);
+            this.cursesPanel.Size = new System.Drawing.Size(281, 313);
             this.cursesPanel.TabIndex = 174;
             this.cursesPanel.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.cursesPanel.VerticalScrollbarBarColor = true;
@@ -484,7 +494,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(616, 383);
+            this.ClientSize = new System.Drawing.Size(590, 390);
             this.Controls.Add(this.cursesLbl);
             this.Controls.Add(this.cursesPanel);
             this.Controls.Add(this.ToolsLbl);
@@ -493,8 +503,9 @@
             this.Controls.Add(this.armorPanel);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(3840, 390);
+            this.MinimumSize = new System.Drawing.Size(590, 390);
             this.Name = "EnchantmentEditor";
-            this.Resizable = false;
             this.Text = "Minecraft: Wii U Mod Injector - Enchantment Editor";
             this.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.TopMost = true;

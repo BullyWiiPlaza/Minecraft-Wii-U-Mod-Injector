@@ -1,11 +1,9 @@
-﻿using MetroFramework;
-using Minecraft_Wii_U_Mod_Injector.Helpers.Files;
+﻿using Minecraft_Wii_U_Mod_Injector.Helpers.Files;
 using Octokit;
 using System;
 using System.Threading.Tasks;
 using Minecraft_Wii_U_Mod_Injector.Helpers.Win_Forms;
 using Minecraft_Wii_U_Mod_Injector.Properties;
-using Settings = Minecraft_Wii_U_Mod_Injector.Helpers.Files.Settings;
 using System.Net;
 using System.Windows.Forms;
 using System.Diagnostics;
@@ -17,7 +15,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
     {
         public static MainForm Injector = new MainForm();
 
-        public static string LocalVer = "v5.2.0.c1";
+        public static string LocalVer = "v5.2.0.c2";
         public static string GitVer = string.Empty;
         public static string UpdaterPath = $@"{Application.StartupPath}\Minecraft.Wii.U.Mod.Injector.Updater.exe";
 
@@ -83,7 +81,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
                         Process.Start(UpdaterPath);
                         Environment.Exit(0);
                     }
-                    else if (Settings.EqualsTo("PrereleaseOptIn", "True", "Updates") && PreRelease)
+                    else if (Settings.Default.PrereleaseOptIn && PreRelease)
                     {
                         using (var wc = new WebClient())
                         {
@@ -119,45 +117,37 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
             {
                 try
                 {
-                    if (!Settings.Exists("FirstLaunch", "Display"))
-                        Settings.Write("FirstLaunch", "True", "Display");
-
-                    var firstLaunch = Convert.ToBoolean(Settings.Read("FirstLaunch", "Display"));
-
-                    if (firstLaunch)
+                    if (Settings.Default.FirstLaunch)
                         Messaging.Show(
                             "Welcome to the Minecraft: Wii U Mod Injector! the first and longest lasting Mod Injector for Minecraft: Wii U Edition!\n" +
                             "Before we get started, please take a look at the setup tutorial here: https://www.youtube.com/watch?v=be5fNSgxhrU. \n\nIf you appreciate all the work " +
                             "I've put into this software, a sub is appreciated. Happy modding!");
 
-                    Settings.Write("FirstLaunch", "False", "Display");
+                    Settings.Default.FirstLaunch = false;
 
-                    Injector.Style = Injector.StyleMngr.Style =
-                        (MetroColorStyle) Enum.Parse(typeof(MetroColorStyle), Settings.Read("Color", "Display"));
+                    Injector.Style = Injector.StyleMngr.Style = Settings.Default.Style;
+                    Injector.colorsBox.Text = Settings.Default.Style.ToString();
 
-                    Injector.colorsBox.Text = Settings.Read("Color", "Display");
+                    Injector.MainTabs.SelectedIndex = Settings.Default.TabIndex;
 
-                    Injector.MainTabs.SelectedIndex = Convert.ToInt32(Settings.Read("TabIndex", "Display"));
+                    Injector.CheckForPreRelease.Checked = Settings.Default.PrereleaseOptIn;
 
-                    Injector.CheckForPreRelease.Checked =
-                        Convert.ToBoolean(Settings.Read("PrereleaseOptIn", "Updates"));
-
-                    Injector.discordRpcCheckBox.Checked = Convert.ToBoolean(Settings.Read("DiscordRPC", "Discord"));
+                    Injector.discordRpcCheckBox.Checked = Settings.Default.DiscordRPC;
                 }
                 catch (Exception)
                 {
                     //Failing to set User Preferences isn't a big deal, so we ignore the exception if one happens
                 }
 
-                if (Settings.EqualsTo("ReleaseNotes", "all", "Display"))
-                {
-                    Injector.releaseNotesToggle.Checked = false;
-                    Injector.BuildNotesBox.Text = Resources.releaseNotes;
-                }
-                else if (Settings.EqualsTo("ReleaseNotes", "current", "Display"))
+                if (Settings.Default.ReleaseNotes == "Current")
                 {
                     Injector.releaseNotesToggle.Checked = true;
                     Injector.BuildNotesBox.Text = Resources.releaseNote;
+                }
+                else
+                {
+                    Injector.releaseNotesToggle.Checked = false;
+                    Injector.BuildNotesBox.Text = Resources.releaseNotes;
                 }
             }
             catch (Exception error)

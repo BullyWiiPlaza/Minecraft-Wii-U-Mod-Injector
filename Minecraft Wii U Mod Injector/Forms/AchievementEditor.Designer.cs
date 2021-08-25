@@ -155,7 +155,7 @@
             this.withBox.Location = new System.Drawing.Point(72, 98);
             this.withBox.MaxDropDownItems = 3;
             this.withBox.Name = "withBox";
-            this.withBox.Size = new System.Drawing.Size(477, 29);
+            this.withBox.Size = new System.Drawing.Size(485, 29);
             this.withBox.TabIndex = 8;
             this.withBox.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.ToolTips.SetToolTip(this.withBox, "Which achievement do you want to replace the selected one with?");
@@ -164,11 +164,11 @@
             // 
             // ApplyBtn
             // 
-            this.ApplyBtn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.ApplyBtn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.ApplyBtn.Location = new System.Drawing.Point(23, 133);
+            this.ApplyBtn.Location = new System.Drawing.Point(23, 135);
             this.ApplyBtn.Name = "ApplyBtn";
-            this.ApplyBtn.Size = new System.Drawing.Size(526, 23);
+            this.ApplyBtn.Size = new System.Drawing.Size(534, 23);
             this.ApplyBtn.TabIndex = 9;
             this.ApplyBtn.Text = "Apply";
             this.ApplyBtn.Theme = MetroFramework.MetroThemeStyle.Dark;
@@ -280,7 +280,7 @@
             this.replaceBox.Location = new System.Drawing.Point(100, 63);
             this.replaceBox.MaxDropDownItems = 3;
             this.replaceBox.Name = "replaceBox";
-            this.replaceBox.Size = new System.Drawing.Size(449, 29);
+            this.replaceBox.Size = new System.Drawing.Size(457, 29);
             this.replaceBox.TabIndex = 11;
             this.replaceBox.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.ToolTips.SetToolTip(this.replaceBox, "What achievement should be edited?");
@@ -313,7 +313,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(572, 173);
+            this.ClientSize = new System.Drawing.Size(580, 175);
             this.Controls.Add(this.replaceBox);
             this.Controls.Add(this.replaceLbl);
             this.Controls.Add(this.ApplyBtn);
@@ -321,9 +321,9 @@
             this.Controls.Add(this.withLbl);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(572, 173);
+            this.MaximumSize = new System.Drawing.Size(3840, 175);
+            this.MinimumSize = new System.Drawing.Size(580, 175);
             this.Name = "AchievementEditor";
-            this.Resizable = false;
             this.Text = "Minecraft: Wii U Mod Injector - Achievement Editor";
             this.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.TopMost = true;

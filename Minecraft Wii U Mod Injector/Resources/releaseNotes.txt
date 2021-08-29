@@ -1,16 +1,3 @@
-[Release v5.2.0.pr1 (29th of August, 2021)]
-
-[Information]
-If you are experiencing issues, please report them on the Github Issues page or by joining the official discord server.
-
-This pre-release update fixes a Language Manager bug
-
-[Fixes]
-
-+ General Fixes
-
-- Language Manager should no longer export slider controls when user asked not to
-
 [Release v5.2.0.c2 (25th of August, 2021)]
 
 [Information]

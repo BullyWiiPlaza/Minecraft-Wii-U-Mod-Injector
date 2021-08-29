@@ -21,5 +21,10 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms
                 return cp;
             }
         }
+
+        private void Exiting(object sender, FormClosingEventArgs e)
+        {
+            Dispose();
+        }
     }
 }

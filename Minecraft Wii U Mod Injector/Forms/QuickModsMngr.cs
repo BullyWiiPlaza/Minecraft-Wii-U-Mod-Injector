@@ -78,6 +78,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms
         private void Exiting(object sender, FormClosingEventArgs e)
         {
             DiscordRp.SetPresence(_iw.IsConnected ? "Connected" : "Disconnected", _iw.MainTabs.SelectedTab.Text + " tab");
+            Dispose();
         }
 
         #endregion

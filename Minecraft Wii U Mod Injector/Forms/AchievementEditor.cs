@@ -60,6 +60,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms {
         private void ApplyBtnClicked(object sender, EventArgs e) 
         {
             MainForm.GeckoU.WriteUInt(achievementAddresses[replaceBox.SelectedIndex], 0x38800000u + achievementIDs[withBox.SelectedIndex]);
+            Dispose();
             Close();
         }
     }

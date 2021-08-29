@@ -81,6 +81,7 @@
             this.Style = MetroFramework.MetroColorStyle.Default;
             this.Text = "Minecraft: Wii U Mod Injector - Frequently Asked Questions";
             this.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Exiting);
             ((System.ComponentModel.ISupportInitialize)(this.StyleMngr)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

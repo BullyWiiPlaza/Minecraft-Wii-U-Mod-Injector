@@ -22,6 +22,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms
         private void Exiting(object sender, FormClosingEventArgs e)
         {
             DiscordRp.SetPresence("Connected", new MainForm().MainTabs.SelectedTab.Text + " tab");
+            Dispose();
         }
 
         private void FrostWalkerLvlSliderChanged(object sender, EventArgs e)

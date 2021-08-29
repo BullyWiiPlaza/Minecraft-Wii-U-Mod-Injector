@@ -20,6 +20,12 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms
             DiscordRp.SetPresence("Connected", "Nintendo Network ID Editor");
         }
 
+        private void Exiting(object sender, FormClosingEventArgs e)
+        {
+            DiscordRp.SetPresence("Connected", new MainForm().MainTabs.SelectedTab.Text + " tab");
+            Dispose();
+        }
+
         private void NnidChangeBtnClicked(object sender, EventArgs e)
         {
             MainForm.GeckoU.ClearString(NnidNameAddress, NnidNameAddress + 0x44);
@@ -30,11 +36,6 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms
         private void ReadNameBtnClicked(object sender, EventArgs e)
         {
             NNIDNameBox.Text = MainForm.GeckoU.PeekString16(0x44, NnidNameAddress);
-        }
-
-        private void Exiting(object sender, FormClosingEventArgs e)
-        {
-            DiscordRp.SetPresence("Connected", new MainForm().MainTabs.SelectedTab.Text + " tab");
         }
 
         private void NNIDResetBtn_Click(object sender, EventArgs e)

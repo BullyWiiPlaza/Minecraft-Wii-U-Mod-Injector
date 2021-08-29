@@ -96,6 +96,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms
             ServerUrls.Clear();
 
             DiscordRp.SetPresence(_iw.IsConnected ? "Connected" : "Disconnected",  _iw.MainTabs.SelectedTab.Text + " tab");
+            Dispose();
         }
         #endregion
 

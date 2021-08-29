@@ -45,6 +45,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms
         private void Exiting(object sender, FormClosingEventArgs e)
         {
             DiscordRp.SetPresence("Connected", new MainForm().worldTab.Text + " tab");
+            Dispose();
         }
 
         private void ApplyBtnClicked(object sender, EventArgs e)

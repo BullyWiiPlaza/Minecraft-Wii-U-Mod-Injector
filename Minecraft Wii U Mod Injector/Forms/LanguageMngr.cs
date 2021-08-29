@@ -175,6 +175,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms
                 "Some controls might overlap if their text is longer than the default." +
                 "\nWould you like to export control size and locations too? (so you can fine tune them in-case they don't fit)",
                 MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
                 foreach (var c in Miscellaneous.AllMetroControls())
                 {
                     templateFile.Write(c.Name + ".sizeWidth", c.Size.Width.ToString(), "controls.properties");
@@ -183,11 +184,12 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms
                     templateFile.Write(c.Name + ".locationY", c.Location.Y.ToString(), "controls.properties");
                 }
 
-            foreach (var c in Miscellaneous.AllSliderControls())
-            {
-                templateFile.Write(c.Name + ".sizeWidth", c.Size.Width.ToString(), "controls.properties");
-                templateFile.Write(c.Name + ".locationX", c.Location.X.ToString(), "controls.properties");
-                templateFile.Write(c.Name + ".locationY", c.Location.Y.ToString(), "controls.properties");
+                foreach (var c in Miscellaneous.AllSliderControls())
+                {
+                    templateFile.Write(c.Name + ".sizeWidth", c.Size.Width.ToString(), "controls.properties");
+                    templateFile.Write(c.Name + ".locationX", c.Location.X.ToString(), "controls.properties");
+                    templateFile.Write(c.Name + ".locationY", c.Location.Y.ToString(), "controls.properties");
+                }
             }
 
             Messaging.Show("Template File has been created in:\n" + _langRootDir + "Template.ini");

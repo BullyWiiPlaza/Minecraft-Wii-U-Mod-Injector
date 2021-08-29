@@ -78,7 +78,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
                                 UpdaterPath);
                         }
 
-                        Process.Start(UpdaterPath);
+                        Process.Start(UpdaterPath, GitVer);
                         Environment.Exit(0);
                     }
                     else if (Settings.Default.PrereleaseOptIn && PreRelease)
@@ -90,7 +90,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
                                 UpdaterPath);
                         }
 
-                        Process.Start(UpdaterPath);
+                        Process.Start(UpdaterPath, GitVer);
                         Environment.Exit(0);
                     }
                 }

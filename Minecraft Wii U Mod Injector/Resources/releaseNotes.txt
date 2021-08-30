@@ -1,3 +1,23 @@
+[Release v5.2.0.c3 (30th of August, 2021)]
+
+[Information]
+If you are experiencing issues, please report them on the Github Issues page or by joining the official discord server.
+
+This update adds Cemu support and fixes a language manager bug
+
+[Changes]
+
++ General Additions & Updates:
+
+- Settings > Cemu Graphics Pack Manager > The start of Cemu support is here. With the first itteration of it comes the Cemu Graphics Pack Manager!
+- First Launch message updated
+
+[Fixes]
+
++ General Fixes
+
+- Language Manager should no longer export slider controls even if user asked not to
+
 [Release v5.2.0.c2 (25th of August, 2021)]
 
 [Information]

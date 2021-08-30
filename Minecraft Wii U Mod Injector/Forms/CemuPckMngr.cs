@@ -127,7 +127,6 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms
                     {
                         Settings.Default.CemuGfxLoc = folderBrowser.SelectedPath;
                         Settings.Default.Save();
-                        Settings.Default.Upgrade();
 
                         Miscellaneous.CopyFolder(gfxPckFolder,
                             folderBrowser.SelectedPath + @"\Minecraft Wii U Mod Injector - " + nameBox.Text);

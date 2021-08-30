@@ -1342,7 +1342,7 @@
             this.SleepingDoesntClearWeather.Name = "SleepingDoesntClearWeather";
             this.SleepingDoesntClearWeather.Size = new System.Drawing.Size(183, 15);
             this.SleepingDoesntClearWeather.TabIndex = 155;
-            this.SleepingDoesntClearWeather.Tag = "032AE7A4 = nop|0x032AE7A8 = nop";
+            this.SleepingDoesntClearWeather.Tag = "0x032AE7A4 = nop|0x032AE7A8 = nop";
             this.SleepingDoesntClearWeather.Text = "Sleeping doesn\'t clear weather";
             this.SleepingDoesntClearWeather.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.SleepingDoesntClearWeather.UseSelectable = true;

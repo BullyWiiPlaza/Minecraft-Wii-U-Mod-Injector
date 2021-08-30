@@ -136,7 +136,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             DiscordRp.Deinitialize();
             Settings.Default.TabIndex = MainTabs.SelectedIndex;
             Settings.Default.Save();
-            Settings.Default.Upgrade();
         }
 
         private void SwapTab(object sender, EventArgs e)

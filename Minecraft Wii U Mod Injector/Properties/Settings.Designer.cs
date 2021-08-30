@@ -130,5 +130,29 @@ namespace Minecraft_Wii_U_Mod_Injector.Properties {
                 this["SeenQmmMngr"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("C:\\")]
+        public string CemuGfxLoc {
+            get {
+                return ((string)(this["CemuGfxLoc"]));
+            }
+            set {
+                this["CemuGfxLoc"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool SeenCemuMngr {
+            get {
+                return ((bool)(this["SeenCemuMngr"]));
+            }
+            set {
+                this["SeenCemuMngr"] = value;
+            }
+        }
     }
 }

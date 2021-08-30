@@ -281,6 +281,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.RightClickMenu = new MetroFramework.Controls.MetroContextMenu(this.components);
             this.IncreaseDecimalPlace = new System.Windows.Forms.ToolStripMenuItem();
             this.DecreaseDecimalPlace = new System.Windows.Forms.ToolStripMenuItem();
+            this.CemuPckMngrBtn = new MetroFramework.Controls.MetroButton();
             this.MainTabs.SuspendLayout();
             this.MainTab.SuspendLayout();
             this.playersTab.SuspendLayout();
@@ -420,7 +421,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.MainTabs.Location = new System.Drawing.Point(155, 61);
             this.MainTabs.Multiline = true;
             this.MainTabs.Name = "MainTabs";
-            this.MainTabs.SelectedIndex = 0;
+            this.MainTabs.SelectedIndex = 6;
             this.MainTabs.Size = new System.Drawing.Size(1130, 639);
             this.MainTabs.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.MainTabs.TabIndex = 0;
@@ -4281,6 +4282,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             // 
             // settingsTab
             // 
+            this.settingsTab.Controls.Add(this.CemuPckMngrBtn);
             this.settingsTab.Controls.Add(this.QuickModsManagerBtn);
             this.settingsTab.Controls.Add(this.OpenLangMngrBtn);
             this.settingsTab.Controls.Add(this.CheckForPreRelease);
@@ -4354,9 +4356,9 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.settingsLogo.HorizontalScrollbarBarColor = true;
             this.settingsLogo.HorizontalScrollbarHighlightOnWheel = false;
             this.settingsLogo.HorizontalScrollbarSize = 10;
-            this.settingsLogo.Location = new System.Drawing.Point(65, 203);
+            this.settingsLogo.Location = new System.Drawing.Point(65, 251);
             this.settingsLogo.Name = "settingsLogo";
-            this.settingsLogo.Size = new System.Drawing.Size(1050, 417);
+            this.settingsLogo.Size = new System.Drawing.Size(1050, 369);
             this.settingsLogo.TabIndex = 44;
             this.settingsLogo.VerticalScrollbarBarColor = true;
             this.settingsLogo.VerticalScrollbarHighlightOnWheel = false;
@@ -4378,7 +4380,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             // updateBtn
             // 
             this.updateBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.updateBtn.Location = new System.Drawing.Point(65, 158);
+            this.updateBtn.Location = new System.Drawing.Point(65, 206);
             this.updateBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.updateBtn.Name = "updateBtn";
             this.updateBtn.Size = new System.Drawing.Size(1050, 36);
@@ -4530,6 +4532,20 @@ namespace Minecraft_Wii_U_Mod_Injector
             | System.Windows.Forms.Keys.OemMinus)));
             this.DecreaseDecimalPlace.Size = new System.Drawing.Size(322, 22);
             this.DecreaseDecimalPlace.Text = "Decrease decimal place";
+            // 
+            // CemuPckMngrBtn
+            // 
+            this.CemuPckMngrBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.CemuPckMngrBtn.Location = new System.Drawing.Point(65, 158);
+            this.CemuPckMngrBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.CemuPckMngrBtn.Name = "CemuPckMngrBtn";
+            this.CemuPckMngrBtn.Size = new System.Drawing.Size(1050, 36);
+            this.CemuPckMngrBtn.TabIndex = 50;
+            this.CemuPckMngrBtn.Text = "Cemu Graphics Pack Manager";
+            this.CemuPckMngrBtn.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.ToolTipManager.SetToolTip(this.CemuPckMngrBtn, "Opens the Cemu Graphics Pack Manager");
+            this.CemuPckMngrBtn.UseSelectable = true;
+            this.CemuPckMngrBtn.Click += new System.EventHandler(this.CemuPckMngrBtnClicked);
             // 
             // MainForm
             // 
@@ -4866,5 +4882,6 @@ namespace Minecraft_Wii_U_Mod_Injector
         private MetroCheckBox NoPosLock;
         private MetroCheckBox UnlockInventoty;
         private MetroCheckBox DisableCameraAnimation;
+        public MetroButton CemuPckMngrBtn;
     }
 }

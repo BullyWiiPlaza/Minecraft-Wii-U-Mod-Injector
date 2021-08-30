@@ -268,6 +268,12 @@
     <Compile Include="Forms\NNIDEditor.Designer.cs">
       <DependentUpon>NNIDEditor.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\CemuPckMngr.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CemuPckMngr.Designer.cs">
+      <DependentUpon>CemuPckMngr.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\WorldGenerationEditor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -349,6 +355,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\NNIDEditor.resx">
       <DependentUpon>NNIDEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CemuPckMngr.resx">
+      <DependentUpon>CemuPckMngr.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\WorldGenerationEditor.resx">
       <DependentUpon>WorldGenerationEditor.cs</DependentUpon>

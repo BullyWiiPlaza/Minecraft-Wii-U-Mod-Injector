@@ -333,6 +333,11 @@ namespace Minecraft_Wii_U_Mod_Injector
             new QuickModsMngr(this).ShowDialog();
         }
 
+        private void CemuPckMngrBtnClicked(object sender, EventArgs e)
+        {
+            new CemuPckMngr(this).ShowDialog();
+        }
+
         private void OpenFaqInfoClicked(object sender, EventArgs e)
         {
             new Faq(this).ShowDialog();
@@ -989,7 +994,7 @@ namespace Minecraft_Wii_U_Mod_Injector
 
         private void SuperFurnaceToggled(object sender, EventArgs e)
         {
-            GeckoU.WriteUIntToggle(0x023F66A4, 0x38600001, 0x386000C8, SuperFurnace.Checked); //FurnaceBlockEntity::getTotalCookTime((not_null_ptr__tm__15_12ItemInstance))
+            GeckoU.WriteUIntToggle(0x023F66A4, On, 0x386000C8, SuperFurnace.Checked); //FurnaceBlockEntity::getTotalCookTime((not_null_ptr__tm__15_12ItemInstance))
         }
 
         private void MaxStackSliderChanged(object sender, EventArgs e)
@@ -1655,6 +1660,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             GeckoU.WriteUIntToggle(0x02C5F808, Off, 0x5403D97E, DisableCameraAnimation.Checked);
         }
         #endregion
+
         #endregion memory editing
     }
 }

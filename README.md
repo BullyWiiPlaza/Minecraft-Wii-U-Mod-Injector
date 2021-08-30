@@ -3,7 +3,7 @@ The first and original Mod Injector for Minecraft: Wii U Edition, now open sourc
 # ![Logo](Minecraft%20Wii%20U%20Mod%20Injector/Icon.ico)
 
 # Download
-A pre-compiled version can be found in the [Releases](https://github.com/Kashiiera/Minecraft-Wii-U-Mod-Injector/releases)
+You can install the [installer](https://github.com/Kashiiera/Minecraft-Wii-U-Mod-Injector-Installer/releases) or the [standalone](https://github.com/Kashiiera/Minecraft-Wii-U-Mod-Injector/releases) version.
 
 # Prerequisites 
 You will need Visual Studio 2019 and .NET Framework 4.8 to compile the Mod Injector.

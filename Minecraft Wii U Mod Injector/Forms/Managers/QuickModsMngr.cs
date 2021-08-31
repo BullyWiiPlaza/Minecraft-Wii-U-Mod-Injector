@@ -1,19 +1,18 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.IO;
-using System.Windows.Forms;
-using MetroFramework.Forms;
-using Minecraft_Wii_U_Mod_Injector.Helpers.Files;
-using Minecraft_Wii_U_Mod_Injector.Helpers;
-using MetroFramework.Controls;
-using Minecraft_Wii_U_Mod_Injector.Helpers.Win_Forms;
-using System.Text;
-using Application = System.Windows.Forms.Application;
 using System.Diagnostics;
-using Minecraft_Wii_U_Mod_Injector.Properties;
+using System.IO;
+using System.Text;
+using System.Windows.Forms;
+using MetroFramework.Controls;
+using MetroFramework.Forms;
+using Minecraft_Wii_U_Mod_Injector.Helpers;
+using Minecraft_Wii_U_Mod_Injector.Helpers.Files;
+using Minecraft_Wii_U_Mod_Injector.Helpers.Win_Forms;
+using Application = System.Windows.Forms.Application;
 
-namespace Minecraft_Wii_U_Mod_Injector.Forms
+namespace Minecraft_Wii_U_Mod_Injector.Forms.Managers
 {
     /*TODO - Quick Mods Manager
     I wrote alot of this while on basically no sleep, this could all use a clean up and use ALOT of improvements so if anyone is up to do that,
@@ -53,12 +52,12 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms
             if (!Directory.Exists(_qmmRootDir))
                 Directory.CreateDirectory(_qmmRootDir);
 
-            if (!Settings.Default.SeenQmmMngr)
+            if (!Properties.Settings.Default.SeenQmmMngr)
                 Messaging.Show(
                     "Welcome to the Quick Mods Manager!\nQuick Mods are basically mod presets, you activate a quick mod and it activates a bunch of mods within that" +
                     " preset.\nThis is useful for whenever you want to activate a large amount of mods at once. Have fun!");
 
-            Settings.Default.SeenQmmMngr = true;
+            Properties.Settings.Default.SeenQmmMngr = true;
 
             LoadInstalledQmms();
 

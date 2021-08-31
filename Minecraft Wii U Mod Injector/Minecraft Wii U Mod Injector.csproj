@@ -250,52 +250,58 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Forms\EnchantmentEditor.cs">
+    <Compile Include="Forms\Mods\EntityEditor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\EnchantmentEditor.Designer.cs">
+    <Compile Include="Forms\Mods\EntityEditor.Designer.cs">
+      <DependentUpon>EntityEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Mods\EnchantmentEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Mods\EnchantmentEditor.Designer.cs">
       <DependentUpon>EnchantmentEditor.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\AchievementEditor.cs">
+    <Compile Include="Forms\Mods\AchievementEditor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\AchievementEditor.Designer.cs">
+    <Compile Include="Forms\Mods\AchievementEditor.Designer.cs">
       <DependentUpon>AchievementEditor.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\NNIDEditor.cs">
+    <Compile Include="Forms\Mods\NNIDEditor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\NNIDEditor.Designer.cs">
+    <Compile Include="Forms\Mods\NNIDEditor.Designer.cs">
       <DependentUpon>NNIDEditor.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\CemuPckMngr.cs">
+    <Compile Include="Forms\Managers\CemuPckMngr.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\CemuPckMngr.Designer.cs">
+    <Compile Include="Forms\Managers\CemuPckMngr.Designer.cs">
       <DependentUpon>CemuPckMngr.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\WorldGenerationEditor.cs">
+    <Compile Include="Forms\Mods\WorldGenerationEditor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\WorldGenerationEditor.Designer.cs">
+    <Compile Include="Forms\Mods\WorldGenerationEditor.Designer.cs">
       <DependentUpon>WorldGenerationEditor.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\LootTableEditor.cs">
+    <Compile Include="Forms\Mods\LootTableEditor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\LootTableEditor.Designer.cs">
+    <Compile Include="Forms\Mods\LootTableEditor.Designer.cs">
       <DependentUpon>LootTableEditor.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\QuickModsMngr.cs">
+    <Compile Include="Forms\Managers\QuickModsMngr.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\QuickModsMngr.Designer.cs">
+    <Compile Include="Forms\Managers\QuickModsMngr.Designer.cs">
       <DependentUpon>QuickModsMngr.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\LanguageMngr.cs">
+    <Compile Include="Forms\Managers\LanguageMngr.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\LanguageMngr.Designer.cs">
+    <Compile Include="Forms\Managers\LanguageMngr.Designer.cs">
       <DependentUpon>LanguageMngr.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FAQ.cs">
@@ -304,10 +310,10 @@
     <Compile Include="Forms\FAQ.Designer.cs">
       <DependentUpon>FAQ.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\PlayerOptions.cs">
+    <Compile Include="Forms\Mods\PlayerOptions.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\PlayerOptions.Designer.cs">
+    <Compile Include="Forms\Mods\PlayerOptions.Designer.cs">
       <DependentUpon>PlayerOptions.cs</DependentUpon>
     </Compile>
     <Compile Include="Helpers\DiscordRp.cs" />
@@ -333,10 +339,10 @@
     <Compile Include="Forms\Credits.Designer.cs">
       <DependentUpon>Credits.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\MapTextEditor.cs">
+    <Compile Include="Forms\Mods\MapTextEditor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\MapTextEditor.Designer.cs">
+    <Compile Include="Forms\Mods\MapTextEditor.Designer.cs">
       <DependentUpon>MapTextEditor.cs</DependentUpon>
     </Compile>
     <Compile Include="MainForm.cs">
@@ -347,28 +353,31 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Forms\EnchantmentEditor.resx">
+    <EmbeddedResource Include="Forms\Mods\EntityEditor.resx">
+      <DependentUpon>EntityEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Mods\EnchantmentEditor.resx">
       <DependentUpon>EnchantmentEditor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\AchievementEditor.resx">
+    <EmbeddedResource Include="Forms\Mods\AchievementEditor.resx">
       <DependentUpon>AchievementEditor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\NNIDEditor.resx">
+    <EmbeddedResource Include="Forms\Mods\NNIDEditor.resx">
       <DependentUpon>NNIDEditor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\CemuPckMngr.resx">
+    <EmbeddedResource Include="Forms\Managers\CemuPckMngr.resx">
       <DependentUpon>CemuPckMngr.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\WorldGenerationEditor.resx">
+    <EmbeddedResource Include="Forms\Mods\WorldGenerationEditor.resx">
       <DependentUpon>WorldGenerationEditor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\LootTableEditor.resx">
+    <EmbeddedResource Include="Forms\Mods\LootTableEditor.resx">
       <DependentUpon>LootTableEditor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\QuickModsMngr.resx">
+    <EmbeddedResource Include="Forms\Managers\QuickModsMngr.resx">
       <DependentUpon>QuickModsMngr.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\LanguageMngr.resx">
+    <EmbeddedResource Include="Forms\Managers\LanguageMngr.resx">
       <DependentUpon>LanguageMngr.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FAQ.resx">
@@ -377,10 +386,10 @@
     <EmbeddedResource Include="Forms\Credits.resx">
       <DependentUpon>Credits.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\MapTextEditor.resx">
+    <EmbeddedResource Include="Forms\Mods\MapTextEditor.resx">
       <DependentUpon>MapTextEditor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\PlayerOptions.resx">
+    <EmbeddedResource Include="Forms\Mods\PlayerOptions.resx">
       <DependentUpon>PlayerOptions.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">

@@ -1,24 +1,23 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using MetroFramework.Forms;
-using Minecraft_Wii_U_Mod_Injector.Helpers.Files;
-using Minecraft_Wii_U_Mod_Injector.Helpers;
-using MetroFramework.Controls;
-using Minecraft_Wii_U_Mod_Injector.Helpers.Win_Forms;
-using Octokit;
-using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using MetroFramework.Controls;
+using MetroFramework.Forms;
+using Minecraft_Wii_U_Mod_Injector.Helpers;
+using Minecraft_Wii_U_Mod_Injector.Helpers.Files;
+using Minecraft_Wii_U_Mod_Injector.Helpers.Win_Forms;
+using Octokit;
 using Application = System.Windows.Forms.Application;
-using System.Diagnostics;
-using Minecraft_Wii_U_Mod_Injector.Properties;
 
-namespace Minecraft_Wii_U_Mod_Injector.Forms
+namespace Minecraft_Wii_U_Mod_Injector.Forms.Managers
 {
     public partial class LanguageMngr : MetroForm
     {
@@ -58,13 +57,13 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms
             if (!Directory.Exists(_langRootDir))
                 Directory.CreateDirectory(_langRootDir);
 
-            if (!Settings.Default.SeenLangMngr)
+            if (!Properties.Settings.Default.SeenLangMngr)
                 Messaging.Show(
                     "Welcome to the language manager, here you can apply or create new language files for the Mod Injector!" +
                     "\nYou are not limited to only making new languages, you can freely customize any text to your liking as-well as edit control" +
                     "\nproperties such as size and location!");
 
-            Settings.Default.SeenLangMngr = true;
+            Properties.Settings.Default.SeenLangMngr = true;
 
             LoadInstalledLangs();
 

@@ -143,6 +143,13 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.NoFallDamage = new MetroFramework.Controls.MetroCheckBox();
             this.CraftAnything = new MetroFramework.Controls.MetroCheckBox();
             this.CreativeMode = new MetroFramework.Controls.MetroCheckBox();
+            this.itemsTab = new MetroFramework.Controls.MetroTabPage();
+            this.fishingRod = new MetroFramework.Controls.MetroLabel();
+            this.fishingRodPnl = new MetroFramework.Controls.MetroPanel();
+            this.luckSlider = new System.Windows.Forms.NumericUpDown();
+            this.Luck = new MetroFramework.Controls.MetroLabel();
+            this.lureSlider = new System.Windows.Forms.NumericUpDown();
+            this.Lure = new MetroFramework.Controls.MetroLabel();
             this.worldTab = new MetroFramework.Controls.MetroTabPage();
             this.ThunderMode = new MetroFramework.Controls.MetroCheckBox();
             this.RainMode = new MetroFramework.Controls.MetroCheckBox();
@@ -263,6 +270,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.giveAmountBox = new MetroFramework.Controls.MetroTextBox();
             this.giveIDBox = new MetroFramework.Controls.MetroTextBox();
             this.settingsTab = new MetroFramework.Controls.MetroTabPage();
+            this.CemuPckMngrBtn = new MetroFramework.Controls.MetroButton();
             this.QuickModsManagerBtn = new MetroFramework.Controls.MetroButton();
             this.OpenLangMngrBtn = new MetroFramework.Controls.MetroButton();
             this.CheckForPreRelease = new MetroFramework.Controls.MetroCheckBox();
@@ -281,7 +289,8 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.RightClickMenu = new MetroFramework.Controls.MetroContextMenu(this.components);
             this.IncreaseDecimalPlace = new System.Windows.Forms.ToolStripMenuItem();
             this.DecreaseDecimalPlace = new System.Windows.Forms.ToolStripMenuItem();
-            this.CemuPckMngrBtn = new MetroFramework.Controls.MetroButton();
+            this.ItemsTile = new MetroFramework.Controls.MetroTile();
+            this.FreezeGameWhenPaused = new MetroFramework.Controls.MetroCheckBox();
             this.MainTabs.SuspendLayout();
             this.MainTab.SuspendLayout();
             this.playersTab.SuspendLayout();
@@ -300,6 +309,10 @@ namespace Minecraft_Wii_U_Mod_Injector
             ((System.ComponentModel.ISupportInitialize)(this.JumpHeightSlider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.FieldOfViewSlider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.HitBoxScaleSlider)).BeginInit();
+            this.itemsTab.SuspendLayout();
+            this.fishingRodPnl.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.luckSlider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lureSlider)).BeginInit();
             this.worldTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LiquidSpreadTimeSlider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.EntitySpeedSlider)).BeginInit();
@@ -332,7 +345,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             // WorldTile
             // 
             this.WorldTile.ActiveControl = null;
-            this.WorldTile.Location = new System.Drawing.Point(0, 173);
+            this.WorldTile.Location = new System.Drawing.Point(0, 228);
             this.WorldTile.Name = "WorldTile";
             this.WorldTile.PaintTileCount = false;
             this.WorldTile.Size = new System.Drawing.Size(160, 55);
@@ -340,7 +353,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.WorldTile.Tag = "";
             this.WorldTile.Text = "Entities / World";
             this.WorldTile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.WorldTile.TileCount = 2;
+            this.WorldTile.TileCount = 3;
             this.WorldTile.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
             this.WorldTile.UseSelectable = true;
             this.WorldTile.Click += new System.EventHandler(this.SwapTab);
@@ -348,7 +361,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             // GeneralTile
             // 
             this.GeneralTile.ActiveControl = null;
-            this.GeneralTile.Location = new System.Drawing.Point(0, 228);
+            this.GeneralTile.Location = new System.Drawing.Point(0, 283);
             this.GeneralTile.Name = "GeneralTile";
             this.GeneralTile.PaintTileCount = false;
             this.GeneralTile.Size = new System.Drawing.Size(160, 55);
@@ -356,7 +369,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.GeneralTile.Tag = "";
             this.GeneralTile.Text = "General Game";
             this.GeneralTile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.GeneralTile.TileCount = 3;
+            this.GeneralTile.TileCount = 4;
             this.GeneralTile.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
             this.GeneralTile.UseSelectable = true;
             this.GeneralTile.Click += new System.EventHandler(this.SwapTab);
@@ -364,7 +377,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             // MinigamesTile
             // 
             this.MinigamesTile.ActiveControl = null;
-            this.MinigamesTile.Location = new System.Drawing.Point(0, 283);
+            this.MinigamesTile.Location = new System.Drawing.Point(0, 338);
             this.MinigamesTile.Name = "MinigamesTile";
             this.MinigamesTile.PaintTileCount = false;
             this.MinigamesTile.Size = new System.Drawing.Size(160, 55);
@@ -372,7 +385,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.MinigamesTile.Tag = "";
             this.MinigamesTile.Text = "Minigames";
             this.MinigamesTile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.MinigamesTile.TileCount = 4;
+            this.MinigamesTile.TileCount = 5;
             this.MinigamesTile.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
             this.MinigamesTile.UseSelectable = true;
             this.MinigamesTile.Click += new System.EventHandler(this.SwapTab);
@@ -380,7 +393,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             // SettingsTile
             // 
             this.SettingsTile.ActiveControl = null;
-            this.SettingsTile.Location = new System.Drawing.Point(0, 393);
+            this.SettingsTile.Location = new System.Drawing.Point(0, 448);
             this.SettingsTile.Name = "SettingsTile";
             this.SettingsTile.PaintTileCount = false;
             this.SettingsTile.Size = new System.Drawing.Size(160, 69);
@@ -388,7 +401,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.SettingsTile.Tag = "";
             this.SettingsTile.Text = "Settings";
             this.SettingsTile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.SettingsTile.TileCount = 6;
+            this.SettingsTile.TileCount = 7;
             this.SettingsTile.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
             this.SettingsTile.UseSelectable = true;
             this.SettingsTile.Click += new System.EventHandler(this.SwapTab);
@@ -397,10 +410,10 @@ namespace Minecraft_Wii_U_Mod_Injector
             // 
             this.BuildTile.ActiveControl = null;
             this.BuildTile.Enabled = false;
-            this.BuildTile.Location = new System.Drawing.Point(0, 462);
+            this.BuildTile.Location = new System.Drawing.Point(0, 517);
             this.BuildTile.Name = "BuildTile";
             this.BuildTile.PaintTileCount = false;
-            this.BuildTile.Size = new System.Drawing.Size(160, 238);
+            this.BuildTile.Size = new System.Drawing.Size(160, 183);
             this.BuildTile.TabIndex = 6;
             this.BuildTile.Text = "VERSION";
             this.BuildTile.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -412,16 +425,17 @@ namespace Minecraft_Wii_U_Mod_Injector
             // 
             this.MainTabs.Controls.Add(this.MainTab);
             this.MainTabs.Controls.Add(this.playersTab);
+            this.MainTabs.Controls.Add(this.itemsTab);
             this.MainTabs.Controls.Add(this.worldTab);
             this.MainTabs.Controls.Add(this.generalTab);
             this.MainTabs.Controls.Add(this.minigamesTab);
             this.MainTabs.Controls.Add(this.commandsTab);
             this.MainTabs.Controls.Add(this.settingsTab);
-            this.MainTabs.ItemSize = new System.Drawing.Size(160, 5);
+            this.MainTabs.ItemSize = new System.Drawing.Size(140, 5);
             this.MainTabs.Location = new System.Drawing.Point(155, 61);
             this.MainTabs.Multiline = true;
             this.MainTabs.Name = "MainTabs";
-            this.MainTabs.SelectedIndex = 6;
+            this.MainTabs.SelectedIndex = 4;
             this.MainTabs.Size = new System.Drawing.Size(1130, 639);
             this.MainTabs.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.MainTabs.TabIndex = 0;
@@ -2261,6 +2275,117 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.CreativeMode.UseSelectable = true;
             this.CreativeMode.CheckedChanged += new System.EventHandler(this.CreativeModeToggled);
             // 
+            // itemsTab
+            // 
+            this.itemsTab.Controls.Add(this.fishingRod);
+            this.itemsTab.Controls.Add(this.fishingRodPnl);
+            this.itemsTab.HorizontalScrollbarBarColor = true;
+            this.itemsTab.HorizontalScrollbarHighlightOnWheel = false;
+            this.itemsTab.HorizontalScrollbarSize = 10;
+            this.itemsTab.Location = new System.Drawing.Point(4, 9);
+            this.itemsTab.Name = "itemsTab";
+            this.itemsTab.Size = new System.Drawing.Size(1122, 626);
+            this.itemsTab.TabIndex = 8;
+            this.itemsTab.Text = "Item(s)";
+            this.itemsTab.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.itemsTab.VerticalScrollbarBarColor = true;
+            this.itemsTab.VerticalScrollbarHighlightOnWheel = false;
+            this.itemsTab.VerticalScrollbarSize = 10;
+            // 
+            // fishingRod
+            // 
+            this.fishingRod.AutoSize = true;
+            this.fishingRod.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.fishingRod.Location = new System.Drawing.Point(11, 3);
+            this.fishingRod.Name = "fishingRod";
+            this.fishingRod.Size = new System.Drawing.Size(80, 19);
+            this.fishingRod.TabIndex = 38;
+            this.fishingRod.Text = "Fishing Rod";
+            this.fishingRod.Theme = MetroFramework.MetroThemeStyle.Dark;
+            // 
+            // fishingRodPnl
+            // 
+            this.fishingRodPnl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.fishingRodPnl.Controls.Add(this.luckSlider);
+            this.fishingRodPnl.Controls.Add(this.Luck);
+            this.fishingRodPnl.Controls.Add(this.lureSlider);
+            this.fishingRodPnl.Controls.Add(this.Lure);
+            this.fishingRodPnl.HorizontalScrollbarBarColor = true;
+            this.fishingRodPnl.HorizontalScrollbarHighlightOnWheel = false;
+            this.fishingRodPnl.HorizontalScrollbarSize = 10;
+            this.fishingRodPnl.Location = new System.Drawing.Point(7, 13);
+            this.fishingRodPnl.Name = "fishingRodPnl";
+            this.fishingRodPnl.Size = new System.Drawing.Size(185, 72);
+            this.fishingRodPnl.TabIndex = 37;
+            this.fishingRodPnl.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.fishingRodPnl.VerticalScrollbarBarColor = true;
+            this.fishingRodPnl.VerticalScrollbarHighlightOnWheel = false;
+            this.fishingRodPnl.VerticalScrollbarSize = 10;
+            // 
+            // luckSlider
+            // 
+            this.StyleExtender.SetApplyMetroTheme(this.luckSlider, true);
+            this.luckSlider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.luckSlider.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.luckSlider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
+            this.luckSlider.Location = new System.Drawing.Point(49, 40);
+            this.luckSlider.Maximum = new decimal(new int[] {
+            99999999,
+            0,
+            0,
+            0});
+            this.luckSlider.Name = "luckSlider";
+            this.luckSlider.Size = new System.Drawing.Size(131, 20);
+            this.luckSlider.TabIndex = 164;
+            this.luckSlider.Tag = "";
+            this.ToolTipManager.SetToolTip(this.luckSlider, "What Level should we be?\r\n\r\n(Affects newest player in splitscreen)");
+            this.luckSlider.ValueChanged += new System.EventHandler(this.luckSliderChanged);
+            // 
+            // Luck
+            // 
+            this.Luck.AutoSize = true;
+            this.Luck.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.Luck.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.Luck.Location = new System.Drawing.Point(3, 40);
+            this.Luck.Name = "Luck";
+            this.Luck.Size = new System.Drawing.Size(40, 19);
+            this.Luck.TabIndex = 163;
+            this.Luck.Tag = "";
+            this.Luck.Text = "Luck:";
+            this.Luck.Theme = MetroFramework.MetroThemeStyle.Dark;
+            // 
+            // lureSlider
+            // 
+            this.StyleExtender.SetApplyMetroTheme(this.lureSlider, true);
+            this.lureSlider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.lureSlider.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lureSlider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
+            this.lureSlider.Location = new System.Drawing.Point(48, 14);
+            this.lureSlider.Maximum = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            this.lureSlider.Name = "lureSlider";
+            this.lureSlider.Size = new System.Drawing.Size(132, 20);
+            this.lureSlider.TabIndex = 162;
+            this.lureSlider.Tag = "";
+            this.ToolTipManager.SetToolTip(this.lureSlider, "What Level should we be?\r\n\r\n(Affects newest player in splitscreen)");
+            this.lureSlider.ValueChanged += new System.EventHandler(this.lureSliderChanged);
+            // 
+            // Lure
+            // 
+            this.Lure.AutoSize = true;
+            this.Lure.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.Lure.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.Lure.Location = new System.Drawing.Point(3, 14);
+            this.Lure.Name = "Lure";
+            this.Lure.Size = new System.Drawing.Size(39, 19);
+            this.Lure.TabIndex = 161;
+            this.Lure.Tag = "";
+            this.Lure.Text = "Lure:";
+            this.Lure.Theme = MetroFramework.MetroThemeStyle.Dark;
+            // 
             // worldTab
             // 
             this.worldTab.Controls.Add(this.ThunderMode);
@@ -2717,6 +2842,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             // 
             // generalTab
             // 
+            this.generalTab.Controls.Add(this.FreezeGameWhenPaused);
             this.generalTab.Controls.Add(this.AchievementsEverywhere);
             this.generalTab.Controls.Add(this.MuteMicrophone);
             this.generalTab.Controls.Add(this.AchievementEditor);
@@ -4307,6 +4433,20 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.settingsTab.VerticalScrollbarHighlightOnWheel = false;
             this.settingsTab.VerticalScrollbarSize = 10;
             // 
+            // CemuPckMngrBtn
+            // 
+            this.CemuPckMngrBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.CemuPckMngrBtn.Location = new System.Drawing.Point(65, 158);
+            this.CemuPckMngrBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.CemuPckMngrBtn.Name = "CemuPckMngrBtn";
+            this.CemuPckMngrBtn.Size = new System.Drawing.Size(1050, 36);
+            this.CemuPckMngrBtn.TabIndex = 50;
+            this.CemuPckMngrBtn.Text = "Cemu Graphics Pack Manager";
+            this.CemuPckMngrBtn.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.ToolTipManager.SetToolTip(this.CemuPckMngrBtn, "Opens the Cemu Graphics Pack Manager");
+            this.CemuPckMngrBtn.UseSelectable = true;
+            this.CemuPckMngrBtn.Click += new System.EventHandler(this.CemuPckMngrBtnClicked);
+            // 
             // QuickModsManagerBtn
             // 
             this.QuickModsManagerBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
@@ -4495,7 +4635,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             // CommandsTile
             // 
             this.CommandsTile.ActiveControl = null;
-            this.CommandsTile.Location = new System.Drawing.Point(0, 338);
+            this.CommandsTile.Location = new System.Drawing.Point(0, 393);
             this.CommandsTile.Name = "CommandsTile";
             this.CommandsTile.PaintTileCount = false;
             this.CommandsTile.Size = new System.Drawing.Size(160, 55);
@@ -4503,7 +4643,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.CommandsTile.Tag = "";
             this.CommandsTile.Text = "Commands";
             this.CommandsTile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.CommandsTile.TileCount = 5;
+            this.CommandsTile.TileCount = 6;
             this.CommandsTile.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
             this.CommandsTile.UseSelectable = true;
             this.CommandsTile.Click += new System.EventHandler(this.SwapTab);
@@ -4533,25 +4673,43 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.DecreaseDecimalPlace.Size = new System.Drawing.Size(322, 22);
             this.DecreaseDecimalPlace.Text = "Decrease decimal place";
             // 
-            // CemuPckMngrBtn
+            // ItemsTile
             // 
-            this.CemuPckMngrBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.CemuPckMngrBtn.Location = new System.Drawing.Point(65, 158);
-            this.CemuPckMngrBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.CemuPckMngrBtn.Name = "CemuPckMngrBtn";
-            this.CemuPckMngrBtn.Size = new System.Drawing.Size(1050, 36);
-            this.CemuPckMngrBtn.TabIndex = 50;
-            this.CemuPckMngrBtn.Text = "Cemu Graphics Pack Manager";
-            this.CemuPckMngrBtn.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.CemuPckMngrBtn, "Opens the Cemu Graphics Pack Manager");
-            this.CemuPckMngrBtn.UseSelectable = true;
-            this.CemuPckMngrBtn.Click += new System.EventHandler(this.CemuPckMngrBtnClicked);
+            this.ItemsTile.ActiveControl = null;
+            this.ItemsTile.Location = new System.Drawing.Point(0, 173);
+            this.ItemsTile.Name = "ItemsTile";
+            this.ItemsTile.PaintTileCount = false;
+            this.ItemsTile.Size = new System.Drawing.Size(160, 55);
+            this.ItemsTile.TabIndex = 8;
+            this.ItemsTile.Tag = "";
+            this.ItemsTile.Text = "Item(s)";
+            this.ItemsTile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.ItemsTile.TileCount = 2;
+            this.ItemsTile.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
+            this.ItemsTile.UseSelectable = true;
+            // 
+            // FreezeGameWhenPaused
+            // 
+            this.FreezeGameWhenPaused.AutoSize = true;
+            this.FreezeGameWhenPaused.BackColor = System.Drawing.Color.Transparent;
+            this.FreezeGameWhenPaused.Location = new System.Drawing.Point(475, 256);
+            this.FreezeGameWhenPaused.Name = "FreezeGameWhenPaused";
+            this.FreezeGameWhenPaused.Size = new System.Drawing.Size(211, 15);
+            this.FreezeGameWhenPaused.TabIndex = 148;
+            this.FreezeGameWhenPaused.Tag = "";
+            this.FreezeGameWhenPaused.Text = "Freeze game when paused (Default)";
+            this.FreezeGameWhenPaused.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.FreezeGameWhenPaused.ThreeState = true;
+            this.ToolTipManager.SetToolTip(this.FreezeGameWhenPaused, "Whether it thunders or not");
+            this.FreezeGameWhenPaused.UseSelectable = true;
+            this.FreezeGameWhenPaused.CheckedChanged += new System.EventHandler(this.FreezeGameWhenPausedToggled);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(1280, 700);
+            this.Controls.Add(this.ItemsTile);
             this.Controls.Add(this.SettingsTile);
             this.Controls.Add(this.MinigamesTile);
             this.Controls.Add(this.GeneralTile);
@@ -4592,6 +4750,12 @@ namespace Minecraft_Wii_U_Mod_Injector
             ((System.ComponentModel.ISupportInitialize)(this.JumpHeightSlider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.FieldOfViewSlider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.HitBoxScaleSlider)).EndInit();
+            this.itemsTab.ResumeLayout(false);
+            this.itemsTab.PerformLayout();
+            this.fishingRodPnl.ResumeLayout(false);
+            this.fishingRodPnl.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.luckSlider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lureSlider)).EndInit();
             this.worldTab.ResumeLayout(false);
             this.worldTab.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LiquidSpreadTimeSlider)).EndInit();
@@ -4883,5 +5047,14 @@ namespace Minecraft_Wii_U_Mod_Injector
         private MetroCheckBox UnlockInventoty;
         private MetroCheckBox DisableCameraAnimation;
         public MetroButton CemuPckMngrBtn;
+        private MetroTabPage itemsTab;
+        private MetroLabel fishingRod;
+        private MetroPanel fishingRodPnl;
+        public System.Windows.Forms.NumericUpDown luckSlider;
+        public MetroLabel Luck;
+        public System.Windows.Forms.NumericUpDown lureSlider;
+        public MetroLabel Lure;
+        public MetroTile ItemsTile;
+        public MetroCheckBox FreezeGameWhenPaused;
     }
 }

@@ -15,9 +15,9 @@ namespace Minecraft_Wii_U_Mod_Injector.Properties {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.10.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
-        private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
+        private static Minecraft_Wii_U_Mod_Injector.Properties.Settings defaultInstance = ((Minecraft_Wii_U_Mod_Injector.Properties.Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Minecraft_Wii_U_Mod_Injector.Properties.Settings())));
         
-        public static Settings Default {
+        public static Minecraft_Wii_U_Mod_Injector.Properties.Settings Default {
             get {
                 return defaultInstance;
             }

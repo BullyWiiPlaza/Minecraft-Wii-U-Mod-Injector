@@ -1,12 +1,12 @@
-﻿using MetroFramework.Forms;
-using Minecraft_Wii_U_Mod_Injector.Helpers;
-using System;
+﻿using System;
 using System.Globalization;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
+using MetroFramework.Forms;
+using Minecraft_Wii_U_Mod_Injector.Helpers;
 using Minecraft_Wii_U_Mod_Injector.Helpers.Files;
 
-namespace Minecraft_Wii_U_Mod_Injector.Forms
+namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods
 {
     public partial class PlayerOptions : MetroForm
     {

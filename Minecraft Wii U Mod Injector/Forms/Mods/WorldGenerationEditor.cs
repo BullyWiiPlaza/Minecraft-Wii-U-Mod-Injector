@@ -1,10 +1,10 @@
-﻿using MetroFramework.Forms;
-using Minecraft_Wii_U_Mod_Injector.Helpers;
-using System;
+﻿using System;
 using System.Windows.Forms;
+using MetroFramework.Forms;
+using Minecraft_Wii_U_Mod_Injector.Helpers;
 using Minecraft_Wii_U_Mod_Injector.Helpers.Win_Forms;
 
-namespace Minecraft_Wii_U_Mod_Injector.Forms
+namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods
 {
     public partial class WorldGenerationEditor : MetroForm
     {

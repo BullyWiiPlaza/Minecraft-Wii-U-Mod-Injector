@@ -11,6 +11,8 @@ using System.Linq;
 using System.Net.Sockets;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Minecraft_Wii_U_Mod_Injector.Forms.Managers;
+using Minecraft_Wii_U_Mod_Injector.Forms.Mods;
 using Minecraft_Wii_U_Mod_Injector.Helpers.Win_Forms;
 using Minecraft_Wii_U_Mod_Injector.Properties;
 using Minecraft_Wii_U_Mod_Injector.Wii_U.Gecko_U;
@@ -677,7 +679,7 @@ namespace Minecraft_Wii_U_Mod_Injector
 
         private void HostOptionsToggled(object sender, EventArgs e)
         {
-            GeckoU.WriteUIntToggle(0x02F17714, 0x38807D00, 0x388303F4,
+            GeckoU.WriteUIntToggle(0x02F17B30, 0x38807D00, 0x388303F4,
                 HostOptions.Checked); //CMinecraftApp::SetGameHostOption((eGameHostOption, unsigned int))
         }
 
@@ -1183,6 +1185,37 @@ namespace Minecraft_Wii_U_Mod_Injector
         private void NoDamageToggled(object sender, EventArgs e)
         {
             GeckoU.WriteUIntToggle(0x0271AA90, Blr, 0x9421FF90, NoDamage.Checked);
+        }
+
+        private void lureSliderChanged(object sender, EventArgs e)
+        {
+            GeckoU.WriteUInt(0x02417F38, GeckoU.Mix(0x38800000, lureSlider.Value));
+        }
+
+        private void luckSliderChanged(object sender, EventArgs e)
+        {
+            GeckoU.WriteUInt(0x02417F98, GeckoU.Mix(0x38800000, luckSlider.Value));
+        }
+
+        private void FreezeGameWhenPausedToggled(object sender, EventArgs e)
+        {
+            switch (FreezeGameWhenPaused.CheckState)
+            {
+                case CheckState.Unchecked:
+                    GeckoU.WriteUInt(0x025C2AC4, 0x00000000); //TODO: change value to default
+                    RainMode.Text = @"Freeze game when paused (Default)";
+                    break;
+
+                case CheckState.Checked:
+                    GeckoU.WriteUInt(0x025C2AC4, 0x38800001);
+                    RainMode.Text = @"Freeze game when paused (Always Frozen)";
+                    break;
+
+                case CheckState.Indeterminate:
+                    GeckoU.WriteUInt(0x025C2AC4, 0x38800000);
+                    RainMode.Text = @"Freeze game when paused (Never)";
+                    break;
+            }
         }
 
         #region commands

@@ -5,7 +5,7 @@ using Minecraft_Wii_U_Mod_Injector.Helpers;
 using Minecraft_Wii_U_Mod_Injector.Helpers.Files;
 using Minecraft_Wii_U_Mod_Injector.Helpers.Win_Forms;
 
-namespace Minecraft_Wii_U_Mod_Injector.Forms
+namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods
 {
     public partial class MapTextEditor : MetroForm
     {

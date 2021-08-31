@@ -1,4 +1,4 @@
-﻿namespace Minecraft_Wii_U_Mod_Injector.Forms
+﻿namespace Minecraft_Wii_U_Mod_Injector.Forms.Managers
 {
     partial class QuickModsMngr
     {

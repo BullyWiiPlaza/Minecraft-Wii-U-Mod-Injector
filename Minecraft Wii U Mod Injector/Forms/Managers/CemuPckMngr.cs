@@ -1,16 +1,15 @@
 ﻿using System;
 using System.IO;
+using System.Text;
 using System.Windows.Forms;
+using MetroFramework.Controls;
 using MetroFramework.Forms;
 using Minecraft_Wii_U_Mod_Injector.Helpers;
-using MetroFramework.Controls;
-using System.Text;
 using Minecraft_Wii_U_Mod_Injector.Helpers.Files;
-using Minecraft_Wii_U_Mod_Injector.Properties;
 using Minecraft_Wii_U_Mod_Injector.Helpers.Win_Forms;
 using Application = System.Windows.Forms.Application;
 
-namespace Minecraft_Wii_U_Mod_Injector.Forms
+namespace Minecraft_Wii_U_Mod_Injector.Forms.Managers
 {
     public partial class CemuPckMngr : MetroForm
     {
@@ -37,16 +36,16 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms
             if (!Directory.Exists(_cemuPckRootDir))
                 Directory.CreateDirectory(_cemuPckRootDir);
 
-            if (!Settings.Default.SeenCemuMngr)
+            if (!Properties.Settings.Default.SeenCemuMngr)
             {
                 Messaging.Show(
                     "Welcome to the Cemu Graphics Pack Manager!\nHere you are able to make Cemu graphics packs so you can use mods on Cemu. For now" +
                     " slider mods aren't supported but may in a future update.\nAll created graphics pack NEED to go into the /graphicsPack/ folder in your Cemu" +
                     " installation folder.");
 
-                Settings.Default.SeenCemuMngr = true;
-                Settings.Default.Save();
-                Settings.Default.Upgrade();
+                Properties.Settings.Default.SeenCemuMngr = true;
+                Properties.Settings.Default.Save();
+                Properties.Settings.Default.Upgrade();
             }
 
 
@@ -121,12 +120,12 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms
                 {
                     var folderBrowser = new FolderBrowserDialog();
 
-                    folderBrowser.SelectedPath = Settings.Default.CemuGfxLoc;
+                    folderBrowser.SelectedPath = Properties.Settings.Default.CemuGfxLoc;
 
                     if (folderBrowser.ShowDialog() == DialogResult.OK)
                     {
-                        Settings.Default.CemuGfxLoc = folderBrowser.SelectedPath;
-                        Settings.Default.Save();
+                        Properties.Settings.Default.CemuGfxLoc = folderBrowser.SelectedPath;
+                        Properties.Settings.Default.Save();
 
                         Miscellaneous.CopyFolder(gfxPckFolder,
                             folderBrowser.SelectedPath + @"\Minecraft Wii U Mod Injector - " + nameBox.Text);

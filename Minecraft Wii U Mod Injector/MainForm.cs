@@ -1187,12 +1187,12 @@ namespace Minecraft_Wii_U_Mod_Injector
             GeckoU.WriteUIntToggle(0x0271AA90, Blr, 0x9421FF90, NoDamage.Checked);
         }
 
-        private void lureSliderChanged(object sender, EventArgs e)
+        private void LureSliderChanged(object sender, EventArgs e)
         {
             GeckoU.WriteUInt(0x02417F38, GeckoU.Mix(0x38800000, lureSlider.Value));
         }
 
-        private void luckSliderChanged(object sender, EventArgs e)
+        private void LuckSliderChanged(object sender, EventArgs e)
         {
             GeckoU.WriteUInt(0x02417F98, GeckoU.Mix(0x38800000, luckSlider.Value));
         }
@@ -1202,7 +1202,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             switch (FreezeGameWhenPaused.CheckState)
             {
                 case CheckState.Unchecked:
-                    GeckoU.WriteUInt(0x025C2AC4, 0x00000000); //TODO: change value to default
+                    GeckoU.WriteUInt(0x025C2AC4, 0x00000000); //TODO: change value to default, dont have my wii u setup right now lol
                     RainMode.Text = @"Freeze game when paused (Default)";
                     break;
 

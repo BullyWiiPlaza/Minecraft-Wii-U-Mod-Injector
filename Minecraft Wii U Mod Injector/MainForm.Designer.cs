@@ -2339,7 +2339,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.luckSlider.TabIndex = 164;
             this.luckSlider.Tag = "";
             this.ToolTipManager.SetToolTip(this.luckSlider, "What Level should we be?\r\n\r\n(Affects newest player in splitscreen)");
-            this.luckSlider.ValueChanged += new System.EventHandler(this.luckSliderChanged);
+            this.luckSlider.ValueChanged += new System.EventHandler(this.LuckSliderChanged);
             // 
             // Luck
             // 
@@ -2371,7 +2371,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.lureSlider.TabIndex = 162;
             this.lureSlider.Tag = "";
             this.ToolTipManager.SetToolTip(this.lureSlider, "What Level should we be?\r\n\r\n(Affects newest player in splitscreen)");
-            this.lureSlider.ValueChanged += new System.EventHandler(this.lureSliderChanged);
+            this.lureSlider.ValueChanged += new System.EventHandler(this.LureSliderChanged);
             // 
             // Lure
             // 

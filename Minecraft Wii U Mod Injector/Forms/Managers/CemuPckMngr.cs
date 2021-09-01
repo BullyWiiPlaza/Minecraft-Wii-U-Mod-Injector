@@ -50,6 +50,9 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Managers
             _iw = iw;
             StyleMngr.Style = Style = iw.StyleMngr.Style;
             StyleMngr.Theme = Theme = iw.StyleMngr.Theme;
+            MainTabs.SelectedIndex = 0;
+            ModificationTabs.SelectedIndex = 0;
+            MinigamesTabs.SelectedIndex = 0;
         }
 
         private void Init(object sender, EventArgs e)

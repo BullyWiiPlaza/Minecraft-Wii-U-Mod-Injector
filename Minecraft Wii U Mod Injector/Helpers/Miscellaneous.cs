@@ -78,14 +78,21 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
             }
             catch (Exception e)
             {
-                Exceptions.LogError(e, "Unable to process Encoding type", false);
+                Exceptions.LogError(e, "Unable to process Encoding type", true);
                 return Encoding.ASCII;
             }
         }
 
         public static void ChangeEncoding(string path, Encoding encoding)
         {
-            File.WriteAllText(path, File.ReadAllText(path), encoding);
+            try
+            {
+                File.WriteAllText(path, File.ReadAllText(path), encoding);
+            }
+            catch (Exception e)
+            {
+                Exceptions.LogError(e, "", true);
+            }
         }
 
         static public void CopyFolder(string sourceFolder, string destFolder)

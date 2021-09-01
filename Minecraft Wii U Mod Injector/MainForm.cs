@@ -218,7 +218,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             }
             catch (Exception err)
             {
-                Exceptions.LogError(err, "Unable to Connect to the Wii U, unknown error", false);
+                Exceptions.LogError(err, "Unable to Connect to the Wii U, unknown error", true);
                 States.SwapState(States.StatesIds.Disconnected);
             }
         }
@@ -385,6 +385,11 @@ namespace Minecraft_Wii_U_Mod_Injector
         private void WorldGenerationOptsBtnClicked(object sender, EventArgs e)
         {
             new WorldGenerationEditor(this).ShowDialog(this);
+        }
+
+        private void EntityEditorBtnClicked(object sender, EventArgs e)
+        {
+            new EntityEditor(this).ShowDialog();
         }
 
         private void EnchantmentEditorBtnClicked(object sender, EventArgs e)
@@ -1187,35 +1192,40 @@ namespace Minecraft_Wii_U_Mod_Injector
             GeckoU.WriteUIntToggle(0x0271AA90, Blr, 0x9421FF90, NoDamage.Checked);
         }
 
-        private void LureSliderChanged(object sender, EventArgs e)
-        {
-            GeckoU.WriteUInt(0x02417F38, GeckoU.Mix(0x38800000, lureSlider.Value));
-        }
-
-        private void LuckSliderChanged(object sender, EventArgs e)
-        {
-            GeckoU.WriteUInt(0x02417F98, GeckoU.Mix(0x38800000, luckSlider.Value));
-        }
-
         private void FreezeGameWhenPausedToggled(object sender, EventArgs e)
         {
             switch (FreezeGameWhenPaused.CheckState)
             {
                 case CheckState.Unchecked:
-                    GeckoU.WriteUInt(0x025C2AC4, 0x00000000); //TODO: change value to default, dont have my wii u setup right now lol
-                    RainMode.Text = @"Freeze game when paused (Default)";
+                    GeckoU.WriteUInt(0x02F37D98, 0x5684063E);
+                    FreezeGameWhenPaused.Text = @"Freeze game when paused (Default)";
                     break;
 
                 case CheckState.Checked:
-                    GeckoU.WriteUInt(0x025C2AC4, 0x38800001);
-                    RainMode.Text = @"Freeze game when paused (Always Frozen)";
+                    GeckoU.WriteUInt(0x02F37D98, 0x38800001);
+                    FreezeGameWhenPaused.Text = @"Freeze game when paused (Always Frozen)";
                     break;
 
                 case CheckState.Indeterminate:
-                    GeckoU.WriteUInt(0x025C2AC4, 0x38800000);
-                    RainMode.Text = @"Freeze game when paused (Never)";
+                    GeckoU.WriteUInt(0x02F37D98, 0x38800000);
+                    FreezeGameWhenPaused.Text = @"Freeze game when paused (Never)";
                     break;
             }
+        }
+
+        private void SplashLingeringPotionsToggled(object sender, EventArgs e)
+        {
+            GeckoU.WriteUIntToggle(0x029916A4, On, Off, SplashLingeringPotions.Checked);
+        }
+
+        private void ItemOfUndyingToggled(object sender, EventArgs e)
+        {
+            GeckoU.WriteUIntToggle(0x0257B984, On, 0x7C035840, ItemOfUndying.Checked);
+        }
+
+        private void UnlimitedTotemsOfUndyingToggled(object sender, EventArgs e)
+        {
+            GeckoU.WriteUIntToggle(0x0257BB60, 0x38800000, 0x38800001, UnlimitedTotemsOfUndying.Checked);
         }
 
         #region commands
@@ -1638,6 +1648,38 @@ namespace Minecraft_Wii_U_Mod_Injector
             GeckoU.WriteUInt(0x02C93A90, Blr);
             await PutTaskDelay(200);
             GeckoU.WriteUInt(0x02C93A90, Mflr);
+        }
+
+        private void AllowMobsToggled(object sender, EventArgs e)
+        {
+            GeckoU.WriteUIntToggle(0x032252FC, 0x38800001, 0x7C641B78, AllowMobs.Checked); //Animals
+            GeckoU.WriteUIntToggle(0x03225208, 0x38800001, 0x7C641B78, AllowMobs.Checked);
+
+            GeckoU.WriteUIntToggle(0x03225330, 0x38800001, 0x7C641B78, AllowMobs.Checked); //NPCs
+            GeckoU.WriteUIntToggle(0x0322523C, 0x38800001, 0x7C641B78, AllowMobs.Checked);
+        }
+
+        private void LiquidsCanConvertToggled(object sender, EventArgs e)
+        {
+            GeckoU.WriteUIntToggle(0x02C59DB8, On, 0x5403063E, LiquidsCanConvert.Checked);
+        }
+
+        private void MapSizeBoxChanged(object sender, EventArgs e)
+        {
+            switch (MapSizeBox.SelectedIndex)
+            {
+                case 0:
+                    GeckoU.WriteUInt(0x02D16014, 0x806300B4);
+                    break;
+
+                case 1:
+                    GeckoU.WriteUInt(0x02D16014, 0x38600001);
+                    break;
+
+                case 2:
+                    GeckoU.WriteUInt(0x02D16014, 0x38600000);
+                    break;
+            }
         }
 
         private void TumbleHudToggled(object sender, EventArgs e)

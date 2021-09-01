@@ -1,19 +1,37 @@
-[Release v5.2.0.c3 (30th of August, 2021)]
+[Release v5.2.0.c4 (1st of September, 2021)]
 
 [Information]
 If you are experiencing issues, please report them on the Github Issues page or by joining the official discord server.
 
-This update adds Cemu support and fixes a language manager bug
+This update adds new mods and adds slider/dropdown mods for Cemu
 
 [Changes]
 
++ New mods
+
+- Player(s) and Item(s) > Item of Undying (All items now act as a Totem of Undying)
+- Player(s) and Item(s) > Unlimited Totems of Undying (You will not lose your Totem of Undying upon activating it)
+- Player(s) and Item(s) > Splash Lingering Potions (Splash potions will now act as lingering potions)
+- Player(s) and Item(s) > Enchantment Editor > Improvements to Lure and Luck of The Sea enchants
+- World and Entities > Entity Editor (An editor specifically for entities, allows you to modify spawn variants and spawn rates)
+- General Game > Freeze game when paused (Whether the game will freeze or not)
+- Minigames > General > Allow Mobs (You can now spawn mobs within minigames (except for hostile ones))
+- Minigames > General > Liquids can convert (Whether liquids such as lava or water can turn into stone/cobblestone/obsidian)
+- Minigames > Battle > Map Size (You can choose whether to use large or small sized maps manually instead of based on player count)
+
 + General Additions & Updates:
 
-- Settings > Cemu Graphics Pack Manager > The start of Cemu support is here. With the first itteration of it comes the Cemu Graphics Pack Manager!
-- First Launch message updated
+- Player(s) tab has now been renamed to Player(s) and Item(s)
+- Entities / World tab has now been renamed to World and Entities
+- Cemu Graphics Pack Manager > Added support for more mods including slider and dropdown based mods
+- Cemu Graphics Pack Manager > Redesigned UI
 
 [Fixes]
 
++ Mod Fixes
+
+- General Game > Host Options should now work properly again
+
 + General Fixes
 
-- Language Manager should no longer export slider controls even if user asked not to
+- Cemu Graphics Manager > Controls will no longer be duplicated when spammed

@@ -317,7 +317,7 @@
       <DependentUpon>PlayerOptions.cs</DependentUpon>
     </Compile>
     <Compile Include="Helpers\DiscordRp.cs" />
-    <Compile Include="Helpers\Files\Exceptions.cs" />
+    <Compile Include="Helpers\Exceptions.cs" />
     <Compile Include="Helpers\Files\INIFile.cs" />
     <Compile Include="Helpers\Miscellaneous.cs" />
     <Compile Include="Helpers\Setup.cs" />

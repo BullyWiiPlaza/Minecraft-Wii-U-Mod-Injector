@@ -15,7 +15,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
     {
         public static MainForm Injector = new MainForm();
 
-        public static string LocalVer = "v5.2.0.c3";
+        public static string LocalVer = "v5.2.0.c4";
         public static string GitVer = string.Empty;
         public static string UpdaterPath = $@"{Application.StartupPath}\Minecraft.Wii.U.Mod.Injector.Updater.exe";
 
@@ -34,7 +34,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
                 await RetrieveGitVersion();
 #endif
 #if DEBUG
-                LocalVer = LocalVer + " (Debugging)";
+                LocalVer = LocalVer + " (Dev)";
 #endif
 
                 if (Settings.Default.UpdateSettings)

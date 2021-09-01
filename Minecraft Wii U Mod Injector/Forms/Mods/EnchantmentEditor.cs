@@ -62,22 +62,12 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods
 
         private void LuckOfTheSeaSliderChanged(object sender, EventArgs e)
         {
-            MainForm.GeckoU.WriteBytes(0x022F5898,
-                new byte[]
-                {
-                    0x38, 0x60, 0x00, (byte) MainForm.GeckoU.Mix(0x00, LuckOfTheSeaSlider.Value), 0x7D, 0x89, 0x03,
-                    0xA6, 0x4E, 0x80, 0x00, 0x20
-                });
+            MainForm.GeckoU.WriteUInt(0x02417F98, MainForm.GeckoU.Mix(0x38800000, LuckOfTheSeaSlider.Value));
         }
 
         private void LureSliderChanged(object sender, EventArgs e)
         {
-            MainForm.GeckoU.WriteBytes(0x022F58B4,
-                new byte[]
-                {
-                    0x38, 0x60, 0x00, (byte) MainForm.GeckoU.Mix(0x00, LureSlider.Value), 0x7D, 0x89, 0x03,
-                    0xA6, 0x4E, 0x80, 0x00, 0x20
-                });
+            MainForm.GeckoU.WriteUInt(0x02417F38, MainForm.GeckoU.Mix(0x38800000, LureSlider.Value));
         }
 
         private void LootingSliderChanged(object sender, EventArgs e)

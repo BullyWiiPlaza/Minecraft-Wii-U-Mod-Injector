@@ -180,6 +180,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.StaticLiquidBlocks = new MetroFramework.Controls.MetroCheckBox();
             this.NoFog = new MetroFramework.Controls.MetroCheckBox();
             this.generalTab = new MetroFramework.Controls.MetroTabPage();
+            this.FreezeGameWhenPaused = new MetroFramework.Controls.MetroCheckBox();
             this.AchievementsEverywhere = new MetroFramework.Controls.MetroCheckBox();
             this.MuteMicrophone = new MetroFramework.Controls.MetroCheckBox();
             this.AchievementEditor = new MetroFramework.Controls.MetroButton();
@@ -290,7 +291,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.IncreaseDecimalPlace = new System.Windows.Forms.ToolStripMenuItem();
             this.DecreaseDecimalPlace = new System.Windows.Forms.ToolStripMenuItem();
             this.ItemsTile = new MetroFramework.Controls.MetroTile();
-            this.FreezeGameWhenPaused = new MetroFramework.Controls.MetroCheckBox();
             this.MainTabs.SuspendLayout();
             this.MainTab.SuspendLayout();
             this.playersTab.SuspendLayout();
@@ -435,7 +435,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.MainTabs.Location = new System.Drawing.Point(155, 61);
             this.MainTabs.Multiline = true;
             this.MainTabs.Name = "MainTabs";
-            this.MainTabs.SelectedIndex = 4;
+            this.MainTabs.SelectedIndex = 2;
             this.MainTabs.Size = new System.Drawing.Size(1130, 639);
             this.MainTabs.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.MainTabs.TabIndex = 0;
@@ -2878,6 +2878,22 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.generalTab.VerticalScrollbarHighlightOnWheel = false;
             this.generalTab.VerticalScrollbarSize = 10;
             // 
+            // FreezeGameWhenPaused
+            // 
+            this.FreezeGameWhenPaused.AutoSize = true;
+            this.FreezeGameWhenPaused.BackColor = System.Drawing.Color.Transparent;
+            this.FreezeGameWhenPaused.Location = new System.Drawing.Point(475, 256);
+            this.FreezeGameWhenPaused.Name = "FreezeGameWhenPaused";
+            this.FreezeGameWhenPaused.Size = new System.Drawing.Size(211, 15);
+            this.FreezeGameWhenPaused.TabIndex = 148;
+            this.FreezeGameWhenPaused.Tag = "";
+            this.FreezeGameWhenPaused.Text = "Freeze game when paused (Default)";
+            this.FreezeGameWhenPaused.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.FreezeGameWhenPaused.ThreeState = true;
+            this.ToolTipManager.SetToolTip(this.FreezeGameWhenPaused, "Whether it thunders or not");
+            this.FreezeGameWhenPaused.UseSelectable = true;
+            this.FreezeGameWhenPaused.CheckedChanged += new System.EventHandler(this.FreezeGameWhenPausedToggled);
+            // 
             // AchievementsEverywhere
             // 
             this.AchievementsEverywhere.AutoSize = true;
@@ -4687,22 +4703,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.ItemsTile.TileCount = 2;
             this.ItemsTile.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
             this.ItemsTile.UseSelectable = true;
-            // 
-            // FreezeGameWhenPaused
-            // 
-            this.FreezeGameWhenPaused.AutoSize = true;
-            this.FreezeGameWhenPaused.BackColor = System.Drawing.Color.Transparent;
-            this.FreezeGameWhenPaused.Location = new System.Drawing.Point(475, 256);
-            this.FreezeGameWhenPaused.Name = "FreezeGameWhenPaused";
-            this.FreezeGameWhenPaused.Size = new System.Drawing.Size(211, 15);
-            this.FreezeGameWhenPaused.TabIndex = 148;
-            this.FreezeGameWhenPaused.Tag = "";
-            this.FreezeGameWhenPaused.Text = "Freeze game when paused (Default)";
-            this.FreezeGameWhenPaused.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.FreezeGameWhenPaused.ThreeState = true;
-            this.ToolTipManager.SetToolTip(this.FreezeGameWhenPaused, "Whether it thunders or not");
-            this.FreezeGameWhenPaused.UseSelectable = true;
-            this.FreezeGameWhenPaused.CheckedChanged += new System.EventHandler(this.FreezeGameWhenPausedToggled);
+            this.ItemsTile.Click += new System.EventHandler(this.SwapTab);
             // 
             // MainForm
             // 

@@ -7,6 +7,11 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
 {
     class StringUtils
     {
+        public static string ToHex(decimal val)
+        {
+            return new System.Numerics.BigInteger(val).ToString("X");
+        }
+
         public static string Shuffle(string str)
         {
             char[] array = str.ToCharArray();

@@ -2,7 +2,7 @@
 
 # Overview
 
-This update adds new mods, general additions and bug fixes.
+This update adds new mods and general additions
 
 # Changes
 

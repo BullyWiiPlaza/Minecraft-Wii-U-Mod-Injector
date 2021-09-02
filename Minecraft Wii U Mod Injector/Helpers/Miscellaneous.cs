@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using System.Windows.Forms;
+using MetroFramework;
 using Minecraft_Wii_U_Mod_Injector.Helpers.Files;
 
 namespace Minecraft_Wii_U_Mod_Injector.Helpers
@@ -53,6 +54,80 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
                     controls.Add(c);
 
             return controls;
+        }
+
+        public static void DoHostIndicators(bool enabled) //SOMEONE PLEASE CLEAN THIS UP I AM EXTREMELY LAZY AND TIRED D:
+        {
+            foreach (MetroTabPage page in Injector.MainTabs.TabPages)
+            foreach (Control c in page.Controls)
+            {
+                if (!string.IsNullOrWhiteSpace((string)c.Tag))
+                    switch (c)
+                    {
+                        case MetroCheckBox cb:
+                            cb.UseStyleColors = enabled;
+                            if ((string)cb.Tag == "Host")
+                                cb.Style = MetroColorStyle.Orange;
+                            else if ((string)cb.Tag == "NonHost") cb.Style = MetroColorStyle.Blue;
+
+                            if (!enabled) cb.Style = MetroColorStyle.Default;
+                            break;
+
+                        case MetroLabel lb:
+                            lb.UseStyleColors = enabled;
+                            if ((string)lb.Tag == "Host")
+                                lb.Style = MetroColorStyle.Orange;
+                            else if ((string)lb.Tag == "NonHost") lb.Style = MetroColorStyle.Blue;
+
+                            if (!enabled) lb.Style = MetroColorStyle.Default;
+                            break;
+
+                        case MetroButton bt:
+                            bt.UseStyleColors = enabled;
+                            if ((string)bt.Tag == "Host")
+                                bt.Style = MetroColorStyle.Orange;
+                            else if ((string)bt.Tag == "NonHost") bt.Style = MetroColorStyle.Blue;
+
+                            if (!enabled) bt.Style = MetroColorStyle.Default;
+                            break;
+                    }
+
+            }
+
+            foreach (MetroTabPage page in Injector.MinigamesTabs.TabPages)
+            foreach (Control c in page.Controls)
+            {
+                if(!string.IsNullOrWhiteSpace((string)c.Tag))
+                    switch (c)
+                    {
+                        case MetroCheckBox cb:
+                            cb.UseStyleColors = enabled;
+                            if ((string)cb.Tag == "Host")
+                                cb.Style = MetroColorStyle.Orange;
+                            else if ((string)cb.Tag == "NonHost") cb.Style = MetroColorStyle.Blue;
+
+                            if (!enabled) cb.Style = MetroColorStyle.Default;
+                            break;
+
+                        case MetroLabel lb:
+                            lb.UseStyleColors = enabled;
+                            if ((string)lb.Tag == "Host")
+                                lb.Style = MetroColorStyle.Orange;
+                            else if ((string)lb.Tag == "NonHost") lb.Style = MetroColorStyle.Blue;
+
+                            if (!enabled) lb.Style = MetroColorStyle.Default;
+                            break;
+
+                        case MetroButton bt:
+                            bt.UseStyleColors = enabled;
+                            if ((string)bt.Tag == "Host")
+                                bt.Style = MetroColorStyle.Orange;
+                            else if ((string)bt.Tag == "NonHost") bt.Style = MetroColorStyle.Blue;
+
+                            if (!enabled) bt.Style = MetroColorStyle.Default;
+                            break;
+                    }
+            }
         }
 
         public static Encoding GetEncoding(string filename)

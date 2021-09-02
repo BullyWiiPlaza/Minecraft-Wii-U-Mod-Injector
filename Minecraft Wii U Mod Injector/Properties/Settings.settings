@@ -38,5 +38,11 @@
     <Setting Name="UpdateSettings" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
+    <Setting Name="HostIndicators" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="FormTxtAlign" Type="MetroFramework.Forms.MetroFormTextAlign" Scope="User">
+      <Value Profile="(Default)">Left</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

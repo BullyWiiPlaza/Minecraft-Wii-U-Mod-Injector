@@ -64,7 +64,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
                 }
             }
 
-            Injector.minigamesTab.Enabled = enabled;
+            Injector.MinigamesTab.Enabled = enabled;
         }
     }
 }

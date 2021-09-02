@@ -1,3 +1,25 @@
+[Release v5.2.0.c5 (2nd of September, 2021)]
+
+# Overview
+
+This update adds new mods and general additions
+
+# Changes
+
+### New mods
+
+- Player(s) and Item(s) > Punch to ride (You can now ride any entity by just punching them, including players!)
+- General Game > Cursed. (You will have to find out yourself what this mod does...)
+- Minigames > General > Solo (Allows you to play a solo battle/tumble match just like how you can in Glide)
+
+### General Additions & Updates:
+
+- Home > Redesigned
+- Home > Release Notes are now a lot clearer
+- Minigames > Redesigned to match the base tabs
+- Settings > Text Align (You can change the form text to be left, center or right aligned)
+- Settings > Host / Non-Host Indicators (No need to guess whether a mod works whenever you're not the host, this option has got you covered)
+
 [Release v5.2.0.c4 (1st of September, 2021)]
 
 [Information]

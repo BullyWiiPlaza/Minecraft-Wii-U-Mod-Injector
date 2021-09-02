@@ -128,6 +128,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             _ = new States(this);
             _ = new Messaging(this);
             _ = new Setup(this);
+            _ = new Miscellaneous(this);
 
             Setup.SetupInjector();
         }
@@ -143,6 +144,15 @@ namespace Minecraft_Wii_U_Mod_Injector
         private void SwapTab(object sender, EventArgs e)
         {
             var tile = (MetroTile) sender;
+
+            if ((string)tile.Tag == "MgTile")
+            {
+                if (MinigamesTabs.SelectedIndex != tile.TileCount)
+                    MinigamesTabs.SelectedIndex = tile.TileCount;
+                else return;
+
+                return;
+            }
 
             if (MainTabs.SelectedIndex != tile.TileCount)
                 MainTabs.SelectedIndex = tile.TileCount;
@@ -248,14 +258,28 @@ namespace Minecraft_Wii_U_Mod_Injector
         {
             try
             {
-                Style = (MetroColorStyle) Enum.Parse(typeof(MetroColorStyle), colorsBox.Text);
-                StyleMngr.Style = (MetroColorStyle) Enum.Parse(typeof(MetroColorStyle), colorsBox.Text);
+                Style = (MetroColorStyle) Enum.Parse(typeof(MetroColorStyle), ColorsBox.Text);
+                StyleMngr.Style = (MetroColorStyle) Enum.Parse(typeof(MetroColorStyle), ColorsBox.Text);
                 Refresh();
                 Settings.Default.Style = Style;
             }
             catch (Exception error)
             {
                 Exceptions.LogError(error, "Failed to Change Injector Form Color", true);
+            }
+        }
+
+        private void FormTxtAlgnSelected(object sender, EventArgs e)
+        {
+            try
+            {
+                TextAlign = (MetroFormTextAlign)Enum.Parse(typeof(MetroFormTextAlign), TextAllignBox.Text);
+                Refresh();
+                Settings.Default.FormTxtAlign = TextAlign;
+            }
+            catch (Exception error)
+            {
+                Exceptions.LogError(error, "Failed to Change Injector Text Align", true);
             }
         }
 
@@ -321,6 +345,24 @@ namespace Minecraft_Wii_U_Mod_Injector
             catch (Exception error)
             {
                 Exceptions.LogError(error, "Failed to Toggle Release Notes", true);
+            }
+        }
+
+        private void HostIndicatorsToggled(object sender, EventArgs e)
+        {
+            try
+            {
+                if (!Settings.Default.HostIndicators)
+                    Messaging.Show(
+                        "All mods will now be highlighted with a blue and orange color\n\nOrange: Host Only mod\nBlue: Non-Host mod");
+
+                Settings.Default.HostIndicators = HostIndicators.Checked;
+                Miscellaneous.DoHostIndicators(HostIndicators.Checked);
+                Refresh();
+            }
+            catch (Exception error)
+            {
+                Exceptions.LogError(error, "Failed to Toggle Host Indicators", true);
             }
         }
 
@@ -1228,6 +1270,16 @@ namespace Minecraft_Wii_U_Mod_Injector
             GeckoU.WriteUIntToggle(0x0257BB60, 0x38800000, 0x38800001, UnlimitedTotemsOfUndying.Checked);
         }
 
+        private void PunchToRideToggled(object sender, EventArgs e)
+        {
+            GeckoU.WriteUIntToggle(0x0271D184, 0x48AC5738, 0x9421FD90, PunchToRide.Checked);
+        }
+
+        private void CursedToggled(object sender, EventArgs e)
+        {
+            GeckoU.WriteUIntToggle(0x108E021C, 0x40000000, 0x3F800000, Cursed.Checked);
+        }
+
         #region commands
 
         private void GiveCommandBtnClicked(object sender, EventArgs e)
@@ -1732,6 +1784,12 @@ namespace Minecraft_Wii_U_Mod_Injector
         private void DisableCameraAnimationToggled(object sender, EventArgs e)
         {
             GeckoU.WriteUIntToggle(0x02C5F808, Off, 0x5403D97E, DisableCameraAnimation.Checked);
+        }
+
+        private void SoloToggled(object sender, EventArgs e)
+        {
+            GeckoU.WriteUIntToggle(0x02C50078, Nop, 0x41820010, Solo.Checked);
+            GeckoU.WriteUIntToggle(0x02C50078, 0x38600002, 0x7FE3FB78, Solo.Checked);
         }
         #endregion
 

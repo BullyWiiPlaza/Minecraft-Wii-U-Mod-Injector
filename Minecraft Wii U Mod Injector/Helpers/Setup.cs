@@ -15,7 +15,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
     {
         public static MainForm Injector = new MainForm();
 
-        public static string LocalVer = "v5.2.0.c4";
+        public static string LocalVer = "v5.2.0.c5";
         public static string GitVer = string.Empty;
         public static string UpdaterPath = $@"{Application.StartupPath}\Minecraft.Wii.U.Mod.Injector.Updater.exe";
 
@@ -85,7 +85,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
                                 UpdaterPath);
                         }
 
-                        Process.Start(UpdaterPath, GitVer);
+                        Process.Start(UpdaterPath);
                         Environment.Exit(0);
                     }
                     else if (Settings.Default.PrereleaseOptIn && PreRelease)
@@ -133,13 +133,18 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
                     Settings.Default.FirstLaunch = false;
 
                     Injector.Style = Injector.StyleMngr.Style = Settings.Default.Style;
-                    Injector.colorsBox.Text = Settings.Default.Style.ToString();
+                    Injector.ColorsBox.Text = Settings.Default.Style.ToString();
+
+                    Injector.TextAlign = Settings.Default.FormTxtAlign;
+                    Injector.TextAllignBox.Text = Settings.Default.FormTxtAlign.ToString();
 
                     Injector.MainTabs.SelectedIndex = Settings.Default.TabIndex;
 
                     Injector.CheckForPreRelease.Checked = Settings.Default.PrereleaseOptIn;
 
                     Injector.discordRpcCheckBox.Checked = Settings.Default.DiscordRPC;
+
+                    Injector.HostIndicators.Checked = Settings.Default.HostIndicators;
                 }
                 catch (Exception)
                 {
@@ -156,6 +161,8 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
                     Injector.releaseNotesToggle.Checked = false;
                     Injector.BuildNotesBox.Text = Resources.releaseNotes;
                 }
+
+                Miscellaneous.DoHostIndicators(Settings.Default.HostIndicators);
             }
             catch (Exception error)
             {

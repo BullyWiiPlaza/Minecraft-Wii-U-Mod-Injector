@@ -61,6 +61,7 @@
             this.WoolMultiplierSlider = new System.Windows.Forms.NumericUpDown();
             this.ModificationTabs = new MetroFramework.Controls.MetroTabControl();
             this.PlayersTab = new MetroFramework.Controls.MetroTabPage();
+            this.PunchToRide = new MetroFramework.Controls.MetroCheckBox();
             this.UnlimitedTotemsOfUndying = new MetroFramework.Controls.MetroCheckBox();
             this.SplashLingeringPotions = new MetroFramework.Controls.MetroCheckBox();
             this.ItemOfUndying = new MetroFramework.Controls.MetroCheckBox();
@@ -212,6 +213,7 @@
             this.EmptyTile1 = new MetroFramework.Controls.MetroTile();
             this.ModificationsTile = new MetroFramework.Controls.MetroTile();
             this.EmptyTile2 = new MetroFramework.Controls.MetroTile();
+            this.Solo = new MetroFramework.Controls.MetroCheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.StyleMngr)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BabyRateSlider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.WoolMultiplierSlider)).BeginInit();
@@ -682,7 +684,7 @@
             this.ModificationTabs.ItemSize = new System.Drawing.Size(232, 1);
             this.ModificationTabs.Location = new System.Drawing.Point(164, 4);
             this.ModificationTabs.Name = "ModificationTabs";
-            this.ModificationTabs.SelectedIndex = 1;
+            this.ModificationTabs.SelectedIndex = 3;
             this.ModificationTabs.Size = new System.Drawing.Size(932, 446);
             this.ModificationTabs.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.ModificationTabs.TabIndex = 55;
@@ -692,6 +694,7 @@
             // 
             // PlayersTab
             // 
+            this.PlayersTab.Controls.Add(this.PunchToRide);
             this.PlayersTab.Controls.Add(this.UnlimitedTotemsOfUndying);
             this.PlayersTab.Controls.Add(this.SplashLingeringPotions);
             this.PlayersTab.Controls.Add(this.ItemOfUndying);
@@ -761,6 +764,19 @@
             this.PlayersTab.VerticalScrollbarBarColor = true;
             this.PlayersTab.VerticalScrollbarHighlightOnWheel = false;
             this.PlayersTab.VerticalScrollbarSize = 10;
+            // 
+            // PunchToRide
+            // 
+            this.PunchToRide.AutoSize = true;
+            this.PunchToRide.BackColor = System.Drawing.Color.Transparent;
+            this.PunchToRide.Location = new System.Drawing.Point(391, 235);
+            this.PunchToRide.Name = "PunchToRide";
+            this.PunchToRide.Size = new System.Drawing.Size(94, 15);
+            this.PunchToRide.TabIndex = 213;
+            this.PunchToRide.Tag = "0x0271D184 = b 0x31E28BC";
+            this.PunchToRide.Text = "Punch to ride";
+            this.PunchToRide.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.PunchToRide.UseSelectable = true;
             // 
             // UnlimitedTotemsOfUndying
             // 
@@ -2219,6 +2235,7 @@
             // GeneralMgTab
             // 
             this.GeneralMgTab.BackColor = System.Drawing.Color.White;
+            this.GeneralMgTab.Controls.Add(this.Solo);
             this.GeneralMgTab.Controls.Add(this.LiquidsCanConvert);
             this.GeneralMgTab.Controls.Add(this.AllowMobs);
             this.GeneralMgTab.Controls.Add(this.RequiredPlayersSlider);
@@ -3042,6 +3059,18 @@
             this.EmptyTile2.UseSelectable = true;
             this.EmptyTile2.Visible = false;
             // 
+            // Solo
+            // 
+            this.Solo.AutoSize = true;
+            this.Solo.Location = new System.Drawing.Point(7, 175);
+            this.Solo.Name = "Solo";
+            this.Solo.Size = new System.Drawing.Size(46, 15);
+            this.Solo.TabIndex = 30;
+            this.Solo.Tag = "0x02C50078 = nop|0x02C50078 = li r3,2";
+            this.Solo.Text = "Solo";
+            this.Solo.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.Solo.UseSelectable = true;
+            // 
             // CemuPckMngr
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3284,5 +3313,7 @@
         public MetroFramework.Controls.MetroLabel MapSizeLbl;
         public System.Windows.Forms.NumericUpDown LiquidSpreadTimeSlider;
         public MetroFramework.Controls.MetroLabel LiquidSpreadTime;
+        public MetroFramework.Controls.MetroCheckBox PunchToRide;
+        private MetroFramework.Controls.MetroCheckBox Solo;
     }
 }

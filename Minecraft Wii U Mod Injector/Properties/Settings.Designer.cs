@@ -15,9 +15,9 @@ namespace Minecraft_Wii_U_Mod_Injector.Properties {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.10.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
-        private static Minecraft_Wii_U_Mod_Injector.Properties.Settings defaultInstance = ((Minecraft_Wii_U_Mod_Injector.Properties.Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Minecraft_Wii_U_Mod_Injector.Properties.Settings())));
+        private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
         
-        public static Minecraft_Wii_U_Mod_Injector.Properties.Settings Default {
+        public static Settings Default {
             get {
                 return defaultInstance;
             }
@@ -164,6 +164,30 @@ namespace Minecraft_Wii_U_Mod_Injector.Properties {
             }
             set {
                 this["UpdateSettings"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool HostIndicators {
+            get {
+                return ((bool)(this["HostIndicators"]));
+            }
+            set {
+                this["HostIndicators"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Left")]
+        public global::MetroFramework.Forms.MetroFormTextAlign FormTxtAlign {
+            get {
+                return ((global::MetroFramework.Forms.MetroFormTextAlign)(this["FormTxtAlign"]));
+            }
+            set {
+                this["FormTxtAlign"] = value;
             }
         }
     }

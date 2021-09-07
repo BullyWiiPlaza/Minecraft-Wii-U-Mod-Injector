@@ -695,7 +695,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Wii_U.Gecko_U
         /// <returns>The peeked Double</returns>
         public double PeekDouble(uint address)
         {
-            var bytes = ReadBytes(address, 0x4);
+            var bytes = ReadBytes(address, 8);
             double value;
 
             try

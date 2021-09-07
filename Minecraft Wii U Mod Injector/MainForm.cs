@@ -1837,5 +1837,10 @@ namespace Minecraft_Wii_U_Mod_Injector
 
             GeckoU.WriteUIntToggle(0x02555338, 0x492CA99C, 0xC3CA5EF4, AlwaysDaylight.Checked);
         }
+
+        private void DLCManagerBtn_Click(object sender, EventArgs e)
+        {
+            new DLCManager(this).ShowDialog();
+        }
     }
 }

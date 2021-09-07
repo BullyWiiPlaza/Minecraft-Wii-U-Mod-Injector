@@ -444,6 +444,11 @@ namespace Minecraft_Wii_U_Mod_Injector
             new AchievementEditor(this).ShowDialog();
         }
 
+        private void DLCManagerBtn_Click(object sender, EventArgs e)
+        {
+            new DLCManager(this).ShowDialog();
+        }
+
         private void ItemIdHelpBtnClicked(object sender, EventArgs e)
         {
             Messaging.Show(MessageBoxIcon.Information,
@@ -1798,30 +1803,16 @@ namespace Minecraft_Wii_U_Mod_Injector
         private void AirborneSpeedSliderChanged(object sender, EventArgs e)
         {
             var airbornespeed = Miscellaneous.FloatToInt32Bits((float) AirborneSpeedSlider.Value);
-            var firstHalf = (short) (airbornespeed >> 16);
-            var secondHalf = (short) (airbornespeed & 0xffff);
-
-            GeckoU.WriteUInt(0x025822A4, 0x492CA99C); //doesnt work
-            GeckoU.WriteUInt(0x0384CC44, 0xC3E85EF4);
-            GeckoU.WriteUInt(0x0384CC48, 0x3D600000);
-            GeckoU.WriteUInt(0x0384CC48, 0x3D600000 + (uint) firstHalf);
-            GeckoU.WriteUInt(0x0384CC4C, 0x616B0000);
-            GeckoU.WriteUInt(0x0384CC4C, 0x616B0000 + (uint) secondHalf);
-            GeckoU.WriteUInt(0x0384CC50, 0x3D801100);
-            GeckoU.WriteUInt(0x0384CC54, 0x618C0000);
-            GeckoU.WriteUInt(0x0384CC58, 0x916C0000);
-            GeckoU.WriteUInt(0x0384CC5C, 0xC3EC0000);
-            GeckoU.WriteUInt(0x0384CC60, 0x4AD3564C);
+            uint realValue = GeckoU.PeekUInt(0x10665EF4);
+            GeckoU.WriteUInt(0x11010000, realValue);
+            GeckoU.WriteUInt(0x0258229c, 0x3D001101); // load our address :)
+            GeckoU.WriteUInt(0x025822a4, 0xC3E80000); // lfs f31,0x...(..)
+            GeckoU.WriteUInt(0x11010000, (uint)airbornespeed);
         }
 
         private void AlwaysDaylightToggled(object sender, EventArgs e)
         {
             GeckoU.WriteUIntToggle(0x02555318, 0xFC210824, 0x4e800421, AlwaysDaylight.Checked); // fdiv f1, f1, f1
-        }
-
-        private void DLCManagerBtn_Click(object sender, EventArgs e)
-        {
-            new DLCManager(this).ShowDialog();
         }
     }
 }

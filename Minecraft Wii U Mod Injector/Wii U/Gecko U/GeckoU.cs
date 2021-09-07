@@ -589,8 +589,8 @@ namespace Minecraft_Wii_U_Mod_Injector.Wii_U.Gecko_U
         }
         public void WriteString16(uint address, string value)
         {
-            var bytes = Encoding.Unicode.GetBytes(value);
-            WriteBytes(address+1, bytes);
+            var bytes = Encoding.BigEndianUnicode.GetBytes(value);
+            WriteBytes(address, bytes);
         }
         #endregion Writing, Poking
 
@@ -718,8 +718,8 @@ namespace Minecraft_Wii_U_Mod_Injector.Wii_U.Gecko_U
         }
         public string PeekString16(int length, uint address)
         {
-            var peekedString = ReadBytes(address+1, (uint)length);
-            return Encoding.Unicode.GetString(peekedString).Replace("\0", "");
+            var peekedString = ReadBytes(address, (uint)length*2);
+            return Encoding.BigEndianUnicode.GetString(peekedString);
         }
 
         #endregion reading

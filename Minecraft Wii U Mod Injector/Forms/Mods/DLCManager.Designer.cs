@@ -121,6 +121,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods
             this.setLicenseMaskBtn.TabIndex = 4;
             this.setLicenseMaskBtn.Text = "Set License Mask";
             this.setLicenseMaskBtn.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.ToolTipManager.SetToolTip(this.setLicenseMaskBtn, "Set the License Mask e.g unlocks the selected DLC Pack");
             this.setLicenseMaskBtn.UseSelectable = true;
             this.setLicenseMaskBtn.Click += new System.EventHandler(this.setLicenseMaskBtn_Click);
             // 
@@ -133,6 +134,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods
             this.removePackBtn.TabIndex = 5;
             this.removePackBtn.Text = "Remove Pack";
             this.removePackBtn.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.ToolTipManager.SetToolTip(this.removePackBtn, "Removes the selected DLC Pack from memory");
             this.removePackBtn.UseSelectable = true;
             this.removePackBtn.Click += new System.EventHandler(this.removePackBtn_Click);
             // 

@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Threading;
 using MetroFramework.Forms;
 using Minecraft_Wii_U_Mod_Injector.Wii_U.Gecko_U;
 using Minecraft_Wii_U_Mod_Injector.Helpers;
@@ -45,7 +44,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods
             DLCMountIndex = BitConverter.ToUInt32(data, 0x10);
             DLCDeviceID = BitConverter.ToUInt32(data, 0xc);
             PackID = BitConverter.ToUInt32(data, 0);
-            ParentPack = BitConverter.ToUInt32(data, 0x94);
+            ParentPack = BitConverter.ToUInt32(data, 0x8c);
             }
 
         private string getPackName(uint dlcPack)
@@ -65,7 +64,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods
             DLCPackListView.Clear();
             uint start = MainForm.GeckoU.PeekUInt(0x10A2AFD4);
             uint end = MainForm.GeckoU.PeekUInt(0x10A2AFD8);
-            uint maxStorage = MainForm.GeckoU.PeekUInt(0x10A2AFDc);
+            uint maxStorage = MainForm.GeckoU.PeekUInt(0x10A2AFDC);
 
             currentAmount = ((end - start) >> 2)-1;
             uint maxAmount = ((maxStorage - start) >> 2);
@@ -82,6 +81,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods
         {
             uint dlcPack = uint.Parse(DLCPackListView.SelectedItems[0].SubItems[1].Text);
             MainForm.GeckoU.WriteInt(dlcPack + 0x17c,1);
+            setLicenseMaskBtn.Enabled = false;
         }
 
         private void viewPackInfo(object sender, ListViewItemSelectionChangedEventArgs e)
@@ -89,7 +89,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods
             removePackBtn.Enabled = true;
             StringBuilder packInfo = new StringBuilder("DLC Pack Info");
             uint dlcPack = uint.Parse(e.Item.SubItems[1].Text);
-            uint ChildpacksCount = 0, licenseMask = 0, DLCMountIndex = 0, DLCDeviceID = 0, PackID = 0, parentPack = 0;
+            uint ChildpacksCount, licenseMask, DLCMountIndex, DLCDeviceID, PackID, parentPack;
             getPackInfos(dlcPack, out ChildpacksCount, out licenseMask, out DLCMountIndex, out DLCDeviceID, out PackID, out parentPack);
             setLicenseMaskBtn.Enabled = licenseMask == 0;
             packInfo.Append("\nName : ");

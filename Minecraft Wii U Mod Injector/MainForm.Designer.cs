@@ -181,6 +181,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.StaticLiquidBlocks = new MetroFramework.Controls.MetroCheckBox();
             this.NoFog = new MetroFramework.Controls.MetroCheckBox();
             this.generalTab = new MetroFramework.Controls.MetroTabPage();
+            this.DLCManagerBtn = new MetroFramework.Controls.MetroButton();
             this.Cursed = new MetroFramework.Controls.MetroCheckBox();
             this.FreezeGameWhenPaused = new MetroFramework.Controls.MetroCheckBox();
             this.AchievementsEverywhere = new MetroFramework.Controls.MetroCheckBox();
@@ -305,7 +306,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.RightClickMenu = new MetroFramework.Controls.MetroContextMenu(this.components);
             this.IncreaseDecimalPlace = new System.Windows.Forms.ToolStripMenuItem();
             this.DecreaseDecimalPlace = new System.Windows.Forms.ToolStripMenuItem();
-            this.DLCManagerBtn = new MetroFramework.Controls.MetroButton();
             this.MainTabs.SuspendLayout();
             this.MainTab.SuspendLayout();
             this.playersTab.SuspendLayout();
@@ -446,7 +446,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.MainTabs.Location = new System.Drawing.Point(155, 61);
             this.MainTabs.Multiline = true;
             this.MainTabs.Name = "MainTabs";
-            this.MainTabs.SelectedIndex = 3;
+            this.MainTabs.SelectedIndex = 1;
             this.MainTabs.Size = new System.Drawing.Size(1130, 643);
             this.MainTabs.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.MainTabs.TabIndex = 0;
@@ -771,7 +771,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.AlwaysDaylight.Tag = "NonHost";
             this.AlwaysDaylight.Text = "Always Daylight";
             this.AlwaysDaylight.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.AlwaysDaylight, "Whether you can ride any entity by punching them");
+            this.ToolTipManager.SetToolTip(this.AlwaysDaylight, "Whether its always Day or not");
             this.AlwaysDaylight.UseSelectable = true;
             this.AlwaysDaylight.UseStyleColors = true;
             this.AlwaysDaylight.CheckedChanged += new System.EventHandler(this.AlwaysDaylightToggled);
@@ -3121,6 +3121,20 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.generalTab.VerticalScrollbarHighlightOnWheel = false;
             this.generalTab.VerticalScrollbarSize = 10;
             // 
+            // DLCManagerBtn
+            // 
+            this.DLCManagerBtn.Location = new System.Drawing.Point(7, 534);
+            this.DLCManagerBtn.Name = "DLCManagerBtn";
+            this.DLCManagerBtn.Size = new System.Drawing.Size(1108, 23);
+            this.DLCManagerBtn.TabIndex = 150;
+            this.DLCManagerBtn.Tag = "NonHost";
+            this.DLCManagerBtn.Text = "DLC Manager";
+            this.DLCManagerBtn.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.ToolTipManager.SetToolTip(this.DLCManagerBtn, "Open the DLC Manager");
+            this.DLCManagerBtn.UseSelectable = true;
+            this.DLCManagerBtn.UseStyleColors = true;
+            this.DLCManagerBtn.Click += new System.EventHandler(this.DLCManagerBtn_Click);
+            // 
             // Cursed
             // 
             this.Cursed.AutoSize = true;
@@ -5266,20 +5280,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             | System.Windows.Forms.Keys.OemMinus)));
             this.DecreaseDecimalPlace.Size = new System.Drawing.Size(322, 22);
             this.DecreaseDecimalPlace.Text = "Decrease decimal place";
-            // 
-            // DLCManagerBtn
-            // 
-            this.DLCManagerBtn.Location = new System.Drawing.Point(7, 534);
-            this.DLCManagerBtn.Name = "DLCManagerBtn";
-            this.DLCManagerBtn.Size = new System.Drawing.Size(1108, 23);
-            this.DLCManagerBtn.TabIndex = 150;
-            this.DLCManagerBtn.Tag = "NonHost";
-            this.DLCManagerBtn.Text = "DLC Manager";
-            this.DLCManagerBtn.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.DLCManagerBtn, "Open the DLC Manager");
-            this.DLCManagerBtn.UseSelectable = true;
-            this.DLCManagerBtn.UseStyleColors = true;
-            this.DLCManagerBtn.Click += new System.EventHandler(this.DLCManagerBtn_Click);
             // 
             // MainForm
             // 

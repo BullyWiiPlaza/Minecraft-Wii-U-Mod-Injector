@@ -1794,5 +1794,48 @@ namespace Minecraft_Wii_U_Mod_Injector
         #endregion
 
         #endregion memory editing
+
+        private void AirborneSpeedSliderChanged(object sender, EventArgs e)
+        {
+            var airbornespeed = Miscellaneous.FloatToInt32Bits((float) AirborneSpeedSlider.Value);
+            var firstHalf = (short) (airbornespeed >> 16);
+            var secondHalf = (short) (airbornespeed & 0xffff);
+
+            GeckoU.WriteUInt(0x025822A4, 0x492CA99C); //doesnt work
+            GeckoU.WriteUInt(0x0384CC44, 0xC3E85EF4);
+            GeckoU.WriteUInt(0x0384CC48, 0x3D600000);
+            GeckoU.WriteUInt(0x0384CC48, 0x3D600000 + (uint) firstHalf);
+            GeckoU.WriteUInt(0x0384CC4C, 0x616B0000);
+            GeckoU.WriteUInt(0x0384CC4C, 0x616B0000 + (uint) secondHalf);
+            GeckoU.WriteUInt(0x0384CC50, 0x3D801100);
+            GeckoU.WriteUInt(0x0384CC54, 0x618C0000);
+            GeckoU.WriteUInt(0x0384CC58, 0x916C0000);
+            GeckoU.WriteUInt(0x0384CC5C, 0xC3EC0000);
+            GeckoU.WriteUInt(0x0384CC60, 0x4AD3564C);
+        }
+
+        private void AlwaysDaylightToggled(object sender, EventArgs e)
+        {
+            if(AlwaysDaylight.Checked) //test lol
+            {
+                GeckoU.WriteBytes(0x0384CC20,
+                    new byte[]
+                    {
+                        0xC3, 0xE8, 0x5E, 0xF4, 0x3D, 0x60, 0x40, 0x00, 0x61, 0x6B, 0x00, 0x00, 0x3D, 0x80, 0x11, 0x00,
+                        0x61, 0x8C, 0x00, 0x00, 0x91, 0x6C, 0x00, 0x00, 0xC3, 0xCC, 0x00, 0x00, 0x4A, 0xD0, 0x87, 0x00
+                    });
+            }
+            else
+            {
+                GeckoU.WriteBytes(0x0384CC20,
+                    new byte[]
+                    {
+                        0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+                        0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+                    });
+            }
+
+            GeckoU.WriteUIntToggle(0x02555338, 0x492CA99C, 0xC3CA5EF4, AlwaysDaylight.Checked);
+        }
     }
 }

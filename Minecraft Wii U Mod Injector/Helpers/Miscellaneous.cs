@@ -170,7 +170,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
             }
         }
 
-        static public void CopyFolder(string sourceFolder, string destFolder)
+        public static void CopyFolder(string sourceFolder, string destFolder)
         {
             if (!Directory.Exists(destFolder))
                 Directory.CreateDirectory(destFolder);
@@ -188,6 +188,11 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
                 string dest = Path.Combine(destFolder, name);
                 CopyFolder(folder, dest);
             }
+        }
+
+        public static unsafe int FloatToInt32Bits(float f)
+        {
+            return *((int*)&f);
         }
     }
 }

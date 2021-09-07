@@ -178,6 +178,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.StaticLiquidBlocks = new MetroFramework.Controls.MetroCheckBox();
             this.NoFog = new MetroFramework.Controls.MetroCheckBox();
             this.generalTab = new MetroFramework.Controls.MetroTabPage();
+            this.Cursed = new MetroFramework.Controls.MetroCheckBox();
             this.FreezeGameWhenPaused = new MetroFramework.Controls.MetroCheckBox();
             this.AchievementsEverywhere = new MetroFramework.Controls.MetroCheckBox();
             this.MuteMicrophone = new MetroFramework.Controls.MetroCheckBox();
@@ -200,6 +201,11 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.AllDLCUnlocked = new MetroFramework.Controls.MetroCheckBox();
             this.ExitGame = new MetroFramework.Controls.MetroButton();
             this.MinigamesTab = new MetroFramework.Controls.MetroTabPage();
+            this.EmptyTile = new MetroFramework.Controls.MetroTile();
+            this.GlideTile = new MetroFramework.Controls.MetroTile();
+            this.TumbleTile = new MetroFramework.Controls.MetroTile();
+            this.BattleTile = new MetroFramework.Controls.MetroTile();
+            this.GeneralMgTile = new MetroFramework.Controls.MetroTile();
             this.MinigamesTabs = new MetroFramework.Controls.MetroTabControl();
             this.GeneralMinigames = new MetroFramework.Controls.MetroTabPage();
             this.Solo = new MetroFramework.Controls.MetroCheckBox();
@@ -274,6 +280,9 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.giveAmountBox = new MetroFramework.Controls.MetroTextBox();
             this.giveIDBox = new MetroFramework.Controls.MetroTextBox();
             this.settingsTab = new MetroFramework.Controls.MetroTabPage();
+            this.TextAllignBox = new MetroFramework.Controls.MetroComboBox();
+            this.TextAllignLbl = new MetroFramework.Controls.MetroLabel();
+            this.HostIndicators = new MetroFramework.Controls.MetroCheckBox();
             this.CemuPckMngrBtn = new MetroFramework.Controls.MetroButton();
             this.QuickModsManagerBtn = new MetroFramework.Controls.MetroButton();
             this.OpenLangMngrBtn = new MetroFramework.Controls.MetroButton();
@@ -293,15 +302,9 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.RightClickMenu = new MetroFramework.Controls.MetroContextMenu(this.components);
             this.IncreaseDecimalPlace = new System.Windows.Forms.ToolStripMenuItem();
             this.DecreaseDecimalPlace = new System.Windows.Forms.ToolStripMenuItem();
-            this.Cursed = new MetroFramework.Controls.MetroCheckBox();
-            this.HostIndicators = new MetroFramework.Controls.MetroCheckBox();
-            this.GlideTile = new MetroFramework.Controls.MetroTile();
-            this.TumbleTile = new MetroFramework.Controls.MetroTile();
-            this.BattleTile = new MetroFramework.Controls.MetroTile();
-            this.GeneralMgTile = new MetroFramework.Controls.MetroTile();
-            this.EmptyTile = new MetroFramework.Controls.MetroTile();
-            this.TextAllignBox = new MetroFramework.Controls.MetroComboBox();
-            this.TextAllignLbl = new MetroFramework.Controls.MetroLabel();
+            this.AirborneSpeedSlider = new System.Windows.Forms.NumericUpDown();
+            this.AirborneSpeed = new MetroFramework.Controls.MetroLabel();
+            this.AlwaysDaylight = new MetroFramework.Controls.MetroCheckBox();
             this.MainTabs.SuspendLayout();
             this.MainTab.SuspendLayout();
             this.playersTab.SuspendLayout();
@@ -347,6 +350,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.settingsTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.StyleMngr)).BeginInit();
             this.RightClickMenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.AirborneSpeedSlider)).BeginInit();
             this.SuspendLayout();
             // 
             // WorldTile
@@ -441,7 +445,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.MainTabs.Location = new System.Drawing.Point(155, 61);
             this.MainTabs.Multiline = true;
             this.MainTabs.Name = "MainTabs";
-            this.MainTabs.SelectedIndex = 6;
+            this.MainTabs.SelectedIndex = 1;
             this.MainTabs.Size = new System.Drawing.Size(1130, 643);
             this.MainTabs.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.MainTabs.TabIndex = 0;
@@ -639,6 +643,9 @@ namespace Minecraft_Wii_U_Mod_Injector
             // 
             // playersTab
             // 
+            this.playersTab.Controls.Add(this.AlwaysDaylight);
+            this.playersTab.Controls.Add(this.AirborneSpeedSlider);
+            this.playersTab.Controls.Add(this.AirborneSpeed);
             this.playersTab.Controls.Add(this.PunchToRide);
             this.playersTab.Controls.Add(this.UnlimitedTotemsOfUndying);
             this.playersTab.Controls.Add(this.SplashLingeringPotions);
@@ -2538,10 +2545,10 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.worldTab.HorizontalScrollbarBarColor = true;
             this.worldTab.HorizontalScrollbarHighlightOnWheel = false;
             this.worldTab.HorizontalScrollbarSize = 10;
-            this.worldTab.Location = new System.Drawing.Point(4, 5);
+            this.worldTab.Location = new System.Drawing.Point(4, 9);
             this.worldTab.Name = "worldTab";
             this.worldTab.Padding = new System.Windows.Forms.Padding(3);
-            this.worldTab.Size = new System.Drawing.Size(1122, 634);
+            this.worldTab.Size = new System.Drawing.Size(1122, 630);
             this.worldTab.TabIndex = 1;
             this.worldTab.Tag = "needsGeckoU";
             this.worldTab.Text = "World and Entities";
@@ -3049,10 +3056,10 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.generalTab.HorizontalScrollbarBarColor = true;
             this.generalTab.HorizontalScrollbarHighlightOnWheel = false;
             this.generalTab.HorizontalScrollbarSize = 10;
-            this.generalTab.Location = new System.Drawing.Point(4, 5);
+            this.generalTab.Location = new System.Drawing.Point(4, 9);
             this.generalTab.Name = "generalTab";
             this.generalTab.Padding = new System.Windows.Forms.Padding(3);
-            this.generalTab.Size = new System.Drawing.Size(1122, 634);
+            this.generalTab.Size = new System.Drawing.Size(1122, 630);
             this.generalTab.TabIndex = 2;
             this.generalTab.Tag = "needsGeckoU";
             this.generalTab.Text = "General Game";
@@ -3060,6 +3067,22 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.generalTab.VerticalScrollbarBarColor = true;
             this.generalTab.VerticalScrollbarHighlightOnWheel = false;
             this.generalTab.VerticalScrollbarSize = 10;
+            // 
+            // Cursed
+            // 
+            this.Cursed.AutoSize = true;
+            this.Cursed.Location = new System.Drawing.Point(475, 277);
+            this.Cursed.Name = "Cursed";
+            this.Cursed.Size = new System.Drawing.Size(60, 15);
+            this.Cursed.Style = MetroFramework.MetroColorStyle.Blue;
+            this.Cursed.TabIndex = 149;
+            this.Cursed.Tag = "NonHost";
+            this.Cursed.Text = "Cursed";
+            this.Cursed.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.ToolTipManager.SetToolTip(this.Cursed, "Cursed");
+            this.Cursed.UseSelectable = true;
+            this.Cursed.UseStyleColors = true;
+            this.Cursed.CheckedChanged += new System.EventHandler(this.CursedToggled);
             // 
             // FreezeGameWhenPaused
             // 
@@ -3423,6 +3446,85 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.MinigamesTab.VerticalScrollbarBarColor = true;
             this.MinigamesTab.VerticalScrollbarHighlightOnWheel = false;
             this.MinigamesTab.VerticalScrollbarSize = 10;
+            // 
+            // EmptyTile
+            // 
+            this.EmptyTile.ActiveControl = null;
+            this.EmptyTile.Enabled = false;
+            this.EmptyTile.Location = new System.Drawing.Point(1, 213);
+            this.EmptyTile.Name = "EmptyTile";
+            this.EmptyTile.PaintTileCount = false;
+            this.EmptyTile.Size = new System.Drawing.Size(160, 422);
+            this.EmptyTile.TabIndex = 9;
+            this.EmptyTile.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.EmptyTile.TileCount = 4;
+            this.EmptyTile.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
+            this.EmptyTile.UseSelectable = true;
+            // 
+            // GlideTile
+            // 
+            this.GlideTile.ActiveControl = null;
+            this.GlideTile.Location = new System.Drawing.Point(1, 158);
+            this.GlideTile.Name = "GlideTile";
+            this.GlideTile.PaintTileCount = false;
+            this.GlideTile.Size = new System.Drawing.Size(160, 55);
+            this.GlideTile.TabIndex = 8;
+            this.GlideTile.Tag = "MgTile";
+            this.GlideTile.Text = "Glide";
+            this.GlideTile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.GlideTile.TileCount = 3;
+            this.GlideTile.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
+            this.GlideTile.UseSelectable = true;
+            this.GlideTile.Click += new System.EventHandler(this.SwapTab);
+            // 
+            // TumbleTile
+            // 
+            this.TumbleTile.ActiveControl = null;
+            this.TumbleTile.Location = new System.Drawing.Point(1, 103);
+            this.TumbleTile.Name = "TumbleTile";
+            this.TumbleTile.PaintTileCount = false;
+            this.TumbleTile.Size = new System.Drawing.Size(160, 55);
+            this.TumbleTile.TabIndex = 7;
+            this.TumbleTile.Tag = "MgTile";
+            this.TumbleTile.Text = "Tumble";
+            this.TumbleTile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.TumbleTile.TileCount = 2;
+            this.TumbleTile.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
+            this.TumbleTile.UseSelectable = true;
+            this.TumbleTile.Click += new System.EventHandler(this.SwapTab);
+            // 
+            // BattleTile
+            // 
+            this.BattleTile.ActiveControl = null;
+            this.BattleTile.Location = new System.Drawing.Point(1, 48);
+            this.BattleTile.Name = "BattleTile";
+            this.BattleTile.PaintTileCount = false;
+            this.BattleTile.Size = new System.Drawing.Size(160, 55);
+            this.BattleTile.TabIndex = 6;
+            this.BattleTile.Tag = "MgTile";
+            this.BattleTile.Text = "Battle";
+            this.BattleTile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.BattleTile.TileCount = 1;
+            this.BattleTile.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
+            this.BattleTile.UseSelectable = true;
+            this.BattleTile.UseTileImage = true;
+            this.BattleTile.Click += new System.EventHandler(this.SwapTab);
+            // 
+            // GeneralMgTile
+            // 
+            this.GeneralMgTile.ActiveControl = null;
+            this.GeneralMgTile.Location = new System.Drawing.Point(1, -7);
+            this.GeneralMgTile.Name = "GeneralMgTile";
+            this.GeneralMgTile.PaintTileCount = false;
+            this.GeneralMgTile.Size = new System.Drawing.Size(160, 55);
+            this.GeneralMgTile.TabIndex = 5;
+            this.GeneralMgTile.Tag = "MgTile";
+            this.GeneralMgTile.Text = "General";
+            this.GeneralMgTile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.GeneralMgTile.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
+            this.GeneralMgTile.UseSelectable = true;
+            this.GeneralMgTile.UseTileImage = true;
+            this.GeneralMgTile.Click += new System.EventHandler(this.SwapTab);
             // 
             // MinigamesTabs
             // 
@@ -4832,6 +4934,46 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.settingsTab.VerticalScrollbarHighlightOnWheel = false;
             this.settingsTab.VerticalScrollbarSize = 10;
             // 
+            // TextAllignBox
+            // 
+            this.TextAllignBox.FormattingEnabled = true;
+            this.TextAllignBox.ItemHeight = 23;
+            this.TextAllignBox.Items.AddRange(new object[] {
+            "Left",
+            "Center",
+            "Right"});
+            this.TextAllignBox.Location = new System.Drawing.Point(87, 38);
+            this.TextAllignBox.Name = "TextAllignBox";
+            this.TextAllignBox.Size = new System.Drawing.Size(1028, 29);
+            this.TextAllignBox.TabIndex = 53;
+            this.TextAllignBox.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.TextAllignBox.UseSelectable = true;
+            this.TextAllignBox.SelectedIndexChanged += new System.EventHandler(this.FormTxtAlgnSelected);
+            // 
+            // TextAllignLbl
+            // 
+            this.TextAllignLbl.AutoSize = true;
+            this.TextAllignLbl.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.TextAllignLbl.Location = new System.Drawing.Point(7, 38);
+            this.TextAllignLbl.Name = "TextAllignLbl";
+            this.TextAllignLbl.Size = new System.Drawing.Size(74, 19);
+            this.TextAllignLbl.TabIndex = 52;
+            this.TextAllignLbl.Text = "Text Allign:";
+            this.TextAllignLbl.Theme = MetroFramework.MetroThemeStyle.Dark;
+            // 
+            // HostIndicators
+            // 
+            this.HostIndicators.AutoSize = true;
+            this.HostIndicators.Location = new System.Drawing.Point(630, 73);
+            this.HostIndicators.Name = "HostIndicators";
+            this.HostIndicators.Size = new System.Drawing.Size(167, 15);
+            this.HostIndicators.TabIndex = 51;
+            this.HostIndicators.Text = "Host / Non-Host Indicators";
+            this.HostIndicators.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.ToolTipManager.SetToolTip(this.HostIndicators, "Whether to highlight host/non host mods\r\n\r\nNon Host: Blue\r\nHost: Orange");
+            this.HostIndicators.UseSelectable = true;
+            this.HostIndicators.CheckedChanged += new System.EventHandler(this.HostIndicatorsToggled);
+            // 
             // CemuPckMngrBtn
             // 
             this.CemuPckMngrBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
@@ -5072,140 +5214,56 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.DecreaseDecimalPlace.Size = new System.Drawing.Size(322, 22);
             this.DecreaseDecimalPlace.Text = "Decrease decimal place";
             // 
-            // Cursed
+            // AirborneSpeedSlider
             // 
-            this.Cursed.AutoSize = true;
-            this.Cursed.Location = new System.Drawing.Point(475, 277);
-            this.Cursed.Name = "Cursed";
-            this.Cursed.Size = new System.Drawing.Size(60, 15);
-            this.Cursed.Style = MetroFramework.MetroColorStyle.Blue;
-            this.Cursed.TabIndex = 149;
-            this.Cursed.Tag = "NonHost";
-            this.Cursed.Text = "Cursed";
-            this.Cursed.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.Cursed, "Cursed");
-            this.Cursed.UseSelectable = true;
-            this.Cursed.UseStyleColors = true;
-            this.Cursed.CheckedChanged += new System.EventHandler(this.CursedToggled);
+            this.StyleExtender.SetApplyMetroTheme(this.AirborneSpeedSlider, true);
+            this.AirborneSpeedSlider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.AirborneSpeedSlider.DecimalPlaces = 1;
+            this.AirborneSpeedSlider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
+            this.AirborneSpeedSlider.Location = new System.Drawing.Point(666, 558);
+            this.AirborneSpeedSlider.Name = "AirborneSpeedSlider";
+            this.AirborneSpeedSlider.Size = new System.Drawing.Size(115, 20);
+            this.AirborneSpeedSlider.TabIndex = 185;
+            this.AirborneSpeedSlider.Tag = "";
+            this.ToolTipManager.SetToolTip(this.AirborneSpeedSlider, "How much faster do we go down in water while\r\npressing crouch?");
+            this.AirborneSpeedSlider.Value = new decimal(new int[] {
+            2,
+            0,
+            0,
+            65536});
+            this.AirborneSpeedSlider.ValueChanged += new System.EventHandler(this.AirborneSpeedSliderChanged);
             // 
-            // HostIndicators
+            // AirborneSpeed
             // 
-            this.HostIndicators.AutoSize = true;
-            this.HostIndicators.Location = new System.Drawing.Point(630, 73);
-            this.HostIndicators.Name = "HostIndicators";
-            this.HostIndicators.Size = new System.Drawing.Size(167, 15);
-            this.HostIndicators.TabIndex = 51;
-            this.HostIndicators.Text = "Host / Non-Host Indicators";
-            this.HostIndicators.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.HostIndicators, "Whether to highlight host/non host mods\r\n\r\nNon Host: Blue\r\nHost: Orange");
-            this.HostIndicators.UseSelectable = true;
-            this.HostIndicators.CheckedChanged += new System.EventHandler(this.HostIndicatorsToggled);
+            this.AirborneSpeed.AutoSize = true;
+            this.AirborneSpeed.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.AirborneSpeed.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.AirborneSpeed.Location = new System.Drawing.Point(554, 559);
+            this.AirborneSpeed.Name = "AirborneSpeed";
+            this.AirborneSpeed.Size = new System.Drawing.Size(106, 19);
+            this.AirborneSpeed.Style = MetroFramework.MetroColorStyle.Blue;
+            this.AirborneSpeed.TabIndex = 184;
+            this.AirborneSpeed.Tag = "NonHost";
+            this.AirborneSpeed.Text = "Airborne Speed:";
+            this.AirborneSpeed.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.AirborneSpeed.UseStyleColors = true;
             // 
-            // GlideTile
+            // AlwaysDaylight
             // 
-            this.GlideTile.ActiveControl = null;
-            this.GlideTile.Location = new System.Drawing.Point(1, 158);
-            this.GlideTile.Name = "GlideTile";
-            this.GlideTile.PaintTileCount = false;
-            this.GlideTile.Size = new System.Drawing.Size(160, 55);
-            this.GlideTile.TabIndex = 8;
-            this.GlideTile.Tag = "MgTile";
-            this.GlideTile.Text = "Glide";
-            this.GlideTile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.GlideTile.TileCount = 3;
-            this.GlideTile.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
-            this.GlideTile.UseSelectable = true;
-            this.GlideTile.Click += new System.EventHandler(this.SwapTab);
-            // 
-            // TumbleTile
-            // 
-            this.TumbleTile.ActiveControl = null;
-            this.TumbleTile.Location = new System.Drawing.Point(1, 103);
-            this.TumbleTile.Name = "TumbleTile";
-            this.TumbleTile.PaintTileCount = false;
-            this.TumbleTile.Size = new System.Drawing.Size(160, 55);
-            this.TumbleTile.TabIndex = 7;
-            this.TumbleTile.Tag = "MgTile";
-            this.TumbleTile.Text = "Tumble";
-            this.TumbleTile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.TumbleTile.TileCount = 2;
-            this.TumbleTile.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
-            this.TumbleTile.UseSelectable = true;
-            this.TumbleTile.Click += new System.EventHandler(this.SwapTab);
-            // 
-            // BattleTile
-            // 
-            this.BattleTile.ActiveControl = null;
-            this.BattleTile.Location = new System.Drawing.Point(1, 48);
-            this.BattleTile.Name = "BattleTile";
-            this.BattleTile.PaintTileCount = false;
-            this.BattleTile.Size = new System.Drawing.Size(160, 55);
-            this.BattleTile.TabIndex = 6;
-            this.BattleTile.Tag = "MgTile";
-            this.BattleTile.Text = "Battle";
-            this.BattleTile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.BattleTile.TileCount = 1;
-            this.BattleTile.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
-            this.BattleTile.UseSelectable = true;
-            this.BattleTile.UseTileImage = true;
-            this.BattleTile.Click += new System.EventHandler(this.SwapTab);
-            // 
-            // GeneralMgTile
-            // 
-            this.GeneralMgTile.ActiveControl = null;
-            this.GeneralMgTile.Location = new System.Drawing.Point(1, -7);
-            this.GeneralMgTile.Name = "GeneralMgTile";
-            this.GeneralMgTile.PaintTileCount = false;
-            this.GeneralMgTile.Size = new System.Drawing.Size(160, 55);
-            this.GeneralMgTile.TabIndex = 5;
-            this.GeneralMgTile.Tag = "MgTile";
-            this.GeneralMgTile.Text = "General";
-            this.GeneralMgTile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.GeneralMgTile.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
-            this.GeneralMgTile.UseSelectable = true;
-            this.GeneralMgTile.UseTileImage = true;
-            this.GeneralMgTile.Click += new System.EventHandler(this.SwapTab);
-            // 
-            // EmptyTile
-            // 
-            this.EmptyTile.ActiveControl = null;
-            this.EmptyTile.Enabled = false;
-            this.EmptyTile.Location = new System.Drawing.Point(1, 213);
-            this.EmptyTile.Name = "EmptyTile";
-            this.EmptyTile.PaintTileCount = false;
-            this.EmptyTile.Size = new System.Drawing.Size(160, 422);
-            this.EmptyTile.TabIndex = 9;
-            this.EmptyTile.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.EmptyTile.TileCount = 4;
-            this.EmptyTile.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
-            this.EmptyTile.UseSelectable = true;
-            // 
-            // TextAllignBox
-            // 
-            this.TextAllignBox.FormattingEnabled = true;
-            this.TextAllignBox.ItemHeight = 23;
-            this.TextAllignBox.Items.AddRange(new object[] {
-            "Left",
-            "Center",
-            "Right"});
-            this.TextAllignBox.Location = new System.Drawing.Point(87, 38);
-            this.TextAllignBox.Name = "TextAllignBox";
-            this.TextAllignBox.Size = new System.Drawing.Size(1028, 29);
-            this.TextAllignBox.TabIndex = 53;
-            this.TextAllignBox.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.TextAllignBox.UseSelectable = true;
-            this.TextAllignBox.SelectedIndexChanged += new System.EventHandler(this.FormTxtAlgnSelected);
-            // 
-            // TextAllignLbl
-            // 
-            this.TextAllignLbl.AutoSize = true;
-            this.TextAllignLbl.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.TextAllignLbl.Location = new System.Drawing.Point(7, 38);
-            this.TextAllignLbl.Name = "TextAllignLbl";
-            this.TextAllignLbl.Size = new System.Drawing.Size(74, 19);
-            this.TextAllignLbl.TabIndex = 52;
-            this.TextAllignLbl.Text = "Text Allign:";
-            this.TextAllignLbl.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.AlwaysDaylight.AutoSize = true;
+            this.AlwaysDaylight.BackColor = System.Drawing.Color.Transparent;
+            this.AlwaysDaylight.Location = new System.Drawing.Point(383, 425);
+            this.AlwaysDaylight.Name = "AlwaysDaylight";
+            this.AlwaysDaylight.Size = new System.Drawing.Size(107, 15);
+            this.AlwaysDaylight.Style = MetroFramework.MetroColorStyle.Blue;
+            this.AlwaysDaylight.TabIndex = 186;
+            this.AlwaysDaylight.Tag = "NonHost";
+            this.AlwaysDaylight.Text = "Always Daylight";
+            this.AlwaysDaylight.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.ToolTipManager.SetToolTip(this.AlwaysDaylight, "Whether you can ride any entity by punching them");
+            this.AlwaysDaylight.UseSelectable = true;
+            this.AlwaysDaylight.UseStyleColors = true;
+            this.AlwaysDaylight.CheckedChanged += new System.EventHandler(this.AlwaysDaylightToggled);
             // 
             // MainForm
             // 
@@ -5288,6 +5346,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.settingsTab.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.StyleMngr)).EndInit();
             this.RightClickMenu.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.AirborneSpeedSlider)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -5563,5 +5622,8 @@ namespace Minecraft_Wii_U_Mod_Injector
         public MetroTile GeneralMgTile;
         public MetroComboBox TextAllignBox;
         public MetroLabel TextAllignLbl;
+        public System.Windows.Forms.NumericUpDown AirborneSpeedSlider;
+        public MetroLabel AirborneSpeed;
+        public MetroCheckBox AlwaysDaylight;
     }
 }

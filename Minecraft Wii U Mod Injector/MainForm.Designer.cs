@@ -50,6 +50,9 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.WiiUIPv4Box = new MetroFramework.Controls.MetroTextBox();
             this.WiiUIpv4Lbl = new MetroFramework.Controls.MetroLabel();
             this.playersTab = new MetroFramework.Controls.MetroTabPage();
+            this.AlwaysDaylight = new MetroFramework.Controls.MetroCheckBox();
+            this.AirborneSpeedSlider = new System.Windows.Forms.NumericUpDown();
+            this.AirborneSpeed = new MetroFramework.Controls.MetroLabel();
             this.PunchToRide = new MetroFramework.Controls.MetroCheckBox();
             this.UnlimitedTotemsOfUndying = new MetroFramework.Controls.MetroCheckBox();
             this.SplashLingeringPotions = new MetroFramework.Controls.MetroCheckBox();
@@ -302,12 +305,11 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.RightClickMenu = new MetroFramework.Controls.MetroContextMenu(this.components);
             this.IncreaseDecimalPlace = new System.Windows.Forms.ToolStripMenuItem();
             this.DecreaseDecimalPlace = new System.Windows.Forms.ToolStripMenuItem();
-            this.AirborneSpeedSlider = new System.Windows.Forms.NumericUpDown();
-            this.AirborneSpeed = new MetroFramework.Controls.MetroLabel();
-            this.AlwaysDaylight = new MetroFramework.Controls.MetroCheckBox();
+            this.DLCManagerBtn = new MetroFramework.Controls.MetroButton();
             this.MainTabs.SuspendLayout();
             this.MainTab.SuspendLayout();
             this.playersTab.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.AirborneSpeedSlider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.WaterDownStrengthSlider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MaxStackSlider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.XPLevelSlider)).BeginInit();
@@ -350,7 +352,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.settingsTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.StyleMngr)).BeginInit();
             this.RightClickMenu.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.AirborneSpeedSlider)).BeginInit();
             this.SuspendLayout();
             // 
             // WorldTile
@@ -445,7 +446,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.MainTabs.Location = new System.Drawing.Point(155, 61);
             this.MainTabs.Multiline = true;
             this.MainTabs.Name = "MainTabs";
-            this.MainTabs.SelectedIndex = 1;
+            this.MainTabs.SelectedIndex = 3;
             this.MainTabs.Size = new System.Drawing.Size(1130, 643);
             this.MainTabs.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.MainTabs.TabIndex = 0;
@@ -757,6 +758,57 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.playersTab.VerticalScrollbarBarColor = true;
             this.playersTab.VerticalScrollbarHighlightOnWheel = false;
             this.playersTab.VerticalScrollbarSize = 10;
+            // 
+            // AlwaysDaylight
+            // 
+            this.AlwaysDaylight.AutoSize = true;
+            this.AlwaysDaylight.BackColor = System.Drawing.Color.Transparent;
+            this.AlwaysDaylight.Location = new System.Drawing.Point(383, 425);
+            this.AlwaysDaylight.Name = "AlwaysDaylight";
+            this.AlwaysDaylight.Size = new System.Drawing.Size(107, 15);
+            this.AlwaysDaylight.Style = MetroFramework.MetroColorStyle.Blue;
+            this.AlwaysDaylight.TabIndex = 186;
+            this.AlwaysDaylight.Tag = "NonHost";
+            this.AlwaysDaylight.Text = "Always Daylight";
+            this.AlwaysDaylight.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.ToolTipManager.SetToolTip(this.AlwaysDaylight, "Whether you can ride any entity by punching them");
+            this.AlwaysDaylight.UseSelectable = true;
+            this.AlwaysDaylight.UseStyleColors = true;
+            this.AlwaysDaylight.CheckedChanged += new System.EventHandler(this.AlwaysDaylightToggled);
+            // 
+            // AirborneSpeedSlider
+            // 
+            this.StyleExtender.SetApplyMetroTheme(this.AirborneSpeedSlider, true);
+            this.AirborneSpeedSlider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.AirborneSpeedSlider.DecimalPlaces = 1;
+            this.AirborneSpeedSlider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
+            this.AirborneSpeedSlider.Location = new System.Drawing.Point(666, 558);
+            this.AirborneSpeedSlider.Name = "AirborneSpeedSlider";
+            this.AirborneSpeedSlider.Size = new System.Drawing.Size(115, 20);
+            this.AirborneSpeedSlider.TabIndex = 185;
+            this.AirborneSpeedSlider.Tag = "";
+            this.ToolTipManager.SetToolTip(this.AirborneSpeedSlider, "How much faster do we go down in water while\r\npressing crouch?");
+            this.AirborneSpeedSlider.Value = new decimal(new int[] {
+            2,
+            0,
+            0,
+            65536});
+            this.AirborneSpeedSlider.ValueChanged += new System.EventHandler(this.AirborneSpeedSliderChanged);
+            // 
+            // AirborneSpeed
+            // 
+            this.AirborneSpeed.AutoSize = true;
+            this.AirborneSpeed.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.AirborneSpeed.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.AirborneSpeed.Location = new System.Drawing.Point(554, 559);
+            this.AirborneSpeed.Name = "AirborneSpeed";
+            this.AirborneSpeed.Size = new System.Drawing.Size(106, 19);
+            this.AirborneSpeed.Style = MetroFramework.MetroColorStyle.Blue;
+            this.AirborneSpeed.TabIndex = 184;
+            this.AirborneSpeed.Tag = "NonHost";
+            this.AirborneSpeed.Text = "Airborne Speed:";
+            this.AirborneSpeed.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.AirborneSpeed.UseStyleColors = true;
             // 
             // PunchToRide
             // 
@@ -3031,6 +3083,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             // 
             // generalTab
             // 
+            this.generalTab.Controls.Add(this.DLCManagerBtn);
             this.generalTab.Controls.Add(this.Cursed);
             this.generalTab.Controls.Add(this.FreezeGameWhenPaused);
             this.generalTab.Controls.Add(this.AchievementsEverywhere);
@@ -5214,56 +5267,19 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.DecreaseDecimalPlace.Size = new System.Drawing.Size(322, 22);
             this.DecreaseDecimalPlace.Text = "Decrease decimal place";
             // 
-            // AirborneSpeedSlider
+            // DLCManagerBtn
             // 
-            this.StyleExtender.SetApplyMetroTheme(this.AirborneSpeedSlider, true);
-            this.AirborneSpeedSlider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.AirborneSpeedSlider.DecimalPlaces = 1;
-            this.AirborneSpeedSlider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
-            this.AirborneSpeedSlider.Location = new System.Drawing.Point(666, 558);
-            this.AirborneSpeedSlider.Name = "AirborneSpeedSlider";
-            this.AirborneSpeedSlider.Size = new System.Drawing.Size(115, 20);
-            this.AirborneSpeedSlider.TabIndex = 185;
-            this.AirborneSpeedSlider.Tag = "";
-            this.ToolTipManager.SetToolTip(this.AirborneSpeedSlider, "How much faster do we go down in water while\r\npressing crouch?");
-            this.AirborneSpeedSlider.Value = new decimal(new int[] {
-            2,
-            0,
-            0,
-            65536});
-            this.AirborneSpeedSlider.ValueChanged += new System.EventHandler(this.AirborneSpeedSliderChanged);
-            // 
-            // AirborneSpeed
-            // 
-            this.AirborneSpeed.AutoSize = true;
-            this.AirborneSpeed.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.AirborneSpeed.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.AirborneSpeed.Location = new System.Drawing.Point(554, 559);
-            this.AirborneSpeed.Name = "AirborneSpeed";
-            this.AirborneSpeed.Size = new System.Drawing.Size(106, 19);
-            this.AirborneSpeed.Style = MetroFramework.MetroColorStyle.Blue;
-            this.AirborneSpeed.TabIndex = 184;
-            this.AirborneSpeed.Tag = "NonHost";
-            this.AirborneSpeed.Text = "Airborne Speed:";
-            this.AirborneSpeed.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.AirborneSpeed.UseStyleColors = true;
-            // 
-            // AlwaysDaylight
-            // 
-            this.AlwaysDaylight.AutoSize = true;
-            this.AlwaysDaylight.BackColor = System.Drawing.Color.Transparent;
-            this.AlwaysDaylight.Location = new System.Drawing.Point(383, 425);
-            this.AlwaysDaylight.Name = "AlwaysDaylight";
-            this.AlwaysDaylight.Size = new System.Drawing.Size(107, 15);
-            this.AlwaysDaylight.Style = MetroFramework.MetroColorStyle.Blue;
-            this.AlwaysDaylight.TabIndex = 186;
-            this.AlwaysDaylight.Tag = "NonHost";
-            this.AlwaysDaylight.Text = "Always Daylight";
-            this.AlwaysDaylight.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.AlwaysDaylight, "Whether you can ride any entity by punching them");
-            this.AlwaysDaylight.UseSelectable = true;
-            this.AlwaysDaylight.UseStyleColors = true;
-            this.AlwaysDaylight.CheckedChanged += new System.EventHandler(this.AlwaysDaylightToggled);
+            this.DLCManagerBtn.Location = new System.Drawing.Point(7, 534);
+            this.DLCManagerBtn.Name = "DLCManagerBtn";
+            this.DLCManagerBtn.Size = new System.Drawing.Size(1108, 23);
+            this.DLCManagerBtn.TabIndex = 150;
+            this.DLCManagerBtn.Tag = "NonHost";
+            this.DLCManagerBtn.Text = "DLC Manager";
+            this.DLCManagerBtn.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.ToolTipManager.SetToolTip(this.DLCManagerBtn, "Open the DLC Manager");
+            this.DLCManagerBtn.UseSelectable = true;
+            this.DLCManagerBtn.UseStyleColors = true;
+            this.DLCManagerBtn.Click += new System.EventHandler(this.DLCManagerBtn_Click);
             // 
             // MainForm
             // 
@@ -5295,6 +5311,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.MainTab.PerformLayout();
             this.playersTab.ResumeLayout(false);
             this.playersTab.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.AirborneSpeedSlider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.WaterDownStrengthSlider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MaxStackSlider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.XPLevelSlider)).EndInit();
@@ -5346,7 +5363,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.settingsTab.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.StyleMngr)).EndInit();
             this.RightClickMenu.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.AirborneSpeedSlider)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -5625,5 +5641,6 @@ namespace Minecraft_Wii_U_Mod_Injector
         public System.Windows.Forms.NumericUpDown AirborneSpeedSlider;
         public MetroLabel AirborneSpeed;
         public MetroCheckBox AlwaysDaylight;
+        private MetroButton DLCManagerBtn;
     }
 }

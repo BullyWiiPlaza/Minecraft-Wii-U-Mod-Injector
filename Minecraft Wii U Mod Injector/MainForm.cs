@@ -136,6 +136,7 @@ namespace Minecraft_Wii_U_Mod_Injector
 
         private void Exit(object sender, FormClosingEventArgs e)
         {
+            if (IsConnected) GeckoU.Tcp.Close();
             DiscordRp.Deinitialize();
             Settings.Default.TabIndex = MainTabs.SelectedIndex;
             Settings.Default.Save();
@@ -779,7 +780,12 @@ namespace Minecraft_Wii_U_Mod_Injector
                 Messaging.Show("You're about to close the game, continue?", MessageBoxButtons.YesNo);
 
             if (confirmCg == Yes)
+            {
                 GeckoU.CallFunction64(0x02F50028, 0x00000000); //CConsoleMinecraftApp::ExitGame((void))
+                GeckoU.Tcp.Close();
+                States.SwapState(States.StatesIds.Disconnected);
+                IsConnected = false;
+            }
         }
 
         private void BypassFriendsOnlyToggled(object sender, EventArgs e)

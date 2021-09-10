@@ -117,7 +117,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods
             this.setLicenseMaskBtn.Enabled = false;
             this.setLicenseMaskBtn.Location = new System.Drawing.Point(340, 504);
             this.setLicenseMaskBtn.Name = "setLicenseMaskBtn";
-            this.setLicenseMaskBtn.Size = new System.Drawing.Size(114, 23);
+            this.setLicenseMaskBtn.Size = new System.Drawing.Size(129, 23);
             this.setLicenseMaskBtn.TabIndex = 4;
             this.setLicenseMaskBtn.Text = "Set License Mask";
             this.setLicenseMaskBtn.Theme = MetroFramework.MetroThemeStyle.Dark;
@@ -130,7 +130,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods
             this.removePackBtn.Enabled = false;
             this.removePackBtn.Location = new System.Drawing.Point(340, 533);
             this.removePackBtn.Name = "removePackBtn";
-            this.removePackBtn.Size = new System.Drawing.Size(114, 23);
+            this.removePackBtn.Size = new System.Drawing.Size(129, 23);
             this.removePackBtn.TabIndex = 5;
             this.removePackBtn.Text = "Remove Pack";
             this.removePackBtn.Theme = MetroFramework.MetroThemeStyle.Dark;
@@ -152,8 +152,10 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "DLCManager";
-            this.Text = "DLCManager";
+            this.Text = "DLCManager [BETA]";
             this.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.OnExit);
+            this.Load += new System.EventHandler(this.OnLoad);
             ((System.ComponentModel.ISupportInitialize)(this.StyleMngr)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -34,84 +34,10 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods
         }
 
         private uint currentAmount = 0;
+        private readonly uint DLCManager_ptr = 0x10A2AFD0;
         private void updatePackCountLabel()
         {
             PackCountLabel.Text = "Current Pack amount : " + currentAmount.ToString();
-        }
-
-        private void getPackInfos(uint dlcPack,out uint ChildPackCount, out uint LicenseMask, out uint DLCMountIndex, out uint DLCDeviceID, out uint PackID)
-        {
-            byte[] data = MainForm.GeckoU.ReadBytes(dlcPack + 0xf4, 0xa0); // to make less trafic and get everthing we want in one way
-            try
-            {
-                Array.Reverse(data);
-            }
-            catch (Exception error)
-            {
-                MessageBox.Show(error.Message);
-            }
-            ChildPackCount = (BitConverter.ToUInt32(data, 0x98) - BitConverter.ToUInt32(data, 0x9c)) >> 2;
-            LicenseMask = BitConverter.ToUInt32(data, 0x14);
-            DLCMountIndex = BitConverter.ToUInt32(data, 0x10);
-            DLCDeviceID = BitConverter.ToUInt32(data, 0xc);
-            PackID = BitConverter.ToUInt32(data, 0);
-        }
-
-        private string getPackName(uint dlcPack)
-        {
-            byte[] data = MainForm.GeckoU.ReadBytes(dlcPack + 0x13c, 0x20);
-            uint strLength = ByteSwap.Swap(BitConverter.ToUInt32(data, 0x18));
-            uint capacity = ByteSwap.Swap(BitConverter.ToUInt32(data, 0x1c));
-            if (capacity > 7)
-            {
-                uint wchar_ptr = ByteSwap.Swap(BitConverter.ToUInt32(data, 0x14));
-                return MainForm.GeckoU.PeekString16((int)strLength, wchar_ptr);
-            }
-            return Encoding.BigEndianUnicode.GetString(data,4,(int)strLength*2);
-        }
-
-        private void ListPacksBtn_Click(object sender, EventArgs e)
-        {
-            DLCPackListView.Clear();
-            uint start, end;
-            currentAmount = getVectorSize(0x10A2AFD0, 4, out start, out end, out _) -1;
-            updatePackCountLabel();
-            for (uint i = 1;i<currentAmount-1;i++)
-            {
-                uint dlcPack = MainForm.GeckoU.PeekUInt(start + i * 4);
-                string name = getPackName(dlcPack);
-                DLCPackListView.Items.Add(name).SubItems.Add(dlcPack.ToString());
-            }
-        }
-
-        private void setLicenseMaskBtn_Click(object sender, EventArgs e)
-        {
-            uint dlcPack = uint.Parse(DLCPackListView.SelectedItems[0].SubItems[1].Text);
-            MainForm.GeckoU.WriteInt(dlcPack + 0x17c,1);
-            setLicenseMaskBtn.Enabled = false;
-        }
-
-        private void viewPackInfo(object sender, ListViewItemSelectionChangedEventArgs e)
-        {
-            //removePackBtn.Enabled = true; // disabled for now
-            StringBuilder packInfo = new StringBuilder("DLC Pack Info");
-            uint dlcPack = uint.Parse(e.Item.SubItems[1].Text);
-            uint ChildpacksCount, licenseMask, DLCMountIndex, DLCDeviceID, PackID;
-            getPackInfos(dlcPack, out ChildpacksCount, out licenseMask, out DLCMountIndex, out DLCDeviceID, out PackID);
-            setLicenseMaskBtn.Enabled = licenseMask == 0;
-            packInfo.Append("\nName : ");
-            packInfo.Append(e.Item.Text);
-            packInfo.Append("\nPack ID : ");
-            packInfo.Append(PackID);
-            packInfo.Append("\nDLC Mount Index : ");
-            packInfo.Append(DLCMountIndex);
-            packInfo.Append("\nDLC Device ID : ");
-            packInfo.Append(DLCDeviceID);
-            packInfo.Append("\nLicenseMask : ");
-            packInfo.Append(licenseMask);
-            packInfo.Append("\nChild Pack Count : ");
-            packInfo.Append(ChildpacksCount);
-            dlcPackInfoLabel.Text = packInfo.ToString();
         }
 
         private void memmove(uint __dest, uint __src, uint __n)
@@ -132,6 +58,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods
                     memmove(pos, pos + sizeOfEachElement, end - (pos + sizeOfEachElement));
                     end -= sizeOfEachElement;
                     MainForm.GeckoU.WriteUInt(vector_ptr + 8, end);
+                    break;
                 }
             }
             return;
@@ -139,11 +66,85 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods
         private uint getVectorSize(uint vector_ptr,uint sizeOfElement,out uint start,out uint end, out uint max)
         {
             byte[] data = MainForm.GeckoU.ReadBytes(vector_ptr + 4, 12);
-            start = ByteSwap.Swap(BitConverter.ToUInt32(data,0));
-            end = ByteSwap.Swap(BitConverter.ToUInt32(data, 4));
-            max = ByteSwap.Swap(BitConverter.ToUInt32(data, 8)); // will be important when pack injection is stable
-            return (end - start) / sizeOfElement;
+            if (data.Length > 1)
+            {
+                start = ByteSwap.Swap(BitConverter.ToUInt32(data, 0));
+                end = ByteSwap.Swap(BitConverter.ToUInt32(data, 4));
+                max = ByteSwap.Swap(BitConverter.ToUInt32(data, 8)); // will be important when pack injection is stable
+                return (end - start) / sizeOfElement;
+            }
+            start = end = max = 0;
+            return 0;
         }
+
+        private void getPackInfos(uint dlcPack,out uint ChildPackCount, out uint LicenseMask, out uint DLCMountIndex, out uint DLCDeviceID, out uint PackID)
+        {
+            byte[] data = MainForm.GeckoU.ReadBytes(dlcPack + 0xf4, 0xa0); // to make less trafic and get everthing we want in one way
+            Array.Reverse(data);
+            ChildPackCount = (BitConverter.ToUInt32(data, 0x98) - BitConverter.ToUInt32(data, 0x9c)) >> 2;
+            LicenseMask = BitConverter.ToUInt32(data, 0x14);
+            DLCMountIndex = BitConverter.ToUInt32(data, 0x10);
+            DLCDeviceID = BitConverter.ToUInt32(data, 0xc);
+            PackID = BitConverter.ToUInt32(data, 0);
+        }
+
+        private string getPackName(uint dlcPack)
+        {
+            byte[] data = MainForm.GeckoU.ReadBytes(dlcPack + 0x13c, 0x20);
+            uint strLength = ByteSwap.Swap(BitConverter.ToUInt32(data, 0x18));
+            uint capacity = ByteSwap.Swap(BitConverter.ToUInt32(data, 0x1c));
+            if (capacity > 7)
+            {
+                uint wchar_ptr = ByteSwap.Swap(BitConverter.ToUInt32(data, 0x14));
+                return MainForm.GeckoU.PeekString16((int)strLength, wchar_ptr);
+            }
+            return Encoding.BigEndianUnicode.GetString(data, 4, (int)strLength * 2);
+        }
+
+        private void ListPacksBtn_Click(object sender, EventArgs e)
+        {
+            DLCPackListView.Clear();
+            uint start, end;
+            currentAmount = getVectorSize(DLCManager_ptr, 4, out start, out end, out _) -1;
+            updatePackCountLabel();
+            for (uint i = 1;i<currentAmount-1;i++)
+            {
+                uint dlcPack = MainForm.GeckoU.PeekUInt(start + i * 4);
+                string name = getPackName(dlcPack);
+                DLCPackListView.Items.Add(name).SubItems.Add(dlcPack.ToString());
+            }
+        }
+
+        private void setLicenseMaskBtn_Click(object sender, EventArgs e)
+        {
+            uint dlcPack = uint.Parse(DLCPackListView.SelectedItems[0].SubItems[1].Text);
+            MainForm.GeckoU.WriteInt(dlcPack + 0x17c, 1);
+            setLicenseMaskBtn.Enabled = false;
+        }
+
+        private void viewPackInfo(object sender, ListViewItemSelectionChangedEventArgs e)
+        {
+            removePackBtn.Enabled = true;
+            StringBuilder packInfo = new StringBuilder("DLC Pack Info");
+            uint dlcPack = uint.Parse(e.Item.SubItems[1].Text);
+            uint ChildpacksCount, licenseMask, DLCMountIndex, DLCDeviceID, PackID;
+            getPackInfos(dlcPack, out ChildpacksCount, out licenseMask, out DLCMountIndex, out DLCDeviceID, out PackID);
+            setLicenseMaskBtn.Enabled = licenseMask == 0;
+            packInfo.Append("\nName : ");
+            packInfo.Append(e.Item.Text);
+            packInfo.Append("\nPack ID : ");
+            packInfo.Append(PackID);
+            packInfo.Append("\nDLC Mount Index : ");
+            packInfo.Append(DLCMountIndex);
+            packInfo.Append("\nDLC Device ID : ");
+            packInfo.Append(DLCDeviceID);
+            packInfo.Append("\nLicenseMask : ");
+            packInfo.Append(licenseMask);
+            packInfo.Append("\nChild Pack Count : ");
+            packInfo.Append(ChildpacksCount);
+            dlcPackInfoLabel.Text = packInfo.ToString();
+        }
+
 
         private bool removeDLCTexturePack(uint childStart,uint childCount)
         {
@@ -167,7 +168,6 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods
                     {
                         eraseVectorObject(vec_ptr, pos, 4);
                         MainForm.GeckoU.CallFunction(0x030b5204, dlcTexturePack, 1); // DLCTexturePack::~DLCTexturePack
-                        Console.WriteLine("Removed DLC Texture Pack from TexturePackRepository and freed its memory");
                         break;
                     }
                 }
@@ -180,7 +180,6 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods
             uint LevelGenerator_ptr = MainForm.GeckoU.PeekUInt(0x10A2B3E0);
             uint GenerationOptionsStart;
             uint GenerationOptionsCount = getVectorSize(LevelGenerator_ptr, 4, out GenerationOptionsStart, out _, out _);
-
             bool found = false;
             for (uint i = 0; i < GenerationOptionsCount; i++)
             {
@@ -189,8 +188,8 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods
                 found = GenOptPack_ptr == dlcpack_ref;
                 if (found)
                 {
+                    // MainForm.GeckoU.CallFunction(0x02d18280, LevelGenOpt_ptr, 1); // LevelGenerationOptions::~LevelGenerationOptions
                     MainForm.GeckoU.CallFunction(0x02d163e8, LevelGenerator_ptr, LevelGenOpt_ptr); // LevelGenerators::removeLevelGenerator
-                    MainForm.GeckoU.CallFunction(0x02d18280, LevelGenOpt_ptr, 1); // LevelGenerationOptions::~LevelGenerationOptions
                     break;
                 }
             }
@@ -204,7 +203,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods
             if (choice != DialogResult.Yes) return;
             uint dlcPack = uint.Parse(DLCPackListView.SelectedItems[0].SubItems[1].Text);
             DLCPackListView.SelectedItems[0].Remove();
-
+            //MessageBox.Show(dlcPack.ToString("X8"));
             // first check if it has child packs that are used in texturepacks
             uint childStart;
             uint childCount = getVectorSize(dlcPack + 0xf0, 4, out childStart, out _, out _);
@@ -213,10 +212,9 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods
             {
                 res = removeDLCTexturePack(childStart, childCount);
             }
-            // still unstable ;(
             var res2 = removeLevelGenOpt(dlcPack);
             MessageBox.Show("Contained in Texturepack : " + res.ToString() + "\nContained in Game Rule Manager : " + res2.ToString());
-            MainForm.GeckoU.CallFunction(0x02ae7e30, 0x10A2AFD0, dlcPack); // DLCManager::removePack(DLCPack *)
+            MainForm.GeckoU.CallFunction(0x02ae7e30, DLCManager_ptr, dlcPack); // DLCManager::removePack(DLCPack *)
             removePackBtn.Enabled = false;
             setLicenseMaskBtn.Enabled = false;
             currentAmount -= 1;

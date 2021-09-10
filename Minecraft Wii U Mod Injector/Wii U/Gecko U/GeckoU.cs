@@ -305,6 +305,43 @@ namespace Minecraft_Wii_U_Mod_Injector.Wii_U.Gecko_U
             return ByteSwap.Swap(BitConverter.ToUInt64(buffer, 0));
         }
         
+        public uint getSymbol(string rplname, string sysname,byte data = 0)
+        {
+            byte[] rplnbuf = Encoding.UTF8.GetBytes(rplname);
+            byte[] sysnbuf = Encoding.UTF8.GetBytes(sysname);
+            byte[] startStuff = { 0x0,0x0,0x0,0x8 };
+            byte[] startStuff1 = BitConverter.GetBytes(8 + rplnbuf.Length + 1);
+            Array.Reverse(startStuff1);
+
+            byte[] size = { (byte)(rplnbuf.Length + sysnbuf.Length + 10) };
+            var ms = new MemoryStream(new byte[size[0]], 0, size[0], true, true);
+            ms.Write(startStuff, 0, startStuff.Length);
+            ms.Write(startStuff1, 0, startStuff.Length);
+            ms.Write(rplnbuf, 0, rplnbuf.Length);
+            ms.Write(new byte[] { 0}, 0, 1); // null terminator
+            ms.Write(sysnbuf, 0, sysnbuf.Length);
+            ms.Write(new byte[] { 0}, 0, 1);
+            byte[] buffer = ms.GetBuffer();
+            byte[] Data = { data };
+
+            if (RawCommand((byte)GeckoUCommands.Command.CommandGetSymbol) != FtdiCommand.CmdOk)
+                throw new GeckoUException(GeckoUException.EtcpErrorCode.FtdiCommandSendError);
+
+            if (GeckoUWrite(size, 1) != FtdiCommand.CmdOk)
+                throw new GeckoUException(GeckoUException.EtcpErrorCode.FtdiCommandSendError);
+
+            if (GeckoUWrite(buffer, buffer.Length) != FtdiCommand.CmdOk)
+                throw new GeckoUException(GeckoUException.EtcpErrorCode.FtdiCommandSendError);
+
+            if (GeckoUWrite(Data, 1) != FtdiCommand.CmdOk)
+                throw new GeckoUException(GeckoUException.EtcpErrorCode.FtdiCommandSendError);
+
+            if (GeckoURead(buffer, 4) != FtdiCommand.CmdOk)
+                throw new GeckoUException(GeckoUException.EtcpErrorCode.FtdiCommandSendError);
+
+            return ByteSwap.Swap(BitConverter.ToUInt32(buffer, 0));
+        }
+
         public void RpcToggle(uint address1, uint address2, uint value1, uint value2, bool toggle)
         {
             switch (toggle)
@@ -332,6 +369,8 @@ namespace Minecraft_Wii_U_Mod_Injector.Wii_U.Gecko_U
                     break;
             }
         }
+
+
         #endregion rpc
 
         #region writing
@@ -589,8 +628,8 @@ namespace Minecraft_Wii_U_Mod_Injector.Wii_U.Gecko_U
         }
         public void WriteString16(uint address, string value)
         {
-            var bytes = Encoding.Unicode.GetBytes(value);
-            WriteBytes(address+1, bytes);
+            var bytes = Encoding.BigEndianUnicode.GetBytes(value);
+            WriteBytes(address, bytes);
         }
         #endregion Writing, Poking
 
@@ -695,7 +734,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Wii_U.Gecko_U
         /// <returns>The peeked Double</returns>
         public double PeekDouble(uint address)
         {
-            var bytes = ReadBytes(address, 0x4);
+            var bytes = ReadBytes(address, 8);
             double value;
 
             try
@@ -718,8 +757,8 @@ namespace Minecraft_Wii_U_Mod_Injector.Wii_U.Gecko_U
         }
         public string PeekString16(int length, uint address)
         {
-            var peekedString = ReadBytes(address+1, (uint)length);
-            return Encoding.Unicode.GetString(peekedString).Replace("\0", "");
+            var peekedString = ReadBytes(address, (uint)length*2);
+            return Encoding.BigEndianUnicode.GetString(peekedString);
         }
 
         #endregion reading

@@ -426,7 +426,7 @@ namespace Minecraft_Wii_U_Mod_Injector
 
         private void WorldGenerationOptsBtnClicked(object sender, EventArgs e)
         {
-            new WorldGenerationEditor(this).ShowDialog(this);
+            new WorldGenerationEditor(this).ShowDialog();
         }
 
         private void EntityEditorBtnClicked(object sender, EventArgs e)
@@ -555,7 +555,7 @@ namespace Minecraft_Wii_U_Mod_Injector
 
         private void WalkonWaterToggled(object sender, EventArgs e)
         {
-            GeckoU.WriteULongToggle(0x025A963C, 0x3C60109E80639948, 0x3C6010568063B61C,
+            GeckoU.WriteULongToggle(0x025A963C, 0x3C60109F80632a10, 0x3C6010568063B61C,
                 WalkonWater.Checked); //LiquidBlock::getClipAABB((BlockState const *, LevelSource *, BlockPos const &))
         }
 
@@ -1284,6 +1284,20 @@ namespace Minecraft_Wii_U_Mod_Injector
         {
             GeckoU.WriteUIntToggle(0x108E021C, 0x40000000, 0x3F800000, Cursed.Checked);
         }
+        private void AirborneSpeedSliderChanged(object sender, EventArgs e)
+        {
+            var airbornespeed = Miscellaneous.FloatToInt32Bits((float) AirborneSpeedSlider.Value);
+            uint realValue = GeckoU.PeekUInt(0x10665EF4);
+            GeckoU.WriteUInt(0x11010000, realValue);
+            GeckoU.WriteUInt(0x0258229c, 0x3D001101); // load our address :)
+            GeckoU.WriteUInt(0x025822a4, 0xC3E80000); // lfs f31,0x...(..)
+            GeckoU.WriteUInt(0x11010000, (uint)airbornespeed);
+        }
+
+        private void AlwaysDaylightToggled(object sender, EventArgs e)
+        {
+            GeckoU.WriteUIntToggle(0x02555318, 0xFC210824, 0x4e800421, AlwaysDaylight.Checked); // fdiv f1, f1, f1
+        }
 
         #region commands
 
@@ -1800,19 +1814,5 @@ namespace Minecraft_Wii_U_Mod_Injector
 
         #endregion memory editing
 
-        private void AirborneSpeedSliderChanged(object sender, EventArgs e)
-        {
-            var airbornespeed = Miscellaneous.FloatToInt32Bits((float) AirborneSpeedSlider.Value);
-            uint realValue = GeckoU.PeekUInt(0x10665EF4);
-            GeckoU.WriteUInt(0x11010000, realValue);
-            GeckoU.WriteUInt(0x0258229c, 0x3D001101); // load our address :)
-            GeckoU.WriteUInt(0x025822a4, 0xC3E80000); // lfs f31,0x...(..)
-            GeckoU.WriteUInt(0x11010000, (uint)airbornespeed);
-        }
-
-        private void AlwaysDaylightToggled(object sender, EventArgs e)
-        {
-            GeckoU.WriteUIntToggle(0x02555318, 0xFC210824, 0x4e800421, AlwaysDaylight.Checked); // fdiv f1, f1, f1
-        }
     }
 }

@@ -858,7 +858,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Wii_U.Gecko_U
 
         public string ReadTitleId()
         {
-            return CallFunction64(0x0101F5CC).ToString("x8");
+            return CallFunction64(getSymbol("coreinit.rpl", "OSGetTitleID")).ToString("x8");
         }
         #endregion Commands
 
@@ -915,6 +915,20 @@ namespace Minecraft_Wii_U_Mod_Injector.Wii_U.Gecko_U
                 WriteUInt(clearingAddress, 0x00000000);
                 clearingAddress += 4;
             }
+        }
+
+        public uint malloc(uint size,uint alignment = 4)
+        {
+            uint symbol = getSymbol("coreinit.rpl", "MEMAllocFromDefaultHeapEx", 1);
+            uint funcAddy = PeekUInt(symbol);
+            return CallFunction(funcAddy, size, alignment);
+        }
+
+        public void free(uint address)
+        {
+            uint symbol = getSymbol("coreinit.rpl", "MEMFreeToDefaultHeap", 1);
+            uint funcAddy = PeekUInt(symbol);
+            CallFunction(funcAddy, address);
         }
 
         #endregion misc

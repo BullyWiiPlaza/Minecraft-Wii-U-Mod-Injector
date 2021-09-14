@@ -16,6 +16,7 @@ using Minecraft_Wii_U_Mod_Injector.Forms.Mods;
 using Minecraft_Wii_U_Mod_Injector.Helpers.Win_Forms;
 using Minecraft_Wii_U_Mod_Injector.Properties;
 using Minecraft_Wii_U_Mod_Injector.Wii_U.Gecko_U;
+using Minecraft_Wii_U_Mod_Injector.Wii_U.Minecraft;
 using static System.Windows.Forms.DialogResult;
 
 namespace Minecraft_Wii_U_Mod_Injector
@@ -204,6 +205,7 @@ namespace Minecraft_Wii_U_Mod_Injector
                             break;
                         }
 
+                        new MinecraftFunctions(GeckoU);
                         States.SwapState(States.StatesIds.Connected);
                         IsConnected = true;
                         break;
@@ -1305,6 +1307,28 @@ namespace Minecraft_Wii_U_Mod_Injector
             GeckoU.WriteUIntToggle(0x02555318, 0xFC210824, 0x4e800421, AlwaysDaylight.Checked); // fdiv f1, f1, f1
         }
 
+        private void DefPotionBoxChanged(object sender, EventArgs e)
+        {
+            GeckoU.WriteUInt(0x02228F64, GeckoU.Mix(0x38600000, defPotionBox.SelectedIndex));
+        }
+
+        private void NoCooldownsToggled(object sender, EventArgs e)
+        {
+            GeckoU.WriteUIntToggle(0x024A4F6C, 0x3D601101, 0x3D601064, NoCooldowns.Checked);
+            GeckoU.WriteUIntToggle(0x024A4F78, 0xC06B0004, 0xC06B81C8, NoCooldowns.Checked);
+            GeckoU.WriteUInt(0x11010004, 0);
+        }
+
+        private void FogDistanceSliderChanged(object sender, EventArgs e)
+        {
+            GeckoU.CallFunction(0x0256B358, MinecraftFunctions.GetLevel(), (uint)FogDistanceSlider.Value);
+        }
+
+        private void CursedSliderChanged(object sender, EventArgs e)
+        {
+            GeckoU.WriteFloat(0x108A1964, (float)CursedSlider.Value);
+        }
+
         #region commands
 
         private void GiveCommandBtnClicked(object sender, EventArgs e)
@@ -1819,6 +1843,5 @@ namespace Minecraft_Wii_U_Mod_Injector
         #endregion
 
         #endregion memory editing
-
     }
 }

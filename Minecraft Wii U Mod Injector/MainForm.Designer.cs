@@ -104,10 +104,10 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.RiptideFlyingSpeed = new MetroFramework.Controls.MetroLabel();
             this.PlayerModelScale = new MetroFramework.Controls.MetroLabel();
             this.JumpHeight = new MetroFramework.Controls.MetroLabel();
-            this.SprintingSpeedScale = new MetroFramework.Controls.MetroLabel();
+            this.WalkingSpeedScale = new MetroFramework.Controls.MetroLabel();
             this.GodMode = new MetroFramework.Controls.MetroCheckBox();
             this.Reach = new MetroFramework.Controls.MetroLabel();
-            this.WalkingSpeedScale = new MetroFramework.Controls.MetroLabel();
+            this.SprintingSpeedScale = new MetroFramework.Controls.MetroLabel();
             this.DeadMauFiveMode = new MetroFramework.Controls.MetroCheckBox();
             this.ArmorHUD = new MetroFramework.Controls.MetroCheckBox();
             this.TakeEverythingAnywhere = new MetroFramework.Controls.MetroCheckBox();
@@ -306,6 +306,13 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.RightClickMenu = new MetroFramework.Controls.MetroContextMenu(this.components);
             this.IncreaseDecimalPlace = new System.Windows.Forms.ToolStripMenuItem();
             this.DecreaseDecimalPlace = new System.Windows.Forms.ToolStripMenuItem();
+            this.defPotionBox = new MetroFramework.Controls.MetroComboBox();
+            this.DefaultPotionEffect = new MetroFramework.Controls.MetroLabel();
+            this.NoCooldowns = new MetroFramework.Controls.MetroCheckBox();
+            this.FogDistanceSlider = new System.Windows.Forms.NumericUpDown();
+            this.FogDistance = new MetroFramework.Controls.MetroLabel();
+            this.CursedSlider = new System.Windows.Forms.NumericUpDown();
+            this.CursedLbl = new MetroFramework.Controls.MetroLabel();
             this.MainTabs.SuspendLayout();
             this.MainTab.SuspendLayout();
             this.playersTab.SuspendLayout();
@@ -352,6 +359,8 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.settingsTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.StyleMngr)).BeginInit();
             this.RightClickMenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.FogDistanceSlider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CursedSlider)).BeginInit();
             this.SuspendLayout();
             // 
             // WorldTile
@@ -644,6 +653,9 @@ namespace Minecraft_Wii_U_Mod_Injector
             // 
             // playersTab
             // 
+            this.playersTab.Controls.Add(this.NoCooldowns);
+            this.playersTab.Controls.Add(this.defPotionBox);
+            this.playersTab.Controls.Add(this.DefaultPotionEffect);
             this.playersTab.Controls.Add(this.AlwaysDaylight);
             this.playersTab.Controls.Add(this.AirborneSpeedSlider);
             this.playersTab.Controls.Add(this.AirborneSpeed);
@@ -698,10 +710,10 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.playersTab.Controls.Add(this.RiptideFlyingSpeed);
             this.playersTab.Controls.Add(this.PlayerModelScale);
             this.playersTab.Controls.Add(this.JumpHeight);
-            this.playersTab.Controls.Add(this.SprintingSpeedScale);
+            this.playersTab.Controls.Add(this.WalkingSpeedScale);
             this.playersTab.Controls.Add(this.GodMode);
             this.playersTab.Controls.Add(this.Reach);
-            this.playersTab.Controls.Add(this.WalkingSpeedScale);
+            this.playersTab.Controls.Add(this.SprintingSpeedScale);
             this.playersTab.Controls.Add(this.DeadMauFiveMode);
             this.playersTab.Controls.Add(this.ArmorHUD);
             this.playersTab.Controls.Add(this.TakeEverythingAnywhere);
@@ -771,7 +783,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.AlwaysDaylight.Tag = "NonHost";
             this.AlwaysDaylight.Text = "Always Daylight";
             this.AlwaysDaylight.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.AlwaysDaylight, "Whether its always Day or not");
+            this.ToolTipManager.SetToolTip(this.AlwaysDaylight, "Whether lighting will be bright at night");
             this.AlwaysDaylight.UseSelectable = true;
             this.AlwaysDaylight.UseStyleColors = true;
             this.AlwaysDaylight.CheckedChanged += new System.EventHandler(this.AlwaysDaylightToggled);
@@ -1808,20 +1820,20 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.JumpHeight.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.JumpHeight.UseStyleColors = true;
             // 
-            // SprintingSpeedScale
+            // WalkingSpeedScale
             // 
-            this.SprintingSpeedScale.AutoSize = true;
-            this.SprintingSpeedScale.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.SprintingSpeedScale.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.SprintingSpeedScale.Location = new System.Drawing.Point(292, 506);
-            this.SprintingSpeedScale.Name = "SprintingSpeedScale";
-            this.SprintingSpeedScale.Size = new System.Drawing.Size(142, 19);
-            this.SprintingSpeedScale.Style = MetroFramework.MetroColorStyle.Blue;
-            this.SprintingSpeedScale.TabIndex = 127;
-            this.SprintingSpeedScale.Tag = "NonHost";
-            this.SprintingSpeedScale.Text = "Sprinting Speed Scale:";
-            this.SprintingSpeedScale.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.SprintingSpeedScale.UseStyleColors = true;
+            this.WalkingSpeedScale.AutoSize = true;
+            this.WalkingSpeedScale.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.WalkingSpeedScale.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.WalkingSpeedScale.Location = new System.Drawing.Point(292, 506);
+            this.WalkingSpeedScale.Name = "WalkingSpeedScale";
+            this.WalkingSpeedScale.Size = new System.Drawing.Size(135, 19);
+            this.WalkingSpeedScale.Style = MetroFramework.MetroColorStyle.Blue;
+            this.WalkingSpeedScale.TabIndex = 127;
+            this.WalkingSpeedScale.Tag = "NonHost";
+            this.WalkingSpeedScale.Text = "Walking Speed Scale:";
+            this.WalkingSpeedScale.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.WalkingSpeedScale.UseStyleColors = true;
             // 
             // GodMode
             // 
@@ -1854,20 +1866,20 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.Reach.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.Reach.UseStyleColors = true;
             // 
-            // WalkingSpeedScale
+            // SprintingSpeedScale
             // 
-            this.WalkingSpeedScale.AutoSize = true;
-            this.WalkingSpeedScale.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.WalkingSpeedScale.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.WalkingSpeedScale.Location = new System.Drawing.Point(292, 532);
-            this.WalkingSpeedScale.Name = "WalkingSpeedScale";
-            this.WalkingSpeedScale.Size = new System.Drawing.Size(135, 19);
-            this.WalkingSpeedScale.Style = MetroFramework.MetroColorStyle.Blue;
-            this.WalkingSpeedScale.TabIndex = 130;
-            this.WalkingSpeedScale.Tag = "NonHost";
-            this.WalkingSpeedScale.Text = "Walking Speed Scale:";
-            this.WalkingSpeedScale.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.WalkingSpeedScale.UseStyleColors = true;
+            this.SprintingSpeedScale.AutoSize = true;
+            this.SprintingSpeedScale.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.SprintingSpeedScale.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.SprintingSpeedScale.Location = new System.Drawing.Point(292, 532);
+            this.SprintingSpeedScale.Name = "SprintingSpeedScale";
+            this.SprintingSpeedScale.Size = new System.Drawing.Size(142, 19);
+            this.SprintingSpeedScale.Style = MetroFramework.MetroColorStyle.Blue;
+            this.SprintingSpeedScale.TabIndex = 130;
+            this.SprintingSpeedScale.Tag = "NonHost";
+            this.SprintingSpeedScale.Text = "Sprinting Speed Scale:";
+            this.SprintingSpeedScale.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.SprintingSpeedScale.UseStyleColors = true;
             // 
             // DeadMauFiveMode
             // 
@@ -2565,6 +2577,8 @@ namespace Minecraft_Wii_U_Mod_Injector
             // 
             // worldTab
             // 
+            this.worldTab.Controls.Add(this.FogDistanceSlider);
+            this.worldTab.Controls.Add(this.FogDistance);
             this.worldTab.Controls.Add(this.EntityEditorBtn);
             this.worldTab.Controls.Add(this.ThunderMode);
             this.worldTab.Controls.Add(this.RainMode);
@@ -2611,7 +2625,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             // 
             // EntityEditorBtn
             // 
-            this.EntityEditorBtn.Location = new System.Drawing.Point(6, 527);
+            this.EntityEditorBtn.Location = new System.Drawing.Point(6, 497);
             this.EntityEditorBtn.Name = "EntityEditorBtn";
             this.EntityEditorBtn.Size = new System.Drawing.Size(1112, 23);
             this.EntityEditorBtn.Style = MetroFramework.MetroColorStyle.Orange;
@@ -2662,7 +2676,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             // 
             // WorldGenerationOptsBtn
             // 
-            this.WorldGenerationOptsBtn.Location = new System.Drawing.Point(567, 556);
+            this.WorldGenerationOptsBtn.Location = new System.Drawing.Point(567, 526);
             this.WorldGenerationOptsBtn.Name = "WorldGenerationOptsBtn";
             this.WorldGenerationOptsBtn.Size = new System.Drawing.Size(550, 23);
             this.WorldGenerationOptsBtn.Style = MetroFramework.MetroColorStyle.Orange;
@@ -2714,7 +2728,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.StyleExtender.SetApplyMetroTheme(this.LiquidSpreadTimeSlider, true);
             this.LiquidSpreadTimeSlider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.LiquidSpreadTimeSlider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
-            this.LiquidSpreadTimeSlider.Location = new System.Drawing.Point(140, 608);
+            this.LiquidSpreadTimeSlider.Location = new System.Drawing.Point(140, 578);
             this.LiquidSpreadTimeSlider.Maximum = new decimal(new int[] {
             120,
             0,
@@ -2732,7 +2746,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.LiquidSpreadTime.AutoSize = true;
             this.LiquidSpreadTime.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.LiquidSpreadTime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.LiquidSpreadTime.Location = new System.Drawing.Point(5, 608);
+            this.LiquidSpreadTime.Location = new System.Drawing.Point(5, 578);
             this.LiquidSpreadTime.Name = "LiquidSpreadTime";
             this.LiquidSpreadTime.Size = new System.Drawing.Size(128, 19);
             this.LiquidSpreadTime.Style = MetroFramework.MetroColorStyle.Orange;
@@ -2781,7 +2795,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.StyleExtender.SetApplyMetroTheme(this.EntitySpeedSlider, true);
             this.EntitySpeedSlider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.EntitySpeedSlider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
-            this.EntitySpeedSlider.Location = new System.Drawing.Point(108, 582);
+            this.EntitySpeedSlider.Location = new System.Drawing.Point(108, 552);
             this.EntitySpeedSlider.Maximum = new decimal(new int[] {
             120,
             0,
@@ -2804,7 +2818,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.EntitySpeed.AutoSize = true;
             this.EntitySpeed.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.EntitySpeed.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.EntitySpeed.Location = new System.Drawing.Point(5, 582);
+            this.EntitySpeed.Location = new System.Drawing.Point(5, 552);
             this.EntitySpeed.Name = "EntitySpeed";
             this.EntitySpeed.Size = new System.Drawing.Size(97, 19);
             this.EntitySpeed.Style = MetroFramework.MetroColorStyle.Blue;
@@ -2850,7 +2864,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             // 
             // LootTableEditorBtn
             // 
-            this.LootTableEditorBtn.Location = new System.Drawing.Point(7, 556);
+            this.LootTableEditorBtn.Location = new System.Drawing.Point(7, 526);
             this.LootTableEditorBtn.Name = "LootTableEditorBtn";
             this.LootTableEditorBtn.Size = new System.Drawing.Size(550, 23);
             this.LootTableEditorBtn.Style = MetroFramework.MetroColorStyle.Orange;
@@ -3083,6 +3097,8 @@ namespace Minecraft_Wii_U_Mod_Injector
             // 
             // generalTab
             // 
+            this.generalTab.Controls.Add(this.CursedSlider);
+            this.generalTab.Controls.Add(this.CursedLbl);
             this.generalTab.Controls.Add(this.DLCManagerBtn);
             this.generalTab.Controls.Add(this.Cursed);
             this.generalTab.Controls.Add(this.FreezeGameWhenPaused);
@@ -3123,7 +3139,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             // 
             // DLCManagerBtn
             // 
-            this.DLCManagerBtn.Location = new System.Drawing.Point(7, 534);
+            this.DLCManagerBtn.Location = new System.Drawing.Point(7, 504);
             this.DLCManagerBtn.Name = "DLCManagerBtn";
             this.DLCManagerBtn.Size = new System.Drawing.Size(1108, 23);
             this.DLCManagerBtn.TabIndex = 150;
@@ -3203,7 +3219,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             // 
             // AchievementEditor
             // 
-            this.AchievementEditor.Location = new System.Drawing.Point(7, 566);
+            this.AchievementEditor.Location = new System.Drawing.Point(7, 536);
             this.AchievementEditor.Name = "AchievementEditor";
             this.AchievementEditor.Size = new System.Drawing.Size(550, 25);
             this.AchievementEditor.Style = MetroFramework.MetroColorStyle.Blue;
@@ -3307,7 +3323,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             // UIColorPickerBtn
             // 
             this.UIColorPickerBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.UIColorPickerBtn.Location = new System.Drawing.Point(566, 600);
+            this.UIColorPickerBtn.Location = new System.Drawing.Point(566, 570);
             this.UIColorPickerBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.UIColorPickerBtn.Name = "UIColorPickerBtn";
             this.UIColorPickerBtn.Size = new System.Drawing.Size(550, 25);
@@ -3413,7 +3429,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             // MapTextEditor
             // 
             this.MapTextEditor.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.MapTextEditor.Location = new System.Drawing.Point(7, 600);
+            this.MapTextEditor.Location = new System.Drawing.Point(7, 570);
             this.MapTextEditor.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.MapTextEditor.Name = "MapTextEditor";
             this.MapTextEditor.Size = new System.Drawing.Size(550, 25);
@@ -3478,7 +3494,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             // ExitGame
             // 
             this.ExitGame.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ExitGame.Location = new System.Drawing.Point(566, 566);
+            this.ExitGame.Location = new System.Drawing.Point(566, 536);
             this.ExitGame.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.ExitGame.Name = "ExitGame";
             this.ExitGame.Size = new System.Drawing.Size(550, 25);
@@ -5281,6 +5297,153 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.DecreaseDecimalPlace.Size = new System.Drawing.Size(322, 22);
             this.DecreaseDecimalPlace.Text = "Decrease decimal place";
             // 
+            // defPotionBox
+            // 
+            this.defPotionBox.FontSize = MetroFramework.MetroComboBoxSize.Small;
+            this.defPotionBox.FontWeight = MetroFramework.MetroComboBoxWeight.Light;
+            this.defPotionBox.FormattingEnabled = true;
+            this.defPotionBox.ItemHeight = 19;
+            this.defPotionBox.Items.AddRange(new object[] {
+            "None",
+            "Speed",
+            "Slowness",
+            "Haste",
+            "Mining Fatigue",
+            "Strenght",
+            "None",
+            "None",
+            "Jump Boost",
+            "Nausea",
+            "Regeneration",
+            "Resistance",
+            "Fire Resistance",
+            "Water Breathing",
+            "Invisibility",
+            "Blindness",
+            "Night Vision",
+            "Hunger",
+            "Weakness",
+            "Posion",
+            "Wither",
+            "Health Boost",
+            "Absorption",
+            "None",
+            "Glowing",
+            "Levitation",
+            "Luck",
+            "Bad Luck",
+            "Slow Falling"});
+            this.defPotionBox.Location = new System.Drawing.Point(931, 512);
+            this.defPotionBox.Name = "defPotionBox";
+            this.defPotionBox.Size = new System.Drawing.Size(185, 25);
+            this.defPotionBox.TabIndex = 188;
+            this.defPotionBox.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.ToolTipManager.SetToolTip(this.defPotionBox, "What effect will ALL potions default to?");
+            this.defPotionBox.UseSelectable = true;
+            this.defPotionBox.SelectedIndexChanged += new System.EventHandler(this.DefPotionBoxChanged);
+            // 
+            // DefaultPotionEffect
+            // 
+            this.DefaultPotionEffect.AutoSize = true;
+            this.DefaultPotionEffect.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.DefaultPotionEffect.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.DefaultPotionEffect.Location = new System.Drawing.Point(789, 512);
+            this.DefaultPotionEffect.Name = "DefaultPotionEffect";
+            this.DefaultPotionEffect.Size = new System.Drawing.Size(136, 19);
+            this.DefaultPotionEffect.Style = MetroFramework.MetroColorStyle.Blue;
+            this.DefaultPotionEffect.TabIndex = 187;
+            this.DefaultPotionEffect.Tag = "NonHost";
+            this.DefaultPotionEffect.Text = "Default Potion Effect:";
+            this.DefaultPotionEffect.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.DefaultPotionEffect.UseStyleColors = true;
+            // 
+            // NoCooldowns
+            // 
+            this.NoCooldowns.AutoSize = true;
+            this.NoCooldowns.Location = new System.Drawing.Point(586, 6);
+            this.NoCooldowns.Name = "NoCooldowns";
+            this.NoCooldowns.Size = new System.Drawing.Size(102, 15);
+            this.NoCooldowns.Style = MetroFramework.MetroColorStyle.Blue;
+            this.NoCooldowns.TabIndex = 189;
+            this.NoCooldowns.Tag = "NonHost";
+            this.NoCooldowns.Text = "No Cooldowns";
+            this.NoCooldowns.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.ToolTipManager.SetToolTip(this.NoCooldowns, "Whether there is no cooldowns for items such as Enderpearls");
+            this.NoCooldowns.UseSelectable = true;
+            this.NoCooldowns.UseStyleColors = true;
+            this.NoCooldowns.CheckedChanged += new System.EventHandler(this.NoCooldownsToggled);
+            // 
+            // FogDistanceSlider
+            // 
+            this.StyleExtender.SetApplyMetroTheme(this.FogDistanceSlider, true);
+            this.FogDistanceSlider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.FogDistanceSlider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
+            this.FogDistanceSlider.Location = new System.Drawing.Point(102, 604);
+            this.FogDistanceSlider.Maximum = new decimal(new int[] {
+            120,
+            0,
+            0,
+            0});
+            this.FogDistanceSlider.Name = "FogDistanceSlider";
+            this.FogDistanceSlider.Size = new System.Drawing.Size(1015, 20);
+            this.FogDistanceSlider.TabIndex = 148;
+            this.FogDistanceSlider.Tag = "";
+            this.ToolTipManager.SetToolTip(this.FogDistanceSlider, "How far away is the fog?");
+            this.FogDistanceSlider.ValueChanged += new System.EventHandler(this.FogDistanceSliderChanged);
+            // 
+            // FogDistance
+            // 
+            this.FogDistance.AutoSize = true;
+            this.FogDistance.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.FogDistance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.FogDistance.Location = new System.Drawing.Point(5, 604);
+            this.FogDistance.Name = "FogDistance";
+            this.FogDistance.Size = new System.Drawing.Size(91, 19);
+            this.FogDistance.Style = MetroFramework.MetroColorStyle.Orange;
+            this.FogDistance.TabIndex = 147;
+            this.FogDistance.Tag = "Host";
+            this.FogDistance.Text = "Fog Distance:";
+            this.FogDistance.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.FogDistance.UseStyleColors = true;
+            // 
+            // CursedSlider
+            // 
+            this.StyleExtender.SetApplyMetroTheme(this.CursedSlider, true);
+            this.CursedSlider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.CursedSlider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
+            this.CursedSlider.Location = new System.Drawing.Point(66, 604);
+            this.CursedSlider.Maximum = new decimal(new int[] {
+            120,
+            0,
+            0,
+            0});
+            this.CursedSlider.Name = "CursedSlider";
+            this.CursedSlider.Size = new System.Drawing.Size(1051, 20);
+            this.CursedSlider.TabIndex = 153;
+            this.CursedSlider.Tag = "";
+            this.ToolTipManager.SetToolTip(this.CursedSlider, "How cursed should our game get?");
+            this.CursedSlider.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.CursedSlider.ValueChanged += new System.EventHandler(this.CursedSliderChanged);
+            // 
+            // CursedLbl
+            // 
+            this.CursedLbl.AutoSize = true;
+            this.CursedLbl.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.CursedLbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.CursedLbl.Location = new System.Drawing.Point(5, 604);
+            this.CursedLbl.Name = "CursedLbl";
+            this.CursedLbl.Size = new System.Drawing.Size(55, 19);
+            this.CursedLbl.Style = MetroFramework.MetroColorStyle.Blue;
+            this.CursedLbl.TabIndex = 152;
+            this.CursedLbl.Tag = "NonHost";
+            this.CursedLbl.Text = "Cursed:";
+            this.CursedLbl.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.CursedLbl.UseStyleColors = true;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -5363,6 +5526,8 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.settingsTab.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.StyleMngr)).EndInit();
             this.RightClickMenu.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.FogDistanceSlider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CursedSlider)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -5419,7 +5584,7 @@ namespace Minecraft_Wii_U_Mod_Injector
         public MetroFramework.Controls.MetroCheckBox CraftAnything;
         public MetroFramework.Controls.MetroCheckBox CreativeMode;
         public System.Windows.Forms.NumericUpDown SprintingSpeedScaleSlider;
-        public MetroFramework.Controls.MetroLabel SprintingSpeedScale;
+        public MetroFramework.Controls.MetroLabel WalkingSpeedScale;
         public System.Windows.Forms.NumericUpDown RiptideFlyingSpeedSlider;
         public MetroFramework.Controls.MetroLabel RiptideFlyingSpeed;
         public System.Windows.Forms.NumericUpDown ReachSlider;
@@ -5499,7 +5664,7 @@ namespace Minecraft_Wii_U_Mod_Injector
         private MetroFramework.Controls.MetroTextBox giveIDBox;
         public MetroFramework.Controls.MetroCheckBox BypassFriendsOnly;
         public System.Windows.Forms.NumericUpDown WalkingSpeedScaleSlider;
-        public MetroFramework.Controls.MetroLabel WalkingSpeedScale;
+        public MetroFramework.Controls.MetroLabel SprintingSpeedScale;
         public MetroFramework.Controls.MetroCheckBox CraftingTableAnywhere;
         public System.Windows.Forms.NumericUpDown HitBoxScaleSlider;
         public MetroFramework.Controls.MetroLabel HitBoxScale;
@@ -5642,5 +5807,12 @@ namespace Minecraft_Wii_U_Mod_Injector
         public MetroLabel AirborneSpeed;
         public MetroCheckBox AlwaysDaylight;
         private MetroButton DLCManagerBtn;
+        private MetroComboBox defPotionBox;
+        public MetroLabel DefaultPotionEffect;
+        public MetroCheckBox NoCooldowns;
+        public System.Windows.Forms.NumericUpDown FogDistanceSlider;
+        public MetroLabel FogDistance;
+        public System.Windows.Forms.NumericUpDown CursedSlider;
+        public MetroLabel CursedLbl;
     }
 }

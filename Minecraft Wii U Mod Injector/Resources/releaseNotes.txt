@@ -1,3 +1,21 @@
+[Release v5.2.0.c6 (14th of September, 2021)]
+
+# Overview
+
+This update adds new modss
+
+# Changes
+
+### New mods
+
+- Player(s) and Item(s) > Always Daylight (You can now ride any entity by just punching them, including players!)
+- Player(s) and Item(s) > No Cooldowns (Cooldowns from items such as Ender Pearls will be removed with this mod)
+- Player(s) and Item(s) > Airborne Speed (You can change how fast your character goes when you jump and sprint or hold jump while fast flying)
+- Player(s) and Item(s) > Default Potion Effect (You can now change the effect of all potions to any effect, including ones like Wither, Blindess etc)
+- World and Entities > Fog Distance (You can change the world fog distance)
+- General Game > DLC Manager (This is the beta, options such as injecting will be available soon. (Made by miku-666))
+- General Game > Cursed (Slider): You'll have to find out what this mod does yourself.. :)
+
 [Release v5.2.0.c5 (2nd of September, 2021)]
 
 # Overview

@@ -80,27 +80,14 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods
 
         private void GameModeBoxChanged(object sender, EventArgs e)
         {
-            MainForm.GeckoU.WriteUInt(0x1B000000, 0x0);
-            MainForm.GeckoU.WriteUInt(0x1B000004, 0x1);
-            MainForm.GeckoU.WriteUInt(0x1B000008, 0x2);
-
-            switch (GameModeBox.SelectedIndex)
+            if (GameModeBox.SelectedIndex < 3)
             {
-                case 0:
-                    MainForm.GeckoU.CallFunction(0x031F40A0, _localPlayer, 0x1B000000);
-                    break;
-
-                case 1:
-                    MainForm.GeckoU.CallFunction(0x031F40A0, _localPlayer, 0x1B000004);
-                    break;
-
-                case 2:
-                    MainForm.GeckoU.CallFunction(0x031F40A0, _localPlayer, 0x1B000008);
-                    break;
-
-                case 3:
-                    MainForm.GeckoU.CallFunction(0x031F49B0, _localPlayer, 0x0);
-                    break;
+                uint gametype = MainForm.GeckoU.PeekUInt(0x109C4D24 + (uint)GameModeBox.SelectedIndex * 4);
+                MainForm.GeckoU.CallFunction(0x031F40A0, _localPlayer, gametype);
+            }
+            else
+            {
+                MainForm.GeckoU.CallFunction(0x031F49B0, _localPlayer, 0x0);
             }
         }
 

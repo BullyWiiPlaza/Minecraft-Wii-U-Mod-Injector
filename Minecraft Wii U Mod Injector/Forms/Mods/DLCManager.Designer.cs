@@ -101,7 +101,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods
             this.DLCPackListView.UseCompatibleStateImageBehavior = false;
             this.DLCPackListView.UseSelectable = true;
             this.DLCPackListView.View = System.Windows.Forms.View.List;
-            this.DLCPackListView.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.viewPackInfo);
+            this.DLCPackListView.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.ViewPackInfo);
             // 
             // dlcPackInfoLabel
             // 
@@ -132,7 +132,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods
             this.setLicenseMaskBtn.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.ToolTipManager.SetToolTip(this.setLicenseMaskBtn, "Set the License Mask e.g unlocks the selected DLC Pack");
             this.setLicenseMaskBtn.UseSelectable = true;
-            this.setLicenseMaskBtn.Click += new System.EventHandler(this.setLicenseMaskBtn_Click);
+            this.setLicenseMaskBtn.Click += new System.EventHandler(this.SetLicenseMask);
             // 
             // removePackBtn
             // 
@@ -147,7 +147,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods
             this.removePackBtn.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.ToolTipManager.SetToolTip(this.removePackBtn, "Removes the selected DLC Pack from memory");
             this.removePackBtn.UseSelectable = true;
-            this.removePackBtn.Click += new System.EventHandler(this.removePackBtn_Click);
+            this.removePackBtn.Click += new System.EventHandler(this.RemovePackBtn_Click);
             // 
             // DLCManager
             // 

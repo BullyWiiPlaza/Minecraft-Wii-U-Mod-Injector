@@ -26,7 +26,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
             Injector = window;
         }
 
-        public static async void SetupInjector()
+        public static void SetupInjector()
         {
             try
             {
@@ -34,7 +34,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
                 await RetrieveGitVersion();
 #endif
 #if DEBUG
-                LocalVer = LocalVer + " (Dev)";
+                LocalVer += " (Dev)";
 #endif
 
                 if (Settings.Default.UpdateSettings)

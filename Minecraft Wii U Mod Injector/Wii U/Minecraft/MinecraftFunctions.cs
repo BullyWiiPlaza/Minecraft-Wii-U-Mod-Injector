@@ -28,7 +28,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Wii_U.Minecraft
 
         public static uint GetMinecraftServer()
         {
-            return 0x109CD8FC;
+            return GeckoU.PeekUInt(0x109CD8FC);
         }
     }
 }

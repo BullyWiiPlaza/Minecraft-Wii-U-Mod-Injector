@@ -7,9 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MetroFramework.Controls;
 using MetroFramework.Forms;
 using Minecraft_Wii_U_Mod_Injector.Wii_U.Gecko_U;
 using Minecraft_Wii_U_Mod_Injector.Helpers;
+using Minecraft_Wii_U_Mod_Injector.Helpers.Files;
 
 namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods
 {
@@ -103,15 +105,32 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods
 
         private void ListPacksBtn_Click(object sender, EventArgs e)
         {
-            DLCPackListView.Clear();
-            uint start, end;
-            currentAmount = getVectorSize(DLCManager_ptr, 4, out start, out end, out _) -1;
-            updatePackCountLabel();
-            for (uint i = 1;i<currentAmount-1;i++)
+            var Btn = (MetroButton)sender;
+
+            try
             {
-                uint dlcPack = MainForm.GeckoU.PeekUInt(start + i * 4);
-                string name = getPackName(dlcPack);
-                DLCPackListView.Items.Add(name).SubItems.Add(dlcPack.ToString());
+                Btn.Text = @"Gathering...";
+                Btn.Enabled = false;
+
+                DLCPackListView.Clear();
+                uint start, end;
+                currentAmount = getVectorSize(DLCManager_ptr, 4, out start, out end, out _) - 1;
+                updatePackCountLabel();
+                for (uint i = 1; i < currentAmount - 1; i++)
+                {
+                    uint dlcPack = MainForm.GeckoU.PeekUInt(start + i * 4);
+                    string name = getPackName(dlcPack);
+                    DLCPackListView.Items.Add(name).SubItems.Add(dlcPack.ToString());
+                }
+
+                Btn.Text = @"List DLC Packs";
+                Btn.Enabled = true;
+            }
+            catch (Exception exception)
+            {
+                Exceptions.LogError(exception, "Failed to list DLC Packs", true);
+                Btn.Text = @"List DLC Packs";
+                Btn.Enabled = true;
             }
         }
 
@@ -130,17 +149,17 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods
             uint ChildpacksCount, licenseMask, DLCMountIndex, DLCDeviceID, PackID;
             getPackInfos(dlcPack, out ChildpacksCount, out licenseMask, out DLCMountIndex, out DLCDeviceID, out PackID);
             setLicenseMaskBtn.Enabled = licenseMask == 0;
-            packInfo.Append("\nName : ");
+            packInfo.Append("\nName: ");
             packInfo.Append(e.Item.Text);
-            packInfo.Append("\nPack ID : ");
+            packInfo.Append("\nPack ID: ");
             packInfo.Append(PackID);
-            packInfo.Append("\nDLC Mount Index : ");
+            packInfo.Append("\nDLC Mount Index: ");
             packInfo.Append(DLCMountIndex);
-            packInfo.Append("\nDLC Device ID : ");
+            packInfo.Append("\nDLC Device ID: ");
             packInfo.Append(DLCDeviceID);
-            packInfo.Append("\nLicenseMask : ");
+            packInfo.Append("\nLicenseMask: ");
             packInfo.Append(licenseMask);
-            packInfo.Append("\nChild Pack Count : ");
+            packInfo.Append("\nChild Pack Count: ");
             packInfo.Append(ChildpacksCount);
             dlcPackInfoLabel.Text = packInfo.ToString();
         }

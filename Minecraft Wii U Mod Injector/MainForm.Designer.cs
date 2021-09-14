@@ -446,7 +446,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.MainTabs.Location = new System.Drawing.Point(155, 61);
             this.MainTabs.Multiline = true;
             this.MainTabs.Name = "MainTabs";
-            this.MainTabs.SelectedIndex = 1;
+            this.MainTabs.SelectedIndex = 0;
             this.MainTabs.Size = new System.Drawing.Size(1130, 643);
             this.MainTabs.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.MainTabs.TabIndex = 0;
@@ -3130,7 +3130,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.DLCManagerBtn.Tag = "NonHost";
             this.DLCManagerBtn.Text = "DLC Manager";
             this.DLCManagerBtn.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.DLCManagerBtn, "Open the DLC Manager");
+            this.ToolTipManager.SetToolTip(this.DLCManagerBtn, "Opens the DLC Manager");
             this.DLCManagerBtn.UseSelectable = true;
             this.DLCManagerBtn.UseStyleColors = true;
             this.DLCManagerBtn.Click += new System.EventHandler(this.DLCManagerBtn_Click);

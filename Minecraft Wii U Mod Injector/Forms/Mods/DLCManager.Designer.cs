@@ -45,11 +45,16 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods
             ((System.ComponentModel.ISupportInitialize)(this.StyleMngr)).BeginInit();
             this.SuspendLayout();
             // 
+            // DLCPackNames
+            // 
+            DLCPackNames.Width = 200;
+            // 
             // ListPacksBtn
             // 
-            this.ListPacksBtn.Location = new System.Drawing.Point(825, 533);
+            this.ListPacksBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ListPacksBtn.Location = new System.Drawing.Point(864, 533);
             this.ListPacksBtn.Name = "ListPacksBtn";
-            this.ListPacksBtn.Size = new System.Drawing.Size(152, 23);
+            this.ListPacksBtn.Size = new System.Drawing.Size(263, 23);
             this.ListPacksBtn.TabIndex = 0;
             this.ListPacksBtn.Text = "List DLC Packs";
             this.ListPacksBtn.Theme = MetroFramework.MetroThemeStyle.Dark;
@@ -63,8 +68,9 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods
             // 
             // PackCountLabel
             // 
+            this.PackCountLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.PackCountLabel.AutoSize = true;
-            this.PackCountLabel.Location = new System.Drawing.Point(825, 511);
+            this.PackCountLabel.Location = new System.Drawing.Point(864, 508);
             this.PackCountLabel.Name = "PackCountLabel";
             this.PackCountLabel.Size = new System.Drawing.Size(143, 19);
             this.PackCountLabel.TabIndex = 2;
@@ -74,7 +80,8 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods
             // DLCPackListView
             // 
             this.DLCPackListView.Alignment = System.Windows.Forms.ListViewAlignment.SnapToGrid;
-            this.DLCPackListView.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.DLCPackListView.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.DLCPackListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             DLCPackNames});
             this.DLCPackListView.Font = new System.Drawing.Font("Segoe UI", 12F);
@@ -88,7 +95,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods
             this.DLCPackListView.MultiSelect = false;
             this.DLCPackListView.Name = "DLCPackListView";
             this.DLCPackListView.OwnerDraw = true;
-            this.DLCPackListView.Size = new System.Drawing.Size(311, 493);
+            this.DLCPackListView.Size = new System.Drawing.Size(835, 464);
             this.DLCPackListView.TabIndex = 1;
             this.DLCPackListView.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.DLCPackListView.UseCompatibleStateImageBehavior = false;
@@ -98,8 +105,9 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods
             // 
             // dlcPackInfoLabel
             // 
+            this.dlcPackInfoLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.dlcPackInfoLabel.AutoSize = true;
-            this.dlcPackInfoLabel.Location = new System.Drawing.Point(340, 63);
+            this.dlcPackInfoLabel.Location = new System.Drawing.Point(864, 63);
             this.dlcPackInfoLabel.Name = "dlcPackInfoLabel";
             this.dlcPackInfoLabel.Size = new System.Drawing.Size(88, 19);
             this.dlcPackInfoLabel.TabIndex = 3;
@@ -114,10 +122,11 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods
             // 
             // setLicenseMaskBtn
             // 
+            this.setLicenseMaskBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.setLicenseMaskBtn.Enabled = false;
-            this.setLicenseMaskBtn.Location = new System.Drawing.Point(340, 504);
+            this.setLicenseMaskBtn.Location = new System.Drawing.Point(443, 533);
             this.setLicenseMaskBtn.Name = "setLicenseMaskBtn";
-            this.setLicenseMaskBtn.Size = new System.Drawing.Size(129, 23);
+            this.setLicenseMaskBtn.Size = new System.Drawing.Size(415, 23);
             this.setLicenseMaskBtn.TabIndex = 4;
             this.setLicenseMaskBtn.Text = "Set License Mask";
             this.setLicenseMaskBtn.Theme = MetroFramework.MetroThemeStyle.Dark;
@@ -127,10 +136,12 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods
             // 
             // removePackBtn
             // 
+            this.removePackBtn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.removePackBtn.Enabled = false;
-            this.removePackBtn.Location = new System.Drawing.Point(340, 533);
+            this.removePackBtn.Location = new System.Drawing.Point(23, 533);
             this.removePackBtn.Name = "removePackBtn";
-            this.removePackBtn.Size = new System.Drawing.Size(129, 23);
+            this.removePackBtn.Size = new System.Drawing.Size(415, 23);
             this.removePackBtn.TabIndex = 5;
             this.removePackBtn.Text = "Remove Pack";
             this.removePackBtn.Theme = MetroFramework.MetroThemeStyle.Dark;
@@ -142,7 +153,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1000, 579);
+            this.ClientSize = new System.Drawing.Size(1150, 580);
             this.Controls.Add(this.removePackBtn);
             this.Controls.Add(this.setLicenseMaskBtn);
             this.Controls.Add(this.dlcPackInfoLabel);
@@ -151,8 +162,10 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods
             this.Controls.Add(this.ListPacksBtn);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(3840, 580);
+            this.MinimumSize = new System.Drawing.Size(1150, 580);
             this.Name = "DLCManager";
-            this.Text = "DLCManager [BETA]";
+            this.Text = "Minecraft: Wii U Mod Injector - DLC Manager [BETA]";
             this.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.OnExit);
             this.Load += new System.EventHandler(this.OnLoad);

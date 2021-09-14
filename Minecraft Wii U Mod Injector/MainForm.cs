@@ -1319,6 +1319,11 @@ namespace Minecraft_Wii_U_Mod_Injector
             GeckoU.WriteUInt(0x11010004, 0);
         }
 
+        private void InstantSleepToggled(object sender, EventArgs e)
+        {
+            GeckoU.WriteUIntToggle(0x02721D38, 0x38600001, 0x5403063E, InstantSleep.Checked); //Player::isSleepingLongEnough((void))
+        }
+
         private void FogDistanceSliderChanged(object sender, EventArgs e)
         {
             GeckoU.CallFunction(0x0256B358, MinecraftFunctions.GetLevel(), (uint)FogDistanceSlider.Value);

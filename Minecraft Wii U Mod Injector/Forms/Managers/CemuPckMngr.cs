@@ -20,8 +20,8 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Managers
         private readonly MainForm _iw;
         private readonly string _cemuPckRootDir = Application.StartupPath + @"\Saved\Cemu\";
 
-        private readonly StringBuilder _cemuGraphicPckRulesBuilder = new();
-        private readonly StringBuilder _cemuGraphicPckPatchesBuilder = new();
+        private readonly StringBuilder _cemuGraphicPckRulesBuilder = new StringBuilder();
+        private readonly StringBuilder _cemuGraphicPckPatchesBuilder = new StringBuilder();
 
         private enum SliderDefaults
         {

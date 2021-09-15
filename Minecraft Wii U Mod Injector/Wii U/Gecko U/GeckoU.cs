@@ -342,6 +342,15 @@ namespace Minecraft_Wii_U_Mod_Injector.Wii_U.Gecko_U
             return ByteSwap.Swap(BitConverter.ToUInt32(buffer, 0));
         }
 
+        public void excecuteAssembly(string AssemblyString)
+        {
+            byte[] buffer = Encoding.UTF8.GetBytes(AssemblyString);
+            if (RawCommand((byte)GeckoUCommands.Command.CommandExecuteAssembly) != FtdiCommand.CmdOk)
+                throw new GeckoUException(GeckoUException.EtcpErrorCode.FtdiCommandSendError);
+            if (GeckoUWrite(buffer, buffer.Length) != FtdiCommand.CmdOk)
+                throw new GeckoUException(GeckoUException.EtcpErrorCode.FtdiCommandSendError);
+        }
+
         public void RpcToggle(uint address1, uint address2, uint value1, uint value2, bool toggle)
         {
             switch (toggle)

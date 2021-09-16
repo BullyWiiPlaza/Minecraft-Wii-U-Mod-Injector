@@ -913,17 +913,13 @@ namespace Minecraft_Wii_U_Mod_Injector.Wii_U.Gecko_U
 
         public void ClearString(uint addressStart, uint addressEnd)
         {
-            var clearingAddress = addressStart;
+            ClearString(addressStart, (int)(addressEnd - addressStart));
+        }
 
-            while (PeekUInt(clearingAddress) != 0x00000000)
-            {
-                if (clearingAddress == addressEnd)
-                {
-                    return;
-                }
-                WriteUInt(clearingAddress, 0x00000000);
-                clearingAddress += 4;
-            }
+        public void ClearString(uint address, int length)
+        {
+            byte[] buffer = new byte[length];
+            WriteBytes(address, buffer);
         }
 
         public uint malloc(uint size,uint alignment = 4)

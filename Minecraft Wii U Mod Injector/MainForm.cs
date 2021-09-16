@@ -452,6 +452,16 @@ namespace Minecraft_Wii_U_Mod_Injector
             new DLCManager(this).ShowDialog();
         }
 
+        private void DebugConsoleCustomizerBtn_Click(object sender, EventArgs e)
+        {
+            if(!DebugConsole.Checked || MainForm.GeckoU.PeekUInt(0x109F95E4)==0)
+            {
+                MessageBox.Show("This mod requires the Debug UI Console to be active!");
+                return;
+            }
+            new DebugUIConsoleCustomizer(this).ShowDialog();
+        }
+
         private void ItemIdHelpBtnClicked(object sender, EventArgs e)
         {
             Messaging.Show(MessageBoxIcon.Information,
@@ -1006,12 +1016,9 @@ namespace Minecraft_Wii_U_Mod_Injector
 
         private async void DebugConsoleToggled(object sender, EventArgs e)
         {
-            uint[] bools = {0x01, 0x00};
-
-            GeckoU.RpcToggle(0x02DABA0C, 0x109F95E0, bools, DebugConsole.Checked, 0, 1);
-
             DebugConsole.Enabled = false;
             await PutTaskDelay(1000);
+            GeckoU.CallFunction(0x02DABA0C, 0x109F95E0, Convert.ToUInt32(DebugConsole.Checked));
             DebugConsole.Enabled = true;
         }
 
@@ -1848,5 +1855,6 @@ namespace Minecraft_Wii_U_Mod_Injector
         #endregion
 
         #endregion memory editing
+
     }
 }

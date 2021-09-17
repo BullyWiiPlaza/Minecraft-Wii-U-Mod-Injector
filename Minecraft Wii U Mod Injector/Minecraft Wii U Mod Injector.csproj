@@ -367,6 +367,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Wii U\Minecraft\MCVectorFunctions.cs" />
     <Compile Include="Wii U\Minecraft\MinecraftFunctions.cs" />
     <EmbeddedResource Include="Forms\Mods\DebugUIConsoleCustomizer.resx">
       <DependentUpon>DebugUIConsoleCustomizer.cs</DependentUpon>

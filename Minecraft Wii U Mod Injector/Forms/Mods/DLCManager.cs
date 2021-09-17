@@ -9,9 +9,10 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MetroFramework.Controls;
 using MetroFramework.Forms;
-using Minecraft_Wii_U_Mod_Injector.Wii_U.Gecko_U;
 using Minecraft_Wii_U_Mod_Injector.Helpers;
 using Minecraft_Wii_U_Mod_Injector.Helpers.Files;
+using Minecraft_Wii_U_Mod_Injector.Wii_U.Gecko_U;
+using Minecraft_Wii_U_Mod_Injector.Wii_U.Minecraft;
 
 namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods
 {
@@ -40,42 +41,6 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods
         private void UpdatePackCountLabel()
         {
             PackCountLabel.Text = "Current Pack amount : " + currentAmount.ToString();
-        }
-
-        private void MemMove(uint dest, uint src, uint n)
-        {
-            MainForm.GeckoU.CallFunction(0x02AD54DC, dest, src, n);
-        }
-
-        private void EraseVectorObject(uint vector_ptr, uint vector_position, uint sizeOfEachElement)
-        {
-            uint size = GetVectorSize(vector_ptr, sizeOfEachElement, out uint start, out uint end, out _);
-            for (uint i = 0; i < size; i++)
-            {
-                uint pos = start + i * sizeOfEachElement;
-                if (pos == vector_position) // found position
-                {
-                    MemMove(pos, pos + sizeOfEachElement, end - (pos + sizeOfEachElement));
-                    end -= sizeOfEachElement;
-                    MainForm.GeckoU.WriteUInt(vector_ptr + 8, end);
-                    break;
-                }
-            }
-            return;
-        }
-
-        private uint GetVectorSize(uint vector_ptr, uint sizeOfElement, out uint start, out uint end, out uint max)
-        {
-            byte[] data = MainForm.GeckoU.ReadBytes(vector_ptr + 4, 12);
-            if (data.Length > 1)
-            {
-                start = ByteSwap.Swap(BitConverter.ToUInt32(data, 0));
-                end = ByteSwap.Swap(BitConverter.ToUInt32(data, 4));
-                max = ByteSwap.Swap(BitConverter.ToUInt32(data, 8)); // will be important when pack injection is stable
-                return (end - start) / sizeOfElement;
-            }
-            start = end = max = 0;
-            return 0;
         }
 
         private void GetPackInfo(uint dlcPack, out uint ChildPackCount, out uint LicenseMask, out uint DLCMountIndex, out uint DLCDeviceID, out uint PackID)
@@ -112,7 +77,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods
                 Btn.Enabled = false;
 
                 DLCPackListView.Clear();
-                currentAmount = GetVectorSize(DLCManager_ptr, 4, out uint start, out uint end, out _) - 1;
+                currentAmount = MCVectorFunctions.GetVectorSize(DLCManager_ptr, 4, out uint start, out uint end, out _) - 1;
                 UpdatePackCountLabel();
                 for (uint i = 1; i < currentAmount - 1; i++)
                 {
@@ -158,7 +123,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods
         {
             uint texturePackRepo = MainForm.GeckoU.PeekUInt(MainForm.GeckoU.PeekUInt(0x109cd8e4) + 0x160);
             uint vec_ptr = MainForm.GeckoU.PeekUInt(texturePackRepo + 0x4c);
-            uint currentSize = GetVectorSize(vec_ptr, 4, out uint start, out _, out _);
+            uint currentSize = MCVectorFunctions.GetVectorSize(vec_ptr, 4, out uint start, out _, out _);
             uint pos;
             bool found = false;
             for (uint i = 0; i < currentSize; i++) // loop through the texturepack repo vector
@@ -173,7 +138,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods
                     found = textureDLCPack == DlcpackChild;
                     if (found)
                     {
-                        EraseVectorObject(vec_ptr, pos, 4);
+                        MCVectorFunctions.EraseVectorObject(vec_ptr, pos, 4);
                         MainForm.GeckoU.CallFunction(0x030b5204, dlcTexturePack, 1); // DLCTexturePack::~DLCTexturePack
                         break;
                     }
@@ -185,7 +150,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods
         private bool RemoveLevelGenOpt(uint dlcpack_ref)
         {
             uint LevelGenerator_ptr = MainForm.GeckoU.PeekUInt(0x10A2B3E0);
-            uint GenerationOptionsCount = GetVectorSize(LevelGenerator_ptr, 4, out uint GenerationOptionsStart, out _, out _);
+            uint GenerationOptionsCount = MCVectorFunctions.GetVectorSize(LevelGenerator_ptr, 4, out uint GenerationOptionsStart, out _, out _);
             bool found = false;
             for (uint i = 0; i < GenerationOptionsCount; i++)
             {
@@ -210,7 +175,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods
             DLCPackListView.SelectedItems[0].Remove();
             //MessageBox.Show(dlcPack.ToString("X8"));
             // first check if it has child packs that are used in texturepacks
-            uint childCount = GetVectorSize(dlcPack + 0xf0, 4, out uint childStart, out _, out _);
+            uint childCount = MCVectorFunctions.GetVectorSize(dlcPack + 0xf0, 4, out uint childStart, out _, out _);
             var res = false;
             if (childCount != 0)
             {

@@ -12,6 +12,7 @@ using System.Windows.Forms;
 using Minecraft_Wii_U_Mod_Injector.Helpers;
 using Minecraft_Wii_U_Mod_Injector.Helpers.Files;
 using Minecraft_Wii_U_Mod_Injector.Wii_U.Gecko_U;
+using Minecraft_Wii_U_Mod_Injector.Wii_U.Minecraft;
 
 namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods
 {
@@ -82,9 +83,12 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods
                 Btn.Enabled = false;
 
                 DebugUIStringsListView.Clear();
-                for (uint i = 0; i < 10; i++)
+                uint start;
+                uint elementCount = MCVectorFunctions.GetVectorSize(debugUI_ptr + 0x8c, 4, out start, out _, out _);
+                MessageBox.Show(elementCount.ToString());
+                for (uint i = 0; i < elementCount; i++)
                 {
-                    uint rendernode_ptr = MainForm.GeckoU.PeekUInt(debugUI_ptr + 0xf4 + i * 0x60);
+                    uint rendernode_ptr = MainForm.GeckoU.PeekUInt(MainForm.GeckoU.PeekUInt(start + i * 4)+0x2c);
                     uint fj_fuinode_ptr = MainForm.GeckoU.PeekUInt(rendernode_ptr + 0xdc);
                     uint textfield_ptr = MainForm.GeckoU.CallFunction(0x02b03708, fj_fuinode_ptr);
                     if (textfield_ptr == 0)

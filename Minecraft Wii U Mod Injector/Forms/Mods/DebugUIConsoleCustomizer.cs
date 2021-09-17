@@ -29,11 +29,12 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods
         private void OnLoad(object sender, EventArgs e)
         {
             debugUI_ptr = MainForm.GeckoU.PeekUInt(0x109F95E4);
-            if (debugUI_ptr == 0) return;
+            //if (debugUI_ptr == 0) return;
             DiscordRp.SetPresence("Connected", "Debug UI Customizer");
             var screenSize = MainForm.GeckoU.ReadBytes(MainForm.GeckoU.PeekUInt(0x109F75A8)+0x294,8);
             Array.Reverse(screenSize);
             float screenWidth = BitConverter.ToSingle(screenSize, 4), screenHeight = BitConverter.ToSingle(screenSize, 0);
+            ResolutionLabel.Text += $"{screenWidth}x{screenHeight}";
             uint fuiFile_ptr = MainForm.GeckoU.PeekUInt(debugUI_ptr + 0x20);
             debugRenderNode =  MainForm.GeckoU.PeekUInt(fuiFile_ptr + 0xe0);
             var value = MainForm.GeckoU.PeekUInt(MainForm.GeckoU.PeekUInt(debugRenderNode + 0x10) + 0x3c);

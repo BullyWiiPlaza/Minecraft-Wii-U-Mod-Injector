@@ -1014,12 +1014,12 @@ namespace Minecraft_Wii_U_Mod_Injector
             GeckoU.RpcToggle(0x0112A9E4, 0x0112A9EC, 0x0, 0x0, vpadDisplaySwitch.Checked);
         }
 
-        private async void DebugConsoleToggled(object sender, EventArgs e)
+        private void DebugConsoleToggled(object sender, EventArgs e)
         {
-            DebugConsole.Enabled = false;
-            await PutTaskDelay(1000);
             GeckoU.CallFunction(0x02DABA0C, 0x109F95E0, Convert.ToUInt32(DebugConsole.Checked));
-            DebugConsole.Enabled = true;
+            //DebugConsole.Enabled = false;
+            //await PutTaskDelay(1000);
+            //DebugConsole.Enabled = true;
         }
 
         private void UnlockSignKeyboardToggled(object sender, EventArgs e)

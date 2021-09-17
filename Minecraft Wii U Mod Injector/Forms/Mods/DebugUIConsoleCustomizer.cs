@@ -85,7 +85,6 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods
                 DebugUIStringsListView.Clear();
                 uint start;
                 uint elementCount = MCVectorFunctions.GetVectorSize(debugUI_ptr + 0x8c, 4, out start, out _, out _);
-                MessageBox.Show(elementCount.ToString());
                 for (uint i = 0; i < elementCount; i++)
                 {
                     uint rendernode_ptr = MainForm.GeckoU.PeekUInt(MainForm.GeckoU.PeekUInt(start + i * 4)+0x2c);

@@ -342,6 +342,15 @@ namespace Minecraft_Wii_U_Mod_Injector.Wii_U.Gecko_U
             return ByteSwap.Swap(BitConverter.ToUInt32(buffer, 0));
         }
 
+        public void excecuteAssembly(string AssemblyString)
+        {
+            byte[] buffer = Encoding.UTF8.GetBytes(AssemblyString);
+            if (RawCommand((byte)GeckoUCommands.Command.CommandExecuteAssembly) != FtdiCommand.CmdOk)
+                throw new GeckoUException(GeckoUException.EtcpErrorCode.FtdiCommandSendError);
+            if (GeckoUWrite(buffer, buffer.Length) != FtdiCommand.CmdOk)
+                throw new GeckoUException(GeckoUException.EtcpErrorCode.FtdiCommandSendError);
+        }
+
         public void RpcToggle(uint address1, uint address2, uint value1, uint value2, bool toggle)
         {
             switch (toggle)
@@ -904,17 +913,13 @@ namespace Minecraft_Wii_U_Mod_Injector.Wii_U.Gecko_U
 
         public void ClearString(uint addressStart, uint addressEnd)
         {
-            var clearingAddress = addressStart;
+            ClearString(addressStart, (int)(addressEnd - addressStart));
+        }
 
-            while (PeekUInt(clearingAddress) != 0x00000000)
-            {
-                if (clearingAddress == addressEnd)
-                {
-                    return;
-                }
-                WriteUInt(clearingAddress, 0x00000000);
-                clearingAddress += 4;
-            }
+        public void ClearString(uint address, int length)
+        {
+            byte[] buffer = new byte[length];
+            WriteBytes(address, buffer);
         }
 
         public uint malloc(uint size,uint alignment = 4)

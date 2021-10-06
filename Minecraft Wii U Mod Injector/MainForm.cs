@@ -9,6 +9,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Net.Sockets;
+using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Minecraft_Wii_U_Mod_Injector.Forms.Managers;
@@ -205,7 +206,7 @@ namespace Minecraft_Wii_U_Mod_Injector
                             break;
                         }
 
-                        new MinecraftFunctions(GeckoU);
+                        _ = new MinecraftFunctions(GeckoU);
                         States.SwapState(States.StatesIds.Connected);
                         IsConnected = true;
                         break;
@@ -369,6 +370,19 @@ namespace Minecraft_Wii_U_Mod_Injector
             }
         }
 
+        private void SeasonalThemesToggled(object sender, EventArgs e)
+        {
+            try
+            {
+                Settings.Default.SeasonalThemes = SeasonalThemes.Checked;
+                Refresh();
+            }
+            catch (Exception error)
+            {
+                Exceptions.LogError(error, "Failed to Toggle Seasonal Themes", true);
+            }
+        }
+
         private void OpenLangMngrBtnClicked(object sender, EventArgs e)
         {
             new LanguageMngr(this).ShowDialog();
@@ -454,9 +468,9 @@ namespace Minecraft_Wii_U_Mod_Injector
 
         private void DebugConsoleCustomizerBtn_Click(object sender, EventArgs e)
         {
-            if(!DebugConsole.Checked || MainForm.GeckoU.PeekUInt(0x109F95E4)==0)
+            if (!DebugConsole.Checked || GeckoU.PeekUInt(0x109F95E4) == 0)
             {
-                MessageBox.Show("This mod requires the Debug UI Console to be active!");
+                MessageBox.Show(@"This mod requires the Debug UI Console to be active!");
                 return;
             }
             new DebugUIConsoleCustomizer(this).ShowDialog();
@@ -1855,6 +1869,5 @@ namespace Minecraft_Wii_U_Mod_Injector
         #endregion
 
         #endregion memory editing
-
     }
 }

@@ -7,6 +7,7 @@ using Minecraft_Wii_U_Mod_Injector.Properties;
 using System.Net;
 using System.Windows.Forms;
 using System.Diagnostics;
+using MetroFramework;
 using Application = System.Windows.Forms.Application;
 
 namespace Minecraft_Wii_U_Mod_Injector.Helpers
@@ -15,7 +16,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
     {
         public static MainForm Injector = new MainForm();
 
-        public static string LocalVer = "v5.2.0.c6";
+        public static string LocalVer = "v5.2.0.c7";
         public static string GitVer = string.Empty;
         public static string UpdaterPath = $@"{Application.StartupPath}\Minecraft.Wii.U.Mod.Injector.Updater.exe";
 
@@ -26,7 +27,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
             Injector = window;
         }
 
-        public static void SetupInjector()
+        public static async void SetupInjector()
         {
             try
             {
@@ -128,23 +129,38 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
                         Messaging.Show(
                             "Welcome to the Minecraft: Wii U Mod Injector! the first and longest lasting Mod Injector for Minecraft: Wii U Edition!\n" +
                             "Before we get started, please take a look at the setup tutorial here: https://www.youtube.com/watch?v=be5fNSgxhrU. \n\nIf you appreciate all the work " +
-                            "I've put into this software, a sub on my main channel is appreciated (https://www.youtube.com/channel/Kashiiera).\nHappy modding!");
+                            "I've put into this software, a sub on my main channel is appreciated (https://www.youtube.com/Kashiiera).\nHappy modding!");
 
                     Settings.Default.FirstLaunch = false;
 
                     Injector.Style = Injector.StyleMngr.Style = Settings.Default.Style;
                     Injector.ColorsBox.Text = Settings.Default.Style.ToString();
-
                     Injector.TextAlign = Settings.Default.FormTxtAlign;
                     Injector.TextAllignBox.Text = Settings.Default.FormTxtAlign.ToString();
-
                     Injector.MainTabs.SelectedIndex = Settings.Default.TabIndex;
-
                     Injector.CheckForPreRelease.Checked = Settings.Default.PrereleaseOptIn;
-
                     Injector.discordRpcCheckBox.Checked = Settings.Default.DiscordRPC;
-
                     Injector.HostIndicators.Checked = Settings.Default.HostIndicators;
+
+                    if (Settings.Default.SeasonalThemes)
+                    {
+                        if (DateTime.Now.ToString("MM") == "10") //Halloween
+                        {
+                            Injector.Style = Injector.StyleMngr.Style = MetroColorStyle.Orange;
+                            Injector.BuildTile.Text = LocalVer + @"
+Halloween Edition";
+                            Injector.ColorsBox.Enabled = false;
+                        }
+
+                        if (DateTime.Now.ToString("MM") == "12") //Christmas TODO: Make this way better
+                        {
+                            Injector.Style = MetroColorStyle.Red;
+                            Injector.StyleMngr.Style = MetroColorStyle.Green;
+                            Injector.BuildTile.Text = LocalVer + @"
+Christmas Edition";
+                            Injector.ColorsBox.Enabled = false;
+                        }
+                    }
                 }
                 catch (Exception)
                 {

@@ -187,6 +187,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.StaticLiquidBlocks = new MetroFramework.Controls.MetroCheckBox();
             this.NoFog = new MetroFramework.Controls.MetroCheckBox();
             this.generalTab = new MetroFramework.Controls.MetroTabPage();
+            this.DebugConsoleCustomizerBtn = new MetroFramework.Controls.MetroButton();
             this.CursedSlider = new System.Windows.Forms.NumericUpDown();
             this.CursedLbl = new MetroFramework.Controls.MetroLabel();
             this.DLCManagerBtn = new MetroFramework.Controls.MetroButton();
@@ -314,7 +315,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.RightClickMenu = new MetroFramework.Controls.MetroContextMenu(this.components);
             this.IncreaseDecimalPlace = new System.Windows.Forms.ToolStripMenuItem();
             this.DecreaseDecimalPlace = new System.Windows.Forms.ToolStripMenuItem();
-            this.DebugConsoleCustomizerBtn = new MetroFramework.Controls.MetroButton();
+            this.SeasonalThemes = new MetroFramework.Controls.MetroCheckBox();
             this.MainTabs.SuspendLayout();
             this.MainTab.SuspendLayout();
             this.playersTab.SuspendLayout();
@@ -457,7 +458,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.MainTabs.Location = new System.Drawing.Point(155, 61);
             this.MainTabs.Multiline = true;
             this.MainTabs.Name = "MainTabs";
-            this.MainTabs.SelectedIndex = 3;
+            this.MainTabs.SelectedIndex = 6;
             this.MainTabs.Size = new System.Drawing.Size(1130, 643);
             this.MainTabs.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.MainTabs.TabIndex = 0;
@@ -3266,6 +3267,20 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.generalTab.VerticalScrollbarHighlightOnWheel = false;
             this.generalTab.VerticalScrollbarSize = 10;
             // 
+            // DebugConsoleCustomizerBtn
+            // 
+            this.DebugConsoleCustomizerBtn.Enabled = false;
+            this.DebugConsoleCustomizerBtn.Location = new System.Drawing.Point(8, 504);
+            this.DebugConsoleCustomizerBtn.Name = "DebugConsoleCustomizerBtn";
+            this.DebugConsoleCustomizerBtn.Size = new System.Drawing.Size(549, 23);
+            this.DebugConsoleCustomizerBtn.TabIndex = 154;
+            this.DebugConsoleCustomizerBtn.Tag = "NonHost";
+            this.DebugConsoleCustomizerBtn.Text = "Debug Console Customizer";
+            this.DebugConsoleCustomizerBtn.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.DebugConsoleCustomizerBtn.UseSelectable = true;
+            this.DebugConsoleCustomizerBtn.UseStyleColors = true;
+            this.DebugConsoleCustomizerBtn.Click += new System.EventHandler(this.DebugConsoleCustomizerBtn_Click);
+            // 
             // CursedSlider
             // 
             this.StyleExtender.SetApplyMetroTheme(this.CursedSlider, true);
@@ -5156,6 +5171,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             // 
             // settingsTab
             // 
+            this.settingsTab.Controls.Add(this.SeasonalThemes);
             this.settingsTab.Controls.Add(this.TextAllignBox);
             this.settingsTab.Controls.Add(this.TextAllignLbl);
             this.settingsTab.Controls.Add(this.HostIndicators);
@@ -5464,19 +5480,18 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.DecreaseDecimalPlace.Size = new System.Drawing.Size(322, 22);
             this.DecreaseDecimalPlace.Text = "Decrease decimal place";
             // 
-            // DebugConsoleCustomizerBtn
+            // SeasonalThemes
             // 
-            this.DebugConsoleCustomizerBtn.Enabled = false;
-            this.DebugConsoleCustomizerBtn.Location = new System.Drawing.Point(8, 504);
-            this.DebugConsoleCustomizerBtn.Name = "DebugConsoleCustomizerBtn";
-            this.DebugConsoleCustomizerBtn.Size = new System.Drawing.Size(549, 23);
-            this.DebugConsoleCustomizerBtn.TabIndex = 154;
-            this.DebugConsoleCustomizerBtn.Tag = "NonHost";
-            this.DebugConsoleCustomizerBtn.Text = "Debug Console Customizer";
-            this.DebugConsoleCustomizerBtn.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.DebugConsoleCustomizerBtn.UseSelectable = true;
-            this.DebugConsoleCustomizerBtn.UseStyleColors = true;
-            this.DebugConsoleCustomizerBtn.Click += new System.EventHandler(this.DebugConsoleCustomizerBtn_Click);
+            this.SeasonalThemes.AutoSize = true;
+            this.SeasonalThemes.Location = new System.Drawing.Point(803, 73);
+            this.SeasonalThemes.Name = "SeasonalThemes";
+            this.SeasonalThemes.Size = new System.Drawing.Size(113, 15);
+            this.SeasonalThemes.TabIndex = 54;
+            this.SeasonalThemes.Text = "Seasonal Themes";
+            this.SeasonalThemes.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.ToolTipManager.SetToolTip(this.SeasonalThemes, "Whether to highlight host/non host mods\r\n\r\nNon Host: Blue\r\nHost: Orange");
+            this.SeasonalThemes.UseSelectable = true;
+            this.SeasonalThemes.CheckedChanged += new System.EventHandler(this.SeasonalThemesToggled);
             // 
             // MainForm
             // 
@@ -5850,5 +5865,6 @@ namespace Minecraft_Wii_U_Mod_Injector
         public MetroLabel CursedLbl;
         public MetroCheckBox InstantSleep;
         private MetroButton DebugConsoleCustomizerBtn;
+        public MetroCheckBox SeasonalThemes;
     }
 }

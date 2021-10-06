@@ -836,8 +836,9 @@ namespace Minecraft_Wii_U_Mod_Injector.Wii_U.Gecko_U
 
             return versionHash;
         }
+
         /// <summary>
-        /// Reads the current Wii U firmware version
+        /// Grabs the current Wii U firmware version
         /// </summary>
         /// <returns>Wii U Firmware version</returns>
         public uint ReadOsVersion()
@@ -853,18 +854,32 @@ namespace Minecraft_Wii_U_Mod_Injector.Wii_U.Gecko_U
             return osVer;
         }
 
+        /// <summary>
+        /// Grabs the currently used account name
+        /// </summary>
+        /// <param name="address">Address to write/read the name to/from</param>
+        /// <returns>The name of the account which is currently logged in</returns>
         public string ReadAccountName(uint address)
         {
             CallFunction(0x03863C8C, address);
             return PeekString(28, address);
         }
 
+        /// <summary>
+        /// Grabs the country the Wii U is in
+        /// </summary>
+        /// <param name="address">Address to write/read the country code to/from</param>
+        /// <returns>A country code (e.g US, JP, BE)</returns>
         public string ReadCountryCode(uint address)
         {
             CallFunction(0x0384E79C, address);
             return PeekString(4, address);
         }
 
+        /// <summary>
+        /// Grabs the currently running Title ID
+        /// </summary>
+        /// <returns>A Wii U application/game's Title ID</returns>
         public string ReadTitleId()
         {
             return CallFunction64(getSymbol("coreinit.rpl", "OSGetTitleID")).ToString("x8");

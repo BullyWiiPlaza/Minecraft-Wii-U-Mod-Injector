@@ -57,7 +57,8 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods
             // 
             // setBGColorBtn
             // 
-            this.setBGColorBtn.Location = new System.Drawing.Point(784, 516);
+            this.setBGColorBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.setBGColorBtn.Location = new System.Drawing.Point(784, 93);
             this.setBGColorBtn.Name = "setBGColorBtn";
             this.setBGColorBtn.Size = new System.Drawing.Size(147, 23);
             this.setBGColorBtn.TabIndex = 1;
@@ -68,6 +69,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods
             // 
             // AlphaSlider
             // 
+            this.AlphaSlider.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.AlphaSlider.BackColor = System.Drawing.Color.Transparent;
             this.AlphaSlider.Location = new System.Drawing.Point(784, 486);
             this.AlphaSlider.Maximum = 255;
@@ -81,7 +83,8 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods
             // 
             // ListStringsBtn
             // 
-            this.ListStringsBtn.Location = new System.Drawing.Point(330, 516);
+            this.ListStringsBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ListStringsBtn.Location = new System.Drawing.Point(784, 64);
             this.ListStringsBtn.Name = "ListStringsBtn";
             this.ListStringsBtn.Size = new System.Drawing.Size(147, 23);
             this.ListStringsBtn.TabIndex = 3;
@@ -96,7 +99,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods
             // 
             // 
             this.selectedStringTextBox.CustomButton.Image = null;
-            this.selectedStringTextBox.CustomButton.Location = new System.Drawing.Point(125, 1);
+            this.selectedStringTextBox.CustomButton.Location = new System.Drawing.Point(732, 1);
             this.selectedStringTextBox.CustomButton.Name = "";
             this.selectedStringTextBox.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.selectedStringTextBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -116,7 +119,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods
             this.selectedStringTextBox.SelectionLength = 0;
             this.selectedStringTextBox.SelectionStart = 0;
             this.selectedStringTextBox.ShortcutsEnabled = true;
-            this.selectedStringTextBox.Size = new System.Drawing.Size(147, 23);
+            this.selectedStringTextBox.Size = new System.Drawing.Size(754, 23);
             this.selectedStringTextBox.TabIndex = 4;
             this.selectedStringTextBox.Text = "StringsText";
             this.selectedStringTextBox.Theme = MetroFramework.MetroThemeStyle.Dark;
@@ -126,13 +129,15 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods
             // 
             // DebugUIStringsListView
             // 
+            this.DebugUIStringsListView.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.DebugUIStringsListView.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.DebugUIStringsListView.FullRowSelect = true;
             this.DebugUIStringsListView.Location = new System.Drawing.Point(24, 64);
             this.DebugUIStringsListView.MultiSelect = false;
             this.DebugUIStringsListView.Name = "DebugUIStringsListView";
             this.DebugUIStringsListView.OwnerDraw = true;
-            this.DebugUIStringsListView.Size = new System.Drawing.Size(300, 446);
+            this.DebugUIStringsListView.Size = new System.Drawing.Size(754, 446);
             this.DebugUIStringsListView.TabIndex = 5;
             this.DebugUIStringsListView.UseCompatibleStateImageBehavior = false;
             this.DebugUIStringsListView.UseSelectable = true;
@@ -141,8 +146,10 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods
             // 
             // setStringBtn
             // 
+            this.setStringBtn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.setStringBtn.Enabled = false;
-            this.setStringBtn.Location = new System.Drawing.Point(177, 516);
+            this.setStringBtn.Location = new System.Drawing.Point(784, 516);
             this.setStringBtn.Name = "setStringBtn";
             this.setStringBtn.Size = new System.Drawing.Size(147, 23);
             this.setStringBtn.TabIndex = 6;
@@ -153,18 +160,20 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods
             // 
             // TransparentcyLabel
             // 
+            this.TransparentcyLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.TransparentcyLabel.AutoSize = true;
             this.TransparentcyLabel.Location = new System.Drawing.Point(784, 461);
             this.TransparentcyLabel.Name = "TransparentcyLabel";
-            this.TransparentcyLabel.Size = new System.Drawing.Size(88, 19);
+            this.TransparentcyLabel.Size = new System.Drawing.Size(84, 19);
             this.TransparentcyLabel.TabIndex = 7;
-            this.TransparentcyLabel.Text = "Transparentcy";
+            this.TransparentcyLabel.Text = "Transparency";
             this.TransparentcyLabel.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // ResolutionLabel
             // 
+            this.ResolutionLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ResolutionLabel.AutoSize = true;
-            this.ResolutionLabel.Location = new System.Drawing.Point(784, 64);
+            this.ResolutionLabel.Location = new System.Drawing.Point(784, 430);
             this.ResolutionLabel.Name = "ResolutionLabel";
             this.ResolutionLabel.Size = new System.Drawing.Size(76, 19);
             this.ResolutionLabel.TabIndex = 8;
@@ -175,7 +184,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(954, 562);
+            this.ClientSize = new System.Drawing.Size(955, 560);
             this.Controls.Add(this.ResolutionLabel);
             this.Controls.Add(this.TransparentcyLabel);
             this.Controls.Add(this.setStringBtn);
@@ -185,6 +194,8 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods
             this.Controls.Add(this.AlphaSlider);
             this.Controls.Add(this.setBGColorBtn);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximumSize = new System.Drawing.Size(3840, 560);
+            this.MinimumSize = new System.Drawing.Size(955, 560);
             this.Name = "DebugUIConsoleCustomizer";
             this.Text = "Minecraft: Wii U Mod Injector - Debug UI Console Customizer";
             this.Theme = MetroFramework.MetroThemeStyle.Dark;

@@ -190,5 +190,17 @@ namespace Minecraft_Wii_U_Mod_Injector.Properties {
                 this["FormTxtAlign"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool SeasonalThemes {
+            get {
+                return ((bool)(this["SeasonalThemes"]));
+            }
+            set {
+                this["SeasonalThemes"] = value;
+            }
+        }
     }
 }

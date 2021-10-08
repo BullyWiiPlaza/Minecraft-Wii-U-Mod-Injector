@@ -12,6 +12,7 @@ using System.Windows.Forms;
 using Minecraft_Wii_U_Mod_Injector.Helpers;
 using Minecraft_Wii_U_Mod_Injector.Helpers.Files;
 using Minecraft_Wii_U_Mod_Injector.Wii_U.Gecko_U;
+using Minecraft_Wii_U_Mod_Injector.Wii_U.Minecraft;
 
 namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods
 {
@@ -73,6 +74,23 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods
             return Encoding.BigEndianUnicode.GetString(data, 4, (int)length * 2);
         }
 
+        private Dictionary<string,object> getRenderNodedata(uint node_ptr)
+        {
+            Dictionary<string, object> data = new Dictionary<string, object>();
+            byte[] node_data = MainForm.GeckoU.ReadBytes(node_ptr, 0xe4);
+            data["flags"] = ByteSwap.Swap(BitConverter.ToUInt32(node_data, 0)) ;
+            data["FuiObjectPointer"] = ByteSwap.Swap(BitConverter.ToUInt32(node_data,0x10));
+            // fuiMatrix readonly :/
+            Array.Reverse(node_data, 0x30, 0x18);
+            data["width"] = BitConverter.ToSingle(node_data, 0x44);
+            data["height"] = BitConverter.ToSingle(node_data, 0x38);
+            data["X"] = BitConverter.ToSingle(node_data, 0x34);
+            data["Y"] = BitConverter.ToSingle(node_data, 0x30);
+            data["name"] = Encoding.UTF8.GetString(node_data, 0x7c, 0x40);
+            data["fjFuiNodePointer"] = ByteSwap.Swap(BitConverter.ToUInt32(node_data, 0xdc));
+            return data;
+        }
+
         private void ListStringsBtn_Click(object sender, EventArgs e)
         {
             var Btn = (MetroButton)sender;
@@ -82,15 +100,17 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods
                 Btn.Enabled = false;
 
                 DebugUIStringsListView.Clear();
-                for (uint i = 0; i < 10; i++)
+                uint start,max;
+                int elementCount = MCVectorFunctions.GetVectorSize(debugUI_ptr + 0x8c, 4, out start, out _, out max);
+                for (uint i = 0; i < elementCount; i++)
                 {
-                    uint rendernode_ptr = MainForm.GeckoU.PeekUInt(debugUI_ptr + 0xf4 + i * 0x60);
+                    uint rendernode_ptr = MainForm.GeckoU.PeekUInt(MainForm.GeckoU.PeekUInt(start + i * 4)+0x2c);
                     uint fj_fuinode_ptr = MainForm.GeckoU.PeekUInt(rendernode_ptr + 0xdc);
                     uint textfield_ptr = MainForm.GeckoU.CallFunction(0x02b03708, fj_fuinode_ptr);
                     if (textfield_ptr == 0)
                     {
                         MessageBox.Show("No Text Field returned !!");
-                        return;
+                        continue;
                     }
                     uint wstr_ptr = textfield_ptr + 0x114;
                     DebugUIStringsListView.Items.Add(getString(wstr_ptr)).SubItems.Add(textfield_ptr.ToString());
@@ -111,6 +131,9 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods
             selectedStringTextBox.Text = e.Item.Text;
             selectedStringTextBox.Enabled = true;
             setStringBtn.Enabled = true;
+            uint fuiRenderNodeEditText_ptr = uint.Parse(e.Item.SubItems[1].Text);
+            var info_data = getRenderNodedata(fuiRenderNodeEditText_ptr);
+            UIControl_LabelInfo.Text = $"X: {info_data["X"]}\nY: {info_data["Y"]}";
         }
 
         private void setStringBtn_Click(object sender, EventArgs e)

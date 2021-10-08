@@ -1094,7 +1094,7 @@ namespace Minecraft_Wii_U_Mod_Injector
 
         private void LeftHandedToggled(object sender, EventArgs e)
         {
-            GeckoU.WriteUIntToggle(0x02728620, Off, 0x80630088, LeftHanded.Checked);
+            GeckoU.WriteUIntToggle(0x027285fc, Nop, 0x40820020, LeftHanded.Checked);
         }
 
         private void UnlimitedJumpsToggled(object sender, EventArgs e)

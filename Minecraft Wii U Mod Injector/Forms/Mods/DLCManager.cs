@@ -36,7 +36,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods
             Dispose();
         }
 
-        private uint currentAmount = 0;
+        private int currentAmount = 0;
         private readonly uint DLCManager_ptr = 0x10A2AFD0;
         private void UpdatePackCountLabel()
         {
@@ -123,7 +123,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods
         {
             uint texturePackRepo = MainForm.GeckoU.PeekUInt(MainForm.GeckoU.PeekUInt(0x109cd8e4) + 0x160);
             uint vec_ptr = MainForm.GeckoU.PeekUInt(texturePackRepo + 0x4c);
-            uint currentSize = MCVectorFunctions.GetVectorSize(vec_ptr, 4, out uint start, out _, out _);
+            int currentSize = MCVectorFunctions.GetVectorSize(vec_ptr, 4, out uint start, out _, out _);
             uint pos;
             bool found = false;
             for (uint i = 0; i < currentSize; i++) // loop through the texturepack repo vector
@@ -150,7 +150,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods
         private bool RemoveLevelGenOpt(uint dlcpack_ref)
         {
             uint LevelGenerator_ptr = MainForm.GeckoU.PeekUInt(0x10A2B3E0);
-            uint GenerationOptionsCount = MCVectorFunctions.GetVectorSize(LevelGenerator_ptr, 4, out uint GenerationOptionsStart, out _, out _);
+            int GenerationOptionsCount = MCVectorFunctions.GetVectorSize(LevelGenerator_ptr, 4, out uint GenerationOptionsStart, out _, out _);
             bool found = false;
             for (uint i = 0; i < GenerationOptionsCount; i++)
             {
@@ -175,11 +175,11 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods
             DLCPackListView.SelectedItems[0].Remove();
             //MessageBox.Show(dlcPack.ToString("X8"));
             // first check if it has child packs that are used in texturepacks
-            uint childCount = MCVectorFunctions.GetVectorSize(dlcPack + 0xf0, 4, out uint childStart, out _, out _);
+            int childCount = MCVectorFunctions.GetVectorSize(dlcPack + 0xf0, 4, out uint childStart, out _, out _);
             var res = false;
             if (childCount != 0)
             {
-                res = RemoveDLCTexturePack(childStart, childCount);
+                res = RemoveDLCTexturePack(childStart, (uint)childCount);
             }
             var res2 = RemoveLevelGenOpt(dlcPack);
             MessageBox.Show("Contained in Texturepack : " + res.ToString() + "\nContained in Game Rule Manager : " + res2.ToString());

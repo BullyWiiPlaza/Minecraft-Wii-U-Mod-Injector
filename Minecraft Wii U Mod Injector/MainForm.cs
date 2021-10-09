@@ -131,6 +131,10 @@ namespace Minecraft_Wii_U_Mod_Injector
             _ = new Setup(this);
             _ = new Miscellaneous(this);
 
+            BuildNotesBox.Text = Resources.releaseNotes;
+            BuildVerTitleLbl.Text = @"Patch Notes for " + Setup.LocalVer;
+            BuildTile.Text = Setup.LocalVer;
+
             Setup.SetupInjector();
         }
 

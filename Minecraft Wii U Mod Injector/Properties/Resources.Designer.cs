@@ -83,16 +83,6 @@ namespace Minecraft_Wii_U_Mod_Injector.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap githubLogo {
-            get {
-                object obj = ResourceManager.GetObject("githubLogo", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap Icon {
             get {
                 object obj = ResourceManager.GetObject("Icon", resourceCulture);
@@ -111,18 +101,21 @@ namespace Minecraft_Wii_U_Mod_Injector.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to [Release v5.1.8.h6 (13th of August, 2021)]
+        ///   Looks up a localized string similar to [Release v5.2.0.c7 (6th of October, 2021)]
         ///
-        ///[Information]
-        ///If you are experiencing issues, please report them on the Github Issues page or by joining the official discord server.
+        ///# Overview
         ///
-        ///This update adds the ability to use the Enter key to connect to your Wii U
+        ///This update adds a new mod and adds seasonal themes
         ///
-        ///[Changes]
+        ///# Changes
         ///
-        ///+ General Additions &amp; Updates:
+        ///### New mods
         ///
-        ///- The &quot;Enter&quot; key can now be used to connect to your Wii U.
+        ///- General Game &gt; Debug UI Customizer (You can customize the Debug Console&apos;s output with this, make sure to enable Debug Console first. (Made by miku-666))
+        ///
+        ///### General Additions &amp; Updates:
+        ///
+        ///Seasonal Themes &gt; Depending on what holiday it is, the Injector will change it&apos;s theme and style to match that holiday for an entire month, can be disabled in Settings.
         /// </summary>
         internal static string releaseNote {
             get {
@@ -131,23 +124,23 @@ namespace Minecraft_Wii_U_Mod_Injector.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to [Release v5.1.8.h6 (13th of August, 2021)]
+        ///   Looks up a localized string similar to [Release v5.2.0.c7 (6th of October, 2021)]
         ///
-        ///[Information]
-        ///If you are experiencing issues, please report them on the Github Issues page or by joining the official discord server.
+        ///# Overview
         ///
-        ///This update adds the ability to use the Enter key to connect to your Wii U
+        ///This update adds a new mod and adds seasonal themes
         ///
-        ///[Changes]
+        ///# Changes
         ///
-        ///+ General Additions &amp; Updates:
+        ///### New mods
         ///
-        ///- The &quot;Enter&quot; key can now be used to connect to your Wii U
+        ///- General Game &gt; Debug UI Customizer (You can customize the Debug Console&apos;s output with this, make sure to enable Debug Console first. (Made by miku-666))
         ///
-        ///[Release v5.1.8.c5 (11th of August, 2021)]
+        ///### General Additions &amp; Updates:
         ///
-        ///[Information]
-        ///If you are experiencing issues, please report them on the Github Issues page or  [rest of string was truncated]&quot;;.
+        ///Seasonal Themes &gt; Depending on what holiday it is, the Injector will change it&apos;s theme and style to match that holiday for an entire month, can be disabled in Settings
+        ///
+        ///[Re [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string releaseNotes {
             get {

@@ -28,7 +28,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Managers
         public static List<string> ServerNames = new List<string>();
         public static List<string> ServerUrls = new List<string>();
 
-        public string[] BlackList = {"BuildTile", "BuildVerTitleLbl"};
+        public string[] BlackList = {"BuildTile", "BuildVerTitleLbl", "CommandsWarnLbl" };
         #endregion
 
         #region init

@@ -251,7 +251,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.ringScoreG = new MetroFramework.Controls.MetroLabel();
             this.ringScoreGreen = new System.Windows.Forms.NumericUpDown();
             this.commandsTab = new MetroFramework.Controls.MetroTabPage();
-            this.commandsWarnLbl = new MetroFramework.Controls.MetroLabel();
+            this.CommandsWarnLbl = new MetroFramework.Controls.MetroLabel();
             this.CommandsInMinigames = new MetroFramework.Controls.MetroCheckBox();
             this.tellrawLbl = new MetroFramework.Controls.MetroLabel();
             this.tellrawPanel = new MetroFramework.Controls.MetroPanel();
@@ -316,6 +316,8 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.RightClickMenu = new MetroFramework.Controls.MetroContextMenu(this.components);
             this.IncreaseDecimalPlace = new System.Windows.Forms.ToolStripMenuItem();
             this.DecreaseDecimalPlace = new System.Windows.Forms.ToolStripMenuItem();
+            this.TutorialBtn = new MetroFramework.Controls.MetroButton();
+            this.TipsBtn = new MetroFramework.Controls.MetroButton();
             this.MainTabs.SuspendLayout();
             this.MainTab.SuspendLayout();
             this.playersTab.SuspendLayout();
@@ -458,7 +460,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.MainTabs.Location = new System.Drawing.Point(155, 61);
             this.MainTabs.Multiline = true;
             this.MainTabs.Name = "MainTabs";
-            this.MainTabs.SelectedIndex = 2;
+            this.MainTabs.SelectedIndex = 6;
             this.MainTabs.Size = new System.Drawing.Size(1130, 643);
             this.MainTabs.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.MainTabs.TabIndex = 0;
@@ -4338,7 +4340,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             // 
             // commandsTab
             // 
-            this.commandsTab.Controls.Add(this.commandsWarnLbl);
+            this.commandsTab.Controls.Add(this.CommandsWarnLbl);
             this.commandsTab.Controls.Add(this.CommandsInMinigames);
             this.commandsTab.Controls.Add(this.tellrawLbl);
             this.commandsTab.Controls.Add(this.tellrawPanel);
@@ -4370,19 +4372,19 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.commandsTab.VerticalScrollbarHighlightOnWheel = false;
             this.commandsTab.VerticalScrollbarSize = 10;
             // 
-            // commandsWarnLbl
+            // CommandsWarnLbl
             // 
-            this.commandsWarnLbl.AutoSize = true;
-            this.commandsWarnLbl.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.commandsWarnLbl.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.commandsWarnLbl.Location = new System.Drawing.Point(106, 443);
-            this.commandsWarnLbl.Name = "commandsWarnLbl";
-            this.commandsWarnLbl.Size = new System.Drawing.Size(912, 50);
-            this.commandsWarnLbl.TabIndex = 52;
-            this.commandsWarnLbl.Text = "Commands require you to be the host or a moderator. If you want to use commands i" +
+            this.CommandsWarnLbl.AutoSize = true;
+            this.CommandsWarnLbl.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.CommandsWarnLbl.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.CommandsWarnLbl.Location = new System.Drawing.Point(106, 443);
+            this.CommandsWarnLbl.Name = "CommandsWarnLbl";
+            this.CommandsWarnLbl.Size = new System.Drawing.Size(912, 50);
+            this.CommandsWarnLbl.TabIndex = 52;
+            this.CommandsWarnLbl.Text = "Commands require you to be the host or a moderator. If you want to use commands i" +
     "n minigames make sure to \r\nselect the \"Commands in Minigames\" option";
-            this.commandsWarnLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.commandsWarnLbl.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.CommandsWarnLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.CommandsWarnLbl.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // CommandsInMinigames
             // 
@@ -5171,6 +5173,8 @@ namespace Minecraft_Wii_U_Mod_Injector
             // 
             // settingsTab
             // 
+            this.settingsTab.Controls.Add(this.TipsBtn);
+            this.settingsTab.Controls.Add(this.TutorialBtn);
             this.settingsTab.Controls.Add(this.SeasonalThemes);
             this.settingsTab.Controls.Add(this.TextAllignBox);
             this.settingsTab.Controls.Add(this.TextAllignLbl);
@@ -5256,10 +5260,10 @@ namespace Minecraft_Wii_U_Mod_Injector
             // CemuPckMngrBtn
             // 
             this.CemuPckMngrBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.CemuPckMngrBtn.Location = new System.Drawing.Point(87, 193);
+            this.CemuPckMngrBtn.Location = new System.Drawing.Point(773, 97);
             this.CemuPckMngrBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.CemuPckMngrBtn.Name = "CemuPckMngrBtn";
-            this.CemuPckMngrBtn.Size = new System.Drawing.Size(1028, 36);
+            this.CemuPckMngrBtn.Size = new System.Drawing.Size(335, 36);
             this.CemuPckMngrBtn.TabIndex = 50;
             this.CemuPckMngrBtn.Text = "Cemu Graphics Pack Manager";
             this.CemuPckMngrBtn.Theme = MetroFramework.MetroThemeStyle.Dark;
@@ -5270,10 +5274,10 @@ namespace Minecraft_Wii_U_Mod_Injector
             // QuickModsManagerBtn
             // 
             this.QuickModsManagerBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.QuickModsManagerBtn.Location = new System.Drawing.Point(87, 145);
+            this.QuickModsManagerBtn.Location = new System.Drawing.Point(430, 97);
             this.QuickModsManagerBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.QuickModsManagerBtn.Name = "QuickModsManagerBtn";
-            this.QuickModsManagerBtn.Size = new System.Drawing.Size(1028, 36);
+            this.QuickModsManagerBtn.Size = new System.Drawing.Size(335, 36);
             this.QuickModsManagerBtn.TabIndex = 49;
             this.QuickModsManagerBtn.Text = "Quick Mods Manager";
             this.QuickModsManagerBtn.Theme = MetroFramework.MetroThemeStyle.Dark;
@@ -5287,7 +5291,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.OpenLangMngrBtn.Location = new System.Drawing.Point(87, 97);
             this.OpenLangMngrBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.OpenLangMngrBtn.Name = "OpenLangMngrBtn";
-            this.OpenLangMngrBtn.Size = new System.Drawing.Size(1028, 36);
+            this.OpenLangMngrBtn.Size = new System.Drawing.Size(335, 36);
             this.OpenLangMngrBtn.TabIndex = 48;
             this.OpenLangMngrBtn.Text = "Languages Manager";
             this.OpenLangMngrBtn.Theme = MetroFramework.MetroThemeStyle.Dark;
@@ -5340,10 +5344,10 @@ namespace Minecraft_Wii_U_Mod_Injector
             // updateBtn
             // 
             this.updateBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.updateBtn.Location = new System.Drawing.Point(87, 241);
+            this.updateBtn.Location = new System.Drawing.Point(87, 145);
             this.updateBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.updateBtn.Name = "updateBtn";
-            this.updateBtn.Size = new System.Drawing.Size(1028, 36);
+            this.updateBtn.Size = new System.Drawing.Size(1021, 36);
             this.updateBtn.TabIndex = 45;
             this.updateBtn.Text = "Check for Updates";
             this.updateBtn.Theme = MetroFramework.MetroThemeStyle.Dark;
@@ -5493,6 +5497,34 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.DecreaseDecimalPlace.Size = new System.Drawing.Size(322, 22);
             this.DecreaseDecimalPlace.Text = "Decrease decimal place";
             // 
+            // TutorialBtn
+            // 
+            this.TutorialBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.TutorialBtn.Location = new System.Drawing.Point(87, 193);
+            this.TutorialBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.TutorialBtn.Name = "TutorialBtn";
+            this.TutorialBtn.Size = new System.Drawing.Size(1021, 36);
+            this.TutorialBtn.TabIndex = 55;
+            this.TutorialBtn.Text = "Tutorial";
+            this.TutorialBtn.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.ToolTipManager.SetToolTip(this.TutorialBtn, "Launches the Mod Injector Tutorial");
+            this.TutorialBtn.UseSelectable = true;
+            this.TutorialBtn.Click += new System.EventHandler(this.TutorialBtnClicked);
+            // 
+            // TipsBtn
+            // 
+            this.TipsBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.TipsBtn.Location = new System.Drawing.Point(87, 241);
+            this.TipsBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.TipsBtn.Name = "TipsBtn";
+            this.TipsBtn.Size = new System.Drawing.Size(1021, 36);
+            this.TipsBtn.TabIndex = 56;
+            this.TipsBtn.Text = "Tips";
+            this.TipsBtn.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.ToolTipManager.SetToolTip(this.TipsBtn, "Shows a random tip relating to the Mod Injector");
+            this.TipsBtn.UseSelectable = true;
+            this.TipsBtn.Click += new System.EventHandler(this.TipsBtnClicked);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -5518,6 +5550,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.TransparencyKey = System.Drawing.Color.Empty;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Exit);
             this.Load += new System.EventHandler(this.Init);
+            this.Shown += new System.EventHandler(this.InitShown);
             this.MainTabs.ResumeLayout(false);
             this.MainTab.ResumeLayout(false);
             this.MainTab.PerformLayout();
@@ -5811,7 +5844,7 @@ namespace Minecraft_Wii_U_Mod_Injector
         public MetroLabel LiquidSpreadTime;
         public MetroCheckBox DisableFallingBlocks;
         private MetroCheckBox CommandsInMinigames;
-        private MetroLabel commandsWarnLbl;
+        private MetroLabel CommandsWarnLbl;
         private MetroButton AchievementEditor;
         public MetroCheckBox SwimFast;
         public MetroCheckBox BreakBedrock;
@@ -5866,5 +5899,7 @@ namespace Minecraft_Wii_U_Mod_Injector
         public MetroCheckBox InstantSleep;
         private MetroButton DebugConsoleCustomizerBtn;
         public MetroCheckBox SeasonalThemes;
+        public MetroButton TutorialBtn;
+        public MetroButton TipsBtn;
     }
 }

@@ -116,6 +116,15 @@ namespace Minecraft_Wii_U_Mod_Injector
 
         #endregion
 
+        #region strings
+
+        private readonly string[] _tipsList = new[]
+        {
+            "You can find out what a mod or option does by hovering your mouse over it",
+            "You can increase the decimal places on mods which use a slider by right clicking the slider",
+        };
+        #endregion
+
         #endregion
 
         public MainForm()
@@ -138,6 +147,71 @@ namespace Minecraft_Wii_U_Mod_Injector
             Setup.SetupInjector();
         }
 
+        private void InitShown(object sender, EventArgs e)
+        {
+            if(Settings.Default.FirstLaunch || !Settings.Default.SeenTutorial)
+                InitTutorial();
+        }
+
+        private async void InitTutorial()
+        {
+            Enabled = false;
+
+            Messaging.ShowTutorial(
+                "Welcome to the Minecraft: Wii U Mod Injector Tutorial.\n" +
+                "This tutorial will quickly go through the basics of the Mod Injector to get you started up.\n\n" +
+                "If you are ready, hit \"OK\".", " - Tutorial");
+
+            SwapTab(HomeTile, null);
+
+            Messaging.ShowTutorial(
+                "This is the home page.\n" +
+                "Here you can view the change log(s), connect to your Wii U, view the Frequently asked Questions, Credits, Setup Tutorial and join the official Discord Server.",
+                " - Tutorial");
+
+            Messaging.ShowTutorial(
+                "The following pages are the mod pages.\n" +
+                "This is where you'll be able to start applying mds such as Player specific modifications, world modifications, minigames modifications and commands!\n\n" +
+                "Let's look through them real quick.", " - Tutorial");
+
+            SwapTab(PlayersTile, null);
+            await Task.Delay(1000);
+            SwapTab(WorldTile, null);
+            await Task.Delay(1000);
+            SwapTab(GeneralTile, null);
+            await Task.Delay(1000);
+            SwapTab(MinigamesTile, null);
+            await Task.Delay(1000);
+            SwapTab(CommandsTile, null);
+            await Task.Delay(1000);
+            SwapTab(SettingsTile, null);
+
+            Messaging.ShowTutorial(
+                "This is the settings page. You can customize the Mod Injector, manually check for updates and use various utilities built-in the Mod Injector such as:\n\n" +
+                "Language Manager: An utility to download, create and apply custom language files in-case English isn't your primary language.\n" +
+                "Quick Mods Manager: An utility to create and apply a bunch of mods at once without having to apply them one by one.\n" +
+                "Cemu Graphics Pack Manager: An utility to create Graphics Packs for the Wii U Emulator \"Cemu\". Allows you to use Mod Injector mods on Cemu.\n\n",
+                " - Tutorial");
+
+            Enabled = true;
+
+            await Task.Delay(700);
+            OpenLangMngrBtn.Select();
+            await Task.Delay(700);
+            QuickModsManagerBtn.Select();
+            await Task.Delay(700);
+            CemuPckMngrBtn.Select();
+            await Task.Delay(700);
+            updateBtn.Select();
+
+            Messaging.ShowTutorial(
+                "That was all! If you have any questions, suggestions or bug reports feel free to join our official Discord Server on the home page.\n\n" +
+                "With all that being said, have fun modding!", " - Tutorial");
+
+            SwapTab(HomeTile, null);
+
+            Settings.Default.SeenTutorial = true;
+        }
 
         private void Exit(object sender, FormClosingEventArgs e)
         {
@@ -181,11 +255,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             {
                 slider.DecimalPlaces--;
             }
-        }
-
-        private async Task PutTaskDelay(int sleep)
-        {
-            await Task.Delay(sleep);
         }
 
         private void ConnectBtnClicked(object sender, EventArgs e)
@@ -399,6 +468,19 @@ namespace Minecraft_Wii_U_Mod_Injector
         private void CemuPckMngrBtnClicked(object sender, EventArgs e)
         {
             new CemuPckMngr(this).ShowDialog();
+        }
+
+        private void TutorialBtnClicked(object sender, EventArgs e)
+        {
+            InitTutorial();
+        }
+
+        private void TipsBtnClicked(object sender, EventArgs e)
+        {
+            var r = new Random();
+            var index = r.Next(_tipsList.Length);
+
+            Messaging.Show(_tipsList[index]);
         }
 
         private void OpenFaqInfoClicked(object sender, EventArgs e)
@@ -1716,7 +1798,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             }
 
             GeckoU.ClearString(textStart, textEnd);
-            await PutTaskDelay(200);
+            await Task.Delay(200);
             GeckoU.WriteString(textStart, message);
             DownfallCommandBtnClicked(null, null);
         }
@@ -1776,7 +1858,7 @@ namespace Minecraft_Wii_U_Mod_Injector
         private async void EndGameClicked(object sender, EventArgs e)
         {
             GeckoU.WriteUInt(0x02C93A90, Blr);
-            await PutTaskDelay(200);
+            await Task.Delay(200);
             GeckoU.WriteUInt(0x02C93A90, Mflr);
         }
 

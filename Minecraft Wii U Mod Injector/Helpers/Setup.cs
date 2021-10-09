@@ -33,8 +33,6 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
             {
 #if !DEBUG
                 await RetrieveGitVersion();
-#endif
-#if DEBUG
                 LocalVer += " (Dev)";
 #endif
 
@@ -141,6 +139,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
                     Injector.CheckForPreRelease.Checked = Settings.Default.PrereleaseOptIn;
                     Injector.discordRpcCheckBox.Checked = Settings.Default.DiscordRPC;
                     Injector.HostIndicators.Checked = Settings.Default.HostIndicators;
+                    Injector.SeasonalThemes.Checked = Settings.Default.SeasonalThemes;
 
                     if (Settings.Default.SeasonalThemes)
                     {

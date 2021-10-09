@@ -293,6 +293,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.giveAmountBox = new MetroFramework.Controls.MetroTextBox();
             this.giveIDBox = new MetroFramework.Controls.MetroTextBox();
             this.settingsTab = new MetroFramework.Controls.MetroTabPage();
+            this.SeasonalThemes = new MetroFramework.Controls.MetroCheckBox();
             this.TextAllignBox = new MetroFramework.Controls.MetroComboBox();
             this.TextAllignLbl = new MetroFramework.Controls.MetroLabel();
             this.HostIndicators = new MetroFramework.Controls.MetroCheckBox();
@@ -315,7 +316,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.RightClickMenu = new MetroFramework.Controls.MetroContextMenu(this.components);
             this.IncreaseDecimalPlace = new System.Windows.Forms.ToolStripMenuItem();
             this.DecreaseDecimalPlace = new System.Windows.Forms.ToolStripMenuItem();
-            this.SeasonalThemes = new MetroFramework.Controls.MetroCheckBox();
             this.MainTabs.SuspendLayout();
             this.MainTab.SuspendLayout();
             this.playersTab.SuspendLayout();
@@ -5200,6 +5200,19 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.settingsTab.VerticalScrollbarHighlightOnWheel = false;
             this.settingsTab.VerticalScrollbarSize = 10;
             // 
+            // SeasonalThemes
+            // 
+            this.SeasonalThemes.AutoSize = true;
+            this.SeasonalThemes.Location = new System.Drawing.Point(803, 73);
+            this.SeasonalThemes.Name = "SeasonalThemes";
+            this.SeasonalThemes.Size = new System.Drawing.Size(113, 15);
+            this.SeasonalThemes.TabIndex = 54;
+            this.SeasonalThemes.Text = "Seasonal Themes";
+            this.SeasonalThemes.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.ToolTipManager.SetToolTip(this.SeasonalThemes, "Whether to use Seasonal Themes or not");
+            this.SeasonalThemes.UseSelectable = true;
+            this.SeasonalThemes.CheckedChanged += new System.EventHandler(this.SeasonalThemesToggled);
+            // 
             // TextAllignBox
             // 
             this.TextAllignBox.FormattingEnabled = true;
@@ -5479,19 +5492,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             | System.Windows.Forms.Keys.OemMinus)));
             this.DecreaseDecimalPlace.Size = new System.Drawing.Size(322, 22);
             this.DecreaseDecimalPlace.Text = "Decrease decimal place";
-            // 
-            // SeasonalThemes
-            // 
-            this.SeasonalThemes.AutoSize = true;
-            this.SeasonalThemes.Location = new System.Drawing.Point(803, 73);
-            this.SeasonalThemes.Name = "SeasonalThemes";
-            this.SeasonalThemes.Size = new System.Drawing.Size(113, 15);
-            this.SeasonalThemes.TabIndex = 54;
-            this.SeasonalThemes.Text = "Seasonal Themes";
-            this.SeasonalThemes.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.SeasonalThemes, "Whether to highlight host/non host mods\r\n\r\nNon Host: Blue\r\nHost: Orange");
-            this.SeasonalThemes.UseSelectable = true;
-            this.SeasonalThemes.CheckedChanged += new System.EventHandler(this.SeasonalThemesToggled);
             // 
             // MainForm
             // 

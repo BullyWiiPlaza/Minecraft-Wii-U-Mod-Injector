@@ -45,10 +45,6 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
                     Settings.Default.Save();
                 }
 
-                Injector.BuildNotesBox.Text = Resources.releaseNotes;
-                Injector.BuildVerTitleLbl.Text = @"Patch Notes for " + LocalVer;
-                Injector.BuildTile.Text = LocalVer;
-
                 DiscordRp.Initialize();
 
                 SetupUserPrefs();
@@ -141,6 +137,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
                     Injector.CheckForPreRelease.Checked = Settings.Default.PrereleaseOptIn;
                     Injector.discordRpcCheckBox.Checked = Settings.Default.DiscordRPC;
                     Injector.HostIndicators.Checked = Settings.Default.HostIndicators;
+                    Injector.SeasonalThemes.Checked = Settings.Default.SeasonalThemes;
 
                     if (Settings.Default.SeasonalThemes)
                     {
@@ -150,15 +147,17 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
                             Injector.BuildTile.Text = LocalVer + @"
 Halloween Edition";
                             Injector.ColorsBox.Enabled = false;
+                            Injector.Refresh();
                         }
 
-                        if (DateTime.Now.ToString("MM") == "12") //Christmas TODO: Make this way better
+                        if (DateTime.Now.ToString("MM") == "12") //Christmas TODO: Make this way better, looks kind of ugly?
                         {
                             Injector.Style = MetroColorStyle.Red;
                             Injector.StyleMngr.Style = MetroColorStyle.Green;
                             Injector.BuildTile.Text = LocalVer + @"
 Christmas Edition";
                             Injector.ColorsBox.Enabled = false;
+                            Injector.Refresh();
                         }
                     }
                 }

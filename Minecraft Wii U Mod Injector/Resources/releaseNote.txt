@@ -6,7 +6,7 @@ This update adds a Tutorial, Tips and a few bug fixes
 
 # Changes
 
-### General Additions & Updates:
+### General Additions & Updates
 
 - Tutorial > When you first start the Injector you wil be greeted by a tutorial
 - Settings > Tutorial > Same as above, but for when you want to replay the tutorial

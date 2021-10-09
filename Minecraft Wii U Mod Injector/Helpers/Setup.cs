@@ -16,7 +16,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
     {
         public static MainForm Injector = new MainForm();
 
-        public static string LocalVer = "v5.2.0.c7";
+        public static string LocalVer = "v5.2.0.q8";
         public static string GitVer = string.Empty;
         public static string UpdaterPath = $@"{Application.StartupPath}\Minecraft.Wii.U.Mod.Injector.Updater.exe";
 
@@ -127,8 +127,6 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
                             "Before we get started, please take a look at the setup tutorial here: https://www.youtube.com/watch?v=be5fNSgxhrU. \n\nIf you appreciate all the work " +
                             "I've put into this software, a sub on my main channel is appreciated (https://www.youtube.com/Kashiiera).\nHappy modding!");
 
-                    Settings.Default.FirstLaunch = false;
-
                     Injector.Style = Injector.StyleMngr.Style = Settings.Default.Style;
                     Injector.ColorsBox.Text = Settings.Default.Style.ToString();
                     Injector.TextAlign = Settings.Default.FormTxtAlign;
@@ -136,6 +134,10 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
                     Injector.MainTabs.SelectedIndex = Settings.Default.TabIndex;
                     Injector.CheckForPreRelease.Checked = Settings.Default.PrereleaseOptIn;
                     Injector.discordRpcCheckBox.Checked = Settings.Default.DiscordRPC;
+
+                    if(Settings.Default.DiscordRPC)
+                        DiscordRp.Deinitialize();
+
                     Injector.HostIndicators.Checked = Settings.Default.HostIndicators;
                     Injector.SeasonalThemes.Checked = Settings.Default.SeasonalThemes;
 

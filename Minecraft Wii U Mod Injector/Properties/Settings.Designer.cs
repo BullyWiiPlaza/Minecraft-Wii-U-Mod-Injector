@@ -202,5 +202,17 @@ namespace Minecraft_Wii_U_Mod_Injector.Properties {
                 this["SeasonalThemes"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool SeenTutorial {
+            get {
+                return ((bool)(this["SeenTutorial"]));
+            }
+            set {
+                this["SeenTutorial"] = value;
+            }
+        }
     }
 }

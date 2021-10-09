@@ -1,15 +1,22 @@
-[Release v5.2.0.c7 (6th of October, 2021)]
+[Release v5.2.0.q8 (9th of October, 2021)]
 
 # Overview
 
-This update adds a new mod and adds seasonal themes
+This update adds a Tutorial, Tips and a few bug fixes
 
 # Changes
 
-### New mods
+### General Additions & Updates
 
-- General Game > Debug UI Customizer (You can customize the Debug Console's output with this, make sure to enable Debug Console first. (Made by miku-666))
+- Tutorial > When you first start the Injector you wil be greeted by a tutorial
+- Settings > Tutorial > Same as above, but for when you want to replay the tutorial
+- Settings > Tips > Shows a randomly selected tip on how to use the Mod Injector
 
-### General Additions & Updates:
+# Fixes
 
-Seasonal Themes > Depending on what holiday it is, the Injector will change it's theme and style to match that holiday for an entire month, can be disabled in Settings
+### General Fixes
+
+- Settings > Discord RPC preference is now applied on start-up as intended
+- Settings > Seasonal Themes > Fixed a bug where Seasonal Themes would not be checked on start-up despite it being enabled
+- Settings > Seasonal Themes > Fixed incorrect ToolTip
+- Settings > Language Manager > Fixed a bug where a blacklisted control would still be applied and break the template export

@@ -16,7 +16,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
     {
         public static MainForm Injector = new MainForm();
 
-        public static string LocalVer = "v5.2.0.q8";
+        public static string LocalVer = "v5.2.0.q8/h8";
         public static string GitVer = string.Empty;
         public static string UpdaterPath = $@"{Application.StartupPath}\Minecraft.Wii.U.Mod.Injector.Updater.exe";
 
@@ -135,7 +135,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
                     Injector.CheckForPreRelease.Checked = Settings.Default.PrereleaseOptIn;
                     Injector.discordRpcCheckBox.Checked = Settings.Default.DiscordRPC;
 
-                    if(Settings.Default.DiscordRPC)
+                    if(!Settings.Default.DiscordRPC)
                         DiscordRp.Deinitialize();
 
                     Injector.HostIndicators.Checked = Settings.Default.HostIndicators;

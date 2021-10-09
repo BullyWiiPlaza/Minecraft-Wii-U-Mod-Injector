@@ -1,4 +1,4 @@
-[Release v5.2.0.q8/h8 (9th of October, 2021)]
+[Release v5.2.0.q8h1 (9th of October, 2021)]
 
 # Overview
 

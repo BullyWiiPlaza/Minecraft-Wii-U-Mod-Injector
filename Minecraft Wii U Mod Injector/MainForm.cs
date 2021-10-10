@@ -234,6 +234,9 @@ namespace Minecraft_Wii_U_Mod_Injector
                 return;
             }
 
+            if (tile == MinigamesTile)
+                NavMenuMgPnl.Visible = !NavMenuMgPnl.Visible;
+
             if (MainTabs.SelectedIndex != tile.TileCount)
                 MainTabs.SelectedIndex = tile.TileCount;
             else

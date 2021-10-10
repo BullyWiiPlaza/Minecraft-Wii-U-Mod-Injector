@@ -214,7 +214,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.AllDLCUnlocked = new MetroFramework.Controls.MetroCheckBox();
             this.ExitGame = new MetroFramework.Controls.MetroButton();
             this.MinigamesTab = new MetroFramework.Controls.MetroTabPage();
-            this.EmptyTile = new MetroFramework.Controls.MetroTile();
             this.GlideTile = new MetroFramework.Controls.MetroTile();
             this.TumbleTile = new MetroFramework.Controls.MetroTile();
             this.BattleTile = new MetroFramework.Controls.MetroTile();
@@ -293,6 +292,8 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.giveAmountBox = new MetroFramework.Controls.MetroTextBox();
             this.giveIDBox = new MetroFramework.Controls.MetroTextBox();
             this.settingsTab = new MetroFramework.Controls.MetroTabPage();
+            this.TipsBtn = new MetroFramework.Controls.MetroButton();
+            this.TutorialBtn = new MetroFramework.Controls.MetroButton();
             this.SeasonalThemes = new MetroFramework.Controls.MetroCheckBox();
             this.TextAllignBox = new MetroFramework.Controls.MetroComboBox();
             this.TextAllignLbl = new MetroFramework.Controls.MetroLabel();
@@ -316,8 +317,9 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.RightClickMenu = new MetroFramework.Controls.MetroContextMenu(this.components);
             this.IncreaseDecimalPlace = new System.Windows.Forms.ToolStripMenuItem();
             this.DecreaseDecimalPlace = new System.Windows.Forms.ToolStripMenuItem();
-            this.TutorialBtn = new MetroFramework.Controls.MetroButton();
-            this.TipsBtn = new MetroFramework.Controls.MetroButton();
+            this.NavMenuPnl = new MetroFramework.Controls.MetroPanel();
+            this.NavMenuMgPnl = new MetroFramework.Controls.MetroPanel();
+            this.EmptyTile = new MetroFramework.Controls.MetroTile();
             this.MainTabs.SuspendLayout();
             this.MainTab.SuspendLayout();
             this.playersTab.SuspendLayout();
@@ -366,15 +368,18 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.settingsTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.StyleMngr)).BeginInit();
             this.RightClickMenu.SuspendLayout();
+            this.NavMenuPnl.SuspendLayout();
+            this.NavMenuMgPnl.SuspendLayout();
             this.SuspendLayout();
             // 
             // WorldTile
             // 
             this.WorldTile.ActiveControl = null;
-            this.WorldTile.Location = new System.Drawing.Point(0, 173);
+            this.WorldTile.Dock = System.Windows.Forms.DockStyle.Top;
+            this.WorldTile.Location = new System.Drawing.Point(0, 110);
             this.WorldTile.Name = "WorldTile";
             this.WorldTile.PaintTileCount = false;
-            this.WorldTile.Size = new System.Drawing.Size(160, 55);
+            this.WorldTile.Size = new System.Drawing.Size(140, 55);
             this.WorldTile.TabIndex = 3;
             this.WorldTile.Tag = "";
             this.WorldTile.Text = "World and Entities";
@@ -387,10 +392,11 @@ namespace Minecraft_Wii_U_Mod_Injector
             // GeneralTile
             // 
             this.GeneralTile.ActiveControl = null;
-            this.GeneralTile.Location = new System.Drawing.Point(0, 228);
+            this.GeneralTile.Dock = System.Windows.Forms.DockStyle.Top;
+            this.GeneralTile.Location = new System.Drawing.Point(0, 165);
             this.GeneralTile.Name = "GeneralTile";
             this.GeneralTile.PaintTileCount = false;
-            this.GeneralTile.Size = new System.Drawing.Size(160, 55);
+            this.GeneralTile.Size = new System.Drawing.Size(140, 55);
             this.GeneralTile.TabIndex = 4;
             this.GeneralTile.Tag = "";
             this.GeneralTile.Text = "General Game";
@@ -403,10 +409,11 @@ namespace Minecraft_Wii_U_Mod_Injector
             // MinigamesTile
             // 
             this.MinigamesTile.ActiveControl = null;
-            this.MinigamesTile.Location = new System.Drawing.Point(0, 283);
+            this.MinigamesTile.Dock = System.Windows.Forms.DockStyle.Top;
+            this.MinigamesTile.Location = new System.Drawing.Point(0, 220);
             this.MinigamesTile.Name = "MinigamesTile";
             this.MinigamesTile.PaintTileCount = false;
-            this.MinigamesTile.Size = new System.Drawing.Size(160, 55);
+            this.MinigamesTile.Size = new System.Drawing.Size(140, 55);
             this.MinigamesTile.TabIndex = 5;
             this.MinigamesTile.Tag = "";
             this.MinigamesTile.Text = "Minigames";
@@ -419,10 +426,11 @@ namespace Minecraft_Wii_U_Mod_Injector
             // SettingsTile
             // 
             this.SettingsTile.ActiveControl = null;
-            this.SettingsTile.Location = new System.Drawing.Point(0, 393);
+            this.SettingsTile.Dock = System.Windows.Forms.DockStyle.Top;
+            this.SettingsTile.Location = new System.Drawing.Point(0, 489);
             this.SettingsTile.Name = "SettingsTile";
             this.SettingsTile.PaintTileCount = false;
-            this.SettingsTile.Size = new System.Drawing.Size(160, 69);
+            this.SettingsTile.Size = new System.Drawing.Size(140, 55);
             this.SettingsTile.TabIndex = 7;
             this.SettingsTile.Tag = "";
             this.SettingsTile.Text = "Settings";
@@ -435,13 +443,15 @@ namespace Minecraft_Wii_U_Mod_Injector
             // BuildTile
             // 
             this.BuildTile.ActiveControl = null;
+            this.BuildTile.AutoSize = true;
+            this.BuildTile.Dock = System.Windows.Forms.DockStyle.Fill;
             this.BuildTile.Enabled = false;
-            this.BuildTile.Location = new System.Drawing.Point(0, 461);
+            this.BuildTile.Location = new System.Drawing.Point(0, 544);
             this.BuildTile.Name = "BuildTile";
             this.BuildTile.PaintTileCount = false;
-            this.BuildTile.Size = new System.Drawing.Size(160, 239);
+            this.BuildTile.Size = new System.Drawing.Size(140, 76);
             this.BuildTile.TabIndex = 6;
-            this.BuildTile.Text = "VERSION";
+            this.BuildTile.Text = "v0.0.0.chprq";
             this.BuildTile.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.BuildTile.TileCount = 8;
             this.BuildTile.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
@@ -457,10 +467,10 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.MainTabs.Controls.Add(this.commandsTab);
             this.MainTabs.Controls.Add(this.settingsTab);
             this.MainTabs.ItemSize = new System.Drawing.Size(160, 5);
-            this.MainTabs.Location = new System.Drawing.Point(155, 61);
+            this.MainTabs.Location = new System.Drawing.Point(155, 58);
             this.MainTabs.Multiline = true;
             this.MainTabs.Name = "MainTabs";
-            this.MainTabs.SelectedIndex = 6;
+            this.MainTabs.SelectedIndex = 0;
             this.MainTabs.Size = new System.Drawing.Size(1130, 643);
             this.MainTabs.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.MainTabs.TabIndex = 0;
@@ -496,7 +506,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             // SetupTutorialBtn
             // 
             this.SetupTutorialBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.SetupTutorialBtn.Location = new System.Drawing.Point(542, 602);
+            this.SetupTutorialBtn.Location = new System.Drawing.Point(541, 594);
             this.SetupTutorialBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.SetupTutorialBtn.Name = "SetupTutorialBtn";
             this.SetupTutorialBtn.Size = new System.Drawing.Size(210, 23);
@@ -510,7 +520,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             // FaqBtn
             // 
             this.FaqBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.FaqBtn.Location = new System.Drawing.Point(85, 602);
+            this.FaqBtn.Location = new System.Drawing.Point(84, 594);
             this.FaqBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.FaqBtn.Name = "FaqBtn";
             this.FaqBtn.Size = new System.Drawing.Size(210, 23);
@@ -527,16 +537,16 @@ namespace Minecraft_Wii_U_Mod_Injector
             // 
             // 
             this.BuildNotesBox.CustomButton.Image = null;
-            this.BuildNotesBox.CustomButton.Location = new System.Drawing.Point(577, 1);
+            this.BuildNotesBox.CustomButton.Location = new System.Drawing.Point(585, 1);
             this.BuildNotesBox.CustomButton.Name = "";
-            this.BuildNotesBox.CustomButton.Size = new System.Drawing.Size(531, 531);
+            this.BuildNotesBox.CustomButton.Size = new System.Drawing.Size(523, 523);
             this.BuildNotesBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.BuildNotesBox.CustomButton.TabIndex = 1;
             this.BuildNotesBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.BuildNotesBox.CustomButton.UseSelectable = true;
             this.BuildNotesBox.CustomButton.Visible = false;
             this.BuildNotesBox.Lines = new string[] {
-        "FETCHING PATCH NOTES FOR VERSION"};
+        "Fetching patch notes for version v0.0.0.chprq"};
             this.BuildNotesBox.Location = new System.Drawing.Point(6, 31);
             this.BuildNotesBox.MaxLength = 32767;
             this.BuildNotesBox.Multiline = true;
@@ -548,9 +558,9 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.BuildNotesBox.SelectionLength = 0;
             this.BuildNotesBox.SelectionStart = 0;
             this.BuildNotesBox.ShortcutsEnabled = true;
-            this.BuildNotesBox.Size = new System.Drawing.Size(1109, 533);
+            this.BuildNotesBox.Size = new System.Drawing.Size(1109, 525);
             this.BuildNotesBox.TabIndex = 8;
-            this.BuildNotesBox.Text = "FETCHING PATCH NOTES FOR VERSION";
+            this.BuildNotesBox.Text = "Fetching patch notes for version v0.0.0.chprq";
             this.BuildNotesBox.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.BuildNotesBox.UseSelectable = true;
             this.BuildNotesBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -563,16 +573,16 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.BuildVerTitleLbl.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.BuildVerTitleLbl.Location = new System.Drawing.Point(3, 3);
             this.BuildVerTitleLbl.Name = "BuildVerTitleLbl";
-            this.BuildVerTitleLbl.Size = new System.Drawing.Size(212, 25);
+            this.BuildVerTitleLbl.Size = new System.Drawing.Size(236, 25);
             this.BuildVerTitleLbl.TabIndex = 6;
-            this.BuildVerTitleLbl.Text = "Patch Notes for VERSION";
+            this.BuildVerTitleLbl.Text = "Patch Notes for v0.0.0.chprq";
             this.BuildVerTitleLbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BuildVerTitleLbl.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // CreditsBtn
             // 
             this.CreditsBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.CreditsBtn.Location = new System.Drawing.Point(303, 602);
+            this.CreditsBtn.Location = new System.Drawing.Point(302, 594);
             this.CreditsBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.CreditsBtn.Name = "CreditsBtn";
             this.CreditsBtn.Size = new System.Drawing.Size(210, 23);
@@ -585,7 +595,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             // 
             // ConnectBtn
             // 
-            this.ConnectBtn.Location = new System.Drawing.Point(976, 570);
+            this.ConnectBtn.Location = new System.Drawing.Point(975, 562);
             this.ConnectBtn.Name = "ConnectBtn";
             this.ConnectBtn.Size = new System.Drawing.Size(140, 23);
             this.ConnectBtn.TabIndex = 4;
@@ -598,7 +608,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             // DiscordSrvBtn
             // 
             this.DiscordSrvBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.DiscordSrvBtn.Location = new System.Drawing.Point(760, 602);
+            this.DiscordSrvBtn.Location = new System.Drawing.Point(759, 594);
             this.DiscordSrvBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.DiscordSrvBtn.Name = "DiscordSrvBtn";
             this.DiscordSrvBtn.Size = new System.Drawing.Size(210, 23);
@@ -624,7 +634,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.WiiUIPv4Box.CustomButton.UseSelectable = true;
             this.WiiUIPv4Box.CustomButton.Visible = false;
             this.WiiUIPv4Box.Lines = new string[0];
-            this.WiiUIPv4Box.Location = new System.Drawing.Point(85, 570);
+            this.WiiUIPv4Box.Location = new System.Drawing.Point(84, 562);
             this.WiiUIPv4Box.MaxLength = 32767;
             this.WiiUIPv4Box.Name = "WiiUIPv4Box";
             this.WiiUIPv4Box.PasswordChar = '\0';
@@ -649,7 +659,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             // 
             this.WiiUIpv4Lbl.AutoSize = true;
             this.WiiUIpv4Lbl.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.WiiUIpv4Lbl.Location = new System.Drawing.Point(7, 570);
+            this.WiiUIpv4Lbl.Location = new System.Drawing.Point(6, 562);
             this.WiiUIpv4Lbl.Name = "WiiUIpv4Lbl";
             this.WiiUIpv4Lbl.Size = new System.Drawing.Size(76, 19);
             this.WiiUIpv4Lbl.TabIndex = 2;
@@ -780,7 +790,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             // InstantSleep
             // 
             this.InstantSleep.AutoSize = true;
-            this.InstantSleep.Location = new System.Drawing.Point(586, 27);
+            this.InstantSleep.Location = new System.Drawing.Point(565, 89);
             this.InstantSleep.Name = "InstantSleep";
             this.InstantSleep.Size = new System.Drawing.Size(90, 15);
             this.InstantSleep.Style = MetroFramework.MetroColorStyle.Orange;
@@ -796,7 +806,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             // NoCooldowns
             // 
             this.NoCooldowns.AutoSize = true;
-            this.NoCooldowns.Location = new System.Drawing.Point(586, 6);
+            this.NoCooldowns.Location = new System.Drawing.Point(565, 68);
             this.NoCooldowns.Name = "NoCooldowns";
             this.NoCooldowns.Size = new System.Drawing.Size(102, 15);
             this.NoCooldowns.Style = MetroFramework.MetroColorStyle.Blue;
@@ -845,7 +855,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             "Luck",
             "Bad Luck",
             "Slow Falling"});
-            this.defPotionBox.Location = new System.Drawing.Point(931, 512);
+            this.defPotionBox.Location = new System.Drawing.Point(931, 499);
             this.defPotionBox.Name = "defPotionBox";
             this.defPotionBox.Size = new System.Drawing.Size(185, 25);
             this.defPotionBox.TabIndex = 188;
@@ -859,7 +869,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.DefaultPotionEffect.AutoSize = true;
             this.DefaultPotionEffect.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.DefaultPotionEffect.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.DefaultPotionEffect.Location = new System.Drawing.Point(789, 512);
+            this.DefaultPotionEffect.Location = new System.Drawing.Point(789, 499);
             this.DefaultPotionEffect.Name = "DefaultPotionEffect";
             this.DefaultPotionEffect.Size = new System.Drawing.Size(136, 19);
             this.DefaultPotionEffect.Style = MetroFramework.MetroColorStyle.Blue;
@@ -873,7 +883,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             // 
             this.AlwaysDaylight.AutoSize = true;
             this.AlwaysDaylight.BackColor = System.Drawing.Color.Transparent;
-            this.AlwaysDaylight.Location = new System.Drawing.Point(383, 425);
+            this.AlwaysDaylight.Location = new System.Drawing.Point(565, 47);
             this.AlwaysDaylight.Name = "AlwaysDaylight";
             this.AlwaysDaylight.Size = new System.Drawing.Size(107, 15);
             this.AlwaysDaylight.Style = MetroFramework.MetroColorStyle.Blue;
@@ -892,7 +902,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.AirborneSpeedSlider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.AirborneSpeedSlider.DecimalPlaces = 1;
             this.AirborneSpeedSlider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
-            this.AirborneSpeedSlider.Location = new System.Drawing.Point(666, 558);
+            this.AirborneSpeedSlider.Location = new System.Drawing.Point(666, 545);
             this.AirborneSpeedSlider.Name = "AirborneSpeedSlider";
             this.AirborneSpeedSlider.Size = new System.Drawing.Size(115, 20);
             this.AirborneSpeedSlider.TabIndex = 185;
@@ -910,7 +920,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.AirborneSpeed.AutoSize = true;
             this.AirborneSpeed.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.AirborneSpeed.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.AirborneSpeed.Location = new System.Drawing.Point(554, 559);
+            this.AirborneSpeed.Location = new System.Drawing.Point(554, 546);
             this.AirborneSpeed.Name = "AirborneSpeed";
             this.AirborneSpeed.Size = new System.Drawing.Size(106, 19);
             this.AirborneSpeed.Style = MetroFramework.MetroColorStyle.Blue;
@@ -924,7 +934,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             // 
             this.PunchToRide.AutoSize = true;
             this.PunchToRide.BackColor = System.Drawing.Color.Transparent;
-            this.PunchToRide.Location = new System.Drawing.Point(383, 405);
+            this.PunchToRide.Location = new System.Drawing.Point(565, 27);
             this.PunchToRide.Name = "PunchToRide";
             this.PunchToRide.Size = new System.Drawing.Size(97, 15);
             this.PunchToRide.Style = MetroFramework.MetroColorStyle.Blue;
@@ -940,7 +950,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             // UnlimitedTotemsOfUndying
             // 
             this.UnlimitedTotemsOfUndying.AutoSize = true;
-            this.UnlimitedTotemsOfUndying.Location = new System.Drawing.Point(383, 363);
+            this.UnlimitedTotemsOfUndying.Location = new System.Drawing.Point(379, 405);
             this.UnlimitedTotemsOfUndying.Name = "UnlimitedTotemsOfUndying";
             this.UnlimitedTotemsOfUndying.Size = new System.Drawing.Size(178, 15);
             this.UnlimitedTotemsOfUndying.Style = MetroFramework.MetroColorStyle.Orange;
@@ -957,7 +967,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             // 
             this.SplashLingeringPotions.AutoSize = true;
             this.SplashLingeringPotions.BackColor = System.Drawing.Color.Transparent;
-            this.SplashLingeringPotions.Location = new System.Drawing.Point(383, 384);
+            this.SplashLingeringPotions.Location = new System.Drawing.Point(565, 6);
             this.SplashLingeringPotions.Name = "SplashLingeringPotions";
             this.SplashLingeringPotions.Size = new System.Drawing.Size(153, 15);
             this.SplashLingeringPotions.Style = MetroFramework.MetroColorStyle.Orange;
@@ -974,7 +984,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             // 
             this.ForeverLastingPotions.AutoSize = true;
             this.ForeverLastingPotions.BackColor = System.Drawing.Color.Transparent;
-            this.ForeverLastingPotions.Location = new System.Drawing.Point(192, 90);
+            this.ForeverLastingPotions.Location = new System.Drawing.Point(192, 111);
             this.ForeverLastingPotions.Name = "ForeverLastingPotions";
             this.ForeverLastingPotions.Size = new System.Drawing.Size(146, 15);
             this.ForeverLastingPotions.Style = MetroFramework.MetroColorStyle.Orange;
@@ -990,7 +1000,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             // ItemOfUndying
             // 
             this.ItemOfUndying.AutoSize = true;
-            this.ItemOfUndying.Location = new System.Drawing.Point(383, 342);
+            this.ItemOfUndying.Location = new System.Drawing.Point(379, 384);
             this.ItemOfUndying.Name = "ItemOfUndying";
             this.ItemOfUndying.Size = new System.Drawing.Size(109, 15);
             this.ItemOfUndying.Style = MetroFramework.MetroColorStyle.Orange;
@@ -1006,7 +1016,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             // NoDamage
             // 
             this.NoDamage.AutoSize = true;
-            this.NoDamage.Location = new System.Drawing.Point(383, 321);
+            this.NoDamage.Location = new System.Drawing.Point(379, 363);
             this.NoDamage.Name = "NoDamage";
             this.NoDamage.Size = new System.Drawing.Size(86, 15);
             this.NoDamage.Style = MetroFramework.MetroColorStyle.Orange;
@@ -1025,7 +1035,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.WaterDownStrengthSlider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.WaterDownStrengthSlider.DecimalPlaces = 3;
             this.WaterDownStrengthSlider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
-            this.WaterDownStrengthSlider.Location = new System.Drawing.Point(694, 531);
+            this.WaterDownStrengthSlider.Location = new System.Drawing.Point(694, 518);
             this.WaterDownStrengthSlider.Maximum = new decimal(new int[] {
             9999,
             0,
@@ -1049,7 +1059,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.WaterDownStrength.AutoSize = true;
             this.WaterDownStrength.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.WaterDownStrength.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.WaterDownStrength.Location = new System.Drawing.Point(554, 532);
+            this.WaterDownStrength.Location = new System.Drawing.Point(554, 519);
             this.WaterDownStrength.Name = "WaterDownStrength";
             this.WaterDownStrength.Size = new System.Drawing.Size(134, 19);
             this.WaterDownStrength.Style = MetroFramework.MetroColorStyle.Blue;
@@ -1072,7 +1082,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             "Water",
             "All",
             "None"});
-            this.breatheBox.Location = new System.Drawing.Point(904, 481);
+            this.breatheBox.Location = new System.Drawing.Point(904, 468);
             this.breatheBox.Name = "breatheBox";
             this.breatheBox.Size = new System.Drawing.Size(210, 25);
             this.breatheBox.TabIndex = 175;
@@ -1086,7 +1096,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.BreathingModeLbl.AutoSize = true;
             this.BreathingModeLbl.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.BreathingModeLbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.BreathingModeLbl.Location = new System.Drawing.Point(787, 481);
+            this.BreathingModeLbl.Location = new System.Drawing.Point(787, 468);
             this.BreathingModeLbl.Name = "BreathingModeLbl";
             this.BreathingModeLbl.Size = new System.Drawing.Size(111, 19);
             this.BreathingModeLbl.Style = MetroFramework.MetroColorStyle.Orange;
@@ -1099,7 +1109,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             // BreakBedrock
             // 
             this.BreakBedrock.AutoSize = true;
-            this.BreakBedrock.Location = new System.Drawing.Point(383, 300);
+            this.BreakBedrock.Location = new System.Drawing.Point(379, 342);
             this.BreakBedrock.Name = "BreakBedrock";
             this.BreakBedrock.Size = new System.Drawing.Size(98, 15);
             this.BreakBedrock.Style = MetroFramework.MetroColorStyle.Blue;
@@ -1115,7 +1125,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             // SwimFast
             // 
             this.SwimFast.AutoSize = true;
-            this.SwimFast.Location = new System.Drawing.Point(383, 279);
+            this.SwimFast.Location = new System.Drawing.Point(379, 321);
             this.SwimFast.Name = "SwimFast";
             this.SwimFast.Size = new System.Drawing.Size(76, 15);
             this.SwimFast.Style = MetroFramework.MetroColorStyle.Blue;
@@ -1131,7 +1141,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             // BreakAnything
             // 
             this.BreakAnything.AutoSize = true;
-            this.BreakAnything.Location = new System.Drawing.Point(383, 258);
+            this.BreakAnything.Location = new System.Drawing.Point(379, 300);
             this.BreakAnything.Name = "BreakAnything";
             this.BreakAnything.Size = new System.Drawing.Size(104, 15);
             this.BreakAnything.Style = MetroFramework.MetroColorStyle.Blue;
@@ -1147,7 +1157,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             // UnlimitedJumps
             // 
             this.UnlimitedJumps.AutoSize = true;
-            this.UnlimitedJumps.Location = new System.Drawing.Point(383, 237);
+            this.UnlimitedJumps.Location = new System.Drawing.Point(379, 279);
             this.UnlimitedJumps.Name = "UnlimitedJumps";
             this.UnlimitedJumps.Size = new System.Drawing.Size(112, 15);
             this.UnlimitedJumps.Style = MetroFramework.MetroColorStyle.Blue;
@@ -1163,7 +1173,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             // LeftHanded
             // 
             this.LeftHanded.AutoSize = true;
-            this.LeftHanded.Location = new System.Drawing.Point(383, 216);
+            this.LeftHanded.Location = new System.Drawing.Point(379, 258);
             this.LeftHanded.Name = "LeftHanded";
             this.LeftHanded.Size = new System.Drawing.Size(88, 15);
             this.LeftHanded.Style = MetroFramework.MetroColorStyle.Blue;
@@ -1181,7 +1191,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.StyleExtender.SetApplyMetroTheme(this.MaxStackSlider, true);
             this.MaxStackSlider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.MaxStackSlider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
-            this.MaxStackSlider.Location = new System.Drawing.Point(634, 505);
+            this.MaxStackSlider.Location = new System.Drawing.Point(634, 492);
             this.MaxStackSlider.Maximum = new decimal(new int[] {
             9999,
             0,
@@ -1204,7 +1214,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.MaxStack.AutoSize = true;
             this.MaxStack.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.MaxStack.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.MaxStack.Location = new System.Drawing.Point(554, 506);
+            this.MaxStack.Location = new System.Drawing.Point(554, 493);
             this.MaxStack.Name = "MaxStack";
             this.MaxStack.Size = new System.Drawing.Size(74, 19);
             this.MaxStack.Style = MetroFramework.MetroColorStyle.Orange;
@@ -1217,7 +1227,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             // UnlimitedEnchants
             // 
             this.UnlimitedEnchants.AutoSize = true;
-            this.UnlimitedEnchants.Location = new System.Drawing.Point(383, 195);
+            this.UnlimitedEnchants.Location = new System.Drawing.Point(379, 237);
             this.UnlimitedEnchants.Name = "UnlimitedEnchants";
             this.UnlimitedEnchants.Size = new System.Drawing.Size(126, 15);
             this.UnlimitedEnchants.Style = MetroFramework.MetroColorStyle.Orange;
@@ -1232,7 +1242,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             // 
             // EnchantmentEditorBtn
             // 
-            this.EnchantmentEditorBtn.Location = new System.Drawing.Point(749, 451);
+            this.EnchantmentEditorBtn.Location = new System.Drawing.Point(749, 438);
             this.EnchantmentEditorBtn.Name = "EnchantmentEditorBtn";
             this.EnchantmentEditorBtn.Size = new System.Drawing.Size(365, 25);
             this.EnchantmentEditorBtn.Style = MetroFramework.MetroColorStyle.Blue;
@@ -1248,7 +1258,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             // Invisible
             // 
             this.Invisible.AutoSize = true;
-            this.Invisible.Location = new System.Drawing.Point(383, 174);
+            this.Invisible.Location = new System.Drawing.Point(379, 216);
             this.Invisible.Name = "Invisible";
             this.Invisible.Size = new System.Drawing.Size(66, 15);
             this.Invisible.Style = MetroFramework.MetroColorStyle.Orange;
@@ -1267,7 +1277,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.XPLevelSlider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.XPLevelSlider.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.XPLevelSlider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
-            this.XPLevelSlider.Location = new System.Drawing.Point(623, 479);
+            this.XPLevelSlider.Location = new System.Drawing.Point(623, 466);
             this.XPLevelSlider.Maximum = new decimal(new int[] {
             99999999,
             0,
@@ -1290,7 +1300,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             0,
             0,
             0});
-            this.PotionAmplifierSlider.Location = new System.Drawing.Point(407, 610);
+            this.PotionAmplifierSlider.Location = new System.Drawing.Point(407, 597);
             this.PotionAmplifierSlider.Maximum = new decimal(new int[] {
             9999,
             0,
@@ -1314,7 +1324,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             0,
             0,
             524288});
-            this.FrictionSlider.Location = new System.Drawing.Point(355, 584);
+            this.FrictionSlider.Location = new System.Drawing.Point(355, 571);
             this.FrictionSlider.Minimum = new decimal(new int[] {
             100,
             0,
@@ -1345,7 +1355,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             0,
             0,
             262144});
-            this.playerModelScaleSlider.Location = new System.Drawing.Point(424, 558);
+            this.playerModelScaleSlider.Location = new System.Drawing.Point(424, 545);
             this.playerModelScaleSlider.Name = "playerModelScaleSlider";
             this.playerModelScaleSlider.Size = new System.Drawing.Size(124, 20);
             this.playerModelScaleSlider.TabIndex = 142;
@@ -1371,7 +1381,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             0,
             0,
             65536});
-            this.FieldOfViewSplitSlider.Location = new System.Drawing.Point(176, 610);
+            this.FieldOfViewSplitSlider.Location = new System.Drawing.Point(176, 597);
             this.FieldOfViewSplitSlider.Maximum = new decimal(new int[] {
             4,
             0,
@@ -1402,7 +1412,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             0,
             0,
             262144});
-            this.RiptideFlyingSpeedSlider.Location = new System.Drawing.Point(438, 480);
+            this.RiptideFlyingSpeedSlider.Location = new System.Drawing.Point(438, 467);
             this.RiptideFlyingSpeedSlider.Maximum = new decimal(new int[] {
             5,
             0,
@@ -1438,7 +1448,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             0,
             0,
             262144});
-            this.SprintingSpeedScaleSlider.Location = new System.Drawing.Point(433, 532);
+            this.SprintingSpeedScaleSlider.Location = new System.Drawing.Point(433, 519);
             this.SprintingSpeedScaleSlider.Maximum = new decimal(new int[] {
             4,
             0,
@@ -1463,7 +1473,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.StyleExtender.SetApplyMetroTheme(this.EnchantmentLevelSlider, true);
             this.EnchantmentLevelSlider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.EnchantmentLevelSlider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
-            this.EnchantmentLevelSlider.Location = new System.Drawing.Point(139, 480);
+            this.EnchantmentLevelSlider.Location = new System.Drawing.Point(139, 467);
             this.EnchantmentLevelSlider.Maximum = new decimal(new int[] {
             512,
             0,
@@ -1488,7 +1498,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             0,
             0,
             262144});
-            this.WalkingSpeedScaleSlider.Location = new System.Drawing.Point(440, 506);
+            this.WalkingSpeedScaleSlider.Location = new System.Drawing.Point(440, 493);
             this.WalkingSpeedScaleSlider.Maximum = new decimal(new int[] {
             4,
             0,
@@ -1519,7 +1529,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             0,
             0,
             65536});
-            this.ReachSlider.Location = new System.Drawing.Point(58, 532);
+            this.ReachSlider.Location = new System.Drawing.Point(58, 519);
             this.ReachSlider.Maximum = new decimal(new int[] {
             512,
             0,
@@ -1555,7 +1565,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             0,
             0,
             196608});
-            this.JumpHeightSlider.Location = new System.Drawing.Point(100, 506);
+            this.JumpHeightSlider.Location = new System.Drawing.Point(100, 493);
             this.JumpHeightSlider.Maximum = new decimal(new int[] {
             10,
             0,
@@ -1591,7 +1601,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             0,
             0,
             65536});
-            this.FieldOfViewSlider.Location = new System.Drawing.Point(99, 584);
+            this.FieldOfViewSlider.Location = new System.Drawing.Point(99, 571);
             this.FieldOfViewSlider.Maximum = new decimal(new int[] {
             4,
             0,
@@ -1623,7 +1633,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             0,
             0,
             65536});
-            this.HitBoxScaleSlider.Location = new System.Drawing.Point(96, 558);
+            this.HitBoxScaleSlider.Location = new System.Drawing.Point(96, 545);
             this.HitBoxScaleSlider.Name = "HitBoxScaleSlider";
             this.HitBoxScaleSlider.Size = new System.Drawing.Size(190, 20);
             this.HitBoxScaleSlider.TabIndex = 134;
@@ -1642,7 +1652,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.XPLevel.AutoSize = true;
             this.XPLevel.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.XPLevel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.XPLevel.Location = new System.Drawing.Point(554, 480);
+            this.XPLevel.Location = new System.Drawing.Point(554, 467);
             this.XPLevel.Name = "XPLevel";
             this.XPLevel.Size = new System.Drawing.Size(63, 19);
             this.XPLevel.Style = MetroFramework.MetroColorStyle.Orange;
@@ -1654,7 +1664,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             // 
             // PlayerOptionsBtn
             // 
-            this.PlayerOptionsBtn.Location = new System.Drawing.Point(378, 451);
+            this.PlayerOptionsBtn.Location = new System.Drawing.Point(378, 438);
             this.PlayerOptionsBtn.Name = "PlayerOptionsBtn";
             this.PlayerOptionsBtn.Size = new System.Drawing.Size(365, 25);
             this.PlayerOptionsBtn.Style = MetroFramework.MetroColorStyle.Blue;
@@ -1672,7 +1682,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.PotionAmplifier.AutoSize = true;
             this.PotionAmplifier.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.PotionAmplifier.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.PotionAmplifier.Location = new System.Drawing.Point(292, 610);
+            this.PotionAmplifier.Location = new System.Drawing.Point(292, 597);
             this.PotionAmplifier.Name = "PotionAmplifier";
             this.PotionAmplifier.Size = new System.Drawing.Size(109, 19);
             this.PotionAmplifier.Style = MetroFramework.MetroColorStyle.Orange;
@@ -1685,7 +1695,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             // NoSlowDowns
             // 
             this.NoSlowDowns.AutoSize = true;
-            this.NoSlowDowns.Location = new System.Drawing.Point(383, 153);
+            this.NoSlowDowns.Location = new System.Drawing.Point(379, 195);
             this.NoSlowDowns.Name = "NoSlowDowns";
             this.NoSlowDowns.Size = new System.Drawing.Size(101, 15);
             this.NoSlowDowns.Style = MetroFramework.MetroColorStyle.Blue;
@@ -1702,7 +1712,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             // ESP
             // 
             this.ESP.AutoSize = true;
-            this.ESP.Location = new System.Drawing.Point(383, 132);
+            this.ESP.Location = new System.Drawing.Point(379, 174);
             this.ESP.Name = "ESP";
             this.ESP.Size = new System.Drawing.Size(42, 15);
             this.ESP.Style = MetroFramework.MetroColorStyle.Blue;
@@ -1718,7 +1728,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             // AlwaysInWater
             // 
             this.AlwaysInWater.AutoSize = true;
-            this.AlwaysInWater.Location = new System.Drawing.Point(383, 111);
+            this.AlwaysInWater.Location = new System.Drawing.Point(379, 153);
             this.AlwaysInWater.Name = "AlwaysInWater";
             this.AlwaysInWater.Size = new System.Drawing.Size(107, 15);
             this.AlwaysInWater.Style = MetroFramework.MetroColorStyle.Blue;
@@ -1734,7 +1744,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             // LevelX
             // 
             this.LevelX.AutoSize = true;
-            this.LevelX.Location = new System.Drawing.Point(383, 90);
+            this.LevelX.Location = new System.Drawing.Point(379, 132);
             this.LevelX.Name = "LevelX";
             this.LevelX.Size = new System.Drawing.Size(60, 15);
             this.LevelX.Style = MetroFramework.MetroColorStyle.Orange;
@@ -1750,7 +1760,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             // SeeThroughBlocks
             // 
             this.SeeThroughBlocks.AutoSize = true;
-            this.SeeThroughBlocks.Location = new System.Drawing.Point(383, 69);
+            this.SeeThroughBlocks.Location = new System.Drawing.Point(379, 111);
             this.SeeThroughBlocks.Name = "SeeThroughBlocks";
             this.SeeThroughBlocks.Size = new System.Drawing.Size(124, 15);
             this.SeeThroughBlocks.Style = MetroFramework.MetroColorStyle.Blue;
@@ -1766,7 +1776,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             // AlwaysInLava
             // 
             this.AlwaysInLava.AutoSize = true;
-            this.AlwaysInLava.Location = new System.Drawing.Point(383, 48);
+            this.AlwaysInLava.Location = new System.Drawing.Point(379, 90);
             this.AlwaysInLava.Name = "AlwaysInLava";
             this.AlwaysInLava.Size = new System.Drawing.Size(100, 15);
             this.AlwaysInLava.Style = MetroFramework.MetroColorStyle.Blue;
@@ -1782,7 +1792,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             // HideBlocks
             // 
             this.HideBlocks.AutoSize = true;
-            this.HideBlocks.Location = new System.Drawing.Point(383, 27);
+            this.HideBlocks.Location = new System.Drawing.Point(379, 69);
             this.HideBlocks.Name = "HideBlocks";
             this.HideBlocks.Size = new System.Drawing.Size(85, 15);
             this.HideBlocks.Style = MetroFramework.MetroColorStyle.Blue;
@@ -1798,7 +1808,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             // UnderwaterEffects
             // 
             this.UnderwaterEffects.AutoSize = true;
-            this.UnderwaterEffects.Location = new System.Drawing.Point(383, 6);
+            this.UnderwaterEffects.Location = new System.Drawing.Point(380, 48);
             this.UnderwaterEffects.Name = "UnderwaterEffects";
             this.UnderwaterEffects.Size = new System.Drawing.Size(171, 15);
             this.UnderwaterEffects.Style = MetroFramework.MetroColorStyle.Blue;
@@ -1817,7 +1827,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.EnchantmentLevel.AutoSize = true;
             this.EnchantmentLevel.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.EnchantmentLevel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.EnchantmentLevel.Location = new System.Drawing.Point(5, 480);
+            this.EnchantmentLevel.Location = new System.Drawing.Point(5, 467);
             this.EnchantmentLevel.Name = "EnchantmentLevel";
             this.EnchantmentLevel.Size = new System.Drawing.Size(128, 19);
             this.EnchantmentLevel.Style = MetroFramework.MetroColorStyle.Orange;
@@ -1832,7 +1842,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.Friction.AutoSize = true;
             this.Friction.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.Friction.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.Friction.Location = new System.Drawing.Point(292, 584);
+            this.Friction.Location = new System.Drawing.Point(292, 571);
             this.Friction.Name = "Friction";
             this.Friction.Size = new System.Drawing.Size(57, 19);
             this.Friction.Style = MetroFramework.MetroColorStyle.Blue;
@@ -1845,7 +1855,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             // GodModeAll
             // 
             this.GodModeAll.AutoSize = true;
-            this.GodModeAll.Location = new System.Drawing.Point(192, 425);
+            this.GodModeAll.Location = new System.Drawing.Point(379, 27);
             this.GodModeAll.Name = "GodModeAll";
             this.GodModeAll.Size = new System.Drawing.Size(104, 15);
             this.GodModeAll.Style = MetroFramework.MetroColorStyle.Orange;
@@ -1863,7 +1873,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.FieldofViewSplitscreen.AutoSize = true;
             this.FieldofViewSplitscreen.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.FieldofViewSplitscreen.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.FieldofViewSplitscreen.Location = new System.Drawing.Point(4, 610);
+            this.FieldofViewSplitscreen.Location = new System.Drawing.Point(4, 597);
             this.FieldofViewSplitscreen.Name = "FieldofViewSplitscreen";
             this.FieldofViewSplitscreen.Size = new System.Drawing.Size(166, 19);
             this.FieldofViewSplitscreen.Style = MetroFramework.MetroColorStyle.Blue;
@@ -1878,7 +1888,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.RiptideFlyingSpeed.AutoSize = true;
             this.RiptideFlyingSpeed.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.RiptideFlyingSpeed.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.RiptideFlyingSpeed.Location = new System.Drawing.Point(292, 480);
+            this.RiptideFlyingSpeed.Location = new System.Drawing.Point(292, 467);
             this.RiptideFlyingSpeed.Name = "RiptideFlyingSpeed";
             this.RiptideFlyingSpeed.Size = new System.Drawing.Size(140, 19);
             this.RiptideFlyingSpeed.Style = MetroFramework.MetroColorStyle.Blue;
@@ -1893,7 +1903,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.PlayerModelScale.AutoSize = true;
             this.PlayerModelScale.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.PlayerModelScale.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.PlayerModelScale.Location = new System.Drawing.Point(292, 558);
+            this.PlayerModelScale.Location = new System.Drawing.Point(292, 545);
             this.PlayerModelScale.Name = "PlayerModelScale";
             this.PlayerModelScale.Size = new System.Drawing.Size(126, 19);
             this.PlayerModelScale.Style = MetroFramework.MetroColorStyle.Blue;
@@ -1908,7 +1918,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.JumpHeight.AutoSize = true;
             this.JumpHeight.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.JumpHeight.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.JumpHeight.Location = new System.Drawing.Point(4, 506);
+            this.JumpHeight.Location = new System.Drawing.Point(4, 493);
             this.JumpHeight.Name = "JumpHeight";
             this.JumpHeight.Size = new System.Drawing.Size(90, 19);
             this.JumpHeight.Style = MetroFramework.MetroColorStyle.Blue;
@@ -1923,7 +1933,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.WalkingSpeedScale.AutoSize = true;
             this.WalkingSpeedScale.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.WalkingSpeedScale.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.WalkingSpeedScale.Location = new System.Drawing.Point(292, 506);
+            this.WalkingSpeedScale.Location = new System.Drawing.Point(292, 493);
             this.WalkingSpeedScale.Name = "WalkingSpeedScale";
             this.WalkingSpeedScale.Size = new System.Drawing.Size(135, 19);
             this.WalkingSpeedScale.Style = MetroFramework.MetroColorStyle.Blue;
@@ -1936,7 +1946,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             // GodMode
             // 
             this.GodMode.AutoSize = true;
-            this.GodMode.Location = new System.Drawing.Point(192, 405);
+            this.GodMode.Location = new System.Drawing.Point(379, 6);
             this.GodMode.Name = "GodMode";
             this.GodMode.Size = new System.Drawing.Size(109, 15);
             this.GodMode.Style = MetroFramework.MetroColorStyle.Orange;
@@ -1954,7 +1964,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.Reach.AutoSize = true;
             this.Reach.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.Reach.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.Reach.Location = new System.Drawing.Point(4, 532);
+            this.Reach.Location = new System.Drawing.Point(4, 519);
             this.Reach.Name = "Reach";
             this.Reach.Size = new System.Drawing.Size(48, 19);
             this.Reach.Style = MetroFramework.MetroColorStyle.Blue;
@@ -1969,7 +1979,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.SprintingSpeedScale.AutoSize = true;
             this.SprintingSpeedScale.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.SprintingSpeedScale.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.SprintingSpeedScale.Location = new System.Drawing.Point(292, 532);
+            this.SprintingSpeedScale.Location = new System.Drawing.Point(292, 519);
             this.SprintingSpeedScale.Name = "SprintingSpeedScale";
             this.SprintingSpeedScale.Size = new System.Drawing.Size(142, 19);
             this.SprintingSpeedScale.Style = MetroFramework.MetroColorStyle.Blue;
@@ -1982,7 +1992,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             // DeadMauFiveMode
             // 
             this.DeadMauFiveMode.AutoSize = true;
-            this.DeadMauFiveMode.Location = new System.Drawing.Point(192, 384);
+            this.DeadMauFiveMode.Location = new System.Drawing.Point(192, 405);
             this.DeadMauFiveMode.Name = "DeadMauFiveMode";
             this.DeadMauFiveMode.Size = new System.Drawing.Size(83, 15);
             this.DeadMauFiveMode.Style = MetroFramework.MetroColorStyle.Orange;
@@ -1998,7 +2008,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             // ArmorHUD
             // 
             this.ArmorHUD.AutoSize = true;
-            this.ArmorHUD.Location = new System.Drawing.Point(192, 363);
+            this.ArmorHUD.Location = new System.Drawing.Point(192, 384);
             this.ArmorHUD.Name = "ArmorHUD";
             this.ArmorHUD.Size = new System.Drawing.Size(85, 15);
             this.ArmorHUD.Style = MetroFramework.MetroColorStyle.Blue;
@@ -2014,7 +2024,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             // TakeEverythingAnywhere
             // 
             this.TakeEverythingAnywhere.AutoSize = true;
-            this.TakeEverythingAnywhere.Location = new System.Drawing.Point(192, 342);
+            this.TakeEverythingAnywhere.Location = new System.Drawing.Point(192, 363);
             this.TakeEverythingAnywhere.Name = "TakeEverythingAnywhere";
             this.TakeEverythingAnywhere.Size = new System.Drawing.Size(161, 15);
             this.TakeEverythingAnywhere.Style = MetroFramework.MetroColorStyle.Blue;
@@ -2033,7 +2043,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.FieldOfView.AutoSize = true;
             this.FieldOfView.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.FieldOfView.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.FieldOfView.Location = new System.Drawing.Point(4, 584);
+            this.FieldOfView.Location = new System.Drawing.Point(4, 571);
             this.FieldOfView.Name = "FieldOfView";
             this.FieldOfView.Size = new System.Drawing.Size(89, 19);
             this.FieldOfView.Style = MetroFramework.MetroColorStyle.Blue;
@@ -2046,7 +2056,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             // HiddenGameModesUnlocked
             // 
             this.HiddenGameModesUnlocked.AutoSize = true;
-            this.HiddenGameModesUnlocked.Location = new System.Drawing.Point(192, 321);
+            this.HiddenGameModesUnlocked.Location = new System.Drawing.Point(192, 342);
             this.HiddenGameModesUnlocked.Name = "HiddenGameModesUnlocked";
             this.HiddenGameModesUnlocked.Size = new System.Drawing.Size(185, 15);
             this.HiddenGameModesUnlocked.Style = MetroFramework.MetroColorStyle.Blue;
@@ -2065,7 +2075,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.HitBoxScale.AutoSize = true;
             this.HitBoxScale.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.HitBoxScale.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.HitBoxScale.Location = new System.Drawing.Point(4, 558);
+            this.HitBoxScale.Location = new System.Drawing.Point(4, 545);
             this.HitBoxScale.Name = "HitBoxScale";
             this.HitBoxScale.Size = new System.Drawing.Size(86, 19);
             this.HitBoxScale.Style = MetroFramework.MetroColorStyle.Orange;
@@ -2078,7 +2088,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             // CraftingTableAnywhere
             // 
             this.CraftingTableAnywhere.AutoSize = true;
-            this.CraftingTableAnywhere.Location = new System.Drawing.Point(192, 300);
+            this.CraftingTableAnywhere.Location = new System.Drawing.Point(192, 321);
             this.CraftingTableAnywhere.Name = "CraftingTableAnywhere";
             this.CraftingTableAnywhere.Size = new System.Drawing.Size(152, 15);
             this.CraftingTableAnywhere.Style = MetroFramework.MetroColorStyle.Blue;
@@ -2094,7 +2104,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             // VisibleHitboxes
             // 
             this.VisibleHitboxes.AutoSize = true;
-            this.VisibleHitboxes.Location = new System.Drawing.Point(192, 279);
+            this.VisibleHitboxes.Location = new System.Drawing.Point(192, 300);
             this.VisibleHitboxes.Name = "VisibleHitboxes";
             this.VisibleHitboxes.Size = new System.Drawing.Size(107, 15);
             this.VisibleHitboxes.Style = MetroFramework.MetroColorStyle.Blue;
@@ -2109,7 +2119,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             // 
             // NnidEditorBtn
             // 
-            this.NnidEditorBtn.Location = new System.Drawing.Point(7, 451);
+            this.NnidEditorBtn.Location = new System.Drawing.Point(7, 438);
             this.NnidEditorBtn.Name = "NnidEditorBtn";
             this.NnidEditorBtn.Size = new System.Drawing.Size(365, 25);
             this.NnidEditorBtn.Style = MetroFramework.MetroColorStyle.Orange;
@@ -2126,7 +2136,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             // 
             this.InsaneCriticalHits.AutoSize = true;
             this.InsaneCriticalHits.BackColor = System.Drawing.Color.Transparent;
-            this.InsaneCriticalHits.Location = new System.Drawing.Point(192, 195);
+            this.InsaneCriticalHits.Location = new System.Drawing.Point(192, 216);
             this.InsaneCriticalHits.Name = "InsaneCriticalHits";
             this.InsaneCriticalHits.Size = new System.Drawing.Size(121, 15);
             this.InsaneCriticalHits.Style = MetroFramework.MetroColorStyle.Orange;
@@ -2142,7 +2152,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             // AlwaysSwimming
             // 
             this.AlwaysSwimming.AutoSize = true;
-            this.AlwaysSwimming.Location = new System.Drawing.Point(192, 215);
+            this.AlwaysSwimming.Location = new System.Drawing.Point(192, 236);
             this.AlwaysSwimming.Name = "AlwaysSwimming";
             this.AlwaysSwimming.Size = new System.Drawing.Size(120, 15);
             this.AlwaysSwimming.Style = MetroFramework.MetroColorStyle.Orange;
@@ -2158,7 +2168,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             // InfiniteRiptide
             // 
             this.InfiniteRiptide.AutoSize = true;
-            this.InfiniteRiptide.Location = new System.Drawing.Point(192, 258);
+            this.InfiniteRiptide.Location = new System.Drawing.Point(192, 279);
             this.InfiniteRiptide.Name = "InfiniteRiptide";
             this.InfiniteRiptide.Size = new System.Drawing.Size(116, 15);
             this.InfiniteRiptide.Style = MetroFramework.MetroColorStyle.Blue;
@@ -2190,7 +2200,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             // AlwaysDamagedPlayers
             // 
             this.AlwaysDamagedPlayers.AutoSize = true;
-            this.AlwaysDamagedPlayers.Location = new System.Drawing.Point(192, 237);
+            this.AlwaysDamagedPlayers.Location = new System.Drawing.Point(192, 258);
             this.AlwaysDamagedPlayers.Name = "AlwaysDamagedPlayers";
             this.AlwaysDamagedPlayers.Size = new System.Drawing.Size(114, 15);
             this.AlwaysDamagedPlayers.Style = MetroFramework.MetroColorStyle.Orange;
@@ -2206,7 +2216,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             // InfiniteItems
             // 
             this.InfiniteItems.AutoSize = true;
-            this.InfiniteItems.Location = new System.Drawing.Point(192, 174);
+            this.InfiniteItems.Location = new System.Drawing.Point(192, 195);
             this.InfiniteItems.Name = "InfiniteItems";
             this.InfiniteItems.Size = new System.Drawing.Size(92, 15);
             this.InfiniteItems.Style = MetroFramework.MetroColorStyle.Orange;
@@ -2222,7 +2232,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             // RapidBow
             // 
             this.RapidBow.AutoSize = true;
-            this.RapidBow.Location = new System.Drawing.Point(192, 153);
+            this.RapidBow.Location = new System.Drawing.Point(192, 174);
             this.RapidBow.Name = "RapidBow";
             this.RapidBow.Size = new System.Drawing.Size(79, 15);
             this.RapidBow.Style = MetroFramework.MetroColorStyle.Orange;
@@ -2239,7 +2249,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             // 
             this.BloodVision.AutoSize = true;
             this.BloodVision.BackColor = System.Drawing.Color.Transparent;
-            this.BloodVision.Location = new System.Drawing.Point(192, 132);
+            this.BloodVision.Location = new System.Drawing.Point(192, 153);
             this.BloodVision.Name = "BloodVision";
             this.BloodVision.Size = new System.Drawing.Size(89, 15);
             this.BloodVision.Style = MetroFramework.MetroColorStyle.Blue;
@@ -2256,7 +2266,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             // 
             this.IgnorePotions.AutoSize = true;
             this.IgnorePotions.BackColor = System.Drawing.Color.Transparent;
-            this.IgnorePotions.Location = new System.Drawing.Point(192, 111);
+            this.IgnorePotions.Location = new System.Drawing.Point(192, 132);
             this.IgnorePotions.Name = "IgnorePotions";
             this.IgnorePotions.Size = new System.Drawing.Size(100, 15);
             this.IgnorePotions.Style = MetroFramework.MetroColorStyle.Orange;
@@ -2273,7 +2283,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             // 
             this.BypassInvulnerability.AutoSize = true;
             this.BypassInvulnerability.BackColor = System.Drawing.Color.Transparent;
-            this.BypassInvulnerability.Location = new System.Drawing.Point(192, 69);
+            this.BypassInvulnerability.Location = new System.Drawing.Point(192, 90);
             this.BypassInvulnerability.Name = "BypassInvulnerability";
             this.BypassInvulnerability.Size = new System.Drawing.Size(137, 15);
             this.BypassInvulnerability.Style = MetroFramework.MetroColorStyle.Orange;
@@ -2291,7 +2301,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.PlaceBlocksonHead.AutoSize = true;
             this.PlaceBlocksonHead.BackColor = System.Drawing.Color.Transparent;
             this.PlaceBlocksonHead.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.PlaceBlocksonHead.Location = new System.Drawing.Point(193, 48);
+            this.PlaceBlocksonHead.Location = new System.Drawing.Point(193, 69);
             this.PlaceBlocksonHead.Name = "PlaceBlocksonHead";
             this.PlaceBlocksonHead.Size = new System.Drawing.Size(136, 15);
             this.PlaceBlocksonHead.Style = MetroFramework.MetroColorStyle.Blue;
@@ -2309,7 +2319,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.WalkonWater.AutoSize = true;
             this.WalkonWater.BackColor = System.Drawing.Color.Transparent;
             this.WalkonWater.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.WalkonWater.Location = new System.Drawing.Point(193, 27);
+            this.WalkonWater.Location = new System.Drawing.Point(193, 48);
             this.WalkonWater.Name = "WalkonWater";
             this.WalkonWater.Size = new System.Drawing.Size(100, 15);
             this.WalkonWater.Style = MetroFramework.MetroColorStyle.Blue;
@@ -2327,7 +2337,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.AlwaysElytra.AutoSize = true;
             this.AlwaysElytra.BackColor = System.Drawing.Color.Transparent;
             this.AlwaysElytra.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.AlwaysElytra.Location = new System.Drawing.Point(193, 6);
+            this.AlwaysElytra.Location = new System.Drawing.Point(193, 27);
             this.AlwaysElytra.Name = "AlwaysElytra";
             this.AlwaysElytra.Size = new System.Drawing.Size(92, 15);
             this.AlwaysElytra.Style = MetroFramework.MetroColorStyle.Blue;
@@ -2345,7 +2355,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.CaveFinder.AutoSize = true;
             this.CaveFinder.BackColor = System.Drawing.Color.Transparent;
             this.CaveFinder.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.CaveFinder.Location = new System.Drawing.Point(7, 426);
+            this.CaveFinder.Location = new System.Drawing.Point(193, 6);
             this.CaveFinder.Name = "CaveFinder";
             this.CaveFinder.Size = new System.Drawing.Size(85, 15);
             this.CaveFinder.Style = MetroFramework.MetroColorStyle.Blue;
@@ -3693,11 +3703,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             // 
             // MinigamesTab
             // 
-            this.MinigamesTab.Controls.Add(this.EmptyTile);
-            this.MinigamesTab.Controls.Add(this.GlideTile);
-            this.MinigamesTab.Controls.Add(this.TumbleTile);
-            this.MinigamesTab.Controls.Add(this.BattleTile);
-            this.MinigamesTab.Controls.Add(this.GeneralMgTile);
             this.MinigamesTab.Controls.Add(this.MinigamesTabs);
             this.MinigamesTab.HorizontalScrollbarBarColor = true;
             this.MinigamesTab.HorizontalScrollbarHighlightOnWheel = false;
@@ -3714,27 +3719,14 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.MinigamesTab.VerticalScrollbarHighlightOnWheel = false;
             this.MinigamesTab.VerticalScrollbarSize = 10;
             // 
-            // EmptyTile
-            // 
-            this.EmptyTile.ActiveControl = null;
-            this.EmptyTile.Enabled = false;
-            this.EmptyTile.Location = new System.Drawing.Point(1, 213);
-            this.EmptyTile.Name = "EmptyTile";
-            this.EmptyTile.PaintTileCount = false;
-            this.EmptyTile.Size = new System.Drawing.Size(160, 422);
-            this.EmptyTile.TabIndex = 9;
-            this.EmptyTile.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.EmptyTile.TileCount = 4;
-            this.EmptyTile.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
-            this.EmptyTile.UseSelectable = true;
-            // 
             // GlideTile
             // 
             this.GlideTile.ActiveControl = null;
-            this.GlideTile.Location = new System.Drawing.Point(1, 158);
+            this.GlideTile.Dock = System.Windows.Forms.DockStyle.Top;
+            this.GlideTile.Location = new System.Drawing.Point(0, 120);
             this.GlideTile.Name = "GlideTile";
             this.GlideTile.PaintTileCount = false;
-            this.GlideTile.Size = new System.Drawing.Size(160, 55);
+            this.GlideTile.Size = new System.Drawing.Size(140, 40);
             this.GlideTile.TabIndex = 8;
             this.GlideTile.Tag = "MgTile";
             this.GlideTile.Text = "Glide";
@@ -3747,10 +3739,11 @@ namespace Minecraft_Wii_U_Mod_Injector
             // TumbleTile
             // 
             this.TumbleTile.ActiveControl = null;
-            this.TumbleTile.Location = new System.Drawing.Point(1, 103);
+            this.TumbleTile.Dock = System.Windows.Forms.DockStyle.Top;
+            this.TumbleTile.Location = new System.Drawing.Point(0, 80);
             this.TumbleTile.Name = "TumbleTile";
             this.TumbleTile.PaintTileCount = false;
-            this.TumbleTile.Size = new System.Drawing.Size(160, 55);
+            this.TumbleTile.Size = new System.Drawing.Size(140, 40);
             this.TumbleTile.TabIndex = 7;
             this.TumbleTile.Tag = "MgTile";
             this.TumbleTile.Text = "Tumble";
@@ -3763,10 +3756,11 @@ namespace Minecraft_Wii_U_Mod_Injector
             // BattleTile
             // 
             this.BattleTile.ActiveControl = null;
-            this.BattleTile.Location = new System.Drawing.Point(1, 48);
+            this.BattleTile.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BattleTile.Location = new System.Drawing.Point(0, 40);
             this.BattleTile.Name = "BattleTile";
             this.BattleTile.PaintTileCount = false;
-            this.BattleTile.Size = new System.Drawing.Size(160, 55);
+            this.BattleTile.Size = new System.Drawing.Size(140, 40);
             this.BattleTile.TabIndex = 6;
             this.BattleTile.Tag = "MgTile";
             this.BattleTile.Text = "Battle";
@@ -3780,10 +3774,11 @@ namespace Minecraft_Wii_U_Mod_Injector
             // GeneralMgTile
             // 
             this.GeneralMgTile.ActiveControl = null;
-            this.GeneralMgTile.Location = new System.Drawing.Point(1, -7);
+            this.GeneralMgTile.Dock = System.Windows.Forms.DockStyle.Top;
+            this.GeneralMgTile.Location = new System.Drawing.Point(0, 0);
             this.GeneralMgTile.Name = "GeneralMgTile";
             this.GeneralMgTile.PaintTileCount = false;
-            this.GeneralMgTile.Size = new System.Drawing.Size(160, 55);
+            this.GeneralMgTile.Size = new System.Drawing.Size(140, 40);
             this.GeneralMgTile.TabIndex = 5;
             this.GeneralMgTile.Tag = "MgTile";
             this.GeneralMgTile.Text = "General";
@@ -3800,11 +3795,11 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.MinigamesTabs.Controls.Add(this.Tumble);
             this.MinigamesTabs.Controls.Add(this.Glide);
             this.MinigamesTabs.ItemSize = new System.Drawing.Size(241, 1);
-            this.MinigamesTabs.Location = new System.Drawing.Point(157, 0);
+            this.MinigamesTabs.Location = new System.Drawing.Point(-3, 0);
             this.MinigamesTabs.Multiline = true;
             this.MinigamesTabs.Name = "MinigamesTabs";
             this.MinigamesTabs.SelectedIndex = 0;
-            this.MinigamesTabs.Size = new System.Drawing.Size(969, 633);
+            this.MinigamesTabs.Size = new System.Drawing.Size(1129, 633);
             this.MinigamesTabs.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.MinigamesTabs.TabIndex = 2;
             this.MinigamesTabs.Tag = "needsGeckoU";
@@ -3832,7 +3827,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.GeneralMinigames.Location = new System.Drawing.Point(4, 5);
             this.GeneralMinigames.Name = "GeneralMinigames";
             this.GeneralMinigames.Padding = new System.Windows.Forms.Padding(3);
-            this.GeneralMinigames.Size = new System.Drawing.Size(961, 624);
+            this.GeneralMinigames.Size = new System.Drawing.Size(1121, 624);
             this.GeneralMinigames.TabIndex = 0;
             this.GeneralMinigames.Text = "General";
             this.GeneralMinigames.Theme = MetroFramework.MetroThemeStyle.Dark;
@@ -3933,7 +3928,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             0,
             0});
             this.RequiredPlayersSlider.Name = "RequiredPlayersSlider";
-            this.RequiredPlayersSlider.Size = new System.Drawing.Size(831, 20);
+            this.RequiredPlayersSlider.Size = new System.Drawing.Size(981, 20);
             this.RequiredPlayersSlider.TabIndex = 23;
             this.ToolTipManager.SetToolTip(this.RequiredPlayersSlider, "How many players do we need to start a match?");
             this.RequiredPlayersSlider.Value = new decimal(new int[] {
@@ -5204,6 +5199,34 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.settingsTab.VerticalScrollbarHighlightOnWheel = false;
             this.settingsTab.VerticalScrollbarSize = 10;
             // 
+            // TipsBtn
+            // 
+            this.TipsBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.TipsBtn.Location = new System.Drawing.Point(87, 241);
+            this.TipsBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.TipsBtn.Name = "TipsBtn";
+            this.TipsBtn.Size = new System.Drawing.Size(1021, 36);
+            this.TipsBtn.TabIndex = 56;
+            this.TipsBtn.Text = "Tips";
+            this.TipsBtn.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.ToolTipManager.SetToolTip(this.TipsBtn, "Shows a random tip relating to the Mod Injector");
+            this.TipsBtn.UseSelectable = true;
+            this.TipsBtn.Click += new System.EventHandler(this.TipsBtnClicked);
+            // 
+            // TutorialBtn
+            // 
+            this.TutorialBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.TutorialBtn.Location = new System.Drawing.Point(87, 193);
+            this.TutorialBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.TutorialBtn.Name = "TutorialBtn";
+            this.TutorialBtn.Size = new System.Drawing.Size(1021, 36);
+            this.TutorialBtn.TabIndex = 55;
+            this.TutorialBtn.Text = "Tutorial";
+            this.TutorialBtn.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.ToolTipManager.SetToolTip(this.TutorialBtn, "Launches the Mod Injector Tutorial");
+            this.TutorialBtn.UseSelectable = true;
+            this.TutorialBtn.Click += new System.EventHandler(this.TutorialBtnClicked);
+            // 
             // SeasonalThemes
             // 
             this.SeasonalThemes.AutoSize = true;
@@ -5366,7 +5389,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.discordRpcCheckBox.TabIndex = 43;
             this.discordRpcCheckBox.Text = "Discord Rich Presence";
             this.discordRpcCheckBox.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.discordRpcCheckBox, resources.GetString("discordRpcCheckBox.ToolTip"));
             this.discordRpcCheckBox.UseSelectable = true;
             this.discordRpcCheckBox.CheckedChanged += new System.EventHandler(this.DiscordRpcToggleChecked);
             // 
@@ -5411,10 +5433,11 @@ namespace Minecraft_Wii_U_Mod_Injector
             // HomeTile
             // 
             this.HomeTile.ActiveControl = null;
-            this.HomeTile.Location = new System.Drawing.Point(0, 63);
+            this.HomeTile.Dock = System.Windows.Forms.DockStyle.Top;
+            this.HomeTile.Location = new System.Drawing.Point(0, 0);
             this.HomeTile.Name = "HomeTile";
             this.HomeTile.PaintTileCount = false;
-            this.HomeTile.Size = new System.Drawing.Size(160, 55);
+            this.HomeTile.Size = new System.Drawing.Size(140, 55);
             this.HomeTile.TabIndex = 1;
             this.HomeTile.Tag = "";
             this.HomeTile.Text = "Home";
@@ -5442,13 +5465,14 @@ namespace Minecraft_Wii_U_Mod_Injector
             // PlayersTile
             // 
             this.PlayersTile.ActiveControl = null;
-            this.PlayersTile.Location = new System.Drawing.Point(0, 118);
+            this.PlayersTile.Dock = System.Windows.Forms.DockStyle.Top;
+            this.PlayersTile.Location = new System.Drawing.Point(0, 55);
             this.PlayersTile.Name = "PlayersTile";
             this.PlayersTile.PaintTileCount = false;
-            this.PlayersTile.Size = new System.Drawing.Size(160, 55);
+            this.PlayersTile.Size = new System.Drawing.Size(140, 55);
             this.PlayersTile.TabIndex = 2;
             this.PlayersTile.Tag = "";
-            this.PlayersTile.Text = "Player(s) and Item(s)";
+            this.PlayersTile.Text = "Player(s) / Item(s)";
             this.PlayersTile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.PlayersTile.TileCount = 1;
             this.PlayersTile.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
@@ -5459,10 +5483,11 @@ namespace Minecraft_Wii_U_Mod_Injector
             // CommandsTile
             // 
             this.CommandsTile.ActiveControl = null;
-            this.CommandsTile.Location = new System.Drawing.Point(0, 338);
+            this.CommandsTile.Dock = System.Windows.Forms.DockStyle.Top;
+            this.CommandsTile.Location = new System.Drawing.Point(0, 434);
             this.CommandsTile.Name = "CommandsTile";
             this.CommandsTile.PaintTileCount = false;
-            this.CommandsTile.Size = new System.Drawing.Size(160, 55);
+            this.CommandsTile.Size = new System.Drawing.Size(140, 55);
             this.CommandsTile.TabIndex = 6;
             this.CommandsTile.Tag = "";
             this.CommandsTile.Text = "Commands";
@@ -5497,47 +5522,68 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.DecreaseDecimalPlace.Size = new System.Drawing.Size(322, 22);
             this.DecreaseDecimalPlace.Text = "Decrease decimal place";
             // 
-            // TutorialBtn
+            // NavMenuPnl
             // 
-            this.TutorialBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.TutorialBtn.Location = new System.Drawing.Point(87, 193);
-            this.TutorialBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.TutorialBtn.Name = "TutorialBtn";
-            this.TutorialBtn.Size = new System.Drawing.Size(1021, 36);
-            this.TutorialBtn.TabIndex = 55;
-            this.TutorialBtn.Text = "Tutorial";
-            this.TutorialBtn.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.TutorialBtn, "Launches the Mod Injector Tutorial");
-            this.TutorialBtn.UseSelectable = true;
-            this.TutorialBtn.Click += new System.EventHandler(this.TutorialBtnClicked);
+            this.NavMenuPnl.Controls.Add(this.BuildTile);
+            this.NavMenuPnl.Controls.Add(this.SettingsTile);
+            this.NavMenuPnl.Controls.Add(this.CommandsTile);
+            this.NavMenuPnl.Controls.Add(this.NavMenuMgPnl);
+            this.NavMenuPnl.Controls.Add(this.MinigamesTile);
+            this.NavMenuPnl.Controls.Add(this.GeneralTile);
+            this.NavMenuPnl.Controls.Add(this.WorldTile);
+            this.NavMenuPnl.Controls.Add(this.PlayersTile);
+            this.NavMenuPnl.Controls.Add(this.HomeTile);
+            this.NavMenuPnl.Dock = System.Windows.Forms.DockStyle.Left;
+            this.NavMenuPnl.HorizontalScrollbarBarColor = true;
+            this.NavMenuPnl.HorizontalScrollbarHighlightOnWheel = false;
+            this.NavMenuPnl.HorizontalScrollbarSize = 10;
+            this.NavMenuPnl.Location = new System.Drawing.Point(20, 60);
+            this.NavMenuPnl.Name = "NavMenuPnl";
+            this.NavMenuPnl.Size = new System.Drawing.Size(140, 620);
+            this.NavMenuPnl.TabIndex = 0;
+            this.NavMenuPnl.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.NavMenuPnl.VerticalScrollbarBarColor = true;
+            this.NavMenuPnl.VerticalScrollbarHighlightOnWheel = false;
+            this.NavMenuPnl.VerticalScrollbarSize = 10;
             // 
-            // TipsBtn
+            // NavMenuMgPnl
             // 
-            this.TipsBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.TipsBtn.Location = new System.Drawing.Point(87, 241);
-            this.TipsBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.TipsBtn.Name = "TipsBtn";
-            this.TipsBtn.Size = new System.Drawing.Size(1021, 36);
-            this.TipsBtn.TabIndex = 56;
-            this.TipsBtn.Text = "Tips";
-            this.TipsBtn.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.TipsBtn, "Shows a random tip relating to the Mod Injector");
-            this.TipsBtn.UseSelectable = true;
-            this.TipsBtn.Click += new System.EventHandler(this.TipsBtnClicked);
+            this.NavMenuMgPnl.Controls.Add(this.GlideTile);
+            this.NavMenuMgPnl.Controls.Add(this.TumbleTile);
+            this.NavMenuMgPnl.Controls.Add(this.BattleTile);
+            this.NavMenuMgPnl.Controls.Add(this.GeneralMgTile);
+            this.NavMenuMgPnl.Dock = System.Windows.Forms.DockStyle.Top;
+            this.NavMenuMgPnl.HorizontalScrollbarBarColor = true;
+            this.NavMenuMgPnl.HorizontalScrollbarHighlightOnWheel = false;
+            this.NavMenuMgPnl.HorizontalScrollbarSize = 10;
+            this.NavMenuMgPnl.Location = new System.Drawing.Point(0, 275);
+            this.NavMenuMgPnl.Name = "NavMenuMgPnl";
+            this.NavMenuMgPnl.Size = new System.Drawing.Size(140, 159);
+            this.NavMenuMgPnl.TabIndex = 8;
+            this.NavMenuMgPnl.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.NavMenuMgPnl.VerticalScrollbarBarColor = true;
+            this.NavMenuMgPnl.VerticalScrollbarHighlightOnWheel = false;
+            this.NavMenuMgPnl.VerticalScrollbarSize = 10;
+            this.NavMenuMgPnl.Visible = false;
+            // 
+            // EmptyTile
+            // 
+            this.EmptyTile.ActiveControl = null;
+            this.EmptyTile.Enabled = false;
+            this.EmptyTile.Location = new System.Drawing.Point(0, 60);
+            this.EmptyTile.Name = "EmptyTile";
+            this.EmptyTile.PaintTileCount = false;
+            this.EmptyTile.Size = new System.Drawing.Size(20, 620);
+            this.EmptyTile.TabIndex = 48;
+            this.EmptyTile.UseSelectable = true;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(1280, 700);
-            this.Controls.Add(this.SettingsTile);
-            this.Controls.Add(this.MinigamesTile);
-            this.Controls.Add(this.GeneralTile);
-            this.Controls.Add(this.WorldTile);
-            this.Controls.Add(this.CommandsTile);
-            this.Controls.Add(this.PlayersTile);
-            this.Controls.Add(this.HomeTile);
-            this.Controls.Add(this.BuildTile);
+            this.Controls.Add(this.EmptyTile);
+            this.Controls.Add(this.NavMenuPnl);
             this.Controls.Add(this.MainTabs);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -5610,6 +5656,9 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.settingsTab.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.StyleMngr)).EndInit();
             this.RightClickMenu.ResumeLayout(false);
+            this.NavMenuPnl.ResumeLayout(false);
+            this.NavMenuPnl.PerformLayout();
+            this.NavMenuMgPnl.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -5878,7 +5927,6 @@ namespace Minecraft_Wii_U_Mod_Injector
         private MetroCheckBox Solo;
         private MetroCheckBox Cursed;
         public MetroCheckBox HostIndicators;
-        public MetroTile EmptyTile;
         public MetroTile GlideTile;
         public MetroTile TumbleTile;
         public MetroTile BattleTile;
@@ -5901,5 +5949,8 @@ namespace Minecraft_Wii_U_Mod_Injector
         public MetroCheckBox SeasonalThemes;
         public MetroButton TutorialBtn;
         public MetroButton TipsBtn;
+        private MetroPanel NavMenuPnl;
+        private MetroPanel NavMenuMgPnl;
+        private MetroTile EmptyTile;
     }
 }

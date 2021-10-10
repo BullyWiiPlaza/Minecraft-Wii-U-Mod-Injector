@@ -22,9 +22,41 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers.Win_Forms
             FlexibleMessageBox.Show(message, Application.ProductName + caption, MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
         }
 
-        public static void ShowTutorial(string message, string caption)
+        public static void ShowMetro(string message, string caption, MetroColorStyle color)
         {
-            MetroMessageBox.Show(Owner, message, Application.ProductName + caption, MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+            switch (color)
+            {
+                case MetroColorStyle.Blue:
+                case MetroColorStyle.Default:
+                case MetroColorStyle.Teal:
+                    MetroMessageBox.Show(Owner, message, Application.ProductName + caption, MessageBoxButtons.OK,
+                        MessageBoxIcon.Asterisk);
+                    break;
+                case MetroColorStyle.Red:
+                case MetroColorStyle.Magenta:
+                case MetroColorStyle.Pink:
+                case MetroColorStyle.Purple:
+                    MetroMessageBox.Show(Owner, message, Application.ProductName + caption, MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                    break;
+                case MetroColorStyle.Orange:
+                case MetroColorStyle.Yellow:
+                    MetroMessageBox.Show(Owner, message, Application.ProductName + caption, MessageBoxButtons.OK,
+                        MessageBoxIcon.Exclamation);
+                    break;
+                case MetroColorStyle.Green:
+                case MetroColorStyle.Lime:
+                    MetroMessageBox.Show(Owner, message, Application.ProductName + caption, MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
+                    break;
+                case MetroColorStyle.White:
+                case MetroColorStyle.Black:
+                case MetroColorStyle.Brown:
+                case MetroColorStyle.Silver:
+                    MetroMessageBox.Show(Owner, message, Application.ProductName + caption, MessageBoxButtons.OK,
+                        MessageBoxIcon.None);
+                    break;
+            }
         }
 
         public static void Show(MessageBoxIcon icon, string message)
@@ -36,34 +68,6 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers.Win_Forms
         {
             FlexibleMessageBox.Show(message, Application.ProductName, btns, icon);
         }
-
-        //TODO: Maybe some other time, sucks the colors aren't customizable instead of being locked to icons
-        /*public static void ShowMetro(string message, string caption, MetroColorStyle color) 
-        {
-            switch (color)
-            {
-                case MetroColorStyle.Blue:
-                    MetroMessageBox.Show(Owner, message, Application.ProductName + caption, MessageBoxButtons.OK,
-                        MessageBoxIcon.Asterisk);
-                    break;
-                case MetroColorStyle.Red:
-                    MetroMessageBox.Show(Owner, message, Application.ProductName + caption, MessageBoxButtons.OK,
-                        MessageBoxIcon.Error);
-                    break;
-                case MetroColorStyle.Orange:
-                    MetroMessageBox.Show(Owner, message, Application.ProductName + caption, MessageBoxButtons.OK,
-                        MessageBoxIcon.Exclamation);
-                    break;
-                case MetroColorStyle.Green:
-                    MetroMessageBox.Show(Owner, message, Application.ProductName + caption, MessageBoxButtons.OK,
-                        MessageBoxIcon.Information);
-                    break;
-                case MetroColorStyle.White:
-                    MetroMessageBox.Show(Owner, message, Application.ProductName + caption, MessageBoxButtons.OK,
-                        MessageBoxIcon.None);
-                    break;
-            }
-        }*/
 
         public static DialogResult Show(string message, MessageBoxButtons btns)
         {

@@ -482,6 +482,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Icon.ico" />
+    <None Include="Resources\OpenExplrBtn.png" />
     <None Include="Resources\UndoBtn.png" />
     <None Include="Resources\DeleteBtn.png" />
     <None Include="Resources\EditBtn.png" />

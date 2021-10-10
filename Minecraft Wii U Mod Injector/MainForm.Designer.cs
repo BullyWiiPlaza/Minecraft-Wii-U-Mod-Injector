@@ -319,7 +319,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.DecreaseDecimalPlace = new System.Windows.Forms.ToolStripMenuItem();
             this.NavMenuPnl = new MetroFramework.Controls.MetroPanel();
             this.NavMenuMgPnl = new MetroFramework.Controls.MetroPanel();
-            this.EmptyTile = new MetroFramework.Controls.MetroTile();
             this.MainTabs.SuspendLayout();
             this.MainTab.SuspendLayout();
             this.playersTab.SuspendLayout();
@@ -379,7 +378,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.WorldTile.Location = new System.Drawing.Point(0, 110);
             this.WorldTile.Name = "WorldTile";
             this.WorldTile.PaintTileCount = false;
-            this.WorldTile.Size = new System.Drawing.Size(140, 55);
+            this.WorldTile.Size = new System.Drawing.Size(159, 55);
             this.WorldTile.TabIndex = 3;
             this.WorldTile.Tag = "";
             this.WorldTile.Text = "World and Entities";
@@ -396,7 +395,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.GeneralTile.Location = new System.Drawing.Point(0, 165);
             this.GeneralTile.Name = "GeneralTile";
             this.GeneralTile.PaintTileCount = false;
-            this.GeneralTile.Size = new System.Drawing.Size(140, 55);
+            this.GeneralTile.Size = new System.Drawing.Size(159, 55);
             this.GeneralTile.TabIndex = 4;
             this.GeneralTile.Tag = "";
             this.GeneralTile.Text = "General Game";
@@ -413,7 +412,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.MinigamesTile.Location = new System.Drawing.Point(0, 220);
             this.MinigamesTile.Name = "MinigamesTile";
             this.MinigamesTile.PaintTileCount = false;
-            this.MinigamesTile.Size = new System.Drawing.Size(140, 55);
+            this.MinigamesTile.Size = new System.Drawing.Size(159, 55);
             this.MinigamesTile.TabIndex = 5;
             this.MinigamesTile.Tag = "";
             this.MinigamesTile.Text = "Minigames";
@@ -430,7 +429,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.SettingsTile.Location = new System.Drawing.Point(0, 489);
             this.SettingsTile.Name = "SettingsTile";
             this.SettingsTile.PaintTileCount = false;
-            this.SettingsTile.Size = new System.Drawing.Size(140, 55);
+            this.SettingsTile.Size = new System.Drawing.Size(159, 55);
             this.SettingsTile.TabIndex = 7;
             this.SettingsTile.Tag = "";
             this.SettingsTile.Text = "Settings";
@@ -449,7 +448,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.BuildTile.Location = new System.Drawing.Point(0, 544);
             this.BuildTile.Name = "BuildTile";
             this.BuildTile.PaintTileCount = false;
-            this.BuildTile.Size = new System.Drawing.Size(140, 76);
+            this.BuildTile.Size = new System.Drawing.Size(159, 97);
             this.BuildTile.TabIndex = 6;
             this.BuildTile.Text = "v0.0.0.chprq";
             this.BuildTile.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -470,7 +469,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.MainTabs.Location = new System.Drawing.Point(155, 58);
             this.MainTabs.Multiline = true;
             this.MainTabs.Name = "MainTabs";
-            this.MainTabs.SelectedIndex = 0;
+            this.MainTabs.SelectedIndex = 5;
             this.MainTabs.Size = new System.Drawing.Size(1130, 643);
             this.MainTabs.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.MainTabs.TabIndex = 0;
@@ -780,7 +779,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.playersTab.Padding = new System.Windows.Forms.Padding(3);
             this.playersTab.Size = new System.Drawing.Size(1122, 630);
             this.playersTab.TabIndex = 0;
-            this.playersTab.Tag = "needsGeckoU";
+            this.playersTab.Tag = "GeckoURequired";
             this.playersTab.Text = "Player(s) and Item(s)";
             this.playersTab.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.playersTab.VerticalScrollbarBarColor = true;
@@ -2724,7 +2723,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.worldTab.Padding = new System.Windows.Forms.Padding(3);
             this.worldTab.Size = new System.Drawing.Size(1122, 630);
             this.worldTab.TabIndex = 1;
-            this.worldTab.Tag = "needsGeckoU";
+            this.worldTab.Tag = "GeckoURequired";
             this.worldTab.Text = "World and Entities";
             this.worldTab.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.worldTab.VerticalScrollbarBarColor = true;
@@ -3272,7 +3271,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.generalTab.Padding = new System.Windows.Forms.Padding(3);
             this.generalTab.Size = new System.Drawing.Size(1122, 630);
             this.generalTab.TabIndex = 2;
-            this.generalTab.Tag = "needsGeckoU";
+            this.generalTab.Tag = "GeckoURequired";
             this.generalTab.Text = "General Game";
             this.generalTab.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.generalTab.VerticalScrollbarBarColor = true;
@@ -3726,7 +3725,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.GlideTile.Location = new System.Drawing.Point(0, 120);
             this.GlideTile.Name = "GlideTile";
             this.GlideTile.PaintTileCount = false;
-            this.GlideTile.Size = new System.Drawing.Size(140, 40);
+            this.GlideTile.Size = new System.Drawing.Size(159, 40);
             this.GlideTile.TabIndex = 8;
             this.GlideTile.Tag = "MgTile";
             this.GlideTile.Text = "Glide";
@@ -3743,7 +3742,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.TumbleTile.Location = new System.Drawing.Point(0, 80);
             this.TumbleTile.Name = "TumbleTile";
             this.TumbleTile.PaintTileCount = false;
-            this.TumbleTile.Size = new System.Drawing.Size(140, 40);
+            this.TumbleTile.Size = new System.Drawing.Size(159, 40);
             this.TumbleTile.TabIndex = 7;
             this.TumbleTile.Tag = "MgTile";
             this.TumbleTile.Text = "Tumble";
@@ -3760,7 +3759,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.BattleTile.Location = new System.Drawing.Point(0, 40);
             this.BattleTile.Name = "BattleTile";
             this.BattleTile.PaintTileCount = false;
-            this.BattleTile.Size = new System.Drawing.Size(140, 40);
+            this.BattleTile.Size = new System.Drawing.Size(159, 40);
             this.BattleTile.TabIndex = 6;
             this.BattleTile.Tag = "MgTile";
             this.BattleTile.Text = "Battle";
@@ -3778,7 +3777,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.GeneralMgTile.Location = new System.Drawing.Point(0, 0);
             this.GeneralMgTile.Name = "GeneralMgTile";
             this.GeneralMgTile.PaintTileCount = false;
-            this.GeneralMgTile.Size = new System.Drawing.Size(140, 40);
+            this.GeneralMgTile.Size = new System.Drawing.Size(159, 40);
             this.GeneralMgTile.TabIndex = 5;
             this.GeneralMgTile.Tag = "MgTile";
             this.GeneralMgTile.Text = "General";
@@ -3794,7 +3793,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.MinigamesTabs.Controls.Add(this.Battle);
             this.MinigamesTabs.Controls.Add(this.Tumble);
             this.MinigamesTabs.Controls.Add(this.Glide);
-            this.MinigamesTabs.ItemSize = new System.Drawing.Size(241, 1);
+            this.MinigamesTabs.ItemSize = new System.Drawing.Size(280, 1);
             this.MinigamesTabs.Location = new System.Drawing.Point(-3, 0);
             this.MinigamesTabs.Multiline = true;
             this.MinigamesTabs.Name = "MinigamesTabs";
@@ -3802,7 +3801,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.MinigamesTabs.Size = new System.Drawing.Size(1129, 633);
             this.MinigamesTabs.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.MinigamesTabs.TabIndex = 2;
-            this.MinigamesTabs.Tag = "needsGeckoU";
+            this.MinigamesTabs.Tag = "GeckoURequired";
             this.MinigamesTabs.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.MinigamesTabs.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.MinigamesTabs.UseSelectable = true;
@@ -4029,10 +4028,10 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.Battle.HorizontalScrollbarBarColor = true;
             this.Battle.HorizontalScrollbarHighlightOnWheel = false;
             this.Battle.HorizontalScrollbarSize = 10;
-            this.Battle.Location = new System.Drawing.Point(4, 5);
+            this.Battle.Location = new System.Drawing.Point(4, 9);
             this.Battle.Name = "Battle";
             this.Battle.Padding = new System.Windows.Forms.Padding(3);
-            this.Battle.Size = new System.Drawing.Size(961, 624);
+            this.Battle.Size = new System.Drawing.Size(1121, 620);
             this.Battle.TabIndex = 1;
             this.Battle.Text = "Battle";
             this.Battle.Theme = MetroFramework.MetroThemeStyle.Dark;
@@ -4051,7 +4050,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             "Large"});
             this.MapSizeBox.Location = new System.Drawing.Point(79, 543);
             this.MapSizeBox.Name = "MapSizeBox";
-            this.MapSizeBox.Size = new System.Drawing.Size(876, 25);
+            this.MapSizeBox.Size = new System.Drawing.Size(1036, 25);
             this.MapSizeBox.TabIndex = 177;
             this.MapSizeBox.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.ToolTipManager.SetToolTip(this.MapSizeBox, "What size map should we play on?");
@@ -4080,7 +4079,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.EndGame.Location = new System.Drawing.Point(7, 507);
             this.EndGame.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.EndGame.Name = "EndGame";
-            this.EndGame.Size = new System.Drawing.Size(948, 27);
+            this.EndGame.Size = new System.Drawing.Size(1108, 27);
             this.EndGame.Style = MetroFramework.MetroColorStyle.Orange;
             this.EndGame.TabIndex = 9;
             this.EndGame.Tag = "Host";
@@ -4118,7 +4117,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             0,
             0});
             this.RefillIntervalSlider.Name = "RefillIntervalSlider";
-            this.RefillIntervalSlider.Size = new System.Drawing.Size(815, 20);
+            this.RefillIntervalSlider.Size = new System.Drawing.Size(975, 20);
             this.RefillIntervalSlider.TabIndex = 29;
             this.ToolTipManager.SetToolTip(this.RefillIntervalSlider, "How long should chests take to refill? (in seconds)");
             this.RefillIntervalSlider.Value = new decimal(new int[] {
@@ -4153,10 +4152,10 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.Tumble.HorizontalScrollbarBarColor = true;
             this.Tumble.HorizontalScrollbarHighlightOnWheel = false;
             this.Tumble.HorizontalScrollbarSize = 10;
-            this.Tumble.Location = new System.Drawing.Point(4, 5);
+            this.Tumble.Location = new System.Drawing.Point(4, 9);
             this.Tumble.Name = "Tumble";
             this.Tumble.Padding = new System.Windows.Forms.Padding(3);
-            this.Tumble.Size = new System.Drawing.Size(961, 624);
+            this.Tumble.Size = new System.Drawing.Size(1121, 620);
             this.Tumble.TabIndex = 2;
             this.Tumble.Text = "Tumble";
             this.Tumble.Theme = MetroFramework.MetroThemeStyle.Dark;
@@ -4224,10 +4223,10 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.Glide.HorizontalScrollbarBarColor = true;
             this.Glide.HorizontalScrollbarHighlightOnWheel = false;
             this.Glide.HorizontalScrollbarSize = 10;
-            this.Glide.Location = new System.Drawing.Point(4, 5);
+            this.Glide.Location = new System.Drawing.Point(4, 9);
             this.Glide.Name = "Glide";
             this.Glide.Padding = new System.Windows.Forms.Padding(3);
-            this.Glide.Size = new System.Drawing.Size(961, 624);
+            this.Glide.Size = new System.Drawing.Size(1121, 620);
             this.Glide.TabIndex = 3;
             this.Glide.Text = "Glide";
             this.Glide.Theme = MetroFramework.MetroThemeStyle.Dark;
@@ -4262,7 +4261,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             0,
             0});
             this.ringScoreBlue.Name = "ringScoreBlue";
-            this.ringScoreBlue.Size = new System.Drawing.Size(810, 20);
+            this.ringScoreBlue.Size = new System.Drawing.Size(970, 20);
             this.ringScoreBlue.TabIndex = 36;
             this.ringScoreBlue.Tag = "";
             this.ToolTipManager.SetToolTip(this.ringScoreBlue, "How many score does this type of ring give?");
@@ -4294,7 +4293,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             0,
             0});
             this.ringScoreOrange.Name = "ringScoreOrange";
-            this.ringScoreOrange.Size = new System.Drawing.Size(810, 20);
+            this.ringScoreOrange.Size = new System.Drawing.Size(970, 20);
             this.ringScoreOrange.TabIndex = 34;
             this.ringScoreOrange.Tag = "";
             this.ToolTipManager.SetToolTip(this.ringScoreOrange, "How many score does this type of ring give?");
@@ -4327,7 +4326,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             0,
             0});
             this.ringScoreGreen.Name = "ringScoreGreen";
-            this.ringScoreGreen.Size = new System.Drawing.Size(810, 20);
+            this.ringScoreGreen.Size = new System.Drawing.Size(970, 20);
             this.ringScoreGreen.TabIndex = 32;
             this.ringScoreGreen.Tag = "";
             this.ToolTipManager.SetToolTip(this.ringScoreGreen, "How many score does this type of ring give?");
@@ -4360,7 +4359,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.commandsTab.Name = "commandsTab";
             this.commandsTab.Size = new System.Drawing.Size(1122, 630);
             this.commandsTab.TabIndex = 7;
-            this.commandsTab.Tag = "needsGeckoU";
+            this.commandsTab.Tag = "GeckoURequired";
             this.commandsTab.Text = "Commands";
             this.commandsTab.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.commandsTab.VerticalScrollbarBarColor = true;
@@ -4369,12 +4368,11 @@ namespace Minecraft_Wii_U_Mod_Injector
             // 
             // CommandsWarnLbl
             // 
-            this.CommandsWarnLbl.AutoSize = true;
             this.CommandsWarnLbl.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.CommandsWarnLbl.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.CommandsWarnLbl.Location = new System.Drawing.Point(106, 443);
+            this.CommandsWarnLbl.Location = new System.Drawing.Point(106, 353);
             this.CommandsWarnLbl.Name = "CommandsWarnLbl";
-            this.CommandsWarnLbl.Size = new System.Drawing.Size(912, 50);
+            this.CommandsWarnLbl.Size = new System.Drawing.Size(912, 230);
             this.CommandsWarnLbl.TabIndex = 52;
             this.CommandsWarnLbl.Text = "Commands require you to be the host or a moderator. If you want to use commands i" +
     "n minigames make sure to \r\nselect the \"Commands in Minigames\" option";
@@ -5437,7 +5435,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.HomeTile.Location = new System.Drawing.Point(0, 0);
             this.HomeTile.Name = "HomeTile";
             this.HomeTile.PaintTileCount = false;
-            this.HomeTile.Size = new System.Drawing.Size(140, 55);
+            this.HomeTile.Size = new System.Drawing.Size(159, 55);
             this.HomeTile.TabIndex = 1;
             this.HomeTile.Tag = "";
             this.HomeTile.Text = "Home";
@@ -5469,7 +5467,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.PlayersTile.Location = new System.Drawing.Point(0, 55);
             this.PlayersTile.Name = "PlayersTile";
             this.PlayersTile.PaintTileCount = false;
-            this.PlayersTile.Size = new System.Drawing.Size(140, 55);
+            this.PlayersTile.Size = new System.Drawing.Size(159, 55);
             this.PlayersTile.TabIndex = 2;
             this.PlayersTile.Tag = "";
             this.PlayersTile.Text = "Player(s) / Item(s)";
@@ -5487,7 +5485,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.CommandsTile.Location = new System.Drawing.Point(0, 434);
             this.CommandsTile.Name = "CommandsTile";
             this.CommandsTile.PaintTileCount = false;
-            this.CommandsTile.Size = new System.Drawing.Size(140, 55);
+            this.CommandsTile.Size = new System.Drawing.Size(159, 55);
             this.CommandsTile.TabIndex = 6;
             this.CommandsTile.Tag = "";
             this.CommandsTile.Text = "Commands";
@@ -5533,13 +5531,12 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.NavMenuPnl.Controls.Add(this.WorldTile);
             this.NavMenuPnl.Controls.Add(this.PlayersTile);
             this.NavMenuPnl.Controls.Add(this.HomeTile);
-            this.NavMenuPnl.Dock = System.Windows.Forms.DockStyle.Left;
             this.NavMenuPnl.HorizontalScrollbarBarColor = true;
             this.NavMenuPnl.HorizontalScrollbarHighlightOnWheel = false;
             this.NavMenuPnl.HorizontalScrollbarSize = 10;
-            this.NavMenuPnl.Location = new System.Drawing.Point(20, 60);
+            this.NavMenuPnl.Location = new System.Drawing.Point(1, 60);
             this.NavMenuPnl.Name = "NavMenuPnl";
-            this.NavMenuPnl.Size = new System.Drawing.Size(140, 620);
+            this.NavMenuPnl.Size = new System.Drawing.Size(159, 641);
             this.NavMenuPnl.TabIndex = 0;
             this.NavMenuPnl.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.NavMenuPnl.VerticalScrollbarBarColor = true;
@@ -5558,7 +5555,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.NavMenuMgPnl.HorizontalScrollbarSize = 10;
             this.NavMenuMgPnl.Location = new System.Drawing.Point(0, 275);
             this.NavMenuMgPnl.Name = "NavMenuMgPnl";
-            this.NavMenuMgPnl.Size = new System.Drawing.Size(140, 159);
+            this.NavMenuMgPnl.Size = new System.Drawing.Size(159, 159);
             this.NavMenuMgPnl.TabIndex = 8;
             this.NavMenuMgPnl.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.NavMenuMgPnl.VerticalScrollbarBarColor = true;
@@ -5566,23 +5563,11 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.NavMenuMgPnl.VerticalScrollbarSize = 10;
             this.NavMenuMgPnl.Visible = false;
             // 
-            // EmptyTile
-            // 
-            this.EmptyTile.ActiveControl = null;
-            this.EmptyTile.Enabled = false;
-            this.EmptyTile.Location = new System.Drawing.Point(0, 60);
-            this.EmptyTile.Name = "EmptyTile";
-            this.EmptyTile.PaintTileCount = false;
-            this.EmptyTile.Size = new System.Drawing.Size(20, 620);
-            this.EmptyTile.TabIndex = 48;
-            this.EmptyTile.UseSelectable = true;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(1280, 700);
-            this.Controls.Add(this.EmptyTile);
             this.Controls.Add(this.NavMenuPnl);
             this.Controls.Add(this.MainTabs);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -5949,8 +5934,7 @@ namespace Minecraft_Wii_U_Mod_Injector
         public MetroCheckBox SeasonalThemes;
         public MetroButton TutorialBtn;
         public MetroButton TipsBtn;
-        private MetroPanel NavMenuPnl;
-        private MetroPanel NavMenuMgPnl;
-        private MetroTile EmptyTile;
+        public MetroPanel NavMenuPnl;
+        public MetroPanel NavMenuMgPnl;
     }
 }

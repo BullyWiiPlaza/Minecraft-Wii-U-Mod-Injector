@@ -42,25 +42,37 @@
             this.DescriptionBox = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AuthorBox = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FIlePathBox = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lngMenu = new MetroFramework.Controls.MetroContextMenu(this.components);
+            this.editLngBtn = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteLngBtn = new System.Windows.Forms.ToolStripMenuItem();
+            this.openLngBtn = new System.Windows.Forms.ToolStripMenuItem();
             this.DownloadTile = new MetroFramework.Controls.MetroTile();
             this.ExportTile = new MetroFramework.Controls.MetroTile();
-            this.RefreshTile = new MetroFramework.Controls.MetroTile();
             this.EmptyTile = new MetroFramework.Controls.MetroTile();
             this.ToolTips = new MetroFramework.Components.MetroToolTip();
             this.InstalledTile = new MetroFramework.Controls.MetroTile();
-            this.OpenTile = new MetroFramework.Controls.MetroTile();
+            this.OptionsTile = new MetroFramework.Controls.MetroTile();
+            this.ResetTile = new MetroFramework.Controls.MetroTile();
             this.MainTabs = new MetroFramework.Controls.MetroTabControl();
             this.InstalledLangsTab = new MetroFramework.Controls.MetroTabPage();
             this.DownloadableLangsTab = new MetroFramework.Controls.MetroTabPage();
             this.ServerLanguageList = new MetroFramework.Controls.MetroGrid();
             this.ServerNameBox = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ServerUrlBox = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NavMenuPnl = new MetroFramework.Controls.MetroPanel();
+            this.NavMenuOptsPnl = new MetroFramework.Controls.MetroPanel();
+            this.NavMenuLngPnl = new MetroFramework.Controls.MetroPanel();
+            this.LanguagesTile = new MetroFramework.Controls.MetroTile();
             ((System.ComponentModel.ISupportInitialize)(this.StyleMngr)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LanguagesList)).BeginInit();
+            this.lngMenu.SuspendLayout();
             this.MainTabs.SuspendLayout();
             this.InstalledLangsTab.SuspendLayout();
             this.DownloadableLangsTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ServerLanguageList)).BeginInit();
+            this.NavMenuPnl.SuspendLayout();
+            this.NavMenuOptsPnl.SuspendLayout();
+            this.NavMenuLngPnl.SuspendLayout();
             this.SuspendLayout();
             // 
             // StyleMngr
@@ -93,6 +105,7 @@
             this.DescriptionBox,
             this.AuthorBox,
             this.FIlePathBox});
+            this.LanguagesList.ContextMenuStrip = this.lngMenu;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -159,13 +172,49 @@
             this.FIlePathBox.ReadOnly = true;
             this.FIlePathBox.Visible = false;
             // 
+            // lngMenu
+            // 
+            this.lngMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.lngMenu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.lngMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.editLngBtn,
+            this.deleteLngBtn,
+            this.openLngBtn});
+            this.lngMenu.Name = "qmmMenu";
+            this.lngMenu.Size = new System.Drawing.Size(163, 70);
+            this.lngMenu.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.lngMenu.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.LngMenuHandler);
+            // 
+            // editLngBtn
+            // 
+            this.editLngBtn.Image = global::Minecraft_Wii_U_Mod_Injector.Properties.Resources.EditBtn;
+            this.editLngBtn.Name = "editLngBtn";
+            this.editLngBtn.ShortcutKeyDisplayString = "";
+            this.editLngBtn.Size = new System.Drawing.Size(162, 22);
+            this.editLngBtn.Text = "Edit";
+            // 
+            // deleteLngBtn
+            // 
+            this.deleteLngBtn.Image = global::Minecraft_Wii_U_Mod_Injector.Properties.Resources.DeleteBtn;
+            this.deleteLngBtn.Name = "deleteLngBtn";
+            this.deleteLngBtn.Size = new System.Drawing.Size(162, 22);
+            this.deleteLngBtn.Text = "Delete";
+            // 
+            // openLngBtn
+            // 
+            this.openLngBtn.Image = global::Minecraft_Wii_U_Mod_Injector.Properties.Resources.OpenExplrBtn;
+            this.openLngBtn.Name = "openLngBtn";
+            this.openLngBtn.Size = new System.Drawing.Size(162, 22);
+            this.openLngBtn.Text = "Open in Explorer";
+            // 
             // DownloadTile
             // 
             this.DownloadTile.ActiveControl = null;
-            this.DownloadTile.Location = new System.Drawing.Point(0, 129);
+            this.DownloadTile.Dock = System.Windows.Forms.DockStyle.Top;
+            this.DownloadTile.Location = new System.Drawing.Point(0, 40);
             this.DownloadTile.Name = "DownloadTile";
             this.DownloadTile.PaintTileCount = false;
-            this.DownloadTile.Size = new System.Drawing.Size(169, 60);
+            this.DownloadTile.Size = new System.Drawing.Size(169, 40);
             this.DownloadTile.TabIndex = 47;
             this.DownloadTile.Text = "Download Languages";
             this.DownloadTile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -179,10 +228,11 @@
             // ExportTile
             // 
             this.ExportTile.ActiveControl = null;
-            this.ExportTile.Location = new System.Drawing.Point(0, 189);
+            this.ExportTile.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ExportTile.Location = new System.Drawing.Point(0, 0);
             this.ExportTile.Name = "ExportTile";
             this.ExportTile.PaintTileCount = false;
-            this.ExportTile.Size = new System.Drawing.Size(169, 60);
+            this.ExportTile.Size = new System.Drawing.Size(169, 40);
             this.ExportTile.TabIndex = 52;
             this.ExportTile.Text = "Export Template";
             this.ExportTile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -192,30 +242,15 @@
             this.ExportTile.UseSelectable = true;
             this.ExportTile.Click += new System.EventHandler(this.ExportTemplateBtnClicked);
             // 
-            // RefreshTile
-            // 
-            this.RefreshTile.ActiveControl = null;
-            this.RefreshTile.Location = new System.Drawing.Point(0, 249);
-            this.RefreshTile.Name = "RefreshTile";
-            this.RefreshTile.PaintTileCount = false;
-            this.RefreshTile.Size = new System.Drawing.Size(169, 60);
-            this.RefreshTile.TabIndex = 53;
-            this.RefreshTile.Text = "Refresh";
-            this.RefreshTile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.RefreshTile.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.RefreshTile.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
-            this.ToolTips.SetToolTip(this.RefreshTile, "Refreshes the Language List");
-            this.RefreshTile.UseSelectable = true;
-            this.RefreshTile.Click += new System.EventHandler(this.RefreshTileClicked);
-            // 
             // EmptyTile
             // 
             this.EmptyTile.ActiveControl = null;
+            this.EmptyTile.Dock = System.Windows.Forms.DockStyle.Fill;
             this.EmptyTile.Enabled = false;
-            this.EmptyTile.Location = new System.Drawing.Point(0, 369);
+            this.EmptyTile.Location = new System.Drawing.Point(0, 279);
             this.EmptyTile.Name = "EmptyTile";
             this.EmptyTile.PaintTileCount = false;
-            this.EmptyTile.Size = new System.Drawing.Size(169, 136);
+            this.EmptyTile.Size = new System.Drawing.Size(169, 159);
             this.EmptyTile.TabIndex = 54;
             this.EmptyTile.Text = "Currently Viewing:\r\nInstalled Languages\r\n";
             this.EmptyTile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -231,10 +266,11 @@
             // InstalledTile
             // 
             this.InstalledTile.ActiveControl = null;
-            this.InstalledTile.Location = new System.Drawing.Point(0, 69);
+            this.InstalledTile.Dock = System.Windows.Forms.DockStyle.Top;
+            this.InstalledTile.Location = new System.Drawing.Point(0, 0);
             this.InstalledTile.Name = "InstalledTile";
             this.InstalledTile.PaintTileCount = false;
-            this.InstalledTile.Size = new System.Drawing.Size(169, 60);
+            this.InstalledTile.Size = new System.Drawing.Size(169, 40);
             this.InstalledTile.TabIndex = 56;
             this.InstalledTile.Text = "Installed Languages";
             this.InstalledTile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -244,21 +280,38 @@
             this.InstalledTile.UseSelectable = true;
             this.InstalledTile.Click += new System.EventHandler(this.SwapTab);
             // 
-            // OpenTile
+            // OptionsTile
             // 
-            this.OpenTile.ActiveControl = null;
-            this.OpenTile.Location = new System.Drawing.Point(0, 309);
-            this.OpenTile.Name = "OpenTile";
-            this.OpenTile.PaintTileCount = false;
-            this.OpenTile.Size = new System.Drawing.Size(169, 60);
-            this.OpenTile.TabIndex = 57;
-            this.OpenTile.Text = "Open Directory";
-            this.OpenTile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.OpenTile.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.OpenTile.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
-            this.ToolTips.SetToolTip(this.OpenTile, "Opens the Language directory");
-            this.OpenTile.UseSelectable = true;
-            this.OpenTile.Click += new System.EventHandler(this.OpenTileClicked);
+            this.OptionsTile.ActiveControl = null;
+            this.OptionsTile.Dock = System.Windows.Forms.DockStyle.Top;
+            this.OptionsTile.Location = new System.Drawing.Point(0, 139);
+            this.OptionsTile.Name = "OptionsTile";
+            this.OptionsTile.PaintTileCount = false;
+            this.OptionsTile.Size = new System.Drawing.Size(169, 60);
+            this.OptionsTile.TabIndex = 58;
+            this.OptionsTile.Text = "Options";
+            this.OptionsTile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.OptionsTile.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.OptionsTile.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
+            this.OptionsTile.UseSelectable = true;
+            this.OptionsTile.Click += new System.EventHandler(this.SubMenuHandler);
+            // 
+            // ResetTile
+            // 
+            this.ResetTile.ActiveControl = null;
+            this.ResetTile.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ResetTile.Location = new System.Drawing.Point(0, 40);
+            this.ResetTile.Name = "ResetTile";
+            this.ResetTile.PaintTileCount = false;
+            this.ResetTile.Size = new System.Drawing.Size(169, 40);
+            this.ResetTile.TabIndex = 58;
+            this.ResetTile.Text = "Reset";
+            this.ResetTile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.ResetTile.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.ResetTile.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
+            this.ToolTips.SetToolTip(this.ResetTile, "Resets your language preference (requires a restart)");
+            this.ResetTile.UseSelectable = true;
+            this.ResetTile.Click += new System.EventHandler(this.ResetTileClicked);
             // 
             // MainTabs
             // 
@@ -382,18 +435,84 @@
             this.ServerUrlBox.ReadOnly = true;
             this.ServerUrlBox.Visible = false;
             // 
+            // NavMenuPnl
+            // 
+            this.NavMenuPnl.Controls.Add(this.EmptyTile);
+            this.NavMenuPnl.Controls.Add(this.NavMenuOptsPnl);
+            this.NavMenuPnl.Controls.Add(this.OptionsTile);
+            this.NavMenuPnl.Controls.Add(this.NavMenuLngPnl);
+            this.NavMenuPnl.Controls.Add(this.LanguagesTile);
+            this.NavMenuPnl.HorizontalScrollbarBarColor = true;
+            this.NavMenuPnl.HorizontalScrollbarHighlightOnWheel = false;
+            this.NavMenuPnl.HorizontalScrollbarSize = 10;
+            this.NavMenuPnl.Location = new System.Drawing.Point(0, 67);
+            this.NavMenuPnl.Name = "NavMenuPnl";
+            this.NavMenuPnl.Size = new System.Drawing.Size(169, 438);
+            this.NavMenuPnl.TabIndex = 58;
+            this.NavMenuPnl.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.NavMenuPnl.VerticalScrollbarBarColor = true;
+            this.NavMenuPnl.VerticalScrollbarHighlightOnWheel = false;
+            this.NavMenuPnl.VerticalScrollbarSize = 10;
+            // 
+            // NavMenuOptsPnl
+            // 
+            this.NavMenuOptsPnl.Controls.Add(this.ResetTile);
+            this.NavMenuOptsPnl.Controls.Add(this.ExportTile);
+            this.NavMenuOptsPnl.Dock = System.Windows.Forms.DockStyle.Top;
+            this.NavMenuOptsPnl.HorizontalScrollbarBarColor = true;
+            this.NavMenuOptsPnl.HorizontalScrollbarHighlightOnWheel = false;
+            this.NavMenuOptsPnl.HorizontalScrollbarSize = 10;
+            this.NavMenuOptsPnl.Location = new System.Drawing.Point(0, 199);
+            this.NavMenuOptsPnl.Name = "NavMenuOptsPnl";
+            this.NavMenuOptsPnl.Size = new System.Drawing.Size(169, 80);
+            this.NavMenuOptsPnl.TabIndex = 59;
+            this.NavMenuOptsPnl.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.NavMenuOptsPnl.VerticalScrollbarBarColor = true;
+            this.NavMenuOptsPnl.VerticalScrollbarHighlightOnWheel = false;
+            this.NavMenuOptsPnl.VerticalScrollbarSize = 10;
+            this.NavMenuOptsPnl.Visible = false;
+            // 
+            // NavMenuLngPnl
+            // 
+            this.NavMenuLngPnl.Controls.Add(this.DownloadTile);
+            this.NavMenuLngPnl.Controls.Add(this.InstalledTile);
+            this.NavMenuLngPnl.Dock = System.Windows.Forms.DockStyle.Top;
+            this.NavMenuLngPnl.HorizontalScrollbarBarColor = true;
+            this.NavMenuLngPnl.HorizontalScrollbarHighlightOnWheel = false;
+            this.NavMenuLngPnl.HorizontalScrollbarSize = 10;
+            this.NavMenuLngPnl.Location = new System.Drawing.Point(0, 60);
+            this.NavMenuLngPnl.Name = "NavMenuLngPnl";
+            this.NavMenuLngPnl.Size = new System.Drawing.Size(169, 79);
+            this.NavMenuLngPnl.TabIndex = 58;
+            this.NavMenuLngPnl.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.NavMenuLngPnl.VerticalScrollbarBarColor = true;
+            this.NavMenuLngPnl.VerticalScrollbarHighlightOnWheel = false;
+            this.NavMenuLngPnl.VerticalScrollbarSize = 10;
+            this.NavMenuLngPnl.Visible = false;
+            // 
+            // LanguagesTile
+            // 
+            this.LanguagesTile.ActiveControl = null;
+            this.LanguagesTile.Dock = System.Windows.Forms.DockStyle.Top;
+            this.LanguagesTile.Location = new System.Drawing.Point(0, 0);
+            this.LanguagesTile.Name = "LanguagesTile";
+            this.LanguagesTile.PaintTileCount = false;
+            this.LanguagesTile.Size = new System.Drawing.Size(169, 60);
+            this.LanguagesTile.TabIndex = 59;
+            this.LanguagesTile.Text = "Languages";
+            this.LanguagesTile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.LanguagesTile.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.LanguagesTile.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
+            this.LanguagesTile.UseSelectable = true;
+            this.LanguagesTile.Click += new System.EventHandler(this.SubMenuHandler);
+            // 
             // LanguageMngr
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1120, 505);
-            this.Controls.Add(this.OpenTile);
-            this.Controls.Add(this.InstalledTile);
-            this.Controls.Add(this.RefreshTile);
-            this.Controls.Add(this.ExportTile);
-            this.Controls.Add(this.DownloadTile);
+            this.Controls.Add(this.NavMenuPnl);
             this.Controls.Add(this.MainTabs);
-            this.Controls.Add(this.EmptyTile);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(3840, 505);
@@ -406,10 +525,14 @@
             this.Load += new System.EventHandler(this.Init);
             ((System.ComponentModel.ISupportInitialize)(this.StyleMngr)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LanguagesList)).EndInit();
+            this.lngMenu.ResumeLayout(false);
             this.MainTabs.ResumeLayout(false);
             this.InstalledLangsTab.ResumeLayout(false);
             this.DownloadableLangsTab.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ServerLanguageList)).EndInit();
+            this.NavMenuPnl.ResumeLayout(false);
+            this.NavMenuOptsPnl.ResumeLayout(false);
+            this.NavMenuLngPnl.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -426,13 +549,21 @@
         public MetroFramework.Controls.MetroTile DownloadTile;
         public MetroFramework.Controls.MetroGrid LanguagesList;
         public MetroFramework.Controls.MetroTile EmptyTile;
-        public MetroFramework.Controls.MetroTile RefreshTile;
         public MetroFramework.Controls.MetroTile ExportTile;
         public MetroFramework.Controls.MetroTile InstalledTile;
         public MetroFramework.Controls.MetroTabControl MainTabs;
         public MetroFramework.Controls.MetroTabPage InstalledLangsTab;
         public MetroFramework.Controls.MetroTabPage DownloadableLangsTab;
         public MetroFramework.Controls.MetroGrid ServerLanguageList;
-        public MetroFramework.Controls.MetroTile OpenTile;
+        private MetroFramework.Controls.MetroPanel NavMenuPnl;
+        private MetroFramework.Controls.MetroPanel NavMenuLngPnl;
+        public MetroFramework.Controls.MetroTile LanguagesTile;
+        private MetroFramework.Controls.MetroPanel NavMenuOptsPnl;
+        public MetroFramework.Controls.MetroTile ResetTile;
+        public MetroFramework.Controls.MetroTile OptionsTile;
+        private MetroFramework.Controls.MetroContextMenu lngMenu;
+        private System.Windows.Forms.ToolStripMenuItem editLngBtn;
+        private System.Windows.Forms.ToolStripMenuItem deleteLngBtn;
+        private System.Windows.Forms.ToolStripMenuItem openLngBtn;
     }
 }

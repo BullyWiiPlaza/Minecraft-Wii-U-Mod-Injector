@@ -1,22 +1,27 @@
-[Release v5.2.0.q8h1 (9th of October, 2021)]
+[Release v5.2.0.q8.1 (10th of October, 2021)]
 
 # Overview
 
-This update adds a Tutorial, Tips and a few bug fixes
+This update includes a few quality of life improvements and bug fixes
 
 # Changes
 
 ### General Additions & Updates
 
-- Tutorial > When you first start the Injector you wil be greeted by a tutorial
-- Settings > Tutorial > Same as above, but for when you want to replay the tutorial
-- Settings > Tips > Shows a randomly selected tip on how to use the Mod Injector
+- Mod Injector > Start-up should be much smoother now
+- Mod Injector > First Launch message removed
+- Navigation Menu > Improved the navigation menu to add support for sub-menus on the Mod Injector and Language Manager (like Minigames > Battle etc)
+- Credits > Link to developers YouTube channels are now available
+- Language Manager > Selected language will now be applied on start-up
+- Language Manager > Added right click menu
+- Language Manager > "Open Directory" moved to the new right click menu
+- Language Manager > Removed "Refresh" button
+- Language Manager > Installed languages will now automatically refresh when a new language has been downloaded
+- Quick Mods Manager > Added "Open in Explorer" to right click menu
 
 # Fixes
 
 ### General Fixes
 
-- Settings > Discord RPC preference is now applied on start-up as intended
-- Settings > Seasonal Themes > Fixed a bug where Seasonal Themes would not be checked on start-up despite it being enabled
-- Settings > Seasonal Themes > Fixed incorrect ToolTip
-- Settings > Language Manager > Fixed a bug where a blacklisted control would still be applied and break the template export
+- Language Manager > Blacklisted controls will no longer be exported
+- Tutorial > Fixed typo

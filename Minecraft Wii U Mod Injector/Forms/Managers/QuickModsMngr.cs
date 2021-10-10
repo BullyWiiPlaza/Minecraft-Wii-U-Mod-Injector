@@ -316,6 +316,9 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Managers
                 foreach (MetroTabPage page in _iw.MinigamesTabs.TabPages) UndoQmm(page.Controls);
                 Messaging.Show("Quick Mod has been undone!");
             }
+
+            if (e.ClickedItem == openQmmBtn)
+                Process.Start(_qmmRootDir);
         }
         #endregion
     }

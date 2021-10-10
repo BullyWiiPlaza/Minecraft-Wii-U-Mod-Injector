@@ -1,3 +1,31 @@
+[Release v5.2.0.q8.1 (10th of October, 2021)]
+
+# Overview
+
+This update includes a few quality of life improvements and bug fixes
+
+# Changes
+
+### General Additions & Updates
+
+- Mod Injector > Start-up should be much smoother now
+- Mod Injector > First Launch message removed
+- Navigation Menu > Improved the navigation menu to add support for sub-menus on the Mod Injector and Language Manager (like Minigames > Battle etc)
+- Credits > Link to developers YouTube channels are now available
+- Language Manager > Selected language will now be applied on start-up
+- Language Manager > Added right click menu
+- Language Manager > "Open Directory" moved to the new right click menu
+- Language Manager > Removed "Refresh" button
+- Language Manager > Installed languages will now automatically refresh when a new language has been downloaded
+- Quick Mods Manager > Added "Open in Explorer" to right click menu
+
+# Fixes
+
+### General Fixes
+
+- Language Manager > Blacklisted controls will no longer be exported
+- Tutorial > Fixed typo
+
 [Release v5.2.0.q8h1 (9th of October, 2021)]
 
 # Overview

@@ -54,7 +54,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
         {
             foreach (MetroFramework.Controls.MetroTabPage page in injector.MainTabs.TabPages)
             {
-                if ((string)page.Tag == "needsGeckoU")
+                if ((string)page.Tag == "GeckoURequired")
                 {
                     foreach (Control c in page.Controls)
                     {

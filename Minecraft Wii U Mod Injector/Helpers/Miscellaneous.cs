@@ -1,11 +1,13 @@
 ﻿using System;
 using MetroFramework.Controls;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
+using System.Reflection;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Windows.Forms;
 using MetroFramework;
-using Minecraft_Wii_U_Mod_Injector.Helpers.Files;
 
 namespace Minecraft_Wii_U_Mod_Injector.Helpers
 {
@@ -24,6 +26,14 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
 
             foreach (Control c in Injector.Controls)
                 if (c is MetroButton || c is MetroLabel || c is MetroTextBox || c is MetroTile)
+                    controls.Add(c);
+
+            foreach (Control c in Injector.NavMenuPnl.Controls)
+                if (c is MetroTile)
+                    controls.Add(c);
+
+            foreach (Control c in Injector.NavMenuMgPnl.Controls)
+                if (c is MetroTile)
                     controls.Add(c);
 
             foreach (MetroTabPage page in Injector.MainTabs.TabPages)

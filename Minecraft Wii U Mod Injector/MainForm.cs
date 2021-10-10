@@ -6,6 +6,7 @@ using Minecraft_Wii_U_Mod_Injector.Forms;
 using Minecraft_Wii_U_Mod_Injector.Helpers.Files;
 using System;
 using System.Diagnostics;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Net.Sockets;
@@ -117,7 +118,6 @@ namespace Minecraft_Wii_U_Mod_Injector
         #endregion
 
         #region strings
-
         private readonly string[] _tipsList = new[]
         {
             "You can find out what a mod or option does by hovering your mouse over it",
@@ -130,7 +130,9 @@ namespace Minecraft_Wii_U_Mod_Injector
         public MainForm()
         {
             InitializeComponent();
-            MainTabs.ItemSize = new System.Drawing.Size(MainTabs.ItemSize.Width, 1);
+
+            MainTabs.ItemSize = new Size(MainTabs.ItemSize.Width, 1); // We do this so the MainTabs are navigable in the Designer, but not at Run time
+            Opacity = 0; // We do this so the Injector has time to apply preferences in Setup without it being visible
         }
 
         private void Init(object sender, EventArgs e)
@@ -149,7 +151,7 @@ namespace Minecraft_Wii_U_Mod_Injector
 
         private void InitShown(object sender, EventArgs e)
         {
-            if(Settings.Default.FirstLaunch || !Settings.Default.SeenTutorial)
+            if(!Settings.Default.SeenTutorial)
                 InitTutorial();
         }
 
@@ -157,22 +159,22 @@ namespace Minecraft_Wii_U_Mod_Injector
         {
             Enabled = false;
 
-            Messaging.ShowTutorial(
+            Messaging.ShowMetro(
                 "Welcome to the Minecraft: Wii U Mod Injector Tutorial.\n" +
                 "This tutorial will quickly go through the basics of the Mod Injector to get you started up.\n\n" +
-                "If you are ready, hit \"OK\".", " - Tutorial");
+                "If you are ready, hit \"OK\".", " - Tutorial", StyleMngr.Style);
 
             SwapTab(HomeTile, null);
 
-            Messaging.ShowTutorial(
+            Messaging.ShowMetro(
                 "This is the home page.\n" +
                 "Here you can view the change log(s), connect to your Wii U, view the Frequently asked Questions, Credits, Setup Tutorial and join the official Discord Server.",
-                " - Tutorial");
+                " - Tutorial", StyleMngr.Style);
 
-            Messaging.ShowTutorial(
+            Messaging.ShowMetro(
                 "The following pages are the mod pages.\n" +
-                "This is where you'll be able to start applying mds such as Player specific modifications, world modifications, minigames modifications and commands!\n\n" +
-                "Let's look through them real quick.", " - Tutorial");
+                "This is where you'll be able to start applying mods such as Player specific modifications, world modifications, minigames modifications and commands!\n\n" +
+                "Let's look through them real quick.", " - Tutorial", StyleMngr.Style);
 
             SwapTab(PlayersTile, null);
             await Task.Delay(1000);
@@ -186,12 +188,12 @@ namespace Minecraft_Wii_U_Mod_Injector
             await Task.Delay(1000);
             SwapTab(SettingsTile, null);
 
-            Messaging.ShowTutorial(
+            Messaging.ShowMetro(
                 "This is the settings page. You can customize the Mod Injector, manually check for updates and use various utilities built-in the Mod Injector such as:\n\n" +
                 "Language Manager: An utility to download, create and apply custom language files in-case English isn't your primary language.\n" +
                 "Quick Mods Manager: An utility to create and apply a bunch of mods at once without having to apply them one by one.\n" +
                 "Cemu Graphics Pack Manager: An utility to create Graphics Packs for the Wii U Emulator \"Cemu\". Allows you to use Mod Injector mods on Cemu.\n\n",
-                " - Tutorial");
+                " - Tutorial", StyleMngr.Style);
 
             Enabled = true;
 
@@ -204,9 +206,9 @@ namespace Minecraft_Wii_U_Mod_Injector
             await Task.Delay(700);
             updateBtn.Select();
 
-            Messaging.ShowTutorial(
+            Messaging.ShowMetro(
                 "That was all! If you have any questions, suggestions or bug reports feel free to join our official Discord Server on the home page.\n\n" +
-                "With all that being said, have fun modding!", " - Tutorial");
+                "With all that being said, have fun modding!", " - Tutorial", StyleMngr.Style);
 
             SwapTab(HomeTile, null);
 
@@ -233,6 +235,9 @@ namespace Minecraft_Wii_U_Mod_Injector
 
                 return;
             }
+
+            if (tile == MinigamesTile)
+                NavMenuMgPnl.Visible = !NavMenuMgPnl.Visible;
 
             if (MainTabs.SelectedIndex != tile.TileCount)
                 MainTabs.SelectedIndex = tile.TileCount;
@@ -495,7 +500,7 @@ namespace Minecraft_Wii_U_Mod_Injector
 
         private void DiscordSrvBtnClicked(object sender, EventArgs e)
         {
-            Process.Start("https://discord.gg/jrzZWaDc7a");
+            Process.Start("https://discord.gg/U2xr5qsJxj");
         }
 
         private void CreditsBtnClicked(object sender, EventArgs e)

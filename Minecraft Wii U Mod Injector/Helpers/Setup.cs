@@ -1,5 +1,4 @@
-﻿using Minecraft_Wii_U_Mod_Injector.Helpers.Files;
-using Octokit;
+﻿using Octokit;
 using System;
 using System.Threading.Tasks;
 using Minecraft_Wii_U_Mod_Injector.Helpers.Win_Forms;
@@ -8,6 +7,8 @@ using System.Net;
 using System.Windows.Forms;
 using System.Diagnostics;
 using MetroFramework;
+using MetroFramework.Controls;
+using Minecraft_Wii_U_Mod_Injector.Forms.Managers;
 using Application = System.Windows.Forms.Application;
 
 namespace Minecraft_Wii_U_Mod_Injector.Helpers
@@ -16,7 +17,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
     {
         public static MainForm Injector = new MainForm();
 
-        public static string LocalVer = "v5.2.0.q8h1";
+        public static string LocalVer = "v5.2.0.q8.1";
         public static string GitVer = string.Empty;
         public static string UpdaterPath = $@"{Application.StartupPath}\Minecraft.Wii.U.Mod.Injector.Updater.exe";
 
@@ -51,6 +52,8 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
 
                 DiscordRp.SetPresence("Disconnected", "Idle");
                 States.SwapState(States.StatesIds.Disconnected);
+
+                Injector.Opacity = 100; // Everything has finished setting up, we can show the form now
             }
             catch (Exception error)
             {
@@ -109,8 +112,8 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
             {
                 Console.WriteLine(error);
                 Exceptions.LogError(error,
-                    "Something went wrong while retrieving the latest release, please try re-launching the Injector.\n" +
-                    "If this issue persist please contact the developers.", true);
+                    "Something went wrong while retrieving the latest release, this may be because you have no active internet connection\nor Github servers" +
+                    " are down. Please try re-launching the Mod Injector later and if the issue persists, contact the developers. \nThank you.\n", true);
                 Environment.Exit(0);
             }
         }
@@ -121,12 +124,6 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
             {
                 try
                 {
-                    if (Settings.Default.FirstLaunch)
-                        Messaging.Show(
-                            "Welcome to the Minecraft: Wii U Mod Injector! the first and longest lasting Mod Injector for Minecraft: Wii U Edition!\n" +
-                            "Before we get started, please take a look at the setup tutorial here: https://www.youtube.com/watch?v=be5fNSgxhrU. \n\nIf you appreciate all the work " +
-                            "I've put into this software, a sub on my main channel is appreciated (https://www.youtube.com/Kashiiera).\nHappy modding!");
-
                     Injector.Style = Injector.StyleMngr.Style = Settings.Default.Style;
                     Injector.ColorsBox.Text = Settings.Default.Style.ToString();
                     Injector.TextAlign = Settings.Default.FormTxtAlign;
@@ -140,6 +137,14 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
 
                     Injector.HostIndicators.Checked = Settings.Default.HostIndicators;
                     Injector.SeasonalThemes.Checked = Settings.Default.SeasonalThemes;
+
+                    if(Settings.Default.Language != "Default")
+                    {
+                        foreach (MetroTabPage page in Injector.MainTabs.TabPages)
+                            LanguageMngr.ApplyLanguage(page.Controls, Settings.Default.Language);
+                        foreach (MetroTabPage page in Injector.MinigamesTabs.TabPages)
+                            LanguageMngr.ApplyLanguage(page.Controls, Settings.Default.Language);
+                    }
 
                     if (Settings.Default.SeasonalThemes)
                     {

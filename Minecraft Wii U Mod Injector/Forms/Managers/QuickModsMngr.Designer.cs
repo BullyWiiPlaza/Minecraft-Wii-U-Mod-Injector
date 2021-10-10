@@ -43,12 +43,11 @@
             this.editQmmBtn = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteQmmBtn = new System.Windows.Forms.ToolStripMenuItem();
             this.undoQmmBtn = new System.Windows.Forms.ToolStripMenuItem();
+            this.openQmmBtn = new System.Windows.Forms.ToolStripMenuItem();
             this.CreatorTile = new MetroFramework.Controls.MetroTile();
-            this.RefreshTile = new MetroFramework.Controls.MetroTile();
             this.EmptyTile = new MetroFramework.Controls.MetroTile();
             this.ToolTips = new MetroFramework.Components.MetroToolTip();
             this.InstalledTile = new MetroFramework.Controls.MetroTile();
-            this.OpenTile = new MetroFramework.Controls.MetroTile();
             this.MainTabs = new MetroFramework.Controls.MetroTabControl();
             this.QuickModsTab = new MetroFramework.Controls.MetroTabPage();
             this.CreatorTab = new MetroFramework.Controls.MetroTabPage();
@@ -175,9 +174,10 @@
             this.qmmMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.editQmmBtn,
             this.deleteQmmBtn,
-            this.undoQmmBtn});
+            this.undoQmmBtn,
+            this.openQmmBtn});
             this.qmmMenu.Name = "qmmMenu";
-            this.qmmMenu.Size = new System.Drawing.Size(108, 70);
+            this.qmmMenu.Size = new System.Drawing.Size(181, 114);
             this.qmmMenu.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.qmmMenu.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.QmmMenuHandler);
             // 
@@ -186,22 +186,29 @@
             this.editQmmBtn.Image = global::Minecraft_Wii_U_Mod_Injector.Properties.Resources.EditBtn;
             this.editQmmBtn.Name = "editQmmBtn";
             this.editQmmBtn.ShortcutKeyDisplayString = "";
-            this.editQmmBtn.Size = new System.Drawing.Size(107, 22);
+            this.editQmmBtn.Size = new System.Drawing.Size(180, 22);
             this.editQmmBtn.Text = "Edit";
             // 
             // deleteQmmBtn
             // 
             this.deleteQmmBtn.Image = global::Minecraft_Wii_U_Mod_Injector.Properties.Resources.DeleteBtn;
             this.deleteQmmBtn.Name = "deleteQmmBtn";
-            this.deleteQmmBtn.Size = new System.Drawing.Size(107, 22);
+            this.deleteQmmBtn.Size = new System.Drawing.Size(180, 22);
             this.deleteQmmBtn.Text = "Delete";
             // 
             // undoQmmBtn
             // 
             this.undoQmmBtn.Image = global::Minecraft_Wii_U_Mod_Injector.Properties.Resources.UndoBtn;
             this.undoQmmBtn.Name = "undoQmmBtn";
-            this.undoQmmBtn.Size = new System.Drawing.Size(107, 22);
+            this.undoQmmBtn.Size = new System.Drawing.Size(180, 22);
             this.undoQmmBtn.Text = "Undo";
+            // 
+            // openQmmBtn
+            // 
+            this.openQmmBtn.Image = global::Minecraft_Wii_U_Mod_Injector.Properties.Resources.OpenExplrBtn;
+            this.openQmmBtn.Name = "openQmmBtn";
+            this.openQmmBtn.Size = new System.Drawing.Size(180, 22);
+            this.openQmmBtn.Text = "Open in Explorer";
             // 
             // CreatorTile
             // 
@@ -220,30 +227,14 @@
             this.CreatorTile.UseSelectable = true;
             this.CreatorTile.Click += new System.EventHandler(this.SwapTab);
             // 
-            // RefreshTile
-            // 
-            this.RefreshTile.ActiveControl = null;
-            this.RefreshTile.Location = new System.Drawing.Point(0, 189);
-            this.RefreshTile.Name = "RefreshTile";
-            this.RefreshTile.PaintTileCount = false;
-            this.RefreshTile.Size = new System.Drawing.Size(169, 60);
-            this.RefreshTile.TabIndex = 53;
-            this.RefreshTile.Text = "Refresh";
-            this.RefreshTile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.RefreshTile.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.RefreshTile.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
-            this.ToolTips.SetToolTip(this.RefreshTile, "Refreshes the Quick Mods List");
-            this.RefreshTile.UseSelectable = true;
-            this.RefreshTile.Click += new System.EventHandler(this.RefreshTileClicked);
-            // 
             // EmptyTile
             // 
             this.EmptyTile.ActiveControl = null;
             this.EmptyTile.Enabled = false;
-            this.EmptyTile.Location = new System.Drawing.Point(0, 309);
+            this.EmptyTile.Location = new System.Drawing.Point(0, 189);
             this.EmptyTile.Name = "EmptyTile";
             this.EmptyTile.PaintTileCount = false;
-            this.EmptyTile.Size = new System.Drawing.Size(169, 196);
+            this.EmptyTile.Size = new System.Drawing.Size(169, 316);
             this.EmptyTile.TabIndex = 54;
             this.EmptyTile.Text = "Currently Viewing:\r\nAvailable Quick Mods\r\n\r\n";
             this.EmptyTile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -271,22 +262,6 @@
             this.ToolTips.SetToolTip(this.InstalledTile, "Views currently installed Quick Mods");
             this.InstalledTile.UseSelectable = true;
             this.InstalledTile.Click += new System.EventHandler(this.SwapTab);
-            // 
-            // OpenTile
-            // 
-            this.OpenTile.ActiveControl = null;
-            this.OpenTile.Location = new System.Drawing.Point(0, 249);
-            this.OpenTile.Name = "OpenTile";
-            this.OpenTile.PaintTileCount = false;
-            this.OpenTile.Size = new System.Drawing.Size(169, 60);
-            this.OpenTile.TabIndex = 57;
-            this.OpenTile.Text = "Open Directory";
-            this.OpenTile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.OpenTile.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.OpenTile.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
-            this.ToolTips.SetToolTip(this.OpenTile, "Opens the Quick Mods directory");
-            this.OpenTile.UseSelectable = true;
-            this.OpenTile.Click += new System.EventHandler(this.OpenTileClicked);
             // 
             // MainTabs
             // 
@@ -526,9 +501,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1120, 505);
-            this.Controls.Add(this.OpenTile);
             this.Controls.Add(this.InstalledTile);
-            this.Controls.Add(this.RefreshTile);
             this.Controls.Add(this.CreatorTile);
             this.Controls.Add(this.MainTabs);
             this.Controls.Add(this.EmptyTile);
@@ -563,12 +536,10 @@
         public MetroFramework.Controls.MetroTile CreatorTile;
         public MetroFramework.Controls.MetroGrid QuickModsList;
         public MetroFramework.Controls.MetroTile EmptyTile;
-        public MetroFramework.Controls.MetroTile RefreshTile;
         public MetroFramework.Controls.MetroTile InstalledTile;
         public MetroFramework.Controls.MetroTabControl MainTabs;
         public MetroFramework.Controls.MetroTabPage QuickModsTab;
         public MetroFramework.Controls.MetroTabPage CreatorTab;
-        public MetroFramework.Controls.MetroTile OpenTile;
         private MetroFramework.Controls.MetroTextBox qmmDescBox;
         private MetroFramework.Controls.MetroLabel metroLabel3;
         private MetroFramework.Controls.MetroTextBox qmmAuthBox;
@@ -583,5 +554,6 @@
         private System.Windows.Forms.ToolStripMenuItem editQmmBtn;
         private System.Windows.Forms.ToolStripMenuItem deleteQmmBtn;
         private System.Windows.Forms.ToolStripMenuItem undoQmmBtn;
+        private System.Windows.Forms.ToolStripMenuItem openQmmBtn;
     }
 }

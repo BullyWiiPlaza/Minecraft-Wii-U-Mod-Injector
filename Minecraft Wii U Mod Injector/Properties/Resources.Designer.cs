@@ -101,21 +101,35 @@ namespace Minecraft_Wii_U_Mod_Injector.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to [Release v5.2.0.c7 (6th of October, 2021)]
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap OpenExplrBtn {
+            get {
+                object obj = ResourceManager.GetObject("OpenExplrBtn", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to [Release v5.2.0.q8h1 (9th of October, 2021)]
         ///
         ///# Overview
         ///
-        ///This update adds a new mod and adds seasonal themes
+        ///This update adds a Tutorial, Tips and a few bug fixes
         ///
         ///# Changes
         ///
-        ///### New mods
+        ///### General Additions &amp; Updates
         ///
-        ///- General Game &gt; Debug UI Customizer (You can customize the Debug Console&apos;s output with this, make sure to enable Debug Console first. (Made by miku-666))
+        ///- Tutorial &gt; When you first start the Injector you wil be greeted by a tutorial
+        ///- Settings &gt; Tutorial &gt; Same as above, but for when you want to replay the tutorial
+        ///- Settings &gt; Tips &gt; Shows a randomly selected tip on how to use the Mod Injector
         ///
-        ///### General Additions &amp; Updates:
+        ///# Fixes
         ///
-        ///Seasonal Themes &gt; Depending on what holiday it is, the Injector will change it&apos;s theme and style to match that holiday for an entire month, can be disabled in Settings.
+        ///### General Fixes
+        ///
+        ///- Settings &gt; Discord RPC preference is now applied on start-up  [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string releaseNote {
             get {
@@ -124,23 +138,25 @@ namespace Minecraft_Wii_U_Mod_Injector.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to [Release v5.2.0.c7 (6th of October, 2021)]
+        ///   Looks up a localized string similar to [Release v5.2.0.q8h1 (9th of October, 2021)]
         ///
         ///# Overview
         ///
-        ///This update adds a new mod and adds seasonal themes
+        ///This update adds a Tutorial, Tips and a few bug fixes
         ///
         ///# Changes
         ///
-        ///### New mods
+        ///### General Additions &amp; Updates
         ///
-        ///- General Game &gt; Debug UI Customizer (You can customize the Debug Console&apos;s output with this, make sure to enable Debug Console first. (Made by miku-666))
+        ///- Tutorial &gt; When you first start the Injector you wil be greeted by a tutorial
+        ///- Settings &gt; Tutorial &gt; Same as above, but for when you want to replay the tutorial
+        ///- Settings &gt; Tips &gt; Shows a randomly selected tip on how to use the Mod Injector
         ///
-        ///### General Additions &amp; Updates:
+        ///# Fixes
         ///
-        ///Seasonal Themes &gt; Depending on what holiday it is, the Injector will change it&apos;s theme and style to match that holiday for an entire month, can be disabled in Settings
+        ///### General Fixes
         ///
-        ///[Re [rest of string was truncated]&quot;;.
+        ///- Settings &gt; Discord RPC preference is now applied on start-up  [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string releaseNotes {
             get {

@@ -31,11 +31,11 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Credits));
             this.StyleMngr = new MetroFramework.Components.MetroStyleManager(this.components);
-            this.kashiieraCredits = new MetroFramework.Controls.MetroLabel();
             this.bullywiiplazaCredits = new MetroFramework.Controls.MetroLabel();
             this.appIco = new MetroFramework.Controls.MetroPanel();
             this.vylrynaCredits = new MetroFramework.Controls.MetroLabel();
             this.nessieHaxCredits = new MetroFramework.Controls.MetroLabel();
+            this.kashiieraCredits = new MetroFramework.Controls.MetroLink();
             ((System.ComponentModel.ISupportInitialize)(this.StyleMngr)).BeginInit();
             this.SuspendLayout();
             // 
@@ -43,17 +43,6 @@
             // 
             this.StyleMngr.Owner = this;
             this.StyleMngr.Theme = MetroFramework.MetroThemeStyle.Dark;
-            // 
-            // kashiieraCredits
-            // 
-            this.kashiieraCredits.AutoSize = true;
-            this.kashiieraCredits.Location = new System.Drawing.Point(23, 60);
-            this.kashiieraCredits.Name = "kashiieraCredits";
-            this.kashiieraCredits.Size = new System.Drawing.Size(353, 57);
-            this.kashiieraCredits.TabIndex = 0;
-            this.kashiieraCredits.Text = "Kashiiera AKA Sloth@WiiPlaza: \r\n- Creating/Programming the Minecraft Wii U Mod In" +
-    "jector\r\n- Creating most mods";
-            this.kashiieraCredits.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // bullywiiplazaCredits
             // 
@@ -102,15 +91,30 @@
             this.nessieHaxCredits.Text = "NessieHax: \r\n- Help with development";
             this.nessieHaxCredits.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
+            // kashiieraCredits
+            // 
+            this.kashiieraCredits.FontSize = MetroFramework.MetroLinkSize.Medium;
+            this.kashiieraCredits.FontWeight = MetroFramework.MetroLinkWeight.Light;
+            this.kashiieraCredits.Location = new System.Drawing.Point(23, 60);
+            this.kashiieraCredits.Name = "kashiieraCredits";
+            this.kashiieraCredits.Size = new System.Drawing.Size(353, 57);
+            this.kashiieraCredits.TabIndex = 48;
+            this.kashiieraCredits.Text = "Kashiiera AKA Sloth@WiiPlaza: \r\n- Creating/Programming the Minecraft Wii U Mod In" +
+    "jector\r\n- Creating most mods";
+            this.kashiieraCredits.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.kashiieraCredits.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.kashiieraCredits.UseSelectable = true;
+            this.kashiieraCredits.Click += new System.EventHandler(this.kashiieraClicked);
+            // 
             // Credits
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(720, 369);
+            this.Controls.Add(this.kashiieraCredits);
             this.Controls.Add(this.nessieHaxCredits);
             this.Controls.Add(this.vylrynaCredits);
             this.Controls.Add(this.bullywiiplazaCredits);
-            this.Controls.Add(this.kashiieraCredits);
             this.Controls.Add(this.appIco);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -128,10 +132,10 @@
 
         #endregion
         private MetroFramework.Components.MetroStyleManager StyleMngr;
-        private MetroFramework.Controls.MetroLabel kashiieraCredits;
         private MetroFramework.Controls.MetroLabel bullywiiplazaCredits;
         private MetroFramework.Controls.MetroPanel appIco;
         private MetroFramework.Controls.MetroLabel vylrynaCredits;
         private MetroFramework.Controls.MetroLabel nessieHaxCredits;
+        private MetroFramework.Controls.MetroLink kashiieraCredits;
     }
 }

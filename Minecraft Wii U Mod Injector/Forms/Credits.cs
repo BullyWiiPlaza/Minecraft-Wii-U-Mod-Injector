@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using System.Diagnostics;
+using System.Windows.Forms;
 using MetroFramework.Forms;
 
 namespace Minecraft_Wii_U_Mod_Injector.Forms
@@ -20,6 +21,11 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms
                 cp.ExStyle = cp.ExStyle | 0x02000000;
                 return cp;
             }
+        }
+
+        private void kashiieraClicked(object sender, System.EventArgs e)
+        {
+            Process.Start("https://youtube.com/Kashiiera");
         }
 
         private void Exiting(object sender, FormClosingEventArgs e)

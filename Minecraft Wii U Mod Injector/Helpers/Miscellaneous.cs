@@ -1,7 +1,10 @@
 ﻿using System;
 using MetroFramework.Controls;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
+using System.Reflection;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Windows.Forms;
 using MetroFramework;

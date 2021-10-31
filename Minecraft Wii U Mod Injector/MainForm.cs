@@ -316,17 +316,9 @@ namespace Minecraft_Wii_U_Mod_Injector
 
         private void CaptureWiiUiPv4Box(object sender, EventArgs e)
         {
-            switch (StringUtils.ValidateIPv4(WiiUIPv4Box.Text))
-            {
-                case true:
-                    WiiUIPv4Box.Style = MetroColorStyle.Green;
-                    ConnectBtn.Enabled = true;
-                    break;
-                case false:
-                    WiiUIPv4Box.Style = MetroColorStyle.Red;
-                    ConnectBtn.Enabled = false;
-                    break;
-            }
+            bool valid = StringUtils.ValidateIPv4(WiiUIPv4Box.Text);
+            ConnectBtn.Enabled = valid;
+            WiiUIPv4Box.Style = valid ? MetroColorStyle.Green : WiiUIPv4Box.Style = MetroColorStyle.Red;
         }
 
         private void CaptureWiiUiPv4BoxInput(object sender, KeyEventArgs e)
@@ -389,11 +381,12 @@ namespace Minecraft_Wii_U_Mod_Injector
 
         private async void CheckUpdatesClicked(object sender, EventArgs e)
         {
-            updateBtn.Enabled = false;
-            updateBtn.Text = @"Checking for Updates...";
-            await Setup.RetrieveGitVersion(false);
-            updateBtn.Text = @"Check for Updates";
-            updateBtn.Enabled = true;
+            MessageBox.Show("No Updates can be downloaded right now.");
+            //updateBtn.Enabled = false;
+            //updateBtn.Text = @"Checking for Updates...";
+            //await Setup.RetrieveGitVersion(false);
+            //updateBtn.Text = @"Check for Updates";
+            //updateBtn.Enabled = true;
         }
 
         private void ReleaseNotesToggleClicked(object sender, EventArgs e)
@@ -558,12 +551,14 @@ namespace Minecraft_Wii_U_Mod_Injector
 
         private void DebugConsoleCustomizerBtn_Click(object sender, EventArgs e)
         {
-            if (!DebugConsole.Checked || GeckoU.PeekUInt(0x109F95E4) == 0)
-            {
-                MessageBox.Show(@"This mod requires the Debug UI Console to be active!");
-                return;
-            }
-            new DebugUIConsoleCustomizer(this).ShowDialog();
+            MessageBox.Show(@"Sorry this is currently is on ice.");
+            return;
+            //if (!DebugConsole.Checked || GeckoU.PeekUInt(0x109F95E4) == 0)
+            //{
+            //    MessageBox.Show(@"This mod requires the Debug UI Console to be active!");
+            //    return;
+            //}
+            //new DebugUIConsoleCustomizer(this).ShowDialog();
         }
 
         private void ItemIdHelpBtnClicked(object sender, EventArgs e)

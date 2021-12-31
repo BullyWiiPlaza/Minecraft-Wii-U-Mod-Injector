@@ -141,7 +141,8 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms
 
         private void DownloadTileClicked(object sender, EventArgs e)
         {
-            Process.Start("https://github.com/Kashiiera/Minecraft-Wii-U-Mod-Injector-Languages");
+            Messaging.Show("Sorry, currently languages cannot be downloaded since the languages repository has been removed.", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            // Process.Start("https://github.com/Kashiiera/Minecraft-Wii-U-Mod-Injector-Languages");
         }
 
         private void RefreshTileClicked(object sender, EventArgs e)

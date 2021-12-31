@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Threading.Tasks;
 using Minecraft_Wii_U_Mod_Injector.Helpers.Win_Forms;
+using System.Diagnostics;
 
 namespace Minecraft_Wii_U_Mod_Injector.Helpers
 {
@@ -13,7 +14,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
     {
         public static MainForm Injector = new();
 
-        public static string LocalVer = "v5.1.8";
+        public static string LocalVer = "v5.1.9";
         public static string GitVer = string.Empty;
         public static bool PreRelease;
 
@@ -31,7 +32,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
 #endif
 
 #if DEBUG
-                LocalVer = LocalVer + " (Debugging)";
+                LocalVer += " (Debugging)";
 #endif
 
                 Injector.BuildNotesBox.Text = Properties.Resources.releaseNotes;
@@ -99,16 +100,20 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
                     Injector.colorsBox.Text = Settings.Read("Color", "Display");
 
                     Injector.MainTabs.SelectedIndex = Convert.ToInt32(Settings.Read("TabIndex", "Display"));
-
+                    
                     Injector.CheckForPreRelease.Checked =
                         Convert.ToBoolean(Settings.Read("PrereleaseOptIn", "Updates"));
                     Injector.discordRpcCheckBox.Checked = Convert.ToBoolean(Settings.Read("DiscordRPC", "Discord"));
                 }
-                catch (Exception)
+                catch (Exception exception)
                 {
                     //Failing to set User Preferences isn't a big deal, so we ignore the exception if one happens
+                    Debug.WriteLine(exception.ToString());
                 }
-                
+
+                Injector.releaseNotesToggle.Visible = false;
+                Injector.CheckForPreRelease.Visible = false;
+
                 if (Settings.EqualsTo("ReleaseNotes", "all", "Display"))
                 {
                     Injector.releaseNotesToggle.Checked = false;

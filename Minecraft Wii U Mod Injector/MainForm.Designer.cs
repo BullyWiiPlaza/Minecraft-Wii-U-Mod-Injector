@@ -40,7 +40,8 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.BuildTile = new MetroFramework.Controls.MetroTile();
             this.MainTabs = new MetroFramework.Controls.MetroTabControl();
             this.MainTab = new MetroFramework.Controls.MetroTabPage();
-            this.donateButton = new MetroFramework.Controls.MetroButton();
+            this.InjectorReleasesButton = new MetroFramework.Controls.MetroButton();
+            this.DonateButton = new MetroFramework.Controls.MetroButton();
             this.SetupTutorialBtn = new MetroFramework.Controls.MetroButton();
             this.FaqBtn = new MetroFramework.Controls.MetroButton();
             this.BuildNotesBox = new MetroFramework.Controls.MetroTextBox();
@@ -380,7 +381,8 @@ namespace Minecraft_Wii_U_Mod_Injector
             // 
             // MainTab
             // 
-            this.MainTab.Controls.Add(this.donateButton);
+            this.MainTab.Controls.Add(this.InjectorReleasesButton);
+            this.MainTab.Controls.Add(this.DonateButton);
             this.MainTab.Controls.Add(this.SetupTutorialBtn);
             this.MainTab.Controls.Add(this.FaqBtn);
             this.MainTab.Controls.Add(this.BuildNotesBox);
@@ -403,15 +405,29 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.MainTab.VerticalScrollbarHighlightOnWheel = false;
             this.MainTab.VerticalScrollbarSize = 10;
             // 
-            // donateButton
+            // InjectorReleasesButton
             // 
-            this.donateButton.Location = new System.Drawing.Point(835, 169);
-            this.donateButton.Name = "donateButton";
-            this.donateButton.Size = new System.Drawing.Size(139, 23);
-            this.donateButton.TabIndex = 48;
-            this.donateButton.Text = "Donate";
-            this.donateButton.UseSelectable = true;
-            this.donateButton.Click += new System.EventHandler(this.DonateButton_Click);
+            this.InjectorReleasesButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.InjectorReleasesButton.Location = new System.Drawing.Point(835, 201);
+            this.InjectorReleasesButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.InjectorReleasesButton.Name = "InjectorReleasesButton";
+            this.InjectorReleasesButton.Size = new System.Drawing.Size(139, 23);
+            this.InjectorReleasesButton.TabIndex = 49;
+            this.InjectorReleasesButton.Text = "Injector Releases";
+            this.ToolTipManager.SetToolTip(this.InjectorReleasesButton, "Will take you to the releases page for the mod injector");
+            this.InjectorReleasesButton.UseSelectable = true;
+            this.InjectorReleasesButton.Click += new System.EventHandler(this.ReleasesButton_Click);
+            // 
+            // DonateButton
+            // 
+            this.DonateButton.Location = new System.Drawing.Point(835, 169);
+            this.DonateButton.Name = "DonateButton";
+            this.DonateButton.Size = new System.Drawing.Size(139, 23);
+            this.DonateButton.TabIndex = 48;
+            this.DonateButton.Text = "Donate";
+            this.ToolTipManager.SetToolTip(this.DonateButton, "Allows you to donate to the developer(s)");
+            this.DonateButton.UseSelectable = true;
+            this.DonateButton.Click += new System.EventHandler(this.DonateButton_Click);
             // 
             // SetupTutorialBtn
             // 
@@ -422,7 +438,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.SetupTutorialBtn.Size = new System.Drawing.Size(139, 23);
             this.SetupTutorialBtn.TabIndex = 47;
             this.SetupTutorialBtn.Text = "Setup Tutorial";
-            this.ToolTipManager.SetToolTip(this.SetupTutorialBtn, "View the credits for the Mod Injector");
+            this.ToolTipManager.SetToolTip(this.SetupTutorialBtn, "View a setup tutorial for the mod injector (Wii U and PC side)");
             this.SetupTutorialBtn.UseSelectable = true;
             this.SetupTutorialBtn.Click += new System.EventHandler(this.SetupTutorialBtnClicked);
             // 
@@ -434,8 +450,8 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.FaqBtn.Name = "FaqBtn";
             this.FaqBtn.Size = new System.Drawing.Size(139, 23);
             this.FaqBtn.TabIndex = 46;
-            this.FaqBtn.Text = "FAQ - Information";
-            this.ToolTipManager.SetToolTip(this.FaqBtn, "View the credits for the Mod Injector");
+            this.FaqBtn.Text = "FAQ";
+            this.ToolTipManager.SetToolTip(this.FaqBtn, "View FAQs for the mod injector");
             this.FaqBtn.UseSelectable = true;
             this.FaqBtn.Click += new System.EventHandler(this.OpenFaqInfoClicked);
             // 
@@ -494,7 +510,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.CreditsBtn.Size = new System.Drawing.Size(139, 23);
             this.CreditsBtn.TabIndex = 42;
             this.CreditsBtn.Text = "Credits";
-            this.ToolTipManager.SetToolTip(this.CreditsBtn, "View the credits for the Mod Injector");
+            this.ToolTipManager.SetToolTip(this.CreditsBtn, "View the credits for the mod injector");
             this.CreditsBtn.UseSelectable = true;
             this.CreditsBtn.Click += new System.EventHandler(this.CreditsBtnClicked);
             // 
@@ -517,7 +533,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.DiscordSrvBtn.Size = new System.Drawing.Size(139, 23);
             this.DiscordSrvBtn.TabIndex = 32;
             this.DiscordSrvBtn.Text = "Discord Server";
-            this.ToolTipManager.SetToolTip(this.DiscordSrvBtn, "Will take you to the official Discord server for the Mod Injector");
+            this.ToolTipManager.SetToolTip(this.DiscordSrvBtn, "Will take you to the official Discord server for the mod injector");
             this.DiscordSrvBtn.UseSelectable = true;
             this.DiscordSrvBtn.Click += new System.EventHandler(this.DiscordSrvBtnClicked);
             // 
@@ -3808,6 +3824,7 @@ namespace Minecraft_Wii_U_Mod_Injector
         public MetroTextBox BuildNotesBox;
         public MetroButton OpenLangMngrBtn;
         public MetroButton SetupTutorialBtn;
-        private MetroButton donateButton;
+        private MetroButton DonateButton;
+        public MetroButton InjectorReleasesButton;
     }
 }

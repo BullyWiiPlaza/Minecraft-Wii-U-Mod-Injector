@@ -391,6 +391,11 @@ namespace Minecraft_Wii_U_Mod_Injector
             Process.Start("https://www.paypal.me/bullywiiplaza");
         }
 
+        private void ReleasesButton_Click(object sender, EventArgs e)
+        {
+            Process.Start("https://github.com/BullyWiiPlaza/Minecraft-Wii-U-Mod-Injector/releases");
+        }
+        
         public static bool IsPointerLoaded()
         {
             return GeckoU.PeekUInt(GeckoU.PeekUInt(0x10A0A624) + 0x9C) != 0x0;

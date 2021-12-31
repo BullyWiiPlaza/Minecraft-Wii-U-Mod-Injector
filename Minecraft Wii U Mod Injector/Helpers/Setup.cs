@@ -28,7 +28,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
             Injector = window;
         }
 
-        public static void SetupInjector()
+        public async static void SetupInjector()
         {
             try
             {
@@ -67,9 +67,9 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
         {
             try
             {
-                ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12; //Fix for Windows 7 Systems
+                ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12; // Fix for Windows 7 Systems
                 var verChecker = new GitHubClient(new ProductHeaderValue("MCWiiUMIClient"));
-                var releases = await verChecker.Repository.Release.GetAll("Kashiiera", "Minecraft-Wii-U-Mod-Injector");
+                var releases = await verChecker.Repository.Release.GetAll(ApplicationUrls.GitHubProfileName, "Minecraft-Wii-U-Mod-Injector");
 
                 GitVer = releases[0].TagName;
                 PreRelease = releases[0].Prerelease;
@@ -101,8 +101,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
                 {
                     if (!auto)
                     {
-                        Messaging.Show(MessageBoxIcon.Information,
-                            "You are already running the latest version " + LocalVer);
+                        Messaging.Show(MessageBoxIcon.Information, "You are already running the latest version " + LocalVer);
                     }
                 }
             }
@@ -111,7 +110,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
                 Console.WriteLine(error);
                 Exceptions.LogError(error,
                     "Something went wrong while retrieving the latest release, this may be because you have no active internet connection\nor Github servers" +
-                    " are down. Please try re-launching the Mod Injector later and if the issue persists, contact the developers. \nThank you.\n", true);
+                    " are down. Please try re-launching the mod injector later and if the issue persists, contact the developers.\nThank you.", true);
                 Environment.Exit(0);
             }
         }

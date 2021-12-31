@@ -2,7 +2,8 @@
 {
     internal class ApplicationUrls
     {
-        private const string GitHubProfileUrl = "https://github.com/BullyWiiPlaza";
+        public const string GitHubProfileName = "BullyWiiPlaza";
+        private const string GitHubProfileUrl = "https://github.com/" + GitHubProfileName;
         public const string InjectorUpdaterUrl = GitHubProfileUrl + "/releases/latest/download/Minecraft.Wii.U.Mod.Injector.Updater.exe";
         public const string SetupTutorialUrl = GitHubProfileUrl + "/JGeckoU/blob/master/README.md";
         public const string DiscordServerInviteUrl = "https://discord.gg/EcK8x5Mdr6";

@@ -15,7 +15,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
 {
     class Setup
     {
-        public static MainForm Injector = new MainForm();
+        public static MainForm Injector = new();
 
         public static string LocalVer = "v5.2.0.q8.1";
         public static string GitVer = string.Empty;
@@ -28,7 +28,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
             Injector = window;
         }
 
-        public static async void SetupInjector()
+        public static void SetupInjector()
         {
             try
             {
@@ -80,9 +80,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
                     {
                         using (var wc = new WebClient())
                         {
-                            wc.DownloadFile(
-                                "https://github.com/vylryna/MCUModInjector-Updater/releases/latest/download/Minecraft.Wii.U.Mod.Injector.Updater.exe",
-                                UpdaterPath);
+                            wc.DownloadFile(ApplicationUrls.InjectorUpdaterUrl, UpdaterPath);
                         }
 
                         Process.Start(UpdaterPath);
@@ -92,9 +90,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
                     {
                         using (var wc = new WebClient())
                         {
-                            wc.DownloadFile(
-                                "https://github.com/vylryna/MCUModInjector-Updater/releases/latest/download/Minecraft.Wii.U.Mod.Injector.Updater.exe",
-                                UpdaterPath);
+                            wc.DownloadFile(ApplicationUrls.InjectorUpdaterUrl, UpdaterPath);
                         }
 
                         Process.Start(UpdaterPath, GitVer);
@@ -104,8 +100,10 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
                 else
                 {
                     if (!auto)
+                    {
                         Messaging.Show(MessageBoxIcon.Information,
                             "You are already running the latest version " + LocalVer);
+                    }
                 }
             }
             catch (Exception error)

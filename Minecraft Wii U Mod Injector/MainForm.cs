@@ -488,12 +488,14 @@ namespace Minecraft_Wii_U_Mod_Injector
 
         private void SetupTutorialBtnClicked(object sender, EventArgs e)
         {
-            Process.Start("https://www.youtube.com/watch?v=be5fNSgxhrU");
+            MessageBox.Show("We currently do not have a dedicated setup tutorial for the Minecraft Wii U Mod Injector. Please refer to the setup tutorial of e.g. JGecko U and skip installing Java, also replace mentions of JGecko U with Minecraft Wii U Mod Injector.",
+                "Setup Tutorial", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            Process.Start(ApplicationUrls.SetupTutorialUrl);
         }
 
         private void DiscordSrvBtnClicked(object sender, EventArgs e)
         {
-            Process.Start("https://discord.gg/U2xr5qsJxj");
+            Process.Start(ApplicationUrls.DiscordServerInviteUrl);
         }
 
         private void CreditsBtnClicked(object sender, EventArgs e)
@@ -564,7 +566,7 @@ namespace Minecraft_Wii_U_Mod_Injector
         private void ItemIdHelpBtnClicked(object sender, EventArgs e)
         {
             Messaging.Show(MessageBoxIcon.Information,
-                "Item IDs can be found at https://minecraft-ids.grahamedgecombe.com/ \nData Values are the numbers behind the : in the ID.\nFor example, if you want Birch Wood the ID would be 17 and the data value would be 2");
+                "Item IDs can be found at " + ApplicationUrls.ItemIdsUrl + "\nData Values are the numbers behind the : in the ID.\nFor example, if you want Birch Wood the ID would be 17 and the data value would be 2");
         }
 
         private void IncompatibilityCheck(object sender, EventArgs e)

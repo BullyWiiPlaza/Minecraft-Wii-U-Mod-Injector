@@ -348,6 +348,7 @@
     <Compile Include="Forms\Mods\PlayerOptions.Designer.cs">
       <DependentUpon>PlayerOptions.cs</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\ApplicationUrls.cs" />
     <Compile Include="Helpers\DiscordRp.cs" />
     <Compile Include="Helpers\Exceptions.cs" />
     <Compile Include="Helpers\Files\INIFile.cs" />

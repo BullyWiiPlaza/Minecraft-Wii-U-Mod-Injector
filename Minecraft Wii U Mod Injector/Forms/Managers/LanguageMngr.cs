@@ -53,7 +53,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Managers
 
         private async void Init(object sender, EventArgs e)
         {
-            var index = 0;
+            // var index = 0;
 
             if (!Directory.Exists(_langRootDir))
                 Directory.CreateDirectory(_langRootDir);
@@ -71,7 +71,8 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Managers
             await RetrieveServerLangs();
 
             //this whole region could get cleaned up but I'm lazy and don't really care, it works.
-            ServerLanguageList.Rows.Add(ServerNames.Count);
+            // TODO This is broken after Kiera's repository was taken down
+            /* ServerLanguageList.Rows.Add(ServerNames.Count);
 
             foreach (var a in ServerNames)
             {
@@ -85,7 +86,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Managers
             {
                 ServerLanguageList.Rows[index].Cells[1].Value = a;
                 index++;
-            }
+            } */
 
             DiscordRp.SetPresence(_iw.IsConnected ? "Connected" : "Disconnected", "Language Manager - Browsing Installed Languages");
         }
@@ -294,7 +295,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Managers
             {
                 var gitClient = new GitHubClient(new ProductHeaderValue("MCWiiUMIClient"));
                 var contents = await gitClient.Repository.Content.GetAllContents(
-                    "Kashiiera",
+                    "Kashiiera", // TODO Replace it?
                     "Minecraft-Wii-U-Mod-Injector-Languages");
 
                 foreach (var t in contents)

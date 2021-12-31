@@ -117,7 +117,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
                 else if (Settings.EqualsTo("ReleaseNotes", "current", "Display"))
                 {
                     Injector.releaseNotesToggle.Checked = true;
-                    Injector.BuildNotesBox.Text = Properties.Resources.releaseNote;
+                    Injector.BuildNotesBox.Text = Properties.Resources.releaseNotes;
                 }
 
             }

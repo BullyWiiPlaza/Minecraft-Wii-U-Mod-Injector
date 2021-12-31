@@ -19,7 +19,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -81,54 +81,28 @@ namespace Minecraft_Wii_U_Mod_Injector.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to [Release v5.1.4 (2nd of June, 2021)]
+        ///   Looks up a localized string similar to [Release v5.1.7 (13th of June, 2021)]
         ///
         ///[Information]
         ///If you are experiencing issues, please report them on the Github Issues page or by joining the official discord server.
         ///
-        ///This update adds new mods, fixes mods, new features and a ton of bug fixes
+        ///This update adds a few new mods
         ///
         ///[Changes]
         ///
-        ///+ New mods:
+        ///+ New Mods
         ///
-        ///- Player Model Scale
-        ///- God Mode (Self and All)
-        ///- Splitscreen Field of View
-        ///- Friction
-        ///- Gamepad Splitscreen
-        ///- Disable Teleport Command
-        ///- Read NNID Name
-        ///- Disable Gamepad Input (Debug Mode Only)
-        ///- Gamepad Power Button tur [rest of string was truncated]&quot;;.
-        /// </summary>
-        internal static string releaseNote {
-            get {
-                return ResourceManager.GetString("releaseNote", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to [Release v5.1.4 (2nd of June, 2021)]
+        ///- Players &gt; Potion Amplifier
+        ///- Players &gt; XP Level
+        ///- Players &gt; Player Options
+        ///- Player Options &gt; Game Mode
+        ///- Player Options &gt; Camera
+        ///- Player Options &gt; Open Scoreboard
+        ///- Player Options &gt; Close Container
         ///
-        ///[Information]
-        ///If you are experiencing issues, please report them on the Github Issues page or by joining the official discord server.
+        ///+ General Additions &amp; Updates:
         ///
-        ///This update adds new mods, fixes mods, new features and a ton of bug fixes
-        ///
-        ///[Changes]
-        ///
-        ///+ New mods:
-        ///
-        ///- Player Model Scale
-        ///- God Mode (Self and All)
-        ///- Splitscreen Field of View
-        ///- Friction
-        ///- Gamepad Splitscreen
-        ///- Disable Teleport Command
-        ///- Read NNID Name
-        ///- Disable Gamepad Input (Debug Mode Only)
-        ///- Gamepad Power Button tur [rest of string was truncated]&quot;;.
+        ///- UI Performance increased [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string releaseNotes {
             get {

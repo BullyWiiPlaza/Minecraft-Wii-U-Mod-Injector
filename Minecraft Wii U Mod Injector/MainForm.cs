@@ -302,7 +302,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             {
                 if (releaseNotesToggle.Checked)
                 {
-                    BuildNotesBox.Text = Properties.Resources.releaseNote;
+                    BuildNotesBox.Text = Properties.Resources.releaseNotes;
                     Settings.Write("ReleaseNotes", "current", "Display");
                 }
                 else
@@ -342,12 +342,18 @@ namespace Minecraft_Wii_U_Mod_Injector
 
         private void SetupTutorialBtnClicked(object sender, EventArgs e)
         {
-            Process.Start("https://www.youtube.com/watch?v=be5fNSgxhrU");
+            MessageBox.Show("We currently do not have a dedicated setup tutorial for the Minecraft Wii U Mod Injector. Please refer to the setup tutorial of e.g. JGecko U and skip installing Java, also replace mentions of JGecko U with Minecraft Wii U Mod Injector.",
+                "Setup Tutorial", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            Process.Start("https://github.com/BullyWiiPlaza/JGeckoU/blob/master/README.md");
+
+            // Process.Start("https://www.youtube.com/watch?v=be5fNSgxhrU");
         }
 
         private void DiscordSrvBtnClicked(object sender, EventArgs e)
         {
-            Process.Start("https://discord.gg/jrzZWaDc7a");
+            MessageBox.Show("Sorry, we currently do not have a Discord server. However, we might create another one soon, stay tuned!",
+                "Discord Server", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            // Process.Start("https://discord.gg/jrzZWaDc7a");
         }
 
         private void CreditsBtnClicked(object sender, EventArgs e)
@@ -377,6 +383,14 @@ namespace Minecraft_Wii_U_Mod_Injector
         {
             Messaging.Show(MessageBoxIcon.Information, "Item IDs can be found at https://minecraft-ids.grahamedgecombe.com/ \nData Values are the numbers behind the : in the ID.\nFor example, if you want Birch Wood the ID would be 17 and the data value would be 2");
         }
+
+        private void DonateButton_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Thank you for your interest in donating to keep this project alive and supported. In the following, the PayPal link of a Minecraft Wii U Mod Injector developer will open.",
+                "Donate", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            Process.Start("https://www.paypal.me/bullywiiplaza");
+        }
+
         public static bool IsPointerLoaded()
         {
             return GeckoU.PeekUInt(GeckoU.PeekUInt(0x10A0A624) + 0x9C) != 0x0;

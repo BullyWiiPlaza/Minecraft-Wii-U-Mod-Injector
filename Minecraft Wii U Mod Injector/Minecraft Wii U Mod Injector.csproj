@@ -194,7 +194,6 @@
   <ItemGroup>
     <Content Include="Icon.ico" />
     <None Include="Resources\githubLogo.png" />
-    <None Include="Resources\releaseNote.txt" />
     <None Include="Resources\Icon.png" />
     <None Include="Resources\releaseNotes.txt" />
   </ItemGroup>

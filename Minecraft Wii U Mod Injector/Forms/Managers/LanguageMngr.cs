@@ -18,10 +18,8 @@ using Minecraft_Wii_U_Mod_Injector.Properties;
 using Octokit;
 using Application = System.Windows.Forms.Application;
 
-namespace Minecraft_Wii_U_Mod_Injector.Forms.Managers
-{
-    public partial class LanguageMngr : MetroForm
-    {
+namespace Minecraft_Wii_U_Mod_Injector.Forms.Managers {
+    public partial class LanguageMngr : MetroFramework.Forms.MetroForm {
         #region references
         private readonly MainForm _iw;
         private readonly string _langRootDir = Application.StartupPath + @"\Saved\Languages\";
@@ -29,31 +27,27 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Managers
         public static List<string> ServerNames = new List<string>();
         public static List<string> ServerUrls = new List<string>();
 
-        public static string[] BlackList = {"BuildTile", "BuildVerTitleLbl"};
+        public static string[] BlackList = { "BuildTile", "BuildVerTitleLbl" };
         #endregion
 
         #region init
-        public LanguageMngr(MainForm iw)
-        {
+        public LanguageMngr(MainForm iw) {
             InitializeComponent();
             _iw = iw;
             StyleMngr.Style = Style = iw.StyleMngr.Style;
             StyleMngr.Theme = Theme = iw.StyleMngr.Theme;
         }
 
-        protected override CreateParams CreateParams
-        {
-            get
-            {
+        protected override CreateParams CreateParams {
+            get {
                 var cp = base.CreateParams;
                 cp.ExStyle |= 0x02000000;
                 return cp;
             }
         }
 
-        private async void Init(object sender, EventArgs e)
-        {
-            // var index = 0;
+        private async void Init(object sender, EventArgs e) {
+            var index = 0;
 
             if (!Directory.Exists(_langRootDir))
                 Directory.CreateDirectory(_langRootDir);
@@ -72,46 +66,37 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Managers
 
             //this whole region could get cleaned up but I'm lazy and don't really care, it works.
             // TODO This is broken after Kiera's repository was taken down
-            /* ServerLanguageList.Rows.Add(ServerNames.Count);
+            ServerLanguageList.Rows.Add(ServerNames.Count);
 
-            foreach (var a in ServerNames)
-            {
-                ServerLanguageList.Rows[index].Cells[0].Value = a;
-                index++;
+            for (int i = 0; i < ServerNames.Count; i++) {
+                ServerLanguageList.Rows[i].Cells[0].Value = ServerNames[i];
             }
 
-            index = 0;
-
-            foreach (var a in ServerUrls)
-            {
-                ServerLanguageList.Rows[index].Cells[1].Value = a;
-                index++;
-            } */
+            for (int i = 0; i < ServerUrls.Count; i++) {
+                ServerLanguageList.Rows[i].Cells[1].Value = ServerUrls[i];
+            }
 
             DiscordRp.SetPresence(_iw.IsConnected ? "Connected" : "Disconnected", "Language Manager - Browsing Installed Languages");
         }
 
-        private void Exiting(object sender, FormClosingEventArgs e)
-        {
+        private void Exiting(object sender, FormClosingEventArgs e) {
             ServerNames.Clear();
             ServerUrls.Clear();
 
-            DiscordRp.SetPresence(_iw.IsConnected ? "Connected" : "Disconnected",  _iw.MainTabs.SelectedTab.Text + " tab");
+            DiscordRp.SetPresence(_iw.IsConnected ? "Connected" : "Disconnected", _iw.MainTabs.SelectedTab.Text + " tab");
             Dispose();
         }
         #endregion
 
         #region control handlers
 
-        private void SwapTab(object sender, EventArgs e)
-        {
-            var tile = (MetroTile) sender;
+        private void SwapTab(object sender, EventArgs e) {
+            var tile = (MetroTile)sender;
 
             if (MainTabs.SelectedIndex != tile.TileCount)
                 MainTabs.SelectedIndex = tile.TileCount;
 
-            switch (tile.TileCount)
-            {
+            switch (tile.TileCount) {
                 case 0:
                     DiscordRp.SetPresence(_iw.IsConnected ? "Connected" : "Disconnected", "Language Manager - Browsing Installed Languages");
                     break;
@@ -124,22 +109,19 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Managers
 " + MainTabs.SelectedTab.Text;
         }
 
-        private void ApplyLanguageBtnClicked(object sender, DataGridViewCellEventArgs e)
-        {
+        private void ApplyLanguageBtnClicked(object sender, DataGridViewCellEventArgs e) {
             string filePath = LanguagesList.Rows[e.RowIndex].Cells[3].Value.ToString();
 
-            if (!GetLanguageFile(e).KeyExists("version", "meta") || GetLanguageFile(e).Read("version", "meta") != Setup.LocalVer)
-            {
+            if (!GetLanguageFile(e).KeyExists("version", "meta") || GetLanguageFile(e).Read("version", "meta") != Setup.LocalVer) {
                 if (Messaging.Show(
                     "This Language has last been modified for a different version of the Mod Injector, do you still want to apply?\n" +
                     "(Some things may not be translated/have broken positioning",
-                    MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
-                {
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No) {
                     return;
                 }
             }
 
-            if (!Equals(Miscellaneous.GetEncoding(filePath), Encoding.Unicode)) 
+            if (!Equals(Miscellaneous.GetEncoding(filePath), Encoding.Unicode))
                 Miscellaneous.ChangeEncoding(filePath, Encoding.Unicode);
 
             ApplyLanguage(_iw.Controls, e);
@@ -152,12 +134,11 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Managers
             Messaging.Show("Language has been changed to " + LanguagesList.Rows[e.RowIndex].Cells[0].Value);
         }
 
-        private void DownloadServerLang(object sender, DataGridViewCellEventArgs e)
-        {
+        private void DownloadServerLang(object sender, DataGridViewCellEventArgs e) {
             var downloader = new WebClient();
 
-            downloader.DownloadFile((string) ServerLanguageList.Rows[e.RowIndex].Cells[1].Value,
-                _langRootDir + (string) ServerLanguageList.Rows[e.RowIndex].Cells[0].Value);
+            downloader.DownloadFile((string)ServerLanguageList.Rows[e.RowIndex].Cells[1].Value,
+                _langRootDir + (string)ServerLanguageList.Rows[e.RowIndex].Cells[0].Value);
 
             Messaging.Show(ServerLanguageList.Rows[e.RowIndex].Cells[0].Value + " has been downloaded.");
             downloader.Dispose();
@@ -165,8 +146,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Managers
             LoadInstalledLangs();
         }
 
-        private void ExportTemplateBtnClicked(object sender, EventArgs e)
-        {
+        private void ExportTemplateBtnClicked(object sender, EventArgs e) {
             var templateFile = new IniFile(_langRootDir + "Template.ini");
 
             templateFile.Write("name", "Template Language", "meta");
@@ -174,8 +154,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Managers
             templateFile.Write("description", "Template Language file to start making a new language file", "meta");
             templateFile.Write("version", Setup.LocalVer, "meta");
 
-            foreach (var c in Miscellaneous.AllMetroControls())
-            {
+            foreach (var c in Miscellaneous.AllMetroControls()) {
                 if (BlackList.Contains(c.Name)) continue;
 
                 templateFile.Write(c.Name, c.Text, "controls");
@@ -184,18 +163,15 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Managers
             if (Messaging.Show(
                 "Some controls might overlap if their text is longer than the default." +
                 "\nWould you like to export control size and locations too? (so you can fine tune them in-case they don't fit)",
-                MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            {
-                foreach (var c in Miscellaneous.AllMetroControls())
-                {
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes) {
+                foreach (var c in Miscellaneous.AllMetroControls()) {
                     templateFile.Write(c.Name + ".sizeWidth", c.Size.Width.ToString(), "controls.properties");
                     templateFile.Write(c.Name + ".sizeHeight", c.Size.Height.ToString(), "controls.properties");
                     templateFile.Write(c.Name + ".locationX", c.Location.X.ToString(), "controls.properties");
                     templateFile.Write(c.Name + ".locationY", c.Location.Y.ToString(), "controls.properties");
                 }
 
-                foreach (var c in Miscellaneous.AllSliderControls())
-                {
+                foreach (var c in Miscellaneous.AllSliderControls()) {
                     templateFile.Write(c.Name + ".sizeWidth", c.Size.Width.ToString(), "controls.properties");
                     templateFile.Write(c.Name + ".locationX", c.Location.X.ToString(), "controls.properties");
                     templateFile.Write(c.Name + ".locationY", c.Location.Y.ToString(), "controls.properties");
@@ -205,9 +181,8 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Managers
             Messaging.Show("Template File has been created in:\n" + _langRootDir + "Template.ini");
         }
 
-        private void SubMenuHandler(object sender, EventArgs e)
-        {
-            var tile = (MetroTile) sender;
+        private void SubMenuHandler(object sender, EventArgs e) {
+            var tile = (MetroTile)sender;
 
             if (tile == LanguagesTile)
                 NavMenuLngPnl.Visible = !NavMenuLngPnl.Visible;
@@ -215,15 +190,13 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Managers
                 NavMenuOptsPnl.Visible = !NavMenuOptsPnl.Visible;
         }
 
-        private void LngMenuHandler(object sender, ToolStripItemClickedEventArgs e)
-        {
+        private void LngMenuHandler(object sender, ToolStripItemClickedEventArgs e) {
             if (e.ClickedItem == editLngBtn)
                 if (LanguagesList.CurrentRow != null)
                     Process.Start((string)LanguagesList.Rows[LanguagesList.CurrentRow.Index].Cells[3].Value);
 
             if (e.ClickedItem == deleteLngBtn)
-                if (LanguagesList.CurrentRow != null)
-                {
+                if (LanguagesList.CurrentRow != null) {
                     var confirmation = Messaging.Show("Are you sure you want to delete this Language?",
                         MessageBoxButtons.YesNo,
                         MessageBoxIcon.Question);
@@ -239,8 +212,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Managers
                 Process.Start(_langRootDir);
         }
 
-        private void ResetTileClicked(object sender, EventArgs e)
-        {
+        private void ResetTileClicked(object sender, EventArgs e) {
             Settings.Default.Language = "Default";
             Settings.Default.Save();
 
@@ -251,26 +223,22 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Managers
 
         #region language functions
 
-        private IniFile GetLanguageFile(DataGridViewCellEventArgs e)
-        {
+        private IniFile GetLanguageFile(DataGridViewCellEventArgs e) {
             return new IniFile(LanguagesList.Rows[e.RowIndex].Cells[3].Value.ToString());
         }
 
-        private void LoadInstalledLangs()
-        {
+        private void LoadInstalledLangs() {
             LanguagesList.Rows.Clear();
             LanguagesList.Refresh();
             var index = 0;
-            try
-            {
+            try {
                 var files = Directory.GetFiles(_langRootDir);
 
                 if (files.Length <= 0) return;
 
                 LanguagesList.Rows.Add(files.Length);
 
-                foreach (var t in files)
-                {
+                foreach (var t in files) {
                     var file = new FileInfo(t);
                     var langFile = new IniFile(_langRootDir + file.Name);
 
@@ -281,49 +249,39 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Managers
 
                     index++;
                 }
-            }
-            catch (Exception e)
-            {
+            } catch (Exception e) {
                 Exceptions.LogError(e, "Failed to load Installed languages", true);
             }
 
         }
 
-        public static async Task RetrieveServerLangs()
-        {
-            try
-            {
+        public static async Task RetrieveServerLangs() {
+            try {
                 var gitClient = new GitHubClient(new ProductHeaderValue("MCWiiUMIClient"));
                 var contents = await gitClient.Repository.Content.GetAllContents(
-                    "Kashiiera", // TODO Replace it?
+                    "BullyWiiPlaza", // TODO Replace it?
                     "Minecraft-Wii-U-Mod-Injector-Languages");
 
-                foreach (var t in contents)
-                {
+                foreach (var t in contents) {
                     ServerNames.Add(t.Name);
                     ServerUrls.Add(t.DownloadUrl);
                 }
-            }
-            catch (Exception error)
-            {
+            } catch (Exception error) {
                 Exceptions.LogError(error,
                     "Something went wrong while retrieving languages files.\n" +
                     "If this issue persist please contact the developers.", true);
             }
         }
 
-        public void ApplyLanguage(IEnumerable controls, DataGridViewCellEventArgs e)
-        {
+        public void ApplyLanguage(IEnumerable controls, DataGridViewCellEventArgs e) {
             var languageFile = GetLanguageFile(e);
 
-            foreach (Control control in controls)
-            {
+            foreach (Control control in controls) {
                 if (BlackList.Contains(control.Name)) continue;
 
                 if (!languageFile.KeyExists(control.Name, "controls")) continue;
 
-                if (control is MetroButton || control is MetroLabel || control is MetroTile || control is MetroCheckBox)
-                {
+                if (control is MetroButton || control is MetroLabel || control is MetroTile || control is MetroCheckBox) {
                     control.Text = languageFile.Read(control.Name, "controls");
 
                     if (languageFile.KeyExists(control.Name + ".sizeWidth", "controls.properties"))
@@ -342,18 +300,15 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Managers
             }
         }
 
-        public static void ApplyLanguage(IEnumerable controls, string path)
-        {
+        public static void ApplyLanguage(IEnumerable controls, string path) {
             var languageFile = new IniFile(path);
 
-            foreach (Control control in controls)
-            {
+            foreach (Control control in controls) {
                 if (BlackList.Contains(control.Name)) continue;
 
                 if (!languageFile.KeyExists(control.Name, "controls")) continue;
 
-                if (control is MetroButton || control is MetroLabel || control is MetroTile || control is MetroCheckBox)
-                {
+                if (control is MetroButton || control is MetroLabel || control is MetroTile || control is MetroCheckBox) {
                     control.Text = languageFile.Read(control.Name, "controls");
 
                     if (languageFile.KeyExists(control.Name + ".sizeWidth", "controls.properties"))

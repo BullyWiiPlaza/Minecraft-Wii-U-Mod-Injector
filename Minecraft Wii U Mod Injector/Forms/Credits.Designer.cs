@@ -53,6 +53,7 @@
             this.bullywiiplazaCredits.TabIndex = 2;
             this.bullywiiplazaCredits.Text = "Bully@WiiPlaza: \r\n- Help with late development\r\n- Creating some mods";
             this.bullywiiplazaCredits.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.bullywiiplazaCredits.Click += new System.EventHandler(this.BullyClicked);
             // 
             // appIco
             // 
@@ -80,6 +81,7 @@
             this.vylrynaCredits.Text = "vylryna: \r\n- Help with development\r\n- Creating a handful of mods (most notably, c" +
     "ommands)\r\n- Helping me understand how commands work";
             this.vylrynaCredits.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.vylrynaCredits.Click += new System.EventHandler(this.VylrynaClicked);
             // 
             // nessieHaxCredits
             // 
@@ -104,7 +106,7 @@
             this.kashiieraCredits.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.kashiieraCredits.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.kashiieraCredits.UseSelectable = true;
-            this.kashiieraCredits.Click += new System.EventHandler(this.kashiieraClicked);
+            this.kashiieraCredits.Click += new System.EventHandler(this.KashiieraClicked);
             // 
             // Credits
             // 

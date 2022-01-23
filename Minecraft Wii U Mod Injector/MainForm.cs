@@ -871,6 +871,11 @@ namespace Minecraft_Wii_U_Mod_Injector
             GeckoU.WriteFloat(0x108E0BDC, Convert.ToSingle(ReachSlider.Value));
         }
 
+        private void HitboxSliderChanged(object sender, EventArgs e)
+        {
+            GeckoU.WriteUInt(0x105DD948, (uint)(0x3F000000 + (int)(HitBoxScaleSlider.Value * 0x00400000 - 1)));
+        }
+
         private void RiptideFlyingSpeedSliderChanged(object sender, EventArgs e)
         {
             GeckoU.WriteFloat(0x1079C3E0, (float) RiptideFlyingSpeedSlider.Value);

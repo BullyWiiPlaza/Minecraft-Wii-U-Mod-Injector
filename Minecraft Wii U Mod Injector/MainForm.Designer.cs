@@ -214,10 +214,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.AllDLCUnlocked = new MetroFramework.Controls.MetroCheckBox();
             this.ExitGame = new MetroFramework.Controls.MetroButton();
             this.MinigamesTab = new MetroFramework.Controls.MetroTabPage();
-            this.GlideTile = new MetroFramework.Controls.MetroTile();
-            this.TumbleTile = new MetroFramework.Controls.MetroTile();
-            this.BattleTile = new MetroFramework.Controls.MetroTile();
-            this.GeneralMgTile = new MetroFramework.Controls.MetroTile();
             this.MinigamesTabs = new MetroFramework.Controls.MetroTabControl();
             this.GeneralMinigames = new MetroFramework.Controls.MetroTabPage();
             this.Solo = new MetroFramework.Controls.MetroCheckBox();
@@ -308,6 +304,10 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.discordRpcCheckBox = new MetroFramework.Controls.MetroCheckBox();
             this.ColorsBox = new MetroFramework.Controls.MetroComboBox();
             this.ColorLabel = new MetroFramework.Controls.MetroLabel();
+            this.GlideTile = new MetroFramework.Controls.MetroTile();
+            this.TumbleTile = new MetroFramework.Controls.MetroTile();
+            this.BattleTile = new MetroFramework.Controls.MetroTile();
+            this.GeneralMgTile = new MetroFramework.Controls.MetroTile();
             this.HomeTile = new MetroFramework.Controls.MetroTile();
             this.StyleMngr = new MetroFramework.Components.MetroStyleManager(this.components);
             this.StyleExtender = new MetroFramework.Components.MetroStyleExtender(this.components);
@@ -469,7 +469,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.MainTabs.Location = new System.Drawing.Point(155, 58);
             this.MainTabs.Multiline = true;
             this.MainTabs.Name = "MainTabs";
-            this.MainTabs.SelectedIndex = 5;
+            this.MainTabs.SelectedIndex = 1;
             this.MainTabs.Size = new System.Drawing.Size(1130, 643);
             this.MainTabs.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.MainTabs.TabIndex = 0;
@@ -1625,7 +1625,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.StyleExtender.SetApplyMetroTheme(this.HitBoxScaleSlider, true);
             this.HitBoxScaleSlider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.HitBoxScaleSlider.DecimalPlaces = 1;
-            this.HitBoxScaleSlider.Enabled = false;
             this.HitBoxScaleSlider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
             this.HitBoxScaleSlider.Increment = new decimal(new int[] {
             1,
@@ -1640,10 +1639,11 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.ToolTipManager.SetToolTip(this.HitBoxScaleSlider, "How big should entity hitboxes be? (disabled until fixed)\r\n\r\nCTRL + Click = Incre" +
         "ase Decimal Places\r\nALT + Click = Decrease Decimal Places");
             this.HitBoxScaleSlider.Value = new decimal(new int[] {
-            5,
+            1,
             0,
             0,
-            65536});
+            0});
+            this.HitBoxScaleSlider.ValueChanged += new System.EventHandler(this.HitboxSliderChanged);
             this.HitBoxScaleSlider.Click += new System.EventHandler(this.SliderClicked);
             // 
             // XPLevel
@@ -3718,75 +3718,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.MinigamesTab.VerticalScrollbarHighlightOnWheel = false;
             this.MinigamesTab.VerticalScrollbarSize = 10;
             // 
-            // GlideTile
-            // 
-            this.GlideTile.ActiveControl = null;
-            this.GlideTile.Dock = System.Windows.Forms.DockStyle.Top;
-            this.GlideTile.Location = new System.Drawing.Point(0, 120);
-            this.GlideTile.Name = "GlideTile";
-            this.GlideTile.PaintTileCount = false;
-            this.GlideTile.Size = new System.Drawing.Size(159, 40);
-            this.GlideTile.TabIndex = 8;
-            this.GlideTile.Tag = "MgTile";
-            this.GlideTile.Text = "Glide";
-            this.GlideTile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.GlideTile.TileCount = 3;
-            this.GlideTile.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
-            this.GlideTile.UseSelectable = true;
-            this.GlideTile.Click += new System.EventHandler(this.SwapTab);
-            // 
-            // TumbleTile
-            // 
-            this.TumbleTile.ActiveControl = null;
-            this.TumbleTile.Dock = System.Windows.Forms.DockStyle.Top;
-            this.TumbleTile.Location = new System.Drawing.Point(0, 80);
-            this.TumbleTile.Name = "TumbleTile";
-            this.TumbleTile.PaintTileCount = false;
-            this.TumbleTile.Size = new System.Drawing.Size(159, 40);
-            this.TumbleTile.TabIndex = 7;
-            this.TumbleTile.Tag = "MgTile";
-            this.TumbleTile.Text = "Tumble";
-            this.TumbleTile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.TumbleTile.TileCount = 2;
-            this.TumbleTile.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
-            this.TumbleTile.UseSelectable = true;
-            this.TumbleTile.Click += new System.EventHandler(this.SwapTab);
-            // 
-            // BattleTile
-            // 
-            this.BattleTile.ActiveControl = null;
-            this.BattleTile.Dock = System.Windows.Forms.DockStyle.Top;
-            this.BattleTile.Location = new System.Drawing.Point(0, 40);
-            this.BattleTile.Name = "BattleTile";
-            this.BattleTile.PaintTileCount = false;
-            this.BattleTile.Size = new System.Drawing.Size(159, 40);
-            this.BattleTile.TabIndex = 6;
-            this.BattleTile.Tag = "MgTile";
-            this.BattleTile.Text = "Battle";
-            this.BattleTile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.BattleTile.TileCount = 1;
-            this.BattleTile.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
-            this.BattleTile.UseSelectable = true;
-            this.BattleTile.UseTileImage = true;
-            this.BattleTile.Click += new System.EventHandler(this.SwapTab);
-            // 
-            // GeneralMgTile
-            // 
-            this.GeneralMgTile.ActiveControl = null;
-            this.GeneralMgTile.Dock = System.Windows.Forms.DockStyle.Top;
-            this.GeneralMgTile.Location = new System.Drawing.Point(0, 0);
-            this.GeneralMgTile.Name = "GeneralMgTile";
-            this.GeneralMgTile.PaintTileCount = false;
-            this.GeneralMgTile.Size = new System.Drawing.Size(159, 40);
-            this.GeneralMgTile.TabIndex = 5;
-            this.GeneralMgTile.Tag = "MgTile";
-            this.GeneralMgTile.Text = "General";
-            this.GeneralMgTile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.GeneralMgTile.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
-            this.GeneralMgTile.UseSelectable = true;
-            this.GeneralMgTile.UseTileImage = true;
-            this.GeneralMgTile.Click += new System.EventHandler(this.SwapTab);
-            // 
             // MinigamesTabs
             // 
             this.MinigamesTabs.Controls.Add(this.GeneralMinigames);
@@ -4028,10 +3959,10 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.Battle.HorizontalScrollbarBarColor = true;
             this.Battle.HorizontalScrollbarHighlightOnWheel = false;
             this.Battle.HorizontalScrollbarSize = 10;
-            this.Battle.Location = new System.Drawing.Point(4, 9);
+            this.Battle.Location = new System.Drawing.Point(4, 5);
             this.Battle.Name = "Battle";
             this.Battle.Padding = new System.Windows.Forms.Padding(3);
-            this.Battle.Size = new System.Drawing.Size(1121, 620);
+            this.Battle.Size = new System.Drawing.Size(1121, 624);
             this.Battle.TabIndex = 1;
             this.Battle.Text = "Battle";
             this.Battle.Theme = MetroFramework.MetroThemeStyle.Dark;
@@ -4152,10 +4083,10 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.Tumble.HorizontalScrollbarBarColor = true;
             this.Tumble.HorizontalScrollbarHighlightOnWheel = false;
             this.Tumble.HorizontalScrollbarSize = 10;
-            this.Tumble.Location = new System.Drawing.Point(4, 9);
+            this.Tumble.Location = new System.Drawing.Point(4, 5);
             this.Tumble.Name = "Tumble";
             this.Tumble.Padding = new System.Windows.Forms.Padding(3);
-            this.Tumble.Size = new System.Drawing.Size(1121, 620);
+            this.Tumble.Size = new System.Drawing.Size(1121, 624);
             this.Tumble.TabIndex = 2;
             this.Tumble.Text = "Tumble";
             this.Tumble.Theme = MetroFramework.MetroThemeStyle.Dark;
@@ -4223,10 +4154,10 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.Glide.HorizontalScrollbarBarColor = true;
             this.Glide.HorizontalScrollbarHighlightOnWheel = false;
             this.Glide.HorizontalScrollbarSize = 10;
-            this.Glide.Location = new System.Drawing.Point(4, 9);
+            this.Glide.Location = new System.Drawing.Point(4, 5);
             this.Glide.Name = "Glide";
             this.Glide.Padding = new System.Windows.Forms.Padding(3);
-            this.Glide.Size = new System.Drawing.Size(1121, 620);
+            this.Glide.Size = new System.Drawing.Size(1121, 624);
             this.Glide.TabIndex = 3;
             this.Glide.Text = "Glide";
             this.Glide.Theme = MetroFramework.MetroThemeStyle.Dark;
@@ -5427,6 +5358,75 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.ColorLabel.TabIndex = 36;
             this.ColorLabel.Text = "Color:";
             this.ColorLabel.Theme = MetroFramework.MetroThemeStyle.Dark;
+            // 
+            // GlideTile
+            // 
+            this.GlideTile.ActiveControl = null;
+            this.GlideTile.Dock = System.Windows.Forms.DockStyle.Top;
+            this.GlideTile.Location = new System.Drawing.Point(0, 120);
+            this.GlideTile.Name = "GlideTile";
+            this.GlideTile.PaintTileCount = false;
+            this.GlideTile.Size = new System.Drawing.Size(159, 40);
+            this.GlideTile.TabIndex = 8;
+            this.GlideTile.Tag = "MgTile";
+            this.GlideTile.Text = "Glide";
+            this.GlideTile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.GlideTile.TileCount = 3;
+            this.GlideTile.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
+            this.GlideTile.UseSelectable = true;
+            this.GlideTile.Click += new System.EventHandler(this.SwapTab);
+            // 
+            // TumbleTile
+            // 
+            this.TumbleTile.ActiveControl = null;
+            this.TumbleTile.Dock = System.Windows.Forms.DockStyle.Top;
+            this.TumbleTile.Location = new System.Drawing.Point(0, 80);
+            this.TumbleTile.Name = "TumbleTile";
+            this.TumbleTile.PaintTileCount = false;
+            this.TumbleTile.Size = new System.Drawing.Size(159, 40);
+            this.TumbleTile.TabIndex = 7;
+            this.TumbleTile.Tag = "MgTile";
+            this.TumbleTile.Text = "Tumble";
+            this.TumbleTile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.TumbleTile.TileCount = 2;
+            this.TumbleTile.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
+            this.TumbleTile.UseSelectable = true;
+            this.TumbleTile.Click += new System.EventHandler(this.SwapTab);
+            // 
+            // BattleTile
+            // 
+            this.BattleTile.ActiveControl = null;
+            this.BattleTile.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BattleTile.Location = new System.Drawing.Point(0, 40);
+            this.BattleTile.Name = "BattleTile";
+            this.BattleTile.PaintTileCount = false;
+            this.BattleTile.Size = new System.Drawing.Size(159, 40);
+            this.BattleTile.TabIndex = 6;
+            this.BattleTile.Tag = "MgTile";
+            this.BattleTile.Text = "Battle";
+            this.BattleTile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.BattleTile.TileCount = 1;
+            this.BattleTile.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
+            this.BattleTile.UseSelectable = true;
+            this.BattleTile.UseTileImage = true;
+            this.BattleTile.Click += new System.EventHandler(this.SwapTab);
+            // 
+            // GeneralMgTile
+            // 
+            this.GeneralMgTile.ActiveControl = null;
+            this.GeneralMgTile.Dock = System.Windows.Forms.DockStyle.Top;
+            this.GeneralMgTile.Location = new System.Drawing.Point(0, 0);
+            this.GeneralMgTile.Name = "GeneralMgTile";
+            this.GeneralMgTile.PaintTileCount = false;
+            this.GeneralMgTile.Size = new System.Drawing.Size(159, 40);
+            this.GeneralMgTile.TabIndex = 5;
+            this.GeneralMgTile.Tag = "MgTile";
+            this.GeneralMgTile.Text = "General";
+            this.GeneralMgTile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.GeneralMgTile.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
+            this.GeneralMgTile.UseSelectable = true;
+            this.GeneralMgTile.UseTileImage = true;
+            this.GeneralMgTile.Click += new System.EventHandler(this.SwapTab);
             // 
             // HomeTile
             // 

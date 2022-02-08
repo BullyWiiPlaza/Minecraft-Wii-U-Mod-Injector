@@ -1,27 +1,19 @@
-[Release v5.2.0.q8.1 (10th of October, 2021)]
+[Release v5.3.1 (February 7, 2022)]
 
 # Overview
 
-This update includes a few quality of life improvements and bug fixes
+This update includes a few extra mods and bug fixes
 
 # Changes
 
 ### General Additions & Updates
 
-- Mod Injector > Start-up should be much smoother now
-- Mod Injector > First Launch message removed
-- Navigation Menu > Improved the navigation menu to add support for sub-menus on the Mod Injector and Language Manager (like Minigames > Battle etc)
-- Credits > Link to developers YouTube channels are now available
-- Language Manager > Selected language will now be applied on start-up
-- Language Manager > Added right click menu
-- Language Manager > "Open Directory" moved to the new right click menu
-- Language Manager > Removed "Refresh" button
-- Language Manager > Installed languages will now automatically refresh when a new language has been downloaded
-- Quick Mods Manager > Added "Open in Explorer" to right click menu
+- Mod Injector > Setup Tutorial is now optional
+- General Game > Added Keyboard Customizer
+- Player Options > Added Swap to Offhand
 
 # Fixes
 
 ### General Fixes
 
-- Language Manager > Blacklisted controls will no longer be exported
-- Tutorial > Fixed typo
+- General Game > Upgraded Disable Permanent Kicks

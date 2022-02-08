@@ -187,6 +187,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.StaticLiquidBlocks = new MetroFramework.Controls.MetroCheckBox();
             this.NoFog = new MetroFramework.Controls.MetroCheckBox();
             this.generalTab = new MetroFramework.Controls.MetroTabPage();
+            this.KeyboardCustomizerBtn = new MetroFramework.Controls.MetroButton();
             this.DebugConsoleCustomizerBtn = new MetroFramework.Controls.MetroButton();
             this.CursedSlider = new System.Windows.Forms.NumericUpDown();
             this.CursedLbl = new MetroFramework.Controls.MetroLabel();
@@ -469,7 +470,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.MainTabs.Location = new System.Drawing.Point(155, 58);
             this.MainTabs.Multiline = true;
             this.MainTabs.Name = "MainTabs";
-            this.MainTabs.SelectedIndex = 1;
+            this.MainTabs.SelectedIndex = 5;
             this.MainTabs.Size = new System.Drawing.Size(1130, 643);
             this.MainTabs.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.MainTabs.TabIndex = 0;
@@ -3237,6 +3238,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             // 
             // generalTab
             // 
+            this.generalTab.Controls.Add(this.KeyboardCustomizerBtn);
             this.generalTab.Controls.Add(this.DebugConsoleCustomizerBtn);
             this.generalTab.Controls.Add(this.CursedSlider);
             this.generalTab.Controls.Add(this.CursedLbl);
@@ -3278,12 +3280,26 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.generalTab.VerticalScrollbarHighlightOnWheel = false;
             this.generalTab.VerticalScrollbarSize = 10;
             // 
+            // KeyboardCustomizerBtn
+            // 
+            this.KeyboardCustomizerBtn.Enabled = false;
+            this.KeyboardCustomizerBtn.Location = new System.Drawing.Point(286, 481);
+            this.KeyboardCustomizerBtn.Name = "KeyboardCustomizerBtn";
+            this.KeyboardCustomizerBtn.Size = new System.Drawing.Size(550, 23);
+            this.KeyboardCustomizerBtn.TabIndex = 154;
+            this.KeyboardCustomizerBtn.Tag = "NonHost";
+            this.KeyboardCustomizerBtn.Text = "Keyboard Customizer";
+            this.KeyboardCustomizerBtn.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.KeyboardCustomizerBtn.UseSelectable = true;
+            this.KeyboardCustomizerBtn.UseStyleColors = true;
+            this.KeyboardCustomizerBtn.Click += new System.EventHandler(this.KeyboardCustomizerBtn_Click);
+            // 
             // DebugConsoleCustomizerBtn
             // 
             this.DebugConsoleCustomizerBtn.Enabled = false;
-            this.DebugConsoleCustomizerBtn.Location = new System.Drawing.Point(8, 504);
+            this.DebugConsoleCustomizerBtn.Location = new System.Drawing.Point(7, 510);
             this.DebugConsoleCustomizerBtn.Name = "DebugConsoleCustomizerBtn";
-            this.DebugConsoleCustomizerBtn.Size = new System.Drawing.Size(549, 23);
+            this.DebugConsoleCustomizerBtn.Size = new System.Drawing.Size(550, 23);
             this.DebugConsoleCustomizerBtn.TabIndex = 154;
             this.DebugConsoleCustomizerBtn.Tag = "NonHost";
             this.DebugConsoleCustomizerBtn.Text = "Debug Console Customizer";
@@ -3332,7 +3348,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             // 
             // DLCManagerBtn
             // 
-            this.DLCManagerBtn.Location = new System.Drawing.Point(566, 504);
+            this.DLCManagerBtn.Location = new System.Drawing.Point(566, 510);
             this.DLCManagerBtn.Name = "DLCManagerBtn";
             this.DLCManagerBtn.Size = new System.Drawing.Size(549, 23);
             this.DLCManagerBtn.TabIndex = 150;
@@ -3412,7 +3428,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             // 
             // AchievementEditor
             // 
-            this.AchievementEditor.Location = new System.Drawing.Point(7, 536);
+            this.AchievementEditor.Location = new System.Drawing.Point(7, 539);
             this.AchievementEditor.Name = "AchievementEditor";
             this.AchievementEditor.Size = new System.Drawing.Size(550, 25);
             this.AchievementEditor.Style = MetroFramework.MetroColorStyle.Blue;
@@ -3687,7 +3703,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             // ExitGame
             // 
             this.ExitGame.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ExitGame.Location = new System.Drawing.Point(566, 536);
+            this.ExitGame.Location = new System.Drawing.Point(566, 539);
             this.ExitGame.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.ExitGame.Name = "ExitGame";
             this.ExitGame.Size = new System.Drawing.Size(550, 25);
@@ -5044,7 +5060,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.giveAmountBox.MaxLength = 5;
             this.giveAmountBox.Name = "giveAmountBox";
             this.giveAmountBox.PasswordChar = '\0';
-            this.giveAmountBox.PromptText = "Item Amount (Max 255)";
+            this.giveAmountBox.PromptText = "Item Amount (Max 32767)";
             this.giveAmountBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.giveAmountBox.SelectedText = "";
             this.giveAmountBox.SelectionLength = 0;
@@ -5056,7 +5072,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.giveAmountBox.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.ToolTipManager.SetToolTip(this.giveAmountBox, "How many of the items you want");
             this.giveAmountBox.UseSelectable = true;
-            this.giveAmountBox.WaterMark = "Item Amount (Max 255)";
+            this.giveAmountBox.WaterMark = "Item Amount (Max 32767)";
             this.giveAmountBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.giveAmountBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
@@ -5094,6 +5110,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.giveIDBox.WaterMark = "Item ID";
             this.giveIDBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.giveIDBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.giveIDBox.TextChanged += new System.EventHandler(this.CheckItemID);
             // 
             // settingsTab
             // 
@@ -5936,5 +5953,6 @@ namespace Minecraft_Wii_U_Mod_Injector
         public MetroButton TipsBtn;
         public MetroPanel NavMenuPnl;
         public MetroPanel NavMenuMgPnl;
+        private MetroButton KeyboardCustomizerBtn;
     }
 }

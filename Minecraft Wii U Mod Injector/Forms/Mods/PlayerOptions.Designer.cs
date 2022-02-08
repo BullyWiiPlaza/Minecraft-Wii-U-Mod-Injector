@@ -44,6 +44,7 @@
             this.SkinNameBox = new MetroFramework.Controls.MetroTextBox();
             this.GetSkinIDBtn = new MetroFramework.Controls.MetroButton();
             this.LoopSkins = new MetroFramework.Controls.MetroCheckBox();
+            this.DeleteSkinBtn = new MetroFramework.Controls.MetroButton();
             this.CameraLbl = new MetroFramework.Controls.MetroLabel();
             this.GameModeLbl = new MetroFramework.Controls.MetroLabel();
             this.capeLbl = new MetroFramework.Controls.MetroLabel();
@@ -52,7 +53,7 @@
             this.SkinLbl = new MetroFramework.Controls.MetroLabel();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.SkinLoopTimer = new System.Windows.Forms.Timer(this.components);
-            this.DeleteSkinBtn = new MetroFramework.Controls.MetroButton();
+            this.SwapOffhandBtn = new MetroFramework.Controls.MetroButton();
             ((System.ComponentModel.ISupportInitialize)(this.StyleMngr)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SkinIDBox)).BeginInit();
             this.SuspendLayout();
@@ -317,6 +318,20 @@
             this.LoopSkins.UseSelectable = true;
             this.LoopSkins.CheckedChanged += new System.EventHandler(this.LoopSkinsToggled);
             // 
+            // DeleteSkinBtn
+            // 
+            this.DeleteSkinBtn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.DeleteSkinBtn.Location = new System.Drawing.Point(362, 225);
+            this.DeleteSkinBtn.Name = "DeleteSkinBtn";
+            this.DeleteSkinBtn.Size = new System.Drawing.Size(180, 23);
+            this.DeleteSkinBtn.TabIndex = 25;
+            this.DeleteSkinBtn.Text = "Delete from List";
+            this.DeleteSkinBtn.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.ToolTips.SetToolTip(this.DeleteSkinBtn, "Deletes the skin from the list");
+            this.DeleteSkinBtn.UseSelectable = true;
+            this.DeleteSkinBtn.Click += new System.EventHandler(this.DeleteSkinBtnClicked);
+            // 
             // CameraLbl
             // 
             this.CameraLbl.AutoSize = true;
@@ -392,25 +407,25 @@
             this.SkinLoopTimer.Interval = 500;
             this.SkinLoopTimer.Tick += new System.EventHandler(this.SkinLooper);
             // 
-            // DeleteSkinBtn
+            // SwapOffhandBtn
             // 
-            this.DeleteSkinBtn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.SwapOffhandBtn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.DeleteSkinBtn.Location = new System.Drawing.Point(362, 225);
-            this.DeleteSkinBtn.Name = "DeleteSkinBtn";
-            this.DeleteSkinBtn.Size = new System.Drawing.Size(180, 23);
-            this.DeleteSkinBtn.TabIndex = 25;
-            this.DeleteSkinBtn.Text = "Delete from List";
-            this.DeleteSkinBtn.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTips.SetToolTip(this.DeleteSkinBtn, "Deletes the skin from the list");
-            this.DeleteSkinBtn.UseSelectable = true;
-            this.DeleteSkinBtn.Click += new System.EventHandler(this.DeleteSkinBtnClicked);
+            this.SwapOffhandBtn.Location = new System.Drawing.Point(23, 402);
+            this.SwapOffhandBtn.Name = "SwapOffhandBtn";
+            this.SwapOffhandBtn.Size = new System.Drawing.Size(519, 23);
+            this.SwapOffhandBtn.TabIndex = 12;
+            this.SwapOffhandBtn.Text = "Swap with Offhand";
+            this.SwapOffhandBtn.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.ToolTips.SetToolTip(this.SwapOffhandBtn, "Swaps the items between your offhand and main hand.");
+            this.SwapOffhandBtn.UseSelectable = true;
+            this.SwapOffhandBtn.Click += new System.EventHandler(this.SwapOffhandBtn_Click);
             // 
             // PlayerOptions
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(565, 420);
+            this.ClientSize = new System.Drawing.Size(565, 440);
             this.Controls.Add(this.DeleteSkinBtn);
             this.Controls.Add(this.LoopSkins);
             this.Controls.Add(this.GetSkinIDBtn);
@@ -423,6 +438,7 @@
             this.Controls.Add(this.SkinIDLbl);
             this.Controls.Add(this.CapeBox);
             this.Controls.Add(this.capeLbl);
+            this.Controls.Add(this.SwapOffhandBtn);
             this.Controls.Add(this.DropStackBtn);
             this.Controls.Add(this.GameModeBox);
             this.Controls.Add(this.GameModeLbl);
@@ -432,8 +448,8 @@
             this.Controls.Add(this.CloseContainersBtn);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(3840, 420);
-            this.MinimumSize = new System.Drawing.Size(565, 420);
+            this.MaximumSize = new System.Drawing.Size(3840, 440);
+            this.MinimumSize = new System.Drawing.Size(565, 440);
             this.Name = "PlayerOptions";
             this.Text = "Minecraft: Wii U Mod Injector - Player Options";
             this.Theme = MetroFramework.MetroThemeStyle.Dark;
@@ -471,5 +487,6 @@
         private MetroFramework.Controls.MetroCheckBox LoopSkins;
         private System.Windows.Forms.Timer SkinLoopTimer;
         private MetroFramework.Controls.MetroButton DeleteSkinBtn;
+        private MetroFramework.Controls.MetroButton SwapOffhandBtn;
     }
 }

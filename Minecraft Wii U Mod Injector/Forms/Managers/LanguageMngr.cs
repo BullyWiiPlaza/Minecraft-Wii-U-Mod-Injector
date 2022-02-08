@@ -76,14 +76,14 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Managers {
                 ServerLanguageList.Rows[i].Cells[1].Value = ServerUrls[i];
             }
 
-            DiscordRp.SetPresence(_iw.IsConnected ? "Connected" : "Disconnected", "Language Manager - Browsing Installed Languages");
+            DiscordRP.SetPresence(_iw.IsConnected ? "Connected" : "Disconnected", "Language Manager - Browsing Installed Languages");
         }
 
         private void Exiting(object sender, FormClosingEventArgs e) {
             ServerNames.Clear();
             ServerUrls.Clear();
 
-            DiscordRp.SetPresence(_iw.IsConnected ? "Connected" : "Disconnected", _iw.MainTabs.SelectedTab.Text + " tab");
+            DiscordRP.SetPresence(_iw.IsConnected ? "Connected" : "Disconnected", _iw.MainTabs.SelectedTab.Text + " tab");
             Dispose();
         }
         #endregion
@@ -98,10 +98,10 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Managers {
 
             switch (tile.TileCount) {
                 case 0:
-                    DiscordRp.SetPresence(_iw.IsConnected ? "Connected" : "Disconnected", "Language Manager - Browsing Installed Languages");
+                    DiscordRP.SetPresence(_iw.IsConnected ? "Connected" : "Disconnected", "Language Manager - Browsing Installed Languages");
                     break;
                 case 1:
-                    DiscordRp.SetPresence(_iw.IsConnected ? "Connected" : "Disconnected", "Language Manager - Browsing Downloadable Languages");
+                    DiscordRP.SetPresence(_iw.IsConnected ? "Connected" : "Disconnected", "Language Manager - Browsing Downloadable Languages");
                     break;
             }
 

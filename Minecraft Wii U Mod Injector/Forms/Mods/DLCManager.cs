@@ -27,12 +27,12 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods
 
         private void OnLoad(object sender, EventArgs e)
         {
-            DiscordRp.SetPresence("Connected", "DLC Manager");
+            DiscordRP.SetPresence("Connected", "DLC Manager");
         }
 
         private void OnExit(object sender, FormClosingEventArgs e)
         {
-            DiscordRp.SetPresence("Connected", new MainForm().MainTabs.SelectedTab.Text + " tab");
+            DiscordRP.SetPresence("Connected", new MainForm().MainTabs.SelectedTab.Text + " tab");
             Dispose();
         }
 

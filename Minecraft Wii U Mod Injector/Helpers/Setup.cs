@@ -17,7 +17,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
     {
         public static MainForm Injector = new();
 
-        public static string LocalVer = "v5.3.0.q8.1";
+        public static string LocalVer = "v5.3.1";
         public static string GitVer = string.Empty;
         public static string UpdaterPath = $@"{Application.StartupPath}\Minecraft.Wii.U.Mod.Injector.Updater.exe";
 
@@ -33,7 +33,8 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
             try
             {
 #if !DEBUG
-                await RetrieveGitVersion();
+                // Uncomment this when auto updater is fixed
+                //await RetrieveGitVersion();
 #endif
 #if DEBUG
                 LocalVer += " (Dev)";
@@ -46,11 +47,11 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
                     Settings.Default.Save();
                 }
 
-                DiscordRp.Initialize();
+                DiscordRP.Initialize();
 
                 SetupUserPrefs();
 
-                DiscordRp.SetPresence("Disconnected", "Idle");
+                DiscordRP.SetPresence("Disconnected", "Idle");
                 States.SwapState(States.StatesIds.Disconnected);
 
                 Injector.Opacity = 100; // Everything has finished setting up, we can show the form now
@@ -58,7 +59,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
             catch (Exception error)
             {
                 Exceptions.LogError(error, "Failed to setup", true);
-                DiscordRp.Deinitialize();
+                DiscordRP.Deinitialize();
                 Environment.Exit(0);
             }
         }
@@ -130,7 +131,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
                     Injector.discordRpcCheckBox.Checked = Settings.Default.DiscordRPC;
 
                     if(!Settings.Default.DiscordRPC)
-                        DiscordRp.Deinitialize();
+                        DiscordRP.Deinitialize();
 
                     Injector.HostIndicators.Checked = Settings.Default.HostIndicators;
                     Injector.SeasonalThemes.Checked = Settings.Default.SeasonalThemes;
@@ -148,8 +149,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
                         if (DateTime.Now.ToString("MM") == "10") //Halloween
                         {
                             Injector.Style = Injector.StyleMngr.Style = MetroColorStyle.Orange;
-                            Injector.BuildTile.Text = LocalVer + @"
-Halloween Edition";
+                            Injector.BuildTile.Text = LocalVer + "\r\nHalloween Edition";
                             Injector.ColorsBox.Enabled = false;
                             Injector.Refresh();
                         }
@@ -158,8 +158,7 @@ Halloween Edition";
                         {
                             Injector.Style = MetroColorStyle.Red;
                             Injector.StyleMngr.Style = MetroColorStyle.Green;
-                            Injector.BuildTile.Text = LocalVer + @"
-Christmas Edition";
+                            Injector.BuildTile.Text = LocalVer + "\r\nChristmas Edition";
                             Injector.ColorsBox.Enabled = false;
                             Injector.Refresh();
                         }

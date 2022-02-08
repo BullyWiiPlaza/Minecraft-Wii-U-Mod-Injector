@@ -3,7 +3,7 @@ using System;
 
 namespace Minecraft_Wii_U_Mod_Injector.Helpers
 {
-    class DiscordRp
+    class DiscordRP
     {
         public static DiscordRpcClient Client;
         public static DateTime StartUpTime = DateTime.UtcNow;

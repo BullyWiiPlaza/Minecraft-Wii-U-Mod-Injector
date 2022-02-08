@@ -37,7 +37,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods
 
         private void Init(object sender, EventArgs e)
         {
-            DiscordRp.SetPresence("Connected", "Player Options window");
+            DiscordRP.SetPresence("Connected", "Player Options window");
 #if DEBUG
             Console.WriteLine(@"LocalPlayer: 0x" + _localPlayer.ToString("X4"));
 #endif
@@ -50,7 +50,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods
 
         private void Exiting(object sender, FormClosingEventArgs e)
         {
-            DiscordRp.SetPresence("Connected", new MainForm().MainTabs.SelectedTab.Text + " tab");
+            DiscordRP.SetPresence("Connected", new MainForm().MainTabs.SelectedTab.Text + " tab");
             Dispose();
         }
 
@@ -140,5 +140,13 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods
             SkinList.SelectedIndex = new Random().Next(0, SkinList.Items.Count);
         }
         #endregion
+
+        private void SwapOffhandBtn_Click(object sender, EventArgs e) {
+            var xyzPos = MainForm.GeckoU.PeekUInt(MainForm.GeckoU.PeekUInt(0x109CD8E4) + 0x34) + 0x54;
+            var packet = MainForm.GeckoU.CallFunction(0x028AEC5C, 0x0, 0x6, xyzPos, MainForm.GeckoU.PeekUInt(0x109C46A0), 0x0);
+            MainForm.GeckoU.WriteBytes(0x12000000, new byte[8]);
+            MainForm.GeckoU.WriteUInt(0x12000000, packet);
+            MainForm.GeckoU.CallFunction64(0x0304A5D8, MainForm.GeckoU.PeekUInt(MainForm.GeckoU.PeekUInt(MainForm.GeckoU.PeekUInt(0x109CD8E4) + 0x34) + 0x878), 0x12000000);
+        }
     }
 }

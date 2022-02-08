@@ -42,7 +42,12 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods
             this.TransparentcyLabel = new MetroFramework.Controls.MetroLabel();
             this.ResolutionLabel = new MetroFramework.Controls.MetroLabel();
             this.UIControl_LabelInfo = new MetroFramework.Controls.MetroLabel();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
+            this.metroButton1 = new MetroFramework.Controls.MetroButton();
             ((System.ComponentModel.ISupportInitialize)(this.StyleMngr)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             this.SuspendLayout();
             // 
             // StyleMngr
@@ -186,11 +191,39 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods
             this.UIControl_LabelInfo.Text = "Info";
             this.UIControl_LabelInfo.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Location = new System.Drawing.Point(339, 585);
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(120, 20);
+            this.numericUpDown1.TabIndex = 10;
+            // 
+            // numericUpDown2
+            // 
+            this.numericUpDown2.Location = new System.Drawing.Point(465, 585);
+            this.numericUpDown2.Name = "numericUpDown2";
+            this.numericUpDown2.Size = new System.Drawing.Size(120, 20);
+            this.numericUpDown2.TabIndex = 10;
+            // 
+            // metroButton1
+            // 
+            this.metroButton1.Location = new System.Drawing.Point(339, 611);
+            this.metroButton1.Name = "metroButton1";
+            this.metroButton1.Size = new System.Drawing.Size(246, 23);
+            this.metroButton1.TabIndex = 11;
+            this.metroButton1.Text = "Set Position";
+            this.metroButton1.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.metroButton1.UseSelectable = true;
+            this.metroButton1.Click += new System.EventHandler(this.setPosition);
+            // 
             // DebugUIConsoleCustomizer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1092, 661);
+            this.Controls.Add(this.metroButton1);
+            this.Controls.Add(this.numericUpDown2);
+            this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.UIControl_LabelInfo);
             this.Controls.Add(this.ResolutionLabel);
             this.Controls.Add(this.TransparentcyLabel);
@@ -209,6 +242,8 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.OnExit);
             this.Load += new System.EventHandler(this.OnLoad);
             ((System.ComponentModel.ISupportInitialize)(this.StyleMngr)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -226,5 +261,8 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods
         private MetroFramework.Controls.MetroLabel TransparentcyLabel;
         private MetroFramework.Controls.MetroLabel ResolutionLabel;
         private MetroFramework.Controls.MetroLabel UIControl_LabelInfo;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown numericUpDown2;
+        private MetroFramework.Controls.MetroButton metroButton1;
     }
 }

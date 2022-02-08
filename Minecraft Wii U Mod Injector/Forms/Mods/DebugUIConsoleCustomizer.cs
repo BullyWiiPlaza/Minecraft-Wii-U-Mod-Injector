@@ -31,7 +31,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods
         {
             debugUI_ptr = MainForm.GeckoU.PeekUInt(0x109F95E4);
             //if (debugUI_ptr == 0) return;
-            DiscordRp.SetPresence("Connected", "Debug UI Customizer");
+            DiscordRP.SetPresence("Connected", "Debug UI Customizer");
             var screenSize = MainForm.GeckoU.ReadBytes(MainForm.GeckoU.PeekUInt(0x109F75A8)+0x294,8);
             Array.Reverse(screenSize);
             float screenWidth = BitConverter.ToSingle(screenSize, 4), screenHeight = BitConverter.ToSingle(screenSize, 0);
@@ -44,7 +44,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods
 
         private void OnExit(object sender, FormClosingEventArgs e)
         {
-            DiscordRp.SetPresence("Connected", new MainForm().MainTabs.SelectedTab.Text + " tab");
+            DiscordRP.SetPresence("Connected", new MainForm().MainTabs.SelectedTab.Text + " tab");
             Dispose();
         }
 
@@ -146,8 +146,16 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods
             MainForm.GeckoU.ClearString(tmp_mem, text.Length*2);
             MainForm.GeckoU.WriteString16(tmp_mem, text);
             MainForm.GeckoU.CallFunction(0x2b5f8b0, wstr_ptr, tmp_mem); // std::wstring::allocator<wchar_t>
-            MainForm.GeckoU.CallFunction(0x02bb7cf0, fuiRenderNodeEditText_ptr, wstr_ptr);
+            MainForm.GeckoU.CallFunction(0x02BB7E34, fuiRenderNodeEditText_ptr, wstr_ptr);
             MainForm.GeckoU.free(tmp_mem);
+        }
+
+        private void setPosition(object sender, EventArgs e) {
+            uint fuiRenderNodeEditText_ptr = uint.Parse(DebugUIStringsListView.SelectedItems[0].SubItems[1].Text);
+            uint x = BitConverter.ToUInt32(BitConverter.GetBytes(Convert.ToSingle(numericUpDown1.Value)), 0);
+            uint y = BitConverter.ToUInt32(BitConverter.GetBytes(Convert.ToSingle(numericUpDown2.Value)), 0);
+            MainForm.GeckoU.CallFunction(0x02BB859C, fuiRenderNodeEditText_ptr, x);
+            MainForm.GeckoU.CallFunction(0x02BB8618, fuiRenderNodeEditText_ptr, y);
         }
     }
 }

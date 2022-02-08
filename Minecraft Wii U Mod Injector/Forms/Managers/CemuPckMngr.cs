@@ -75,7 +75,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Managers
 
             _cemuGraphicPckPatchesBuilder.AppendLine("[Minecraft]\nmoduleMatches = " + ModuleMatchesBox.Text);
 
-            DiscordRp.SetPresence(_iw.IsConnected ? "Connected" : "Disconnected",
+            DiscordRP.SetPresence(_iw.IsConnected ? "Connected" : "Disconnected",
                 "Cemu Graphics Pack Manager");
         }
 
@@ -83,7 +83,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Managers
         {
             _cemuGraphicPckPatchesBuilder.Clear();
             _cemuGraphicPckRulesBuilder.Clear();
-            DiscordRp.SetPresence(_iw.IsConnected ? "Connected" : "Disconnected",
+            DiscordRP.SetPresence(_iw.IsConnected ? "Connected" : "Disconnected",
                 _iw.MainTabs.SelectedTab.Text + " tab");
             Dispose();
         }

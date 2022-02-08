@@ -39,12 +39,12 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods
 
         private void Init(object sender, EventArgs e)
         {
-            DiscordRp.SetPresence("Connected", "Loot Table Editor");
+            DiscordRP.SetPresence("Connected", "Loot Table Editor");
         }
 
         private void Exiting(object sender, FormClosingEventArgs e)
         {
-            DiscordRp.SetPresence("Connected", new MainForm().worldTab.Text + " tab");
+            DiscordRP.SetPresence("Connected", new MainForm().worldTab.Text + " tab");
             Dispose();
         }
 

@@ -12,7 +12,6 @@ namespace Minecraft_Wii_U_Mod_Injector.Wii_U.Gecko_U {
         public GeckoUConnect Tcp;
 
         private const int CmdDefaultPort = 7331;
-        private const uint CmdMaximumMemoryChunkSize = 0x400;
 
         public enum FtdiCommand {
             CmdResultError,
@@ -100,8 +99,8 @@ namespace Minecraft_Wii_U_Mod_Injector.Wii_U.Gecko_U {
                 while (remainingBytesCount > 0) {
                     var chunkSize = remainingBytesCount;
 
-                    if (chunkSize > CmdMaximumMemoryChunkSize) {
-                        chunkSize = CmdMaximumMemoryChunkSize;
+                    if (chunkSize > Tcp.CmdMaxBufferSize) {
+                        chunkSize = Tcp.CmdMaxBufferSize;
                     }
 
                     var buffer = new byte[chunkSize];
@@ -217,7 +216,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Wii_U.Gecko_U {
         /// <param name="bytes">Bytes to write</param>
         public void WriteBytes(uint address, byte[] bytes) // Write bytes to the specified memory address
         {
-            var partitionedBytes = Partition(bytes, CmdMaximumMemoryChunkSize);
+            var partitionedBytes = Partition(bytes, Tcp.CmdMaxBufferSize);
             WritePartitionedBytes(address, partitionedBytes);
         }
         #endregion the magic

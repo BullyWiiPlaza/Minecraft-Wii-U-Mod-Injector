@@ -13,6 +13,8 @@ namespace Minecraft_Wii_U_Mod_Injector.Wii_U.Gecko_U
         public string Host { get; }
         public int Port { get; }
 
+        public uint CmdMaxBufferSize { get; private set; }
+
         public GeckoUConnect(string host, int port)
         {
             Host = host;
@@ -52,6 +54,14 @@ namespace Minecraft_Wii_U_Mod_Injector.Wii_U.Gecko_U
 
             NetworkStream = _tcpClient.GetStream();
             NetworkStream.ReadTimeout = NetworkStream.WriteTimeout = 10000;
+
+            NetworkStream.Write(new byte[] { 0x51 }, 0, 1);
+
+            byte[] CmdMaximumMemoryChunkSizeOut = { 0, 0, 0, 0 };
+            NetworkStream.Read(CmdMaximumMemoryChunkSizeOut, 0, 4);
+            Array.Reverse(CmdMaximumMemoryChunkSizeOut);
+            
+            CmdMaxBufferSize = BitConverter.ToUInt32(CmdMaximumMemoryChunkSizeOut, 0);
 
             Console.WriteLine("Connected successfully...");
         }

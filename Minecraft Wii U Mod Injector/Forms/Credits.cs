@@ -19,10 +19,10 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms {
             }
         }
 
-        private void KashiieraClicked(object sender, EventArgs e) {
-            Process.Start("https://www.youtube.com/Kashiiera");
+        private void SlothWiiPlazaClicked(object sender, EventArgs e) {
+            Process.Start("https://www.youtube.com/c/SlothWiiPlaza");
         }
-
+        
         private void BullyClicked(object sender, EventArgs e) {
             Process.Start("https://www.youtube.com/BullyWiiPlaza");
         }

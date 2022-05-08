@@ -35,7 +35,7 @@
             this.appIco = new MetroFramework.Controls.MetroPanel();
             this.vylrynaCredits = new MetroFramework.Controls.MetroLabel();
             this.nessieHaxCredits = new MetroFramework.Controls.MetroLabel();
-            this.kashiieraCredits = new MetroFramework.Controls.MetroLink();
+            this.slothWiiPlazaCredits = new MetroFramework.Controls.MetroLink();
             ((System.ComponentModel.ISupportInitialize)(this.StyleMngr)).BeginInit();
             this.SuspendLayout();
             // 
@@ -93,27 +93,27 @@
             this.nessieHaxCredits.Text = "NessieHax: \r\n- Help with development";
             this.nessieHaxCredits.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
-            // kashiieraCredits
+            // slothWiiPlazaCredits
             // 
-            this.kashiieraCredits.FontSize = MetroFramework.MetroLinkSize.Medium;
-            this.kashiieraCredits.FontWeight = MetroFramework.MetroLinkWeight.Light;
-            this.kashiieraCredits.Location = new System.Drawing.Point(23, 60);
-            this.kashiieraCredits.Name = "kashiieraCredits";
-            this.kashiieraCredits.Size = new System.Drawing.Size(353, 57);
-            this.kashiieraCredits.TabIndex = 48;
-            this.kashiieraCredits.Text = "Kashiiera: \r\n- Creating/Programming the Minecraft Wii U Mod In" +
+            this.slothWiiPlazaCredits.FontSize = MetroFramework.MetroLinkSize.Medium;
+            this.slothWiiPlazaCredits.FontWeight = MetroFramework.MetroLinkWeight.Light;
+            this.slothWiiPlazaCredits.Location = new System.Drawing.Point(23, 60);
+            this.slothWiiPlazaCredits.Name = "slothWiiPlazaCredits";
+            this.slothWiiPlazaCredits.Size = new System.Drawing.Size(353, 57);
+            this.slothWiiPlazaCredits.TabIndex = 48;
+            this.slothWiiPlazaCredits.Text = "SlothWiiPlaza: \r\n- Creating/Programming the Minecraft Wii U Mod In" +
     "jector\r\n- Creating most mods";
-            this.kashiieraCredits.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.kashiieraCredits.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.kashiieraCredits.UseSelectable = true;
-            this.kashiieraCredits.Click += new System.EventHandler(this.KashiieraClicked);
+            this.slothWiiPlazaCredits.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.slothWiiPlazaCredits.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.slothWiiPlazaCredits.UseSelectable = true;
+            this.slothWiiPlazaCredits.Click += new System.EventHandler(this.SlothWiiPlazaClicked);
             // 
             // Credits
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(720, 369);
-            this.Controls.Add(this.kashiieraCredits);
+            this.Controls.Add(this.slothWiiPlazaCredits);
             this.Controls.Add(this.nessieHaxCredits);
             this.Controls.Add(this.vylrynaCredits);
             this.Controls.Add(this.bullywiiplazaCredits);
@@ -138,6 +138,6 @@
         private MetroFramework.Controls.MetroPanel appIco;
         private MetroFramework.Controls.MetroLabel vylrynaCredits;
         private MetroFramework.Controls.MetroLabel nessieHaxCredits;
-        private MetroFramework.Controls.MetroLink kashiieraCredits;
+        private MetroFramework.Controls.MetroLink slothWiiPlazaCredits;
     }
 }

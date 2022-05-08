@@ -150,7 +150,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Managers {
             var templateFile = new IniFile(_langRootDir + "Template.ini");
 
             templateFile.Write("name", "Template Language", "meta");
-            templateFile.Write("authors", "Kashiiera", "meta");
+            templateFile.Write("authors", "SlothWiiPlaza", "meta");
             templateFile.Write("description", "Template Language file to start making a new language file", "meta");
             templateFile.Write("version", Setup.LocalVer, "meta");
 

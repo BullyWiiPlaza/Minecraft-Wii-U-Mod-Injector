@@ -28,7 +28,7 @@ Before downloading the mod injector or it's source code, you must agree to the [
 
 # Support the Developers!
 
-Kashiiera (AKA Sloth@WiiPlaza):
+Kashiiera:
 * [Youtube (Kashiiera)](https://www.youtube.com/channel/UCoW_EFIY3kskjV2howbuXvw)
 
 Bully@WiiPlaza:

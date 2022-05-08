@@ -101,7 +101,7 @@
             this.kashiieraCredits.Name = "kashiieraCredits";
             this.kashiieraCredits.Size = new System.Drawing.Size(353, 57);
             this.kashiieraCredits.TabIndex = 48;
-            this.kashiieraCredits.Text = "Kashiiera AKA Sloth@WiiPlaza: \r\n- Creating/Programming the Minecraft Wii U Mod In" +
+            this.kashiieraCredits.Text = "Kashiiera: \r\n- Creating/Programming the Minecraft Wii U Mod In" +
     "jector\r\n- Creating most mods";
             this.kashiieraCredits.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.kashiieraCredits.Theme = MetroFramework.MetroThemeStyle.Dark;

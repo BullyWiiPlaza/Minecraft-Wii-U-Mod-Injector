@@ -17,7 +17,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
     {
         public static MainForm Injector = new();
 
-        public static string LocalVer = "v5.4.0";
+        public static string LocalVer = "v5.3.2";
         public static string GitVer = string.Empty;
         public static string UpdaterPath = $@"{Application.StartupPath}\Minecraft.Wii.U.Mod.Injector.Updater.exe";
 
@@ -102,7 +102,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
                 {
                     if (!auto)
                     {
-                        Messaging.Show(MessageBoxIcon.Information, "You are already running the latest version " + LocalVer);
+                        Messaging.Show(MessageBoxIcon.Information, "You are already running the latest version: " + LocalVer);
                     }
                 }
             }
@@ -169,16 +169,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
                     //Failing to set User Preferences isn't a big deal, so we ignore the exception if one happens
                 }
 
-                if (Settings.Default.ReleaseNotes == "Current")
-                {
-                    Injector.releaseNotesToggle.Checked = true;
-                    Injector.BuildNotesBox.Text = Resources.releaseNote;
-                }
-                else
-                {
-                    Injector.releaseNotesToggle.Checked = false;
-                    Injector.BuildNotesBox.Text = Resources.releaseNotes;
-                }
+                Injector.BuildNotesBox.Text = Resources.releaseNotes;
 
                 Miscellaneous.DoHostIndicators(Settings.Default.HostIndicators);
             }

@@ -82,7 +82,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Wii_U.Gecko_U {
         /// <param name="address">Address to read</param>
         /// <param name="length">Length of the bytes</param>
         /// <returns></returns>
-        public byte[] ReadBytes(uint address, uint length) {
+        public byte[] ReadBytes(uint address, uint length, bool handleZByte = true) {
             try {
                 RequestBytes(address, length);
 
@@ -91,8 +91,8 @@ namespace Minecraft_Wii_U_Mod_Injector.Wii_U.Gecko_U {
 
                 var ms = new MemoryStream();
 
-                if (response[0] == 0xB0) {
-                    return ms.ToArray();
+                if (response[0] == 0xB0 && handleZByte) {
+                    return new byte[length];
                 }
 
                 var remainingBytesCount = length;
@@ -558,6 +558,24 @@ namespace Minecraft_Wii_U_Mod_Injector.Wii_U.Gecko_U {
         #endregion Writing, Poking
 
         #region reading
+
+        /// <summary>
+        /// Peeks a byte from the Wii U
+        /// </summary>
+        /// <param name="address">The address to peak</param>
+        /// <returns>The peeked byte</returns>
+        public byte PeekByte(uint address) {
+            var bytes = ReadBytes(address, 0x1);
+            byte value;
+
+            try {
+                value = bytes[1];
+            } catch (Exception) {
+                return 0;
+            }
+
+            return value;
+        }
 
         /// <summary>
         /// Peeks a Unsigned Integer from the Wii U

@@ -111,52 +111,26 @@ namespace Minecraft_Wii_U_Mod_Injector.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to [Release v5.2.0.q8h1 (9th of October, 2021)]
+        ///   Looks up a localized string similar to [Release v5.3.2 (July 19, 2022)]
         ///
         ///# Overview
         ///
-        ///This update adds a Tutorial, Tips and a few bug fixes
+        ///This update includes an extra mod and a few bug fixes
         ///
         ///# Changes
         ///
         ///### General Additions &amp; Updates
         ///
-        ///- Tutorial &gt; When you first start the Injector you wil be greeted by a tutorial
-        ///- Settings &gt; Tutorial &gt; Same as above, but for when you want to replay the tutorial
-        ///- Settings &gt; Tips &gt; Shows a randomly selected tip on how to use the Mod Injector
+        ///- General Game &gt; Added Prevent Being Kicked
+        ///- Commands &gt; Tellraw has been revamped
         ///
         ///# Fixes
         ///
         ///### General Fixes
         ///
-        ///- Settings &gt; Discord RPC preference is now applied on start-up  [rest of string was truncated]&quot;;.
-        /// </summary>
-        internal static string releaseNote {
-            get {
-                return ResourceManager.GetString("releaseNote", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to [Release v5.2.0.q8h1 (9th of October, 2021)]
-        ///
-        ///# Overview
-        ///
-        ///This update adds a Tutorial, Tips and a few bug fixes
-        ///
-        ///# Changes
-        ///
-        ///### General Additions &amp; Updates
-        ///
-        ///- Tutorial &gt; When you first start the Injector you wil be greeted by a tutorial
-        ///- Settings &gt; Tutorial &gt; Same as above, but for when you want to replay the tutorial
-        ///- Settings &gt; Tips &gt; Shows a randomly selected tip on how to use the Mod Injector
-        ///
-        ///# Fixes
-        ///
-        ///### General Fixes
-        ///
-        ///- Settings &gt; Discord RPC preference is now applied on start-up  [rest of string was truncated]&quot;;.
+        ///- Mod Injector &gt; Fixed a few typos and bugs
+        ///- Commands &gt; Tellraw now works again
+        ///- Commands &gt; Optimized Command Code.
         /// </summary>
         internal static string releaseNotes {
             get {

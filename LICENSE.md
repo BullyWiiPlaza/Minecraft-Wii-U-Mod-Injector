@@ -1,6 +1,6 @@
 # Terms of Use
 
-### Copyright (c) Kashiiera (Sloth@WiiPlaza)
+### Copyright (c) Sloth@WiiPlaza (https://www.youtube.com/@SlothWiiPlaza)
 
 By downloading this software and/or it's source code, you automatically agree to these terms.
 If you do not, you are obligated to delete the software and/or it's source code from your device.

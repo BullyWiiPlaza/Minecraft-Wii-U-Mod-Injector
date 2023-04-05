@@ -1,19 +1,21 @@
-[Release v5.3.1 (February 7, 2022)]
+[Release v5.3.2 (July 19, 2022)]
 
 # Overview
 
-This update includes a few extra mods and bug fixes
+This update includes an extra mod and a few bug fixes
 
 # Changes
 
 ### General Additions & Updates
 
-- Mod Injector > Setup Tutorial is now optional
-- General Game > Added Keyboard Customizer
-- Player Options > Added Swap to Offhand
+- General Game > Added Prevent Being Kicked
+- Commands > Tellraw has been revamped
+- Commands > DefaultGameMode now works with other gamemodes.
 
 # Fixes
 
 ### General Fixes
 
-- General Game > Upgraded Disable Permanent Kicks
+- Mod Injector > Fixed a few typos and bugs
+- Commands > Tellraw now works again
+- Commands > Optimized Command Code

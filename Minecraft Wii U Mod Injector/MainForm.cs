@@ -220,11 +220,15 @@ namespace Minecraft_Wii_U_Mod_Injector {
                     MinigamesTabs.SelectedIndex = tile.TileCount;
                 else return;
 
+                // The main tab control will switch back to Minigames tab page when any of the Minigame tiles are clicked
+                if (MainTabs.SelectedIndex != 4)
+                    MainTabs.SelectedIndex = 4;
+
                 return;
             }
 
             if (tile == MinigamesTile)
-                NavMenuMgPnl.Visible = !NavMenuMgPnl.Visible;
+                NavMenuMgPnl.Visible = !NavMenuMgPnl.Visible;   
 
             if (MainTabs.SelectedIndex != tile.TileCount)
                 MainTabs.SelectedIndex = tile.TileCount;
@@ -532,9 +536,9 @@ namespace Minecraft_Wii_U_Mod_Injector {
                 IgnorePotions.Checked); //LivingEntity::isAffectedByPotions((void))
         }
 
-        private void ForeverLastingPotionsToggled(object sender, EventArgs e) {
+        private void EffectsLastForeverToggled(object sender, EventArgs e) {
             GeckoU.WriteUIntToggle(0x02576994, Blr, 0x9421FF40,
-                ForeverLastingPotions.Checked); //LivingEntity::tickEffects((void))
+                EffectsLastForever.Checked); //LivingEntity::tickEffects((void))
         }
 
         private void BypassInvulnerabilityToggled(object sender, EventArgs e) {
@@ -1119,6 +1123,11 @@ namespace Minecraft_Wii_U_Mod_Injector {
                     ThunderMode.Text = @"Thunder Mode (Never)";
                     break;
             }
+        }
+
+        private void BubbleColumnAnywhereToggled(object sender, EventArgs e)
+        {
+            GeckoU.WriteUIntToggle(0x0217D574, On, Off, BubbleColumnAnywhere.Checked); // Bubble Columns can generate regardless if the water is a source block or not
         }
 
         private void AchievementsEverywhereToggled(object sender, EventArgs e) {

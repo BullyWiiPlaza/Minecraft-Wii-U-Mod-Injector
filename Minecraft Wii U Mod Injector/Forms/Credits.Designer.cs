@@ -36,6 +36,7 @@
             this.vylrynaCredits = new MetroFramework.Controls.MetroLabel();
             this.nessieHaxCredits = new MetroFramework.Controls.MetroLabel();
             this.slothWiiPlazaCredits = new MetroFramework.Controls.MetroLink();
+            this.kashiieraCredits = new MetroFramework.Controls.MetroLink();
             ((System.ComponentModel.ISupportInitialize)(this.StyleMngr)).BeginInit();
             this.SuspendLayout();
             // 
@@ -65,7 +66,7 @@
             this.appIco.HorizontalScrollbarSize = 10;
             this.appIco.Location = new System.Drawing.Point(443, 35);
             this.appIco.Name = "appIco";
-            this.appIco.Size = new System.Drawing.Size(255, 311);
+            this.appIco.Size = new System.Drawing.Size(255, 379);
             this.appIco.TabIndex = 45;
             this.appIco.VerticalScrollbarBarColor = true;
             this.appIco.VerticalScrollbarHighlightOnWheel = false;
@@ -101,18 +102,33 @@
             this.slothWiiPlazaCredits.Name = "slothWiiPlazaCredits";
             this.slothWiiPlazaCredits.Size = new System.Drawing.Size(353, 57);
             this.slothWiiPlazaCredits.TabIndex = 48;
-            this.slothWiiPlazaCredits.Text = "SlothWiiPlaza: \r\n- Creating/Programming the Minecraft Wii U Mod In" +
-    "jector\r\n- Creating most mods";
+            this.slothWiiPlazaCredits.Text = "SlothWiiPlaza: \r\n- Creating/Programming the Minecraft Wii U Mod Injector\r\n- Creat" +
+    "ing most mods";
             this.slothWiiPlazaCredits.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.slothWiiPlazaCredits.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.slothWiiPlazaCredits.UseSelectable = true;
             this.slothWiiPlazaCredits.Click += new System.EventHandler(this.SlothWiiPlazaClicked);
             // 
+            // kashiieraCredits
+            // 
+            this.kashiieraCredits.FontSize = MetroFramework.MetroLinkSize.Medium;
+            this.kashiieraCredits.FontWeight = MetroFramework.MetroLinkWeight.Light;
+            this.kashiieraCredits.Location = new System.Drawing.Point(23, 356);
+            this.kashiieraCredits.Name = "kashiieraCredits";
+            this.kashiieraCredits.Size = new System.Drawing.Size(353, 57);
+            this.kashiieraCredits.TabIndex = 49;
+            this.kashiieraCredits.Text = "Kashiiera:\r\n- Help with development\r\n- Support for the Cemu emulator\r\n";
+            this.kashiieraCredits.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.kashiieraCredits.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.kashiieraCredits.UseSelectable = true;
+            this.kashiieraCredits.Click += new System.EventHandler(this.KashiieraClicked);
+            // 
             // Credits
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(720, 369);
+            this.ClientSize = new System.Drawing.Size(720, 437);
+            this.Controls.Add(this.kashiieraCredits);
             this.Controls.Add(this.slothWiiPlazaCredits);
             this.Controls.Add(this.nessieHaxCredits);
             this.Controls.Add(this.vylrynaCredits);
@@ -139,5 +155,6 @@
         private MetroFramework.Controls.MetroLabel vylrynaCredits;
         private MetroFramework.Controls.MetroLabel nessieHaxCredits;
         private MetroFramework.Controls.MetroLink slothWiiPlazaCredits;
+        private MetroFramework.Controls.MetroLink kashiieraCredits;
     }
 }

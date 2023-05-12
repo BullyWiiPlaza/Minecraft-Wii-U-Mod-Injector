@@ -61,24 +61,24 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods
 
         private void IncreasedShipwreckSpawnToggled(object sender, EventArgs e)
         {
-           MainForm.GeckoU.WriteUIntToggle(0x02896394,MainForm.On, 0x7FE3FB78, IncreasedShipwreckSpawn.Checked);
-           MainForm.GeckoU.WriteUIntToggle(0x02895824,MainForm.On,MainForm.Off, IncreasedShipwreckSpawn.Checked);
+           MainForm.GeckoU.WriteUIntToggle(0x02896394, MainForm.On, 0x7FE3FB78, IncreasedShipwreckSpawn.Checked);
+           MainForm.GeckoU.WriteUIntToggle(0x02895824, MainForm.On,MainForm.Off, IncreasedShipwreckSpawn.Checked);
         }
 
         private void IncreasedStrongholdSpawnToggled(object sender, EventArgs e)
         {
-           MainForm.GeckoU.WriteUIntToggle(0x029651E0,MainForm.On,MainForm.Off, IncreasedStrongholdSpawn.Checked);
+           MainForm.GeckoU.WriteUIntToggle(0x029651E0, MainForm.On,MainForm.Off, IncreasedStrongholdSpawn.Checked);
         }
 
         private void IncreasedVillageSpawnToggled(object sender, EventArgs e)
         {
-           MainForm.GeckoU.WriteUIntToggle(0x02A8CD34,MainForm.On,MainForm.Off, IncreasedVillageSpawn.Checked);
+           MainForm.GeckoU.WriteUIntToggle(0x02A8CD34, MainForm.On,MainForm.Off, IncreasedVillageSpawn.Checked);
         }
 
         private void IncreasedWoodlandMansionSpawnToggled(object sender, EventArgs e)
         {
-           MainForm.GeckoU.WriteUIntToggle(0x02AB9CB4,MainForm.On, 0x7FC3F378, IncreasedWoodlandMansionSpawn.Checked);
-           MainForm.GeckoU.WriteUIntToggle(0x02AB9CCC,MainForm.On,MainForm.Off, IncreasedWoodlandMansionSpawn.Checked);
+           MainForm.GeckoU.WriteUIntToggle(0x02AB9CB4, MainForm.On, 0x7FC3F378, IncreasedWoodlandMansionSpawn.Checked);
+           MainForm.GeckoU.WriteUIntToggle(0x02AB9CCC, MainForm.On, MainForm.Off, IncreasedWoodlandMansionSpawn.Checked);
         }
 
         private void GeneratePlainWorldToggled(object sender, EventArgs e)
@@ -89,7 +89,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods
 
         private void FreezingWorldToggled(object sender, EventArgs e)
         {
-           MainForm.GeckoU.WriteUIntToggle(0x0253C71C,MainForm.On,MainForm.Off,
+           MainForm.GeckoU.WriteUIntToggle(0x0253C71C, MainForm.On,MainForm.Off,
                 FreezingWorld.Checked);
         }
 
@@ -105,7 +105,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods
 
         private void NetherSizeSliderChanged(object sender, EventArgs e)
         {
-            MainForm.GeckoU.WriteUInt(0x025C2D98, MainForm.GeckoU.Mix(MainForm.Off, WorldSizeSlider.Value));
+            MainForm.GeckoU.WriteUInt(0x025C2DA0, MainForm.GeckoU.Mix(MainForm.Off, NetherSizeSlider.Value));
         }
 
         private void StoneWorldToggled(object sender, EventArgs e)

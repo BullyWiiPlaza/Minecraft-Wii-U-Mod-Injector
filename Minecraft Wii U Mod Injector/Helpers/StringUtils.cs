@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text;
@@ -74,9 +75,14 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
             return new string(outs);
         }
 
+        public static string StripInvalidChars(string str)
+        {
+            return string.Join("", str.Split(Path.GetInvalidFileNameChars()));
+        }
+
         public static bool ValidateIPv4(string ipString)
         {
-            if (String.IsNullOrWhiteSpace(ipString))
+            if (string.IsNullOrWhiteSpace(ipString))
                 return false;
 
             if (ipString == "127.0.0.1")

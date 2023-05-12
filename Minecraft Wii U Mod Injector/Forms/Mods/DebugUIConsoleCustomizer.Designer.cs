@@ -164,11 +164,11 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods
             // 
             this.TransparentcyLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.TransparentcyLabel.AutoSize = true;
-            this.TransparentcyLabel.Location = new System.Drawing.Point(922, 560);
+            this.TransparentcyLabel.Location = new System.Drawing.Point(922, 563);
             this.TransparentcyLabel.Name = "TransparentcyLabel";
-            this.TransparentcyLabel.Size = new System.Drawing.Size(88, 19);
+            this.TransparentcyLabel.Size = new System.Drawing.Size(84, 19);
             this.TransparentcyLabel.TabIndex = 7;
-            this.TransparentcyLabel.Text = "Transparentcy";
+            this.TransparentcyLabel.Text = "Transparency";
             this.TransparentcyLabel.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // ResolutionLabel
@@ -193,21 +193,21 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods
             // 
             // numericUpDown1
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(339, 585);
+            this.numericUpDown1.Location = new System.Drawing.Point(329, 585);
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(120, 20);
             this.numericUpDown1.TabIndex = 10;
             // 
             // numericUpDown2
             // 
-            this.numericUpDown2.Location = new System.Drawing.Point(465, 585);
+            this.numericUpDown2.Location = new System.Drawing.Point(455, 585);
             this.numericUpDown2.Name = "numericUpDown2";
             this.numericUpDown2.Size = new System.Drawing.Size(120, 20);
             this.numericUpDown2.TabIndex = 10;
             // 
             // metroButton1
             // 
-            this.metroButton1.Location = new System.Drawing.Point(339, 611);
+            this.metroButton1.Location = new System.Drawing.Point(329, 615);
             this.metroButton1.Name = "metroButton1";
             this.metroButton1.Size = new System.Drawing.Size(246, 23);
             this.metroButton1.TabIndex = 11;

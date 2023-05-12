@@ -1,10 +1,7 @@
 ﻿using System;
 using MetroFramework.Controls;
 using System.Collections.Generic;
-using System.Globalization;
 using System.IO;
-using System.Reflection;
-using System.Runtime.InteropServices;
 using System.Text;
 using System.Windows.Forms;
 using MetroFramework;
@@ -169,7 +166,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers {
             foreach (string file in files) {
                 string name = Path.GetFileName(file);
                 string dest = Path.Combine(destFolder, name);
-                File.Copy(file, dest);
+                File.Copy(file, dest, true);
             }
             string[] folders = Directory.GetDirectories(sourceFolder);
             foreach (string folder in folders) {

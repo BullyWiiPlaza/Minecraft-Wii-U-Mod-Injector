@@ -11,7 +11,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
         public static void Initialize()
         {
             Client = new DiscordRpcClient("839430556583854101");
-            Client.Initialize();         
+            Client.Initialize();
         }
 
         public static void SetPresence(string details, string state)

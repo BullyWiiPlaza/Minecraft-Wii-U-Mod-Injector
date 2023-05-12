@@ -19,9 +19,13 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers.Files
         [DllImport("kernel32.dll")]
         static extern int GetPrivateProfileSection(string lpAppName, byte[] lpszReturnBuffer, int nSize, string lpFileName);
 
-        public IniFile(string iniPath = null)
+        public IniFile(string iniPath = null, bool isText = false)
         {
-            _path = new FileInfo(iniPath ?? _exe + ".ini").FullName;
+            if(isText)
+                _path = new FileInfo(iniPath ?? _exe + ".ini").FullName;
+            else       
+                _path = new FileInfo(iniPath ?? _exe + ".txt").FullName;
+            
         }
 
         public string Read(string key, string section = null)

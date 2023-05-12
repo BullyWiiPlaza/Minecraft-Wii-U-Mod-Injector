@@ -17,7 +17,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
     {
         public static MainForm Injector = new();
 
-        public static string LocalVer = "v5.3.2";
+        public static string LocalVer = "v5.3.3";
         public static string GitVer = string.Empty;
         public static string UpdaterPath = $@"{Application.StartupPath}\Minecraft.Wii.U.Mod.Injector.Updater.exe";
 
@@ -28,7 +28,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
             Injector = window;
         }
 
-        public async static void SetupInjector()
+        public static void SetupInjector()
         {
             try
             {
@@ -54,7 +54,8 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
                 DiscordRP.SetPresence("Disconnected", "Idle");
                 States.SwapState(States.StatesIds.Disconnected);
 
-                Injector.Opacity = 100; // Everything has finished setting up, we can show the form now
+                // Setup is finished, we can show the window now
+                Injector.Opacity = 100;
             }
             catch (Exception error)
             {
@@ -68,7 +69,8 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
         {
             try
             {
-                ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12; // Fix for Windows 7 Systems
+                // Fix for Windows 7 Systems
+                ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
                 var verChecker = new GitHubClient(new ProductHeaderValue("MCWiiUMIClient"));
                 var releases = await verChecker.Repository.Release.GetAll(ApplicationUrls.GitHubProfileName, "Minecraft-Wii-U-Mod-Injector");
 
@@ -146,7 +148,8 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
 
                     if (Settings.Default.SeasonalThemes)
                     {
-                        if (DateTime.Now.ToString("MM") == "10") //Halloween
+                        //Halloween
+                        if (DateTime.Now.ToString("MM") == "10")
                         {
                             Injector.Style = Injector.StyleMngr.Style = MetroColorStyle.Orange;
                             Injector.BuildTile.Text = LocalVer + "\r\nHalloween Edition";
@@ -154,7 +157,8 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
                             Injector.Refresh();
                         }
 
-                        if (DateTime.Now.ToString("MM") == "12") //Christmas TODO: Make this way better, looks kind of ugly?
+                        //Christmas
+                        if (DateTime.Now.ToString("MM") == "12")
                         {
                             Injector.Style = MetroColorStyle.Red;
                             Injector.StyleMngr.Style = MetroColorStyle.Green;

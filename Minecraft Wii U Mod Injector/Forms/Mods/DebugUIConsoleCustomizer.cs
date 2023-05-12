@@ -109,7 +109,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods
                     uint textfield_ptr = MainForm.GeckoU.CallFunction(0x02b03708, fj_fuinode_ptr);
                     if (textfield_ptr == 0)
                     {
-                        MessageBox.Show("No Text Field returned !!");
+                        MessageBox.Show("No Text Field returned!");
                         continue;
                     }
                     uint wstr_ptr = textfield_ptr + 0x114;

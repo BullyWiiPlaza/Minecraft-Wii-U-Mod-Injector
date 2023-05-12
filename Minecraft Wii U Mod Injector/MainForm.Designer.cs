@@ -60,7 +60,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.PunchToRide = new MetroFramework.Controls.MetroCheckBox();
             this.UnlimitedTotemsOfUndying = new MetroFramework.Controls.MetroCheckBox();
             this.SplashLingeringPotions = new MetroFramework.Controls.MetroCheckBox();
-            this.ForeverLastingPotions = new MetroFramework.Controls.MetroCheckBox();
+            this.EffectsLastForever = new MetroFramework.Controls.MetroCheckBox();
             this.ItemOfUndying = new MetroFramework.Controls.MetroCheckBox();
             this.NoDamage = new MetroFramework.Controls.MetroCheckBox();
             this.WaterDownStrengthSlider = new System.Windows.Forms.NumericUpDown();
@@ -155,6 +155,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.CraftAnything = new MetroFramework.Controls.MetroCheckBox();
             this.CreativeMode = new MetroFramework.Controls.MetroCheckBox();
             this.worldTab = new MetroFramework.Controls.MetroTabPage();
+            this.BubbleColumnAnywhere = new MetroFramework.Controls.MetroCheckBox();
             this.FogDistanceSlider = new System.Windows.Forms.NumericUpDown();
             this.FogDistance = new MetroFramework.Controls.MetroLabel();
             this.EntityEditorBtn = new MetroFramework.Controls.MetroButton();
@@ -474,7 +475,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.MainTabs.Location = new System.Drawing.Point(155, 58);
             this.MainTabs.Multiline = true;
             this.MainTabs.Name = "MainTabs";
-            this.MainTabs.SelectedIndex = 6;
+            this.MainTabs.SelectedIndex = 4;
             this.MainTabs.Size = new System.Drawing.Size(1130, 643);
             this.MainTabs.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.MainTabs.TabIndex = 0;
@@ -499,7 +500,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.MainTab.Location = new System.Drawing.Point(4, 9);
             this.MainTab.Name = "MainTab";
             this.MainTab.Padding = new System.Windows.Forms.Padding(3);
-            this.MainTab.Size = new System.Drawing.Size(1122, 630);
+            this.MainTab.Size = new System.Drawing.Size(1121, 630);
             this.MainTab.TabIndex = 6;
             this.MainTab.Text = "Home";
             this.MainTab.Theme = MetroFramework.MetroThemeStyle.Dark;
@@ -577,7 +578,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.BuildVerTitleLbl.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.BuildVerTitleLbl.Location = new System.Drawing.Point(3, 3);
             this.BuildVerTitleLbl.Name = "BuildVerTitleLbl";
-            this.BuildVerTitleLbl.Size = new System.Drawing.Size(237, 25);
+            this.BuildVerTitleLbl.Size = new System.Drawing.Size(236, 25);
             this.BuildVerTitleLbl.TabIndex = 6;
             this.BuildVerTitleLbl.Text = "Patch Notes for v0.0.0.chprq";
             this.BuildVerTitleLbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -682,7 +683,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.playersTab.Controls.Add(this.PunchToRide);
             this.playersTab.Controls.Add(this.UnlimitedTotemsOfUndying);
             this.playersTab.Controls.Add(this.SplashLingeringPotions);
-            this.playersTab.Controls.Add(this.ForeverLastingPotions);
+            this.playersTab.Controls.Add(this.EffectsLastForever);
             this.playersTab.Controls.Add(this.ItemOfUndying);
             this.playersTab.Controls.Add(this.NoDamage);
             this.playersTab.Controls.Add(this.WaterDownStrengthSlider);
@@ -782,7 +783,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.playersTab.Location = new System.Drawing.Point(4, 9);
             this.playersTab.Name = "playersTab";
             this.playersTab.Padding = new System.Windows.Forms.Padding(3);
-            this.playersTab.Size = new System.Drawing.Size(1122, 630);
+            this.playersTab.Size = new System.Drawing.Size(1121, 630);
             this.playersTab.TabIndex = 0;
             this.playersTab.Tag = "GeckoURequired";
             this.playersTab.Text = "Player(s) and Item(s)";
@@ -861,7 +862,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             "Slow Falling"});
             this.defPotionBox.Location = new System.Drawing.Point(931, 499);
             this.defPotionBox.Name = "defPotionBox";
-            this.defPotionBox.Size = new System.Drawing.Size(185, 25);
+            this.defPotionBox.Size = new System.Drawing.Size(183, 25);
             this.defPotionBox.TabIndex = 188;
             this.defPotionBox.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.ToolTipManager.SetToolTip(this.defPotionBox, "What effect will ALL potions default to?");
@@ -875,7 +876,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.DefaultPotionEffect.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.DefaultPotionEffect.Location = new System.Drawing.Point(789, 499);
             this.DefaultPotionEffect.Name = "DefaultPotionEffect";
-            this.DefaultPotionEffect.Size = new System.Drawing.Size(137, 19);
+            this.DefaultPotionEffect.Size = new System.Drawing.Size(136, 19);
             this.DefaultPotionEffect.Style = MetroFramework.MetroColorStyle.Blue;
             this.DefaultPotionEffect.TabIndex = 187;
             this.DefaultPotionEffect.Tag = "NonHost";
@@ -956,7 +957,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.UnlimitedTotemsOfUndying.AutoSize = true;
             this.UnlimitedTotemsOfUndying.Location = new System.Drawing.Point(379, 405);
             this.UnlimitedTotemsOfUndying.Name = "UnlimitedTotemsOfUndying";
-            this.UnlimitedTotemsOfUndying.Size = new System.Drawing.Size(180, 15);
+            this.UnlimitedTotemsOfUndying.Size = new System.Drawing.Size(178, 15);
             this.UnlimitedTotemsOfUndying.Style = MetroFramework.MetroColorStyle.Orange;
             this.UnlimitedTotemsOfUndying.TabIndex = 182;
             this.UnlimitedTotemsOfUndying.Tag = "Host";
@@ -984,22 +985,22 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.SplashLingeringPotions.UseStyleColors = true;
             this.SplashLingeringPotions.CheckedChanged += new System.EventHandler(this.SplashLingeringPotionsToggled);
             // 
-            // ForeverLastingPotions
+            // EffectsLastForever
             // 
-            this.ForeverLastingPotions.AutoSize = true;
-            this.ForeverLastingPotions.BackColor = System.Drawing.Color.Transparent;
-            this.ForeverLastingPotions.Location = new System.Drawing.Point(192, 111);
-            this.ForeverLastingPotions.Name = "ForeverLastingPotions";
-            this.ForeverLastingPotions.Size = new System.Drawing.Size(124, 15);
-            this.ForeverLastingPotions.Style = MetroFramework.MetroColorStyle.Orange;
-            this.ForeverLastingPotions.TabIndex = 180;
-            this.ForeverLastingPotions.Tag = "Host";
-            this.ForeverLastingPotions.Text = "Effects Last Forever";
-            this.ForeverLastingPotions.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.ForeverLastingPotions, "Potion effects will never run out.");
-            this.ForeverLastingPotions.UseSelectable = true;
-            this.ForeverLastingPotions.UseStyleColors = true;
-            this.ForeverLastingPotions.CheckedChanged += new System.EventHandler(this.ForeverLastingPotionsToggled);
+            this.EffectsLastForever.AutoSize = true;
+            this.EffectsLastForever.BackColor = System.Drawing.Color.Transparent;
+            this.EffectsLastForever.Location = new System.Drawing.Point(192, 111);
+            this.EffectsLastForever.Name = "EffectsLastForever";
+            this.EffectsLastForever.Size = new System.Drawing.Size(124, 15);
+            this.EffectsLastForever.Style = MetroFramework.MetroColorStyle.Orange;
+            this.EffectsLastForever.TabIndex = 180;
+            this.EffectsLastForever.Tag = "Host";
+            this.EffectsLastForever.Text = "Effects Last Forever";
+            this.EffectsLastForever.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.ToolTipManager.SetToolTip(this.EffectsLastForever, "Potion, Beacon and Mob Effects will never run out");
+            this.EffectsLastForever.UseSelectable = true;
+            this.EffectsLastForever.UseStyleColors = true;
+            this.EffectsLastForever.CheckedChanged += new System.EventHandler(this.EffectsLastForeverToggled);
             // 
             // ItemOfUndying
             // 
@@ -1065,7 +1066,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.WaterDownStrength.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.WaterDownStrength.Location = new System.Drawing.Point(554, 519);
             this.WaterDownStrength.Name = "WaterDownStrength";
-            this.WaterDownStrength.Size = new System.Drawing.Size(135, 19);
+            this.WaterDownStrength.Size = new System.Drawing.Size(134, 19);
             this.WaterDownStrength.Style = MetroFramework.MetroColorStyle.Blue;
             this.WaterDownStrength.TabIndex = 176;
             this.WaterDownStrength.Tag = "NonHost";
@@ -1246,7 +1247,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             // 
             // EnchantmentEditorBtn
             // 
-            this.EnchantmentEditorBtn.Location = new System.Drawing.Point(749, 438);
+            this.EnchantmentEditorBtn.Location = new System.Drawing.Point(749, 436);
             this.EnchantmentEditorBtn.Name = "EnchantmentEditorBtn";
             this.EnchantmentEditorBtn.Size = new System.Drawing.Size(365, 25);
             this.EnchantmentEditorBtn.Style = MetroFramework.MetroColorStyle.Blue;
@@ -1668,7 +1669,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             // 
             // PlayerOptionsBtn
             // 
-            this.PlayerOptionsBtn.Location = new System.Drawing.Point(378, 438);
+            this.PlayerOptionsBtn.Location = new System.Drawing.Point(378, 436);
             this.PlayerOptionsBtn.Name = "PlayerOptionsBtn";
             this.PlayerOptionsBtn.Size = new System.Drawing.Size(365, 25);
             this.PlayerOptionsBtn.Style = MetroFramework.MetroColorStyle.Blue;
@@ -1688,7 +1689,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.PotionAmplifier.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.PotionAmplifier.Location = new System.Drawing.Point(292, 597);
             this.PotionAmplifier.Name = "PotionAmplifier";
-            this.PotionAmplifier.Size = new System.Drawing.Size(110, 19);
+            this.PotionAmplifier.Size = new System.Drawing.Size(109, 19);
             this.PotionAmplifier.Style = MetroFramework.MetroColorStyle.Orange;
             this.PotionAmplifier.TabIndex = 156;
             this.PotionAmplifier.Tag = "Host";
@@ -1766,7 +1767,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.SeeThroughBlocks.AutoSize = true;
             this.SeeThroughBlocks.Location = new System.Drawing.Point(379, 111);
             this.SeeThroughBlocks.Name = "SeeThroughBlocks";
-            this.SeeThroughBlocks.Size = new System.Drawing.Size(127, 15);
+            this.SeeThroughBlocks.Size = new System.Drawing.Size(126, 15);
             this.SeeThroughBlocks.Style = MetroFramework.MetroColorStyle.Blue;
             this.SeeThroughBlocks.TabIndex = 151;
             this.SeeThroughBlocks.Tag = "NonHost";
@@ -1940,7 +1941,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.WalkingSpeedScale.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.WalkingSpeedScale.Location = new System.Drawing.Point(292, 493);
             this.WalkingSpeedScale.Name = "WalkingSpeedScale";
-            this.WalkingSpeedScale.Size = new System.Drawing.Size(136, 19);
+            this.WalkingSpeedScale.Size = new System.Drawing.Size(135, 19);
             this.WalkingSpeedScale.Style = MetroFramework.MetroColorStyle.Blue;
             this.WalkingSpeedScale.TabIndex = 127;
             this.WalkingSpeedScale.Tag = "NonHost";
@@ -2005,7 +2006,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.DeadMauFiveMode.Tag = "Host";
             this.DeadMauFiveMode.Text = "Mouse Ears";
             this.DeadMauFiveMode.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.DeadMauFiveMode, "Apply deadmau5 ears to your player when holding an item.");
+            this.ToolTipManager.SetToolTip(this.DeadMauFiveMode, "Apply deadmau5 ears to your player when holding an item");
             this.DeadMauFiveMode.UseSelectable = true;
             this.DeadMauFiveMode.UseStyleColors = true;
             this.DeadMauFiveMode.CheckedChanged += new System.EventHandler(this.DeadMauFiveModeToggled);
@@ -2021,7 +2022,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.ArmorHUD.Tag = "NonHost";
             this.ArmorHUD.Text = "Armor HUD";
             this.ArmorHUD.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.ArmorHUD, "Displays a HUD Element of your currently equipped armour on the left side.");
+            this.ToolTipManager.SetToolTip(this.ArmorHUD, "Displays a HUD Element of your currently equipped armour on the \r\nleft side");
             this.ArmorHUD.UseSelectable = true;
             this.ArmorHUD.UseStyleColors = true;
             this.ArmorHUD.CheckedChanged += new System.EventHandler(this.ArmorHudToggled);
@@ -2031,14 +2032,14 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.TakeEverythingAnywhere.AutoSize = true;
             this.TakeEverythingAnywhere.Location = new System.Drawing.Point(192, 363);
             this.TakeEverythingAnywhere.Name = "TakeEverythingAnywhere";
-            this.TakeEverythingAnywhere.Size = new System.Drawing.Size(163, 15);
+            this.TakeEverythingAnywhere.Size = new System.Drawing.Size(161, 15);
             this.TakeEverythingAnywhere.Style = MetroFramework.MetroColorStyle.Blue;
             this.TakeEverythingAnywhere.TabIndex = 25;
             this.TakeEverythingAnywhere.Tag = "NonHost";
             this.TakeEverythingAnywhere.Text = "Take Everything Anywhere";
             this.TakeEverythingAnywhere.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.TakeEverythingAnywhere, "Permanently enables the \'Take Everything\' option in containers, even if it is off" +
-        ".");
+            this.ToolTipManager.SetToolTip(this.TakeEverythingAnywhere, "Permanently enables the \'Take Everything\' option in containers, \r\neven if it is d" +
+        "isabled");
             this.TakeEverythingAnywhere.UseSelectable = true;
             this.TakeEverythingAnywhere.UseStyleColors = true;
             this.TakeEverythingAnywhere.CheckedChanged += new System.EventHandler(this.TakeEverythingAnywhereToggled);
@@ -2095,14 +2096,13 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.CraftingTableAnywhere.AutoSize = true;
             this.CraftingTableAnywhere.Location = new System.Drawing.Point(192, 321);
             this.CraftingTableAnywhere.Name = "CraftingTableAnywhere";
-            this.CraftingTableAnywhere.Size = new System.Drawing.Size(154, 15);
+            this.CraftingTableAnywhere.Size = new System.Drawing.Size(152, 15);
             this.CraftingTableAnywhere.Style = MetroFramework.MetroColorStyle.Blue;
             this.CraftingTableAnywhere.TabIndex = 132;
             this.CraftingTableAnywhere.Tag = "NonHost";
             this.CraftingTableAnywhere.Text = "Crafting Table Anywhere";
             this.CraftingTableAnywhere.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.CraftingTableAnywhere, "Allows you to use the 3x3 crafting menu anywhere, without needing a crafting tabl" +
-        "e.");
+            this.ToolTipManager.SetToolTip(this.CraftingTableAnywhere, "Allows you to use the full crafting table functionally in your inventory");
             this.CraftingTableAnywhere.UseSelectable = true;
             this.CraftingTableAnywhere.UseStyleColors = true;
             this.CraftingTableAnywhere.CheckedChanged += new System.EventHandler(this.CraftingTableAnywhereToggled);
@@ -2112,7 +2112,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.VisibleHitboxes.AutoSize = true;
             this.VisibleHitboxes.Location = new System.Drawing.Point(192, 300);
             this.VisibleHitboxes.Name = "VisibleHitboxes";
-            this.VisibleHitboxes.Size = new System.Drawing.Size(106, 15);
+            this.VisibleHitboxes.Size = new System.Drawing.Size(107, 15);
             this.VisibleHitboxes.Style = MetroFramework.MetroColorStyle.Blue;
             this.VisibleHitboxes.TabIndex = 129;
             this.VisibleHitboxes.Tag = "NonHost";
@@ -2125,7 +2125,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             // 
             // NnidEditorBtn
             // 
-            this.NnidEditorBtn.Location = new System.Drawing.Point(7, 438);
+            this.NnidEditorBtn.Location = new System.Drawing.Point(7, 436);
             this.NnidEditorBtn.Name = "NnidEditorBtn";
             this.NnidEditorBtn.Size = new System.Drawing.Size(365, 25);
             this.NnidEditorBtn.Style = MetroFramework.MetroColorStyle.Blue;
@@ -2150,7 +2150,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.InsaneCriticalHits.Tag = "Host";
             this.InsaneCriticalHits.Text = "Insane Critical Hits";
             this.InsaneCriticalHits.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.InsaneCriticalHits, "Critical hits will deal massive amounts of damage.");
+            this.ToolTipManager.SetToolTip(this.InsaneCriticalHits, "Critical hits will deal massive amounts of damage");
             this.InsaneCriticalHits.UseSelectable = true;
             this.InsaneCriticalHits.UseStyleColors = true;
             this.InsaneCriticalHits.CheckedChanged += new System.EventHandler(this.InsaneCriticalHitsToggled);
@@ -2166,7 +2166,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.AlwaysSwimming.Tag = "Host";
             this.AlwaysSwimming.Text = "Always Swimming";
             this.AlwaysSwimming.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.AlwaysSwimming, "Always acts like you\'re swimming underwater.");
+            this.ToolTipManager.SetToolTip(this.AlwaysSwimming, "Always acts like you\'re swimming underwater");
             this.AlwaysSwimming.UseSelectable = true;
             this.AlwaysSwimming.UseStyleColors = true;
             this.AlwaysSwimming.CheckedChanged += new System.EventHandler(this.AlwaysSwimmingToggled);
@@ -2182,7 +2182,8 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.InfiniteRiptide.Tag = "NonHost";
             this.InfiniteRiptide.Text = "Riptide Anywhere";
             this.InfiniteRiptide.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.InfiniteRiptide, "Allows you to use the Riptide enchantment outside of water.");
+            this.ToolTipManager.SetToolTip(this.InfiniteRiptide, "Allows you to use the Riptide Enchantment regardless of \r\nwhether you\'re in the r" +
+        "ain or water");
             this.InfiniteRiptide.UseSelectable = true;
             this.InfiniteRiptide.UseStyleColors = true;
             this.InfiniteRiptide.CheckedChanged += new System.EventHandler(this.InfiniteRiptideToggled);
@@ -2198,7 +2199,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.FullRotation.Tag = "NonHost";
             this.FullRotation.Text = "Full Rotation";
             this.FullRotation.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.FullRotation, "Allows you to look vertically further than just up and down.");
+            this.ToolTipManager.SetToolTip(this.FullRotation, "Allows you to look vertically further than just up and down");
             this.FullRotation.UseSelectable = true;
             this.FullRotation.UseStyleColors = true;
             this.FullRotation.CheckedChanged += new System.EventHandler(this.FullRotationToggled);
@@ -2214,7 +2215,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.AlwaysDamagedPlayers.Tag = "Host";
             this.AlwaysDamagedPlayers.Text = "Always Damaged";
             this.AlwaysDamagedPlayers.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.AlwaysDamagedPlayers, "Always damages everything, as if you were falling in the void.");
+            this.ToolTipManager.SetToolTip(this.AlwaysDamagedPlayers, "All entities will get damaged");
             this.AlwaysDamagedPlayers.UseSelectable = true;
             this.AlwaysDamagedPlayers.UseStyleColors = true;
             this.AlwaysDamagedPlayers.CheckedChanged += new System.EventHandler(this.AlwaysDamagedPlayersToggled);
@@ -2230,7 +2231,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.InfiniteItems.Tag = "Host";
             this.InfiniteItems.Text = "Infinite Items";
             this.InfiniteItems.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.InfiniteItems, "Dropping any item from your inventory will not remove the item.");
+            this.ToolTipManager.SetToolTip(this.InfiniteItems, "Dropping any items will not decrease it\'s count");
             this.InfiniteItems.UseSelectable = true;
             this.InfiniteItems.UseStyleColors = true;
             this.InfiniteItems.CheckedChanged += new System.EventHandler(this.InfiniteItemsToggled);
@@ -2246,7 +2247,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.RapidBow.Tag = "Host";
             this.RapidBow.Text = "Rapid Bow";
             this.RapidBow.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.RapidBow, "Allows you to use a bow rapidly.");
+            this.ToolTipManager.SetToolTip(this.RapidBow, "Allows you to fire the bow rapdily");
             this.RapidBow.UseSelectable = true;
             this.RapidBow.UseStyleColors = true;
             this.RapidBow.CheckedChanged += new System.EventHandler(this.RapidBowToggled);
@@ -2263,7 +2264,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.BloodVision.Tag = "NonHost";
             this.BloodVision.Text = "Blood Vision";
             this.BloodVision.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.BloodVision, "Your screen will be tinted red.");
+            this.ToolTipManager.SetToolTip(this.BloodVision, "The screen will have a red overlay as if you were dead");
             this.BloodVision.UseSelectable = true;
             this.BloodVision.UseStyleColors = true;
             this.BloodVision.CheckedChanged += new System.EventHandler(this.BloodVisionToggled);
@@ -2280,7 +2281,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.IgnorePotions.Tag = "Host";
             this.IgnorePotions.Text = "Ignore Potions";
             this.IgnorePotions.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.IgnorePotions, "Ignores all potion effects.");
+            this.ToolTipManager.SetToolTip(this.IgnorePotions, "Ignores all potion effects");
             this.IgnorePotions.UseSelectable = true;
             this.IgnorePotions.UseStyleColors = true;
             this.IgnorePotions.CheckedChanged += new System.EventHandler(this.IgnorePotionsToggled);
@@ -2297,7 +2298,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.BypassInvulnerability.Tag = "Host";
             this.BypassInvulnerability.Text = "Bypass Invulnerability";
             this.BypassInvulnerability.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.BypassInvulnerability, "Disables invulnerability, such as being able to be damaged in Creative mode.");
+            this.ToolTipManager.SetToolTip(this.BypassInvulnerability, "Disables invulnerability for all Entities");
             this.BypassInvulnerability.UseSelectable = true;
             this.BypassInvulnerability.UseStyleColors = true;
             this.BypassInvulnerability.CheckedChanged += new System.EventHandler(this.BypassInvulnerabilityToggled);
@@ -2351,7 +2352,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.AlwaysElytra.Tag = "NonHost";
             this.AlwaysElytra.Text = "Always Elytra";
             this.AlwaysElytra.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.AlwaysElytra, "Allows you to always fly like you had an Elytra on.");
+            this.ToolTipManager.SetToolTip(this.AlwaysElytra, "Allows you to fly as if you had an Elytra equipped");
             this.AlwaysElytra.UseSelectable = true;
             this.AlwaysElytra.UseStyleColors = true;
             this.AlwaysElytra.CheckedChanged += new System.EventHandler(this.AlwaysElytraToggled);
@@ -2369,7 +2370,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.CaveFinder.Tag = "NonHost";
             this.CaveFinder.Text = "Cave Finder";
             this.CaveFinder.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.CaveFinder, "Makes caves visible through the ground.");
+            this.ToolTipManager.SetToolTip(this.CaveFinder, "Highlights Caves through blocks");
             this.CaveFinder.UseSelectable = true;
             this.CaveFinder.UseStyleColors = true;
             this.CaveFinder.CheckedChanged += new System.EventHandler(this.CaveFinderToggled);
@@ -2387,7 +2388,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.Wallhack.Tag = "NonHost";
             this.Wallhack.Text = "Wallhack";
             this.Wallhack.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.Wallhack, "Makes nametags permanently visible, even through walls.");
+            this.ToolTipManager.SetToolTip(this.Wallhack, "Nametags will be visible at any time");
             this.Wallhack.UseSelectable = true;
             this.Wallhack.UseStyleColors = true;
             this.Wallhack.CheckedChanged += new System.EventHandler(this.WallhackToggled);
@@ -2404,7 +2405,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.LargeXPDrops.Tag = "Host";
             this.LargeXPDrops.Text = "Large XP Drops";
             this.LargeXPDrops.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.LargeXPDrops, "XP dropped by entities or Bottles o\' Enchanting will have insane values.");
+            this.ToolTipManager.SetToolTip(this.LargeXPDrops, "Increased XP Drops from Entities");
             this.LargeXPDrops.UseSelectable = true;
             this.LargeXPDrops.UseStyleColors = true;
             this.LargeXPDrops.CheckedChanged += new System.EventHandler(this.LargeXpDropsToggled);
@@ -2421,7 +2422,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.WallClimbing.Tag = "NonHost";
             this.WallClimbing.Text = "Wall Climbing";
             this.WallClimbing.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.WallClimbing, "Makes any block climbable.");
+            this.ToolTipManager.SetToolTip(this.WallClimbing, "Any block will act as if they\'re ladders");
             this.WallClimbing.UseSelectable = true;
             this.WallClimbing.UseStyleColors = true;
             this.WallClimbing.CheckedChanged += new System.EventHandler(this.WallClimbingToggled);
@@ -2438,7 +2439,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.NoCollision.Tag = "NonHost";
             this.NoCollision.Text = "No Collision";
             this.NoCollision.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.NoCollision, "Disables collision with blocks.");
+            this.ToolTipManager.SetToolTip(this.NoCollision, "Disables any block collision");
             this.NoCollision.UseSelectable = true;
             this.NoCollision.UseStyleColors = true;
             this.NoCollision.CheckedChanged += new System.EventHandler(this.NoCollisionToggled);
@@ -2472,7 +2473,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.InfiniteDurability.Tag = "Host";
             this.InfiniteDurability.Text = "Infinite Durability";
             this.InfiniteDurability.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.InfiniteDurability, "The durability of items will never decrease.");
+            this.ToolTipManager.SetToolTip(this.InfiniteDurability, "The durability of items will never decrease");
             this.InfiniteDurability.UseSelectable = true;
             this.InfiniteDurability.UseStyleColors = true;
             this.InfiniteDurability.CheckedChanged += new System.EventHandler(this.InfiniteDurabilityToggled);
@@ -2506,7 +2507,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.DisabledKnockback.Tag = "Host";
             this.DisabledKnockback.Text = "Disabled Knockback";
             this.DisabledKnockback.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.DisabledKnockback, "Disables all sorts of knockback.");
+            this.ToolTipManager.SetToolTip(this.DisabledKnockback, "Any knockback will be disabled");
             this.DisabledKnockback.UseSelectable = true;
             this.DisabledKnockback.UseStyleColors = true;
             this.DisabledKnockback.CheckedChanged += new System.EventHandler(this.DisabledKnockbackToggled);
@@ -2517,13 +2518,13 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.SilkTouchAnything.BackColor = System.Drawing.Color.Transparent;
             this.SilkTouchAnything.Location = new System.Drawing.Point(7, 216);
             this.SilkTouchAnything.Name = "SilkTouchAnything";
-            this.SilkTouchAnything.Size = new System.Drawing.Size(130, 15);
+            this.SilkTouchAnything.Size = new System.Drawing.Size(128, 15);
             this.SilkTouchAnything.Style = MetroFramework.MetroColorStyle.Orange;
             this.SilkTouchAnything.TabIndex = 87;
             this.SilkTouchAnything.Tag = "Host";
             this.SilkTouchAnything.Text = "Silk Touch Anything";
             this.SilkTouchAnything.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.SilkTouchAnything, "Any block you break will act like Silk Touch was used on it.");
+            this.ToolTipManager.SetToolTip(this.SilkTouchAnything, "Any block you break will act like Silk Touch was used on it");
             this.SilkTouchAnything.UseSelectable = true;
             this.SilkTouchAnything.UseStyleColors = true;
             this.SilkTouchAnything.CheckedChanged += new System.EventHandler(this.SilkTouchAnythingToggled);
@@ -2555,7 +2556,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.PickLiquidBlocks.Tag = "NonHost";
             this.PickLiquidBlocks.Text = "Pick Liquid Blocks";
             this.PickLiquidBlocks.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.PickLiquidBlocks, "Allows you to use \'Pick Block\' on liquids (such as Water and Lava).");
+            this.ToolTipManager.SetToolTip(this.PickLiquidBlocks, "Allows you to use \"Pick Block\" on liquids");
             this.PickLiquidBlocks.UseSelectable = true;
             this.PickLiquidBlocks.UseStyleColors = true;
             this.PickLiquidBlocks.CheckedChanged += new System.EventHandler(this.PickLiquidBlocksToggled);
@@ -2571,8 +2572,8 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.DuelWieldanyItem.Tag = "Host";
             this.DuelWieldanyItem.Text = "Duel Wield any Item";
             this.DuelWieldanyItem.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.DuelWieldanyItem, "Allows you to place any item in your off-hand slot.\r\nNOTE: The item can\'t be used" +
-        ".");
+            this.ToolTipManager.SetToolTip(this.DuelWieldanyItem, "Allows you to place any item in your off-hand slot\r\nNOTE: This is purely visual, " +
+        "the off-hand cannot be used");
             this.DuelWieldanyItem.UseSelectable = true;
             this.DuelWieldanyItem.UseStyleColors = true;
             this.DuelWieldanyItem.CheckedChanged += new System.EventHandler(this.DuelWieldAnyItemToggled);
@@ -2588,7 +2589,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.DisableStarving.Tag = "Host";
             this.DisableStarving.Text = "Disable Starving";
             this.DisableStarving.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.DisableStarving, "Prevents starving damage.");
+            this.ToolTipManager.SetToolTip(this.DisableStarving, "You will no longer take damage when starving");
             this.DisableStarving.UseSelectable = true;
             this.DisableStarving.UseStyleColors = true;
             this.DisableStarving.CheckedChanged += new System.EventHandler(this.DisableStarvingToggled);
@@ -2604,7 +2605,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.InstantMining.Tag = "Host";
             this.InstantMining.Text = "Instant Mining";
             this.InstantMining.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.InstantMining, "Allows you to mine any block at insane speed.");
+            this.ToolTipManager.SetToolTip(this.InstantMining, "Allows you to break any blocks instantly");
             this.InstantMining.UseSelectable = true;
             this.InstantMining.UseStyleColors = true;
             this.InstantMining.CheckedChanged += new System.EventHandler(this.InstantMiningToggled);
@@ -2620,7 +2621,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.Flight.Tag = "NonHost";
             this.Flight.Text = "Flight";
             this.Flight.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.Flight, "Allows you to fly at any time without needing the permission or Creative mode.");
+            this.ToolTipManager.SetToolTip(this.Flight, "Allows you to fly regardless of what gametype, gamemode \r\nand permissions");
             this.Flight.UseSelectable = true;
             this.Flight.UseStyleColors = true;
             this.Flight.CheckedChanged += new System.EventHandler(this.FlightToggled);
@@ -2636,7 +2637,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.DisableSuffocating.Tag = "Host";
             this.DisableSuffocating.Text = "Disable Suffocating";
             this.DisableSuffocating.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.DisableSuffocating, "Prevents anyone from suffocating.");
+            this.ToolTipManager.SetToolTip(this.DisableSuffocating, "Entities will no longer suffocate");
             this.DisableSuffocating.UseSelectable = true;
             this.DisableSuffocating.UseStyleColors = true;
             this.DisableSuffocating.CheckedChanged += new System.EventHandler(this.DisableSuffocatingToggled);
@@ -2652,7 +2653,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.NoFallDamage.Tag = "Host";
             this.NoFallDamage.Text = "No Fall Damage";
             this.NoFallDamage.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.NoFallDamage, "Disables fall damage.");
+            this.ToolTipManager.SetToolTip(this.NoFallDamage, "You won\'t take damage when falling");
             this.NoFallDamage.UseSelectable = true;
             this.NoFallDamage.UseStyleColors = true;
             this.NoFallDamage.CheckedChanged += new System.EventHandler(this.NoFallDamageToggled);
@@ -2668,8 +2669,8 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.CraftAnything.Tag = "NonHost";
             this.CraftAnything.Text = "Craft Anything";
             this.CraftAnything.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.CraftAnything, "Allows you to craft anything without needing the required resources.\r\nNOTE: This " +
-        "mod has a side effect of making thunder go crazy if it is storming.");
+            this.ToolTipManager.SetToolTip(this.CraftAnything, "Allows you to craft anything without needing the required resources\r\nNOTE: This m" +
+        "od has a side effect of making thunder go \r\ncrazy if it is storming");
             this.CraftAnything.UseSelectable = true;
             this.CraftAnything.UseStyleColors = true;
             this.CraftAnything.CheckedChanged += new System.EventHandler(this.CraftAnythingToggled);
@@ -2686,13 +2687,14 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.CreativeMode.Tag = "Host";
             this.CreativeMode.Text = "Creative";
             this.CreativeMode.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.CreativeMode, "Allows you to access the Creative menu without actually being in Creative mode.");
+            this.ToolTipManager.SetToolTip(this.CreativeMode, "Allows the Creative Menu to be used regardless of \r\nwhat gametype and gamemode");
             this.CreativeMode.UseSelectable = true;
             this.CreativeMode.UseStyleColors = true;
             this.CreativeMode.CheckedChanged += new System.EventHandler(this.CreativeModeToggled);
             // 
             // worldTab
             // 
+            this.worldTab.Controls.Add(this.BubbleColumnAnywhere);
             this.worldTab.Controls.Add(this.FogDistanceSlider);
             this.worldTab.Controls.Add(this.FogDistance);
             this.worldTab.Controls.Add(this.EntityEditorBtn);
@@ -2730,7 +2732,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.worldTab.Location = new System.Drawing.Point(4, 9);
             this.worldTab.Name = "worldTab";
             this.worldTab.Padding = new System.Windows.Forms.Padding(3);
-            this.worldTab.Size = new System.Drawing.Size(1122, 630);
+            this.worldTab.Size = new System.Drawing.Size(1121, 630);
             this.worldTab.TabIndex = 1;
             this.worldTab.Tag = "GeckoURequired";
             this.worldTab.Text = "World and Entities";
@@ -2738,6 +2740,23 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.worldTab.VerticalScrollbarBarColor = true;
             this.worldTab.VerticalScrollbarHighlightOnWheel = false;
             this.worldTab.VerticalScrollbarSize = 10;
+            // 
+            // BubbleColumnAnywhere
+            // 
+            this.BubbleColumnAnywhere.AutoSize = true;
+            this.BubbleColumnAnywhere.BackColor = System.Drawing.Color.Transparent;
+            this.BubbleColumnAnywhere.Location = new System.Drawing.Point(7, 256);
+            this.BubbleColumnAnywhere.Name = "BubbleColumnAnywhere";
+            this.BubbleColumnAnywhere.Size = new System.Drawing.Size(162, 15);
+            this.BubbleColumnAnywhere.Style = MetroFramework.MetroColorStyle.Orange;
+            this.BubbleColumnAnywhere.TabIndex = 149;
+            this.BubbleColumnAnywhere.Tag = "Host";
+            this.BubbleColumnAnywhere.Text = "Bubble Column Anywhere";
+            this.BubbleColumnAnywhere.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.ToolTipManager.SetToolTip(this.BubbleColumnAnywhere, "Whether a bubble column can be created by any water block");
+            this.BubbleColumnAnywhere.UseSelectable = true;
+            this.BubbleColumnAnywhere.UseStyleColors = true;
+            this.BubbleColumnAnywhere.CheckedChanged += new System.EventHandler(this.BubbleColumnAnywhereToggled);
             // 
             // FogDistanceSlider
             // 
@@ -2774,9 +2793,9 @@ namespace Minecraft_Wii_U_Mod_Injector
             // 
             // EntityEditorBtn
             // 
-            this.EntityEditorBtn.Location = new System.Drawing.Point(6, 497);
+            this.EntityEditorBtn.Location = new System.Drawing.Point(8, 494);
             this.EntityEditorBtn.Name = "EntityEditorBtn";
-            this.EntityEditorBtn.Size = new System.Drawing.Size(1112, 23);
+            this.EntityEditorBtn.Size = new System.Drawing.Size(1109, 23);
             this.EntityEditorBtn.Style = MetroFramework.MetroColorStyle.Orange;
             this.EntityEditorBtn.TabIndex = 146;
             this.EntityEditorBtn.Tag = "Host";
@@ -2793,7 +2812,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.ThunderMode.BackColor = System.Drawing.Color.Transparent;
             this.ThunderMode.Location = new System.Drawing.Point(7, 235);
             this.ThunderMode.Name = "ThunderMode";
-            this.ThunderMode.Size = new System.Drawing.Size(151, 15);
+            this.ThunderMode.Size = new System.Drawing.Size(150, 15);
             this.ThunderMode.Style = MetroFramework.MetroColorStyle.Orange;
             this.ThunderMode.TabIndex = 145;
             this.ThunderMode.Tag = "Host";
@@ -2825,7 +2844,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             // 
             // WorldGenerationOptsBtn
             // 
-            this.WorldGenerationOptsBtn.Location = new System.Drawing.Point(567, 526);
+            this.WorldGenerationOptsBtn.Location = new System.Drawing.Point(567, 523);
             this.WorldGenerationOptsBtn.Name = "WorldGenerationOptsBtn";
             this.WorldGenerationOptsBtn.Size = new System.Drawing.Size(550, 23);
             this.WorldGenerationOptsBtn.Style = MetroFramework.MetroColorStyle.Orange;
@@ -3013,7 +3032,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             // 
             // LootTableEditorBtn
             // 
-            this.LootTableEditorBtn.Location = new System.Drawing.Point(7, 526);
+            this.LootTableEditorBtn.Location = new System.Drawing.Point(8, 523);
             this.LootTableEditorBtn.Name = "LootTableEditorBtn";
             this.LootTableEditorBtn.Size = new System.Drawing.Size(550, 23);
             this.LootTableEditorBtn.Style = MetroFramework.MetroColorStyle.Orange;
@@ -3081,7 +3100,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.ZombieTower.AutoSize = true;
             this.ZombieTower.Location = new System.Drawing.Point(475, 88);
             this.ZombieTower.Name = "ZombieTower";
-            this.ZombieTower.Size = new System.Drawing.Size(100, 15);
+            this.ZombieTower.Size = new System.Drawing.Size(98, 15);
             this.ZombieTower.Style = MetroFramework.MetroColorStyle.Orange;
             this.ZombieTower.TabIndex = 20;
             this.ZombieTower.Tag = "Host";
@@ -3174,7 +3193,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.World.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.World.Location = new System.Drawing.Point(3, 3);
             this.World.Name = "World";
-            this.World.Size = new System.Drawing.Size(97, 19);
+            this.World.Size = new System.Drawing.Size(96, 19);
             this.World.TabIndex = 44;
             this.World.Text = "World / Blocks";
             this.World.Theme = MetroFramework.MetroThemeStyle.Dark;
@@ -3280,7 +3299,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.generalTab.Location = new System.Drawing.Point(4, 9);
             this.generalTab.Name = "generalTab";
             this.generalTab.Padding = new System.Windows.Forms.Padding(3);
-            this.generalTab.Size = new System.Drawing.Size(1122, 630);
+            this.generalTab.Size = new System.Drawing.Size(1121, 630);
             this.generalTab.TabIndex = 2;
             this.generalTab.Tag = "GeckoURequired";
             this.generalTab.Text = "General Game";
@@ -3380,7 +3399,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.PreventBeingKicked.Tag = "NonHost";
             this.PreventBeingKicked.Text = "Prevent Being Kicked";
             this.PreventBeingKicked.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.PreventBeingKicked, "Prevents you from ever being kicked.");
+            this.ToolTipManager.SetToolTip(this.PreventBeingKicked, "Whether or not you can be kicked from games");
             this.PreventBeingKicked.UseSelectable = true;
             this.PreventBeingKicked.UseStyleColors = true;
             this.PreventBeingKicked.CheckedChanged += new System.EventHandler(this.PreventBeingKickedToggled);
@@ -3578,7 +3597,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.DisableTeleporting.ForeColor = System.Drawing.SystemColors.ControlText;
             this.DisableTeleporting.Location = new System.Drawing.Point(475, 130);
             this.DisableTeleporting.Name = "DisableTeleporting";
-            this.DisableTeleporting.Size = new System.Drawing.Size(125, 15);
+            this.DisableTeleporting.Size = new System.Drawing.Size(123, 15);
             this.DisableTeleporting.Style = MetroFramework.MetroColorStyle.Orange;
             this.DisableTeleporting.TabIndex = 31;
             this.DisableTeleporting.Tag = "Host";
@@ -3961,7 +3980,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.TNTGriefing.AutoSize = true;
             this.TNTGriefing.Location = new System.Drawing.Point(7, 27);
             this.TNTGriefing.Name = "TNTGriefing";
-            this.TNTGriefing.Size = new System.Drawing.Size(91, 15);
+            this.TNTGriefing.Size = new System.Drawing.Size(89, 15);
             this.TNTGriefing.Style = MetroFramework.MetroColorStyle.Orange;
             this.TNTGriefing.TabIndex = 7;
             this.TNTGriefing.Tag = "Host";
@@ -4172,7 +4191,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.TumbleHUD.AutoSize = true;
             this.TumbleHUD.Location = new System.Drawing.Point(7, 6);
             this.TumbleHUD.Name = "TumbleHUD";
-            this.TumbleHUD.Size = new System.Drawing.Size(92, 15);
+            this.TumbleHUD.Size = new System.Drawing.Size(91, 15);
             this.TumbleHUD.Style = MetroFramework.MetroColorStyle.Blue;
             this.TumbleHUD.TabIndex = 3;
             this.TumbleHUD.Tag = "NonHost";
@@ -4329,7 +4348,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.commandsTab.HorizontalScrollbarSize = 10;
             this.commandsTab.Location = new System.Drawing.Point(4, 9);
             this.commandsTab.Name = "commandsTab";
-            this.commandsTab.Size = new System.Drawing.Size(1122, 630);
+            this.commandsTab.Size = new System.Drawing.Size(1121, 630);
             this.commandsTab.TabIndex = 7;
             this.commandsTab.Tag = "GeckoURequired";
             this.commandsTab.Text = "Commands";
@@ -4424,7 +4443,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.customTellBox.AutoSize = true;
             this.customTellBox.Location = new System.Drawing.Point(339, 70);
             this.customTellBox.Name = "customTellBox";
-            this.customTellBox.Size = new System.Drawing.Size(128, 15);
+            this.customTellBox.Size = new System.Drawing.Size(129, 15);
             this.customTellBox.TabIndex = 23;
             this.customTellBox.Text = "Custom ( no prefix )";
             this.customTellBox.Theme = MetroFramework.MetroThemeStyle.Dark;
@@ -4724,7 +4743,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.worldCmdLbl.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.worldCmdLbl.Location = new System.Drawing.Point(843, 9);
             this.worldCmdLbl.Name = "worldCmdLbl";
-            this.worldCmdLbl.Size = new System.Drawing.Size(46, 19);
+            this.worldCmdLbl.Size = new System.Drawing.Size(45, 19);
             this.worldCmdLbl.Style = MetroFramework.MetroColorStyle.Blue;
             this.worldCmdLbl.TabIndex = 44;
             this.worldCmdLbl.Tag = "NonHost";
@@ -5210,7 +5229,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.settingsTab.Location = new System.Drawing.Point(4, 9);
             this.settingsTab.Name = "settingsTab";
             this.settingsTab.Padding = new System.Windows.Forms.Padding(3);
-            this.settingsTab.Size = new System.Drawing.Size(1122, 630);
+            this.settingsTab.Size = new System.Drawing.Size(1121, 630);
             this.settingsTab.TabIndex = 5;
             this.settingsTab.Tag = "";
             this.settingsTab.Text = "Settings";
@@ -5252,7 +5271,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.SeasonalThemes.AutoSize = true;
             this.SeasonalThemes.Location = new System.Drawing.Point(592, 73);
             this.SeasonalThemes.Name = "SeasonalThemes";
-            this.SeasonalThemes.Size = new System.Drawing.Size(114, 15);
+            this.SeasonalThemes.Size = new System.Drawing.Size(113, 15);
             this.SeasonalThemes.TabIndex = 54;
             this.SeasonalThemes.Text = "Seasonal Themes";
             this.SeasonalThemes.Theme = MetroFramework.MetroThemeStyle.Dark;
@@ -5282,7 +5301,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.TextAllignLbl.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.TextAllignLbl.Location = new System.Drawing.Point(7, 38);
             this.TextAllignLbl.Name = "TextAllignLbl";
-            this.TextAllignLbl.Size = new System.Drawing.Size(75, 19);
+            this.TextAllignLbl.Size = new System.Drawing.Size(74, 19);
             this.TextAllignLbl.TabIndex = 52;
             this.TextAllignLbl.Text = "Text Allign:";
             this.TextAllignLbl.Theme = MetroFramework.MetroThemeStyle.Dark;
@@ -5983,7 +6002,7 @@ namespace Minecraft_Wii_U_Mod_Injector
         public MetroCheckBox ItemOfUndying;
         public MetroCheckBox UnlimitedTotemsOfUndying;
         public MetroCheckBox SplashLingeringPotions;
-        public MetroCheckBox ForeverLastingPotions;
+        public MetroCheckBox EffectsLastForever;
         private MetroButton EntityEditorBtn;
         public MetroCheckBox PunchToRide;
         private MetroCheckBox Solo;
@@ -6019,5 +6038,6 @@ namespace Minecraft_Wii_U_Mod_Injector
         private MetroButton AdventureCommandBtn;
         private MetroRadioButton customTellBox;
         private MetroCheckBox PreventBeingKicked;
+        public MetroCheckBox BubbleColumnAnywhere;
     }
 }

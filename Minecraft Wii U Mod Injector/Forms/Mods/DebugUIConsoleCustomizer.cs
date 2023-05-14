@@ -1,16 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
 using System.Text;
 using MetroFramework.Controls;
-using MetroFramework.Forms;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Minecraft_Wii_U_Mod_Injector.Helpers;
-using Minecraft_Wii_U_Mod_Injector.Helpers.Files;
 using Minecraft_Wii_U_Mod_Injector.Wii_U.Gecko_U;
 using Minecraft_Wii_U_Mod_Injector.Wii_U.Minecraft;
 
@@ -58,7 +51,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods
 
         private void AlphaSlider_ValueChanged(object sender, EventArgs e)
         {
-            MainForm.GeckoU.WriteBytes(MainForm.GeckoU.PeekUInt(debugRenderNode + 0x10) + 0x3f, new byte[] { (byte)AlphaSlider.Value });
+            MainForm.GeckoU.WriteBytes(MainForm.GeckoU.PeekUInt(debugRenderNode + 0x10) + 0x3f, new[] { (byte)AlphaSlider.Value });
         }
 
         private string getString(uint wstring_ptr)

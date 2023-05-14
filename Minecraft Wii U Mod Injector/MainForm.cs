@@ -3,7 +3,6 @@ using MetroFramework.Forms;
 using MetroFramework;
 using Minecraft_Wii_U_Mod_Injector.Helpers;
 using Minecraft_Wii_U_Mod_Injector.Forms;
-using Minecraft_Wii_U_Mod_Injector.Helpers.Files;
 using System;
 using System.Diagnostics;
 using System.Drawing;
@@ -20,7 +19,6 @@ using Minecraft_Wii_U_Mod_Injector.Wii_U.Gecko_U;
 using Minecraft_Wii_U_Mod_Injector.Wii_U.Minecraft;
 using static System.Windows.Forms.DialogResult;
 using System.Text;
-using System.Collections.Generic;
 
 namespace Minecraft_Wii_U_Mod_Injector {
     public partial class MainForm : MetroForm {
@@ -108,12 +106,6 @@ namespace Minecraft_Wii_U_Mod_Injector {
 
         #endregion
 
-        #region pointers
-
-        private uint _localPlayer;
-
-        #endregion
-
         #region strings
         private readonly string[] _tipsList = new[]
         {
@@ -137,11 +129,14 @@ namespace Minecraft_Wii_U_Mod_Injector {
             _ = new Setup(this);
             _ = new Miscellaneous(this);
 
+            MainTabs.SelectedIndex = 0;
+            MinigamesTabs.SelectedIndex = 0;
+
+            Setup.SetupInjector();
+
             BuildNotesBox.Text = Resources.releaseNotes;
             BuildVerTitleLbl.Text = @"Patch Notes for " + Setup.LocalVer;
             BuildTile.Text = Setup.LocalVer;
-
-            Setup.SetupInjector();
         }
 
         private void InitShown(object sender, EventArgs e) {
@@ -228,7 +223,10 @@ namespace Minecraft_Wii_U_Mod_Injector {
             }
 
             if (tile == MinigamesTile)
-                NavMenuMgPnl.Visible = !NavMenuMgPnl.Visible;   
+            {
+                NavMenuMgPnl.Visible = !NavMenuMgPnl.Visible;
+                return;
+            }
 
             if (MainTabs.SelectedIndex != tile.TileCount)
                 MainTabs.SelectedIndex = tile.TileCount;
@@ -339,13 +337,13 @@ namespace Minecraft_Wii_U_Mod_Injector {
             }
         }
 
+        // TODO: Fix & Update Links
         private async void CheckUpdatesClicked(object sender, EventArgs e) {
-            Process.Start("https://github.com/BullyWiiPlaza/Minecraft-Wii-U-Mod-Injector/releases/latest");
-            //updateBtn.Enabled = false;
-            //updateBtn.Text = @"Checking for Updates...";
-            //await Setup.RetrieveGitVersion(false);
-            //updateBtn.Text = @"Check for Updates";
-            //updateBtn.Enabled = true;
+            updateBtn.Enabled = false;
+            updateBtn.Text = @"Checking for Updates...";
+            await Setup.RetrieveGitVersion(false);
+            updateBtn.Text = @"Check for Updates";
+            updateBtn.Enabled = true;
         }
 
         private void CheckForPreReleaseToggled(object sender, EventArgs e) {
@@ -407,8 +405,8 @@ namespace Minecraft_Wii_U_Mod_Injector {
         }
 
         private void SetupTutorialBtnClicked(object sender, EventArgs e) {
-            MessageBox.Show("We currently do not have a dedicated setup tutorial for the Minecraft Wii U Mod Injector. Please refer to the setup tutorial of e.g. JGecko U and skip installing Java, also replace mentions of JGecko U with Minecraft Wii U Mod Injector.",
-                "Setup Tutorial", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show(@"We currently do not have a dedicated setup tutorial for the Minecraft Wii U Mod Injector. Please refer to the setup tutorial of e.g. JGecko U and skip installing Java, also replace mentions of JGecko U with Minecraft Wii U Mod Injector.",
+                @"Setup Tutorial", MessageBoxButtons.OK, MessageBoxIcon.Information);
             Process.Start(ApplicationUrls.SetupTutorialUrl);
         }
 
@@ -482,7 +480,7 @@ namespace Minecraft_Wii_U_Mod_Injector {
         }
 
         private void SwimFastToggled(object sender, EventArgs e) {
-            GeckoU.WriteUIntToggle(0x1066879C, 0x3DA00000, 0x3CA3D70A, SwimFast.Checked);
+            GeckoU.WriteUIntToggle(0x1066879C, 0x3DA00000, 0x3CA3D70A, SwimFast.Checked); // This should be a slider?
         }
 
         private void BreakBedrockToggled(object sender, EventArgs e) {
@@ -523,7 +521,7 @@ namespace Minecraft_Wii_U_Mod_Injector {
         }
 
         private void RapidBowToggled(object sender, EventArgs e) {
-            GeckoU.WriteUIntToggle(0x02162F04, 0x3BE00001, 0x3BE00014,
+            GeckoU.WriteUIntToggle(0x02162F04, R31On, 0x3BE00014,
                 RapidBow.Checked); //GetMaxBowDuration__7BowItemSFv
         }
 
@@ -845,7 +843,7 @@ namespace Minecraft_Wii_U_Mod_Injector {
         }
 
         private void SeeThroughBlocksToggled(object sender, EventArgs e) {
-            GeckoU.WriteUIntToggle(0x020E751C, 0x3BE00000, 0x3BE00001, SeeThroughBlocks.Checked);
+            GeckoU.WriteUIntToggle(0x020E751C, R31Off, R31On, SeeThroughBlocks.Checked);
         }
 
         private void LevelXToggled(object sender, EventArgs e) {
@@ -856,9 +854,10 @@ namespace Minecraft_Wii_U_Mod_Injector {
             GeckoU.WriteUIntToggle(0x0255E81C, 0x38000001, 0x38000000, AlwaysInWater.Checked);
         }
 
-        private void EspToggled(object sender, EventArgs e) {
+        private void EspToggled(object sender, EventArgs e)
+        {
             if (!Wallhack.Checked)
-                GeckoU.WriteUIntToggle(0x031B2B4C, 0x38000001, 0x6CC08000, ESP.Checked);
+                Wallhack.Checked = true;
 
             GeckoU.WriteUIntToggle(0x030EA178, 0xFC80E890, 0xFC60E890, ESP.Checked);
             GeckoU.WriteUIntToggle(0x030EA0E8, 0xFC80F890, 0xFC60F890, ESP.Checked);
@@ -874,12 +873,12 @@ namespace Minecraft_Wii_U_Mod_Injector {
         private void UiColorPickerBtnClicked(object sender, EventArgs e) {
             ColorDialog colorDlg = new ColorDialog { AllowFullOpen = true, AnyColor = true };
 
-            if (colorDlg.ShowDialog() == OK) {
-                GeckoU.WriteFloat(0x109C8E68, colorDlg.Color.R / 255.0F);
-                GeckoU.WriteFloat(0x109C8E6C, colorDlg.Color.G / 255.0F);
-                GeckoU.WriteFloat(0x109C8E70, colorDlg.Color.B / 255.0F);
-                GeckoU.WriteFloat(0x109C8E74, colorDlg.Color.A / 255.0F);
-            }
+            if (colorDlg.ShowDialog() != OK) return;
+
+            GeckoU.WriteFloat(0x109C8E68, colorDlg.Color.R / 255.0F);
+            GeckoU.WriteFloat(0x109C8E6C, colorDlg.Color.G / 255.0F);
+            GeckoU.WriteFloat(0x109C8E70, colorDlg.Color.B / 255.0F);
+            GeckoU.WriteFloat(0x109C8E74, colorDlg.Color.A / 255.0F);
         }
 
         private void SuperchargedCreepersToggled(object sender, EventArgs e) {
@@ -907,13 +906,6 @@ namespace Minecraft_Wii_U_Mod_Injector {
             GeckoU.WriteUInt(0x02692DF0, GeckoU.Mix(0x38600000, PotionAmplifierSlider.Value));
         }
 
-        private void XpLevelSliderChanged(object sender, EventArgs e) {
-            var level = (uint)XPLevelSlider.Value;
-            _localPlayer = GeckoU.PeekUInt(GeckoU.PeekUInt(0x10A0A648) + 0x2C);
-
-            GeckoU.CallFunction(0x031EA12C, _localPlayer, level, level, level);
-        }
-
         private void DisableVPadInputToggled(object sender, EventArgs e) {
             GeckoU.WriteUIntToggle(0x011293D0, Blr, 0x38E00001, disableVPadInput.Checked);
         }
@@ -924,9 +916,6 @@ namespace Minecraft_Wii_U_Mod_Injector {
 
         private void DebugConsoleToggled(object sender, EventArgs e) {
             GeckoU.CallFunction(0x02DABA0C, 0x109F95E0, Convert.ToUInt32(DebugConsole.Checked));
-            //DebugConsole.Enabled = false;
-            //await PutTaskDelay(1000);
-            //DebugConsole.Enabled = true;
         }
 
         private void UnlockSignKeyboardToggled(object sender, EventArgs e) {
@@ -1182,7 +1171,7 @@ namespace Minecraft_Wii_U_Mod_Injector {
         }
         private void AirborneSpeedSliderChanged(object sender, EventArgs e) {
             var airbornespeed = Miscellaneous.FloatToInt32Bits((float)AirborneSpeedSlider.Value);
-            uint realValue = GeckoU.PeekUInt(0x10665EF4);
+            var realValue = GeckoU.PeekUInt(0x10665EF4);
             GeckoU.WriteUInt(0x11010000, realValue);
             GeckoU.WriteUInt(0x0258229c, 0x3D001101); // load our address :)
             GeckoU.WriteUInt(0x025822a4, 0xC3E80000); // lfs f31,0x...(..)
@@ -1259,9 +1248,9 @@ namespace Minecraft_Wii_U_Mod_Injector {
             return tool;
         }
 
-        private void CheckItemID(object sender, EventArgs e) {
+        private void CheckItemId(object sender, EventArgs e) {
             var textBox = sender as MetroTextBox;
-            textBox.Tag = IsTool();
+                textBox.Tag = IsTool();
         }
 
         private void GiveCommandBtnClicked(object sender, EventArgs e) {
@@ -1615,28 +1604,28 @@ namespace Minecraft_Wii_U_Mod_Injector {
         }
         #endregion
 
-        private void SetUUID(bool useOrigin = false, byte[] uuid = null) { // THIS CODE IS HORRIBLY UNOPTIMIZED PLEASE DONT LOOK AT IT HDGHASDKFJS
-            var pointer = GeckoU.PeekUInt(0x10AD1C58);
-            var uuidPointer = GeckoU.PeekUInt(0x11FFFFFC);
-            if (uuidPointer == 0x0) {
-                var bytesToSearch = GeckoU.ReadBytes(0x186ED000, 0x2000);
-                var byteString = BitConverter.ToString(bytesToSearch).Replace("-", "");
-                var index = byteString.IndexOf("7795518FE05E875F");
-                if (index == -1) {
-                    MessageBox.Show("Could not replace UUID, try restarting Minecraft.");
-                } else {
-                    var newPtr = 0x186ED000 + (uint)(index / 2) + 0xA;
-                    GeckoU.WriteUInt(0x11FFFFFC, newPtr);
-                    var originalUUID = GeckoU.ReadBytes(newPtr, 16);
-                    GeckoU.WriteBytes(0x11FFFFE0, originalUUID);
-                    GeckoU.WriteBytes(pointer + 0x18, useOrigin ? uuid : GeckoU.ReadBytes(0x11FFFFE0, 16));
-                    GeckoU.WriteBytes(newPtr, useOrigin ? uuid : GeckoU.ReadBytes(0x11FFFFE0, 16));
-                }
-            } else {
-                GeckoU.WriteBytes(pointer + 0x18, useOrigin ? uuid : GeckoU.ReadBytes(0x11FFFFE0, 16));
-                GeckoU.WriteBytes(uuidPointer, useOrigin ? uuid : GeckoU.ReadBytes(0x11FFFFE0, 16));
-            }
-        }
+        //private void SetUuid(bool useOrigin = false, byte[] uuid = null) { // THIS CODE IS HORRIBLY UNOPTIMIZED PLEASE DONT LOOK AT IT HDGHASDKFJS
+        //    var pointer = GeckoU.PeekUInt(0x10AD1C58);
+        //    var uuidPointer = GeckoU.PeekUInt(0x11FFFFFC);
+        //    if (uuidPointer == 0x0) {
+        //        var bytesToSearch = GeckoU.ReadBytes(0x186ED000, 0x2000);
+        //        var byteString = BitConverter.ToString(bytesToSearch).Replace("-", "");
+        //        var index = byteString.IndexOf("7795518FE05E875F");
+        //        if (index == -1) {
+        //            MessageBox.Show("Could not replace UUID, try restarting Minecraft.");
+        //        } else {
+        //            var newPtr = 0x186ED000 + (uint)(index / 2) + 0xA;
+        //            GeckoU.WriteUInt(0x11FFFFFC, newPtr);
+        //            var originalUuid = GeckoU.ReadBytes(newPtr, 16);
+        //            GeckoU.WriteBytes(0x11FFFFE0, originalUuid);
+        //            GeckoU.WriteBytes(pointer + 0x18, useOrigin ? uuid : GeckoU.ReadBytes(0x11FFFFE0, 16));
+        //            GeckoU.WriteBytes(newPtr, useOrigin ? uuid : GeckoU.ReadBytes(0x11FFFFE0, 16));
+        //        }
+        //    } else {
+        //        GeckoU.WriteBytes(pointer + 0x18, useOrigin ? uuid : GeckoU.ReadBytes(0x11FFFFE0, 16));
+        //        GeckoU.WriteBytes(uuidPointer, useOrigin ? uuid : GeckoU.ReadBytes(0x11FFFFE0, 16));
+        //    }
+        //}
 
         #endregion memory editing
 

@@ -2,58 +2,33 @@
 using MetroFramework.Controls;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using MetroFramework;
 
 namespace Minecraft_Wii_U_Mod_Injector.Helpers {
     public class Miscellaneous {
-        public static MainForm Injector = new MainForm();
+        public static MainForm Injector = new();
+        public static int Read { get; private set; }
 
         public Miscellaneous(MainForm iw) {
             Injector = iw;
         }
 
         public static List<Control> AllMetroControls() {
-            List<Control> controls = new List<Control>();
-
-            foreach (Control c in Injector.Controls)
-                if (c is MetroButton || c is MetroLabel || c is MetroTextBox || c is MetroTile)
-                    controls.Add(c);
-
-            foreach (Control c in Injector.NavMenuPnl.Controls)
-                if (c is MetroTile)
-                    controls.Add(c);
-
-            foreach (Control c in Injector.NavMenuMgPnl.Controls)
-                if (c is MetroTile)
-                    controls.Add(c);
-
-            foreach (MetroTabPage page in Injector.MainTabs.TabPages)
-                foreach (Control c in page.Controls)
-                    if (c is MetroCheckBox || c is MetroLabel || c is MetroButton)
-                        controls.Add(c);
-
-            foreach (MetroTabPage page in Injector.MinigamesTabs.TabPages)
-                foreach (Control c in page.Controls)
-                    if (c is MetroCheckBox || c is MetroLabel || c is MetroButton)
-                        controls.Add(c);
+            var controls = Injector.Controls.Cast<Control>().Where(c => c is MetroButton || c is MetroLabel || c is MetroTextBox || c is MetroTile).ToList();
+            controls.AddRange(Injector.NavMenuPnl.Controls.OfType<MetroTile>());
+            controls.AddRange(Injector.NavMenuMgPnl.Controls.OfType<MetroTile>());
+            controls.AddRange(from MetroTabPage page in Injector.MainTabs.TabPages from Control c in page.Controls where c is MetroCheckBox or MetroLabel or MetroButton select c);
+            controls.AddRange(from MetroTabPage page in Injector.MinigamesTabs.TabPages from Control c in page.Controls where c is MetroCheckBox or MetroLabel or MetroButton select c);
 
             return controls;
         }
 
         public static List<Control> AllSliderControls() {
-            List<Control> controls = new List<Control>();
-
-            foreach (MetroTabPage page in Injector.MainTabs.TabPages)
-                foreach (Control c in page.Controls)
-                    if (c is NumericUpDown)
-                        controls.Add(c);
-
-            foreach (MetroTabPage page in Injector.MinigamesTabs.TabPages)
-                foreach (Control c in page.Controls)
-                    if (c is NumericUpDown)
-                        controls.Add(c);
+            var controls = (from MetroTabPage page in Injector.MainTabs.TabPages from Control c in page.Controls select c).OfType<NumericUpDown>().Cast<Control>().ToList();
+            controls.AddRange((from MetroTabPage page in Injector.MinigamesTabs.TabPages from Control c in page.Controls select c).OfType<NumericUpDown>());
 
             return controls;
         }
@@ -65,31 +40,46 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers {
                     if (!string.IsNullOrWhiteSpace((string)c.Tag))
                         switch (c) {
                             case MetroCheckBox cb:
+                            {
                                 cb.UseStyleColors = enabled;
-                                if ((string)cb.Tag == "Host")
-                                    cb.Style = MetroColorStyle.Orange;
-                                else if ((string)cb.Tag == "NonHost") cb.Style = MetroColorStyle.Blue;
+                                cb.Style = (string)cb.Tag switch
+                                {
+                                    "Host" => MetroColorStyle.Orange,
+                                    "NonHost" => MetroColorStyle.Blue,
+                                    _ => cb.Style
+                                };
 
                                 if (!enabled) cb.Style = MetroColorStyle.Default;
                                 break;
+                            }
 
                             case MetroLabel lb:
+                            {
                                 lb.UseStyleColors = enabled;
-                                if ((string)lb.Tag == "Host")
-                                    lb.Style = MetroColorStyle.Orange;
-                                else if ((string)lb.Tag == "NonHost") lb.Style = MetroColorStyle.Blue;
+                                lb.Style = (string)lb.Tag switch
+                                {
+                                    "Host" => MetroColorStyle.Orange,
+                                    "NonHost" => MetroColorStyle.Blue,
+                                    _ => lb.Style
+                                };
 
                                 if (!enabled) lb.Style = MetroColorStyle.Default;
                                 break;
+                            }
 
                             case MetroButton bt:
+                            {
                                 bt.UseStyleColors = enabled;
-                                if ((string)bt.Tag == "Host")
-                                    bt.Style = MetroColorStyle.Orange;
-                                else if ((string)bt.Tag == "NonHost") bt.Style = MetroColorStyle.Blue;
+                                bt.Style = (string)bt.Tag switch
+                                {
+                                    "Host" => MetroColorStyle.Orange,
+                                    "NonHost" => MetroColorStyle.Blue,
+                                    _ => bt.Style
+                                };
 
                                 if (!enabled) bt.Style = MetroColorStyle.Default;
                                 break;
+                            }
                         }
 
                 }
@@ -132,8 +122,9 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers {
             try {
                 // Read the BOM
                 var bom = new byte[4];
-                using (var file = new FileStream(filename, FileMode.Open, FileAccess.Read)) {
-                    file.Read(bom, 0, 4);
+                using (var file = new FileStream(filename, FileMode.Open, FileAccess.Read))
+                {
+                    Read = file.Read(bom, 0, 4);
                 }
 
                 // Analyze the BOM

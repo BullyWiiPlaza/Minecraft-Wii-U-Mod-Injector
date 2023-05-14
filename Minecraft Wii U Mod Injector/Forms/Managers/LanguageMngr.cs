@@ -10,7 +10,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MetroFramework.Controls;
-using MetroFramework.Forms;
 using Minecraft_Wii_U_Mod_Injector.Helpers;
 using Minecraft_Wii_U_Mod_Injector.Helpers.Files;
 using Minecraft_Wii_U_Mod_Injector.Helpers.Win_Forms;
@@ -47,18 +46,16 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Managers {
         }
 
         private async void Init(object sender, EventArgs e) {
-            var index = 0;
-
             if (!Directory.Exists(_langRootDir))
                 Directory.CreateDirectory(_langRootDir);
 
-            if (!Properties.Settings.Default.SeenLangMngr)
+            if (!Settings.Default.SeenLangMngr)
                 Messaging.Show(
                     "Welcome to the language manager, here you can apply or create new language files for the Mod Injector!" +
                     "\nYou are not limited to only making new languages, you can freely customize any text to your liking as-well as edit control" +
                     "\nproperties such as size and location!");
 
-            Properties.Settings.Default.SeenLangMngr = true;
+            Settings.Default.SeenLangMngr = true;
 
             LoadInstalledLangs();
 

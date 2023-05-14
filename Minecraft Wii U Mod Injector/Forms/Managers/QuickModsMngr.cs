@@ -120,7 +120,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Managers
 
                 foreach (MetroCheckBox c in qmmModsList.Controls) c.Checked = false;
 
-                RefreshTileClicked(null, null);
+                RefreshTileClicked();
             }
 
             if (tile.TileCount == 0)
@@ -154,17 +154,11 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Managers
             Messaging.Show("Successfully applied " + QuickModsList.Rows[e.RowIndex].Cells[0].Value + "!");
         }
 
-        private void RefreshTileClicked(object sender, EventArgs e)
+        private void RefreshTileClicked()
         {
             if (QuickModsList.Rows.Count > 0) QuickModsList.Rows.Clear();
 
             LoadInstalledQmms();
-        }
-
-        private void OpenTileClicked(object sender, EventArgs e)
-        {
-            if(Directory.Exists(_qmmRootDir))
-                Process.Start(_qmmRootDir);
         }
 
         #endregion
@@ -307,7 +301,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Managers
                     if (confirmation == DialogResult.Yes)
                         File.Delete((string) QuickModsList.Rows[QuickModsList.CurrentRow.Index].Cells[3].Value);
 
-                    RefreshTileClicked(null, null);
+                    RefreshTileClicked();
                 }
 
             if (e.ClickedItem == undoQmmBtn)

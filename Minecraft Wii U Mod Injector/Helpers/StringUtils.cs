@@ -3,6 +3,7 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text;
+using System.Text.RegularExpressions;
 
 namespace Minecraft_Wii_U_Mod_Injector.Helpers
 {
@@ -41,11 +42,11 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
         {
             int numberChars = hex.Length / 2;
             byte[] bytes = new byte[numberChars];
-            using (var sr = new System.IO.StringReader(hex))
+            using (var sr = new StringReader(hex))
             {
                 for (int i = 0; i < numberChars; i++)
                     bytes[i] =
-                      Convert.ToByte(new string(new char[2] { (char)sr.Read(), (char)sr.Read() }), 16);
+                      Convert.ToByte(new string(new[] { (char)sr.Read(), (char)sr.Read() }), 16);
             }
             return bytes;
         }
@@ -78,6 +79,11 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
         public static string StripInvalidChars(string str)
         {
             return string.Join("", str.Split(Path.GetInvalidFileNameChars()));
+        }
+
+        public static string RemoveEmpties(string str)
+        {
+            return Regex.Replace(str, @"^\s*$\n|\r", string.Empty, RegexOptions.Multiline).TrimEnd();
         }
 
         public static bool ValidateIPv4(string ipString)

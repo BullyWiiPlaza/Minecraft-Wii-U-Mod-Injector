@@ -26,8 +26,9 @@ namespace Minecraft_Wii_U_Mod_Injector.Wii_U.Gecko_U
         /// </summary>
         public void Connect()
         {
-            Console.WriteLine("Connecting...");
-
+#if DEBUG
+            Console.WriteLine(@"GECKO U: Attempting connection to " + Host + @":" + Port);
+#endif
             _tcpClient = new TcpClient
             {
                 NoDelay = true
@@ -40,6 +41,9 @@ namespace Minecraft_Wii_U_Mod_Injector.Wii_U.Gecko_U
             {
                 if (!tcpAsyncResult.AsyncWaitHandle.WaitOne(TimeSpan.FromSeconds(5), false))
                 {
+#if DEBUG
+                    Console.WriteLine(@"GECKO U: Connection to " + Host + @":" + Port + @" unsuccessful, timed out");
+#endif
                     _tcpClient.Close();
                     throw new IOException("Unable to Connect to the Wii U, connection timed-out", new TimeoutException());
                 }
@@ -49,7 +53,11 @@ namespace Minecraft_Wii_U_Mod_Injector.Wii_U.Gecko_U
             }
             catch
             {
+#if DEBUG
+                Console.WriteLine(@"GECKO U: Connection to " + Host + @":" + Port + @" unsuccessful");
+#endif
                 throw new IOException("Unable to connect to the Wii U, connection timed-out", new TimeoutException());
+
             }
 
             NetworkStream = _tcpClient.GetStream();
@@ -62,8 +70,9 @@ namespace Minecraft_Wii_U_Mod_Injector.Wii_U.Gecko_U
             Array.Reverse(CmdMaximumMemoryChunkSizeOut);
             
             CmdMaxBufferSize = BitConverter.ToUInt32(CmdMaximumMemoryChunkSizeOut, 0);
-
-            Console.WriteLine("Connected successfully...");
+#if DEBUG
+            Console.WriteLine(@"GECKO U: Connection to " + Host + @":" + Port + @" successful");
+#endif
         }
 
         /// <summary>
@@ -71,8 +80,9 @@ namespace Minecraft_Wii_U_Mod_Injector.Wii_U.Gecko_U
         /// </summary>
         public void Close()
         {
-            Console.WriteLine("Closing connection...");
-
+#if DEBUG
+            Console.WriteLine(@"GECKO U: Closing connection " + Host + @":" + Port);
+#endif
             try
             {
                 _tcpClient?.Close();
@@ -82,12 +92,16 @@ namespace Minecraft_Wii_U_Mod_Injector.Wii_U.Gecko_U
             }
             catch (Exception)
             {
-                throw new IOException("Unable to close the connection from the Wii U");
+                throw new IOException("Unable to close the connection to the Wii U");
             }
             finally
             {
                 _tcpClient = null;
                 NetworkStream = null;
+
+#if DEBUG
+                Console.WriteLine(@"GECKO U: Connection closed");
+#endif
             }
         }
 
@@ -104,9 +118,13 @@ namespace Minecraft_Wii_U_Mod_Injector.Wii_U.Gecko_U
 
             while (byteCount > 0)
             {
-                Console.WriteLine("Reading " + byteCount + " from the network stream...");
+#if DEBUG
+                Console.WriteLine(@"GECKO U: Reading " + byteCount + @" from the network stream");
+#endif
                 var read = NetworkStream.Read(buffer, offset, (int)byteCount);
-                Console.WriteLine("Read buffer: " + StringUtils.ByteArrayToString(buffer));
+#if DEBUG
+                Console.WriteLine(@"GECKO U: Read buffer: " + StringUtils.ByteArrayToString(buffer));
+#endif
 
                 if (read >= 0)
                 {
@@ -129,7 +147,9 @@ namespace Minecraft_Wii_U_Mod_Injector.Wii_U.Gecko_U
         /// <param name="bytesWritten">Amount of bytes written</param>
         public void Write(byte[] buffer, int byteCount, out uint bytesWritten)
         {
-            Console.WriteLine("Writing to the network stream: " + StringUtils.ByteArrayToString(buffer));
+#if DEBUG
+            Console.WriteLine(@"GECKO U: Writing to the network stream: " + StringUtils.ByteArrayToString(buffer));
+#endif
             NetworkStream.Write(buffer, 0, byteCount);
 
             if (byteCount >= 0)
@@ -141,7 +161,9 @@ namespace Minecraft_Wii_U_Mod_Injector.Wii_U.Gecko_U
                 bytesWritten = 0;
             }
 
-            Console.WriteLine("Flushing network stream...");
+#if DEBUG
+            Console.WriteLine(@"GECKO U: Flushing network stream");
+#endif
             NetworkStream.Flush();
         }
     }

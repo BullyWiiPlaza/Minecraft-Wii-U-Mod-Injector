@@ -111,12 +111,12 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.WarningLbl.AutoSize = true;
             this.WarningLbl.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.WarningLbl.Location = new System.Drawing.Point(80, 60);
+            this.WarningLbl.Location = new System.Drawing.Point(126, 60);
             this.WarningLbl.Name = "WarningLbl";
-            this.WarningLbl.Size = new System.Drawing.Size(507, 25);
+            this.WarningLbl.Size = new System.Drawing.Size(412, 25);
             this.WarningLbl.Style = MetroFramework.MetroColorStyle.Red;
             this.WarningLbl.TabIndex = 5;
-            this.WarningLbl.Text = "You won\'t see changes and other people won\'t unless they rejoin!";
+            this.WarningLbl.Text = "You and others won\'t see changes unless they rejoin!";
             this.WarningLbl.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.WarningLbl.UseStyleColors = true;
             // 

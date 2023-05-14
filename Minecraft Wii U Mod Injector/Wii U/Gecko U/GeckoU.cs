@@ -81,6 +81,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Wii_U.Gecko_U {
         /// </summary>
         /// <param name="address">Address to read</param>
         /// <param name="length">Length of the bytes</param>
+        /// <param name="handleZByte"></param>
         /// <returns></returns>
         public byte[] ReadBytes(uint address, uint length, bool handleZByte = true) {
             try {
@@ -542,6 +543,8 @@ namespace Minecraft_Wii_U_Mod_Injector.Wii_U.Gecko_U {
         /// </summary>
         /// <param name="address">Address to write to</param>
         /// <param name="value">String to write</param>
+        /// <param name="type">Encoding Type of the string</param>
+        /// <param name="terminate"></param>
         public void WriteString(uint address, string value, Encoding type, bool terminate = false) {
             byte[] bytes;
             if (terminate) {

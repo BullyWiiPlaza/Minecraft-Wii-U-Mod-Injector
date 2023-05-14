@@ -1,24 +1,31 @@
-[Release v5.3.3 (May, 2023)]
+[Release v5.3.3 (TBD, 2023)]
 
 # Overview
 
-This update adds several mods and fixes a couple of bugs
+This update adds several mods, has several additions and fixes a couple of bugs
 
 # Changes
 
 ### General Additions & Updates
 
+- Player(s) / Item(s) > Player Options > Added various information fields for players (just yourself for now)
+- Player(s) / Item(s) > Player Options > Added "Jump" and "Play Ring Sound Effect
+- Player(s) / Item(s) > Player Options > Fixed various incorrect Tool Tips
+- Player(s) / Item(s) > Player Options > Moved "XP Level" to the Player Options window
 - World and Entities > Bubble Column Anywhere
+- Cemu Graphics Pack Manager > Export All, which exports all mods to individual graphic packs so you can toggle them on and off in-game
 - Cemu Graphics Pack Manager > Included several missing mods
 - Cemu Graphics Pack Manager > Added Tool Tips
 - Cemu Graphics Pack Manager > Updated old mod names
 - Windows > File and Folder Browser dialogs now use a modernized window
+- Tool Tips > Several Tool Tips have been adjusted to provide more information
 
 # Fixes
 
 ### General Fixes
 
 - World and Entities > World Generation Editor > Nether Size now correctly adjusts the Nether instead of the overworld
-- Navigation Menu > Clicking on any Minigames sub catagory while the currently selected tab is not Minigames will now switch the Tab to the Minigames tab
+- Navigation Menu > Clicking on the Minigames tile will only pop out the menu rather than switch to the last selected TabPage
+- Navigation Menu > Clicking on any Minigames sub category while the currently selected tab is not Minigames will now switch the Tab to the Minigames tab
 - Cemu Graphics Pack Manager > Overwriting a existing Graphics Pack no longer throws an exception
 - Cemu Graphics Pack Manager > Fixed an issue where the selected mods had a chance of duplicating in the patches.txt file

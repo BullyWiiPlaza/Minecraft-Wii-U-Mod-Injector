@@ -152,7 +152,8 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
                         if (DateTime.Now.ToString("MM") == "10")
                         {
                             Injector.Style = Injector.StyleMngr.Style = MetroColorStyle.Orange;
-                            Injector.BuildTile.Text = LocalVer + "\r\nHalloween Edition";
+                            Injector.BuildTile.Text = LocalVer + @"
+Halloween Edition";
                             Injector.ColorsBox.Enabled = false;
                             Injector.Refresh();
                         }
@@ -162,7 +163,8 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
                         {
                             Injector.Style = MetroColorStyle.Red;
                             Injector.StyleMngr.Style = MetroColorStyle.Green;
-                            Injector.BuildTile.Text = LocalVer + "\r\nChristmas Edition";
+                            Injector.BuildTile.Text = LocalVer + @"
+Christmas Edition";
                             Injector.ColorsBox.Enabled = false;
                             Injector.Refresh();
                         }

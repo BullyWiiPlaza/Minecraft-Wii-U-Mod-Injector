@@ -34,14 +34,15 @@
             this.ToolTips = new MetroFramework.Components.MetroToolTip();
             this.WoolMultiplier = new System.Windows.Forms.NumericUpDown();
             this.DontLoseWoolBox = new MetroFramework.Controls.MetroCheckBox();
+            this.BabyRateSlider = new System.Windows.Forms.NumericUpDown();
             this.WoolMultiplierLbl = new MetroFramework.Controls.MetroLabel();
             this.SheepLbl = new MetroFramework.Controls.MetroLabel();
             this.armorPanel = new MetroFramework.Controls.MetroPanel();
             this.VillagersLbl = new MetroFramework.Controls.MetroLabel();
             this.VillagersPnl = new MetroFramework.Controls.MetroPanel();
-            this.StyleExtender = new MetroFramework.Components.MetroStyleExtender(this.components);
-            this.ProfessionLbl = new MetroFramework.Controls.MetroLabel();
             this.ProfessionBox = new MetroFramework.Controls.MetroComboBox();
+            this.ProfessionLbl = new MetroFramework.Controls.MetroLabel();
+            this.StyleExtender = new MetroFramework.Components.MetroStyleExtender(this.components);
             this.LlamaLbl = new MetroFramework.Controls.MetroLabel();
             this.LlamaPnl = new MetroFramework.Controls.MetroPanel();
             this.LlamaVariantBox = new MetroFramework.Controls.MetroComboBox();
@@ -56,17 +57,16 @@
             this.RabbitVariantLbl = new MetroFramework.Controls.MetroLabel();
             this.ZombieLbl = new MetroFramework.Controls.MetroLabel();
             this.ZombiePnl = new MetroFramework.Controls.MetroPanel();
-            this.BabyRateSlider = new System.Windows.Forms.NumericUpDown();
             this.BabyRateLbl = new MetroFramework.Controls.MetroLabel();
             ((System.ComponentModel.ISupportInitialize)(this.StyleMngr)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.WoolMultiplier)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BabyRateSlider)).BeginInit();
             this.armorPanel.SuspendLayout();
             this.VillagersPnl.SuspendLayout();
             this.LlamaPnl.SuspendLayout();
             this.ParrotPnl.SuspendLayout();
             this.RabbitPnl.SuspendLayout();
             this.ZombiePnl.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.BabyRateSlider)).BeginInit();
             this.SuspendLayout();
             // 
             // StyleMngr
@@ -112,9 +112,27 @@
             this.DontLoseWoolBox.TabIndex = 177;
             this.DontLoseWoolBox.Text = "Don\'t lose wool";
             this.DontLoseWoolBox.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTips.SetToolTip(this.DontLoseWoolBox, "Whether sheep will not lose their wool when sheared");
+            this.ToolTips.SetToolTip(this.DontLoseWoolBox, "Sheep will not lose their wool when sheared");
             this.DontLoseWoolBox.UseSelectable = true;
             this.DontLoseWoolBox.CheckedChanged += new System.EventHandler(this.DontLoseWoolBoxChecked);
+            // 
+            // BabyRateSlider
+            // 
+            this.StyleExtender.SetApplyMetroTheme(this.BabyRateSlider, true);
+            this.BabyRateSlider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.BabyRateSlider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
+            this.BabyRateSlider.Location = new System.Drawing.Point(82, 20);
+            this.BabyRateSlider.Name = "BabyRateSlider";
+            this.BabyRateSlider.Size = new System.Drawing.Size(197, 20);
+            this.BabyRateSlider.TabIndex = 167;
+            this.BabyRateSlider.Tag = "";
+            this.ToolTips.SetToolTip(this.BabyRateSlider, "How frequent do baby zombies spawn?");
+            this.BabyRateSlider.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            this.BabyRateSlider.ValueChanged += new System.EventHandler(this.BabyRateSliderChanged);
             // 
             // WoolMultiplierLbl
             // 
@@ -196,23 +214,6 @@
             this.VillagersPnl.VerticalScrollbarHighlightOnWheel = false;
             this.VillagersPnl.VerticalScrollbarSize = 10;
             // 
-            // StyleExtender
-            // 
-            this.StyleExtender.Theme = MetroFramework.MetroThemeStyle.Dark;
-            // 
-            // ProfessionLbl
-            // 
-            this.ProfessionLbl.AutoSize = true;
-            this.ProfessionLbl.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.ProfessionLbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.ProfessionLbl.Location = new System.Drawing.Point(3, 10);
-            this.ProfessionLbl.Name = "ProfessionLbl";
-            this.ProfessionLbl.Size = new System.Drawing.Size(75, 19);
-            this.ProfessionLbl.TabIndex = 167;
-            this.ProfessionLbl.Tag = "";
-            this.ProfessionLbl.Text = "Profession:";
-            this.ProfessionLbl.Theme = MetroFramework.MetroThemeStyle.Dark;
-            // 
             // ProfessionBox
             // 
             this.ProfessionBox.FormattingEnabled = true;
@@ -229,8 +230,26 @@
             this.ProfessionBox.Size = new System.Drawing.Size(165, 29);
             this.ProfessionBox.TabIndex = 168;
             this.ProfessionBox.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.ToolTips.SetToolTip(this.ProfessionBox, "What profession should all villagers be?");
             this.ProfessionBox.UseSelectable = true;
             this.ProfessionBox.SelectedIndexChanged += new System.EventHandler(this.ProfessionBoxChanged);
+            // 
+            // ProfessionLbl
+            // 
+            this.ProfessionLbl.AutoSize = true;
+            this.ProfessionLbl.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.ProfessionLbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.ProfessionLbl.Location = new System.Drawing.Point(3, 10);
+            this.ProfessionLbl.Name = "ProfessionLbl";
+            this.ProfessionLbl.Size = new System.Drawing.Size(75, 19);
+            this.ProfessionLbl.TabIndex = 167;
+            this.ProfessionLbl.Tag = "";
+            this.ProfessionLbl.Text = "Profession:";
+            this.ProfessionLbl.Theme = MetroFramework.MetroThemeStyle.Dark;
+            // 
+            // StyleExtender
+            // 
+            this.StyleExtender.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // LlamaLbl
             // 
@@ -279,6 +298,7 @@
             this.LlamaVariantBox.Size = new System.Drawing.Size(185, 29);
             this.LlamaVariantBox.TabIndex = 168;
             this.LlamaVariantBox.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.ToolTips.SetToolTip(this.LlamaVariantBox, "Which variant should all llamas be?");
             this.LlamaVariantBox.UseSelectable = true;
             this.LlamaVariantBox.SelectedIndexChanged += new System.EventHandler(this.LlamaVariantBoxChanged);
             // 
@@ -343,6 +363,7 @@
             this.ParrotVariantBox.Size = new System.Drawing.Size(185, 29);
             this.ParrotVariantBox.TabIndex = 168;
             this.ParrotVariantBox.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.ToolTips.SetToolTip(this.ParrotVariantBox, "What variant should all parrots be?");
             this.ParrotVariantBox.UseSelectable = true;
             this.ParrotVariantBox.SelectedIndexChanged += new System.EventHandler(this.ParrotVariantBoxChanged);
             // 
@@ -409,6 +430,7 @@
             this.RabbitVariantBox.Size = new System.Drawing.Size(185, 29);
             this.RabbitVariantBox.TabIndex = 168;
             this.RabbitVariantBox.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.ToolTips.SetToolTip(this.RabbitVariantBox, "What variant should all rabbits be?");
             this.RabbitVariantBox.UseSelectable = true;
             this.RabbitVariantBox.SelectedIndexChanged += new System.EventHandler(this.RabbitVariantBoxChanged);
             // 
@@ -458,24 +480,6 @@
             this.ZombiePnl.VerticalScrollbarHighlightOnWheel = false;
             this.ZombiePnl.VerticalScrollbarSize = 10;
             // 
-            // BabyRateSlider
-            // 
-            this.StyleExtender.SetApplyMetroTheme(this.BabyRateSlider, true);
-            this.BabyRateSlider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.BabyRateSlider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
-            this.BabyRateSlider.Location = new System.Drawing.Point(82, 20);
-            this.BabyRateSlider.Name = "BabyRateSlider";
-            this.BabyRateSlider.Size = new System.Drawing.Size(197, 20);
-            this.BabyRateSlider.TabIndex = 167;
-            this.BabyRateSlider.Tag = "";
-            this.ToolTips.SetToolTip(this.BabyRateSlider, "How frequent do baby zombies spawn?");
-            this.BabyRateSlider.Value = new decimal(new int[] {
-            5,
-            0,
-            0,
-            0});
-            this.BabyRateSlider.ValueChanged += new System.EventHandler(this.BabyRateSliderChanged);
-            // 
             // BabyRateLbl
             // 
             this.BabyRateLbl.AutoSize = true;
@@ -518,6 +522,7 @@
             this.Load += new System.EventHandler(this.Init);
             ((System.ComponentModel.ISupportInitialize)(this.StyleMngr)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.WoolMultiplier)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BabyRateSlider)).EndInit();
             this.armorPanel.ResumeLayout(false);
             this.armorPanel.PerformLayout();
             this.VillagersPnl.ResumeLayout(false);
@@ -530,7 +535,6 @@
             this.RabbitPnl.PerformLayout();
             this.ZombiePnl.ResumeLayout(false);
             this.ZombiePnl.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.BabyRateSlider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

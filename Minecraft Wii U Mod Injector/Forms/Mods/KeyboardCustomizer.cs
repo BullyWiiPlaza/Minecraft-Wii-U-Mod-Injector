@@ -1,13 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
 using System.Text;
 using MetroFramework.Controls;
 using MetroFramework.Forms;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Minecraft_Wii_U_Mod_Injector.Helpers;
 
@@ -31,7 +25,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods {
         private void ApplyKeyboardChanges(object sender, EventArgs e) {
             foreach (Control txt in metroPanel2.Controls) {
                 if (txt is MetroTextBox && String.IsNullOrWhiteSpace(txt.Text)) {
-                    MessageBox.Show("One or more of the keys are empty.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                    MessageBox.Show(@"One or more of the keys are empty.", @"Error", MessageBoxButtons.OK, MessageBoxIcon.Hand);
                     return;
                 } else {
                     break;
@@ -51,38 +45,38 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods {
             phraseInput.Clear();
             MainForm.GeckoU.WriteString(0x15A64AF8, "qwertyuiop@asdfghjkl'!zxcvbnm,.?", Encoding.BigEndianUnicode);
             MainForm.GeckoU.WriteString(0x15A64BF8, "qwertyuiop@asdfghjkl'!zxcvbnm,.?", Encoding.BigEndianUnicode);
-            customKeyQ.Text = "q";
-            customKeyW.Text = "w";
-            customKeyE.Text = "e";
-            customKeyR.Text = "r";
-            customKeyT.Text = "t";
-            customKeyY.Text = "y";
-            customKeyU.Text = "u";
-            customKeyI.Text = "i";
-            customKeyO.Text = "o";
-            customKeyP.Text = "p";
-            customKeyAT.Text = "@";
-            customKeyA.Text = "a";
-            customKeyS.Text = "s";
-            customKeyD.Text = "d";
-            customKeyF.Text = "f";
-            customKeyG.Text = "g";
-            customKeyH.Text = "h";
-            customKeyJ.Text = "j";
-            customKeyK.Text = "k";
-            customKeyL.Text = "l";
-            customKeyApostrophe.Text = "'";
-            customKeyExclamation.Text = "!";
-            customKeyZ.Text = "z";
-            customKeyX.Text = "x";
-            customKeyC.Text = "c";
-            customKeyV.Text = "v";
-            customKeyB.Text = "b";
-            customKeyN.Text = "n";
-            customKeyM.Text = "m";
-            customKeyComma.Text = ",";
-            customKeyPeriod.Text = ".";
-            customKeyQuestion.Text = "?";
+            customKeyQ.Text = @"q";
+            customKeyW.Text = @"w";
+            customKeyE.Text = @"e";
+            customKeyR.Text = @"r";
+            customKeyT.Text = @"t";
+            customKeyY.Text = @"y";
+            customKeyU.Text = @"u";
+            customKeyI.Text = @"i";
+            customKeyO.Text = @"o";
+            customKeyP.Text = @"p";
+            customKeyAT.Text = @"@";
+            customKeyA.Text = @"a";
+            customKeyS.Text = @"s";
+            customKeyD.Text = @"d";
+            customKeyF.Text = @"f";
+            customKeyG.Text = @"g";
+            customKeyH.Text = @"h";
+            customKeyJ.Text = @"j";
+            customKeyK.Text = @"k";
+            customKeyL.Text = @"l";
+            customKeyApostrophe.Text = @"'";
+            customKeyExclamation.Text = @"!";
+            customKeyZ.Text = @"z";
+            customKeyX.Text = @"x";
+            customKeyC.Text = @"c";
+            customKeyV.Text = @"v";
+            customKeyB.Text = @"b";
+            customKeyN.Text = @"n";
+            customKeyM.Text = @"m";
+            customKeyComma.Text = @",";
+            customKeyPeriod.Text = @".";
+            customKeyQuestion.Text = @"?";
         }
     }
 }

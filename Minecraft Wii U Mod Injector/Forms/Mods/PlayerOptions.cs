@@ -14,6 +14,8 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods
         private readonly string _savedDataDir = Application.StartupPath + @"\Saved\Data\";
 
         private readonly uint _localPlayer = MainForm.GeckoU.PeekUInt(MainForm.GeckoU.PeekUInt(0x10A0A648) + 0x2C);
+        private readonly uint _Player = MainForm.GeckoU.PeekUInt(MainForm.GeckoU.PeekUInt(0x109CD8E4) + 0x34);
+        
 
         private readonly uint[] _capeIdTable =
         {
@@ -39,12 +41,13 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods
         {
             DiscordRP.SetPresence("Connected", "Player Options window");
 #if DEBUG
-            Console.WriteLine(@"LocalPlayer: 0x" + _localPlayer.ToString("X4"));
+            Console.WriteLine(@"PLAYER OPTIONS: LocalPlayer: 0x" + _localPlayer.ToString("X4"));
+            Console.WriteLine(@"PLAYER OPTIONS: SelfPlayer: 0x" + _Player.ToString("X4"));
 #endif
             if (!System.IO.Directory.Exists(_savedDataDir))
                 System.IO.Directory.CreateDirectory(_savedDataDir);
 
-            foreach (string skin in _savedData.GetKeys("Skins"))
+            foreach (var skin in _savedData.GetKeys("Skins"))
                 SkinList.Items.Add(_savedData.Read(skin, "Skins") + " | " + skin);
         }
 
@@ -102,6 +105,22 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods
             MainForm.GeckoU.CallFunction(0x02F6FC2C, 0, capeId, 0);
         }
 
+        private void SwapOffhandBtn_Click(object sender, EventArgs e)
+        {
+            var xyzPos = MainForm.GeckoU.PeekUInt(MainForm.GeckoU.PeekUInt(0x109CD8E4) + 0x34) + 0x54;
+            var packet = MainForm.GeckoU.CallFunction(0x028AEC5C, 0x0, 0x6, xyzPos, MainForm.GeckoU.PeekUInt(0x109C46A0), 0x0);
+            MainForm.GeckoU.WriteBytes(0x12000000, new byte[8]);
+            MainForm.GeckoU.WriteUInt(0x12000000, packet);
+            MainForm.GeckoU.CallFunction64(0x0304A5D8, MainForm.GeckoU.PeekUInt(MainForm.GeckoU.PeekUInt(MainForm.GeckoU.PeekUInt(0x109CD8E4) + 0x34) + 0x878), 0x12000000);
+        }
+
+        private void XpLevelSliderChanged(object sender, EventArgs e)
+        {
+            var level = (uint)XpLevelSlider.Value;
+
+            MainForm.GeckoU.CallFunction(0x031EA12C, _localPlayer, level, level, level);
+        }
+
         #region skins
         private void AddSkinBtnClicked(object sender, EventArgs e)
         {
@@ -141,12 +160,41 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods
         }
         #endregion
 
-        private void SwapOffhandBtn_Click(object sender, EventArgs e) {
-            var xyzPos = MainForm.GeckoU.PeekUInt(MainForm.GeckoU.PeekUInt(0x109CD8E4) + 0x34) + 0x54;
-            var packet = MainForm.GeckoU.CallFunction(0x028AEC5C, 0x0, 0x6, xyzPos, MainForm.GeckoU.PeekUInt(0x109C46A0), 0x0);
-            MainForm.GeckoU.WriteBytes(0x12000000, new byte[8]);
-            MainForm.GeckoU.WriteUInt(0x12000000, packet);
-            MainForm.GeckoU.CallFunction64(0x0304A5D8, MainForm.GeckoU.PeekUInt(MainForm.GeckoU.PeekUInt(MainForm.GeckoU.PeekUInt(0x109CD8E4) + 0x34) + 0x878), 0x12000000);
+        private void UpdatePlrInfoBtnClicked(object sender, EventArgs e)
+        {
+            ModeratorBox.Text = Convert.ToBoolean(MainForm.GeckoU.CallFunction(0x0272B714, _Player)).ToString();
+            InvisiblePrivilegeBox.Text = Convert.ToBoolean(MainForm.GeckoU.CallFunction(0x0271B6A0, _Player, 0x0)).ToString();
+            InvulnerablePrivilegeBox.Text = Convert.ToBoolean(MainForm.GeckoU.CallFunction(0x0270F670, _Player, 0x0)).ToString();
+            CanHarmAnimalsBox.Text = Convert.ToBoolean(MainForm.GeckoU.CallFunction(0x0272B304, _Player)).ToString();
+            CanHarmPlayersBox.Text = Convert.ToBoolean(MainForm.GeckoU.CallFunction(0x0271B720, _Player)).ToString();
+            CanFlyBox.Text = Convert.ToBoolean(MainForm.GeckoU.CallFunction(0x0271AA10, _Player)).ToString();
+            CanIgnoreExhaustionBox.Text = Convert.ToBoolean(MainForm.GeckoU.CallFunction(0x0271BA08, _Player)).ToString();
+            CanMineBox.Text = Convert.ToBoolean(MainForm.GeckoU.CallFunction(0x0272B284, _Player)).ToString();
+            CanBuildBox.Text = Convert.ToBoolean(MainForm.GeckoU.CallFunction(0x027256D0, _Player, 0x0)).ToString();
+            IsXpDropperBox.Text = Convert.ToBoolean(MainForm.GeckoU.CallFunction(0x027259E8, _Player)).ToString();
+            IsCreativeFlyingBox.Text = Convert.ToBoolean(MainForm.GeckoU.CallFunction(0x0272B74C, _Player, 0x0)).ToString();
+            IsHurtBox.Text = Convert.ToBoolean(MainForm.GeckoU.CallFunction(0x02725624, _Player, 0x0)).ToString();
+            IsImmobileBox.Text = Convert.ToBoolean(MainForm.GeckoU.CallFunction(0x02712158, _Player, 0x0)).ToString();
+            IsInWallBox.Text = Convert.ToBoolean(MainForm.GeckoU.CallFunction(0x02720690, _Player, 0x0)).ToString();
+            IsLocalPlayerBox.Text = Convert.ToBoolean(MainForm.GeckoU.CallFunction(0x027206E4, _Player)).ToString();
+            IsPushedByWaterBox.Text = Convert.ToBoolean(MainForm.GeckoU.CallFunction(0x02726FB0, _Player, 0x0)).ToString();
+            IsReducedDebugBox.Text = Convert.ToBoolean(MainForm.GeckoU.CallFunction(0x02728584, _Player, 0x0)).ToString();
+            IsRespawnedForcedBox.Text = Convert.ToBoolean(MainForm.GeckoU.CallFunction(0x02721D5C, _Player, 0x0)).ToString();
+            //IsSendMsgBox.Text = Convert.ToBoolean(MainForm.GeckoU.CallFunction(0x026D2F80, _Player, 0x0)).ToString(); // Crashes? Not sure how else to call this..
+            IsSleepingBox.Text = Convert.ToBoolean(MainForm.GeckoU.CallFunction(0x02721D10, _Player, 0x0)).ToString();
+            IsSleepingEnoughBox.Text = Convert.ToBoolean(MainForm.GeckoU.CallFunction(0x02721D18, _Player, 0x0)).ToString();
+            IsSpectatingPlayerBox.Text = Convert.ToBoolean(MainForm.GeckoU.CallFunction(0x0272C57C, _Player, 0x0)).ToString();
+            IsStarvingBox.Text = Convert.ToBoolean(MainForm.GeckoU.CallFunction(0x0270BC78, _Player, 0x0)).ToString();
+        }
+
+        private void JumpBtnClicked(object sender, EventArgs e)
+        {
+            MainForm.GeckoU.CallFunction(0x02721E08, _Player);
+        }
+
+        private void PlayRingSndBtnClicked(object sender, EventArgs e)
+        {
+            MainForm.GeckoU.CallFunction(0x0270FD94, _Player, 0x0);
         }
     }
 }

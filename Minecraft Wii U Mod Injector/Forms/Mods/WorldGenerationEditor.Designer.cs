@@ -32,8 +32,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WorldGenerationEditor));
             this.StyleMngr = new MetroFramework.Components.MetroStyleManager(this.components);
             this.ToolTips = new MetroFramework.Components.MetroToolTip();
-            this.Structures = new MetroFramework.Controls.MetroLabel();
-            this.StructuresPanel = new MetroFramework.Controls.MetroPanel();
             this.IncreasedVillageSpawn = new MetroFramework.Controls.MetroCheckBox();
             this.IncreasedStrongholdSpawn = new MetroFramework.Controls.MetroCheckBox();
             this.IncreasedWoodlandMansionSpawn = new MetroFramework.Controls.MetroCheckBox();
@@ -43,6 +41,13 @@
             this.IncreasedStructuresSpawn = new MetroFramework.Controls.MetroCheckBox();
             this.IncreasedOceanMonumentSpawn = new MetroFramework.Controls.MetroCheckBox();
             this.IncreasedOceanRuinsSpawn = new MetroFramework.Controls.MetroCheckBox();
+            this.GeneratePlainWorld = new MetroFramework.Controls.MetroCheckBox();
+            this.FreezingWorld = new MetroFramework.Controls.MetroCheckBox();
+            this.GenerateAmplifiedWorld = new MetroFramework.Controls.MetroCheckBox();
+            this.StoneWorld = new MetroFramework.Controls.MetroCheckBox();
+            this.NoTerrain = new MetroFramework.Controls.MetroCheckBox();
+            this.Structures = new MetroFramework.Controls.MetroLabel();
+            this.StructuresPanel = new MetroFramework.Controls.MetroPanel();
             this.Terrain = new MetroFramework.Controls.MetroLabel();
             this.TerrainPanel = new MetroFramework.Controls.MetroPanel();
             this.NetherSizeSlider = new System.Windows.Forms.NumericUpDown();
@@ -50,11 +55,6 @@
             this.WorldSizeBtn = new MetroFramework.Controls.MetroButton();
             this.WorldSizeSlider = new System.Windows.Forms.NumericUpDown();
             this.WorldSize = new MetroFramework.Controls.MetroLabel();
-            this.GeneratePlainWorld = new MetroFramework.Controls.MetroCheckBox();
-            this.FreezingWorld = new MetroFramework.Controls.MetroCheckBox();
-            this.GenerateAmplifiedWorld = new MetroFramework.Controls.MetroCheckBox();
-            this.StoneWorld = new MetroFramework.Controls.MetroCheckBox();
-            this.NoTerrain = new MetroFramework.Controls.MetroCheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.StyleMngr)).BeginInit();
             this.StructuresPanel.SuspendLayout();
             this.TerrainPanel.SuspendLayout();
@@ -72,6 +72,217 @@
             this.ToolTips.Style = MetroFramework.MetroColorStyle.Default;
             this.ToolTips.StyleManager = null;
             this.ToolTips.Theme = MetroFramework.MetroThemeStyle.Dark;
+            // 
+            // IncreasedVillageSpawn
+            // 
+            this.IncreasedVillageSpawn.AutoSize = true;
+            this.IncreasedVillageSpawn.BackColor = System.Drawing.Color.Transparent;
+            this.IncreasedVillageSpawn.Location = new System.Drawing.Point(3, 158);
+            this.IncreasedVillageSpawn.Name = "IncreasedVillageSpawn";
+            this.IncreasedVillageSpawn.Size = new System.Drawing.Size(149, 15);
+            this.IncreasedVillageSpawn.TabIndex = 152;
+            this.IncreasedVillageSpawn.Tag = "";
+            this.IncreasedVillageSpawn.Text = "Increased Village Spawn";
+            this.IncreasedVillageSpawn.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.ToolTips.SetToolTip(this.IncreasedVillageSpawn, "Increases the spawn rate of Villages");
+            this.IncreasedVillageSpawn.UseSelectable = true;
+            this.IncreasedVillageSpawn.CheckedChanged += new System.EventHandler(this.IncreasedVillageSpawnToggled);
+            // 
+            // IncreasedStrongholdSpawn
+            // 
+            this.IncreasedStrongholdSpawn.AutoSize = true;
+            this.IncreasedStrongholdSpawn.BackColor = System.Drawing.Color.Transparent;
+            this.IncreasedStrongholdSpawn.Location = new System.Drawing.Point(3, 137);
+            this.IncreasedStrongholdSpawn.Name = "IncreasedStrongholdSpawn";
+            this.IncreasedStrongholdSpawn.Size = new System.Drawing.Size(173, 15);
+            this.IncreasedStrongholdSpawn.TabIndex = 150;
+            this.IncreasedStrongholdSpawn.Tag = "";
+            this.IncreasedStrongholdSpawn.Text = "Increased Stronghold Spawn";
+            this.IncreasedStrongholdSpawn.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.ToolTips.SetToolTip(this.IncreasedStrongholdSpawn, "Increases the spawn rate of Strongholds");
+            this.IncreasedStrongholdSpawn.UseSelectable = true;
+            this.IncreasedStrongholdSpawn.CheckedChanged += new System.EventHandler(this.IncreasedStrongholdSpawnToggled);
+            // 
+            // IncreasedWoodlandMansionSpawn
+            // 
+            this.IncreasedWoodlandMansionSpawn.AutoSize = true;
+            this.IncreasedWoodlandMansionSpawn.BackColor = System.Drawing.Color.Transparent;
+            this.IncreasedWoodlandMansionSpawn.Location = new System.Drawing.Point(3, 179);
+            this.IncreasedWoodlandMansionSpawn.Name = "IncreasedWoodlandMansionSpawn";
+            this.IncreasedWoodlandMansionSpawn.Size = new System.Drawing.Size(218, 15);
+            this.IncreasedWoodlandMansionSpawn.TabIndex = 151;
+            this.IncreasedWoodlandMansionSpawn.Tag = "";
+            this.IncreasedWoodlandMansionSpawn.Text = "Increased Woodland Mansion Spawn";
+            this.IncreasedWoodlandMansionSpawn.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.ToolTips.SetToolTip(this.IncreasedWoodlandMansionSpawn, "Increases the spawn rate of Woodland\r\nMansions");
+            this.IncreasedWoodlandMansionSpawn.UseSelectable = true;
+            this.IncreasedWoodlandMansionSpawn.CheckedChanged += new System.EventHandler(this.IncreasedWoodlandMansionSpawnToggled);
+            // 
+            // IncreasedBuriedTreasureSpawn
+            // 
+            this.IncreasedBuriedTreasureSpawn.AutoSize = true;
+            this.IncreasedBuriedTreasureSpawn.BackColor = System.Drawing.Color.Transparent;
+            this.IncreasedBuriedTreasureSpawn.Location = new System.Drawing.Point(3, 11);
+            this.IncreasedBuriedTreasureSpawn.Name = "IncreasedBuriedTreasureSpawn";
+            this.IncreasedBuriedTreasureSpawn.Size = new System.Drawing.Size(194, 15);
+            this.IncreasedBuriedTreasureSpawn.TabIndex = 144;
+            this.IncreasedBuriedTreasureSpawn.Tag = "";
+            this.IncreasedBuriedTreasureSpawn.Text = "Increased Buried Treasure Spawn";
+            this.IncreasedBuriedTreasureSpawn.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.ToolTips.SetToolTip(this.IncreasedBuriedTreasureSpawn, "Increases the spawn rate of Buried Treasure");
+            this.IncreasedBuriedTreasureSpawn.UseSelectable = true;
+            this.IncreasedBuriedTreasureSpawn.CheckedChanged += new System.EventHandler(this.IncreasedBuriedTreasureSpawnToggled);
+            // 
+            // IncreasedShipwreckSpawn
+            // 
+            this.IncreasedShipwreckSpawn.AutoSize = true;
+            this.IncreasedShipwreckSpawn.BackColor = System.Drawing.Color.Transparent;
+            this.IncreasedShipwreckSpawn.Location = new System.Drawing.Point(3, 116);
+            this.IncreasedShipwreckSpawn.Name = "IncreasedShipwreckSpawn";
+            this.IncreasedShipwreckSpawn.Size = new System.Drawing.Size(168, 15);
+            this.IncreasedShipwreckSpawn.TabIndex = 149;
+            this.IncreasedShipwreckSpawn.Tag = "";
+            this.IncreasedShipwreckSpawn.Text = "Increased Shipwreck Spawn";
+            this.IncreasedShipwreckSpawn.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.ToolTips.SetToolTip(this.IncreasedShipwreckSpawn, "Increases the spawn rate of Shipwrecks");
+            this.IncreasedShipwreckSpawn.UseSelectable = true;
+            this.IncreasedShipwreckSpawn.CheckedChanged += new System.EventHandler(this.IncreasedShipwreckSpawnToggled);
+            // 
+            // IncreasedMineshaftSpawn
+            // 
+            this.IncreasedMineshaftSpawn.AutoSize = true;
+            this.IncreasedMineshaftSpawn.BackColor = System.Drawing.Color.Transparent;
+            this.IncreasedMineshaftSpawn.Location = new System.Drawing.Point(3, 32);
+            this.IncreasedMineshaftSpawn.Name = "IncreasedMineshaftSpawn";
+            this.IncreasedMineshaftSpawn.Size = new System.Drawing.Size(167, 15);
+            this.IncreasedMineshaftSpawn.TabIndex = 145;
+            this.IncreasedMineshaftSpawn.Tag = "";
+            this.IncreasedMineshaftSpawn.Text = "Increased Mineshaft Spawn";
+            this.IncreasedMineshaftSpawn.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.ToolTips.SetToolTip(this.IncreasedMineshaftSpawn, "Increases the spawn rate of Mineshafts");
+            this.IncreasedMineshaftSpawn.UseSelectable = true;
+            this.IncreasedMineshaftSpawn.CheckedChanged += new System.EventHandler(this.IncreasedMineshaftSpawnToggled);
+            // 
+            // IncreasedStructuresSpawn
+            // 
+            this.IncreasedStructuresSpawn.AutoSize = true;
+            this.IncreasedStructuresSpawn.BackColor = System.Drawing.Color.Transparent;
+            this.IncreasedStructuresSpawn.Location = new System.Drawing.Point(3, 95);
+            this.IncreasedStructuresSpawn.Name = "IncreasedStructuresSpawn";
+            this.IncreasedStructuresSpawn.Size = new System.Drawing.Size(167, 15);
+            this.IncreasedStructuresSpawn.TabIndex = 148;
+            this.IncreasedStructuresSpawn.Tag = "";
+            this.IncreasedStructuresSpawn.Text = "Increased Structures Spawn";
+            this.IncreasedStructuresSpawn.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.ToolTips.SetToolTip(this.IncreasedStructuresSpawn, "Increases the spawn rate of Structures");
+            this.IncreasedStructuresSpawn.UseSelectable = true;
+            this.IncreasedStructuresSpawn.CheckedChanged += new System.EventHandler(this.IncreasedStructuresSpawnToggled);
+            // 
+            // IncreasedOceanMonumentSpawn
+            // 
+            this.IncreasedOceanMonumentSpawn.AutoSize = true;
+            this.IncreasedOceanMonumentSpawn.BackColor = System.Drawing.Color.Transparent;
+            this.IncreasedOceanMonumentSpawn.Location = new System.Drawing.Point(3, 53);
+            this.IncreasedOceanMonumentSpawn.Name = "IncreasedOceanMonumentSpawn";
+            this.IncreasedOceanMonumentSpawn.Size = new System.Drawing.Size(211, 15);
+            this.IncreasedOceanMonumentSpawn.TabIndex = 146;
+            this.IncreasedOceanMonumentSpawn.Tag = "";
+            this.IncreasedOceanMonumentSpawn.Text = "Increased Ocean Monument Spawn";
+            this.IncreasedOceanMonumentSpawn.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.ToolTips.SetToolTip(this.IncreasedOceanMonumentSpawn, "Increases the spawn rate of Ocean Monuments");
+            this.IncreasedOceanMonumentSpawn.UseSelectable = true;
+            this.IncreasedOceanMonumentSpawn.CheckedChanged += new System.EventHandler(this.IncreasedOceanMonumentSpawnToggled);
+            // 
+            // IncreasedOceanRuinsSpawn
+            // 
+            this.IncreasedOceanRuinsSpawn.AutoSize = true;
+            this.IncreasedOceanRuinsSpawn.BackColor = System.Drawing.Color.Transparent;
+            this.IncreasedOceanRuinsSpawn.Location = new System.Drawing.Point(3, 74);
+            this.IncreasedOceanRuinsSpawn.Name = "IncreasedOceanRuinsSpawn";
+            this.IncreasedOceanRuinsSpawn.Size = new System.Drawing.Size(180, 15);
+            this.IncreasedOceanRuinsSpawn.TabIndex = 147;
+            this.IncreasedOceanRuinsSpawn.Tag = "";
+            this.IncreasedOceanRuinsSpawn.Text = "Increased Ocean Ruins Spawn";
+            this.IncreasedOceanRuinsSpawn.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.ToolTips.SetToolTip(this.IncreasedOceanRuinsSpawn, "Increases the spawn rate of Ocean Ruins");
+            this.IncreasedOceanRuinsSpawn.UseSelectable = true;
+            this.IncreasedOceanRuinsSpawn.CheckedChanged += new System.EventHandler(this.IncreasedOceanRuinsSpawnToggled);
+            // 
+            // GeneratePlainWorld
+            // 
+            this.GeneratePlainWorld.AutoSize = true;
+            this.GeneratePlainWorld.BackColor = System.Drawing.Color.Transparent;
+            this.GeneratePlainWorld.Location = new System.Drawing.Point(3, 53);
+            this.GeneratePlainWorld.Name = "GeneratePlainWorld";
+            this.GeneratePlainWorld.Size = new System.Drawing.Size(84, 15);
+            this.GeneratePlainWorld.TabIndex = 25;
+            this.GeneratePlainWorld.Tag = "";
+            this.GeneratePlainWorld.Text = "Plain World";
+            this.GeneratePlainWorld.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.ToolTips.SetToolTip(this.GeneratePlainWorld, "Removes any decoration from newly\r\ngenerated chunks such as flowers, trees,\r\nand " +
+        "more");
+            this.GeneratePlainWorld.UseSelectable = true;
+            this.GeneratePlainWorld.CheckedChanged += new System.EventHandler(this.GeneratePlainWorldToggled);
+            // 
+            // FreezingWorld
+            // 
+            this.FreezingWorld.AutoSize = true;
+            this.FreezingWorld.BackColor = System.Drawing.Color.Transparent;
+            this.FreezingWorld.Location = new System.Drawing.Point(3, 11);
+            this.FreezingWorld.Name = "FreezingWorld";
+            this.FreezingWorld.Size = new System.Drawing.Size(102, 15);
+            this.FreezingWorld.TabIndex = 24;
+            this.FreezingWorld.Tag = "";
+            this.FreezingWorld.Text = "Freezing World";
+            this.FreezingWorld.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.ToolTips.SetToolTip(this.FreezingWorld, "The world will slowly freeze over with Ice");
+            this.FreezingWorld.UseSelectable = true;
+            this.FreezingWorld.CheckedChanged += new System.EventHandler(this.FreezingWorldToggled);
+            // 
+            // GenerateAmplifiedWorld
+            // 
+            this.GenerateAmplifiedWorld.AutoSize = true;
+            this.GenerateAmplifiedWorld.BackColor = System.Drawing.Color.Transparent;
+            this.GenerateAmplifiedWorld.Location = new System.Drawing.Point(3, 32);
+            this.GenerateAmplifiedWorld.Name = "GenerateAmplifiedWorld";
+            this.GenerateAmplifiedWorld.Size = new System.Drawing.Size(110, 15);
+            this.GenerateAmplifiedWorld.TabIndex = 26;
+            this.GenerateAmplifiedWorld.Tag = "";
+            this.GenerateAmplifiedWorld.Text = "Amplified World";
+            this.GenerateAmplifiedWorld.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.ToolTips.SetToolTip(this.GenerateAmplifiedWorld, "Whether to generate an amplified world");
+            this.GenerateAmplifiedWorld.UseSelectable = true;
+            this.GenerateAmplifiedWorld.CheckedChanged += new System.EventHandler(this.GenerateAmplifiedWorldToggled);
+            // 
+            // StoneWorld
+            // 
+            this.StoneWorld.AutoSize = true;
+            this.StoneWorld.BackColor = System.Drawing.Color.Transparent;
+            this.StoneWorld.Location = new System.Drawing.Point(3, 74);
+            this.StoneWorld.Name = "StoneWorld";
+            this.StoneWorld.Size = new System.Drawing.Size(88, 15);
+            this.StoneWorld.TabIndex = 131;
+            this.StoneWorld.Tag = "";
+            this.StoneWorld.Text = "Stone World";
+            this.StoneWorld.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.ToolTips.SetToolTip(this.StoneWorld, "Newly generated chunks will mostly\r\nconsist of Stone");
+            this.StoneWorld.UseSelectable = true;
+            this.StoneWorld.CheckedChanged += new System.EventHandler(this.StoneWorldToggled);
+            // 
+            // NoTerrain
+            // 
+            this.NoTerrain.AutoSize = true;
+            this.NoTerrain.BackColor = System.Drawing.Color.Transparent;
+            this.NoTerrain.Location = new System.Drawing.Point(3, 95);
+            this.NoTerrain.Name = "NoTerrain";
+            this.NoTerrain.Size = new System.Drawing.Size(77, 15);
+            this.NoTerrain.TabIndex = 132;
+            this.NoTerrain.Tag = "";
+            this.NoTerrain.Text = "No Terrain";
+            this.NoTerrain.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.ToolTips.SetToolTip(this.NoTerrain, "Newly generated chunks will only\r\nconsist of Air");
+            this.NoTerrain.UseSelectable = true;
+            this.NoTerrain.CheckedChanged += new System.EventHandler(this.NoTerrainToggled);
             // 
             // Structures
             // 
@@ -111,141 +322,6 @@
             this.StructuresPanel.VerticalScrollbarBarColor = true;
             this.StructuresPanel.VerticalScrollbarHighlightOnWheel = false;
             this.StructuresPanel.VerticalScrollbarSize = 10;
-            // 
-            // IncreasedVillageSpawn
-            // 
-            this.IncreasedVillageSpawn.AutoSize = true;
-            this.IncreasedVillageSpawn.BackColor = System.Drawing.Color.Transparent;
-            this.IncreasedVillageSpawn.Location = new System.Drawing.Point(3, 158);
-            this.IncreasedVillageSpawn.Name = "IncreasedVillageSpawn";
-            this.IncreasedVillageSpawn.Size = new System.Drawing.Size(149, 15);
-            this.IncreasedVillageSpawn.TabIndex = 152;
-            this.IncreasedVillageSpawn.Tag = "";
-            this.IncreasedVillageSpawn.Text = "Increased Village Spawn";
-            this.IncreasedVillageSpawn.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTips.SetToolTip(this.IncreasedVillageSpawn, "Whether to increase the spawns of Villages");
-            this.IncreasedVillageSpawn.UseSelectable = true;
-            this.IncreasedVillageSpawn.CheckedChanged += new System.EventHandler(this.IncreasedVillageSpawnToggled);
-            // 
-            // IncreasedStrongholdSpawn
-            // 
-            this.IncreasedStrongholdSpawn.AutoSize = true;
-            this.IncreasedStrongholdSpawn.BackColor = System.Drawing.Color.Transparent;
-            this.IncreasedStrongholdSpawn.Location = new System.Drawing.Point(3, 137);
-            this.IncreasedStrongholdSpawn.Name = "IncreasedStrongholdSpawn";
-            this.IncreasedStrongholdSpawn.Size = new System.Drawing.Size(173, 15);
-            this.IncreasedStrongholdSpawn.TabIndex = 150;
-            this.IncreasedStrongholdSpawn.Tag = "";
-            this.IncreasedStrongholdSpawn.Text = "Increased Stronghold Spawn";
-            this.IncreasedStrongholdSpawn.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTips.SetToolTip(this.IncreasedStrongholdSpawn, "Whether to increase the spawns of Strongholds");
-            this.IncreasedStrongholdSpawn.UseSelectable = true;
-            this.IncreasedStrongholdSpawn.CheckedChanged += new System.EventHandler(this.IncreasedStrongholdSpawnToggled);
-            // 
-            // IncreasedWoodlandMansionSpawn
-            // 
-            this.IncreasedWoodlandMansionSpawn.AutoSize = true;
-            this.IncreasedWoodlandMansionSpawn.BackColor = System.Drawing.Color.Transparent;
-            this.IncreasedWoodlandMansionSpawn.Location = new System.Drawing.Point(3, 179);
-            this.IncreasedWoodlandMansionSpawn.Name = "IncreasedWoodlandMansionSpawn";
-            this.IncreasedWoodlandMansionSpawn.Size = new System.Drawing.Size(218, 15);
-            this.IncreasedWoodlandMansionSpawn.TabIndex = 151;
-            this.IncreasedWoodlandMansionSpawn.Tag = "";
-            this.IncreasedWoodlandMansionSpawn.Text = "Increased Woodland Mansion Spawn";
-            this.IncreasedWoodlandMansionSpawn.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTips.SetToolTip(this.IncreasedWoodlandMansionSpawn, "Whether to increase the spawns of Woodland Mansions");
-            this.IncreasedWoodlandMansionSpawn.UseSelectable = true;
-            this.IncreasedWoodlandMansionSpawn.CheckedChanged += new System.EventHandler(this.IncreasedWoodlandMansionSpawnToggled);
-            // 
-            // IncreasedBuriedTreasureSpawn
-            // 
-            this.IncreasedBuriedTreasureSpawn.AutoSize = true;
-            this.IncreasedBuriedTreasureSpawn.BackColor = System.Drawing.Color.Transparent;
-            this.IncreasedBuriedTreasureSpawn.Location = new System.Drawing.Point(3, 11);
-            this.IncreasedBuriedTreasureSpawn.Name = "IncreasedBuriedTreasureSpawn";
-            this.IncreasedBuriedTreasureSpawn.Size = new System.Drawing.Size(194, 15);
-            this.IncreasedBuriedTreasureSpawn.TabIndex = 144;
-            this.IncreasedBuriedTreasureSpawn.Tag = "";
-            this.IncreasedBuriedTreasureSpawn.Text = "Increased Buried Treasure Spawn";
-            this.IncreasedBuriedTreasureSpawn.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTips.SetToolTip(this.IncreasedBuriedTreasureSpawn, "Whether to increase the spawns of Buried Treasure");
-            this.IncreasedBuriedTreasureSpawn.UseSelectable = true;
-            this.IncreasedBuriedTreasureSpawn.CheckedChanged += new System.EventHandler(this.IncreasedBuriedTreasureSpawnToggled);
-            // 
-            // IncreasedShipwreckSpawn
-            // 
-            this.IncreasedShipwreckSpawn.AutoSize = true;
-            this.IncreasedShipwreckSpawn.BackColor = System.Drawing.Color.Transparent;
-            this.IncreasedShipwreckSpawn.Location = new System.Drawing.Point(3, 116);
-            this.IncreasedShipwreckSpawn.Name = "IncreasedShipwreckSpawn";
-            this.IncreasedShipwreckSpawn.Size = new System.Drawing.Size(168, 15);
-            this.IncreasedShipwreckSpawn.TabIndex = 149;
-            this.IncreasedShipwreckSpawn.Tag = "";
-            this.IncreasedShipwreckSpawn.Text = "Increased Shipwreck Spawn";
-            this.IncreasedShipwreckSpawn.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTips.SetToolTip(this.IncreasedShipwreckSpawn, "Whether to increase the spawns of Shipwrecks");
-            this.IncreasedShipwreckSpawn.UseSelectable = true;
-            this.IncreasedShipwreckSpawn.CheckedChanged += new System.EventHandler(this.IncreasedShipwreckSpawnToggled);
-            // 
-            // IncreasedMineshaftSpawn
-            // 
-            this.IncreasedMineshaftSpawn.AutoSize = true;
-            this.IncreasedMineshaftSpawn.BackColor = System.Drawing.Color.Transparent;
-            this.IncreasedMineshaftSpawn.Location = new System.Drawing.Point(3, 32);
-            this.IncreasedMineshaftSpawn.Name = "IncreasedMineshaftSpawn";
-            this.IncreasedMineshaftSpawn.Size = new System.Drawing.Size(167, 15);
-            this.IncreasedMineshaftSpawn.TabIndex = 145;
-            this.IncreasedMineshaftSpawn.Tag = "";
-            this.IncreasedMineshaftSpawn.Text = "Increased Mineshaft Spawn";
-            this.IncreasedMineshaftSpawn.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTips.SetToolTip(this.IncreasedMineshaftSpawn, "Whether to increase the spawns of Mineshafts");
-            this.IncreasedMineshaftSpawn.UseSelectable = true;
-            this.IncreasedMineshaftSpawn.CheckedChanged += new System.EventHandler(this.IncreasedMineshaftSpawnToggled);
-            // 
-            // IncreasedStructuresSpawn
-            // 
-            this.IncreasedStructuresSpawn.AutoSize = true;
-            this.IncreasedStructuresSpawn.BackColor = System.Drawing.Color.Transparent;
-            this.IncreasedStructuresSpawn.Location = new System.Drawing.Point(3, 95);
-            this.IncreasedStructuresSpawn.Name = "IncreasedStructuresSpawn";
-            this.IncreasedStructuresSpawn.Size = new System.Drawing.Size(167, 15);
-            this.IncreasedStructuresSpawn.TabIndex = 148;
-            this.IncreasedStructuresSpawn.Tag = "";
-            this.IncreasedStructuresSpawn.Text = "Increased Structures Spawn";
-            this.IncreasedStructuresSpawn.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTips.SetToolTip(this.IncreasedStructuresSpawn, "Whether to increase the spawns of Structures (Temples etc)");
-            this.IncreasedStructuresSpawn.UseSelectable = true;
-            this.IncreasedStructuresSpawn.CheckedChanged += new System.EventHandler(this.IncreasedStructuresSpawnToggled);
-            // 
-            // IncreasedOceanMonumentSpawn
-            // 
-            this.IncreasedOceanMonumentSpawn.AutoSize = true;
-            this.IncreasedOceanMonumentSpawn.BackColor = System.Drawing.Color.Transparent;
-            this.IncreasedOceanMonumentSpawn.Location = new System.Drawing.Point(3, 53);
-            this.IncreasedOceanMonumentSpawn.Name = "IncreasedOceanMonumentSpawn";
-            this.IncreasedOceanMonumentSpawn.Size = new System.Drawing.Size(211, 15);
-            this.IncreasedOceanMonumentSpawn.TabIndex = 146;
-            this.IncreasedOceanMonumentSpawn.Tag = "";
-            this.IncreasedOceanMonumentSpawn.Text = "Increased Ocean Monument Spawn";
-            this.IncreasedOceanMonumentSpawn.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTips.SetToolTip(this.IncreasedOceanMonumentSpawn, "Whether to increase the spawns of Ocean Monuments");
-            this.IncreasedOceanMonumentSpawn.UseSelectable = true;
-            this.IncreasedOceanMonumentSpawn.CheckedChanged += new System.EventHandler(this.IncreasedOceanMonumentSpawnToggled);
-            // 
-            // IncreasedOceanRuinsSpawn
-            // 
-            this.IncreasedOceanRuinsSpawn.AutoSize = true;
-            this.IncreasedOceanRuinsSpawn.BackColor = System.Drawing.Color.Transparent;
-            this.IncreasedOceanRuinsSpawn.Location = new System.Drawing.Point(3, 74);
-            this.IncreasedOceanRuinsSpawn.Name = "IncreasedOceanRuinsSpawn";
-            this.IncreasedOceanRuinsSpawn.Size = new System.Drawing.Size(180, 15);
-            this.IncreasedOceanRuinsSpawn.TabIndex = 147;
-            this.IncreasedOceanRuinsSpawn.Tag = "";
-            this.IncreasedOceanRuinsSpawn.Text = "Increased Ocean Ruins Spawn";
-            this.IncreasedOceanRuinsSpawn.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTips.SetToolTip(this.IncreasedOceanRuinsSpawn, "Whether to increase the spawns of Ocean Ruins");
-            this.IncreasedOceanRuinsSpawn.UseSelectable = true;
-            this.IncreasedOceanRuinsSpawn.CheckedChanged += new System.EventHandler(this.IncreasedOceanRuinsSpawnToggled);
             // 
             // Terrain
             // 
@@ -369,81 +445,6 @@
             this.WorldSize.Tag = "";
             this.WorldSize.Text = "World Size:";
             this.WorldSize.Theme = MetroFramework.MetroThemeStyle.Dark;
-            // 
-            // GeneratePlainWorld
-            // 
-            this.GeneratePlainWorld.AutoSize = true;
-            this.GeneratePlainWorld.BackColor = System.Drawing.Color.Transparent;
-            this.GeneratePlainWorld.Location = new System.Drawing.Point(3, 53);
-            this.GeneratePlainWorld.Name = "GeneratePlainWorld";
-            this.GeneratePlainWorld.Size = new System.Drawing.Size(84, 15);
-            this.GeneratePlainWorld.TabIndex = 25;
-            this.GeneratePlainWorld.Tag = "";
-            this.GeneratePlainWorld.Text = "Plain World";
-            this.GeneratePlainWorld.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTips.SetToolTip(this.GeneratePlainWorld, "Whether to remove any decoration");
-            this.GeneratePlainWorld.UseSelectable = true;
-            this.GeneratePlainWorld.CheckedChanged += new System.EventHandler(this.GeneratePlainWorldToggled);
-            // 
-            // FreezingWorld
-            // 
-            this.FreezingWorld.AutoSize = true;
-            this.FreezingWorld.BackColor = System.Drawing.Color.Transparent;
-            this.FreezingWorld.Location = new System.Drawing.Point(3, 11);
-            this.FreezingWorld.Name = "FreezingWorld";
-            this.FreezingWorld.Size = new System.Drawing.Size(102, 15);
-            this.FreezingWorld.TabIndex = 24;
-            this.FreezingWorld.Tag = "";
-            this.FreezingWorld.Text = "Freezing World";
-            this.FreezingWorld.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTips.SetToolTip(this.FreezingWorld, "Whether the world should freeze");
-            this.FreezingWorld.UseSelectable = true;
-            this.FreezingWorld.CheckedChanged += new System.EventHandler(this.FreezingWorldToggled);
-            // 
-            // GenerateAmplifiedWorld
-            // 
-            this.GenerateAmplifiedWorld.AutoSize = true;
-            this.GenerateAmplifiedWorld.BackColor = System.Drawing.Color.Transparent;
-            this.GenerateAmplifiedWorld.Location = new System.Drawing.Point(3, 32);
-            this.GenerateAmplifiedWorld.Name = "GenerateAmplifiedWorld";
-            this.GenerateAmplifiedWorld.Size = new System.Drawing.Size(110, 15);
-            this.GenerateAmplifiedWorld.TabIndex = 26;
-            this.GenerateAmplifiedWorld.Tag = "";
-            this.GenerateAmplifiedWorld.Text = "Amplified World";
-            this.GenerateAmplifiedWorld.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTips.SetToolTip(this.GenerateAmplifiedWorld, "Whether to generate an amplified world");
-            this.GenerateAmplifiedWorld.UseSelectable = true;
-            this.GenerateAmplifiedWorld.CheckedChanged += new System.EventHandler(this.GenerateAmplifiedWorldToggled);
-            // 
-            // StoneWorld
-            // 
-            this.StoneWorld.AutoSize = true;
-            this.StoneWorld.BackColor = System.Drawing.Color.Transparent;
-            this.StoneWorld.Location = new System.Drawing.Point(3, 74);
-            this.StoneWorld.Name = "StoneWorld";
-            this.StoneWorld.Size = new System.Drawing.Size(88, 15);
-            this.StoneWorld.TabIndex = 131;
-            this.StoneWorld.Tag = "";
-            this.StoneWorld.Text = "Stone World";
-            this.StoneWorld.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTips.SetToolTip(this.StoneWorld, "Whether to generate a world mostly made up of Stone");
-            this.StoneWorld.UseSelectable = true;
-            this.StoneWorld.CheckedChanged += new System.EventHandler(this.StoneWorldToggled);
-            // 
-            // NoTerrain
-            // 
-            this.NoTerrain.AutoSize = true;
-            this.NoTerrain.BackColor = System.Drawing.Color.Transparent;
-            this.NoTerrain.Location = new System.Drawing.Point(3, 95);
-            this.NoTerrain.Name = "NoTerrain";
-            this.NoTerrain.Size = new System.Drawing.Size(77, 15);
-            this.NoTerrain.TabIndex = 132;
-            this.NoTerrain.Tag = "";
-            this.NoTerrain.Text = "No Terrain";
-            this.NoTerrain.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTips.SetToolTip(this.NoTerrain, "Whether to generate a world without any terrain");
-            this.NoTerrain.UseSelectable = true;
-            this.NoTerrain.CheckedChanged += new System.EventHandler(this.NoTerrainToggled);
             // 
             // WorldGenerationEditor
             // 

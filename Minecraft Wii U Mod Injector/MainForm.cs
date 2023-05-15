@@ -5,7 +5,6 @@ using Minecraft_Wii_U_Mod_Injector.Helpers;
 using Minecraft_Wii_U_Mod_Injector.Forms;
 using System;
 using System.Diagnostics;
-using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Net.Sockets;
@@ -22,7 +21,7 @@ using System.Text;
 
 namespace Minecraft_Wii_U_Mod_Injector {
     public partial class MainForm : MetroForm {
-        #region base variables
+        #region local variables
 
         #region references
 
@@ -53,7 +52,7 @@ namespace Minecraft_Wii_U_Mod_Injector {
 
         #endregion
 
-        #region assembly
+        #region instructions
 
         public static uint On = 0x38600001;
         public static uint Off = 0x38600000;
@@ -112,6 +111,8 @@ namespace Minecraft_Wii_U_Mod_Injector {
             "You can find out what a mod or option does by hovering your mouse over it",
             "You can increase the decimal places on mods which use a slider by right clicking the slider",
         };
+
+        private const string _commandsInWorld = "Commands only work in-game, please load a world before executing a command";
         #endregion
 
         #endregion
@@ -119,21 +120,29 @@ namespace Minecraft_Wii_U_Mod_Injector {
         public MainForm() {
             InitializeComponent();
 
-            MainTabs.ItemSize = new Size(MainTabs.ItemSize.Width, 1); // We do this so the MainTabs are navigable in the Designer, but not at Run time
-            Opacity = 0; // We do this so the Injector has time to apply preferences in Setup without it being visible
+            // Set the ItemSize properties for TabControls so we can navigate them in the designer but not at Runtime
+            MainTabs.ItemSize = MainTabs.ItemSize with { Height = 1 };
+            MinigamesTabs.ItemSize = MinigamesTabs.ItemSize with { Height = 1 };
+
+            // We do this so the Injector has time to apply preferences in Setup without it being visible
+            Opacity = 0;
         }
 
         private void Init(object sender, EventArgs e) {
+            // Initialize necessary classes
             _ = new States(this);
             _ = new Messaging(this);
             _ = new Setup(this);
             _ = new Miscellaneous(this);
 
+            // The TabControls their selected index are stored from the editor so we reset them here
             MainTabs.SelectedIndex = 0;
             MinigamesTabs.SelectedIndex = 0;
 
+            // Runs the setup which is responsible for loading user preferences and checking for updates initially
             Setup.SetupInjector();
 
+            // Set the version where applicable
             BuildNotesBox.Text = Resources.releaseNotes;
             BuildVerTitleLbl.Text = @"Patch Notes for " + Setup.LocalVer;
             BuildTile.Text = Setup.LocalVer;
@@ -201,7 +210,7 @@ namespace Minecraft_Wii_U_Mod_Injector {
         }
 
         private void Exit(object sender, FormClosingEventArgs e) {
-            if (IsConnected) GeckoU.Tcp.Close();
+            if (IsConnected) GeckoU.GUC.Close();
             DiscordRP.Deinitialize();
             Settings.Default.TabIndex = MainTabs.SelectedIndex;
             Settings.Default.Save();
@@ -211,13 +220,14 @@ namespace Minecraft_Wii_U_Mod_Injector {
             var tile = (MetroTile)sender;
 
             if ((string)tile.Tag == "MgTile") {
+                if (MainTabs.SelectedIndex != 4)
+                    MainTabs.SelectedIndex = 4;
+
                 if (MinigamesTabs.SelectedIndex != tile.TileCount)
                     MinigamesTabs.SelectedIndex = tile.TileCount;
                 else return;
 
-                // The main tab control will switch back to Minigames tab page when any of the Minigame tiles are clicked
-                if (MainTabs.SelectedIndex != 4)
-                    MainTabs.SelectedIndex = 4;
+                DiscordRP.SetPresence(IsConnected ? "Connected" : "Disconnected", "Minigames - " + MinigamesTabs.SelectedTab.Text + " Tab");
 
                 return;
             }
@@ -233,7 +243,7 @@ namespace Minecraft_Wii_U_Mod_Injector {
             else
                 return;
 
-            DiscordRP.SetPresence(IsConnected ? "Connected" : "Disconnected", MainTabs.SelectedTab.Text + " tab");
+            DiscordRP.SetPresence(IsConnected ? "Connected" : "Disconnected", MainTabs.SelectedTab.Text + " Tab");
         }
 
         private void SliderClicked(object sender, EventArgs e) {
@@ -254,12 +264,12 @@ namespace Minecraft_Wii_U_Mod_Injector {
                 switch (States.CurrentState) {
                     case States.StatesIds.Disconnected:
                         States.SwapState(States.StatesIds.Connecting);
-                        GeckoU.Tcp.Connect();
+                        GeckoU.GUC.Connect();
 
                         if (!IsMinecraft()) {
                             Messaging.Show(
                                 "This Mod Injector is intended to be used with Minecraft: Wii U Edition, please launch Minecraft and try again.");
-                            GeckoU.Tcp.Close();
+                            GeckoU.GUC.Close();
                             States.SwapState(States.StatesIds.Disconnected);
                             break;
                         }
@@ -270,7 +280,7 @@ namespace Minecraft_Wii_U_Mod_Injector {
                         break;
 
                     case States.StatesIds.Connected:
-                        GeckoU.Tcp.Close();
+                        GeckoU.GUC.Close();
                         IsConnected = false;
                         States.SwapState(States.StatesIds.Disconnected);
                         break;
@@ -479,10 +489,6 @@ namespace Minecraft_Wii_U_Mod_Injector {
             return GeckoU.PeekUInt(GeckoU.PeekUInt(0x10A0A624) + 0x9C) != 0x0;
         }
 
-        private void SwimFastToggled(object sender, EventArgs e) {
-            GeckoU.WriteUIntToggle(0x1066879C, 0x3DA00000, 0x3CA3D70A, SwimFast.Checked); // This should be a slider?
-        }
-
         private void BreakBedrockToggled(object sender, EventArgs e) {
             if (!IsPointerLoaded()) {
                 Messaging.Show("Please load a world before toggling this mod");
@@ -643,10 +649,11 @@ namespace Minecraft_Wii_U_Mod_Injector {
         }
 
         private void CraftAnythingToggled(object sender, EventArgs e) {
-            GeckoU.WriteUIntToggle(0x02F70970, On, Off,
-                CraftAnything.Checked); //IsDebugSettingEnabled__12GameSettingsSF13eDebugSettingi
-            GeckoU.WriteUIntToggle(0x032283CC, 0x38800000, 0x38800001,
-                CraftAnything.Checked); //run__15MinecraftServerFLPv
+            GeckoU.WriteUIntToggle(0x02F70970, On, Off, CraftAnything.Checked); //static GameSettings::IsDebugSettingEnabled(eDebugSetting, int)
+            GeckoU.WriteUIntToggle(0x032283CC, 0x38800000, 0x38800001, CraftAnything.Checked); //MinecraftServer::run(long long, void *)
+
+            // Since we set ALL debug settings to enabled, this means this specific one is also enabled and that causes thunder to strike every second and causes lag
+            GeckoU.WriteUIntToggle(0x032B0784, 0x2C030001, 0x2C030000, CraftAnything.Checked); //ServerLevel::tickBlocks(void)
         }
 
         private void CreativeModeToggled(object sender, EventArgs e) {
@@ -726,6 +733,12 @@ namespace Minecraft_Wii_U_Mod_Injector {
         }
 
         private void VisibleHitboxesToggled(object sender, EventArgs e) {
+            if (!IsPointerLoaded())
+            {
+                Messaging.Show("Visible Hitboxes requires an active world", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             uint whiteBoxAddress = GeckoU.PeekUInt(GeckoU.PeekUInt(0x10A72A94) + 0xC0);
             GeckoU.WriteUIntToggle(whiteBoxAddress + 0x90, 0x0001F000, 0x000100000, VisibleHitboxes.Checked);
         }
@@ -736,7 +749,7 @@ namespace Minecraft_Wii_U_Mod_Injector {
 
             if (confirmCg == Yes) {
                 GeckoU.CallFunction64(0x02F50028, 0x00000000); //CConsoleMinecraftApp::ExitGame((void))
-                GeckoU.Tcp.Close();
+                GeckoU.GUC.Close();
                 States.SwapState(States.StatesIds.Disconnected);
                 IsConnected = false;
             }
@@ -1178,6 +1191,11 @@ namespace Minecraft_Wii_U_Mod_Injector {
             GeckoU.WriteUInt(0x11010000, (uint)airbornespeed);
         }
 
+        private void SwimmingSpeedSliderChanged(object sender, EventArgs e)
+        {
+            GeckoU.WriteFloat(0x1066879C, (float)SwimmingSpeedSlider.Value);
+        }
+
         private void AlwaysDaylightToggled(object sender, EventArgs e) {
             GeckoU.WriteUIntToggle(0x02555318, 0xFC210824, 0x4e800421, AlwaysDaylight.Checked); // fdiv f1, f1, f1
         }
@@ -1255,7 +1273,7 @@ namespace Minecraft_Wii_U_Mod_Injector {
 
         private void GiveCommandBtnClicked(object sender, EventArgs e) {
             if (!IsPointerLoaded()) {
-                Messaging.Show("Commands only work in-game, please load a world before executing a command");
+                Messaging.Show(_commandsInWorld);
                 return;
             }
 
@@ -1284,7 +1302,7 @@ namespace Minecraft_Wii_U_Mod_Injector {
 
         private void EnchantCommandBtnClicked(object sender, EventArgs e) {
             if (!IsPointerLoaded()) {
-                Messaging.Show("Commands only work in-game, please load a world before executing a command");
+                Messaging.Show(_commandsInWorld);
                 return;
             }
 
@@ -1305,7 +1323,7 @@ namespace Minecraft_Wii_U_Mod_Injector {
 
         private void TimeCommandBtnClicked(object sender, EventArgs e) {
             if (!IsPointerLoaded()) {
-                Messaging.Show("Commands only work in-game, please load a world before executing a command");
+                Messaging.Show(_commandsInWorld);
                 return;
             }
 
@@ -1321,7 +1339,7 @@ namespace Minecraft_Wii_U_Mod_Injector {
 
         private void KillCommandBtnClicked(object sender, EventArgs e) {
             if (!IsPointerLoaded()) {
-                Messaging.Show("Commands only work in-game, please load a world before executing a command");
+                Messaging.Show(_commandsInWorld);
                 return;
             }
 
@@ -1332,7 +1350,7 @@ namespace Minecraft_Wii_U_Mod_Injector {
 
         private void DownfallCommandBtnClicked(object sender, EventArgs e) {
             if (!IsPointerLoaded()) {
-                Messaging.Show("Commands only work in-game, please load a world before executing a command");
+                Messaging.Show(_commandsInWorld);
                 return;
             }
 
@@ -1343,7 +1361,7 @@ namespace Minecraft_Wii_U_Mod_Injector {
 
         private void SetWorldSpawnBtnClicked(object sender, EventArgs e) {
             if (!IsPointerLoaded()) {
-                Messaging.Show("Commands only work in-game, please load a world before executing a command");
+                Messaging.Show(_commandsInWorld);
                 return;
             }
 
@@ -1354,7 +1372,7 @@ namespace Minecraft_Wii_U_Mod_Injector {
 
         private void SurvivalCommandBtnClicked(object sender, EventArgs e) {
             if (!IsPointerLoaded()) {
-                Messaging.Show("Commands only work in-game, please load a world before executing a command");
+                Messaging.Show(_commandsInWorld);
                 return;
             }
 
@@ -1365,7 +1383,7 @@ namespace Minecraft_Wii_U_Mod_Injector {
 
         private void CreativeCommandBtnClicked(object sender, EventArgs e) {
             if (!IsPointerLoaded()) {
-                Messaging.Show("Commands only work in-game, please load a world before executing a command");
+                Messaging.Show(_commandsInWorld);
                 return;
             }
 
@@ -1376,7 +1394,7 @@ namespace Minecraft_Wii_U_Mod_Injector {
 
         private void AdventureCommandBtnClicked(object sender, EventArgs e) {
             if (!IsPointerLoaded()) {
-                Messaging.Show("Commands only work in-game, please load a world before executing a command");
+                Messaging.Show(_commandsInWorld);
                 return;
             }
 
@@ -1387,7 +1405,7 @@ namespace Minecraft_Wii_U_Mod_Injector {
 
         private void SpectatorCommandBtnClicked(object sender, EventArgs e) {
             if (!IsPointerLoaded()) {
-                Messaging.Show("Commands only work in-game, please load a world before executing a command");
+                Messaging.Show(_commandsInWorld);
                 return;
             }
 
@@ -1398,7 +1416,7 @@ namespace Minecraft_Wii_U_Mod_Injector {
 
         private void GiveXpOrbsBtnClicked(object sender, EventArgs e) {
             if (!IsPointerLoaded()) {
-                Messaging.Show("Commands only work in-game, please load a world before executing a command");
+                Messaging.Show(_commandsInWorld);
                 return;
             }
 
@@ -1421,7 +1439,7 @@ namespace Minecraft_Wii_U_Mod_Injector {
 
         private void GiveXpLevelsBtnClicked(object sender, EventArgs e) {
             if (!IsPointerLoaded()) {
-                Messaging.Show("Commands only work in-game, please load a world before executing a command");
+                Messaging.Show(_commandsInWorld);
                 return;
             }
 
@@ -1444,7 +1462,7 @@ namespace Minecraft_Wii_U_Mod_Injector {
 
         private void TellrawCmdBtnClicked(object sender, EventArgs e) {
             if (!IsPointerLoaded()) {
-                Messaging.Show("Commands only work in-game, please load a world before executing a command");
+                Messaging.Show(_commandsInWorld);
                 return;
             }
             uint textStart = 0x107A097C;

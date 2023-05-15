@@ -48,7 +48,7 @@
             // bullywiiplazaCredits
             // 
             this.bullywiiplazaCredits.AutoSize = true;
-            this.bullywiiplazaCredits.Location = new System.Drawing.Point(23, 132);
+            this.bullywiiplazaCredits.Location = new System.Drawing.Point(23, 217);
             this.bullywiiplazaCredits.Name = "bullywiiplazaCredits";
             this.bullywiiplazaCredits.Size = new System.Drawing.Size(179, 57);
             this.bullywiiplazaCredits.TabIndex = 2;
@@ -64,9 +64,9 @@
             this.appIco.HorizontalScrollbarBarColor = true;
             this.appIco.HorizontalScrollbarHighlightOnWheel = false;
             this.appIco.HorizontalScrollbarSize = 10;
-            this.appIco.Location = new System.Drawing.Point(443, 35);
+            this.appIco.Location = new System.Drawing.Point(443, 60);
             this.appIco.Name = "appIco";
-            this.appIco.Size = new System.Drawing.Size(255, 379);
+            this.appIco.Size = new System.Drawing.Size(254, 376);
             this.appIco.TabIndex = 45;
             this.appIco.VerticalScrollbarBarColor = true;
             this.appIco.VerticalScrollbarHighlightOnWheel = false;
@@ -75,7 +75,7 @@
             // vylrynaCredits
             // 
             this.vylrynaCredits.AutoSize = true;
-            this.vylrynaCredits.Location = new System.Drawing.Point(23, 210);
+            this.vylrynaCredits.Location = new System.Drawing.Point(23, 299);
             this.vylrynaCredits.Name = "vylrynaCredits";
             this.vylrynaCredits.Size = new System.Drawing.Size(339, 76);
             this.vylrynaCredits.TabIndex = 46;
@@ -87,7 +87,7 @@
             // nessieHaxCredits
             // 
             this.nessieHaxCredits.AutoSize = true;
-            this.nessieHaxCredits.Location = new System.Drawing.Point(23, 302);
+            this.nessieHaxCredits.Location = new System.Drawing.Point(23, 398);
             this.nessieHaxCredits.Name = "nessieHaxCredits";
             this.nessieHaxCredits.Size = new System.Drawing.Size(154, 38);
             this.nessieHaxCredits.TabIndex = 47;
@@ -113,7 +113,7 @@
             // 
             this.kashiieraCredits.FontSize = MetroFramework.MetroLinkSize.Medium;
             this.kashiieraCredits.FontWeight = MetroFramework.MetroLinkWeight.Light;
-            this.kashiieraCredits.Location = new System.Drawing.Point(23, 356);
+            this.kashiieraCredits.Location = new System.Drawing.Point(23, 138);
             this.kashiieraCredits.Name = "kashiieraCredits";
             this.kashiieraCredits.Size = new System.Drawing.Size(353, 57);
             this.kashiieraCredits.TabIndex = 49;
@@ -127,7 +127,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(720, 437);
+            this.ClientSize = new System.Drawing.Size(720, 459);
             this.Controls.Add(this.kashiieraCredits);
             this.Controls.Add(this.slothWiiPlazaCredits);
             this.Controls.Add(this.nessieHaxCredits);

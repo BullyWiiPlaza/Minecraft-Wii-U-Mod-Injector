@@ -9,7 +9,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Wii_U.Gecko_U {
     public class GeckoUCore {
         #region base vars
 
-        public GeckoUConnect Tcp;
+        public GeckoUConnect GUC;
 
         private const int CmdDefaultPort = 7331;
 
@@ -27,7 +27,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Wii_U.Gecko_U {
         /// </summary>
         /// <param name="host">Wii U IP Address</param>
         public GeckoUCore(string host) {
-            Tcp = new GeckoUConnect(host, CmdDefaultPort);
+            GUC = new GeckoUConnect(host, CmdDefaultPort);
         }
 
         #endregion connection
@@ -37,9 +37,9 @@ namespace Minecraft_Wii_U_Mod_Injector.Wii_U.Gecko_U {
             uint bytesRead;
 
             try {
-                Tcp.Read(recbyte, nobytes, out bytesRead);
+                GUC.Read(recbyte, nobytes, out bytesRead);
             } catch (IOException) {
-                Tcp.Close();
+                GUC.Close();
                 return FtdiCommand.CmdFatalError;
             }
 
@@ -50,9 +50,9 @@ namespace Minecraft_Wii_U_Mod_Injector.Wii_U.Gecko_U {
             uint bytesWritten;
 
             try {
-                Tcp.Write(sendbyte, nobytes, out bytesWritten);
+                GUC.Write(sendbyte, nobytes, out bytesWritten);
             } catch (IOException) {
-                Tcp.Close();
+                GUC.Close();
                 return FtdiCommand.CmdFatalError;
             }
 
@@ -73,7 +73,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Wii_U.Gecko_U {
         /// </summary>
         /// <param name="command">Command to send</param>
         private void SendCommand(GeckoUCommands.Command command) {
-            Tcp.Write(new[] { (byte)command }, 1, out _);
+            GUC.Write(new[] { (byte)command }, 1, out _);
         }
 
         /// <summary>
@@ -88,7 +88,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Wii_U.Gecko_U {
                 RequestBytes(address, length);
 
                 var response = new byte[1];
-                Tcp.Read(response, 1, out _);
+                GUC.Read(response, 1, out _);
 
                 var ms = new MemoryStream();
 
@@ -100,12 +100,12 @@ namespace Minecraft_Wii_U_Mod_Injector.Wii_U.Gecko_U {
                 while (remainingBytesCount > 0) {
                     var chunkSize = remainingBytesCount;
 
-                    if (chunkSize > Tcp.CmdMaxBufferSize) {
-                        chunkSize = Tcp.CmdMaxBufferSize;
+                    if (chunkSize > GUC.CmdMaxBufferSize) {
+                        chunkSize = GUC.CmdMaxBufferSize;
                     }
 
                     var buffer = new byte[chunkSize];
-                    Tcp.Read(buffer, chunkSize, out _);
+                    GUC.Read(buffer, chunkSize, out _);
 
                     ms.Write(buffer, 0, (int)chunkSize);
 
@@ -131,8 +131,8 @@ namespace Minecraft_Wii_U_Mod_Injector.Wii_U.Gecko_U {
 
                 var bytes = BitConverter.GetBytes(ByteSwap.Swap(address));
                 var bytes2 = BitConverter.GetBytes(ByteSwap.Swap(address + length));
-                Tcp.Write(bytes, 4, out _);
-                Tcp.Write(bytes2, 4, out _);
+                GUC.Write(bytes, 4, out _);
+                GUC.Write(bytes2, 4, out _);
             } catch (Exception) {
                 // ignored
             }
@@ -148,7 +148,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Wii_U.Gecko_U {
             var length = bytes.Length;
 
             var endAddress = address + (uint)bytes.Length;
-            Tcp.Write(bytes, length, out _);
+            GUC.Write(bytes, length, out _);
 
             return endAddress;
         }
@@ -168,8 +168,8 @@ namespace Minecraft_Wii_U_Mod_Injector.Wii_U.Gecko_U {
                 var start = BitConverter.GetBytes(ByteSwap.Swap(address));
                 var end = BitConverter.GetBytes(ByteSwap.Swap(address + length));
 
-                Tcp.Write(start, 4, out _);
-                Tcp.Write(end, 4, out _);
+                GUC.Write(start, 4, out _);
+                GUC.Write(end, 4, out _);
 
                 enumerable.Aggregate(address, UploadBytes);
             } catch (Exception error) {
@@ -217,7 +217,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Wii_U.Gecko_U {
         /// <param name="bytes">Bytes to write</param>
         public void WriteBytes(uint address, byte[] bytes) // Write bytes to the specified memory address
         {
-            var partitionedBytes = Partition(bytes, Tcp.CmdMaxBufferSize);
+            var partitionedBytes = Partition(bytes, GUC.CmdMaxBufferSize);
             WritePartitionedBytes(address, partitionedBytes);
         }
         #endregion the magic
@@ -712,7 +712,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Wii_U.Gecko_U {
             SendCommand(GeckoUCommands.Command.CommandGetCodeHandlerAddress);
 
             var response = new byte[4];
-            Tcp.Read(response, 4, out _);
+            GUC.Read(response, 4, out _);
 
             Array.Reverse(response);
             var bufferSize = BitConverter.ToUInt32(response, 0);
@@ -728,7 +728,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Wii_U.Gecko_U {
             SendCommand(GeckoUCommands.Command.CommandAccountIdentifier);
 
             var response = new byte[4];
-            Tcp.Read(response, 4, out _);
+            GUC.Read(response, 4, out _);
 
             Array.Reverse(response);
             var bufferSize = BitConverter.ToUInt32(response, 0);
@@ -740,7 +740,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Wii_U.Gecko_U {
             SendCommand(GeckoUCommands.Command.CommandGetVersionHash);
 
             var response = new byte[4];
-            Tcp.Read(response, 4, out _);
+            GUC.Read(response, 4, out _);
 
             Array.Reverse(response);
             var versionHash = BitConverter.ToUInt32(response, 0);
@@ -756,7 +756,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Wii_U.Gecko_U {
             SendCommand(GeckoUCommands.Command.CommandGetOsVersion);
 
             var response = new byte[4];
-            Tcp.Read(response, 4, out _);
+            GUC.Read(response, 4, out _);
 
             Array.Reverse(response);
             var osVer = BitConverter.ToUInt32(response, 0);

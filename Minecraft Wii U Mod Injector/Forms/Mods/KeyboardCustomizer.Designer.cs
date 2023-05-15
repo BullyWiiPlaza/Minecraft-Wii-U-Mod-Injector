@@ -124,6 +124,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods {
             this.metroPanel2.Name = "metroPanel2";
             this.metroPanel2.Size = new System.Drawing.Size(381, 85);
             this.metroPanel2.TabIndex = 16;
+            this.metroPanel2.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroPanel2.VerticalScrollbarBarColor = true;
             this.metroPanel2.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel2.VerticalScrollbarSize = 10;
@@ -160,12 +161,13 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods {
             this.customKeyQ.Tag = "q";
             this.customKeyQ.Text = "q";
             this.customKeyQ.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.customKeyQ.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.customKeyQ.UseSelectable = true;
             this.customKeyQ.WaterMark = "?";
             this.customKeyQ.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.customKeyQ.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
-            // customKeyAposterphe
+            // customKeyApostrophe
             // 
             // 
             // 
@@ -184,7 +186,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods {
         "\'"};
             this.customKeyApostrophe.Location = new System.Drawing.Point(317, 30);
             this.customKeyApostrophe.MaxLength = 1;
-            this.customKeyApostrophe.Name = "customKeyAposterphe";
+            this.customKeyApostrophe.Name = "customKeyApostrophe";
             this.customKeyApostrophe.PasswordChar = '\0';
             this.customKeyApostrophe.PromptText = "?";
             this.customKeyApostrophe.ScrollBars = System.Windows.Forms.ScrollBars.None;
@@ -197,6 +199,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods {
             this.customKeyApostrophe.Tag = "\'";
             this.customKeyApostrophe.Text = "\'";
             this.customKeyApostrophe.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.customKeyApostrophe.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.customKeyApostrophe.UseSelectable = true;
             this.customKeyApostrophe.WaterMark = "?";
             this.customKeyApostrophe.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -234,6 +237,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods {
             this.customKeyF.Tag = "f";
             this.customKeyF.Text = "f";
             this.customKeyF.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.customKeyF.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.customKeyF.UseSelectable = true;
             this.customKeyF.WaterMark = "?";
             this.customKeyF.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -271,6 +275,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods {
             this.customKeyC.Tag = "c";
             this.customKeyC.Text = "c";
             this.customKeyC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.customKeyC.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.customKeyC.UseSelectable = true;
             this.customKeyC.WaterMark = "?";
             this.customKeyC.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -308,6 +313,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods {
             this.customKeyPeriod.Tag = ".";
             this.customKeyPeriod.Text = ".";
             this.customKeyPeriod.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.customKeyPeriod.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.customKeyPeriod.UseSelectable = true;
             this.customKeyPeriod.WaterMark = "?";
             this.customKeyPeriod.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -345,6 +351,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods {
             this.customKeyP.Tag = "p";
             this.customKeyP.Text = "p";
             this.customKeyP.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.customKeyP.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.customKeyP.UseSelectable = true;
             this.customKeyP.WaterMark = "?";
             this.customKeyP.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -382,6 +389,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods {
             this.customKeyJ.Tag = "j";
             this.customKeyJ.Text = "j";
             this.customKeyJ.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.customKeyJ.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.customKeyJ.UseSelectable = true;
             this.customKeyJ.WaterMark = "?";
             this.customKeyJ.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -419,6 +427,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods {
             this.customKeyR.Tag = "r";
             this.customKeyR.Text = "r";
             this.customKeyR.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.customKeyR.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.customKeyR.UseSelectable = true;
             this.customKeyR.WaterMark = "?";
             this.customKeyR.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -456,6 +465,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods {
             this.customKeyT.Tag = "t";
             this.customKeyT.Text = "t";
             this.customKeyT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.customKeyT.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.customKeyT.UseSelectable = true;
             this.customKeyT.WaterMark = "?";
             this.customKeyT.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -493,6 +503,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods {
             this.customKeyN.Tag = "n";
             this.customKeyN.Text = "n";
             this.customKeyN.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.customKeyN.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.customKeyN.UseSelectable = true;
             this.customKeyN.WaterMark = "?";
             this.customKeyN.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -530,6 +541,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods {
             this.customKeyAT.Tag = "@";
             this.customKeyAT.Text = "@";
             this.customKeyAT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.customKeyAT.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.customKeyAT.UseSelectable = true;
             this.customKeyAT.WaterMark = "?";
             this.customKeyAT.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -567,6 +579,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods {
             this.customKeyComma.Tag = ",";
             this.customKeyComma.Text = ",";
             this.customKeyComma.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.customKeyComma.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.customKeyComma.UseSelectable = true;
             this.customKeyComma.WaterMark = "?";
             this.customKeyComma.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -604,6 +617,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods {
             this.customKeyX.Tag = "x";
             this.customKeyX.Text = "x";
             this.customKeyX.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.customKeyX.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.customKeyX.UseSelectable = true;
             this.customKeyX.WaterMark = "?";
             this.customKeyX.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -641,6 +655,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods {
             this.customKeyG.Tag = "g";
             this.customKeyG.Text = "g";
             this.customKeyG.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.customKeyG.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.customKeyG.UseSelectable = true;
             this.customKeyG.WaterMark = "?";
             this.customKeyG.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -678,6 +693,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods {
             this.customKeyU.Tag = "u";
             this.customKeyU.Text = "u";
             this.customKeyU.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.customKeyU.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.customKeyU.UseSelectable = true;
             this.customKeyU.WaterMark = "?";
             this.customKeyU.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -715,6 +731,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods {
             this.customKeyExclamation.Tag = "!";
             this.customKeyExclamation.Text = "!";
             this.customKeyExclamation.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.customKeyExclamation.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.customKeyExclamation.UseSelectable = true;
             this.customKeyExclamation.WaterMark = "?";
             this.customKeyExclamation.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -752,6 +769,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods {
             this.customKeyL.Tag = "l";
             this.customKeyL.Text = "l";
             this.customKeyL.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.customKeyL.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.customKeyL.UseSelectable = true;
             this.customKeyL.WaterMark = "?";
             this.customKeyL.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -789,6 +807,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods {
             this.customKeyD.Tag = "d";
             this.customKeyD.Text = "d";
             this.customKeyD.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.customKeyD.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.customKeyD.UseSelectable = true;
             this.customKeyD.WaterMark = "?";
             this.customKeyD.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -826,6 +845,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods {
             this.customKeyI.Tag = "i";
             this.customKeyI.Text = "i";
             this.customKeyI.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.customKeyI.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.customKeyI.UseSelectable = true;
             this.customKeyI.WaterMark = "?";
             this.customKeyI.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -863,6 +883,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods {
             this.customKeyV.Tag = "v";
             this.customKeyV.Text = "v";
             this.customKeyV.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.customKeyV.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.customKeyV.UseSelectable = true;
             this.customKeyV.WaterMark = "?";
             this.customKeyV.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -900,6 +921,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods {
             this.customKeyQuestion.Tag = "?";
             this.customKeyQuestion.Text = "?";
             this.customKeyQuestion.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.customKeyQuestion.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.customKeyQuestion.UseSelectable = true;
             this.customKeyQuestion.WaterMark = "?";
             this.customKeyQuestion.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -937,6 +959,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods {
             this.customKeyO.Tag = "o";
             this.customKeyO.Text = "o";
             this.customKeyO.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.customKeyO.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.customKeyO.UseSelectable = true;
             this.customKeyO.WaterMark = "?";
             this.customKeyO.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -974,6 +997,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods {
             this.customKeyA.Tag = "a";
             this.customKeyA.Text = "a";
             this.customKeyA.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.customKeyA.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.customKeyA.UseSelectable = true;
             this.customKeyA.WaterMark = "?";
             this.customKeyA.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -1011,6 +1035,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods {
             this.customKeyE.Tag = "e";
             this.customKeyE.Text = "e";
             this.customKeyE.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.customKeyE.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.customKeyE.UseSelectable = true;
             this.customKeyE.WaterMark = "?";
             this.customKeyE.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -1048,6 +1073,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods {
             this.customKeyY.Tag = "y";
             this.customKeyY.Text = "y";
             this.customKeyY.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.customKeyY.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.customKeyY.UseSelectable = true;
             this.customKeyY.WaterMark = "?";
             this.customKeyY.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -1085,6 +1111,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods {
             this.customKeyB.Tag = "b";
             this.customKeyB.Text = "b";
             this.customKeyB.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.customKeyB.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.customKeyB.UseSelectable = true;
             this.customKeyB.WaterMark = "?";
             this.customKeyB.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -1122,6 +1149,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods {
             this.customKeyZ.Tag = "z";
             this.customKeyZ.Text = "z";
             this.customKeyZ.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.customKeyZ.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.customKeyZ.UseSelectable = true;
             this.customKeyZ.WaterMark = "?";
             this.customKeyZ.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -1159,6 +1187,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods {
             this.customKeyM.Tag = "m";
             this.customKeyM.Text = "m";
             this.customKeyM.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.customKeyM.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.customKeyM.UseSelectable = true;
             this.customKeyM.WaterMark = "?";
             this.customKeyM.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -1196,6 +1225,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods {
             this.customKeyW.Tag = "w";
             this.customKeyW.Text = "w";
             this.customKeyW.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.customKeyW.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.customKeyW.UseSelectable = true;
             this.customKeyW.WaterMark = "?";
             this.customKeyW.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -1233,6 +1263,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods {
             this.customKeyS.Tag = "s";
             this.customKeyS.Text = "s";
             this.customKeyS.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.customKeyS.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.customKeyS.UseSelectable = true;
             this.customKeyS.WaterMark = "?";
             this.customKeyS.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -1270,6 +1301,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods {
             this.customKeyK.Tag = "k";
             this.customKeyK.Text = "k";
             this.customKeyK.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.customKeyK.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.customKeyK.UseSelectable = true;
             this.customKeyK.WaterMark = "?";
             this.customKeyK.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -1307,6 +1339,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods {
             this.customKeyH.Tag = "h";
             this.customKeyH.Text = "h";
             this.customKeyH.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.customKeyH.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.customKeyH.UseSelectable = true;
             this.customKeyH.WaterMark = "?";
             this.customKeyH.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -1321,6 +1354,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods {
             this.applyChangesBtn.Size = new System.Drawing.Size(714, 23);
             this.applyChangesBtn.TabIndex = 17;
             this.applyChangesBtn.Text = "Apply Changes";
+            this.applyChangesBtn.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.applyChangesBtn.UseSelectable = true;
             this.applyChangesBtn.Click += new System.EventHandler(this.ApplyKeyboardChanges);
             // 
@@ -1334,6 +1368,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods {
             this.metroLabel3.Size = new System.Drawing.Size(182, 25);
             this.metroLabel3.TabIndex = 23;
             this.metroLabel3.Text = "Or, edit keys manually:";
+            this.metroLabel3.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // phraseInput
             // 
@@ -1365,6 +1400,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods {
             this.phraseInput.Size = new System.Drawing.Size(492, 23);
             this.phraseInput.TabIndex = 20;
             this.phraseInput.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.phraseInput.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.phraseInput.UseSelectable = true;
             this.phraseInput.WaterMark = "Enter phrase here.";
             this.phraseInput.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -1377,6 +1413,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods {
             this.resetKeyboard.Size = new System.Drawing.Size(105, 23);
             this.resetKeyboard.TabIndex = 21;
             this.resetKeyboard.Text = "Reset";
+            this.resetKeyboard.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.resetKeyboard.UseSelectable = true;
             this.resetKeyboard.Click += new System.EventHandler(this.ResetKeyboard);
             // 
@@ -1388,6 +1425,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods {
             this.changePhrase.Size = new System.Drawing.Size(105, 23);
             this.changePhrase.TabIndex = 22;
             this.changePhrase.Text = "Apply Phrase";
+            this.changePhrase.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.changePhrase.UseSelectable = true;
             this.changePhrase.Click += new System.EventHandler(this.ApplyPhrase);
             // 
@@ -1409,7 +1447,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods {
             this.Name = "KeyboardCustomizer";
             this.Text = "Keyboard Customizer";
             this.TextAlign = MetroFramework.Forms.MetroFormTextAlign.Center;
-            this.Theme = MetroFramework.MetroThemeStyle.Default;
+            this.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.OnExit);
             this.Load += new System.EventHandler(this.OnLoad);
             ((System.ComponentModel.ISupportInitialize)(this.StyleMngr)).EndInit();

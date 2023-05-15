@@ -80,7 +80,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Managers {
             ServerNames.Clear();
             ServerUrls.Clear();
 
-            DiscordRP.SetPresence(_iw.IsConnected ? "Connected" : "Disconnected", _iw.MainTabs.SelectedTab.Text + " tab");
+            DiscordRP.SetPresence(_iw.IsConnected ? "Connected" : "Disconnected", _iw.MainTabs.SelectedTab.Text + " Tab");
             Dispose();
         }
         #endregion
@@ -297,6 +297,11 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Managers {
             }
         }
 
+        /// <summary>
+        /// Applies a language to the Mod Injector's controls using the provided path to the language.ini file
+        /// </summary>
+        /// <param name="controls">Controls that should be renamed</param>
+        /// <param name="path">Path to the language file</param>
         public static void ApplyLanguage(IEnumerable controls, string path) {
             var languageFile = new IniFile(path);
 

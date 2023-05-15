@@ -44,14 +44,14 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods
 
         private void Exiting(object sender, FormClosingEventArgs e)
         {
-            DiscordRP.SetPresence("Connected", new MainForm().worldTab.Text + " tab");
+            DiscordRP.SetPresence("Connected", new MainForm().worldTab.Text + " Tab");
             Dispose();
         }
 
         private void ApplyBtnClicked(object sender, EventArgs e)
         {
             MainForm.GeckoU.WriteUInt(_loottableAddr[replaceBox.SelectedIndex], MainForm.GeckoU.Mix(0x38630000, _loottableIds[withBox.SelectedIndex]));
-            this.Close();
+            Close();
         }
     }
 }

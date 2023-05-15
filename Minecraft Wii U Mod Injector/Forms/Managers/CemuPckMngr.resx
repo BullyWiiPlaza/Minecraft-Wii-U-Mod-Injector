@@ -120,9 +120,6 @@
   <metadata name="StyleMngr.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <metadata name="ToolTips.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>218, 17</value>
-  </metadata>
   <data name="MaxStackSlider.Tag" xml:space="preserve">
     <value>0x0207F510&amp;0x02009030&amp;0x02081B94&amp;0x020BF710&amp;0x0218FAB8&amp;0x0218F9B0&amp;0x0218F16C&amp;0x021B2044&amp;0x021B3A18&amp;0x02233114&amp;0x02295380&amp;0x0228DB84&amp;0x023E4878&amp;0x023F6B10&amp;0x0245605C&amp;0x0247A1B8&amp;0x0252F280&amp;0x024A100C&amp;0x024CFFC4&amp;0x0262AFA4&amp;0x02618CF4&amp;0x0284A694&amp;0x02878850&amp;0x028DD624</value>
   </data>
@@ -1852,6 +1849,9 @@ NOTE: Voting on a map size can softlock the game upon loading that map</value>
         AP//AADg/wAA4B8AAOAfAADgBwAA4AcAAPgHAAD8BwAA/wcAAP/fAAD//wAA//8AAP//AAA=
 </value>
   </data>
+  <metadata name="ToolTips.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>218, 17</value>
+  </metadata>
   <data name="LeashAnyMobs.Tag" xml:space="preserve">
     <value>0x02078964 = li r3,10x02078964 = li r3,1|0x022D2FFC = li r3,1|0x0234A7B8 = li r3,1|0x023CE0B8 = li r3,1|0x02651494 = li r3,1|0x029D1BB4 = li r3,1|0x02A59DF4 = li r3,1|0x02A7BBE4 = li r3,1|0x02A884E0 = li r3,1|</value>
   </data>

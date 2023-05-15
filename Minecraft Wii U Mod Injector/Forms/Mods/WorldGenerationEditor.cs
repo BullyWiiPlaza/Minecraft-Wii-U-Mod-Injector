@@ -22,7 +22,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods
 
         private void Exiting(object sender, FormClosingEventArgs e)
         {
-            DiscordRP.SetPresence("Connected", new MainForm().MainTabs.SelectedTab.Text + " tab");
+            DiscordRP.SetPresence("Connected", new MainForm().MainTabs.SelectedTab.Text + " Tab");
             Dispose();
         }
 
@@ -95,7 +95,9 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods
 
         private void GenerateAmplifiedWorldToggled(object sender, EventArgs e)
         {
-           MainForm.GeckoU.WriteUIntToggle(0x106CB93C, 0x4000000, 0x3DCCCCCD, GenerateAmplifiedWorld.Checked);
+            MainForm.GeckoU.WriteUIntToggle(0x11020000, 0x40000000, 0x00000000, GenerateAmplifiedWorld.Checked); // Write the float to a unused address
+            MainForm.GeckoU.WriteUIntToggle(0x026D3E08, 0x3D001102, 0x3D001066, GenerateAmplifiedWorld.Checked);  // lis r8,0x1102 Loads the address into memory
+            MainForm.GeckoU.WriteUIntToggle(0x026D3E10, 0xC0C80000, 0xC3E85EF4, GenerateAmplifiedWorld.Checked); // lfs f6,0x0(r8) Overwrites the float with our address
         }
 
         private void WorldSizeSliderChanged(object sender, EventArgs e)

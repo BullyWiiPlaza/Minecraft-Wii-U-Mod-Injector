@@ -39,6 +39,24 @@ namespace Minecraft_Wii_U_Mod_Injector.Wii_U.Minecraft
         }
 
         /// <summary>
+        /// Gets the address of the current Minigame
+        /// </summary>
+        /// <returns>Level pointer</returns>
+        public static uint GetMinigame()
+        {
+            return GeckoU.CallFunction(0x0318C878, GetMinecraft(), 0x0);
+        }
+
+        /// <summary>
+        /// Gets the ID of the current Minigame
+        /// </summary>
+        /// <returns>Minigame ID</returns>
+        public static uint GetMinigameId()
+        {
+            return GeckoU.CallFunction(0x0318C878, GetMinecraft(), 0x0);
+        }
+
+        /// <summary>
         /// Gets the address of the current MinecraftServer Pointer
         /// </summary>
         /// <returns>MincraftServer Pointer</returns>

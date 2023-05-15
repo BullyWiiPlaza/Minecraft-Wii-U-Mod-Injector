@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using System.Windows.Forms;
@@ -9,7 +10,7 @@ using Minecraft_Wii_U_Mod_Injector.Helpers;
 using Minecraft_Wii_U_Mod_Injector.Helpers.Files;
 using Minecraft_Wii_U_Mod_Injector.Helpers.Win_Forms;
 using Minecraft_Wii_U_Mod_Injector.Properties;
-// ReSharper disable UnusedMember.Local
+using Application = System.Windows.Forms.Application;
 
 namespace Minecraft_Wii_U_Mod_Injector.Forms.Managers
 {
@@ -23,36 +24,57 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Managers
         private readonly StringBuilder _cemuGraphicPckRulesBuilder = new();
         private readonly StringBuilder _cemuGraphicPckPatchesBuilder = new();
 
-        private enum SliderDefaults
+        private readonly Dictionary<string, double> _sliderDefaults = new ()
         {
-            EnchantmentLevelSlider = 0,
-            PotionAmplifierSlider = 0,
-            MaxStackSlider = 64,
-            LureSlider = 0,
-            LuckSlider = 0,
-            WorldSizeSlider = 172,
-            NetherSizeSlider = 176,
-            BabyRateSlider = 5,
-            WoolMultiplierSlider = 3,
-            RequiredPlayersSlider = 2,
-            RefillIntervalSlider = 30,
-            RingScoreGreen = 0,
-            RingScoreOrange = 0,
-            RingScoreBlue = 0,
-            LiquidSpreadTimeSlider = 0,
-        }
-
+            { "EnchantmentLevelSlider", 0 },
+            { "JumpHeightSlider", 0.420 },
+            { "ReachSlider", 4.5 },
+            { "HitBoxScaleSlider", 0.5 },
+            { "FieldOfViewSlider", 1.875 },
+            { "FieldOfViewSplitSlider", 0.700 },
+            { "RiptideFlyingSpeedSlider", 0.2500 },
+            { "WalkingSpeedScaleSlider", 0.163 },
+            { "SprintingSpeedScaleSlider", 1.875 },
+            { "PlayerModelScaleSlider", 0.9375 },
+            { "FrictionSlider", 0.91000003 },
+            { "WaterDownStrengthSlider", 1.285 },
+            { "AirborneSpeedSlider", 0.2 },
+            { "PotionAmplifierSlider", 0 },
+            { "MaxStackSlider", 64 },
+            { "LureSlider", 0 },
+            { "LuckSlider", 0 },
+            { "WorldSizeSlider", 172 },
+            { "NetherSizeSlider", 176 },
+            { "BabyRateSlider", 5 },
+            { "WoolMultiplierSlider", 3 },
+            { "RequiredPlayersSlider", 2 },
+            { "RefillIntervalSlider", 30 },
+            { "RingScoreGreen", 0 },
+            { "RingScoreOrange", 0 },
+            { "RingScoreBlue", 0 },
+            { "LiquidSpreadTimeSlider", 0 }
+        };
         #endregion
 
         public CemuPckMngr(MainForm iw)
         {
             InitializeComponent();
+
             _iw = iw;
+
+            // Apply themes
             StyleMngr.Style = Style = iw.StyleMngr.Style;
             StyleMngr.Theme = Theme = iw.StyleMngr.Theme;
+
+            // The TabControls their selected index are stored from the editor so we reset them here
             MainTabs.SelectedIndex = 0;
             ModificationTabs.SelectedIndex = 0;
             MinigamesTabs.SelectedIndex = 0;
+
+            // Set the ItemSize properties for TabControls so we can navigate them in the editor but not at Runtime
+            MainTabs.ItemSize = MainTabs.ItemSize with { Height = 1 };
+            ModificationTabs.ItemSize = ModificationTabs.ItemSize with { Height = 1 };
+            MinigamesTabs.ItemSize = MinigamesTabs.ItemSize with { Height = 1 };
         }
 
         private void Init(object sender, EventArgs e)
@@ -87,7 +109,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Managers
                 Directory.Delete(_cemuPckRootDir + "/temp/", true);
 
             DiscordRP.SetPresence(_iw.IsConnected ? "Connected" : "Disconnected",
-                _iw.MainTabs.SelectedTab.Text + " tab");
+                _iw.MainTabs.SelectedTab.Text + " Tab");
             Dispose();
         }
 
@@ -127,6 +149,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Managers
             if (MainTabs.SelectedIndex != tile.TileCount) MainTabs.SelectedIndex = tile.TileCount;
         }
 
+        //TODO: Checks for whether any mods have even been applied and if not, display an error and abort
         private void SaveBtnClicked(object sender, EventArgs e)
         {
             try
@@ -150,23 +173,67 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Managers
                 foreach (MetroTabPage page in ModificationTabs.TabPages)
                 foreach (Control c in page.Controls)
                 {
-                    if (c is MetroCheckBox cb)
-                        if (cb.Checked)
-                        {
+                    if (c is MetroCheckBox { Checked: true } cb)
+                    {
+#if DEBUG
+                        Console.WriteLine(@"CEMU GRAPHICS PACK MANAGER: Writing values for CheckBox " + cb.Name);
+#endif
+                            // Writes the control name of the CheckBox for identification purposes
                             _cemuGraphicPckPatchesBuilder.AppendLine("#" + cb.Text);
-                            if (cb.Tag.ToString().Contains("|"))
+
+                        // We can modify multiple instructions/addresses by seperating them with | in the tag
+                        if (cb.Tag.ToString().Contains("|"))
+                        {
+                            // Export
+                            _cemuGraphicPckPatchesBuilder.AppendLine(cb.Tag.ToString().Replace('|', '\n'));
+                            continue;
+                        }
+
+                        // Export
+                        _cemuGraphicPckPatchesBuilder.AppendLine(cb.Tag.ToString());
+                    }
+
+                    if (c is NumericUpDown sldr)
+                    {
+
+                        if (!_sliderDefaults.TryGetValue(sldr.Name, out _))
+                        {
+#if DEBUG
+                            Console.WriteLine(@"CEMU GRAPHICS PACK MANAGER: No default value found for " + sldr.Name +
+                                              @". Skipping");
+#endif
+                            continue;
+                        }
+
+                        if (sldr.Value != (decimal)_sliderDefaults[sldr.Name])
+                        {
+#if DEBUG
+                            Console.WriteLine(@"CEMU GRAPHICS PACK MANAGER: Writing values for Slider " + sldr.Name);
+#endif
+                            // Writes the control name of the slider for identification purposes
+                            _cemuGraphicPckPatchesBuilder.AppendLine("#" + sldr.Name);
+
+                            // Decide how we export the Slider, this is a really hacky way of doing it
+
+                            // Exports the slider as a data section modification
+                            if (sldr.Tag.ToString().Contains(".data"))
                             {
-                                _cemuGraphicPckPatchesBuilder.AppendLine(cb.Tag.ToString().Replace('|', '\n'));
+                                // We can modify multiple addresses by seperating them with & in the tag
+                                if (sldr.Tag.ToString().Contains("&"))
+                                {
+                                    var addreStrings = sldr.Tag.ToString().Split('&');
+                                    foreach (var adr in addreStrings)
+                                        _cemuGraphicPckPatchesBuilder.AppendLine(adr + " = .float " + sldr.Value);
+                                    continue;
+                                }
+
+                                // Export
+                                _cemuGraphicPckPatchesBuilder.AppendLine(sldr.Tag.ToString().Replace(".data ", "") +
+                                                                         " = .float " + sldr.Value);
                                 continue;
                             }
 
-                            _cemuGraphicPckPatchesBuilder.AppendLine(cb.Tag.ToString());
-                        }
-
-                    if (c is NumericUpDown sldr)
-                        if (sldr.Value != (int)Enum.Parse(typeof(SliderDefaults), sldr.Name))
-                        {
-                            _cemuGraphicPckPatchesBuilder.AppendLine("#" + sldr.Name);
+                            // We can modify multiple addresses by seperating them with & in the tag
                             if (sldr.Tag.ToString().Contains("&"))
                             {
                                 var addreStrings = sldr.Tag.ToString().Split('&');
@@ -176,12 +243,19 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Managers
                                 continue;
                             }
 
-                            _cemuGraphicPckPatchesBuilder.AppendLine(sldr.Tag + "0x" + StringUtils.ToHex(sldr.Value));
+                            // Finally if the Slider does not modify the data section or multiple addresses, we just export it as a code section modification
+                            _cemuGraphicPckPatchesBuilder.AppendLine(
+                                sldr.Tag + "0x" + StringUtils.ToHex(sldr.Value));
                         }
+                    }
 
+                    // Hacky, this should probabaly get reworked
                     if (c is MetroComboBox comB)
                     {
-                        if (comB == RabbitVariantBox && comB.SelectedIndex == 6)
+#if DEBUG
+                        Console.WriteLine(@"CEMU GRAPHICS PACK MANAGER: Writing values for ComboBox " + comB.Name);
+#endif
+                            if (comB == RabbitVariantBox && comB.SelectedIndex == 6)
                         {
                             _cemuGraphicPckPatchesBuilder.AppendLine("#" + comB.Name + "\n" + comB.Tag + "0x63");
                             continue;
@@ -210,9 +284,10 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Managers
                         }
 
                     if (c is NumericUpDown sldrMini)
-                        if (sldrMini.Value != (int)Enum.Parse(typeof(SliderDefaults), sldrMini.Name))
+                        if (sldrMini.Value != (decimal)_sliderDefaults[sldrMini.Name])
                         {
                             _cemuGraphicPckPatchesBuilder.AppendLine("#" + sldrMini.Name);
+
                             if (sldrMini.Tag.ToString().Contains("&"))
                             {
                                 var addreStrings = sldrMini.Tag.ToString().Split('&');
@@ -222,8 +297,8 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Managers
                                 continue;
                             }
 
-                            _cemuGraphicPckPatchesBuilder.AppendLine(sldrMini.Tag + "0x" +
-                                                                     StringUtils.ToHex(sldrMini.Value));
+                            _cemuGraphicPckPatchesBuilder.AppendLine(
+                                sldrMini.Tag + "0x" + StringUtils.ToHex(sldrMini.Value));
                         }
 
                     if (c is MetroComboBox comB)
@@ -287,40 +362,53 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Managers
                         DialogResult.No)
                         return;
 
-                if (folderBrowser.ShowDialog() == DialogResult.OK)
+                if (folderBrowser.ShowDialog() != DialogResult.OK) return;
+
+                // Load in all the metadata
+                gfxPckFile = new IniFile(folderBrowser.SelectedPath + @"\rules.txt", true);
+                NameBox.Text = gfxPckFile.Read("name", "Definition");
+                PathBox.Text = gfxPckFile.Read("path", "Definition");
+                DescriptionBox.Text = gfxPckFile.Read("description", "Definition")
+                    .Replace("- Generated by the Minecraft: Wii U Mod Injector", string.Empty);
+
+                // Load in all the mods (Only CheckBoxes right now)
+                using (var reader = new StreamReader(folderBrowser.SelectedPath + @"\patches.txt"))
                 {
-                    // Load in all the metadata
-                    gfxPckFile = new IniFile(folderBrowser.SelectedPath + @"\rules.txt", true);
-                    NameBox.Text = gfxPckFile.Read("name", "Definition");
-                    PathBox.Text = gfxPckFile.Read("path", "Definition");
-                    DescriptionBox.Text = gfxPckFile.Read("description", "Definition").Replace("- Generated by the Minecraft: Wii U Mod Injector", string.Empty);
-
-                    // Load in all the mods (Only CheckBoxes right now)
-                    using (var reader = new StreamReader(folderBrowser.SelectedPath + @"\patches.txt"))
+                    while (!reader.EndOfStream)
                     {
-                        while (!reader.EndOfStream)
-                        {
-                            var line = reader.ReadLine();
+                        var line = reader.ReadLine();
 
-                            if (line != null && line.StartsWith("#"))
-                                foreach (MetroTabPage page in ModificationTabs.TabPages)
-                                foreach (Control c in page.Controls)
+                        if (line != null && line.StartsWith("#"))
+                            foreach (MetroTabPage page in ModificationTabs.TabPages)
+                            foreach (Control c in page.Controls)
+                            {
+                                if (c is MetroCheckBox cb)
+                                    // Then check all the mods inside of the pack
+                                    if (line.Trim('#').Contains(cb.Text))
+                                        cb.Checked = true;
+
+                                if (c is NumericUpDown sldr)
                                 {
-                                    if (c is MetroCheckBox cb)
-                                        // Then check all the mods inside of the pack
-                                        if (line.Trim('#').Contains(cb.Text))
-                                            cb.Checked = true;
+                                    // Set the sliders back to default if they aren't already
+                                    if (line.Trim('#').Contains(sldr.Name))
 
-                                    if (c is NumericUpDown sldr)
-                                        // Set the sliders back to default if they aren't already
-                                        if (line.Trim('#').Contains(sldr.Name))
-                                            if (sldr.Value != (int)Enum.Parse(typeof(SliderDefaults), sldr.Name))
-                                                sldr.Value = (int)Enum.Parse(typeof(SliderDefaults), sldr.Name);
+                                        if (!_sliderDefaults.TryGetValue(sldr.Name, out _))
+                                        {
+#if DEBUG
+                                            Console.WriteLine(
+                                                @"CEMU GRAPHICS PACK MANAGER: No default value found for " + sldr.Name +
+                                                @". Skipping");
+#endif
+                                            continue;
+                                        }
+
+                                    if (sldr.Value != (decimal)_sliderDefaults[sldr.Name])
+                                        sldr.Value = (decimal)_sliderDefaults[sldr.Name];
                                 }
-                        }
-
-                        reader.Close();
+                            }
                     }
+
+                    reader.Close();
                 }
             }
             catch (Exception exception)
@@ -328,6 +416,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Managers
                 Exceptions.LogError(exception, "An error occurred while loading Graphics Pack", true);
             }
         }
+
 
         private void ExportAllBtnClicked(object sender, EventArgs e)
         {

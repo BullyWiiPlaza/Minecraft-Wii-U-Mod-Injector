@@ -9,7 +9,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods
 {
     public partial class MapTextEditor : MetroForm
     {
-        private readonly IniFile _savedData = new IniFile(Application.StartupPath + @"\Saved\Data\Minecraft.Wii.U.Mod.Injector.Data.ini");
+        private readonly IniFile _savedData = new(Application.StartupPath + @"\Saved\Data\Minecraft.Wii.U.Mod.Injector.Data.ini");
         private readonly string _savedDataDir = Application.StartupPath + @"\Saved\Data\";
 
         public MapTextEditor(MainForm iw)
@@ -28,7 +28,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods
 
         private void SetMapTextClicked(object sender, EventArgs e)
         {
-            uint textStart = 0x108E2834;
+            const uint textStart = 0x108E2834;
 
             MainForm.GeckoU.ClearString(textStart, 0x108E2984);
             MainForm.GeckoU.WriteString16(textStart, MapText.Text);
@@ -43,7 +43,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods
 
         private void Exiting(object sender, FormClosingEventArgs e)
         {
-            DiscordRP.SetPresence("Connected", new MainForm().MainTabs.SelectedTab.Text + " tab");
+            DiscordRP.SetPresence("Connected", new MainForm().MainTabs.SelectedTab.Text + " Tab");
             Dispose();
         }
     }

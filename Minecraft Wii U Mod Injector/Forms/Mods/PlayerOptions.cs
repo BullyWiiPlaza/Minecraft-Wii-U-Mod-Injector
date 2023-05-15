@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Globalization;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
+using MetroFramework.Controls;
 using MetroFramework.Forms;
 using Minecraft_Wii_U_Mod_Injector.Helpers;
 using Minecraft_Wii_U_Mod_Injector.Helpers.Files;
@@ -10,24 +12,47 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods
 {
     public partial class PlayerOptions : MetroForm
     {
-        private readonly IniFile _savedData = new IniFile(Application.StartupPath + @"\Saved\Data\Minecraft.Wii.U.Mod.Injector.Data.ini");
+        private readonly IniFile _savedData = new(Application.StartupPath + @"\Saved\Data\Minecraft.Wii.U.Mod.Injector.Data.ini");
         private readonly string _savedDataDir = Application.StartupPath + @"\Saved\Data\";
 
+        // Are these 2 the same? I can't tell
         private readonly uint _localPlayer = MainForm.GeckoU.PeekUInt(MainForm.GeckoU.PeekUInt(0x10A0A648) + 0x2C);
         private readonly uint _Player = MainForm.GeckoU.PeekUInt(MainForm.GeckoU.PeekUInt(0x109CD8E4) + 0x34);
         
-
-        private readonly uint[] _capeIdTable =
+        private readonly Dictionary<string, uint> _Capes = new()
         {
-            0x80001518, 0x80001519, 0x8000151A, 0x8000151B,
-            0x8000151C, 0x80000BB8, 0x80000C81, 0x80000C82,
-            0x80000C83, 0x80000C84, 0x80000C85, 0x80000C92,
-            0x80000519, 0x8000051C, 0x8000051D, 0x8000051E,
-            0x80000B1A, 0x80000B1B, 0x80000B17, 0x80000B1E,
-            0x80000B1F, 0x80000B07, 0x80000B0B, 0x80000B0D,
-            0x80000B0E, 0x80000B10, 0x80000B18, 0x80000B13,
-            0x80000B14, 0x80000B0B, 0x80000B1C, 0x80000B1D,
-            0x8000065A
+            { "Minecon 2011", 0x80001518 },
+            { "Minecon 2012", 0x80001519 },
+            { "Minecon 2013", 0x8000151A },
+            { "Minecon 2015", 0x8000151B },
+            { "Minecon 2016", 0x8000151C },
+            { "Jeb Ponytail", 0x80000BB8 },
+            { "The Grim Reaper", 0x80000C81 },
+            { "Devil", 0x80000C82 },
+            { "Dracula", 0x80000C83 },
+            { "Evil Wizard", 0x80000C84 },
+            { "Bride of Frankenstein", 0x80000C85 },
+            { "Wicked Witch", 0x80000C92 },
+            { "Senator Padmé Amidala", 0x80000519 },
+            { "Senator Palpatine", 0x8000051C },
+            { "Count Dooku", 0x8000051D },
+            { "General Grievous", 0x8000051E },
+            { "Erinyes", 0x80000B1A },
+            { "Dryad", 0x80000B1B },
+            { "Spartoi", 0x80000B17 },
+            { "Hephaestus", 0x80000B1E },
+            { "Prometheus", 0x80000B1F },
+            { "Heracles", 0x80000B07 },
+            { "Zeus", 0x80000B0D },
+            { "Hades", 0x80000B0E },
+            { "Poseidon", 0x80000B10 },
+            { "Apollo", 0x80000B18 },
+            { "Artemis", 0x80000B13 },
+            { "Athena",  0x80000B14 },
+            { "Perseus/Trojan Warrior", 0x80000B0B },
+            { "Atlanta", 0x80000B1C },
+            { "Cadmus", 0x80000B1D },
+            { "Drone", 0x8000065A }
         };
 
         public PlayerOptions(MainForm injector)
@@ -49,11 +74,15 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods
 
             foreach (var skin in _savedData.GetKeys("Skins"))
                 SkinList.Items.Add(_savedData.Read(skin, "Skins") + " | " + skin);
+
+            CapeBox.DataSource = new BindingSource(_Capes, null);
+            CapeBox.DisplayMember = "Key";
+            CapeBox.ValueMember = "Value";
         }
 
         private void Exiting(object sender, FormClosingEventArgs e)
         {
-            DiscordRP.SetPresence("Connected", new MainForm().MainTabs.SelectedTab.Text + " tab");
+            DiscordRP.SetPresence("Connected", new MainForm().MainTabs.SelectedTab.Text + " Tab");
             Dispose();
         }
 
@@ -101,7 +130,14 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods
 
         private void CapeBoxChanged(object sender, EventArgs e)
         {
-            var capeId = _capeIdTable[CapeBox.SelectedIndex];
+            // Prevent the CapeBox event from running when the ComboBox isn't clicked, this is to prevent it from changing when populating
+            MetroComboBox cb = (MetroComboBox)sender;
+            if (!cb.Focused)
+            {
+                return;
+            }
+
+            var capeId = _Capes[CapeBox.Text];
             MainForm.GeckoU.CallFunction(0x02F6FC2C, 0, capeId, 0);
         }
 

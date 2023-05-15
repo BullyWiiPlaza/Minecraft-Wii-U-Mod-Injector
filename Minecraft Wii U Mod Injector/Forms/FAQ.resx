@@ -134,10 +134,7 @@ Q: How do I figure out what a mod does?
 A: Each option has a Tool Tip that describes what each one does which you can view by hovering over any mod.
 
 Q: I can't connect to my Wii U, what do I do?
-A: Make sure you are using the Homebrew Launcher, entered the correct IP Address or check your network connection.
-
-Q: What do all the version letters stand for?
-A: c is for Content Update, h is for Hotfix, pr is for Prerelease and q is for Quality of Life</value>
+A: Make sure you are using the Homebrew Launcher, entered the correct IP Address or check your network connection.</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

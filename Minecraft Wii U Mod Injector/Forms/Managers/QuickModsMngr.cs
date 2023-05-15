@@ -55,7 +55,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Managers
             if (!Properties.Settings.Default.SeenQmmMngr)
                 Messaging.Show(
                     "Welcome to the Quick Mods Manager!\nQuick Mods are basically mod presets, you activate a quick mod and it activates a bunch of mods within that" +
-                    " preset.\nThis is useful for whenever you want to activate a large amount of mods at once. Have fun!");
+                    " preset.\nThis is useful for whenever you want to activate a large amount of mods at once");
 
             Properties.Settings.Default.SeenQmmMngr = true;
 
@@ -76,7 +76,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Managers
 
         private void Exiting(object sender, FormClosingEventArgs e)
         {
-            DiscordRP.SetPresence(_iw.IsConnected ? "Connected" : "Disconnected", _iw.MainTabs.SelectedTab.Text + " tab");
+            DiscordRP.SetPresence(_iw.IsConnected ? "Connected" : "Disconnected", _iw.MainTabs.SelectedTab.Text + " Tab");
             Dispose();
         }
 

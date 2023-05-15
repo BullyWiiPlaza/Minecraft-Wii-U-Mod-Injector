@@ -5,7 +5,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
 {
     public class States
     {
-        public static MainForm Injector = new MainForm();
+        public static MainForm Injector = new();
 
         public enum StatesIds
         {
@@ -21,6 +21,10 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
             Injector = mainForm;
         }
 
+        /// <summary>
+        /// Switches between different connection states that affect usability of certain features
+        /// </summary>
+        /// <param name="state">State we should be in</param>
         public static void SwapState(StatesIds state)
         {
             switch (state)
@@ -50,6 +54,11 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
             }
         }
 
+        /// <summary>
+        /// Setup Tabs which depending on connection status
+        /// </summary>
+        /// <param name="injector">The Main Window</param>
+        /// <param name="enabled">Whether pages that require an active connection to the Wii U should be enabled</param>
         public static void SetupTabs(MainForm injector, bool enabled)
         {
             foreach (MetroFramework.Controls.MetroTabPage page in injector.MainTabs.TabPages)

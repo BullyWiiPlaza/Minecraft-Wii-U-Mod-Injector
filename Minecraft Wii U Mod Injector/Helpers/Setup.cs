@@ -13,11 +13,11 @@ using Application = System.Windows.Forms.Application;
 
 namespace Minecraft_Wii_U_Mod_Injector.Helpers
 {
-    class Setup
+    internal class Setup
     {
         public static MainForm Injector = new();
 
-        public static string LocalVer = "v5.3.3";
+        public static string LocalVer = "1.533.00";
         public static string GitVer = string.Empty;
         public static string UpdaterPath = $@"{Application.StartupPath}\Minecraft.Wii.U.Mod.Injector.Updater.exe";
 
@@ -71,7 +71,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
             {
                 // Fix for Windows 7 Systems
                 ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
-                var verChecker = new GitHubClient(new ProductHeaderValue("MCWiiUMIClient"));
+                var verChecker = new GitHubClient(new ProductHeaderValue("MinecraftWiiUModInjector"));
                 var releases = await verChecker.Repository.Release.GetAll(ApplicationUrls.GitHubProfileName, "Minecraft-Wii-U-Mod-Injector");
 
                 GitVer = releases[0].TagName;

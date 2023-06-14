@@ -117,13 +117,190 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="NNIDNameLbl.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="NNIDNameLbl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 74</value>
+  </data>
+  <data name="NNIDNameLbl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>48, 19</value>
+  </data>
+  <data name="NNIDNameLbl.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="NNIDNameLbl.Text" xml:space="preserve">
+    <value>Name:</value>
+  </data>
+  <data name="&gt;&gt;NNIDNameLbl.Name" xml:space="preserve">
+    <value>NNIDNameLbl</value>
+  </data>
+  <data name="&gt;&gt;NNIDNameLbl.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;NNIDNameLbl.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;NNIDNameLbl.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="NNIDNameBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="resource.Image" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="resource.Location" type="System.Drawing.Point, System.Drawing">
+    <value>538, 1</value>
+  </data>
+  <data name="resource.Size" type="System.Drawing.Size, System.Drawing">
+    <value>21, 21</value>
+  </data>
+  <data name="resource.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="resource.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="NNIDNameBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>77, 74</value>
+  </data>
+  <data name="NNIDNameBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>560, 23</value>
+  </data>
+  <data name="NNIDNameBox.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
   <metadata name="ToolTips.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>143, 17</value>
   </metadata>
+  <data name="NNIDNameBox.ToolTip" xml:space="preserve">
+    <value>The name to set</value>
+  </data>
+  <data name="&gt;&gt;NNIDNameBox.Name" xml:space="preserve">
+    <value>NNIDNameBox</value>
+  </data>
+  <data name="&gt;&gt;NNIDNameBox.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroTextBox, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;NNIDNameBox.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;NNIDNameBox.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="NNIDChangeBtn.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="NNIDChangeBtn.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="NNIDChangeBtn.Location" type="System.Drawing.Point, System.Drawing">
+    <value>77, 103</value>
+  </data>
+  <data name="NNIDChangeBtn.Size" type="System.Drawing.Size, System.Drawing">
+    <value>270, 23</value>
+  </data>
+  <data name="NNIDChangeBtn.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="NNIDChangeBtn.Text" xml:space="preserve">
+    <value>Change</value>
+  </data>
+  <data name="NNIDChangeBtn.ToolTip" xml:space="preserve">
+    <value>Changes your Nintendo Network ID</value>
+  </data>
+  <data name="&gt;&gt;NNIDChangeBtn.Name" xml:space="preserve">
+    <value>NNIDChangeBtn</value>
+  </data>
+  <data name="&gt;&gt;NNIDChangeBtn.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroButton, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;NNIDChangeBtn.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;NNIDChangeBtn.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
   <metadata name="StyleMngr.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>660, 165</value>
+  </data>
+  <data name="NNIDResetBtn.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="NNIDResetBtn.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="NNIDResetBtn.Location" type="System.Drawing.Point, System.Drawing">
+    <value>367, 103</value>
+  </data>
+  <data name="NNIDResetBtn.Size" type="System.Drawing.Size, System.Drawing">
+    <value>270, 23</value>
+  </data>
+  <data name="NNIDResetBtn.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="NNIDResetBtn.Text" xml:space="preserve">
+    <value>Reset</value>
+  </data>
+  <data name="NNIDResetBtn.ToolTip" xml:space="preserve">
+    <value>Resets your name to your default
+Nintendo Network ID</value>
+  </data>
+  <data name="&gt;&gt;NNIDResetBtn.Name" xml:space="preserve">
+    <value>NNIDResetBtn</value>
+  </data>
+  <data name="&gt;&gt;NNIDResetBtn.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroButton, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;NNIDResetBtn.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;NNIDResetBtn.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="WarningLbl.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="WarningLbl.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="WarningLbl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>158, 129</value>
+  </data>
+  <data name="WarningLbl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>412, 25</value>
+  </data>
+  <data name="WarningLbl.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="WarningLbl.Text" xml:space="preserve">
+    <value>You and others won't see changes unless they rejoin!</value>
+  </data>
+  <data name="&gt;&gt;WarningLbl.Name" xml:space="preserve">
+    <value>WarningLbl</value>
+  </data>
+  <data name="&gt;&gt;WarningLbl.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;WarningLbl.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;WarningLbl.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAYAAAAAAAEAIAC7DAAAZgAAAICAAAABACAAKAgBACENAABAQAAAAQAgAChCAABJFQEAMDAAAAEA
@@ -1843,5 +2020,32 @@
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP//AAD//wAA//8A
         AP//AADg/wAA4B8AAOAfAADgBwAA4AcAAPgHAAD8BwAA/wcAAP/fAAD//wAA//8AAP//AAA=
 </value>
+  </data>
+  <data name="$this.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>660, 165</value>
+  </data>
+  <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>660, 165</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Minecraft: Wii U Mod Injector - Nintendo Network Editor</value>
+  </data>
+  <data name="&gt;&gt;StyleMngr.Name" xml:space="preserve">
+    <value>StyleMngr</value>
+  </data>
+  <data name="&gt;&gt;StyleMngr.Type" xml:space="preserve">
+    <value>MetroFramework.Components.MetroStyleManager, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;ToolTips.Name" xml:space="preserve">
+    <value>ToolTips</value>
+  </data>
+  <data name="&gt;&gt;ToolTips.Type" xml:space="preserve">
+    <value>MetroFramework.Components.MetroToolTip, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>NnidEditor</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>MetroFramework.Forms.MetroForm, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
   </data>
 </root>

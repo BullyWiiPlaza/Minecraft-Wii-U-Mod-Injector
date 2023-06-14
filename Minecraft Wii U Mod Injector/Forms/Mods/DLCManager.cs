@@ -1,16 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using MetroFramework.Controls;
 using MetroFramework.Forms;
 using Minecraft_Wii_U_Mod_Injector.Helpers;
-using Minecraft_Wii_U_Mod_Injector.Helpers.Files;
 using Minecraft_Wii_U_Mod_Injector.Wii_U.Gecko_U;
 using Minecraft_Wii_U_Mod_Injector.Wii_U.Minecraft;
 
@@ -27,12 +20,12 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods
 
         private void OnLoad(object sender, EventArgs e)
         {
-            DiscordRP.SetPresence("Connected", "DLC Manager");
+            DiscordRpc.SetPresence("Connected", "DLC Manager");
         }
 
         private void OnExit(object sender, FormClosingEventArgs e)
         {
-            DiscordRP.SetPresence("Connected", new MainForm().MainTabs.SelectedTab.Text + " tab");
+            DiscordRpc.SetPresence("Connected", new MainForm().MainTabs.SelectedTab.Text + " Tab");
             Dispose();
         }
 

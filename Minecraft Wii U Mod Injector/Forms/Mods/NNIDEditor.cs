@@ -17,12 +17,15 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods
 
         private void Init(object sender, EventArgs e)
         {
-            DiscordRP.SetPresence("Connected", "Nintendo Network ID Editor");
+            DiscordRpc.SetPresence("Connected", "Nintendo Network ID Editor");
+
+            if(!MainForm.IsPointerLoaded())
+                WarningLbl.Hide();
         }
 
         private void Exiting(object sender, FormClosingEventArgs e)
         {
-            DiscordRP.SetPresence("Connected", new MainForm().MainTabs.SelectedTab.Text + " tab");
+            DiscordRpc.SetPresence("Connected", new MainForm().MainTabs.SelectedTab.Text + " Tab");
             Dispose();
         }
 
@@ -30,7 +33,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods
         {
             MainForm.GeckoU.ClearString(NnidNameAddress, NnidNameAddress + 0x44);
             MainForm.GeckoU.WriteString16(NnidNameAddress, NNIDNameBox.Text);
-            this.Close();
+            Close();
         }
 
         private void ReadNameBtnClicked(object sender, EventArgs e)
@@ -43,7 +46,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods
             var defaultNNID = MainForm.GeckoU.PeekString(0x12, NnidNameAddress + 0x239);
             MainForm.GeckoU.ClearString(NnidNameAddress, NnidNameAddress + 0x44);
             MainForm.GeckoU.WriteString16(NnidNameAddress, defaultNNID);
-            this.Close();
+            Close();
         }
     }
 }

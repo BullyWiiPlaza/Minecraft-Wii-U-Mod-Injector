@@ -6,18 +6,15 @@ using Minecraft_Wii_U_Mod_Injector.Properties;
 using System.Net;
 using System.Windows.Forms;
 using System.Diagnostics;
-using MetroFramework;
-using MetroFramework.Controls;
-using Minecraft_Wii_U_Mod_Injector.Forms.Managers;
 using Application = System.Windows.Forms.Application;
 
 namespace Minecraft_Wii_U_Mod_Injector.Helpers
 {
-    class Setup
+    internal class Setup
     {
         public static MainForm Injector = new();
 
-        public static string LocalVer = "v5.3.2";
+        public static string LocalVer = "1.533.00";
         public static string GitVer = string.Empty;
         public static string UpdaterPath = $@"{Application.StartupPath}\Minecraft.Wii.U.Mod.Injector.Updater.exe";
 
@@ -28,7 +25,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
             Injector = window;
         }
 
-        public async static void SetupInjector()
+        public static void SetupInjector()
         {
             try
             {
@@ -47,19 +44,20 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
                     Settings.Default.Save();
                 }
 
-                DiscordRP.Initialize();
+                DiscordRpc.Initialize();
 
                 SetupUserPrefs();
 
-                DiscordRP.SetPresence("Disconnected", "Idle");
+                DiscordRpc.SetPresence("Disconnected", "Idle");
                 States.SwapState(States.StatesIds.Disconnected);
 
-                Injector.Opacity = 100; // Everything has finished setting up, we can show the form now
+                // Setup is finished, we can show the window now
+                Injector.Opacity = 100;
             }
             catch (Exception error)
             {
                 Exceptions.LogError(error, "Failed to setup", true);
-                DiscordRP.Deinitialize();
+                DiscordRpc.Deinitialize();
                 Environment.Exit(0);
             }
         }
@@ -68,8 +66,9 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
         {
             try
             {
-                ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12; // Fix for Windows 7 Systems
-                var verChecker = new GitHubClient(new ProductHeaderValue("MCWiiUMIClient"));
+                // Fix for Windows 7 Systems
+                ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
+                var verChecker = new GitHubClient(new ProductHeaderValue("MinecraftWiiUModInjector"));
                 var releases = await verChecker.Repository.Release.GetAll(ApplicationUrls.GitHubProfileName, "Minecraft-Wii-U-Mod-Injector");
 
                 GitVer = releases[0].TagName;
@@ -124,52 +123,21 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
                 {
                     Injector.Style = Injector.StyleMngr.Style = Settings.Default.Style;
                     Injector.ColorsBox.Text = Settings.Default.Style.ToString();
-                    Injector.TextAlign = Settings.Default.FormTxtAlign;
-                    Injector.TextAllignBox.Text = Settings.Default.FormTxtAlign.ToString();
                     Injector.MainTabs.SelectedIndex = Settings.Default.TabIndex;
                     Injector.CheckForPreRelease.Checked = Settings.Default.PrereleaseOptIn;
                     Injector.discordRpcCheckBox.Checked = Settings.Default.DiscordRPC;
 
                     if(!Settings.Default.DiscordRPC)
-                        DiscordRP.Deinitialize();
+                        DiscordRpc.Deinitialize();
 
                     Injector.HostIndicators.Checked = Settings.Default.HostIndicators;
-                    Injector.SeasonalThemes.Checked = Settings.Default.SeasonalThemes;
 
-                    if(Settings.Default.Language != "Default")
-                    {
-                        foreach (MetroTabPage page in Injector.MainTabs.TabPages)
-                            LanguageMngr.ApplyLanguage(page.Controls, Settings.Default.Language);
-                        foreach (MetroTabPage page in Injector.MinigamesTabs.TabPages)
-                            LanguageMngr.ApplyLanguage(page.Controls, Settings.Default.Language);
-                    }
-
-                    if (Settings.Default.SeasonalThemes)
-                    {
-                        if (DateTime.Now.ToString("MM") == "10") //Halloween
-                        {
-                            Injector.Style = Injector.StyleMngr.Style = MetroColorStyle.Orange;
-                            Injector.BuildTile.Text = LocalVer + "\r\nHalloween Edition";
-                            Injector.ColorsBox.Enabled = false;
-                            Injector.Refresh();
-                        }
-
-                        if (DateTime.Now.ToString("MM") == "12") //Christmas TODO: Make this way better, looks kind of ugly?
-                        {
-                            Injector.Style = MetroColorStyle.Red;
-                            Injector.StyleMngr.Style = MetroColorStyle.Green;
-                            Injector.BuildTile.Text = LocalVer + "\r\nChristmas Edition";
-                            Injector.ColorsBox.Enabled = false;
-                            Injector.Refresh();
-                        }
-                    }
+                    // TODO Implement new language switcher logic here.. once there are languages setup
                 }
                 catch (Exception)
                 {
                     //Failing to set User Preferences isn't a big deal, so we ignore the exception if one happens
                 }
-
-                Injector.BuildNotesBox.Text = Resources.releaseNotes;
 
                 Miscellaneous.DoHostIndicators(Settings.Default.HostIndicators);
             }

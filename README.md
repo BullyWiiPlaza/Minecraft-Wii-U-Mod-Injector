@@ -20,13 +20,10 @@ The new Discord server can be found by clicking [here](https://discord.gg/EcK8x5
 # How do I report an issue?
 You can report issues using the GitHub issue page or by joining the Discord server linked above.
 
-# Credits
-Credits can be found in the ``Credits`` page on the mod injector.
-
 # Terms
 Before downloading the mod injector or it's source code, you must agree to the [terms of use](LICENSE.md).
 
-# Support the Developers!
+# Credits
 
 SlothWiiPlaza:
 * [Youtube](https://www.youtube.com/c/SlothWiiPlaza)
@@ -36,3 +33,8 @@ Bully@WiiPlaza:
 
 Vylryna:
 * [YouTube](https://www.youtube.com/channel/UCfm8aU2z1k8XaJlW2W4MKSA)
+
+Kashiiera:
+* [YouTube](https://www.youtube.com/Kashiiera)
+
+& many more which can be found on the Credits window in the Mod Injector

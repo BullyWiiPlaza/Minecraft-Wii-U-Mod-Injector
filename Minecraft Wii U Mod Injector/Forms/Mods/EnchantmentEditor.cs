@@ -16,12 +16,12 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods
 
         private void Init(object sender, EventArgs e)
         {
-            DiscordRP.SetPresence("Connected", "Enchantment Editor");
+            DiscordRpc.SetPresence("Connected", "Enchantment Editor");
         }
 
         private void Exiting(object sender, FormClosingEventArgs e)
         {
-            DiscordRP.SetPresence("Connected", new MainForm().MainTabs.SelectedTab.Text + " tab");
+            DiscordRpc.SetPresence("Connected", new MainForm().MainTabs.SelectedTab.Text + " Tab");
             Dispose();
         }
 

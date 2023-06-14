@@ -120,13 +120,765 @@
   <metadata name="StyleMngr.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>590, 390</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="cursesLbl.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="cursesLbl.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cursesLbl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>287, 53</value>
+  </data>
+  <data name="cursesLbl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>50, 19</value>
+  </data>
+  <data name="cursesLbl.TabIndex" type="System.Int32, mscorlib">
+    <value>175</value>
+  </data>
+  <data name="cursesLbl.Text" xml:space="preserve">
+    <value>Curses</value>
+  </data>
+  <data name="&gt;&gt;cursesLbl.Name" xml:space="preserve">
+    <value>cursesLbl</value>
+  </data>
+  <data name="&gt;&gt;cursesLbl.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;cursesLbl.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;cursesLbl.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="cursesPanel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="VanishingCurseBox.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="VanishingCurseBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 32</value>
+  </data>
+  <data name="VanishingCurseBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>121, 15</value>
+  </data>
+  <data name="VanishingCurseBox.TabIndex" type="System.Int32, mscorlib">
+    <value>177</value>
+  </data>
+  <data name="VanishingCurseBox.Text" xml:space="preserve">
+    <value>Curse of Vanishing</value>
+  </data>
   <metadata name="ToolTips.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>143, 17</value>
   </metadata>
+  <data name="VanishingCurseBox.ToolTip" xml:space="preserve">
+    <value>Whether to always enable Curse of Vanishing</value>
+  </data>
+  <data name="&gt;&gt;VanishingCurseBox.Name" xml:space="preserve">
+    <value>VanishingCurseBox</value>
+  </data>
+  <data name="&gt;&gt;VanishingCurseBox.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroCheckBox, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;VanishingCurseBox.Parent" xml:space="preserve">
+    <value>cursesPanel</value>
+  </data>
+  <data name="&gt;&gt;VanishingCurseBox.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="BindingCurseBox.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="BindingCurseBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 11</value>
+  </data>
+  <data name="BindingCurseBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>111, 15</value>
+  </data>
+  <data name="BindingCurseBox.TabIndex" type="System.Int32, mscorlib">
+    <value>176</value>
+  </data>
+  <data name="BindingCurseBox.Text" xml:space="preserve">
+    <value>Curse of Binding</value>
+  </data>
+  <data name="BindingCurseBox.ToolTip" xml:space="preserve">
+    <value>Whether to always enable Curse of Binding</value>
+  </data>
+  <data name="&gt;&gt;BindingCurseBox.Name" xml:space="preserve">
+    <value>BindingCurseBox</value>
+  </data>
+  <data name="&gt;&gt;BindingCurseBox.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroCheckBox, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;BindingCurseBox.Parent" xml:space="preserve">
+    <value>cursesPanel</value>
+  </data>
+  <data name="&gt;&gt;BindingCurseBox.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="cursesPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>283, 63</value>
+  </data>
+  <data name="cursesPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>281, 313</value>
+  </data>
+  <data name="cursesPanel.TabIndex" type="System.Int32, mscorlib">
+    <value>174</value>
+  </data>
+  <data name="&gt;&gt;cursesPanel.Name" xml:space="preserve">
+    <value>cursesPanel</value>
+  </data>
+  <data name="&gt;&gt;cursesPanel.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroPanel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;cursesPanel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;cursesPanel.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="ToolsLbl.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="ToolsLbl.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="ToolsLbl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>27, 173</value>
+  </data>
+  <data name="ToolsLbl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>40, 19</value>
+  </data>
+  <data name="ToolsLbl.TabIndex" type="System.Int32, mscorlib">
+    <value>173</value>
+  </data>
+  <data name="ToolsLbl.Text" xml:space="preserve">
+    <value>Tools</value>
+  </data>
+  <data name="&gt;&gt;ToolsLbl.Name" xml:space="preserve">
+    <value>ToolsLbl</value>
+  </data>
+  <data name="&gt;&gt;ToolsLbl.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;ToolsLbl.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;ToolsLbl.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="toolsPanel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="ChannelingBox.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="ChannelingBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>97, 163</value>
+  </data>
+  <data name="ChannelingBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>84, 15</value>
+  </data>
+  <data name="ChannelingBox.TabIndex" type="System.Int32, mscorlib">
+    <value>178</value>
+  </data>
+  <data name="ChannelingBox.Text" xml:space="preserve">
+    <value>Channeling</value>
+  </data>
+  <data name="ChannelingBox.ToolTip" xml:space="preserve">
+    <value>Whether to always enable Channeling</value>
+  </data>
+  <data name="&gt;&gt;ChannelingBox.Name" xml:space="preserve">
+    <value>ChannelingBox</value>
+  </data>
+  <data name="&gt;&gt;ChannelingBox.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroCheckBox, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;ChannelingBox.Parent" xml:space="preserve">
+    <value>toolsPanel</value>
+  </data>
+  <data name="&gt;&gt;ChannelingBox.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
   <metadata name="StyleExtender.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>246, 17</value>
   </metadata>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="KnockbackSlider.Location" type="System.Drawing.Point, System.Drawing">
+    <value>97, 137</value>
+  </data>
+  <data name="KnockbackSlider.Size" type="System.Drawing.Size, System.Drawing">
+    <value>138, 20</value>
+  </data>
+  <data name="KnockbackSlider.TabIndex" type="System.Int32, mscorlib">
+    <value>177</value>
+  </data>
+  <data name="KnockbackSlider.ToolTip" xml:space="preserve">
+    <value>What level of Knockback do we have?</value>
+  </data>
+  <data name="&gt;&gt;KnockbackSlider.Name" xml:space="preserve">
+    <value>KnockbackSlider</value>
+  </data>
+  <data name="&gt;&gt;KnockbackSlider.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;KnockbackSlider.Parent" xml:space="preserve">
+    <value>toolsPanel</value>
+  </data>
+  <data name="&gt;&gt;KnockbackSlider.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="KnockbackLbl.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="KnockbackLbl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 138</value>
+  </data>
+  <data name="KnockbackLbl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>77, 19</value>
+  </data>
+  <data name="KnockbackLbl.TabIndex" type="System.Int32, mscorlib">
+    <value>176</value>
+  </data>
+  <data name="KnockbackLbl.Text" xml:space="preserve">
+    <value>Knockback:</value>
+  </data>
+  <data name="&gt;&gt;KnockbackLbl.Name" xml:space="preserve">
+    <value>KnockbackLbl</value>
+  </data>
+  <data name="&gt;&gt;KnockbackLbl.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;KnockbackLbl.Parent" xml:space="preserve">
+    <value>toolsPanel</value>
+  </data>
+  <data name="&gt;&gt;KnockbackLbl.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="LootingSlider.Location" type="System.Drawing.Point, System.Drawing">
+    <value>97, 111</value>
+  </data>
+  <data name="LootingSlider.Size" type="System.Drawing.Size, System.Drawing">
+    <value>138, 20</value>
+  </data>
+  <data name="LootingSlider.TabIndex" type="System.Int32, mscorlib">
+    <value>175</value>
+  </data>
+  <data name="LootingSlider.ToolTip" xml:space="preserve">
+    <value>What level of Looting do we have?</value>
+  </data>
+  <data name="&gt;&gt;LootingSlider.Name" xml:space="preserve">
+    <value>LootingSlider</value>
+  </data>
+  <data name="&gt;&gt;LootingSlider.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LootingSlider.Parent" xml:space="preserve">
+    <value>toolsPanel</value>
+  </data>
+  <data name="&gt;&gt;LootingSlider.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="LootingLbl.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LootingLbl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 112</value>
+  </data>
+  <data name="LootingLbl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>59, 19</value>
+  </data>
+  <data name="LootingLbl.TabIndex" type="System.Int32, mscorlib">
+    <value>174</value>
+  </data>
+  <data name="LootingLbl.Text" xml:space="preserve">
+    <value>Looting:</value>
+  </data>
+  <data name="&gt;&gt;LootingLbl.Name" xml:space="preserve">
+    <value>LootingLbl</value>
+  </data>
+  <data name="&gt;&gt;LootingLbl.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;LootingLbl.Parent" xml:space="preserve">
+    <value>toolsPanel</value>
+  </data>
+  <data name="&gt;&gt;LootingLbl.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="LureSlider.Location" type="System.Drawing.Point, System.Drawing">
+    <value>97, 85</value>
+  </data>
+  <data name="LureSlider.Size" type="System.Drawing.Size, System.Drawing">
+    <value>138, 20</value>
+  </data>
+  <data name="LureSlider.TabIndex" type="System.Int32, mscorlib">
+    <value>173</value>
+  </data>
+  <data name="LureSlider.ToolTip" xml:space="preserve">
+    <value>What level of Lure do we have?</value>
+  </data>
+  <data name="&gt;&gt;LureSlider.Name" xml:space="preserve">
+    <value>LureSlider</value>
+  </data>
+  <data name="&gt;&gt;LureSlider.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LureSlider.Parent" xml:space="preserve">
+    <value>toolsPanel</value>
+  </data>
+  <data name="&gt;&gt;LureSlider.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="LureLbl.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LureLbl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 86</value>
+  </data>
+  <data name="LureLbl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>39, 19</value>
+  </data>
+  <data name="LureLbl.TabIndex" type="System.Int32, mscorlib">
+    <value>172</value>
+  </data>
+  <data name="LureLbl.Text" xml:space="preserve">
+    <value>Lure:</value>
+  </data>
+  <data name="&gt;&gt;LureLbl.Name" xml:space="preserve">
+    <value>LureLbl</value>
+  </data>
+  <data name="&gt;&gt;LureLbl.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;LureLbl.Parent" xml:space="preserve">
+    <value>toolsPanel</value>
+  </data>
+  <data name="&gt;&gt;LureLbl.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="LuckOfTheSeaSlider.Location" type="System.Drawing.Point, System.Drawing">
+    <value>119, 59</value>
+  </data>
+  <data name="LuckOfTheSeaSlider.Size" type="System.Drawing.Size, System.Drawing">
+    <value>116, 20</value>
+  </data>
+  <data name="LuckOfTheSeaSlider.TabIndex" type="System.Int32, mscorlib">
+    <value>171</value>
+  </data>
+  <data name="LuckOfTheSeaSlider.ToolTip" xml:space="preserve">
+    <value>What level of Luck Of The Sea do we have?</value>
+  </data>
+  <data name="&gt;&gt;LuckOfTheSeaSlider.Name" xml:space="preserve">
+    <value>LuckOfTheSeaSlider</value>
+  </data>
+  <data name="&gt;&gt;LuckOfTheSeaSlider.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LuckOfTheSeaSlider.Parent" xml:space="preserve">
+    <value>toolsPanel</value>
+  </data>
+  <data name="&gt;&gt;LuckOfTheSeaSlider.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="LuckOfTheSeaLbl.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LuckOfTheSeaLbl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 60</value>
+  </data>
+  <data name="LuckOfTheSeaLbl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>110, 19</value>
+  </data>
+  <data name="LuckOfTheSeaLbl.TabIndex" type="System.Int32, mscorlib">
+    <value>170</value>
+  </data>
+  <data name="LuckOfTheSeaLbl.Text" xml:space="preserve">
+    <value>Luck Of The Sea:</value>
+  </data>
+  <data name="&gt;&gt;LuckOfTheSeaLbl.Name" xml:space="preserve">
+    <value>LuckOfTheSeaLbl</value>
+  </data>
+  <data name="&gt;&gt;LuckOfTheSeaLbl.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;LuckOfTheSeaLbl.Parent" xml:space="preserve">
+    <value>toolsPanel</value>
+  </data>
+  <data name="&gt;&gt;LuckOfTheSeaLbl.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="FireAspectSlider.Location" type="System.Drawing.Point, System.Drawing">
+    <value>97, 33</value>
+  </data>
+  <data name="FireAspectSlider.Size" type="System.Drawing.Size, System.Drawing">
+    <value>138, 20</value>
+  </data>
+  <data name="FireAspectSlider.TabIndex" type="System.Int32, mscorlib">
+    <value>169</value>
+  </data>
+  <data name="FireAspectSlider.ToolTip" xml:space="preserve">
+    <value>What level of Fire Aspect do we have?</value>
+  </data>
+  <data name="&gt;&gt;FireAspectSlider.Name" xml:space="preserve">
+    <value>FireAspectSlider</value>
+  </data>
+  <data name="&gt;&gt;FireAspectSlider.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;FireAspectSlider.Parent" xml:space="preserve">
+    <value>toolsPanel</value>
+  </data>
+  <data name="&gt;&gt;FireAspectSlider.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="EfficiencySlider.Location" type="System.Drawing.Point, System.Drawing">
+    <value>97, 7</value>
+  </data>
+  <data name="EfficiencySlider.Size" type="System.Drawing.Size, System.Drawing">
+    <value>138, 20</value>
+  </data>
+  <data name="EfficiencySlider.TabIndex" type="System.Int32, mscorlib">
+    <value>167</value>
+  </data>
+  <data name="EfficiencySlider.ToolTip" xml:space="preserve">
+    <value>What level of Efficiency do we have?</value>
+  </data>
+  <data name="&gt;&gt;EfficiencySlider.Name" xml:space="preserve">
+    <value>EfficiencySlider</value>
+  </data>
+  <data name="&gt;&gt;EfficiencySlider.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EfficiencySlider.Parent" xml:space="preserve">
+    <value>toolsPanel</value>
+  </data>
+  <data name="&gt;&gt;EfficiencySlider.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="FireAspectLbl.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="FireAspectLbl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 34</value>
+  </data>
+  <data name="FireAspectLbl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>79, 19</value>
+  </data>
+  <data name="FireAspectLbl.TabIndex" type="System.Int32, mscorlib">
+    <value>168</value>
+  </data>
+  <data name="FireAspectLbl.Text" xml:space="preserve">
+    <value>Fire Aspect:</value>
+  </data>
+  <data name="&gt;&gt;FireAspectLbl.Name" xml:space="preserve">
+    <value>FireAspectLbl</value>
+  </data>
+  <data name="&gt;&gt;FireAspectLbl.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;FireAspectLbl.Parent" xml:space="preserve">
+    <value>toolsPanel</value>
+  </data>
+  <data name="&gt;&gt;FireAspectLbl.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="EfficiencyLbl.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="EfficiencyLbl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 8</value>
+  </data>
+  <data name="EfficiencyLbl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>67, 19</value>
+  </data>
+  <data name="EfficiencyLbl.TabIndex" type="System.Int32, mscorlib">
+    <value>166</value>
+  </data>
+  <data name="EfficiencyLbl.Text" xml:space="preserve">
+    <value>Efficiency:</value>
+  </data>
+  <data name="&gt;&gt;EfficiencyLbl.Name" xml:space="preserve">
+    <value>EfficiencyLbl</value>
+  </data>
+  <data name="&gt;&gt;EfficiencyLbl.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;EfficiencyLbl.Parent" xml:space="preserve">
+    <value>toolsPanel</value>
+  </data>
+  <data name="&gt;&gt;EfficiencyLbl.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="toolsPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 183</value>
+  </data>
+  <data name="toolsPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>254, 193</value>
+  </data>
+  <data name="toolsPanel.TabIndex" type="System.Int32, mscorlib">
+    <value>172</value>
+  </data>
+  <data name="&gt;&gt;toolsPanel.Name" xml:space="preserve">
+    <value>toolsPanel</value>
+  </data>
+  <data name="&gt;&gt;toolsPanel.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroPanel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;toolsPanel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;toolsPanel.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="ArmorLbl.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="ArmorLbl.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="ArmorLbl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>27, 53</value>
+  </data>
+  <data name="ArmorLbl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>48, 19</value>
+  </data>
+  <data name="ArmorLbl.TabIndex" type="System.Int32, mscorlib">
+    <value>171</value>
+  </data>
+  <data name="ArmorLbl.Text" xml:space="preserve">
+    <value>Armor</value>
+  </data>
+  <data name="&gt;&gt;ArmorLbl.Name" xml:space="preserve">
+    <value>ArmorLbl</value>
+  </data>
+  <data name="&gt;&gt;ArmorLbl.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;ArmorLbl.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;ArmorLbl.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="armorPanel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="AquaInfinityBox.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="AquaInfinityBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>97, 85</value>
+  </data>
+  <data name="AquaInfinityBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>91, 15</value>
+  </data>
+  <data name="AquaInfinityBox.TabIndex" type="System.Int32, mscorlib">
+    <value>177</value>
+  </data>
+  <data name="AquaInfinityBox.Text" xml:space="preserve">
+    <value>Aqua Infinity</value>
+  </data>
+  <data name="AquaInfinityBox.ToolTip" xml:space="preserve">
+    <value>Whether to always enable Aqua Infinity</value>
+  </data>
+  <data name="&gt;&gt;AquaInfinityBox.Name" xml:space="preserve">
+    <value>AquaInfinityBox</value>
+  </data>
+  <data name="&gt;&gt;AquaInfinityBox.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroCheckBox, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;AquaInfinityBox.Parent" xml:space="preserve">
+    <value>armorPanel</value>
+  </data>
+  <data name="&gt;&gt;AquaInfinityBox.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="RespirationSlider.Location" type="System.Drawing.Point, System.Drawing">
+    <value>97, 59</value>
+  </data>
+  <data name="RespirationSlider.Size" type="System.Drawing.Size, System.Drawing">
+    <value>138, 20</value>
+  </data>
+  <data name="RespirationSlider.TabIndex" type="System.Int32, mscorlib">
+    <value>171</value>
+  </data>
+  <data name="RespirationSlider.ToolTip" xml:space="preserve">
+    <value>What level of Respiration do we have?</value>
+  </data>
+  <data name="&gt;&gt;RespirationSlider.Name" xml:space="preserve">
+    <value>RespirationSlider</value>
+  </data>
+  <data name="&gt;&gt;RespirationSlider.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;RespirationSlider.Parent" xml:space="preserve">
+    <value>armorPanel</value>
+  </data>
+  <data name="&gt;&gt;RespirationSlider.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="RespirationLbl.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="RespirationLbl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 60</value>
+  </data>
+  <data name="RespirationLbl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>80, 19</value>
+  </data>
+  <data name="RespirationLbl.TabIndex" type="System.Int32, mscorlib">
+    <value>170</value>
+  </data>
+  <data name="RespirationLbl.Text" xml:space="preserve">
+    <value>Respiration:</value>
+  </data>
+  <data name="&gt;&gt;RespirationLbl.Name" xml:space="preserve">
+    <value>RespirationLbl</value>
+  </data>
+  <data name="&gt;&gt;RespirationLbl.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;RespirationLbl.Parent" xml:space="preserve">
+    <value>armorPanel</value>
+  </data>
+  <data name="&gt;&gt;RespirationLbl.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="DepthStriderLvlSlider.Location" type="System.Drawing.Point, System.Drawing">
+    <value>97, 33</value>
+  </data>
+  <data name="DepthStriderLvlSlider.Size" type="System.Drawing.Size, System.Drawing">
+    <value>138, 20</value>
+  </data>
+  <data name="DepthStriderLvlSlider.TabIndex" type="System.Int32, mscorlib">
+    <value>169</value>
+  </data>
+  <data name="DepthStriderLvlSlider.ToolTip" xml:space="preserve">
+    <value>What level of Depth Strider do we have?</value>
+  </data>
+  <data name="&gt;&gt;DepthStriderLvlSlider.Name" xml:space="preserve">
+    <value>DepthStriderLvlSlider</value>
+  </data>
+  <data name="&gt;&gt;DepthStriderLvlSlider.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;DepthStriderLvlSlider.Parent" xml:space="preserve">
+    <value>armorPanel</value>
+  </data>
+  <data name="&gt;&gt;DepthStriderLvlSlider.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="FrostWalkerLvlSlider.Location" type="System.Drawing.Point, System.Drawing">
+    <value>97, 7</value>
+  </data>
+  <data name="FrostWalkerLvlSlider.Size" type="System.Drawing.Size, System.Drawing">
+    <value>138, 20</value>
+  </data>
+  <data name="FrostWalkerLvlSlider.TabIndex" type="System.Int32, mscorlib">
+    <value>167</value>
+  </data>
+  <data name="FrostWalkerLvlSlider.ToolTip" xml:space="preserve">
+    <value>What level of Frost Walker do we have?</value>
+  </data>
+  <data name="&gt;&gt;FrostWalkerLvlSlider.Name" xml:space="preserve">
+    <value>FrostWalkerLvlSlider</value>
+  </data>
+  <data name="&gt;&gt;FrostWalkerLvlSlider.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;FrostWalkerLvlSlider.Parent" xml:space="preserve">
+    <value>armorPanel</value>
+  </data>
+  <data name="&gt;&gt;FrostWalkerLvlSlider.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="DepthStriderLvl.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="DepthStriderLvl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 34</value>
+  </data>
+  <data name="DepthStriderLvl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>94, 19</value>
+  </data>
+  <data name="DepthStriderLvl.TabIndex" type="System.Int32, mscorlib">
+    <value>168</value>
+  </data>
+  <data name="DepthStriderLvl.Text" xml:space="preserve">
+    <value>Depth Strider:</value>
+  </data>
+  <data name="&gt;&gt;DepthStriderLvl.Name" xml:space="preserve">
+    <value>DepthStriderLvl</value>
+  </data>
+  <data name="&gt;&gt;DepthStriderLvl.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;DepthStriderLvl.Parent" xml:space="preserve">
+    <value>armorPanel</value>
+  </data>
+  <data name="&gt;&gt;DepthStriderLvl.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="FrostWalkerLvl.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="FrostWalkerLvl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 8</value>
+  </data>
+  <data name="FrostWalkerLvl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>88, 19</value>
+  </data>
+  <data name="FrostWalkerLvl.TabIndex" type="System.Int32, mscorlib">
+    <value>166</value>
+  </data>
+  <data name="FrostWalkerLvl.Text" xml:space="preserve">
+    <value>Frost Walker:</value>
+  </data>
+  <data name="&gt;&gt;FrostWalkerLvl.Name" xml:space="preserve">
+    <value>FrostWalkerLvl</value>
+  </data>
+  <data name="&gt;&gt;FrostWalkerLvl.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;FrostWalkerLvl.Parent" xml:space="preserve">
+    <value>armorPanel</value>
+  </data>
+  <data name="&gt;&gt;FrostWalkerLvl.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="armorPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 63</value>
+  </data>
+  <data name="armorPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>254, 109</value>
+  </data>
+  <data name="armorPanel.TabIndex" type="System.Int32, mscorlib">
+    <value>170</value>
+  </data>
+  <data name="&gt;&gt;armorPanel.Name" xml:space="preserve">
+    <value>armorPanel</value>
+  </data>
+  <data name="&gt;&gt;armorPanel.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroPanel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;armorPanel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;armorPanel.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAYAAAAAAAEAIAC7DAAAZgAAAICAAAABACAAKAgBACENAABAQAAAAQAgAChCAABJFQEAMDAAAAEA
@@ -1846,5 +2598,38 @@
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP//AAD//wAA//8A
         AP//AADg/wAA4B8AAOAfAADgBwAA4AcAAPgHAAD8BwAA/wcAAP/fAAD//wAA//8AAP//AAA=
 </value>
+  </data>
+  <data name="$this.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>3840, 390</value>
+  </data>
+  <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>590, 390</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Minecraft: Wii U Mod Injector - Enchantment Editor</value>
+  </data>
+  <data name="&gt;&gt;StyleMngr.Name" xml:space="preserve">
+    <value>StyleMngr</value>
+  </data>
+  <data name="&gt;&gt;StyleMngr.Type" xml:space="preserve">
+    <value>MetroFramework.Components.MetroStyleManager, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;ToolTips.Name" xml:space="preserve">
+    <value>ToolTips</value>
+  </data>
+  <data name="&gt;&gt;ToolTips.Type" xml:space="preserve">
+    <value>MetroFramework.Components.MetroToolTip, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;StyleExtender.Name" xml:space="preserve">
+    <value>StyleExtender</value>
+  </data>
+  <data name="&gt;&gt;StyleExtender.Type" xml:space="preserve">
+    <value>MetroFramework.Components.MetroStyleExtender, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>EnchantmentEditor</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>MetroFramework.Forms.MetroForm, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
   </data>
 </root>

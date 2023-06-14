@@ -14,7 +14,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms {
         protected override CreateParams CreateParams {
             get {
                 CreateParams cp = base.CreateParams;
-                cp.ExStyle = cp.ExStyle | 0x02000000;
+                cp.ExStyle |= 0x02000000;
                 return cp;
             }
         }
@@ -29,6 +29,11 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms {
 
         private void VylrynaClicked(object sender, EventArgs e) {
             Process.Start("https://www.youtube.com/vylryna");
+        }
+
+        private void KashiieraClicked(object sender, EventArgs e) {
+            Process.Start("https://www.youtube.com/Kashiiera");
+            Process.Start("https://www.youtube.com/@KashiiUera");
         }
 
         private void Exiting(object sender, FormClosingEventArgs e) {

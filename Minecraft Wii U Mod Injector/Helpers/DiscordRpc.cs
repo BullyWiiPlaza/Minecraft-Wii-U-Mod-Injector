@@ -1,9 +1,10 @@
 ﻿using DiscordRPC;
 using System;
+using System.Diagnostics;
 
 namespace Minecraft_Wii_U_Mod_Injector.Helpers
 {
-    class DiscordRP
+    internal class DiscordRpc
     {
         public static DiscordRpcClient Client;
         public static DateTime StartUpTime = DateTime.UtcNow;
@@ -11,7 +12,9 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
         public static void Initialize()
         {
             Client = new DiscordRpcClient("839430556583854101");
-            Client.Initialize();         
+            Client.Initialize();
+
+            Debug.WriteLine(@"Setting Initialized", "DiscordRpc");
         }
 
         public static void SetPresence(string details, string state)
@@ -27,12 +30,15 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
                     LargeImageText = "Minecraft Wii U Mod Injector",
                 }
             });
+            Debug.WriteLine(@"Setting Presence Details: " + details + @" State: " + state, "DiscordRpc");
         }
 
         public static void Deinitialize()
         {
             Client?.Dispose();
             Client = null;
+
+            Debug.WriteLine(@"Disposing", "DiscordRpc");
         }
     }
 }

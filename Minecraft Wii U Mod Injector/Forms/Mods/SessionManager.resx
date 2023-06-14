@@ -117,222 +117,1257 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="DLCPackNames.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
+  <metadata name="StyleManager.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>19, 15</value>
   </metadata>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="DLCPackNames.Width" type="System.Int32, mscorlib">
-    <value>200</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="ListPacksBtn.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
-  </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="ListPacksBtn.Location" type="System.Drawing.Point, System.Drawing">
-    <value>864, 533</value>
-  </data>
-  <data name="ListPacksBtn.Size" type="System.Drawing.Size, System.Drawing">
-    <value>263, 23</value>
-  </data>
-  <data name="ListPacksBtn.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="ListPacksBtn.Text" xml:space="preserve">
-    <value>List DLC Packs</value>
-  </data>
-  <data name="&gt;&gt;ListPacksBtn.Name" xml:space="preserve">
-    <value>ListPacksBtn</value>
-  </data>
-  <data name="&gt;&gt;ListPacksBtn.Type" xml:space="preserve">
-    <value>MetroFramework.Controls.MetroButton, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
-  </data>
-  <data name="&gt;&gt;ListPacksBtn.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;ListPacksBtn.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <metadata name="StyleMngr.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>27, 18</value>
-  </metadata>
-  <data name="PackCountLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
-  </data>
-  <data name="PackCountLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="PackCountLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>864, 508</value>
-  </data>
-  <data name="PackCountLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>143, 19</value>
-  </data>
-  <data name="PackCountLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="PackCountLabel.Text" xml:space="preserve">
-    <value>Current Pack amount : </value>
-  </data>
-  <data name="&gt;&gt;PackCountLabel.Name" xml:space="preserve">
-    <value>PackCountLabel</value>
-  </data>
-  <data name="&gt;&gt;PackCountLabel.Type" xml:space="preserve">
-    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
-  </data>
-  <data name="&gt;&gt;PackCountLabel.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;PackCountLabel.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="DLCPackListView.Alignment" type="System.Windows.Forms.ListViewAlignment, System.Windows.Forms">
-    <value>SnapToGrid</value>
-  </data>
-  <data name="DLCPackListView.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
-  </data>
-  <data name="DLCPackListView.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 12pt</value>
-  </data>
-  <data name="DLCPackListView.Groups" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>
-        AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
-        LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACJTeXN0
-        ZW0uV2luZG93cy5Gb3Jtcy5MaXN0Vmlld0dyb3VwBAAAAAZIZWFkZXIPSGVhZGVyQWxpZ25tZW50A1Rh
-        ZwROYW1lAQQCAShTeXN0ZW0uV2luZG93cy5Gb3Jtcy5Ib3Jpem9udGFsQWxpZ25tZW50AgAAAAIAAAAG
-        AwAAAAdETENOYW1lBfz///8oU3lzdGVtLldpbmRvd3MuRm9ybXMuSG9yaXpvbnRhbEFsaWdubWVudAEA
-        AAAHdmFsdWVfXwAIAgAAAAAAAAAKBgUAAAAHRExDTmFtZQs=
-</value>
-  </data>
-  <data name="DLCPackListView.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 63</value>
-  </data>
-  <data name="DLCPackListView.Size" type="System.Drawing.Size, System.Drawing">
-    <value>835, 464</value>
-  </data>
-  <data name="DLCPackListView.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;DLCPackListView.Name" xml:space="preserve">
-    <value>DLCPackListView</value>
-  </data>
-  <data name="&gt;&gt;DLCPackListView.Type" xml:space="preserve">
-    <value>MetroFramework.Controls.MetroListView, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
-  </data>
-  <data name="&gt;&gt;DLCPackListView.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;DLCPackListView.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="dlcPackInfoLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
-  </data>
-  <data name="dlcPackInfoLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="dlcPackInfoLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>864, 63</value>
-  </data>
-  <data name="dlcPackInfoLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>88, 19</value>
-  </data>
-  <data name="dlcPackInfoLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="dlcPackInfoLabel.Text" xml:space="preserve">
-    <value>DLC Pack Info</value>
-  </data>
-  <data name="&gt;&gt;dlcPackInfoLabel.Name" xml:space="preserve">
-    <value>dlcPackInfoLabel</value>
-  </data>
-  <data name="&gt;&gt;dlcPackInfoLabel.Type" xml:space="preserve">
-    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
-  </data>
-  <data name="&gt;&gt;dlcPackInfoLabel.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;dlcPackInfoLabel.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <metadata name="ToolTipManager.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>131, 18</value>
-  </metadata>
-  <data name="setLicenseMaskBtn.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
-  </data>
-  <data name="setLicenseMaskBtn.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="setLicenseMaskBtn.Location" type="System.Drawing.Point, System.Drawing">
-    <value>443, 533</value>
-  </data>
-  <data name="setLicenseMaskBtn.Size" type="System.Drawing.Size, System.Drawing">
-    <value>415, 23</value>
-  </data>
-  <data name="setLicenseMaskBtn.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="setLicenseMaskBtn.Text" xml:space="preserve">
-    <value>Set License Mask</value>
-  </data>
-  <data name="setLicenseMaskBtn.ToolTip" xml:space="preserve">
-    <value>Set the License Mask e.g unlocks the selected DLC Pack</value>
-  </data>
-  <data name="&gt;&gt;setLicenseMaskBtn.Name" xml:space="preserve">
-    <value>setLicenseMaskBtn</value>
-  </data>
-  <data name="&gt;&gt;setLicenseMaskBtn.Type" xml:space="preserve">
-    <value>MetroFramework.Controls.MetroButton, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
-  </data>
-  <data name="&gt;&gt;setLicenseMaskBtn.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;setLicenseMaskBtn.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="removePackBtn.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
-  </data>
-  <data name="removePackBtn.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="removePackBtn.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 533</value>
-  </data>
-  <data name="removePackBtn.Size" type="System.Drawing.Size, System.Drawing">
-    <value>415, 23</value>
-  </data>
-  <data name="removePackBtn.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="removePackBtn.Text" xml:space="preserve">
-    <value>Remove Pack</value>
-  </data>
-  <data name="removePackBtn.ToolTip" xml:space="preserve">
-    <value>Removes the selected DLC Pack from memory</value>
-  </data>
-  <data name="&gt;&gt;removePackBtn.Name" xml:space="preserve">
-    <value>removePackBtn</value>
-  </data>
-  <data name="&gt;&gt;removePackBtn.Type" xml:space="preserve">
-    <value>MetroFramework.Controls.MetroButton, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
-  </data>
-  <data name="&gt;&gt;removePackBtn.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;removePackBtn.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1150, 580</value>
+    <value>1180, 750</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="CurrentSessionLbl.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="CurrentSessionLbl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>786, 78</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="CurrentSessionLbl.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
+  </data>
+  <data name="CurrentSessionLbl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>174, 25</value>
+  </data>
+  <data name="CurrentSessionLbl.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="CurrentSessionLbl.Text" xml:space="preserve">
+    <value>CURRENT SESSION</value>
+  </data>
+  <data name="&gt;&gt;CurrentSessionLbl.Name" xml:space="preserve">
+    <value>CurrentSessionLbl</value>
+  </data>
+  <data name="&gt;&gt;CurrentSessionLbl.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;CurrentSessionLbl.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;CurrentSessionLbl.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="RefreshPlayersTile.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 672</value>
+  </data>
+  <data name="RefreshPlayersTile.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="RefreshPlayersTile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>760, 60</value>
+  </data>
+  <data name="RefreshPlayersTile.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="RefreshPlayersTile.Text" xml:space="preserve">
+    <value>Refresh</value>
+  </data>
+  <data name="RefreshPlayersTile.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <metadata name="ToolTipManager.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>145, 15</value>
+  </metadata>
+  <data name="RefreshPlayersTile.ToolTip" xml:space="preserve">
+    <value>Repopulates the Player List with the current list of players</value>
+  </data>
+  <data name="&gt;&gt;RefreshPlayersTile.Name" xml:space="preserve">
+    <value>RefreshPlayersTile</value>
+  </data>
+  <data name="&gt;&gt;RefreshPlayersTile.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroTile, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;RefreshPlayersTile.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;RefreshPlayersTile.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="MaxPlayerBar.Location" type="System.Drawing.Point, System.Drawing">
+    <value>17, 61</value>
+  </data>
+  <data name="MaxPlayerBar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>346, 20</value>
+  </data>
+  <data name="MaxPlayerBar.TabIndex" type="System.Int32, mscorlib">
+    <value>43</value>
+  </data>
+  <data name="MaxPlayerBar.ToolTip" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <metadata name="TrackbarToolTips.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>557, 15</value>
+  </metadata>
+  <data name="MaxPlayerBar.ToolTip1" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;MaxPlayerBar.Name" xml:space="preserve">
+    <value>MaxPlayerBar</value>
+  </data>
+  <data name="&gt;&gt;MaxPlayerBar.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroTrackBar, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;MaxPlayerBar.Parent" xml:space="preserve">
+    <value>SessionOptionsPnl</value>
+  </data>
+  <data name="&gt;&gt;MaxPlayerBar.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="SessionOptsLbl.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="SessionOptsLbl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 17</value>
+  </data>
+  <data name="SessionOptsLbl.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 8</value>
+  </data>
+  <data name="SessionOptsLbl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>132, 19</value>
+  </data>
+  <data name="SessionOptsLbl.TabIndex" type="System.Int32, mscorlib">
+    <value>42</value>
+  </data>
+  <data name="SessionOptsLbl.Text" xml:space="preserve">
+    <value>SESSION OPTIONS</value>
+  </data>
+  <data name="&gt;&gt;SessionOptsLbl.Name" xml:space="preserve">
+    <value>SessionOptsLbl</value>
+  </data>
+  <data name="&gt;&gt;SessionOptsLbl.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;SessionOptsLbl.Parent" xml:space="preserve">
+    <value>SessionOptionsPnl</value>
+  </data>
+  <data name="&gt;&gt;SessionOptsLbl.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="MaximumPlrCountLbl.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="MaximumPlrCountLbl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>14, 44</value>
+  </data>
+  <data name="MaximumPlrCountLbl.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
+  </data>
+  <data name="MaximumPlrCountLbl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>133, 15</value>
+  </data>
+  <data name="MaximumPlrCountLbl.TabIndex" type="System.Int32, mscorlib">
+    <value>32</value>
+  </data>
+  <data name="MaximumPlrCountLbl.Text" xml:space="preserve">
+    <value>Maximum Player Count</value>
+  </data>
+  <data name="MaximumPlrCountLbl.ToolTip" xml:space="preserve">
+    <value>Limits the amount of players that are allowed
+to join this session</value>
+  </data>
+  <data name="&gt;&gt;MaximumPlrCountLbl.Name" xml:space="preserve">
+    <value>MaximumPlrCountLbl</value>
+  </data>
+  <data name="&gt;&gt;MaximumPlrCountLbl.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;MaximumPlrCountLbl.Parent" xml:space="preserve">
+    <value>SessionOptionsPnl</value>
+  </data>
+  <data name="&gt;&gt;MaximumPlrCountLbl.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="PauseSessionTile.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <data name="PauseSessionTile.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 482</value>
+  </data>
+  <data name="PauseSessionTile.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="PauseSessionTile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>381, 47</value>
+  </data>
+  <data name="PauseSessionTile.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="PauseSessionTile.Text" xml:space="preserve">
+    <value>Pause/Unpause Session</value>
+  </data>
+  <data name="PauseSessionTile.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="PauseSessionTile.ToolTip" xml:space="preserve">
+    <value>Pauses any server activity until told to resume</value>
+  </data>
+  <data name="&gt;&gt;PauseSessionTile.Name" xml:space="preserve">
+    <value>PauseSessionTile</value>
+  </data>
+  <data name="&gt;&gt;PauseSessionTile.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroTile, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;PauseSessionTile.Parent" xml:space="preserve">
+    <value>SessionOptionsPnl</value>
+  </data>
+  <data name="&gt;&gt;PauseSessionTile.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="DisconnectSessionTile.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <data name="DisconnectSessionTile.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 529</value>
+  </data>
+  <data name="DisconnectSessionTile.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="DisconnectSessionTile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>381, 47</value>
+  </data>
+  <data name="DisconnectSessionTile.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="DisconnectSessionTile.Text" xml:space="preserve">
+    <value>Disconnect</value>
+  </data>
+  <data name="DisconnectSessionTile.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="DisconnectSessionTile.ToolTip" xml:space="preserve">
+    <value>Disconnects the session and removes everyone</value>
+  </data>
+  <data name="&gt;&gt;DisconnectSessionTile.Name" xml:space="preserve">
+    <value>DisconnectSessionTile</value>
+  </data>
+  <data name="&gt;&gt;DisconnectSessionTile.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroTile, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;DisconnectSessionTile.Parent" xml:space="preserve">
+    <value>SessionOptionsPnl</value>
+  </data>
+  <data name="&gt;&gt;DisconnectSessionTile.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="SessionOptionsPnl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>783, 90</value>
+  </data>
+  <data name="SessionOptionsPnl.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="SessionOptionsPnl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>383, 578</value>
+  </data>
+  <data name="SessionOptionsPnl.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;SessionOptionsPnl.Name" xml:space="preserve">
+    <value>SessionOptionsPnl</value>
+  </data>
+  <data name="&gt;&gt;SessionOptionsPnl.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroPanel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;SessionOptionsPnl.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;SessionOptionsPnl.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="PlayersLbl.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="PlayersLbl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 4</value>
+  </data>
+  <data name="PlayersLbl.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
+  </data>
+  <data name="PlayersLbl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>95, 25</value>
+  </data>
+  <data name="PlayersLbl.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="PlayersLbl.Text" xml:space="preserve">
+    <value>Players 0/8</value>
+  </data>
+  <data name="&gt;&gt;PlayersLbl.Name" xml:space="preserve">
+    <value>PlayersLbl</value>
+  </data>
+  <data name="&gt;&gt;PlayersLbl.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;PlayersLbl.Parent" xml:space="preserve">
+    <value>PlayerListTab</value>
+  </data>
+  <data name="&gt;&gt;PlayersLbl.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="PlayerListFlowPnl.AutoScroll" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="PlayerListFlowPnl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>2, 18</value>
+  </data>
+  <data name="PlayerListFlowPnl.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="PlayerListFlowPnl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>752, 565</value>
+  </data>
+  <data name="PlayerListFlowPnl.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;PlayerListFlowPnl.Name" xml:space="preserve">
+    <value>PlayerListFlowPnl</value>
+  </data>
+  <data name="&gt;&gt;PlayerListFlowPnl.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PlayerListFlowPnl.Parent" xml:space="preserve">
+    <value>PlayerListPnl</value>
+  </data>
+  <data name="&gt;&gt;PlayerListFlowPnl.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="PlayerListPnl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>2, 12</value>
+  </data>
+  <data name="PlayerListPnl.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="PlayerListPnl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>758, 587</value>
+  </data>
+  <data name="PlayerListPnl.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;PlayerListPnl.Name" xml:space="preserve">
+    <value>PlayerListPnl</value>
+  </data>
+  <data name="&gt;&gt;PlayerListPnl.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroPanel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;PlayerListPnl.Parent" xml:space="preserve">
+    <value>PlayerListTab</value>
+  </data>
+  <data name="&gt;&gt;PlayerListPnl.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="PlayerListTab.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 5</value>
+  </data>
+  <data name="PlayerListTab.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="PlayerListTab.Size" type="System.Drawing.Size, System.Drawing">
+    <value>762, 601</value>
+  </data>
+  <data name="PlayerListTab.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="PlayerListTab.Text" xml:space="preserve">
+    <value>Players List</value>
+  </data>
+  <data name="&gt;&gt;PlayerListTab.Name" xml:space="preserve">
+    <value>PlayerListTab</value>
+  </data>
+  <data name="&gt;&gt;PlayerListTab.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroTabPage, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;PlayerListTab.Parent" xml:space="preserve">
+    <value>PlayersTabControl</value>
+  </data>
+  <data name="&gt;&gt;PlayerListTab.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="OptionsForLbl.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="OptionsForLbl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 11</value>
+  </data>
+  <data name="OptionsForLbl.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 6</value>
+  </data>
+  <data name="OptionsForLbl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>132, 25</value>
+  </data>
+  <data name="OptionsForLbl.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="OptionsForLbl.Text" xml:space="preserve">
+    <value>OPTIONS FOR</value>
+  </data>
+  <data name="&gt;&gt;OptionsForLbl.Name" xml:space="preserve">
+    <value>OptionsForLbl</value>
+  </data>
+  <data name="&gt;&gt;OptionsForLbl.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;OptionsForLbl.Parent" xml:space="preserve">
+    <value>SelectedPlayerTab</value>
+  </data>
+  <data name="&gt;&gt;OptionsForLbl.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="WarningLbl.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="WarningLbl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>105, 296</value>
+  </data>
+  <data name="WarningLbl.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 8</value>
+  </data>
+  <data name="WarningLbl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>548, 19</value>
+  </data>
+  <data name="WarningLbl.TabIndex" type="System.Int32, mscorlib">
+    <value>50</value>
+  </data>
+  <data name="WarningLbl.Text" xml:space="preserve">
+    <value>Make sure to refresh the Player List if this player dies/rejoins to prevent crashing</value>
+  </data>
+  <data name="&gt;&gt;WarningLbl.Name" xml:space="preserve">
+    <value>WarningLbl</value>
+  </data>
+  <data name="&gt;&gt;WarningLbl.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;WarningLbl.Parent" xml:space="preserve">
+    <value>PlrOptionsPnl</value>
+  </data>
+  <data name="&gt;&gt;WarningLbl.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="CloseContainerTile.Location" type="System.Drawing.Point, System.Drawing">
+    <value>-1, 324</value>
+  </data>
+  <data name="CloseContainerTile.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="CloseContainerTile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>760, 50</value>
+  </data>
+  <data name="CloseContainerTile.TabIndex" type="System.Int32, mscorlib">
+    <value>49</value>
+  </data>
+  <data name="CloseContainerTile.Text" xml:space="preserve">
+    <value>Close Container</value>
+  </data>
+  <data name="CloseContainerTile.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="CloseContainerTile.ToolTip" xml:space="preserve">
+    <value>Closes the player their opened container</value>
+  </data>
+  <data name="&gt;&gt;CloseContainerTile.Name" xml:space="preserve">
+    <value>CloseContainerTile</value>
+  </data>
+  <data name="&gt;&gt;CloseContainerTile.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroTile, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;CloseContainerTile.Parent" xml:space="preserve">
+    <value>PlrOptionsPnl</value>
+  </data>
+  <data name="&gt;&gt;CloseContainerTile.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="LoopCapes.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LoopCapes.Location" type="System.Drawing.Point, System.Drawing">
+    <value>656, 178</value>
+  </data>
+  <data name="LoopCapes.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="LoopCapes.Size" type="System.Drawing.Size, System.Drawing">
+    <value>85, 15</value>
+  </data>
+  <data name="LoopCapes.TabIndex" type="System.Int32, mscorlib">
+    <value>48</value>
+  </data>
+  <data name="LoopCapes.Text" xml:space="preserve">
+    <value>Loop Capes</value>
+  </data>
+  <data name="LoopCapes.ToolTip" xml:space="preserve">
+    <value>Loops through every cape in the list</value>
+  </data>
+  <data name="&gt;&gt;LoopCapes.Name" xml:space="preserve">
+    <value>LoopCapes</value>
+  </data>
+  <data name="&gt;&gt;LoopCapes.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroCheckBox, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;LoopCapes.Parent" xml:space="preserve">
+    <value>PlrOptionsPnl</value>
+  </data>
+  <data name="&gt;&gt;LoopCapes.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="metroPanel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>-1, 322</value>
+  </data>
+  <data name="metroPanel1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="metroPanel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>770, 1</value>
+  </data>
+  <data name="metroPanel1.TabIndex" type="System.Int32, mscorlib">
+    <value>47</value>
+  </data>
+  <data name="&gt;&gt;metroPanel1.Name" xml:space="preserve">
+    <value>metroPanel1</value>
+  </data>
+  <data name="&gt;&gt;metroPanel1.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroPanel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;metroPanel1.Parent" xml:space="preserve">
+    <value>PlrOptionsPnl</value>
+  </data>
+  <data name="&gt;&gt;metroPanel1.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="LockPositionTile.Location" type="System.Drawing.Point, System.Drawing">
+    <value>379, 374</value>
+  </data>
+  <data name="LockPositionTile.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="LockPositionTile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>380, 50</value>
+  </data>
+  <data name="LockPositionTile.TabIndex" type="System.Int32, mscorlib">
+    <value>45</value>
+  </data>
+  <data name="LockPositionTile.Text" xml:space="preserve">
+    <value>Lock Position</value>
+  </data>
+  <data name="LockPositionTile.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="LockPositionTile.ToolTip" xml:space="preserve">
+    <value>Locks the player their position</value>
+  </data>
+  <data name="&gt;&gt;LockPositionTile.Name" xml:space="preserve">
+    <value>LockPositionTile</value>
+  </data>
+  <data name="&gt;&gt;LockPositionTile.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroTile, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;LockPositionTile.Parent" xml:space="preserve">
+    <value>PlrOptionsPnl</value>
+  </data>
+  <data name="&gt;&gt;LockPositionTile.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="UnlockPositionTile.Location" type="System.Drawing.Point, System.Drawing">
+    <value>-1, 374</value>
+  </data>
+  <data name="UnlockPositionTile.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="UnlockPositionTile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>380, 50</value>
+  </data>
+  <data name="UnlockPositionTile.TabIndex" type="System.Int32, mscorlib">
+    <value>44</value>
+  </data>
+  <data name="UnlockPositionTile.Text" xml:space="preserve">
+    <value>Unlock Position</value>
+  </data>
+  <data name="UnlockPositionTile.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="UnlockPositionTile.ToolTip" xml:space="preserve">
+    <value>Unlocks the player their position</value>
+  </data>
+  <data name="&gt;&gt;UnlockPositionTile.Name" xml:space="preserve">
+    <value>UnlockPositionTile</value>
+  </data>
+  <data name="&gt;&gt;UnlockPositionTile.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroTile, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;UnlockPositionTile.Parent" xml:space="preserve">
+    <value>PlrOptionsPnl</value>
+  </data>
+  <data name="&gt;&gt;UnlockPositionTile.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="SetInvulnerableTile.Location" type="System.Drawing.Point, System.Drawing">
+    <value>379, 424</value>
+  </data>
+  <data name="SetInvulnerableTile.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="SetInvulnerableTile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>380, 50</value>
+  </data>
+  <data name="SetInvulnerableTile.TabIndex" type="System.Int32, mscorlib">
+    <value>43</value>
+  </data>
+  <data name="SetInvulnerableTile.Text" xml:space="preserve">
+    <value>Set Invulnerable</value>
+  </data>
+  <data name="SetInvulnerableTile.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="SetInvulnerableTile.ToolTip" xml:space="preserve">
+    <value>Sets the player to be invulnerable</value>
+  </data>
+  <data name="&gt;&gt;SetInvulnerableTile.Name" xml:space="preserve">
+    <value>SetInvulnerableTile</value>
+  </data>
+  <data name="&gt;&gt;SetInvulnerableTile.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroTile, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;SetInvulnerableTile.Parent" xml:space="preserve">
+    <value>PlrOptionsPnl</value>
+  </data>
+  <data name="&gt;&gt;SetInvulnerableTile.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="SetVulnerableTile.Location" type="System.Drawing.Point, System.Drawing">
+    <value>-1, 424</value>
+  </data>
+  <data name="SetVulnerableTile.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="SetVulnerableTile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>380, 50</value>
+  </data>
+  <data name="SetVulnerableTile.TabIndex" type="System.Int32, mscorlib">
+    <value>42</value>
+  </data>
+  <data name="SetVulnerableTile.Text" xml:space="preserve">
+    <value>Set Vulnerable</value>
+  </data>
+  <data name="SetVulnerableTile.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="SetVulnerableTile.ToolTip" xml:space="preserve">
+    <value>Sets the player to be vulnerable</value>
+  </data>
+  <data name="&gt;&gt;SetVulnerableTile.Name" xml:space="preserve">
+    <value>SetVulnerableTile</value>
+  </data>
+  <data name="&gt;&gt;SetVulnerableTile.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroTile, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;SetVulnerableTile.Parent" xml:space="preserve">
+    <value>PlrOptionsPnl</value>
+  </data>
+  <data name="&gt;&gt;SetVulnerableTile.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="metroLabel2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="metroLabel2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 17</value>
+  </data>
+  <data name="metroLabel2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 8</value>
+  </data>
+  <data name="metroLabel2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>99, 19</value>
+  </data>
+  <data name="metroLabel2.TabIndex" type="System.Int32, mscorlib">
+    <value>41</value>
+  </data>
+  <data name="metroLabel2.Text" xml:space="preserve">
+    <value>PLAYER DATA</value>
+  </data>
+  <data name="&gt;&gt;metroLabel2.Name" xml:space="preserve">
+    <value>metroLabel2</value>
+  </data>
+  <data name="&gt;&gt;metroLabel2.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;metroLabel2.Parent" xml:space="preserve">
+    <value>PlrOptionsPnl</value>
+  </data>
+  <data name="&gt;&gt;metroLabel2.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="ReturnToListBtn.Location" type="System.Drawing.Point, System.Drawing">
+    <value>-1, 524</value>
+  </data>
+  <data name="ReturnToListBtn.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="ReturnToListBtn.Size" type="System.Drawing.Size, System.Drawing">
+    <value>760, 50</value>
+  </data>
+  <data name="ReturnToListBtn.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="ReturnToListBtn.Text" xml:space="preserve">
+    <value>Return to Players List</value>
+  </data>
+  <data name="ReturnToListBtn.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="ReturnToListBtn.ToolTip" xml:space="preserve">
+    <value>Returns to the Players List View</value>
+  </data>
+  <data name="&gt;&gt;ReturnToListBtn.Name" xml:space="preserve">
+    <value>ReturnToListBtn</value>
+  </data>
+  <data name="&gt;&gt;ReturnToListBtn.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroTile, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;ReturnToListBtn.Parent" xml:space="preserve">
+    <value>PlrOptionsPnl</value>
+  </data>
+  <data name="&gt;&gt;ReturnToListBtn.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="XpLevelSlider.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="XpLevelSlider.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 225</value>
+  </data>
+  <data name="XpLevelSlider.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 8</value>
+  </data>
+  <data name="XpLevelSlider.Size" type="System.Drawing.Size, System.Drawing">
+    <value>341, 20</value>
+  </data>
+  <data name="XpLevelSlider.TabIndex" type="System.Int32, mscorlib">
+    <value>33</value>
+  </data>
+  <data name="XpLevelSlider.ToolTip" xml:space="preserve">
+    <value>What Level should we be?
+Note: Affects newest player in splitscreen</value>
+  </data>
+  <data name="&gt;&gt;XpLevelSlider.Name" xml:space="preserve">
+    <value>XpLevelSlider</value>
+  </data>
+  <data name="&gt;&gt;XpLevelSlider.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;XpLevelSlider.Parent" xml:space="preserve">
+    <value>PlrOptionsPnl</value>
+  </data>
+  <data name="&gt;&gt;XpLevelSlider.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="DeleteSkinBtn.Location" type="System.Drawing.Point, System.Drawing">
+    <value>512, 115</value>
+  </data>
+  <data name="DeleteSkinBtn.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 8</value>
+  </data>
+  <data name="DeleteSkinBtn.Size" type="System.Drawing.Size, System.Drawing">
+    <value>140, 29</value>
+  </data>
+  <data name="DeleteSkinBtn.TabIndex" type="System.Int32, mscorlib">
+    <value>37</value>
+  </data>
+  <data name="DeleteSkinBtn.Text" xml:space="preserve">
+    <value>Delete from List</value>
+  </data>
+  <data name="DeleteSkinBtn.ToolTip" xml:space="preserve">
+    <value>Deletes the selected skin from the list</value>
+  </data>
+  <data name="&gt;&gt;DeleteSkinBtn.Name" xml:space="preserve">
+    <value>DeleteSkinBtn</value>
+  </data>
+  <data name="&gt;&gt;DeleteSkinBtn.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroButton, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;DeleteSkinBtn.Parent" xml:space="preserve">
+    <value>PlrOptionsPnl</value>
+  </data>
+  <data name="&gt;&gt;DeleteSkinBtn.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="LoopSkins.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LoopSkins.Location" type="System.Drawing.Point, System.Drawing">
+    <value>656, 121</value>
+  </data>
+  <data name="LoopSkins.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="LoopSkins.Size" type="System.Drawing.Size, System.Drawing">
+    <value>80, 15</value>
+  </data>
+  <data name="LoopSkins.TabIndex" type="System.Int32, mscorlib">
+    <value>36</value>
+  </data>
+  <data name="LoopSkins.Text" xml:space="preserve">
+    <value>Loop Skins</value>
+  </data>
+  <data name="LoopSkins.ToolTip" xml:space="preserve">
+    <value>Loops through every skin in the list</value>
+  </data>
+  <data name="&gt;&gt;LoopSkins.Name" xml:space="preserve">
+    <value>LoopSkins</value>
+  </data>
+  <data name="&gt;&gt;LoopSkins.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroCheckBox, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;LoopSkins.Parent" xml:space="preserve">
+    <value>PlrOptionsPnl</value>
+  </data>
+  <data name="&gt;&gt;LoopSkins.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="RemoveCapeBtn.Location" type="System.Drawing.Point, System.Drawing">
+    <value>512, 171</value>
+  </data>
+  <data name="RemoveCapeBtn.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 8</value>
+  </data>
+  <data name="RemoveCapeBtn.Size" type="System.Drawing.Size, System.Drawing">
+    <value>140, 29</value>
+  </data>
+  <data name="RemoveCapeBtn.TabIndex" type="System.Int32, mscorlib">
+    <value>39</value>
+  </data>
+  <data name="RemoveCapeBtn.Text" xml:space="preserve">
+    <value>Delete from List</value>
+  </data>
+  <data name="RemoveCapeBtn.ToolTip" xml:space="preserve">
+    <value>Deletes the selected cape from the list</value>
+  </data>
+  <data name="&gt;&gt;RemoveCapeBtn.Name" xml:space="preserve">
+    <value>RemoveCapeBtn</value>
+  </data>
+  <data name="&gt;&gt;RemoveCapeBtn.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroButton, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;RemoveCapeBtn.Parent" xml:space="preserve">
+    <value>PlrOptionsPnl</value>
+  </data>
+  <data name="&gt;&gt;RemoveCapeBtn.ZOrder" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <data name="xpLbl.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="xpLbl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>17, 208</value>
+  </data>
+  <data name="xpLbl.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
+  </data>
+  <data name="xpLbl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>51, 15</value>
+  </data>
+  <data name="xpLbl.TabIndex" type="System.Int32, mscorlib">
+    <value>32</value>
+  </data>
+  <data name="xpLbl.Text" xml:space="preserve">
+    <value>XP Level</value>
+  </data>
+  <data name="&gt;&gt;xpLbl.Name" xml:space="preserve">
+    <value>xpLbl</value>
+  </data>
+  <data name="&gt;&gt;xpLbl.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;xpLbl.Parent" xml:space="preserve">
+    <value>PlrOptionsPnl</value>
+  </data>
+  <data name="&gt;&gt;xpLbl.ZOrder" xml:space="preserve">
+    <value>16</value>
+  </data>
+  <data name="AddCapeBtn.Location" type="System.Drawing.Point, System.Drawing">
+    <value>365, 171</value>
+  </data>
+  <data name="AddCapeBtn.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 8</value>
+  </data>
+  <data name="AddCapeBtn.Size" type="System.Drawing.Size, System.Drawing">
+    <value>140, 29</value>
+  </data>
+  <data name="AddCapeBtn.TabIndex" type="System.Int32, mscorlib">
+    <value>38</value>
+  </data>
+  <data name="AddCapeBtn.Text" xml:space="preserve">
+    <value>Add Current Cape to List</value>
+  </data>
+  <data name="AddCapeBtn.ToolTip" xml:space="preserve">
+    <value>Adds the equipped cape to the list</value>
+  </data>
+  <data name="&gt;&gt;AddCapeBtn.Name" xml:space="preserve">
+    <value>AddCapeBtn</value>
+  </data>
+  <data name="&gt;&gt;AddCapeBtn.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroButton, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;AddCapeBtn.Parent" xml:space="preserve">
+    <value>PlrOptionsPnl</value>
+  </data>
+  <data name="&gt;&gt;AddCapeBtn.ZOrder" xml:space="preserve">
+    <value>17</value>
+  </data>
+  <data name="AddSkinBtn.Location" type="System.Drawing.Point, System.Drawing">
+    <value>365, 115</value>
+  </data>
+  <data name="AddSkinBtn.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 8</value>
+  </data>
+  <data name="AddSkinBtn.Size" type="System.Drawing.Size, System.Drawing">
+    <value>140, 29</value>
+  </data>
+  <data name="AddSkinBtn.TabIndex" type="System.Int32, mscorlib">
+    <value>29</value>
+  </data>
+  <data name="AddSkinBtn.Text" xml:space="preserve">
+    <value>Add Current Skin to List</value>
+  </data>
+  <data name="AddSkinBtn.ToolTip" xml:space="preserve">
+    <value>Adds the equipped skin to the list</value>
+  </data>
+  <data name="&gt;&gt;AddSkinBtn.Name" xml:space="preserve">
+    <value>AddSkinBtn</value>
+  </data>
+  <data name="&gt;&gt;AddSkinBtn.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroButton, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;AddSkinBtn.Parent" xml:space="preserve">
+    <value>PlrOptionsPnl</value>
+  </data>
+  <data name="&gt;&gt;AddSkinBtn.ZOrder" xml:space="preserve">
+    <value>18</value>
+  </data>
+  <data name="GamemodeLbl.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="GamemodeLbl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>17, 44</value>
+  </data>
+  <data name="GamemodeLbl.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
+  </data>
+  <data name="GamemodeLbl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>72, 15</value>
+  </data>
+  <data name="GamemodeLbl.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="GamemodeLbl.Text" xml:space="preserve">
+    <value>Game Mode</value>
+  </data>
+  <data name="&gt;&gt;GamemodeLbl.Name" xml:space="preserve">
+    <value>GamemodeLbl</value>
+  </data>
+  <data name="&gt;&gt;GamemodeLbl.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;GamemodeLbl.Parent" xml:space="preserve">
+    <value>PlrOptionsPnl</value>
+  </data>
+  <data name="&gt;&gt;GamemodeLbl.ZOrder" xml:space="preserve">
+    <value>19</value>
+  </data>
+  <data name="PlayerGamemodeBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="PlayerGamemodeBox.ItemHeight" type="System.Int32, mscorlib">
+    <value>23</value>
+  </data>
+  <data name="PlayerGamemodeBox.Items" xml:space="preserve">
+    <value>Survival</value>
+  </data>
+  <data name="PlayerGamemodeBox.Items1" xml:space="preserve">
+    <value>Creative</value>
+  </data>
+  <data name="PlayerGamemodeBox.Items2" xml:space="preserve">
+    <value>Adventure</value>
+  </data>
+  <data name="PlayerGamemodeBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 61</value>
+  </data>
+  <data name="PlayerGamemodeBox.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 8</value>
+  </data>
+  <data name="PlayerGamemodeBox.MaxDropDownItems" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="PlayerGamemodeBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>341, 29</value>
+  </data>
+  <data name="PlayerGamemodeBox.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="PlayerGamemodeBox.ToolTip" xml:space="preserve">
+    <value>Sets the player's current game mode</value>
+  </data>
+  <data name="&gt;&gt;PlayerGamemodeBox.Name" xml:space="preserve">
+    <value>PlayerGamemodeBox</value>
+  </data>
+  <data name="&gt;&gt;PlayerGamemodeBox.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroComboBox, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;PlayerGamemodeBox.Parent" xml:space="preserve">
+    <value>PlrOptionsPnl</value>
+  </data>
+  <data name="&gt;&gt;PlayerGamemodeBox.ZOrder" xml:space="preserve">
+    <value>20</value>
+  </data>
+  <data name="SkinList.ItemHeight" type="System.Int32, mscorlib">
+    <value>23</value>
+  </data>
+  <data name="SkinList.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 115</value>
+  </data>
+  <data name="SkinList.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 8</value>
+  </data>
+  <data name="SkinList.MaxDropDownItems" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="SkinList.Size" type="System.Drawing.Size, System.Drawing">
+    <value>341, 29</value>
+  </data>
+  <data name="SkinList.TabIndex" type="System.Int32, mscorlib">
+    <value>32</value>
+  </data>
+  <data name="SkinList.ToolTip" xml:space="preserve">
+    <value>Sets the (local) player's current skin</value>
+  </data>
+  <data name="&gt;&gt;SkinList.Name" xml:space="preserve">
+    <value>SkinList</value>
+  </data>
+  <data name="&gt;&gt;SkinList.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroComboBox, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;SkinList.Parent" xml:space="preserve">
+    <value>PlrOptionsPnl</value>
+  </data>
+  <data name="&gt;&gt;SkinList.ZOrder" xml:space="preserve">
+    <value>21</value>
+  </data>
+  <data name="CapeList.ItemHeight" type="System.Int32, mscorlib">
+    <value>23</value>
+  </data>
+  <data name="CapeList.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 171</value>
+  </data>
+  <data name="CapeList.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 8</value>
+  </data>
+  <data name="CapeList.MaxDropDownItems" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="CapeList.Size" type="System.Drawing.Size, System.Drawing">
+    <value>341, 29</value>
+  </data>
+  <data name="CapeList.TabIndex" type="System.Int32, mscorlib">
+    <value>27</value>
+  </data>
+  <data name="CapeList.ToolTip" xml:space="preserve">
+    <value>Sets the (local) player's current cape</value>
+  </data>
+  <data name="&gt;&gt;CapeList.Name" xml:space="preserve">
+    <value>CapeList</value>
+  </data>
+  <data name="&gt;&gt;CapeList.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroComboBox, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;CapeList.Parent" xml:space="preserve">
+    <value>PlrOptionsPnl</value>
+  </data>
+  <data name="&gt;&gt;CapeList.ZOrder" xml:space="preserve">
+    <value>22</value>
+  </data>
+  <data name="CapeLbl.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="CapeLbl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>17, 152</value>
+  </data>
+  <data name="CapeLbl.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
+  </data>
+  <data name="CapeLbl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>34, 15</value>
+  </data>
+  <data name="CapeLbl.TabIndex" type="System.Int32, mscorlib">
+    <value>26</value>
+  </data>
+  <data name="CapeLbl.Text" xml:space="preserve">
+    <value>Cape</value>
+  </data>
+  <data name="&gt;&gt;CapeLbl.Name" xml:space="preserve">
+    <value>CapeLbl</value>
+  </data>
+  <data name="&gt;&gt;CapeLbl.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;CapeLbl.Parent" xml:space="preserve">
+    <value>PlrOptionsPnl</value>
+  </data>
+  <data name="&gt;&gt;CapeLbl.ZOrder" xml:space="preserve">
+    <value>23</value>
+  </data>
+  <data name="SkinLbl.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="SkinLbl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>17, 98</value>
+  </data>
+  <data name="SkinLbl.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
+  </data>
+  <data name="SkinLbl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>29, 15</value>
+  </data>
+  <data name="SkinLbl.TabIndex" type="System.Int32, mscorlib">
+    <value>31</value>
+  </data>
+  <data name="SkinLbl.Text" xml:space="preserve">
+    <value>Skin</value>
+  </data>
+  <data name="&gt;&gt;SkinLbl.Name" xml:space="preserve">
+    <value>SkinLbl</value>
+  </data>
+  <data name="&gt;&gt;SkinLbl.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;SkinLbl.Parent" xml:space="preserve">
+    <value>PlrOptionsPnl</value>
+  </data>
+  <data name="&gt;&gt;SkinLbl.ZOrder" xml:space="preserve">
+    <value>24</value>
+  </data>
+  <data name="RemoveFromGameBtn.Location" type="System.Drawing.Point, System.Drawing">
+    <value>-1, 474</value>
+  </data>
+  <data name="RemoveFromGameBtn.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="RemoveFromGameBtn.Size" type="System.Drawing.Size, System.Drawing">
+    <value>760, 50</value>
+  </data>
+  <data name="RemoveFromGameBtn.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="RemoveFromGameBtn.Text" xml:space="preserve">
+    <value>Remove From Game</value>
+  </data>
+  <data name="RemoveFromGameBtn.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="RemoveFromGameBtn.ToolTip" xml:space="preserve">
+    <value>Removes the player from the session
+(They'll be stuck in place and disconnect
+after a while)</value>
+  </data>
+  <data name="&gt;&gt;RemoveFromGameBtn.Name" xml:space="preserve">
+    <value>RemoveFromGameBtn</value>
+  </data>
+  <data name="&gt;&gt;RemoveFromGameBtn.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroTile, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;RemoveFromGameBtn.Parent" xml:space="preserve">
+    <value>PlrOptionsPnl</value>
+  </data>
+  <data name="&gt;&gt;RemoveFromGameBtn.ZOrder" xml:space="preserve">
+    <value>25</value>
+  </data>
+  <data name="PlrOptionsPnl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>2, 23</value>
+  </data>
+  <data name="PlrOptionsPnl.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="PlrOptionsPnl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>760, 576</value>
+  </data>
+  <data name="PlrOptionsPnl.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;PlrOptionsPnl.Name" xml:space="preserve">
+    <value>PlrOptionsPnl</value>
+  </data>
+  <data name="&gt;&gt;PlrOptionsPnl.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroPanel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;PlrOptionsPnl.Parent" xml:space="preserve">
+    <value>SelectedPlayerTab</value>
+  </data>
+  <data name="&gt;&gt;PlrOptionsPnl.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="SelectedPlayerTab.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 5</value>
+  </data>
+  <data name="SelectedPlayerTab.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="SelectedPlayerTab.Size" type="System.Drawing.Size, System.Drawing">
+    <value>762, 601</value>
+  </data>
+  <data name="SelectedPlayerTab.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="SelectedPlayerTab.Text" xml:space="preserve">
+    <value>Player Options</value>
+  </data>
+  <data name="&gt;&gt;SelectedPlayerTab.Name" xml:space="preserve">
+    <value>SelectedPlayerTab</value>
+  </data>
+  <data name="&gt;&gt;SelectedPlayerTab.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroTabPage, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;SelectedPlayerTab.Parent" xml:space="preserve">
+    <value>PlayersTabControl</value>
+  </data>
+  <data name="&gt;&gt;SelectedPlayerTab.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="PlayersTabControl.ItemSize" type="System.Drawing.Size, System.Drawing">
+    <value>383, 1</value>
+  </data>
+  <data name="PlayersTabControl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 62</value>
+  </data>
+  <data name="PlayersTabControl.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="PlayersTabControl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>770, 610</value>
+  </data>
+  <data name="PlayersTabControl.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;PlayersTabControl.Name" xml:space="preserve">
+    <value>PlayersTabControl</value>
+  </data>
+  <data name="&gt;&gt;PlayersTabControl.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroTabControl, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;PlayersTabControl.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;PlayersTabControl.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -2066,25 +3101,25 @@
         AAAAAADAAAAA8AAAAPwAAAD/AQAA/8cAAP//AAD//wAA
 </value>
   </data>
+  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
   <data name="$this.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>3840, 580</value>
+    <value>1180, 750</value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>1150, 580</value>
+    <value>1180, 750</value>
+  </data>
+  <data name="$this.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>7, 60, 7, 8</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Minecraft: Wii U Mod Injector - DLC Manager [BETA]</value>
+    <value>Minecraft: Wii U Mod Injector - Session Manager</value>
   </data>
-  <data name="&gt;&gt;DLCPackNames.Name" xml:space="preserve">
-    <value>DLCPackNames</value>
+  <data name="&gt;&gt;StyleManager.Name" xml:space="preserve">
+    <value>StyleManager</value>
   </data>
-  <data name="&gt;&gt;DLCPackNames.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;StyleMngr.Name" xml:space="preserve">
-    <value>StyleMngr</value>
-  </data>
-  <data name="&gt;&gt;StyleMngr.Type" xml:space="preserve">
+  <data name="&gt;&gt;StyleManager.Type" xml:space="preserve">
     <value>MetroFramework.Components.MetroStyleManager, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
   </data>
   <data name="&gt;&gt;ToolTipManager.Name" xml:space="preserve">
@@ -2093,10 +3128,34 @@
   <data name="&gt;&gt;ToolTipManager.Type" xml:space="preserve">
     <value>MetroFramework.Components.MetroToolTip, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
   </data>
+  <data name="&gt;&gt;SkinLoopTimer.Name" xml:space="preserve">
+    <value>SkinLoopTimer</value>
+  </data>
+  <data name="&gt;&gt;SkinLoopTimer.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TrackbarToolTips.Name" xml:space="preserve">
+    <value>TrackbarToolTips</value>
+  </data>
+  <data name="&gt;&gt;TrackbarToolTips.Type" xml:space="preserve">
+    <value>MetroFramework.Components.MetroToolTip, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;CapeLoopTimer.Name" xml:space="preserve">
+    <value>CapeLoopTimer</value>
+  </data>
+  <data name="&gt;&gt;CapeLoopTimer.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>DLCManager</value>
+    <value>SessionManager</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>MetroFramework.Forms.MetroForm, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
   </data>
+  <metadata name="SkinLoopTimer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>286, 15</value>
+  </metadata>
+  <metadata name="CapeLoopTimer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>419, 15</value>
+  </metadata>
 </root>

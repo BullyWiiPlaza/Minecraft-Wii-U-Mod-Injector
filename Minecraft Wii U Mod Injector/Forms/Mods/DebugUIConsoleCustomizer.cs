@@ -1,16 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
 using System.Text;
 using MetroFramework.Controls;
-using MetroFramework.Forms;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Minecraft_Wii_U_Mod_Injector.Helpers;
-using Minecraft_Wii_U_Mod_Injector.Helpers.Files;
 using Minecraft_Wii_U_Mod_Injector.Wii_U.Gecko_U;
 using Minecraft_Wii_U_Mod_Injector.Wii_U.Minecraft;
 
@@ -31,7 +24,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods
         {
             debugUI_ptr = MainForm.GeckoU.PeekUInt(0x109F95E4);
             //if (debugUI_ptr == 0) return;
-            DiscordRP.SetPresence("Connected", "Debug UI Customizer");
+            DiscordRpc.SetPresence("Connected", "Debug UI Customizer");
             var screenSize = MainForm.GeckoU.ReadBytes(MainForm.GeckoU.PeekUInt(0x109F75A8)+0x294,8);
             Array.Reverse(screenSize);
             float screenWidth = BitConverter.ToSingle(screenSize, 4), screenHeight = BitConverter.ToSingle(screenSize, 0);
@@ -44,7 +37,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods
 
         private void OnExit(object sender, FormClosingEventArgs e)
         {
-            DiscordRP.SetPresence("Connected", new MainForm().MainTabs.SelectedTab.Text + " tab");
+            DiscordRpc.SetPresence("Connected", new MainForm().MainTabs.SelectedTab.Text + " Tab");
             Dispose();
         }
 
@@ -58,7 +51,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods
 
         private void AlphaSlider_ValueChanged(object sender, EventArgs e)
         {
-            MainForm.GeckoU.WriteBytes(MainForm.GeckoU.PeekUInt(debugRenderNode + 0x10) + 0x3f, new byte[] { (byte)AlphaSlider.Value });
+            MainForm.GeckoU.WriteBytes(MainForm.GeckoU.PeekUInt(debugRenderNode + 0x10) + 0x3f, new[] { (byte)AlphaSlider.Value });
         }
 
         private string getString(uint wstring_ptr)
@@ -109,7 +102,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods
                     uint textfield_ptr = MainForm.GeckoU.CallFunction(0x02b03708, fj_fuinode_ptr);
                     if (textfield_ptr == 0)
                     {
-                        MessageBox.Show("No Text Field returned !!");
+                        MessageBox.Show("No Text Field returned!");
                         continue;
                     }
                     uint wstr_ptr = textfield_ptr + 0x114;

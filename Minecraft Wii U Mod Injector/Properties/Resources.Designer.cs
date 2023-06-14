@@ -19,7 +19,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -111,26 +111,110 @@ namespace Minecraft_Wii_U_Mod_Injector.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to [Release v5.3.2 (July 19, 2022)]
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap p0 {
+            get {
+                object obj = ResourceManager.GetObject("p0", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap p1 {
+            get {
+                object obj = ResourceManager.GetObject("p1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap p2 {
+            get {
+                object obj = ResourceManager.GetObject("p2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap p3 {
+            get {
+                object obj = ResourceManager.GetObject("p3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap p4 {
+            get {
+                object obj = ResourceManager.GetObject("p4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap p5 {
+            get {
+                object obj = ResourceManager.GetObject("p5", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap p6 {
+            get {
+                object obj = ResourceManager.GetObject("p6", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap p7 {
+            get {
+                object obj = ResourceManager.GetObject("p7", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pInvalid {
+            get {
+                object obj = ResourceManager.GetObject("pInvalid", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to [Release v1.533.00 (TBD, 2023)]
         ///
         ///# Overview
         ///
-        ///This update includes an extra mod and a few bug fixes
+        ///This update adds several mods, has several additions and fixes a couple of bugs
         ///
         ///# Changes
         ///
         ///### General Additions &amp; Updates
         ///
-        ///- General Game &gt; Added Prevent Being Kicked
-        ///- Commands &gt; Tellraw has been revamped
-        ///
-        ///# Fixes
-        ///
-        ///### General Fixes
-        ///
-        ///- Mod Injector &gt; Fixed a few typos and bugs
-        ///- Commands &gt; Tellraw now works again
-        ///- Commands &gt; Optimized Command Code.
+        ///- Player(s) / Item(s) &gt; Developer Mode options have been split up into 3 different mods &quot;Detailed Item Tooltips&quot;, &quot;Skin Changing In Gameplay&quot; and &quot;Selectable Map Variants&quot;
+        ///- Player(s) / Item(s) &gt; Detailed Item Tooltips
+        ///- Player(s) / Item(s) &gt; Session Manager
+        ///- Player(s) / Item(s) &gt; Session Manager &gt; Session Options &gt; Maximum Pl [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string releaseNotes {
             get {

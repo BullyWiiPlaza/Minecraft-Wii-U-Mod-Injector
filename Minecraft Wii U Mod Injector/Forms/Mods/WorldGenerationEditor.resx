@@ -120,10 +120,656 @@
   <metadata name="StyleMngr.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>640, 280</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="Terrain.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="Terrain.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Terrain.Location" type="System.Drawing.Point, System.Drawing">
+    <value>260, 53</value>
+  </data>
+  <data name="Terrain.Size" type="System.Drawing.Size, System.Drawing">
+    <value>50, 19</value>
+  </data>
+  <data name="Terrain.TabIndex" type="System.Int32, mscorlib">
+    <value>145</value>
+  </data>
+  <data name="Terrain.Text" xml:space="preserve">
+    <value>Terrain</value>
+  </data>
+  <data name="&gt;&gt;Terrain.Name" xml:space="preserve">
+    <value>Terrain</value>
+  </data>
+  <data name="&gt;&gt;Terrain.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;Terrain.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;Terrain.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="TerrainPanel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="NoTerrain.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="NoTerrain.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 95</value>
+  </data>
+  <data name="NoTerrain.Size" type="System.Drawing.Size, System.Drawing">
+    <value>77, 15</value>
+  </data>
+  <data name="NoTerrain.TabIndex" type="System.Int32, mscorlib">
+    <value>132</value>
+  </data>
+  <data name="NoTerrain.Text" xml:space="preserve">
+    <value>No Terrain</value>
+  </data>
   <metadata name="ToolTips.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>143, 17</value>
   </metadata>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="NoTerrain.ToolTip" xml:space="preserve">
+    <value>Newly generated chunks will only
+consist of Air</value>
+  </data>
+  <data name="&gt;&gt;NoTerrain.Name" xml:space="preserve">
+    <value>NoTerrain</value>
+  </data>
+  <data name="&gt;&gt;NoTerrain.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroCheckBox, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;NoTerrain.Parent" xml:space="preserve">
+    <value>TerrainPanel</value>
+  </data>
+  <data name="&gt;&gt;NoTerrain.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="StoneWorld.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="StoneWorld.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 74</value>
+  </data>
+  <data name="StoneWorld.Size" type="System.Drawing.Size, System.Drawing">
+    <value>88, 15</value>
+  </data>
+  <data name="StoneWorld.TabIndex" type="System.Int32, mscorlib">
+    <value>131</value>
+  </data>
+  <data name="StoneWorld.Text" xml:space="preserve">
+    <value>Stone World</value>
+  </data>
+  <data name="StoneWorld.ToolTip" xml:space="preserve">
+    <value>Newly generated chunks will mostly
+consist of Stone</value>
+  </data>
+  <data name="&gt;&gt;StoneWorld.Name" xml:space="preserve">
+    <value>StoneWorld</value>
+  </data>
+  <data name="&gt;&gt;StoneWorld.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroCheckBox, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;StoneWorld.Parent" xml:space="preserve">
+    <value>TerrainPanel</value>
+  </data>
+  <data name="&gt;&gt;StoneWorld.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="NetherSizeSlider.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="NetherSizeSlider.Location" type="System.Drawing.Point, System.Drawing">
+    <value>90, 165</value>
+  </data>
+  <data name="NetherSizeSlider.Size" type="System.Drawing.Size, System.Drawing">
+    <value>268, 20</value>
+  </data>
+  <data name="NetherSizeSlider.TabIndex" type="System.Int32, mscorlib">
+    <value>130</value>
+  </data>
+  <data name="&gt;&gt;NetherSizeSlider.Name" xml:space="preserve">
+    <value>NetherSizeSlider</value>
+  </data>
+  <data name="&gt;&gt;NetherSizeSlider.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;NetherSizeSlider.Parent" xml:space="preserve">
+    <value>TerrainPanel</value>
+  </data>
+  <data name="&gt;&gt;NetherSizeSlider.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="NetherSize.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="NetherSize.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 165</value>
+  </data>
+  <data name="NetherSize.Size" type="System.Drawing.Size, System.Drawing">
+    <value>81, 19</value>
+  </data>
+  <data name="NetherSize.TabIndex" type="System.Int32, mscorlib">
+    <value>129</value>
+  </data>
+  <data name="NetherSize.Text" xml:space="preserve">
+    <value>Nether Size:</value>
+  </data>
+  <data name="&gt;&gt;NetherSize.Name" xml:space="preserve">
+    <value>NetherSize</value>
+  </data>
+  <data name="&gt;&gt;NetherSize.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;NetherSize.Parent" xml:space="preserve">
+    <value>TerrainPanel</value>
+  </data>
+  <data name="&gt;&gt;NetherSize.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="WorldSizeSlider.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="WorldSizeSlider.Location" type="System.Drawing.Point, System.Drawing">
+    <value>84, 139</value>
+  </data>
+  <data name="WorldSizeSlider.Size" type="System.Drawing.Size, System.Drawing">
+    <value>274, 20</value>
+  </data>
+  <data name="WorldSizeSlider.TabIndex" type="System.Int32, mscorlib">
+    <value>127</value>
+  </data>
+  <data name="&gt;&gt;WorldSizeSlider.Name" xml:space="preserve">
+    <value>WorldSizeSlider</value>
+  </data>
+  <data name="&gt;&gt;WorldSizeSlider.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;WorldSizeSlider.Parent" xml:space="preserve">
+    <value>TerrainPanel</value>
+  </data>
+  <data name="&gt;&gt;WorldSizeSlider.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="WorldSize.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="WorldSize.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 139</value>
+  </data>
+  <data name="WorldSize.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 19</value>
+  </data>
+  <data name="WorldSize.TabIndex" type="System.Int32, mscorlib">
+    <value>126</value>
+  </data>
+  <data name="WorldSize.Text" xml:space="preserve">
+    <value>World Size:</value>
+  </data>
+  <data name="&gt;&gt;WorldSize.Name" xml:space="preserve">
+    <value>WorldSize</value>
+  </data>
+  <data name="&gt;&gt;WorldSize.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;WorldSize.Parent" xml:space="preserve">
+    <value>TerrainPanel</value>
+  </data>
+  <data name="&gt;&gt;WorldSize.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="GeneratePlainWorld.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="GeneratePlainWorld.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 53</value>
+  </data>
+  <data name="GeneratePlainWorld.Size" type="System.Drawing.Size, System.Drawing">
+    <value>84, 15</value>
+  </data>
+  <data name="GeneratePlainWorld.TabIndex" type="System.Int32, mscorlib">
+    <value>25</value>
+  </data>
+  <data name="GeneratePlainWorld.Text" xml:space="preserve">
+    <value>Plain World</value>
+  </data>
+  <data name="GeneratePlainWorld.ToolTip" xml:space="preserve">
+    <value>Removes any decoration from newly
+generated chunks such as flowers, trees,
+and more</value>
+  </data>
+  <data name="&gt;&gt;GeneratePlainWorld.Name" xml:space="preserve">
+    <value>GeneratePlainWorld</value>
+  </data>
+  <data name="&gt;&gt;GeneratePlainWorld.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroCheckBox, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;GeneratePlainWorld.Parent" xml:space="preserve">
+    <value>TerrainPanel</value>
+  </data>
+  <data name="&gt;&gt;GeneratePlainWorld.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="FreezingWorld.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="FreezingWorld.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 11</value>
+  </data>
+  <data name="FreezingWorld.Size" type="System.Drawing.Size, System.Drawing">
+    <value>102, 15</value>
+  </data>
+  <data name="FreezingWorld.TabIndex" type="System.Int32, mscorlib">
+    <value>24</value>
+  </data>
+  <data name="FreezingWorld.Text" xml:space="preserve">
+    <value>Freezing World</value>
+  </data>
+  <data name="FreezingWorld.ToolTip" xml:space="preserve">
+    <value>The world will slowly freeze over with Ice</value>
+  </data>
+  <data name="&gt;&gt;FreezingWorld.Name" xml:space="preserve">
+    <value>FreezingWorld</value>
+  </data>
+  <data name="&gt;&gt;FreezingWorld.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroCheckBox, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;FreezingWorld.Parent" xml:space="preserve">
+    <value>TerrainPanel</value>
+  </data>
+  <data name="&gt;&gt;FreezingWorld.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="GenerateAmplifiedWorld.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="GenerateAmplifiedWorld.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 32</value>
+  </data>
+  <data name="GenerateAmplifiedWorld.Size" type="System.Drawing.Size, System.Drawing">
+    <value>110, 15</value>
+  </data>
+  <data name="GenerateAmplifiedWorld.TabIndex" type="System.Int32, mscorlib">
+    <value>26</value>
+  </data>
+  <data name="GenerateAmplifiedWorld.Text" xml:space="preserve">
+    <value>Amplified World</value>
+  </data>
+  <data name="GenerateAmplifiedWorld.ToolTip" xml:space="preserve">
+    <value>Whether to generate an amplified world</value>
+  </data>
+  <data name="&gt;&gt;GenerateAmplifiedWorld.Name" xml:space="preserve">
+    <value>GenerateAmplifiedWorld</value>
+  </data>
+  <data name="&gt;&gt;GenerateAmplifiedWorld.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroCheckBox, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;GenerateAmplifiedWorld.Parent" xml:space="preserve">
+    <value>TerrainPanel</value>
+  </data>
+  <data name="&gt;&gt;GenerateAmplifiedWorld.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="TerrainPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>256, 63</value>
+  </data>
+  <data name="TerrainPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>363, 202</value>
+  </data>
+  <data name="TerrainPanel.TabIndex" type="System.Int32, mscorlib">
+    <value>144</value>
+  </data>
+  <data name="&gt;&gt;TerrainPanel.Name" xml:space="preserve">
+    <value>TerrainPanel</value>
+  </data>
+  <data name="&gt;&gt;TerrainPanel.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroPanel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;TerrainPanel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;TerrainPanel.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="Structures.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="Structures.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Structures.Location" type="System.Drawing.Point, System.Drawing">
+    <value>27, 53</value>
+  </data>
+  <data name="Structures.Size" type="System.Drawing.Size, System.Drawing">
+    <value>71, 19</value>
+  </data>
+  <data name="Structures.TabIndex" type="System.Int32, mscorlib">
+    <value>143</value>
+  </data>
+  <data name="Structures.Text" xml:space="preserve">
+    <value>Structures</value>
+  </data>
+  <data name="&gt;&gt;Structures.Name" xml:space="preserve">
+    <value>Structures</value>
+  </data>
+  <data name="&gt;&gt;Structures.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;Structures.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;Structures.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="StructuresPanel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="IncreasedVillageSpawn.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="IncreasedVillageSpawn.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 158</value>
+  </data>
+  <data name="IncreasedVillageSpawn.Size" type="System.Drawing.Size, System.Drawing">
+    <value>149, 15</value>
+  </data>
+  <data name="IncreasedVillageSpawn.TabIndex" type="System.Int32, mscorlib">
+    <value>152</value>
+  </data>
+  <data name="IncreasedVillageSpawn.Text" xml:space="preserve">
+    <value>Increased Village Spawn</value>
+  </data>
+  <data name="IncreasedVillageSpawn.ToolTip" xml:space="preserve">
+    <value>Increases the spawn rate of Villages</value>
+  </data>
+  <data name="&gt;&gt;IncreasedVillageSpawn.Name" xml:space="preserve">
+    <value>IncreasedVillageSpawn</value>
+  </data>
+  <data name="&gt;&gt;IncreasedVillageSpawn.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroCheckBox, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;IncreasedVillageSpawn.Parent" xml:space="preserve">
+    <value>StructuresPanel</value>
+  </data>
+  <data name="&gt;&gt;IncreasedVillageSpawn.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="IncreasedStrongholdSpawn.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="IncreasedStrongholdSpawn.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 137</value>
+  </data>
+  <data name="IncreasedStrongholdSpawn.Size" type="System.Drawing.Size, System.Drawing">
+    <value>173, 15</value>
+  </data>
+  <data name="IncreasedStrongholdSpawn.TabIndex" type="System.Int32, mscorlib">
+    <value>150</value>
+  </data>
+  <data name="IncreasedStrongholdSpawn.Text" xml:space="preserve">
+    <value>Increased Stronghold Spawn</value>
+  </data>
+  <data name="IncreasedStrongholdSpawn.ToolTip" xml:space="preserve">
+    <value>Increases the spawn rate of Strongholds</value>
+  </data>
+  <data name="&gt;&gt;IncreasedStrongholdSpawn.Name" xml:space="preserve">
+    <value>IncreasedStrongholdSpawn</value>
+  </data>
+  <data name="&gt;&gt;IncreasedStrongholdSpawn.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroCheckBox, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;IncreasedStrongholdSpawn.Parent" xml:space="preserve">
+    <value>StructuresPanel</value>
+  </data>
+  <data name="&gt;&gt;IncreasedStrongholdSpawn.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="IncreasedWoodlandMansionSpawn.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="IncreasedWoodlandMansionSpawn.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 179</value>
+  </data>
+  <data name="IncreasedWoodlandMansionSpawn.Size" type="System.Drawing.Size, System.Drawing">
+    <value>218, 15</value>
+  </data>
+  <data name="IncreasedWoodlandMansionSpawn.TabIndex" type="System.Int32, mscorlib">
+    <value>151</value>
+  </data>
+  <data name="IncreasedWoodlandMansionSpawn.Text" xml:space="preserve">
+    <value>Increased Woodland Mansion Spawn</value>
+  </data>
+  <data name="IncreasedWoodlandMansionSpawn.ToolTip" xml:space="preserve">
+    <value>Increases the spawn rate of Woodland
+Mansions</value>
+  </data>
+  <data name="&gt;&gt;IncreasedWoodlandMansionSpawn.Name" xml:space="preserve">
+    <value>IncreasedWoodlandMansionSpawn</value>
+  </data>
+  <data name="&gt;&gt;IncreasedWoodlandMansionSpawn.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroCheckBox, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;IncreasedWoodlandMansionSpawn.Parent" xml:space="preserve">
+    <value>StructuresPanel</value>
+  </data>
+  <data name="&gt;&gt;IncreasedWoodlandMansionSpawn.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="IncreasedBuriedTreasureSpawn.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="IncreasedBuriedTreasureSpawn.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 11</value>
+  </data>
+  <data name="IncreasedBuriedTreasureSpawn.Size" type="System.Drawing.Size, System.Drawing">
+    <value>194, 15</value>
+  </data>
+  <data name="IncreasedBuriedTreasureSpawn.TabIndex" type="System.Int32, mscorlib">
+    <value>144</value>
+  </data>
+  <data name="IncreasedBuriedTreasureSpawn.Text" xml:space="preserve">
+    <value>Increased Buried Treasure Spawn</value>
+  </data>
+  <data name="IncreasedBuriedTreasureSpawn.ToolTip" xml:space="preserve">
+    <value>Increases the spawn rate of Buried Treasure</value>
+  </data>
+  <data name="&gt;&gt;IncreasedBuriedTreasureSpawn.Name" xml:space="preserve">
+    <value>IncreasedBuriedTreasureSpawn</value>
+  </data>
+  <data name="&gt;&gt;IncreasedBuriedTreasureSpawn.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroCheckBox, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;IncreasedBuriedTreasureSpawn.Parent" xml:space="preserve">
+    <value>StructuresPanel</value>
+  </data>
+  <data name="&gt;&gt;IncreasedBuriedTreasureSpawn.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="IncreasedShipwreckSpawn.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="IncreasedShipwreckSpawn.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 116</value>
+  </data>
+  <data name="IncreasedShipwreckSpawn.Size" type="System.Drawing.Size, System.Drawing">
+    <value>168, 15</value>
+  </data>
+  <data name="IncreasedShipwreckSpawn.TabIndex" type="System.Int32, mscorlib">
+    <value>149</value>
+  </data>
+  <data name="IncreasedShipwreckSpawn.Text" xml:space="preserve">
+    <value>Increased Shipwreck Spawn</value>
+  </data>
+  <data name="IncreasedShipwreckSpawn.ToolTip" xml:space="preserve">
+    <value>Increases the spawn rate of Shipwrecks</value>
+  </data>
+  <data name="&gt;&gt;IncreasedShipwreckSpawn.Name" xml:space="preserve">
+    <value>IncreasedShipwreckSpawn</value>
+  </data>
+  <data name="&gt;&gt;IncreasedShipwreckSpawn.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroCheckBox, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;IncreasedShipwreckSpawn.Parent" xml:space="preserve">
+    <value>StructuresPanel</value>
+  </data>
+  <data name="&gt;&gt;IncreasedShipwreckSpawn.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="IncreasedMineshaftSpawn.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="IncreasedMineshaftSpawn.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 32</value>
+  </data>
+  <data name="IncreasedMineshaftSpawn.Size" type="System.Drawing.Size, System.Drawing">
+    <value>167, 15</value>
+  </data>
+  <data name="IncreasedMineshaftSpawn.TabIndex" type="System.Int32, mscorlib">
+    <value>145</value>
+  </data>
+  <data name="IncreasedMineshaftSpawn.Text" xml:space="preserve">
+    <value>Increased Mineshaft Spawn</value>
+  </data>
+  <data name="IncreasedMineshaftSpawn.ToolTip" xml:space="preserve">
+    <value>Increases the spawn rate of Mineshafts</value>
+  </data>
+  <data name="&gt;&gt;IncreasedMineshaftSpawn.Name" xml:space="preserve">
+    <value>IncreasedMineshaftSpawn</value>
+  </data>
+  <data name="&gt;&gt;IncreasedMineshaftSpawn.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroCheckBox, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;IncreasedMineshaftSpawn.Parent" xml:space="preserve">
+    <value>StructuresPanel</value>
+  </data>
+  <data name="&gt;&gt;IncreasedMineshaftSpawn.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="IncreasedStructuresSpawn.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="IncreasedStructuresSpawn.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 95</value>
+  </data>
+  <data name="IncreasedStructuresSpawn.Size" type="System.Drawing.Size, System.Drawing">
+    <value>167, 15</value>
+  </data>
+  <data name="IncreasedStructuresSpawn.TabIndex" type="System.Int32, mscorlib">
+    <value>148</value>
+  </data>
+  <data name="IncreasedStructuresSpawn.Text" xml:space="preserve">
+    <value>Increased Structures Spawn</value>
+  </data>
+  <data name="IncreasedStructuresSpawn.ToolTip" xml:space="preserve">
+    <value>Increases the spawn rate of Structures</value>
+  </data>
+  <data name="&gt;&gt;IncreasedStructuresSpawn.Name" xml:space="preserve">
+    <value>IncreasedStructuresSpawn</value>
+  </data>
+  <data name="&gt;&gt;IncreasedStructuresSpawn.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroCheckBox, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;IncreasedStructuresSpawn.Parent" xml:space="preserve">
+    <value>StructuresPanel</value>
+  </data>
+  <data name="&gt;&gt;IncreasedStructuresSpawn.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="IncreasedOceanMonumentSpawn.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="IncreasedOceanMonumentSpawn.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 53</value>
+  </data>
+  <data name="IncreasedOceanMonumentSpawn.Size" type="System.Drawing.Size, System.Drawing">
+    <value>211, 15</value>
+  </data>
+  <data name="IncreasedOceanMonumentSpawn.TabIndex" type="System.Int32, mscorlib">
+    <value>146</value>
+  </data>
+  <data name="IncreasedOceanMonumentSpawn.Text" xml:space="preserve">
+    <value>Increased Ocean Monument Spawn</value>
+  </data>
+  <data name="IncreasedOceanMonumentSpawn.ToolTip" xml:space="preserve">
+    <value>Increases the spawn rate of Ocean Monuments</value>
+  </data>
+  <data name="&gt;&gt;IncreasedOceanMonumentSpawn.Name" xml:space="preserve">
+    <value>IncreasedOceanMonumentSpawn</value>
+  </data>
+  <data name="&gt;&gt;IncreasedOceanMonumentSpawn.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroCheckBox, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;IncreasedOceanMonumentSpawn.Parent" xml:space="preserve">
+    <value>StructuresPanel</value>
+  </data>
+  <data name="&gt;&gt;IncreasedOceanMonumentSpawn.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="IncreasedOceanRuinsSpawn.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="IncreasedOceanRuinsSpawn.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 74</value>
+  </data>
+  <data name="IncreasedOceanRuinsSpawn.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 15</value>
+  </data>
+  <data name="IncreasedOceanRuinsSpawn.TabIndex" type="System.Int32, mscorlib">
+    <value>147</value>
+  </data>
+  <data name="IncreasedOceanRuinsSpawn.Text" xml:space="preserve">
+    <value>Increased Ocean Ruins Spawn</value>
+  </data>
+  <data name="IncreasedOceanRuinsSpawn.ToolTip" xml:space="preserve">
+    <value>Increases the spawn rate of Ocean Ruins</value>
+  </data>
+  <data name="&gt;&gt;IncreasedOceanRuinsSpawn.Name" xml:space="preserve">
+    <value>IncreasedOceanRuinsSpawn</value>
+  </data>
+  <data name="&gt;&gt;IncreasedOceanRuinsSpawn.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroCheckBox, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;IncreasedOceanRuinsSpawn.Parent" xml:space="preserve">
+    <value>StructuresPanel</value>
+  </data>
+  <data name="&gt;&gt;IncreasedOceanRuinsSpawn.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="StructuresPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 63</value>
+  </data>
+  <data name="StructuresPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>227, 202</value>
+  </data>
+  <data name="StructuresPanel.TabIndex" type="System.Int32, mscorlib">
+    <value>142</value>
+  </data>
+  <data name="&gt;&gt;StructuresPanel.Name" xml:space="preserve">
+    <value>StructuresPanel</value>
+  </data>
+  <data name="&gt;&gt;StructuresPanel.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroPanel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;StructuresPanel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;StructuresPanel.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAYAAAAAAAEAIAC7DAAAZgAAAICAAAABACAAKAgBACENAABAQAAAAQAgAChCAABJFQEAMDAAAAEA
@@ -1843,5 +2489,32 @@
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP//AAD//wAA//8A
         AP//AADg/wAA4B8AAOAfAADgBwAA4AcAAPgHAAD8BwAA/wcAAP/fAAD//wAA//8AAP//AAA=
 </value>
+  </data>
+  <data name="$this.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>3840, 280</value>
+  </data>
+  <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>640, 280</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Minecraft: Wii U Mod Injector - World Generation Editor</value>
+  </data>
+  <data name="&gt;&gt;StyleMngr.Name" xml:space="preserve">
+    <value>StyleMngr</value>
+  </data>
+  <data name="&gt;&gt;StyleMngr.Type" xml:space="preserve">
+    <value>MetroFramework.Components.MetroStyleManager, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;ToolTips.Name" xml:space="preserve">
+    <value>ToolTips</value>
+  </data>
+  <data name="&gt;&gt;ToolTips.Type" xml:space="preserve">
+    <value>MetroFramework.Components.MetroToolTip, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>WorldGenerationEditor</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>MetroFramework.Forms.MetroForm, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
   </data>
 </root>

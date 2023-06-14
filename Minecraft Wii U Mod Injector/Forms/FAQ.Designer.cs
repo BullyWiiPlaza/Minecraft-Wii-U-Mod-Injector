@@ -44,9 +44,9 @@
             // faqText
             // 
             this.faqText.AutoSize = true;
-            this.faqText.Location = new System.Drawing.Point(23, 60);
+            this.faqText.Location = new System.Drawing.Point(23, 63);
             this.faqText.Name = "faqText";
-            this.faqText.Size = new System.Drawing.Size(757, 323);
+            this.faqText.Size = new System.Drawing.Size(757, 266);
             this.faqText.TabIndex = 0;
             this.faqText.Text = resources.GetString("faqText.Text");
             this.faqText.Theme = MetroFramework.MetroThemeStyle.Dark;
@@ -59,9 +59,9 @@
             this.appIco.HorizontalScrollbarBarColor = true;
             this.appIco.HorizontalScrollbarHighlightOnWheel = false;
             this.appIco.HorizontalScrollbarSize = 10;
-            this.appIco.Location = new System.Drawing.Point(786, 37);
+            this.appIco.Location = new System.Drawing.Point(786, 63);
             this.appIco.Name = "appIco";
-            this.appIco.Size = new System.Drawing.Size(255, 338);
+            this.appIco.Size = new System.Drawing.Size(255, 266);
             this.appIco.TabIndex = 45;
             this.appIco.VerticalScrollbarBarColor = true;
             this.appIco.VerticalScrollbarHighlightOnWheel = false;
@@ -71,7 +71,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1050, 400);
+            this.ClientSize = new System.Drawing.Size(1050, 352);
             this.Controls.Add(this.appIco);
             this.Controls.Add(this.faqText);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

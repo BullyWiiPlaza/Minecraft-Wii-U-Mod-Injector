@@ -53,278 +53,248 @@
             // 
             // withBox
             // 
-            this.withBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            resources.ApplyResources(this.withBox, "withBox");
             this.withBox.DisplayMember = "1";
             this.withBox.FormattingEnabled = true;
-            this.withBox.ItemHeight = 23;
             this.withBox.Items.AddRange(new object[] {
-            "Taking Inventory",
-            "Getting Wood",
-            "Benchmarking",
-            "Time to Mine!",
-            "Hot Topic",
-            "Acquire Hardware",
-            "Time to Farm!",
-            "Bake Bread",
-            "The Lie",
-            "Getting an Upgrade",
-            "Delicious Fish",
-            "On A Rail",
-            "Time to Strike!",
-            "Monster Hunter",
-            "Cow Tipper",
-            "When Pigs Fly",
-            "Leader of the Pack",
-            "MOAR Tools",
-            "Dispense With This",
-            "Into The Nether",
-            "Pork Chop",
-            "Passing the Time",
-            "Archer",
-            "Sniper Duel",
-            "DIAMONDS!",
-            "Return to Sender",
-            "Into Fire",
-            "Local Brewery",
-            "The End?",
-            "The End.",
-            "Enchanter",
-            "Overkill",
-            "Librarian",
-            "Adventuring Time",
-            "Repopulation",
-            "Diamonds to you!",
-            "The Haggler",
-            "Pot Planter",
-            "It\'s a Sign!",
-            "Iron Belly",
-            "Have a Shearful Day",
-            "Rainbow Collection",
-            "Stayin\' Frosty",
-            "Chestful of Cobblestone",
-            "Renewable Energy",
-            "Music to my Ears",
-            "Body Guard",
-            "Iron Man",
-            "Zombie Doctor",
-            "Lion Tamer",
-            "The Beginning?",
-            "The Beginning.",
-            "Beaconator",
-            "Overpowered",
-            "Tie Dye Outfit",
-            "Trampoline",
-            "The Student...",
-            "...has become the Master",
-            "\'Tis but a scratch",
-            "Cupid",
-            "Hunger Pain",
-            "Mine!",
-            "The End... Again...",
-            "You Need a Mint",
-            "Super Sonic",
-            "Dry Spell",
-            "Free Diver",
-            "Super Fuel",
-            "Saddle Up",
-            "Taste of Your Own Medicine",
-            "Beam Me Up",
-            "Map Room",
-            "Camouflage",
-            "Back from the Dead",
-            "S-No Throw",
-            "Snow Storm",
-            "Hotshot",
-            "Snowplough",
-            "Overlord",
-            "Underdog",
-            "The Deep End",
-            "Great View From Up Here",
-            "Change of Sheets",
-            "Cheating Death",
-            "So I Got That Going For Me...",
-            "Let It Go!",
-            "Feeling Ill",
-            "One Pickle, Two Pickle, Sea Pickle, Four",
-            "Alternative Fuel",
-            "Moskstraumen",
-            "Castaway",
-            "Sleep with the Fishes",
-            "Echolocation"});
-            this.withBox.Location = new System.Drawing.Point(72, 98);
-            this.withBox.MaxDropDownItems = 3;
+            resources.GetString("withBox.Items"),
+            resources.GetString("withBox.Items1"),
+            resources.GetString("withBox.Items2"),
+            resources.GetString("withBox.Items3"),
+            resources.GetString("withBox.Items4"),
+            resources.GetString("withBox.Items5"),
+            resources.GetString("withBox.Items6"),
+            resources.GetString("withBox.Items7"),
+            resources.GetString("withBox.Items8"),
+            resources.GetString("withBox.Items9"),
+            resources.GetString("withBox.Items10"),
+            resources.GetString("withBox.Items11"),
+            resources.GetString("withBox.Items12"),
+            resources.GetString("withBox.Items13"),
+            resources.GetString("withBox.Items14"),
+            resources.GetString("withBox.Items15"),
+            resources.GetString("withBox.Items16"),
+            resources.GetString("withBox.Items17"),
+            resources.GetString("withBox.Items18"),
+            resources.GetString("withBox.Items19"),
+            resources.GetString("withBox.Items20"),
+            resources.GetString("withBox.Items21"),
+            resources.GetString("withBox.Items22"),
+            resources.GetString("withBox.Items23"),
+            resources.GetString("withBox.Items24"),
+            resources.GetString("withBox.Items25"),
+            resources.GetString("withBox.Items26"),
+            resources.GetString("withBox.Items27"),
+            resources.GetString("withBox.Items28"),
+            resources.GetString("withBox.Items29"),
+            resources.GetString("withBox.Items30"),
+            resources.GetString("withBox.Items31"),
+            resources.GetString("withBox.Items32"),
+            resources.GetString("withBox.Items33"),
+            resources.GetString("withBox.Items34"),
+            resources.GetString("withBox.Items35"),
+            resources.GetString("withBox.Items36"),
+            resources.GetString("withBox.Items37"),
+            resources.GetString("withBox.Items38"),
+            resources.GetString("withBox.Items39"),
+            resources.GetString("withBox.Items40"),
+            resources.GetString("withBox.Items41"),
+            resources.GetString("withBox.Items42"),
+            resources.GetString("withBox.Items43"),
+            resources.GetString("withBox.Items44"),
+            resources.GetString("withBox.Items45"),
+            resources.GetString("withBox.Items46"),
+            resources.GetString("withBox.Items47"),
+            resources.GetString("withBox.Items48"),
+            resources.GetString("withBox.Items49"),
+            resources.GetString("withBox.Items50"),
+            resources.GetString("withBox.Items51"),
+            resources.GetString("withBox.Items52"),
+            resources.GetString("withBox.Items53"),
+            resources.GetString("withBox.Items54"),
+            resources.GetString("withBox.Items55"),
+            resources.GetString("withBox.Items56"),
+            resources.GetString("withBox.Items57"),
+            resources.GetString("withBox.Items58"),
+            resources.GetString("withBox.Items59"),
+            resources.GetString("withBox.Items60"),
+            resources.GetString("withBox.Items61"),
+            resources.GetString("withBox.Items62"),
+            resources.GetString("withBox.Items63"),
+            resources.GetString("withBox.Items64"),
+            resources.GetString("withBox.Items65"),
+            resources.GetString("withBox.Items66"),
+            resources.GetString("withBox.Items67"),
+            resources.GetString("withBox.Items68"),
+            resources.GetString("withBox.Items69"),
+            resources.GetString("withBox.Items70"),
+            resources.GetString("withBox.Items71"),
+            resources.GetString("withBox.Items72"),
+            resources.GetString("withBox.Items73"),
+            resources.GetString("withBox.Items74"),
+            resources.GetString("withBox.Items75"),
+            resources.GetString("withBox.Items76"),
+            resources.GetString("withBox.Items77"),
+            resources.GetString("withBox.Items78"),
+            resources.GetString("withBox.Items79"),
+            resources.GetString("withBox.Items80"),
+            resources.GetString("withBox.Items81"),
+            resources.GetString("withBox.Items82"),
+            resources.GetString("withBox.Items83"),
+            resources.GetString("withBox.Items84"),
+            resources.GetString("withBox.Items85"),
+            resources.GetString("withBox.Items86"),
+            resources.GetString("withBox.Items87"),
+            resources.GetString("withBox.Items88"),
+            resources.GetString("withBox.Items89"),
+            resources.GetString("withBox.Items90"),
+            resources.GetString("withBox.Items91"),
+            resources.GetString("withBox.Items92")});
             this.withBox.Name = "withBox";
-            this.withBox.Size = new System.Drawing.Size(485, 29);
-            this.withBox.TabIndex = 8;
             this.withBox.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTips.SetToolTip(this.withBox, "Which achievement do you want to replace the selected one with?");
+            this.ToolTips.SetToolTip(this.withBox, resources.GetString("withBox.ToolTip"));
             this.withBox.UseSelectable = true;
             this.withBox.ValueMember = "1";
             // 
             // ApplyBtn
             // 
-            this.ApplyBtn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.ApplyBtn.Location = new System.Drawing.Point(23, 135);
+            resources.ApplyResources(this.ApplyBtn, "ApplyBtn");
             this.ApplyBtn.Name = "ApplyBtn";
-            this.ApplyBtn.Size = new System.Drawing.Size(534, 23);
-            this.ApplyBtn.TabIndex = 9;
-            this.ApplyBtn.Text = "Apply";
             this.ApplyBtn.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTips.SetToolTip(this.ApplyBtn, "Applies the achievement edit");
+            this.ToolTips.SetToolTip(this.ApplyBtn, resources.GetString("ApplyBtn.ToolTip"));
             this.ApplyBtn.UseSelectable = true;
             this.ApplyBtn.Click += new System.EventHandler(this.ApplyBtnClicked);
             // 
             // replaceBox
             // 
-            this.replaceBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            resources.ApplyResources(this.replaceBox, "replaceBox");
             this.replaceBox.DisplayMember = "1";
             this.replaceBox.FormattingEnabled = true;
-            this.replaceBox.ItemHeight = 23;
             this.replaceBox.Items.AddRange(new object[] {
-            "Taking Inventory",
-            "Getting Wood",
-            "Benchmarking",
-            "Time to Mine!",
-            "Hot Topic",
-            "Acquire Hardware",
-            "Time to Farm!",
-            "Bake Bread",
-            "The Lie",
-            "Getting an Upgrade",
-            "Delicious Fish",
-            "On A Rail",
-            "Time to Strike!",
-            "Monster Hunter",
-            "Cow Tipper",
-            "When Pigs Fly",
-            "Leader of the Pack",
-            "MOAR Tools",
-            "Dispense With This",
-            "Into The Nether",
-            "Pork Chop",
-            "Passing the Time",
-            "Archer",
-            "Sniper Duel",
-            "DIAMONDS!",
-            "Return to Sender",
-            "Into Fire",
-            "Local Brewery",
-            "The End?",
-            "The End.",
-            "Enchanter",
-            "Overkill",
-            "Librarian",
-            "Adventuring Time",
-            "Repopulation",
-            "Diamonds to you!",
-            "The Haggler",
-            "Pot Planter",
-            "It\'s a Sign!",
-            "Iron Belly",
-            "Have a Shearful Day",
-            "Rainbow Collection",
-            "Stayin\' Frosty",
-            "Chestful of Cobblestone",
-            "Renewable Energy",
-            "Music to my Ears",
-            "Body Guard",
-            "Iron Man",
-            "Zombie Doctor",
-            "Lion Tamer",
-            "The Beginning?",
-            "The Beginning.",
-            "Beaconator",
-            "Overpowered",
-            "Tie Dye Outfit",
-            "Trampoline",
-            "The Student...",
-            "...has become the Master",
-            "\'Tis but a scratch",
-            "Cupid",
-            "Hunger Pain",
-            "Mine!",
-            "The End... Again...",
-            "You Need a Mint",
-            "Super Sonic",
-            "Dry Spell",
-            "Free Diver",
-            "Super Fuel",
-            "Saddle Up",
-            "Taste of Your Own Medicine",
-            "Beam Me Up",
-            "Map Room",
-            "Camouflage",
-            "Back from the Dead",
-            "S-No Throw",
-            "Snow Storm",
-            "Hotshot",
-            "Snowplough",
-            "Overlord",
-            "Underdog",
-            "The Deep End",
-            "Great View From Up Here",
-            "Change of Sheets",
-            "Cheating Death",
-            "So I Got That Going For Me...",
-            "Let It Go!",
-            "Feeling Ill",
-            "One Pickle, Two Pickle, Sea Pickle, Four",
-            "Alternative Fuel",
-            "Moskstraumen",
-            "Castaway",
-            "Sleep with the Fishes",
-            "Echolocation"});
-            this.replaceBox.Location = new System.Drawing.Point(100, 63);
-            this.replaceBox.MaxDropDownItems = 3;
+            resources.GetString("replaceBox.Items"),
+            resources.GetString("replaceBox.Items1"),
+            resources.GetString("replaceBox.Items2"),
+            resources.GetString("replaceBox.Items3"),
+            resources.GetString("replaceBox.Items4"),
+            resources.GetString("replaceBox.Items5"),
+            resources.GetString("replaceBox.Items6"),
+            resources.GetString("replaceBox.Items7"),
+            resources.GetString("replaceBox.Items8"),
+            resources.GetString("replaceBox.Items9"),
+            resources.GetString("replaceBox.Items10"),
+            resources.GetString("replaceBox.Items11"),
+            resources.GetString("replaceBox.Items12"),
+            resources.GetString("replaceBox.Items13"),
+            resources.GetString("replaceBox.Items14"),
+            resources.GetString("replaceBox.Items15"),
+            resources.GetString("replaceBox.Items16"),
+            resources.GetString("replaceBox.Items17"),
+            resources.GetString("replaceBox.Items18"),
+            resources.GetString("replaceBox.Items19"),
+            resources.GetString("replaceBox.Items20"),
+            resources.GetString("replaceBox.Items21"),
+            resources.GetString("replaceBox.Items22"),
+            resources.GetString("replaceBox.Items23"),
+            resources.GetString("replaceBox.Items24"),
+            resources.GetString("replaceBox.Items25"),
+            resources.GetString("replaceBox.Items26"),
+            resources.GetString("replaceBox.Items27"),
+            resources.GetString("replaceBox.Items28"),
+            resources.GetString("replaceBox.Items29"),
+            resources.GetString("replaceBox.Items30"),
+            resources.GetString("replaceBox.Items31"),
+            resources.GetString("replaceBox.Items32"),
+            resources.GetString("replaceBox.Items33"),
+            resources.GetString("replaceBox.Items34"),
+            resources.GetString("replaceBox.Items35"),
+            resources.GetString("replaceBox.Items36"),
+            resources.GetString("replaceBox.Items37"),
+            resources.GetString("replaceBox.Items38"),
+            resources.GetString("replaceBox.Items39"),
+            resources.GetString("replaceBox.Items40"),
+            resources.GetString("replaceBox.Items41"),
+            resources.GetString("replaceBox.Items42"),
+            resources.GetString("replaceBox.Items43"),
+            resources.GetString("replaceBox.Items44"),
+            resources.GetString("replaceBox.Items45"),
+            resources.GetString("replaceBox.Items46"),
+            resources.GetString("replaceBox.Items47"),
+            resources.GetString("replaceBox.Items48"),
+            resources.GetString("replaceBox.Items49"),
+            resources.GetString("replaceBox.Items50"),
+            resources.GetString("replaceBox.Items51"),
+            resources.GetString("replaceBox.Items52"),
+            resources.GetString("replaceBox.Items53"),
+            resources.GetString("replaceBox.Items54"),
+            resources.GetString("replaceBox.Items55"),
+            resources.GetString("replaceBox.Items56"),
+            resources.GetString("replaceBox.Items57"),
+            resources.GetString("replaceBox.Items58"),
+            resources.GetString("replaceBox.Items59"),
+            resources.GetString("replaceBox.Items60"),
+            resources.GetString("replaceBox.Items61"),
+            resources.GetString("replaceBox.Items62"),
+            resources.GetString("replaceBox.Items63"),
+            resources.GetString("replaceBox.Items64"),
+            resources.GetString("replaceBox.Items65"),
+            resources.GetString("replaceBox.Items66"),
+            resources.GetString("replaceBox.Items67"),
+            resources.GetString("replaceBox.Items68"),
+            resources.GetString("replaceBox.Items69"),
+            resources.GetString("replaceBox.Items70"),
+            resources.GetString("replaceBox.Items71"),
+            resources.GetString("replaceBox.Items72"),
+            resources.GetString("replaceBox.Items73"),
+            resources.GetString("replaceBox.Items74"),
+            resources.GetString("replaceBox.Items75"),
+            resources.GetString("replaceBox.Items76"),
+            resources.GetString("replaceBox.Items77"),
+            resources.GetString("replaceBox.Items78"),
+            resources.GetString("replaceBox.Items79"),
+            resources.GetString("replaceBox.Items80"),
+            resources.GetString("replaceBox.Items81"),
+            resources.GetString("replaceBox.Items82"),
+            resources.GetString("replaceBox.Items83"),
+            resources.GetString("replaceBox.Items84"),
+            resources.GetString("replaceBox.Items85"),
+            resources.GetString("replaceBox.Items86"),
+            resources.GetString("replaceBox.Items87"),
+            resources.GetString("replaceBox.Items88"),
+            resources.GetString("replaceBox.Items89"),
+            resources.GetString("replaceBox.Items90"),
+            resources.GetString("replaceBox.Items91"),
+            resources.GetString("replaceBox.Items92")});
             this.replaceBox.Name = "replaceBox";
-            this.replaceBox.Size = new System.Drawing.Size(457, 29);
-            this.replaceBox.TabIndex = 11;
             this.replaceBox.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTips.SetToolTip(this.replaceBox, "What achievement should be edited?");
+            this.ToolTips.SetToolTip(this.replaceBox, resources.GetString("replaceBox.ToolTip"));
             this.replaceBox.UseSelectable = true;
             this.replaceBox.ValueMember = "0";
             // 
             // withLbl
             // 
-            this.withLbl.AutoSize = true;
+            resources.ApplyResources(this.withLbl, "withLbl");
             this.withLbl.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.withLbl.Location = new System.Drawing.Point(19, 98);
             this.withLbl.Name = "withLbl";
-            this.withLbl.Size = new System.Drawing.Size(47, 25);
-            this.withLbl.TabIndex = 7;
-            this.withLbl.Text = "with:";
             this.withLbl.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // replaceLbl
             // 
-            this.replaceLbl.AutoSize = true;
+            resources.ApplyResources(this.replaceLbl, "replaceLbl");
             this.replaceLbl.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.replaceLbl.Location = new System.Drawing.Point(19, 63);
             this.replaceLbl.Name = "replaceLbl";
-            this.replaceLbl.Size = new System.Drawing.Size(75, 25);
-            this.replaceLbl.TabIndex = 10;
-            this.replaceLbl.Text = "Replace:";
             this.replaceLbl.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // AchievementEditor
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(580, 175);
             this.Controls.Add(this.replaceBox);
             this.Controls.Add(this.replaceLbl);
             this.Controls.Add(this.ApplyBtn);
             this.Controls.Add(this.withBox);
             this.Controls.Add(this.withLbl);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(3840, 175);
-            this.MinimumSize = new System.Drawing.Size(580, 175);
             this.Name = "AchievementEditor";
-            this.Text = "Minecraft: Wii U Mod Injector - Achievement Editor";
             this.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.TopMost = true;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Exiting);

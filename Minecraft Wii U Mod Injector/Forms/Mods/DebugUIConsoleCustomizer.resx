@@ -123,7 +123,342 @@
   <metadata name="ToolTipManager.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>135, 19</value>
   </metadata>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="setBGColorBtn.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="setBGColorBtn.Location" type="System.Drawing.Point, System.Drawing">
+    <value>922, 615</value>
+  </data>
+  <data name="setBGColorBtn.Size" type="System.Drawing.Size, System.Drawing">
+    <value>147, 23</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="setBGColorBtn.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="setBGColorBtn.Text" xml:space="preserve">
+    <value>Set Background Color</value>
+  </data>
+  <data name="&gt;&gt;setBGColorBtn.Name" xml:space="preserve">
+    <value>setBGColorBtn</value>
+  </data>
+  <data name="&gt;&gt;setBGColorBtn.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroButton, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;setBGColorBtn.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;setBGColorBtn.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="AlphaSlider.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="AlphaSlider.Location" type="System.Drawing.Point, System.Drawing">
+    <value>922, 585</value>
+  </data>
+  <data name="AlphaSlider.Size" type="System.Drawing.Size, System.Drawing">
+    <value>147, 24</value>
+  </data>
+  <data name="AlphaSlider.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="AlphaSlider.Text" xml:space="preserve">
+    <value>Transparentcy</value>
+  </data>
+  <data name="&gt;&gt;AlphaSlider.Name" xml:space="preserve">
+    <value>AlphaSlider</value>
+  </data>
+  <data name="&gt;&gt;AlphaSlider.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroTrackBar, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;AlphaSlider.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;AlphaSlider.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="ListStringsBtn.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="ListStringsBtn.Location" type="System.Drawing.Point, System.Drawing">
+    <value>769, 615</value>
+  </data>
+  <data name="ListStringsBtn.Size" type="System.Drawing.Size, System.Drawing">
+    <value>147, 23</value>
+  </data>
+  <data name="ListStringsBtn.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="ListStringsBtn.Text" xml:space="preserve">
+    <value>List Strings</value>
+  </data>
+  <data name="&gt;&gt;ListStringsBtn.Name" xml:space="preserve">
+    <value>ListStringsBtn</value>
+  </data>
+  <data name="&gt;&gt;ListStringsBtn.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroButton, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;ListStringsBtn.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;ListStringsBtn.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="resource.Image" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="resource.Location" type="System.Drawing.Point, System.Drawing">
+    <value>125, 1</value>
+  </data>
+  <data name="resource.Size" type="System.Drawing.Size, System.Drawing">
+    <value>21, 21</value>
+  </data>
+  <data name="resource.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="resource.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="selectedStringTextBox.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="selectedStringTextBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 615</value>
+  </data>
+  <data name="selectedStringTextBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>147, 23</value>
+  </data>
+  <data name="selectedStringTextBox.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="selectedStringTextBox.Text" xml:space="preserve">
+    <value>StringsText</value>
+  </data>
+  <data name="&gt;&gt;selectedStringTextBox.Name" xml:space="preserve">
+    <value>selectedStringTextBox</value>
+  </data>
+  <data name="&gt;&gt;selectedStringTextBox.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroTextBox, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;selectedStringTextBox.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;selectedStringTextBox.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="DebugUIStringsListView.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="DebugUIStringsListView.Location" type="System.Drawing.Point, System.Drawing">
+    <value>24, 64</value>
+  </data>
+  <data name="DebugUIStringsListView.Size" type="System.Drawing.Size, System.Drawing">
+    <value>299, 545</value>
+  </data>
+  <data name="DebugUIStringsListView.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;DebugUIStringsListView.Name" xml:space="preserve">
+    <value>DebugUIStringsListView</value>
+  </data>
+  <data name="&gt;&gt;DebugUIStringsListView.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroListView, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;DebugUIStringsListView.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;DebugUIStringsListView.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="setStringBtn.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="setStringBtn.Location" type="System.Drawing.Point, System.Drawing">
+    <value>176, 615</value>
+  </data>
+  <data name="setStringBtn.Size" type="System.Drawing.Size, System.Drawing">
+    <value>147, 23</value>
+  </data>
+  <data name="setStringBtn.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="setStringBtn.Text" xml:space="preserve">
+    <value>Set String</value>
+  </data>
+  <data name="&gt;&gt;setStringBtn.Name" xml:space="preserve">
+    <value>setStringBtn</value>
+  </data>
+  <data name="&gt;&gt;setStringBtn.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroButton, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;setStringBtn.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;setStringBtn.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="TransparentcyLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="TransparentcyLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="TransparentcyLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>922, 563</value>
+  </data>
+  <data name="TransparentcyLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>84, 19</value>
+  </data>
+  <data name="TransparentcyLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="TransparentcyLabel.Text" xml:space="preserve">
+    <value>Transparency</value>
+  </data>
+  <data name="&gt;&gt;TransparentcyLabel.Name" xml:space="preserve">
+    <value>TransparentcyLabel</value>
+  </data>
+  <data name="&gt;&gt;TransparentcyLabel.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;TransparentcyLabel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;TransparentcyLabel.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="ResolutionLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="ResolutionLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>784, 64</value>
+  </data>
+  <data name="ResolutionLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>76, 19</value>
+  </data>
+  <data name="ResolutionLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="ResolutionLabel.Text" xml:space="preserve">
+    <value>Resolution: </value>
+  </data>
+  <data name="&gt;&gt;ResolutionLabel.Name" xml:space="preserve">
+    <value>ResolutionLabel</value>
+  </data>
+  <data name="&gt;&gt;ResolutionLabel.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;ResolutionLabel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;ResolutionLabel.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="UIControl_LabelInfo.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="UIControl_LabelInfo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>329, 64</value>
+  </data>
+  <data name="UIControl_LabelInfo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>31, 19</value>
+  </data>
+  <data name="UIControl_LabelInfo.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="UIControl_LabelInfo.Text" xml:space="preserve">
+    <value>Info</value>
+  </data>
+  <data name="&gt;&gt;UIControl_LabelInfo.Name" xml:space="preserve">
+    <value>UIControl_LabelInfo</value>
+  </data>
+  <data name="&gt;&gt;UIControl_LabelInfo.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;UIControl_LabelInfo.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;UIControl_LabelInfo.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="numericUpDown1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>329, 585</value>
+  </data>
+  <data name="numericUpDown1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>120, 20</value>
+  </data>
+  <data name="numericUpDown1.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;numericUpDown1.Name" xml:space="preserve">
+    <value>numericUpDown1</value>
+  </data>
+  <data name="&gt;&gt;numericUpDown1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;numericUpDown1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;numericUpDown1.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="numericUpDown2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>455, 585</value>
+  </data>
+  <data name="numericUpDown2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>120, 20</value>
+  </data>
+  <data name="numericUpDown2.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;numericUpDown2.Name" xml:space="preserve">
+    <value>numericUpDown2</value>
+  </data>
+  <data name="&gt;&gt;numericUpDown2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;numericUpDown2.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;numericUpDown2.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="metroButton1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>329, 615</value>
+  </data>
+  <data name="metroButton1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>246, 23</value>
+  </data>
+  <data name="metroButton1.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="metroButton1.Text" xml:space="preserve">
+    <value>Set Position</value>
+  </data>
+  <data name="&gt;&gt;metroButton1.Name" xml:space="preserve">
+    <value>metroButton1</value>
+  </data>
+  <data name="&gt;&gt;metroButton1.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroButton, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;metroButton1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;metroButton1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>1092, 661</value>
+  </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAYAAAAAAAEAIAB3DwAAZgAAAICAAAABACAAKAgBAN0PAABAQAAAAQAgAChCAAAFGAEAMDAAAAEA
@@ -1855,5 +2190,26 @@
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD//wAA//8AAMP/AAAA/wAAAD8AAAAHAAAAAQAAAAAA
         AAAAAADAAAAA8AAAAPwAAAD/AQAA/8cAAP//AAD//wAA
 </value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Minecraft: Wii U Mod Injector - Debug UI Console Customizer</value>
+  </data>
+  <data name="&gt;&gt;StyleMngr.Name" xml:space="preserve">
+    <value>StyleMngr</value>
+  </data>
+  <data name="&gt;&gt;StyleMngr.Type" xml:space="preserve">
+    <value>MetroFramework.Components.MetroStyleManager, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;ToolTipManager.Name" xml:space="preserve">
+    <value>ToolTipManager</value>
+  </data>
+  <data name="&gt;&gt;ToolTipManager.Type" xml:space="preserve">
+    <value>MetroFramework.Components.MetroToolTip, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>DebugUIConsoleCustomizer</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>MetroFramework.Forms.MetroForm, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
   </data>
 </root>

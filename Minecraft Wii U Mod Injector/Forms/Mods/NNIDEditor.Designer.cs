@@ -36,39 +36,32 @@
             this.StyleMngr = new MetroFramework.Components.MetroStyleManager(this.components);
             this.WarningLbl = new MetroFramework.Controls.MetroLabel();
             this.ToolTips = new MetroFramework.Components.MetroToolTip();
-            this.readNameBtn = new MetroFramework.Controls.MetroButton();
             this.NNIDResetBtn = new MetroFramework.Controls.MetroButton();
             ((System.ComponentModel.ISupportInitialize)(this.StyleMngr)).BeginInit();
             this.SuspendLayout();
             // 
             // NNIDNameLbl
             // 
-            this.NNIDNameLbl.AutoSize = true;
-            this.NNIDNameLbl.Location = new System.Drawing.Point(23, 97);
+            resources.ApplyResources(this.NNIDNameLbl, "NNIDNameLbl");
             this.NNIDNameLbl.Name = "NNIDNameLbl";
-            this.NNIDNameLbl.Size = new System.Drawing.Size(48, 19);
-            this.NNIDNameLbl.TabIndex = 0;
-            this.NNIDNameLbl.Text = "Name:";
             this.NNIDNameLbl.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // NNIDNameBox
             // 
-            this.NNIDNameBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            resources.ApplyResources(this.NNIDNameBox, "NNIDNameBox");
             // 
             // 
             // 
-            this.NNIDNameBox.CustomButton.Image = null;
-            this.NNIDNameBox.CustomButton.Location = new System.Drawing.Point(439, 1);
+            this.NNIDNameBox.CustomButton.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            this.NNIDNameBox.CustomButton.Location = ((System.Drawing.Point)(resources.GetObject("resource.Location")));
             this.NNIDNameBox.CustomButton.Name = "";
-            this.NNIDNameBox.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.NNIDNameBox.CustomButton.Size = ((System.Drawing.Size)(resources.GetObject("resource.Size")));
             this.NNIDNameBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.NNIDNameBox.CustomButton.TabIndex = 1;
+            this.NNIDNameBox.CustomButton.TabIndex = ((int)(resources.GetObject("resource.TabIndex")));
             this.NNIDNameBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.NNIDNameBox.CustomButton.UseSelectable = true;
-            this.NNIDNameBox.CustomButton.Visible = false;
+            this.NNIDNameBox.CustomButton.Visible = ((bool)(resources.GetObject("resource.Visible")));
             this.NNIDNameBox.Lines = new string[0];
-            this.NNIDNameBox.Location = new System.Drawing.Point(77, 97);
             this.NNIDNameBox.MaxLength = 32;
             this.NNIDNameBox.Name = "NNIDNameBox";
             this.NNIDNameBox.PasswordChar = '\0';
@@ -77,26 +70,18 @@
             this.NNIDNameBox.SelectionLength = 0;
             this.NNIDNameBox.SelectionStart = 0;
             this.NNIDNameBox.ShortcutsEnabled = true;
-            this.NNIDNameBox.Size = new System.Drawing.Size(461, 23);
-            this.NNIDNameBox.TabIndex = 1;
             this.NNIDNameBox.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTips.SetToolTip(this.NNIDNameBox, "The name to set");
+            this.ToolTips.SetToolTip(this.NNIDNameBox, resources.GetString("NNIDNameBox.ToolTip"));
             this.NNIDNameBox.UseSelectable = true;
             this.NNIDNameBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.NNIDNameBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
             // NNIDChangeBtn
             // 
-            this.NNIDChangeBtn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.NNIDChangeBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.NNIDChangeBtn.Location = new System.Drawing.Point(77, 126);
+            resources.ApplyResources(this.NNIDChangeBtn, "NNIDChangeBtn");
             this.NNIDChangeBtn.Name = "NNIDChangeBtn";
-            this.NNIDChangeBtn.Size = new System.Drawing.Size(560, 23);
-            this.NNIDChangeBtn.TabIndex = 2;
-            this.NNIDChangeBtn.Text = "Change";
             this.NNIDChangeBtn.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTips.SetToolTip(this.NNIDChangeBtn, "Changes your Nintendo Network ID");
+            this.ToolTips.SetToolTip(this.NNIDChangeBtn, resources.GetString("NNIDChangeBtn.ToolTip"));
             this.NNIDChangeBtn.UseSelectable = true;
             this.NNIDChangeBtn.Click += new System.EventHandler(this.NnidChangeBtnClicked);
             // 
@@ -107,16 +92,10 @@
             // 
             // WarningLbl
             // 
-            this.WarningLbl.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.WarningLbl.AutoSize = true;
+            resources.ApplyResources(this.WarningLbl, "WarningLbl");
             this.WarningLbl.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.WarningLbl.Location = new System.Drawing.Point(80, 60);
             this.WarningLbl.Name = "WarningLbl";
-            this.WarningLbl.Size = new System.Drawing.Size(507, 25);
             this.WarningLbl.Style = MetroFramework.MetroColorStyle.Red;
-            this.WarningLbl.TabIndex = 5;
-            this.WarningLbl.Text = "You won\'t see changes and other people won\'t unless they rejoin!";
             this.WarningLbl.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.WarningLbl.UseStyleColors = true;
             // 
@@ -126,51 +105,26 @@
             this.ToolTips.StyleManager = null;
             this.ToolTips.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
-            // readNameBtn
-            // 
-            this.readNameBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.readNameBtn.Location = new System.Drawing.Point(542, 97);
-            this.readNameBtn.Name = "readNameBtn";
-            this.readNameBtn.Size = new System.Drawing.Size(95, 23);
-            this.readNameBtn.TabIndex = 6;
-            this.readNameBtn.Text = "Read";
-            this.readNameBtn.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTips.SetToolTip(this.readNameBtn, "Reads your Nintendo Network ID");
-            this.readNameBtn.UseSelectable = true;
-            this.readNameBtn.Click += new System.EventHandler(this.ReadNameBtnClicked);
-            // 
             // NNIDResetBtn
             // 
-            this.NNIDResetBtn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.NNIDResetBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.NNIDResetBtn.Location = new System.Drawing.Point(77, 154);
+            resources.ApplyResources(this.NNIDResetBtn, "NNIDResetBtn");
             this.NNIDResetBtn.Name = "NNIDResetBtn";
-            this.NNIDResetBtn.Size = new System.Drawing.Size(560, 23);
-            this.NNIDResetBtn.TabIndex = 7;
-            this.NNIDResetBtn.Text = "Reset";
             this.NNIDResetBtn.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTips.SetToolTip(this.NNIDResetBtn, "Resets your name to your default\r\nNintendo Network ID");
+            this.ToolTips.SetToolTip(this.NNIDResetBtn, resources.GetString("NNIDResetBtn.ToolTip"));
             this.NNIDResetBtn.UseSelectable = true;
             this.NNIDResetBtn.Click += new System.EventHandler(this.NNIDResetBtn_Click);
             // 
             // NnidEditor
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(660, 200);
             this.Controls.Add(this.NNIDResetBtn);
-            this.Controls.Add(this.readNameBtn);
             this.Controls.Add(this.WarningLbl);
             this.Controls.Add(this.NNIDChangeBtn);
             this.Controls.Add(this.NNIDNameBox);
             this.Controls.Add(this.NNIDNameLbl);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(3840, 200);
-            this.MinimumSize = new System.Drawing.Size(660, 200);
             this.Name = "NnidEditor";
-            this.Text = "Minecraft: Wii U Mod Injector - Nintendo Network Editor";
             this.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.TopMost = true;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Exiting);
@@ -189,7 +143,6 @@
         private MetroFramework.Components.MetroStyleManager StyleMngr;
         private MetroFramework.Controls.MetroLabel WarningLbl;
         private MetroFramework.Components.MetroToolTip ToolTips;
-        private MetroFramework.Controls.MetroButton readNameBtn;
         private MetroFramework.Controls.MetroButton NNIDResetBtn;
     }
 }

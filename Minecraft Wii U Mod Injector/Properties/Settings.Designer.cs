@@ -12,7 +12,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.10.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "17.5.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -176,30 +176,6 @@ namespace Minecraft_Wii_U_Mod_Injector.Properties {
             }
             set {
                 this["HostIndicators"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Left")]
-        public global::MetroFramework.Forms.MetroFormTextAlign FormTxtAlign {
-            get {
-                return ((global::MetroFramework.Forms.MetroFormTextAlign)(this["FormTxtAlign"]));
-            }
-            set {
-                this["FormTxtAlign"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool SeasonalThemes {
-            get {
-                return ((bool)(this["SeasonalThemes"]));
-            }
-            set {
-                this["SeasonalThemes"] = value;
             }
         }
         

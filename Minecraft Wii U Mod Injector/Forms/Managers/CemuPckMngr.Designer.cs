@@ -164,6 +164,8 @@
             this.RingScoreGreen = new System.Windows.Forms.NumericUpDown();
             this.ExtendedPlayerNames = new MetroFramework.Controls.MetroCheckBox();
             this.NoCooldowns = new MetroFramework.Controls.MetroCheckBox();
+            this.NoSlowDowns = new MetroFramework.Controls.MetroCheckBox();
+            this.VisibleHitboxes = new MetroFramework.Controls.MetroCheckBox();
             this.EmptyTile = new MetroFramework.Controls.MetroTile();
             this.ModificationTabs = new MetroFramework.Controls.MetroTabControl();
             this.PlayersTab = new MetroFramework.Controls.MetroTabPage();
@@ -199,7 +201,6 @@
             this.SprintingSpeedScale = new MetroFramework.Controls.MetroLabel();
             this.FieldOfView = new MetroFramework.Controls.MetroLabel();
             this.HitBoxScale = new MetroFramework.Controls.MetroLabel();
-            this.NoSlowDowns = new MetroFramework.Controls.MetroCheckBox();
             this.InsaneCriticalHits = new MetroFramework.Controls.MetroCheckBox();
             this.WalkonWater = new MetroFramework.Controls.MetroCheckBox();
             this.SuperKnockback = new MetroFramework.Controls.MetroCheckBox();
@@ -761,7 +762,7 @@
             // DeadMauFiveMode
             // 
             this.DeadMauFiveMode.AutoSize = true;
-            this.DeadMauFiveMode.Location = new System.Drawing.Point(198, 359);
+            this.DeadMauFiveMode.Location = new System.Drawing.Point(198, 380);
             this.DeadMauFiveMode.Name = "DeadMauFiveMode";
             this.DeadMauFiveMode.Size = new System.Drawing.Size(83, 15);
             this.DeadMauFiveMode.TabIndex = 183;
@@ -774,7 +775,7 @@
             // ArmorHUD
             // 
             this.ArmorHUD.AutoSize = true;
-            this.ArmorHUD.Location = new System.Drawing.Point(198, 338);
+            this.ArmorHUD.Location = new System.Drawing.Point(198, 359);
             this.ArmorHUD.Name = "ArmorHUD";
             this.ArmorHUD.Size = new System.Drawing.Size(85, 15);
             this.ArmorHUD.TabIndex = 182;
@@ -787,7 +788,7 @@
             // TakeEverythingAnywhere
             // 
             this.TakeEverythingAnywhere.AutoSize = true;
-            this.TakeEverythingAnywhere.Location = new System.Drawing.Point(198, 318);
+            this.TakeEverythingAnywhere.Location = new System.Drawing.Point(198, 339);
             this.TakeEverythingAnywhere.Name = "TakeEverythingAnywhere";
             this.TakeEverythingAnywhere.Size = new System.Drawing.Size(161, 15);
             this.TakeEverythingAnywhere.TabIndex = 149;
@@ -801,7 +802,7 @@
             // CraftingTableAnywhere
             // 
             this.CraftingTableAnywhere.AutoSize = true;
-            this.CraftingTableAnywhere.Location = new System.Drawing.Point(198, 297);
+            this.CraftingTableAnywhere.Location = new System.Drawing.Point(198, 318);
             this.CraftingTableAnywhere.Name = "CraftingTableAnywhere";
             this.CraftingTableAnywhere.Size = new System.Drawing.Size(152, 15);
             this.CraftingTableAnywhere.TabIndex = 180;
@@ -1225,7 +1226,7 @@
             // InstantSleep
             // 
             this.InstantSleep.AutoSize = true;
-            this.InstantSleep.Location = new System.Drawing.Point(389, 402);
+            this.InstantSleep.Location = new System.Drawing.Point(611, 3);
             this.InstantSleep.Name = "InstantSleep";
             this.InstantSleep.Size = new System.Drawing.Size(90, 15);
             this.InstantSleep.Style = MetroFramework.MetroColorStyle.Orange;
@@ -1240,7 +1241,7 @@
             // 
             this.AlwaysDaylight.AutoSize = true;
             this.AlwaysDaylight.BackColor = System.Drawing.Color.Transparent;
-            this.AlwaysDaylight.Location = new System.Drawing.Point(389, 381);
+            this.AlwaysDaylight.Location = new System.Drawing.Point(385, 402);
             this.AlwaysDaylight.Name = "AlwaysDaylight";
             this.AlwaysDaylight.Size = new System.Drawing.Size(107, 15);
             this.AlwaysDaylight.Style = MetroFramework.MetroColorStyle.Blue;
@@ -1255,7 +1256,7 @@
             // 
             this.PunchToRide.AutoSize = true;
             this.PunchToRide.BackColor = System.Drawing.Color.Transparent;
-            this.PunchToRide.Location = new System.Drawing.Point(389, 360);
+            this.PunchToRide.Location = new System.Drawing.Point(385, 381);
             this.PunchToRide.Name = "PunchToRide";
             this.PunchToRide.Size = new System.Drawing.Size(94, 15);
             this.PunchToRide.TabIndex = 213;
@@ -1268,7 +1269,7 @@
             // UnlimitedTotemsOfUndying
             // 
             this.UnlimitedTotemsOfUndying.AutoSize = true;
-            this.UnlimitedTotemsOfUndying.Location = new System.Drawing.Point(389, 318);
+            this.UnlimitedTotemsOfUndying.Location = new System.Drawing.Point(385, 339);
             this.UnlimitedTotemsOfUndying.Name = "UnlimitedTotemsOfUndying";
             this.UnlimitedTotemsOfUndying.Size = new System.Drawing.Size(178, 15);
             this.UnlimitedTotemsOfUndying.TabIndex = 212;
@@ -1282,7 +1283,7 @@
             // 
             this.SplashLingeringPotions.AutoSize = true;
             this.SplashLingeringPotions.BackColor = System.Drawing.Color.Transparent;
-            this.SplashLingeringPotions.Location = new System.Drawing.Point(389, 339);
+            this.SplashLingeringPotions.Location = new System.Drawing.Point(385, 360);
             this.SplashLingeringPotions.Name = "SplashLingeringPotions";
             this.SplashLingeringPotions.Size = new System.Drawing.Size(153, 15);
             this.SplashLingeringPotions.TabIndex = 211;
@@ -1295,7 +1296,7 @@
             // ItemOfUndying
             // 
             this.ItemOfUndying.AutoSize = true;
-            this.ItemOfUndying.Location = new System.Drawing.Point(389, 297);
+            this.ItemOfUndying.Location = new System.Drawing.Point(385, 318);
             this.ItemOfUndying.Name = "ItemOfUndying";
             this.ItemOfUndying.Size = new System.Drawing.Size(109, 15);
             this.ItemOfUndying.TabIndex = 210;
@@ -1308,7 +1309,7 @@
             // NoDamage
             // 
             this.NoDamage.AutoSize = true;
-            this.NoDamage.Location = new System.Drawing.Point(389, 276);
+            this.NoDamage.Location = new System.Drawing.Point(385, 297);
             this.NoDamage.Name = "NoDamage";
             this.NoDamage.Size = new System.Drawing.Size(86, 15);
             this.NoDamage.TabIndex = 201;
@@ -1321,7 +1322,7 @@
             // BreakAnything
             // 
             this.BreakAnything.AutoSize = true;
-            this.BreakAnything.Location = new System.Drawing.Point(389, 255);
+            this.BreakAnything.Location = new System.Drawing.Point(385, 276);
             this.BreakAnything.Name = "BreakAnything";
             this.BreakAnything.Size = new System.Drawing.Size(104, 15);
             this.BreakAnything.TabIndex = 200;
@@ -1334,7 +1335,7 @@
             // AirJumps
             // 
             this.AirJumps.AutoSize = true;
-            this.AirJumps.Location = new System.Drawing.Point(389, 234);
+            this.AirJumps.Location = new System.Drawing.Point(385, 255);
             this.AirJumps.Name = "AirJumps";
             this.AirJumps.Size = new System.Drawing.Size(75, 15);
             this.AirJumps.TabIndex = 197;
@@ -1347,7 +1348,7 @@
             // LeftHanded
             // 
             this.LeftHanded.AutoSize = true;
-            this.LeftHanded.Location = new System.Drawing.Point(389, 213);
+            this.LeftHanded.Location = new System.Drawing.Point(385, 234);
             this.LeftHanded.Name = "LeftHanded";
             this.LeftHanded.Size = new System.Drawing.Size(88, 15);
             this.LeftHanded.TabIndex = 196;
@@ -1360,7 +1361,7 @@
             // UnlimitedEnchants
             // 
             this.UnlimitedEnchants.AutoSize = true;
-            this.UnlimitedEnchants.Location = new System.Drawing.Point(389, 192);
+            this.UnlimitedEnchants.Location = new System.Drawing.Point(385, 213);
             this.UnlimitedEnchants.Name = "UnlimitedEnchants";
             this.UnlimitedEnchants.Size = new System.Drawing.Size(126, 15);
             this.UnlimitedEnchants.TabIndex = 195;
@@ -1373,7 +1374,7 @@
             // Invisible
             // 
             this.Invisible.AutoSize = true;
-            this.Invisible.Location = new System.Drawing.Point(389, 171);
+            this.Invisible.Location = new System.Drawing.Point(385, 192);
             this.Invisible.Name = "Invisible";
             this.Invisible.Size = new System.Drawing.Size(66, 15);
             this.Invisible.TabIndex = 194;
@@ -1386,7 +1387,7 @@
             // AlwaysInWater
             // 
             this.AlwaysInWater.AutoSize = true;
-            this.AlwaysInWater.Location = new System.Drawing.Point(389, 108);
+            this.AlwaysInWater.Location = new System.Drawing.Point(385, 129);
             this.AlwaysInWater.Name = "AlwaysInWater";
             this.AlwaysInWater.Size = new System.Drawing.Size(107, 15);
             this.AlwaysInWater.TabIndex = 191;
@@ -1399,7 +1400,7 @@
             // LevelX
             // 
             this.LevelX.AutoSize = true;
-            this.LevelX.Location = new System.Drawing.Point(389, 87);
+            this.LevelX.Location = new System.Drawing.Point(385, 108);
             this.LevelX.Name = "LevelX";
             this.LevelX.Size = new System.Drawing.Size(60, 15);
             this.LevelX.TabIndex = 190;
@@ -1412,7 +1413,7 @@
             // SeeThroughBlocks
             // 
             this.SeeThroughBlocks.AutoSize = true;
-            this.SeeThroughBlocks.Location = new System.Drawing.Point(389, 66);
+            this.SeeThroughBlocks.Location = new System.Drawing.Point(385, 87);
             this.SeeThroughBlocks.Name = "SeeThroughBlocks";
             this.SeeThroughBlocks.Size = new System.Drawing.Size(124, 15);
             this.SeeThroughBlocks.TabIndex = 189;
@@ -1425,7 +1426,7 @@
             // AlwaysInLava
             // 
             this.AlwaysInLava.AutoSize = true;
-            this.AlwaysInLava.Location = new System.Drawing.Point(389, 45);
+            this.AlwaysInLava.Location = new System.Drawing.Point(385, 66);
             this.AlwaysInLava.Name = "AlwaysInLava";
             this.AlwaysInLava.Size = new System.Drawing.Size(100, 15);
             this.AlwaysInLava.TabIndex = 186;
@@ -1438,7 +1439,7 @@
             // HideBlocks
             // 
             this.HideBlocks.AutoSize = true;
-            this.HideBlocks.Location = new System.Drawing.Point(389, 24);
+            this.HideBlocks.Location = new System.Drawing.Point(385, 45);
             this.HideBlocks.Name = "HideBlocks";
             this.HideBlocks.Size = new System.Drawing.Size(85, 15);
             this.HideBlocks.TabIndex = 188;
@@ -1451,7 +1452,7 @@
             // UnderwaterEffects
             // 
             this.UnderwaterEffects.AutoSize = true;
-            this.UnderwaterEffects.Location = new System.Drawing.Point(389, 3);
+            this.UnderwaterEffects.Location = new System.Drawing.Point(385, 24);
             this.UnderwaterEffects.Name = "UnderwaterEffects";
             this.UnderwaterEffects.Size = new System.Drawing.Size(170, 15);
             this.UnderwaterEffects.TabIndex = 187;
@@ -1465,7 +1466,7 @@
             // GodModeAll
             // 
             this.GodModeAll.AutoSize = true;
-            this.GodModeAll.Location = new System.Drawing.Point(198, 402);
+            this.GodModeAll.Location = new System.Drawing.Point(385, 3);
             this.GodModeAll.Name = "GodModeAll";
             this.GodModeAll.Size = new System.Drawing.Size(104, 15);
             this.GodModeAll.TabIndex = 185;
@@ -1478,7 +1479,7 @@
             // GodMode
             // 
             this.GodMode.AutoSize = true;
-            this.GodMode.Location = new System.Drawing.Point(198, 381);
+            this.GodMode.Location = new System.Drawing.Point(198, 402);
             this.GodMode.Name = "GodMode";
             this.GodMode.Size = new System.Drawing.Size(109, 15);
             this.GodMode.TabIndex = 184;
@@ -2215,7 +2216,7 @@
             // ExtendedPlayerNames
             // 
             this.ExtendedPlayerNames.AutoSize = true;
-            this.ExtendedPlayerNames.Location = new System.Drawing.Point(389, 129);
+            this.ExtendedPlayerNames.Location = new System.Drawing.Point(385, 150);
             this.ExtendedPlayerNames.Name = "ExtendedPlayerNames";
             this.ExtendedPlayerNames.Size = new System.Drawing.Size(147, 15);
             this.ExtendedPlayerNames.TabIndex = 217;
@@ -2229,7 +2230,7 @@
             // NoCooldowns
             // 
             this.NoCooldowns.AutoSize = true;
-            this.NoCooldowns.Location = new System.Drawing.Point(607, 3);
+            this.NoCooldowns.Location = new System.Drawing.Point(611, 24);
             this.NoCooldowns.Name = "NoCooldowns";
             this.NoCooldowns.Size = new System.Drawing.Size(102, 15);
             this.NoCooldowns.Style = MetroFramework.MetroColorStyle.Orange;
@@ -2239,6 +2240,33 @@
             this.NoCooldowns.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.ToolTips.SetToolTip(this.NoCooldowns, "Disables the cooldown for items such as Ender Pearls or Chorus Fruit");
             this.NoCooldowns.UseSelectable = true;
+            // 
+            // NoSlowDowns
+            // 
+            this.NoSlowDowns.AutoSize = true;
+            this.NoSlowDowns.Location = new System.Drawing.Point(385, 171);
+            this.NoSlowDowns.Name = "NoSlowDowns";
+            this.NoSlowDowns.Size = new System.Drawing.Size(97, 15);
+            this.NoSlowDowns.TabIndex = 222;
+            this.NoSlowDowns.Tag = "0x103DEC60 = float 1.0|0x0291C1D4 = blr";
+            this.NoSlowDowns.Text = "No Slowdown";
+            this.NoSlowDowns.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.ToolTips.SetToolTip(this.NoSlowDowns, "Disables movement penalties, such as:\r\n\r\nEating\r\nDrinking\r\nDrawing Bow\r\nDrawing T" +
+        "rident\r\nSoul Sand");
+            this.NoSlowDowns.UseSelectable = true;
+            // 
+            // VisibleHitboxes
+            // 
+            this.VisibleHitboxes.AutoSize = true;
+            this.VisibleHitboxes.Location = new System.Drawing.Point(198, 297);
+            this.VisibleHitboxes.Name = "VisibleHitboxes";
+            this.VisibleHitboxes.Size = new System.Drawing.Size(107, 15);
+            this.VisibleHitboxes.TabIndex = 256;
+            this.VisibleHitboxes.Tag = "0x030FA018 = nop";
+            this.VisibleHitboxes.Text = "Visible Hitboxes";
+            this.VisibleHitboxes.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.ToolTips.SetToolTip(this.VisibleHitboxes, "Hitboxes on entities will be visible");
+            this.VisibleHitboxes.UseSelectable = true;
             // 
             // EmptyTile
             // 
@@ -2276,6 +2304,7 @@
             // 
             // PlayersTab
             // 
+            this.PlayersTab.Controls.Add(this.VisibleHitboxes);
             this.PlayersTab.Controls.Add(this.defPotionBox);
             this.PlayersTab.Controls.Add(this.DefaultPotionEffect);
             this.PlayersTab.Controls.Add(this.AirborneSpeedSlider);
@@ -2790,13 +2819,7 @@
             // FieldOfViewSlider
             // 
             this.FieldOfViewSlider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.FieldOfViewSlider.DecimalPlaces = 3;
             this.FieldOfViewSlider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
-            this.FieldOfViewSlider.Increment = new decimal(new int[] {
-            1,
-            0,
-            0,
-            65536});
             this.FieldOfViewSlider.Location = new System.Drawing.Point(111, 535);
             this.FieldOfViewSlider.Maximum = new decimal(new int[] {
             4,
@@ -2806,7 +2829,7 @@
             this.FieldOfViewSlider.Name = "FieldOfViewSlider";
             this.FieldOfViewSlider.Size = new System.Drawing.Size(187, 20);
             this.FieldOfViewSlider.TabIndex = 239;
-            this.FieldOfViewSlider.Tag = ".data 0x1038EFB8";
+            this.FieldOfViewSlider.Tag = ".data 0x108C9CE4";
             this.FieldOfViewSlider.Value = new decimal(new int[] {
             1875,
             0,
@@ -2989,18 +3012,6 @@
             this.HitBoxScale.Tag = "";
             this.HitBoxScale.Text = "Hitbox Scale:";
             this.HitBoxScale.Theme = MetroFramework.MetroThemeStyle.Dark;
-            // 
-            // NoSlowDowns
-            // 
-            this.NoSlowDowns.AutoSize = true;
-            this.NoSlowDowns.Location = new System.Drawing.Point(389, 150);
-            this.NoSlowDowns.Name = "NoSlowDowns";
-            this.NoSlowDowns.Size = new System.Drawing.Size(97, 15);
-            this.NoSlowDowns.TabIndex = 222;
-            this.NoSlowDowns.Tag = "0x103DEC60 = float 1.0|0x0291C1D4 = blr";
-            this.NoSlowDowns.Text = "No Slowdown";
-            this.NoSlowDowns.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.NoSlowDowns.UseSelectable = true;
             // 
             // InsaneCriticalHits
             // 
@@ -3648,7 +3659,7 @@
             this.MainTabs.ItemSize = new System.Drawing.Size(545, 1);
             this.MainTabs.Location = new System.Drawing.Point(189, 62);
             this.MainTabs.Name = "MainTabs";
-            this.MainTabs.SelectedIndex = 1;
+            this.MainTabs.SelectedIndex = 0;
             this.MainTabs.Size = new System.Drawing.Size(1103, 615);
             this.MainTabs.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.MainTabs.TabIndex = 0;
@@ -4389,5 +4400,6 @@
         public MetroFramework.Controls.MetroLabel HitBoxScale;
         private MetroFramework.Controls.MetroComboBox defPotionBox;
         public MetroFramework.Controls.MetroLabel DefaultPotionEffect;
+        public MetroFramework.Controls.MetroCheckBox VisibleHitboxes;
     }
 }

@@ -118,15 +118,6 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="EditBtn" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\EditBtn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="UndoBtn" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\UndoBtn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="releaseNotes" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\releaseNotes.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;iso-8859-1</value>
-  </data>
   <data name="DeleteBtn" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\DeleteBtn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -138,5 +129,41 @@
   </data>
   <data name="OpenExplrBtn" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\OpenExplrBtn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="UndoBtn" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\UndoBtn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="releaseNotes" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ReleaseNote.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;iso-8859-1</value>
+  </data>
+  <data name="EditBtn" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\EditBtn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="p0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\p0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="p1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\p1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="p2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\p2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="p3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\p3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="p4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\p4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="p5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\p5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="p6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\p6.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="p7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\p7.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pInvalid" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pInvalid.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

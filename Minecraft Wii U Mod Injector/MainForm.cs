@@ -25,7 +25,7 @@ namespace Minecraft_Wii_U_Mod_Injector {
 
         #region references
 
-        public static GeckoUCore GeckoU;
+        public static GeckoU GeckoU;
 
         #endregion
 
@@ -37,14 +37,14 @@ namespace Minecraft_Wii_U_Mod_Injector {
             get => Connected;
             set {
                 Connected = value;
-                DiscordRP.SetPresence(Connected ? "Connected" : "Disconnected", MainTabs.SelectedTab.Text + " tab");
+                DiscordRpc.SetPresence(Connected ? "Connected" : "Disconnected", MainTabs.SelectedTab.Text + " Tab");
             }
         }
 
         public bool IsMinecraft() {
-            string[] mcIds = new[] { "50000101d7500", "50000101d9d00", "50000101dbe00" };
+            string[] validIds = { "50000101D7500", "50000101D9D00", "50000101DBE00" };
 
-            return mcIds.Contains(GeckoU.ReadTitleId());
+            return validIds.Contains(GeckoU.ReadTitleId());
         }
 
         private bool _tooHighWarn;
@@ -61,6 +61,8 @@ namespace Minecraft_Wii_U_Mod_Injector {
         public static uint Blr = 0x4E800020;
         public uint Mflr = 0x7C0802A6;
         public uint Nop = 0x60000000;
+        public uint cmpwir30 = 0x2C030000;
+        public uint cmpwir31 = 0x2C030001;
 
         #endregion
 
@@ -106,8 +108,7 @@ namespace Minecraft_Wii_U_Mod_Injector {
         #endregion
 
         #region strings
-        private readonly string[] _tipsList = new[]
-        {
+        private readonly string[] _tipsList = {
             "You can find out what a mod or option does by hovering your mouse over it",
             "You can increase the decimal places on mods which use a slider by right clicking the slider",
         };
@@ -115,7 +116,28 @@ namespace Minecraft_Wii_U_Mod_Injector {
         private const string _commandsInWorld = "Commands only work in-game, please load a world before executing a command";
         #endregion
 
+        #region pointers
+
+        public static uint MasterGameModePtr;
+
         #endregion
+
+        #endregion
+
+
+        // Addresses for overwriting floats which are referenced in multiple functions
+        // This allows us to modify a float used by a function without it affecting the others
+        // Examples of how to do this are listed out in comments in the mods below.
+        // Essentially all we do is point the function to a different float in memory
+        //
+        // 0x11010000 = Airborne Speed Slider
+        // 0x11010004 = No cooldowns
+        // 0x11010008 = Hitbox Sliders
+        // 0x1101000C = Critical Hit Multiplier
+        // 0x11010010 = Fully Charged Bows
+        // 0x11010014 = Elytra Takeoff Height
+        // 0x11010018 = Elytra Forward Speed
+        // 0x1101001C = Field Of View
 
         public MainForm() {
             InitializeComponent();
@@ -126,6 +148,16 @@ namespace Minecraft_Wii_U_Mod_Injector {
 
             // We do this so the Injector has time to apply preferences in Setup without it being visible
             Opacity = 0;
+        }
+
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams cp = base.CreateParams;
+                cp.ExStyle |= 0x02000000;
+                return cp;
+            }
         }
 
         private void Init(object sender, EventArgs e) {
@@ -143,7 +175,7 @@ namespace Minecraft_Wii_U_Mod_Injector {
             Setup.SetupInjector();
 
             // Set the version where applicable
-            BuildNotesBox.Text = Resources.releaseNotes;
+            BuildNotesLbl.Text = Resources.releaseNotes;
             BuildVerTitleLbl.Text = @"Patch Notes for " + Setup.LocalVer;
             BuildTile.Text = Setup.LocalVer;
         }
@@ -211,7 +243,7 @@ namespace Minecraft_Wii_U_Mod_Injector {
 
         private void Exit(object sender, FormClosingEventArgs e) {
             if (IsConnected) GeckoU.GUC.Close();
-            DiscordRP.Deinitialize();
+            DiscordRpc.Deinitialize();
             Settings.Default.TabIndex = MainTabs.SelectedIndex;
             Settings.Default.Save();
         }
@@ -227,7 +259,7 @@ namespace Minecraft_Wii_U_Mod_Injector {
                     MinigamesTabs.SelectedIndex = tile.TileCount;
                 else return;
 
-                DiscordRP.SetPresence(IsConnected ? "Connected" : "Disconnected", "Minigames - " + MinigamesTabs.SelectedTab.Text + " Tab");
+                DiscordRpc.SetPresence(IsConnected ? "Connected" : "Disconnected", "Minigames - " + MinigamesTabs.SelectedTab.Text + " Tab");
 
                 return;
             }
@@ -243,7 +275,9 @@ namespace Minecraft_Wii_U_Mod_Injector {
             else
                 return;
 
-            DiscordRP.SetPresence(IsConnected ? "Connected" : "Disconnected", MainTabs.SelectedTab.Text + " Tab");
+            MainTabs.SuspendLayout();
+
+            DiscordRpc.SetPresence(IsConnected ? "Connected" : "Disconnected", MainTabs.SelectedTab.Text + " Tab");
         }
 
         private void SliderClicked(object sender, EventArgs e) {
@@ -259,7 +293,7 @@ namespace Minecraft_Wii_U_Mod_Injector {
 
         private void ConnectBtnClicked(object sender, EventArgs e) {
             try {
-                GeckoU ??= new GeckoUCore(WiiUIPv4Box.Text);
+                GeckoU ??= new GeckoU(WiiUIPv4Box.Text);
 
                 switch (States.CurrentState) {
                     case States.StatesIds.Disconnected:
@@ -277,6 +311,7 @@ namespace Minecraft_Wii_U_Mod_Injector {
                         _ = new MinecraftFunctions(GeckoU);
                         States.SwapState(States.StatesIds.Connected);
                         IsConnected = true;
+
                         break;
 
                     case States.StatesIds.Connected:
@@ -300,7 +335,7 @@ namespace Minecraft_Wii_U_Mod_Injector {
         }
 
         private void CaptureWiiUiPv4Box(object sender, EventArgs e) {
-            bool valid = StringUtils.ValidateIPv4(WiiUIPv4Box.Text);
+            var valid = StringUtils.ValidateIPv4(WiiUIPv4Box.Text);
             ConnectBtn.Enabled = valid;
             WiiUIPv4Box.Style = valid ? MetroColorStyle.Green : WiiUIPv4Box.Style = MetroColorStyle.Red;
         }
@@ -312,6 +347,13 @@ namespace Minecraft_Wii_U_Mod_Injector {
 
         private void FormColorSelected(object sender, EventArgs e) {
             try {
+                // Prevent this event from running when the ComboBox isn't clicked
+                var cb = (MetroComboBox)sender;
+                if (!cb.Focused)
+                {
+                    return;
+                }
+
                 Style = (MetroColorStyle)Enum.Parse(typeof(MetroColorStyle), ColorsBox.Text);
                 StyleMngr.Style = (MetroColorStyle)Enum.Parse(typeof(MetroColorStyle), ColorsBox.Text);
                 Refresh();
@@ -321,24 +363,14 @@ namespace Minecraft_Wii_U_Mod_Injector {
             }
         }
 
-        private void FormTxtAlgnSelected(object sender, EventArgs e) {
-            try {
-                TextAlign = (MetroFormTextAlign)Enum.Parse(typeof(MetroFormTextAlign), TextAllignBox.Text);
-                Refresh();
-                Settings.Default.FormTxtAlign = TextAlign;
-            } catch (Exception error) {
-                Exceptions.LogError(error, "Failed to Change Injector Text Align", true);
-            }
-        }
-
         private void DiscordRpcToggleChecked(object sender, EventArgs e) {
             try {
                 if (discordRpcCheckBox.Checked) {
-                    DiscordRP.Initialize();
-                    DiscordRP.SetPresence(IsConnected ? "Connected" : "Disconnected",
-                        MainTabs.SelectedTab.Text + " tab");
+                    DiscordRpc.Initialize();
+                    DiscordRpc.SetPresence(IsConnected ? "Connected" : "Disconnected",
+                        MainTabs.SelectedTab.Text + " Tab");
                 } else {
-                    DiscordRP.Deinitialize();
+                    DiscordRpc.Deinitialize();
                 }
 
                 Settings.Default.DiscordRPC = discordRpcCheckBox.Checked;
@@ -378,17 +410,10 @@ namespace Minecraft_Wii_U_Mod_Injector {
             }
         }
 
-        private void SeasonalThemesToggled(object sender, EventArgs e) {
-            try {
-                Settings.Default.SeasonalThemes = SeasonalThemes.Checked;
-                Refresh();
-            } catch (Exception error) {
-                Exceptions.LogError(error, "Failed to Toggle Seasonal Themes", true);
-            }
-        }
-
-        private void OpenLangMngrBtnClicked(object sender, EventArgs e) {
-            new LanguageMngr(this).ShowDialog();
+        private void LangaugeBoxChanged(object sender, EventArgs e)
+        {
+            // Add something when there's actual languages to choose from besides English
+            Console.WriteLine(@"not implemented");
         }
 
         private void QuickModsManagerBtnClicked(object sender, EventArgs e) {
@@ -436,15 +461,12 @@ namespace Minecraft_Wii_U_Mod_Injector {
             new NnidEditor(this).ShowDialog();
         }
 
-        private void PlayerOptionsBtnClicked(object sender, EventArgs e) {
+        private void SessionManagerBtnClicked(object sender, EventArgs e)
+        {
             if (IsPointerLoaded())
-                new PlayerOptions(this).Show();
+                new SessionManager(this).Show();
             else
-                Messaging.Show("Player not found, please load into a world before using Player Options.");
-        }
-
-        private void LootTableEditorBtnClicked(object sender, EventArgs e) {
-            new LootTableEditor(this).ShowDialog();
+                Messaging.Show("No active session was detected");
         }
 
         private void WorldGenerationOptsBtnClicked(object sender, EventArgs e) {
@@ -500,8 +522,20 @@ namespace Minecraft_Wii_U_Mod_Injector {
             GeckoU.WriteULongToggle(pointer + 0x40, 0x3E88888900000000, 0x7F7FFFFF4B895440, BreakBedrock.Checked);
         }
 
-        private void InsaneCriticalHitsToggled(object sender, EventArgs e) {
-            GeckoU.WriteUIntToggle(0x106D0D4C, 0x43F00000, 0x3FC00000, InsaneCriticalHits.Checked);
+        private void CriticalHitMultiplierSlider_Changed(object sender, EventArgs e)
+        {
+            // Clean Up
+            if (CriticalHitMultiplierSlider.Value == (decimal)1.5)
+            {
+                GeckoU.WriteUInt(0x1101000C, 0x00000000);
+                GeckoU.WriteUInt(0x0271DB40, 0x3D00106D);
+                GeckoU.WriteUInt(0x0271DB44, 0xC1480D4C);
+                return;
+            }
+
+            GeckoU.WriteFloat(0x1101000C, (float)CriticalHitMultiplierSlider.Value);
+            GeckoU.WriteUInt(0x0271DB40, 0x3D001101);  // lis r8,0x1101 Loads the address into memory
+            GeckoU.WriteUInt(0x0271DB44, 0xC148000C); // lfs f10,0xC(r8) Overwrites the float with our address
         }
 
         private void AlwaysSwimmingToggled(object sender, EventArgs e) {
@@ -528,7 +562,7 @@ namespace Minecraft_Wii_U_Mod_Injector {
 
         private void RapidBowToggled(object sender, EventArgs e) {
             GeckoU.WriteUIntToggle(0x02162F04, R31On, 0x3BE00014,
-                RapidBow.Checked); //GetMaxBowDuration__7BowItemSFv
+                RapidBow.Checked); //BowItem::GetMaxBowDuration(void)
         }
 
         private void BloodVisionToggled(object sender, EventArgs e) {
@@ -567,16 +601,16 @@ namespace Minecraft_Wii_U_Mod_Injector {
 
         private void CaveFinderToggled(object sender, EventArgs e) {
             GeckoU.WriteUIntToggle(0x030E4924, 0x38800000, 0x38800001,
-                CaveFinder.Checked); //enableState__14GlStateManagerSFi
+                CaveFinder.Checked); //GlStateManager::enableState(int)
         }
 
         private void WallhackToggled(object sender, EventArgs e) {
-            GeckoU.WriteUIntToggle(0x031B2B4C, On, 0x5403063E, Wallhack.Checked); //renderDebug__9MinecraftSFv
+            GeckoU.WriteUIntToggle(0x031B2B4C, On, 0x5403063E, Wallhack.Checked); //Minecraft::renderDebug(void)
         }
 
         private void LargeXpDropsToggled(object sender, EventArgs e) {
             GeckoU.WriteUIntToggle(0x0239A26C, Nop, 0x4180000C,
-                LargeXPDrops.Checked); //getExperienceValue__13ExperienceOrbSFi:
+                LargeXPDrops.Checked); //ExperienceOrb::getExperienceValue(int)
             GeckoU.WriteUIntToggle(0x0239A270, 0x38607FFF, 0x386009AD, LargeXPDrops.Checked);
         }
 
@@ -585,8 +619,22 @@ namespace Minecraft_Wii_U_Mod_Injector {
         }
 
         private void NoCollisionToggled(object sender, EventArgs e) {
-            GeckoU.WriteUIntToggle(0x020E7BF4, Blr, 0x9421FFE0,
-                NoCollision.Checked); //Block::addCollisionAABBs((BlockState const *, Level *, BlockPos const &, AABB const *, std::vector__tm__39_P4AABBQ2_3std23allocator__tm__7_P4AABB *, boost::shared_ptr__tm__8_6Entity, bool))
+            GeckoU.WriteUIntToggle(0x020E7BF4, Blr, 0x9421FFE0, NoCollision.Checked); // Blocks
+            GeckoU.WriteUIntToggle(0x02362A00, Blr, 0x9421FFD0, NoCollision.Checked); // Blocks
+            GeckoU.WriteUIntToggle(0x02925EA8, Blr, 0x9421FFD8, NoCollision.Checked); // Stairs
+            GeckoU.WriteUIntToggle(0x024E7C30, Blr, Mflr, NoCollision.Checked); // Hoppers
+            GeckoU.WriteUIntToggle(0x0225C928, Blr, 0x9421FFD8, NoCollision.Checked); // Conduit
+            GeckoU.WriteUIntToggle(0x021BD690, Blr, Mflr, NoCollision.Checked); // Cauldron
+            GeckoU.WriteUIntToggle(0x029B1DF8, Blr, 0x9421FFD8, NoCollision.Checked); // Iron Bars
+            GeckoU.WriteUIntToggle(0x02A32AD0, Blr, 0x9421FFD8, NoCollision.Checked); // Turtle Eggs
+            GeckoU.WriteUIntToggle(0x2737A4C, Blr, 0x9421FFE0, NoCollision.Checked); // Pistol Base
+            GeckoU.WriteUIntToggle(0x02740630, Blr, 0x9421FFE0, NoCollision.Checked); // Piston Head
+            GeckoU.WriteUIntToggle(0x021F5CD8, Blr, 0x9421FF98, NoCollision.Checked); // Chorus Flowers
+            GeckoU.WriteUIntToggle(0x027921CC, Blr, 0x9421FFD0, NoCollision.Checked); // Pistol Magic Block(?)
+            GeckoU.WriteUIntToggle(0x02102DFC, Blr, Mflr, NoCollision.Checked); // Brewing Stand
+            GeckoU.WriteUIntToggle(0x023684C4, Blr, 0x9421FFE0, NoCollision.Checked); // End Portal Frame
+            GeckoU.WriteUIntToggle(0x02A2A32C, Blr, 0x9421FFE0, NoCollision.Checked); // Walls
+            GeckoU.WriteUIntToggle(0x027906DC, Blr, 0x9421FF58, NoCollision.Checked); // Pistol Moving Block(?)
         }
 
         private void InfiniteAirToggled(object sender, EventArgs e) {
@@ -595,20 +643,20 @@ namespace Minecraft_Wii_U_Mod_Injector {
 
         private void InfiniteDurabilityToggled(object sender, EventArgs e) {
             GeckoU.WriteUIntToggle(0x0248909C, Nop, 0x4181001C,
-                InfiniteDurability.Checked); //ItemInstance::hurt((int,Random *)) (bgt)
+                InfiniteDurability.Checked); //ItemInstance::hurt((int,Random *))
             GeckoU.WriteUIntToggle(0x024889CC, Off, On,
                 InfiniteDurability.Checked); //ItemInstance::isDamageableItem((void))
         }
 
         private void SuperKnockbackToggled(object sender, EventArgs e) {
             GeckoU.WriteUIntToggle(0x0257D980, 0xFC00E838, 0xFC006378,
-                SuperKnockback.Checked); //Knockback__12LivingEntityFQ2_5boost25shared_ptr__tm__8_6EntityfdT3
+                SuperKnockback.Checked); //LivingEntity::Knockback(boost::shared_ptr<class Z1 = Entity>, float, double, double)
             GeckoU.WriteUIntToggle(0x0257D990, 0xFD20B890, 0xFD290372, SuperKnockback.Checked);
         }
 
         private void DisabledKnockbackToggled(object sender, EventArgs e) {
             GeckoU.WriteUIntToggle(0x0257D85C, Blr, 0x9421FFA8,
-                DisabledKnockback.Checked); //Knockback__12LivingEntityFQ2_5boost25shared_ptr__tm__8_6EntityfdT3
+                DisabledKnockback.Checked); //LivingEntity::Knockback(boost::shared_ptr<class Z1 = Entity>, float, double, double)
         }
 
         private void SilkTouchAnythingToggled(object sender, EventArgs e) {
@@ -616,8 +664,9 @@ namespace Minecraft_Wii_U_Mod_Injector {
                 SilkTouchAnything.Checked); //Block::isSilkTouchable((void))
         }
 
-        private void DeveloperModeToggled(object sender, EventArgs e) {
-            GeckoU.WriteUIntToggle(0x02F5C874, On, Off, DeveloperMode.Checked); //CMinecraftApp::DebugArtToolsOn((void))
+        private void DetailedItemTooltipsToggled(object sender, EventArgs e)
+        {
+            GeckoU.WriteUIntToggle(0x02492C3C, cmpwir31, cmpwir30, DetailedItemTooltips.Checked); // Disables the check for DebugArtToolsOn
         }
 
         private void PickLiquidBlocksToggled(object sender, EventArgs e) {
@@ -649,7 +698,9 @@ namespace Minecraft_Wii_U_Mod_Injector {
         }
 
         private void CraftAnythingToggled(object sender, EventArgs e) {
-            GeckoU.WriteUIntToggle(0x02F70970, On, Off, CraftAnything.Checked); //static GameSettings::IsDebugSettingEnabled(eDebugSetting, int)
+            GeckoU.WriteUIntToggle(0x02F70970, On, Off, CraftAnything.Checked); //GameSettings::IsDebugSettingEnabled(eDebugSetting, int)
+
+            // Servers stops working after a while if this is not disabled
             GeckoU.WriteUIntToggle(0x032283CC, 0x38800000, 0x38800001, CraftAnything.Checked); //MinecraftServer::run(long long, void *)
 
             // Since we set ALL debug settings to enabled, this means this specific one is also enabled and that causes thunder to strike every second and causes lag
@@ -672,7 +723,7 @@ namespace Minecraft_Wii_U_Mod_Injector {
         }
 
         private void FoggyWeatherToggled(object sender, EventArgs e) {
-            GeckoU.WriteUIntToggle(0x031C06A4, On, Off, FoggyWeather.Checked); //isInCloud__13LevelRendererFdN21f
+            GeckoU.WriteUIntToggle(0x031C06A4, On, Off, FoggyWeather.Checked); //LevelRenderer::isInCloud(double, double, double, float)
         }
 
         private void AcidLiquidBlocksToggled(object sender, EventArgs e) {
@@ -721,7 +772,19 @@ namespace Minecraft_Wii_U_Mod_Injector {
         }
 
         private void HitboxSliderChanged(object sender, EventArgs e) {
-            GeckoU.WriteFloat(0x105DD948, Convert.ToSingle(HitBoxScaleSlider.Value));
+
+            // Clean Up
+            if (HitBoxScaleSlider.Value == (decimal)0.5)
+            {
+                GeckoU.WriteFloat(0x11020208, 0x00000000);
+                GeckoU.WriteUInt(0x023298F8, 0x3D80105E);
+                GeckoU.WriteUInt(0x02329900, 0xC00CD948);
+                return;
+            }
+
+            GeckoU.WriteFloat(0x11020208, (float)HitBoxScaleSlider.Value); // Write the float to a unused address
+            GeckoU.WriteUInt(0x023298F8, 0x3D801101);  // lis r12,0x1101 Loads the address into memory
+            GeckoU.WriteUInt(0x02329900, 0xC19F0008); // lfs f0,8(r12) Overwrites the float with our address
         }
 
         private void RiptideFlyingSpeedSliderChanged(object sender, EventArgs e) {
@@ -733,26 +796,20 @@ namespace Minecraft_Wii_U_Mod_Injector {
         }
 
         private void VisibleHitboxesToggled(object sender, EventArgs e) {
-            if (!IsPointerLoaded())
-            {
-                Messaging.Show("Visible Hitboxes requires an active world", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            uint whiteBoxAddress = GeckoU.PeekUInt(GeckoU.PeekUInt(0x10A72A94) + 0xC0);
-            GeckoU.WriteUIntToggle(whiteBoxAddress + 0x90, 0x0001F000, 0x000100000, VisibleHitboxes.Checked);
+            GeckoU.WriteUIntToggle(0x030FA018, Nop, 0x418200BC, VisibleHitboxes.Checked);
         }
 
         private void ExitGameClicked(object sender, EventArgs e) {
-            DialogResult confirmCg =
+            var confirmCg =
                 Messaging.Show("You're about to close the game, continue?", MessageBoxButtons.YesNo);
 
-            if (confirmCg == Yes) {
-                GeckoU.CallFunction64(0x02F50028, 0x00000000); //CConsoleMinecraftApp::ExitGame((void))
-                GeckoU.GUC.Close();
-                States.SwapState(States.StatesIds.Disconnected);
-                IsConnected = false;
-            }
+            if (confirmCg != Yes) 
+                return;
+
+            GeckoU.CallFunction64(0x02F50028, 0x00000000); //CConsoleMinecraftApp::ExitGame((void))
+            GeckoU.GUC.Close();
+            States.SwapState(States.StatesIds.Disconnected);
+            IsConnected = false;
         }
 
         private void BypassFriendsOnlyToggled(object sender, EventArgs e) {
@@ -774,7 +831,20 @@ namespace Minecraft_Wii_U_Mod_Injector {
         }
 
         private void FieldOfViewSliderChanged(object sender, EventArgs e) {
-            GeckoU.WriteFloat(0x108911B8, (float)FieldOfViewSlider.Value);
+            //Clean Up
+            if (FieldOfViewSlider.Value == 70)
+            {
+                GeckoU.WriteUInt(0x03100108, 0x3CA0108D);
+                GeckoU.WriteUInt(0x0310010C, 0xC0259CE4);
+                GeckoU.WriteUInt(0x03100100, 0x2C000000);
+                GeckoU.WriteFloat(0x1101001C, 0f);
+                return;
+            }
+
+            GeckoU.WriteUInt(0x03100100, 0x2C00FFFF);
+            GeckoU.WriteUInt(0x03100108, 0x3CA01101);
+            GeckoU.WriteUInt(0x0310010C, 0xC025001C);
+            GeckoU.WriteFloat(0x1101001C, (float)FieldOfViewSlider.Value);
         }
 
         private void TakeEverythingAnywhereToggled(object sender, EventArgs e) {
@@ -812,10 +882,6 @@ namespace Minecraft_Wii_U_Mod_Injector {
 
         private void GodModeAllToggled(object sender, EventArgs e) {
             GeckoU.WriteUIntToggle(0x025795C0, Nop, 0xFC20F890, GodMode.Checked); //LivingEntity::setHealth((float))
-        }
-
-        private void FieldOfViewSplitSliderChanged(object sender, EventArgs e) {
-            GeckoU.WriteFloat(0x108C7870, (float)FieldOfViewSplitSlider.Value);
         }
 
         private void FrictionSliderChanged(object sender, EventArgs e) {
@@ -902,10 +968,6 @@ namespace Minecraft_Wii_U_Mod_Injector {
             GeckoU.WriteUIntToggle(0x02273030, On, 0x8869000C, IgnitedCreepers.Checked);
         }
 
-        private void ZombieTowerToggled(object sender, EventArgs e) {
-            GeckoU.WriteUIntToggle(0x02A3B77C, On, 0x88630740, ZombieTower.Checked);
-        }
-
         private void SunProofMobsToggled(object sender, EventArgs e) {
             GeckoU.WriteUIntToggle(0x02A3D808, Off, On, SunProofMobs.Checked);
         }
@@ -923,8 +985,10 @@ namespace Minecraft_Wii_U_Mod_Injector {
             GeckoU.WriteUIntToggle(0x011293D0, Blr, 0x38E00001, disableVPadInput.Checked);
         }
 
-        private void VpadDisplaySwitchToggled(object sender, EventArgs e) {
-            GeckoU.RpcToggle(0x0112A9E4, 0x0112A9EC, 0x0, 0x0, vpadDisplaySwitch.Checked);
+        private void VpadDisplaySwitchToggled(object sender, EventArgs e)
+        {
+            GeckoU.CallFunction(0x0112A9E4, 0x0112A9EC,
+                0x0); // Is this broken? It used to call this with the now removed "RpcToggle" function but both we're set to 0x0?? Might aswell do it like this I guess?
         }
 
         private void DebugConsoleToggled(object sender, EventArgs e) {
@@ -996,6 +1060,10 @@ namespace Minecraft_Wii_U_Mod_Injector {
         private void SleepingDoesntClearWeatherToggled(object sender, EventArgs e) {
             GeckoU.WriteULongToggle(0x032AE7A4, 0x6000000060000000, 0x3D80032B398CE608,
                 SleepingDoesntClearWeather.Checked);
+        }
+        private void ZombieJockeyToggled(object sender, EventArgs e)
+        {
+            GeckoU.WriteUIntToggle(0x02A3B77C, On, 0x88630740, ZombieJockey.Checked);
         }
 
         private void InvulnerableEntitiesToggled(object sender, EventArgs e) {
@@ -1182,6 +1250,7 @@ namespace Minecraft_Wii_U_Mod_Injector {
         private void PreventBeingKickedToggled(object sender, EventArgs e) {
             GeckoU.WriteUIntToggle(0x03052720, Blr, 0x9421FFD8, PreventBeingKicked.Checked);
         }
+
         private void AirborneSpeedSliderChanged(object sender, EventArgs e) {
             var airbornespeed = Miscellaneous.FloatToInt32Bits((float)AirborneSpeedSlider.Value);
             var realValue = GeckoU.PeekUInt(0x10665EF4);
@@ -1222,6 +1291,29 @@ namespace Minecraft_Wii_U_Mod_Injector {
             GeckoU.WriteFloat(0x108A1964, (float)CursedSlider.Value);
         }
 
+        private void PanoramaModeToggled(object sender, EventArgs e)
+        {
+            switch (PanoramaMode.CheckState)
+            {
+                case CheckState.Unchecked:
+                    GeckoU.WriteUInt(0x02E0B0B8, 0x38800001);
+                    GeckoU.WriteUInt(0x02E0B048, 0x38800000);
+                    PanoramaMode.Text = @"Panorama Mode (Default)";
+                    break;
+
+                case CheckState.Checked:
+                    GeckoU.WriteUInt(0x02E0B0B8, 0x38800000);
+                    PanoramaMode.Text = @"Panorama Mode (Night)";
+                    break;
+
+                case CheckState.Indeterminate:
+                    GeckoU.WriteUInt(0x02E0B0B8, 0x38800001);
+                    GeckoU.WriteUInt(0x02E0B048, 0x38800001);
+                    PanoramaMode.Text = @"Panorama Mode (Day)";
+                    break;
+            }
+        }
+
         #region commands
         private bool IsTool() {
             bool tool;
@@ -1230,23 +1322,23 @@ namespace Minecraft_Wii_U_Mod_Injector {
                 giveDataBox.WaterMark = "Damage Value...";
                 giveDataBox.MaxLength = 5;
                 tool = true;
-            } else if (x > 255 && x < 260) {
+            } else if (x is > 255 and < 260) {
                 giveDataBox.WaterMark = "Damage Value...";
                 giveDataBox.MaxLength = 5;
                 tool = true;
-            } else if (x > 266 && x < 280) {
+            } else if (x is > 266 and < 280) {
                 giveDataBox.WaterMark = "Damage Value...";
                 giveDataBox.MaxLength = 5;
                 tool = true;
-            } else if (x > 282 && x < 287) {
+            } else if (x is > 282 and < 287) {
                 giveDataBox.WaterMark = "Damage Value...";
                 giveDataBox.MaxLength = 5;
                 tool = true;
-            } else if (x > 289 && x < 295) {
+            } else if (x is > 289 and < 295) {
                 giveDataBox.WaterMark = "Damage Value...";
                 giveDataBox.MaxLength = 5;
                 tool = true;
-            } else if (x > 297 && x < 318) {
+            } else if (x is > 297 and < 318) {
                 giveDataBox.WaterMark = "Damage Value...";
                 giveDataBox.MaxLength = 5;
                 tool = true;
@@ -1306,10 +1398,10 @@ namespace Minecraft_Wii_U_Mod_Injector {
                 return;
             }
 
-            if (enchantIDBox.SelectedIndex == -1 || string.IsNullOrWhiteSpace(enchantLevelBox.Text)) {
-                Messaging.Show("Make sure all fields are filled out before executing a command");
-                return;
-            }
+            //if (enchantIDBox.SelectedIndex == -1 || string.IsNullOrWhiteSpace(enchantLevelBox.Text)) {
+            //    Messaging.Show("Make sure all fields are filled out before executing a command");
+            //    return;
+            //}
 
             if (Convert.ToInt32(enchantLevelBox.Text) < -32768 || Convert.ToInt32(enchantLevelBox.Text) > 32767) {
                 Messaging.Show("Enchantment level must be in between -32768 and 32767.");
@@ -1317,6 +1409,14 @@ namespace Minecraft_Wii_U_Mod_Injector {
             }
 
             GeckoU.WriteBytes(0x12000000, new byte[0x1000]); // Clear memory
+
+            if (EnchantmentID.Text != string.Empty)
+            {
+                GeckoU.CallFunction64(0x022F1518, 0x12000000, GetSelfPlayerPointer(), Convert.ToUInt32(EnchantmentID.Text), (uint)int.Parse(enchantLevelBox.Text));
+                GeckoU.CallFunction64(0x0304A5D8, GeckoU.PeekUInt(GetSelfPlayerPointer() + 0x878), 0x12000000);
+                return;
+            }
+
             GeckoU.CallFunction64(0x022F1518, 0x12000000, GetSelfPlayerPointer(), Enchantments[enchantIDBox.SelectedIndex], (uint)int.Parse(enchantLevelBox.Text));
             GeckoU.CallFunction64(0x0304A5D8, GeckoU.PeekUInt(GetSelfPlayerPointer() + 0x878), 0x12000000);
         }
@@ -1465,8 +1565,8 @@ namespace Minecraft_Wii_U_Mod_Injector {
                 Messaging.Show(_commandsInWorld);
                 return;
             }
-            uint textStart = 0x107A097C;
-            string message = string.Empty;
+            const uint textStart = 0x107A097C;
+            var message = string.Empty;
 
             if (String.IsNullOrWhiteSpace(tellNameBox.Text)) {
                 message = $"{tellMsgBox.Text}";
@@ -1505,18 +1605,20 @@ namespace Minecraft_Wii_U_Mod_Injector {
         #region minigames
 
         private void AllPermissionsToggled(object sender, EventArgs e) {
-            GeckoU.WriteUIntToggle(0x02C57E94, On, 0x57E3063E,
-                AllPermissions.Checked); //MiniGameDef::MayUseBlock(const(int))
-            GeckoU.WriteUIntToggle(0x02C57E34, On, 0x57E3063E,
-                AllPermissions.Checked); //MiniGameDef::MayUse(const(int))
+            //GeckoU.WriteUIntToggle(0x02C57E94, On, 0x57E3063E,
+            //    AllPermissions.Checked); //MiniGameDef::MayUseBlock(const(int))
+            //GeckoU.WriteUIntToggle(0x02C57E34, On, 0x57E3063E,
+            //    AllPermissions.Checked); //MiniGameDef::MayUse(const(int))
             GeckoU.WriteUIntToggle(0x02C51C20, On, 0x57E3063E,
-                AllPermissions.Checked); //MiniGameDef::MayUseBlock(const(int))
+               AllPermissions.Checked); //MiniGameDef::MayUseBlock(const(int))
             GeckoU.WriteUIntToggle(0x02C5CC84, On, 0X88630124,
                 AllPermissions.Checked); //MiniGameDef::CanCraft(const(void))
-            GeckoU.WriteUIntToggle(0x02C57D74, On, 0x57E3063E,
-                AllPermissions.Checked); //MiniGameDef::MayPlace(const(int))
-            GeckoU.WriteUIntToggle(0x02C57DD4, On, 0x57E3063E,
-                AllPermissions.Checked); //MiniGameDef::MayDestroy(const(int))
+            //GeckoU.WriteUIntToggle(0x02C57D74, On, 0x57E3063E,
+            //    AllPermissions.Checked); //MiniGameDef::MayPlace(const(int))
+            //GeckoU.WriteUIntToggle(0x02C57DD4, On, 0x57E3063E,
+            //    AllPermissions.Checked); //MiniGameDef::MayDestroy(const(int))
+            GeckoU.WriteUIntToggle(0x02C57D1C, On, 0x5403063E, 
+                AllPermissions.Checked);
         }
 
         private void AlwaysDamagedToggled(object sender, EventArgs e) {
@@ -1605,7 +1707,7 @@ namespace Minecraft_Wii_U_Mod_Injector {
             GeckoU.WriteUIntToggle(0x02CDF9B0, Off, 0x88630814, NoPosLock.Checked);
             GeckoU.WriteUIntToggle(0x02FC804C, Off, 0x88630814, NoPosLock.Checked);
             GeckoU.WriteUIntToggle(0x0323F7F8, Off, 0x88630814, NoPosLock.Checked);
-            GeckoU.WriteUIntToggle(0x0332d270, Off, 0x88630814, NoPosLock.Checked);
+            GeckoU.WriteUIntToggle(0x0332D270, Off, 0x88630814, NoPosLock.Checked);
         }
 
         private void UnlockInventoryToggled(object sender, EventArgs e) {
@@ -1617,10 +1719,156 @@ namespace Minecraft_Wii_U_Mod_Injector {
         }
 
         private void SoloToggled(object sender, EventArgs e) {
-            GeckoU.WriteUIntToggle(0x02C50078, Nop, 0x41820010, Solo.Checked);
+            GeckoU.WriteUIntToggle(0x02C50078, Nop, 0x41820010, Solo.Checked); // Uh.... this modifies the same address?
             GeckoU.WriteUIntToggle(0x02C50078, 0x38600002, 0x7FE3FB78, Solo.Checked);
         }
+
+        private void MinigamesGamemodeBox_Changed(object sender, EventArgs e) {
+            MasterGameModePtr = GeckoU.PeekUInt(GeckoU.PeekUInt(0x109CD8FC) + 0x14C);
+            var gametype = GeckoU.PeekUInt(0x109C4D24 + (uint)MgGamemodeBox.SelectedIndex * 4);
+            GeckoU.CallFunction(0x02C8B238, MasterGameModePtr, gametype);
+        }
+
+        private void SetPlayersInvulnerability(object sender, EventArgs e)
+        {
+            var InvulnerabilityButton = (MetroButton)sender;
+            MasterGameModePtr = GeckoU.PeekUInt(GeckoU.PeekUInt(0x109CD8FC) + 0x14C);
+
+            GeckoU.CallFunction(0x02C8E388, MasterGameModePtr,
+                InvulnerabilityButton == SetPlayersVulnerable ? (uint)0x00 : 0x01);
+        }
+
+        private void StartRoundEndTimer_Clicked(object sender, EventArgs e)
+        {
+            MasterGameModePtr = GeckoU.PeekUInt(GeckoU.PeekUInt(0x109CD8FC) + 0x14C);
+            GeckoU.CallFunction(0x02C93FC0, MasterGameModePtr);
+        }
+
+        private void MgPlayerPositionLock(object sender, EventArgs e)
+        {
+            var PositionLockButton = (MetroButton)sender;
+            MasterGameModePtr = GeckoU.PeekUInt(GeckoU.PeekUInt(0x109CD8FC) + 0x14C);
+
+            GeckoU.CallFunction(0x02C858D8, MasterGameModePtr,
+                PositionLockButton == UnlockPlayerPositions ? (uint)0x00 : 0x01);
+        }
+
+        private void SetPlayersReady_Clicked(object sender, EventArgs e)
+        {
+            var ReadyStateButton = (MetroButton)sender;
+            MasterGameModePtr = GeckoU.PeekUInt(GeckoU.PeekUInt(0x109CD8FC) + 0x14C);
+
+            // Loop through every player index
+            for (uint i = 0x0; i < 0x8; i++)
+            {
+                GeckoU.CallFunction(0x02CA22C8, MasterGameModePtr, i,
+                    ReadyStateButton == UnreadyAllPlayers ? (uint)0x00 : 0x01);
+            }
+        }
+
+        private void SelectableMapVariantsToggled(object sender, EventArgs e)
+        {
+            GeckoU.WriteUIntToggle(0x02BFC798, cmpwir31, cmpwir30, SelectableMapVariants.Checked); // Disables the check for DebugArtToolsOn
+            GeckoU.WriteUIntToggle(0x02BDF338, cmpwir31, cmpwir30, SelectableMapVariants.Checked);
+            GeckoU.WriteUIntToggle(0x02F74A00, Nop, 0x4E800421, SelectableMapVariants.Checked);
+        }
+
+        private void SkinChangingDuringGameplayToggled(object sender, EventArgs e)
+        {
+            GeckoU.WriteUIntToggle(0x02F74A00, cmpwir31, cmpwir30, SelectableMapVariants.Checked); // Disables the check for DebugArtToolsOn
+        }
+
         #endregion
+
+        private void FullyChargedBowsToggled(object sender, EventArgs e)
+        {
+            GeckoU.WriteUIntToggle(0x02162F70, 0x3D801101, 0x3D801054, FullyChargedBows.Checked);  // lis r12,0x1101 Loads the address into memory
+            GeckoU.WriteUIntToggle(0x02162F7C, 0xC98C0010, 0xC98C4B70, FullyChargedBows.Checked); // lfd f12,0x10(r12) Overwrites the float with our address
+            GeckoU.WriteUIntToggle(0x02162FA0, 0x3D801101, 0x3D801054, FullyChargedBows.Checked);  // lis r12,0x1101 Loads the address into memory
+            GeckoU.WriteUIntToggle(0x02162FAC, 0xC80C0010, 0xC80C4B70, FullyChargedBows.Checked); // lfd f0,0x10(r12) Overwrites the float with our address
+        }
+
+        private void DisablePotionParticlesToggled(object sender, EventArgs e)
+        {
+            GeckoU.WriteUIntToggle(0x02991F4C, Blr, 0x9421FF80, DisablePotionParticles.Checked);
+        }
+
+        private void GiantTextureFixToggled(object sender, EventArgs e)
+        {
+            GeckoU.WriteULongToggle(0x033CF6A0, 0x482B8C104E800020, 0x3C6010A738632048, GiantTextureFix.Checked);
+        }
+
+        //https://gbatemp.net/threads/need-to-find-codes-for-minecraft-wii-u.620754/post-10092079
+        private void JoinRandomGamesToggled(object sender, EventArgs e)
+        {
+            GeckoU.WriteUIntToggle(0x034927D4, 0x483BAE90, 0x809F1204, JoinRandomGames.Checked);
+            GeckoU.WriteUIntToggle(0x0384D664, 0x809F1204, 0x00000000, JoinRandomGames.Checked);
+            GeckoU.WriteUIntToggle(0x0384D668, 0x3D801002, 0x00000000, JoinRandomGames.Checked);
+            GeckoU.WriteUIntToggle(0x0384D66C, 0x804CFF40, 0x00000000, JoinRandomGames.Checked);
+            GeckoU.WriteUIntToggle(0x0384D670, 0x38420001, 0x00000000, JoinRandomGames.Checked);
+            GeckoU.WriteUIntToggle(0x0384D674, 0x904CFF40, 0x00000000, JoinRandomGames.Checked);
+            GeckoU.WriteUIntToggle(0x0384D678, 0x7C841214, 0x00000000, JoinRandomGames.Checked);
+            GeckoU.WriteUIntToggle(0x0384D67C, 0x2C024000, 0x00000000, JoinRandomGames.Checked);
+            GeckoU.WriteUIntToggle(0x0384D680, 0x4081000C, 0x00000000, JoinRandomGames.Checked);
+            GeckoU.WriteUIntToggle(0x0384D684, 0x38400000, 0x00000000, JoinRandomGames.Checked);
+            GeckoU.WriteUIntToggle(0x0384D688, 0x904CFF40, 0x00000000, JoinRandomGames.Checked);
+            GeckoU.WriteUIntToggle(0x0384D68C, 0x4BC4514C, 0x00000000, JoinRandomGames.Checked);
+            GeckoU.WriteUIntToggle(0x0384D690, 0x4081000C, 0x00000000, JoinRandomGames.Checked);
+            GeckoU.WriteUIntToggle(0x0384D684, 0x4081000C, 0x00000000, JoinRandomGames.Checked);
+        }
+
+        //https://gbatemp.net/threads/need-to-find-codes-for-minecraft-wii-u.620754/page-4#post-10021018
+        private void ArrowPotionCrashFixToggled(object sender, EventArgs e)
+        {
+            GeckoU.WriteUIntToggle(0x02B563FC, Blr, 0x9421FF58, ArrowPotionCrashFix.Checked);
+        }
+
+        private void UncensorContentToggled(object sender, EventArgs e)
+        {
+            GeckoU.WriteUIntToggle(0x02F5B598, Off, 0x5403D97E, UncensorContent.Checked);
+        }
+
+        private void ElytraTakeoffHeightSliderChanged(object sender, EventArgs e)
+        {
+            // Clean Up
+            if (ElytraTakeoffHeightSlider.Value == (decimal)1.875)
+            {
+                GeckoU.WriteUInt(0x11010014, 0x00000000);
+                GeckoU.WriteUInt(0x0271DB40, 0x3D801066);
+                GeckoU.WriteUInt(0x0271DB44, 0xC96CA9F8);
+                return;
+            }
+
+            GeckoU.WriteFloat(0x11010014, (float)ElytraTakeoffHeightSlider.Value);
+            GeckoU.WriteUInt(0x02584670, 0x3D801101);  // lis r12,0x1101 Loads the address into memory
+            GeckoU.WriteUInt(0x02584678, 0xC96C0014); // lfd f11,0x14(r12) Overwrites the float with our address
+        }
+
+        private void ElytraRecoveryHeightSliderChanged(object sender, EventArgs e)
+        {
+            GeckoU.WriteFloat(0x1066ACB0, (float)ElytraRecoveryHeightSlider.Value);
+        }
+
+        private void ElytraForwardSpeedSliderChanged(object sender, EventArgs e)
+        {
+            // Clean Up
+            if (ElytraForwardSpeedSlider.Value == (decimal)1.872)
+            {
+                GeckoU.WriteUInt(0x11010018, 0x00000000);
+                GeckoU.WriteUInt(0x025847F8, 0x3CE01067);
+                GeckoU.WriteUInt(0x025847FC, 0xC807ACB8);
+                return;
+            }
+
+            GeckoU.WriteFloat(0x11010018, (float)ElytraForwardSpeedSlider.Value);
+            GeckoU.WriteUInt(0x025847F8, 0x3CE01101);  // lis r7,0x1101 Loads the address into memory
+            GeckoU.WriteUInt(0x025847FC, 0xC8070018); // lfd f0,0x18(r7) Overwrites the float with our address
+        }
+        
+        private void BiomeSelectMenuToggled(object sender, EventArgs e)
+        {
+            GeckoU.WriteUIntToggle(0x02E7D924, 0x38A00019, 0x38A00015, BiomeSelectMenu.Checked);
+        }
 
         //private void SetUuid(bool useOrigin = false, byte[] uuid = null) { // THIS CODE IS HORRIBLY UNOPTIMIZED PLEASE DONT LOOK AT IT HDGHASDKFJS
         //    var pointer = GeckoU.PeekUInt(0x10AD1C58);
@@ -1648,7 +1896,7 @@ namespace Minecraft_Wii_U_Mod_Injector {
         #endregion memory editing
 
         #region Utilities
-        private uint GetSelfPlayerPointer() {
+        public static uint GetSelfPlayerPointer() {
             return GeckoU.PeekUInt(GeckoU.PeekUInt(0x109CD8E4) + 0x34);
         }
         #endregion

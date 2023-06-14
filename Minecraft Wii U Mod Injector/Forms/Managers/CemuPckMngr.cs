@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Text;
 using System.Windows.Forms;
@@ -94,7 +95,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Managers
                 Settings.Default.Upgrade();
             }
 
-            DiscordRP.SetPresence(_iw.IsConnected ? "Connected" : "Disconnected",
+            DiscordRpc.SetPresence(_iw.IsConnected ? "Connected" : "Disconnected",
                 "Cemu Graphics Pack Manager");
         }
 
@@ -108,7 +109,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Managers
             if(Directory.Exists(_cemuPckRootDir + "/temp/"))
                 Directory.Delete(_cemuPckRootDir + "/temp/", true);
 
-            DiscordRP.SetPresence(_iw.IsConnected ? "Connected" : "Disconnected",
+            DiscordRpc.SetPresence(_iw.IsConnected ? "Connected" : "Disconnected",
                 _iw.MainTabs.SelectedTab.Text + " Tab");
             Dispose();
         }
@@ -175,10 +176,9 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Managers
                 {
                     if (c is MetroCheckBox { Checked: true } cb)
                     {
-#if DEBUG
-                        Console.WriteLine(@"CEMU GRAPHICS PACK MANAGER: Writing values for CheckBox " + cb.Name);
-#endif
-                            // Writes the control name of the CheckBox for identification purposes
+                        Debug.WriteLine(@"CEMU GRAPHICS PACK MANAGER: Writing values for CheckBox " + cb.Name, "Cemu Graphics Pack Manager");
+
+                        // Writes the control name of the CheckBox for identification purposes
                             _cemuGraphicPckPatchesBuilder.AppendLine("#" + cb.Text);
 
                         // We can modify multiple instructions/addresses by seperating them with | in the tag
@@ -198,18 +198,15 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Managers
 
                         if (!_sliderDefaults.TryGetValue(sldr.Name, out _))
                         {
-#if DEBUG
-                            Console.WriteLine(@"CEMU GRAPHICS PACK MANAGER: No default value found for " + sldr.Name +
-                                              @". Skipping");
-#endif
+                            Debug.WriteLine(@"No default value found for " + sldr.Name +
+                                              @". Skipping", "Cemu Graphics Pack Manager");
                             continue;
                         }
 
                         if (sldr.Value != (decimal)_sliderDefaults[sldr.Name])
                         {
-#if DEBUG
-                            Console.WriteLine(@"CEMU GRAPHICS PACK MANAGER: Writing values for Slider " + sldr.Name);
-#endif
+                            Debug.WriteLine(@"Writing values for Slider " + sldr.Name, "Cemu Graphics Pack Manager");
+
                             // Writes the control name of the slider for identification purposes
                             _cemuGraphicPckPatchesBuilder.AppendLine("#" + sldr.Name);
 
@@ -252,10 +249,9 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Managers
                     // Hacky, this should probabaly get reworked
                     if (c is MetroComboBox comB)
                     {
-#if DEBUG
-                        Console.WriteLine(@"CEMU GRAPHICS PACK MANAGER: Writing values for ComboBox " + comB.Name);
-#endif
-                            if (comB == RabbitVariantBox && comB.SelectedIndex == 6)
+                        Debug.WriteLine(@"Writing values for ComboBox " + comB.Name, "Cemu Graphics Pack Manager");
+
+                        if (comB == RabbitVariantBox && comB.SelectedIndex == 6)
                         {
                             _cemuGraphicPckPatchesBuilder.AppendLine("#" + comB.Name + "\n" + comB.Tag + "0x63");
                             continue;
@@ -351,7 +347,6 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Managers
         {
             try
             {
-                IniFile gfxPckFile;
                 var folderBrowser = new VistaFolderBrowserDialog();
 
                 folderBrowser.SelectedPath = _cemuPckRootDir;
@@ -365,7 +360,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Managers
                 if (folderBrowser.ShowDialog() != DialogResult.OK) return;
 
                 // Load in all the metadata
-                gfxPckFile = new IniFile(folderBrowser.SelectedPath + @"\rules.txt", true);
+                var gfxPckFile = new IniFile(folderBrowser.SelectedPath + @"\rules.txt", true);
                 NameBox.Text = gfxPckFile.Read("name", "Definition");
                 PathBox.Text = gfxPckFile.Read("path", "Definition");
                 DescriptionBox.Text = gfxPckFile.Read("description", "Definition")
@@ -394,11 +389,9 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Managers
 
                                         if (!_sliderDefaults.TryGetValue(sldr.Name, out _))
                                         {
-#if DEBUG
-                                            Console.WriteLine(
-                                                @"CEMU GRAPHICS PACK MANAGER: No default value found for " + sldr.Name +
-                                                @". Skipping");
-#endif
+                                            Debug.WriteLine(
+                                                @"No default value found for " + sldr.Name +
+                                                @". Skipping", "Cemu Graphics Pack Manager");
                                             continue;
                                         }
 

@@ -92,12 +92,10 @@
             this.StyleExtender.SetApplyMetroTheme(this.DepthStriderLvlSlider, true);
             this.DepthStriderLvlSlider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.DepthStriderLvlSlider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
-            this.DepthStriderLvlSlider.Location = new System.Drawing.Point(97, 33);
+            resources.ApplyResources(this.DepthStriderLvlSlider, "DepthStriderLvlSlider");
             this.DepthStriderLvlSlider.Name = "DepthStriderLvlSlider";
-            this.DepthStriderLvlSlider.Size = new System.Drawing.Size(138, 20);
-            this.DepthStriderLvlSlider.TabIndex = 169;
             this.DepthStriderLvlSlider.Tag = "";
-            this.ToolTips.SetToolTip(this.DepthStriderLvlSlider, "What level of Depth Strider do we have?");
+            this.ToolTips.SetToolTip(this.DepthStriderLvlSlider, resources.GetString("DepthStriderLvlSlider.ToolTip"));
             this.DepthStriderLvlSlider.ValueChanged += new System.EventHandler(this.DepthStriderLvlSliderChanged);
             // 
             // FrostWalkerLvlSlider
@@ -105,12 +103,10 @@
             this.StyleExtender.SetApplyMetroTheme(this.FrostWalkerLvlSlider, true);
             this.FrostWalkerLvlSlider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.FrostWalkerLvlSlider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
-            this.FrostWalkerLvlSlider.Location = new System.Drawing.Point(97, 7);
+            resources.ApplyResources(this.FrostWalkerLvlSlider, "FrostWalkerLvlSlider");
             this.FrostWalkerLvlSlider.Name = "FrostWalkerLvlSlider";
-            this.FrostWalkerLvlSlider.Size = new System.Drawing.Size(138, 20);
-            this.FrostWalkerLvlSlider.TabIndex = 167;
             this.FrostWalkerLvlSlider.Tag = "";
-            this.ToolTips.SetToolTip(this.FrostWalkerLvlSlider, "What level of Frost Walker do we have?");
+            this.ToolTips.SetToolTip(this.FrostWalkerLvlSlider, resources.GetString("FrostWalkerLvlSlider.ToolTip"));
             this.FrostWalkerLvlSlider.ValueChanged += new System.EventHandler(this.FrostWalkerLvlSliderChanged);
             // 
             // FireAspectSlider
@@ -118,12 +114,10 @@
             this.StyleExtender.SetApplyMetroTheme(this.FireAspectSlider, true);
             this.FireAspectSlider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.FireAspectSlider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
-            this.FireAspectSlider.Location = new System.Drawing.Point(97, 33);
+            resources.ApplyResources(this.FireAspectSlider, "FireAspectSlider");
             this.FireAspectSlider.Name = "FireAspectSlider";
-            this.FireAspectSlider.Size = new System.Drawing.Size(138, 20);
-            this.FireAspectSlider.TabIndex = 169;
             this.FireAspectSlider.Tag = "";
-            this.ToolTips.SetToolTip(this.FireAspectSlider, "What level of Fire Aspect do we have?");
+            this.ToolTips.SetToolTip(this.FireAspectSlider, resources.GetString("FireAspectSlider.ToolTip"));
             this.FireAspectSlider.ValueChanged += new System.EventHandler(this.FireAspectSliderChanged);
             // 
             // EfficiencySlider
@@ -131,12 +125,10 @@
             this.StyleExtender.SetApplyMetroTheme(this.EfficiencySlider, true);
             this.EfficiencySlider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.EfficiencySlider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
-            this.EfficiencySlider.Location = new System.Drawing.Point(97, 7);
+            resources.ApplyResources(this.EfficiencySlider, "EfficiencySlider");
             this.EfficiencySlider.Name = "EfficiencySlider";
-            this.EfficiencySlider.Size = new System.Drawing.Size(138, 20);
-            this.EfficiencySlider.TabIndex = 167;
             this.EfficiencySlider.Tag = "";
-            this.ToolTips.SetToolTip(this.EfficiencySlider, "What level of Efficiency do we have?");
+            this.ToolTips.SetToolTip(this.EfficiencySlider, resources.GetString("EfficiencySlider.ToolTip"));
             this.EfficiencySlider.ValueChanged += new System.EventHandler(this.EfficiencySliderChanged);
             // 
             // LuckOfTheSeaSlider
@@ -144,12 +136,10 @@
             this.StyleExtender.SetApplyMetroTheme(this.LuckOfTheSeaSlider, true);
             this.LuckOfTheSeaSlider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.LuckOfTheSeaSlider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
-            this.LuckOfTheSeaSlider.Location = new System.Drawing.Point(119, 59);
+            resources.ApplyResources(this.LuckOfTheSeaSlider, "LuckOfTheSeaSlider");
             this.LuckOfTheSeaSlider.Name = "LuckOfTheSeaSlider";
-            this.LuckOfTheSeaSlider.Size = new System.Drawing.Size(116, 20);
-            this.LuckOfTheSeaSlider.TabIndex = 171;
             this.LuckOfTheSeaSlider.Tag = "";
-            this.ToolTips.SetToolTip(this.LuckOfTheSeaSlider, "What level of Luck Of The Sea do we have?");
+            this.ToolTips.SetToolTip(this.LuckOfTheSeaSlider, resources.GetString("LuckOfTheSeaSlider.ToolTip"));
             this.LuckOfTheSeaSlider.ValueChanged += new System.EventHandler(this.LuckOfTheSeaSliderChanged);
             // 
             // LureSlider
@@ -157,12 +147,10 @@
             this.StyleExtender.SetApplyMetroTheme(this.LureSlider, true);
             this.LureSlider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.LureSlider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
-            this.LureSlider.Location = new System.Drawing.Point(97, 85);
+            resources.ApplyResources(this.LureSlider, "LureSlider");
             this.LureSlider.Name = "LureSlider";
-            this.LureSlider.Size = new System.Drawing.Size(138, 20);
-            this.LureSlider.TabIndex = 173;
             this.LureSlider.Tag = "";
-            this.ToolTips.SetToolTip(this.LureSlider, "What level of Lure do we have?");
+            this.ToolTips.SetToolTip(this.LureSlider, resources.GetString("LureSlider.ToolTip"));
             this.LureSlider.ValueChanged += new System.EventHandler(this.LureSliderChanged);
             // 
             // LootingSlider
@@ -170,12 +158,10 @@
             this.StyleExtender.SetApplyMetroTheme(this.LootingSlider, true);
             this.LootingSlider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.LootingSlider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
-            this.LootingSlider.Location = new System.Drawing.Point(97, 111);
+            resources.ApplyResources(this.LootingSlider, "LootingSlider");
             this.LootingSlider.Name = "LootingSlider";
-            this.LootingSlider.Size = new System.Drawing.Size(138, 20);
-            this.LootingSlider.TabIndex = 175;
             this.LootingSlider.Tag = "";
-            this.ToolTips.SetToolTip(this.LootingSlider, "What level of Looting do we have?");
+            this.ToolTips.SetToolTip(this.LootingSlider, resources.GetString("LootingSlider.ToolTip"));
             this.LootingSlider.ValueChanged += new System.EventHandler(this.LootingSliderChanged);
             // 
             // KnockbackSlider
@@ -183,12 +169,10 @@
             this.StyleExtender.SetApplyMetroTheme(this.KnockbackSlider, true);
             this.KnockbackSlider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.KnockbackSlider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
-            this.KnockbackSlider.Location = new System.Drawing.Point(97, 137);
+            resources.ApplyResources(this.KnockbackSlider, "KnockbackSlider");
             this.KnockbackSlider.Name = "KnockbackSlider";
-            this.KnockbackSlider.Size = new System.Drawing.Size(138, 20);
-            this.KnockbackSlider.TabIndex = 177;
             this.KnockbackSlider.Tag = "";
-            this.ToolTips.SetToolTip(this.KnockbackSlider, "What level of Knockback do we have?");
+            this.ToolTips.SetToolTip(this.KnockbackSlider, resources.GetString("KnockbackSlider.ToolTip"));
             this.KnockbackSlider.ValueChanged += new System.EventHandler(this.KnockbackSliderChanged);
             // 
             // RespirationSlider
@@ -196,110 +180,77 @@
             this.StyleExtender.SetApplyMetroTheme(this.RespirationSlider, true);
             this.RespirationSlider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.RespirationSlider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
-            this.RespirationSlider.Location = new System.Drawing.Point(97, 59);
+            resources.ApplyResources(this.RespirationSlider, "RespirationSlider");
             this.RespirationSlider.Name = "RespirationSlider";
-            this.RespirationSlider.Size = new System.Drawing.Size(138, 20);
-            this.RespirationSlider.TabIndex = 171;
             this.RespirationSlider.Tag = "";
-            this.ToolTips.SetToolTip(this.RespirationSlider, "What level of Respiration do we have?");
+            this.ToolTips.SetToolTip(this.RespirationSlider, resources.GetString("RespirationSlider.ToolTip"));
             this.RespirationSlider.ValueChanged += new System.EventHandler(this.RespirationSliderChanged);
             // 
             // BindingCurseBox
             // 
-            this.BindingCurseBox.AutoSize = true;
-            this.BindingCurseBox.Location = new System.Drawing.Point(7, 11);
+            resources.ApplyResources(this.BindingCurseBox, "BindingCurseBox");
             this.BindingCurseBox.Name = "BindingCurseBox";
-            this.BindingCurseBox.Size = new System.Drawing.Size(111, 15);
-            this.BindingCurseBox.TabIndex = 176;
-            this.BindingCurseBox.Text = "Curse of Binding";
             this.BindingCurseBox.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTips.SetToolTip(this.BindingCurseBox, "Whether to always enable Curse of Binding");
+            this.ToolTips.SetToolTip(this.BindingCurseBox, resources.GetString("BindingCurseBox.ToolTip"));
             this.BindingCurseBox.UseSelectable = true;
             this.BindingCurseBox.CheckedChanged += new System.EventHandler(this.BindingCurseBoxChecked);
             // 
             // AquaInfinityBox
             // 
-            this.AquaInfinityBox.AutoSize = true;
-            this.AquaInfinityBox.Location = new System.Drawing.Point(97, 85);
+            resources.ApplyResources(this.AquaInfinityBox, "AquaInfinityBox");
             this.AquaInfinityBox.Name = "AquaInfinityBox";
-            this.AquaInfinityBox.Size = new System.Drawing.Size(91, 15);
-            this.AquaInfinityBox.TabIndex = 177;
-            this.AquaInfinityBox.Text = "Aqua Infinity";
             this.AquaInfinityBox.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTips.SetToolTip(this.AquaInfinityBox, "Whether to always enable Aqua Infinity");
+            this.ToolTips.SetToolTip(this.AquaInfinityBox, resources.GetString("AquaInfinityBox.ToolTip"));
             this.AquaInfinityBox.UseSelectable = true;
             this.AquaInfinityBox.CheckedChanged += new System.EventHandler(this.AquaInfinityBoxChecked);
             // 
             // VanishingCurseBox
             // 
-            this.VanishingCurseBox.AutoSize = true;
-            this.VanishingCurseBox.Location = new System.Drawing.Point(7, 32);
+            resources.ApplyResources(this.VanishingCurseBox, "VanishingCurseBox");
             this.VanishingCurseBox.Name = "VanishingCurseBox";
-            this.VanishingCurseBox.Size = new System.Drawing.Size(121, 15);
-            this.VanishingCurseBox.TabIndex = 177;
-            this.VanishingCurseBox.Text = "Curse of Vanishing";
             this.VanishingCurseBox.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTips.SetToolTip(this.VanishingCurseBox, "Whether to always enable Curse of Vanishing");
+            this.ToolTips.SetToolTip(this.VanishingCurseBox, resources.GetString("VanishingCurseBox.ToolTip"));
             this.VanishingCurseBox.UseSelectable = true;
             this.VanishingCurseBox.CheckedChanged += new System.EventHandler(this.VanishingCurseBoxChecked);
             // 
             // ChannelingBox
             // 
-            this.ChannelingBox.AutoSize = true;
-            this.ChannelingBox.Location = new System.Drawing.Point(97, 163);
+            resources.ApplyResources(this.ChannelingBox, "ChannelingBox");
             this.ChannelingBox.Name = "ChannelingBox";
-            this.ChannelingBox.Size = new System.Drawing.Size(84, 15);
-            this.ChannelingBox.TabIndex = 178;
-            this.ChannelingBox.Text = "Channeling";
             this.ChannelingBox.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTips.SetToolTip(this.ChannelingBox, "Whether to always enable Channeling");
+            this.ToolTips.SetToolTip(this.ChannelingBox, resources.GetString("ChannelingBox.ToolTip"));
             this.ChannelingBox.UseSelectable = true;
             this.ChannelingBox.CheckedChanged += new System.EventHandler(this.ChannelingBoxChecked);
             // 
             // DepthStriderLvl
             // 
-            this.DepthStriderLvl.AutoSize = true;
+            resources.ApplyResources(this.DepthStriderLvl, "DepthStriderLvl");
             this.DepthStriderLvl.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.DepthStriderLvl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.DepthStriderLvl.Location = new System.Drawing.Point(3, 34);
             this.DepthStriderLvl.Name = "DepthStriderLvl";
-            this.DepthStriderLvl.Size = new System.Drawing.Size(94, 19);
-            this.DepthStriderLvl.TabIndex = 168;
             this.DepthStriderLvl.Tag = "";
-            this.DepthStriderLvl.Text = "Depth Strider:";
             this.DepthStriderLvl.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // FrostWalkerLvl
             // 
-            this.FrostWalkerLvl.AutoSize = true;
+            resources.ApplyResources(this.FrostWalkerLvl, "FrostWalkerLvl");
             this.FrostWalkerLvl.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.FrostWalkerLvl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.FrostWalkerLvl.Location = new System.Drawing.Point(3, 8);
             this.FrostWalkerLvl.Name = "FrostWalkerLvl";
-            this.FrostWalkerLvl.Size = new System.Drawing.Size(88, 19);
-            this.FrostWalkerLvl.TabIndex = 166;
             this.FrostWalkerLvl.Tag = "";
-            this.FrostWalkerLvl.Text = "Frost Walker:";
             this.FrostWalkerLvl.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // ArmorLbl
             // 
-            this.ArmorLbl.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.ArmorLbl.AutoSize = true;
+            resources.ApplyResources(this.ArmorLbl, "ArmorLbl");
             this.ArmorLbl.BackColor = System.Drawing.Color.Transparent;
             this.ArmorLbl.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.ArmorLbl.Location = new System.Drawing.Point(27, 53);
             this.ArmorLbl.Name = "ArmorLbl";
-            this.ArmorLbl.Size = new System.Drawing.Size(48, 19);
-            this.ArmorLbl.TabIndex = 171;
-            this.ArmorLbl.Text = "Armor";
             this.ArmorLbl.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // armorPanel
             // 
-            this.armorPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            resources.ApplyResources(this.armorPanel, "armorPanel");
             this.armorPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.armorPanel.Controls.Add(this.AquaInfinityBox);
             this.armorPanel.Controls.Add(this.RespirationSlider);
@@ -311,10 +262,7 @@
             this.armorPanel.HorizontalScrollbarBarColor = true;
             this.armorPanel.HorizontalScrollbarHighlightOnWheel = false;
             this.armorPanel.HorizontalScrollbarSize = 10;
-            this.armorPanel.Location = new System.Drawing.Point(23, 63);
             this.armorPanel.Name = "armorPanel";
-            this.armorPanel.Size = new System.Drawing.Size(254, 109);
-            this.armorPanel.TabIndex = 170;
             this.armorPanel.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.armorPanel.VerticalScrollbarBarColor = true;
             this.armorPanel.VerticalScrollbarHighlightOnWheel = false;
@@ -322,35 +270,24 @@
             // 
             // RespirationLbl
             // 
-            this.RespirationLbl.AutoSize = true;
+            resources.ApplyResources(this.RespirationLbl, "RespirationLbl");
             this.RespirationLbl.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.RespirationLbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.RespirationLbl.Location = new System.Drawing.Point(3, 60);
             this.RespirationLbl.Name = "RespirationLbl";
-            this.RespirationLbl.Size = new System.Drawing.Size(80, 19);
-            this.RespirationLbl.TabIndex = 170;
             this.RespirationLbl.Tag = "";
-            this.RespirationLbl.Text = "Respiration:";
             this.RespirationLbl.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // ToolsLbl
             // 
-            this.ToolsLbl.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.ToolsLbl.AutoSize = true;
+            resources.ApplyResources(this.ToolsLbl, "ToolsLbl");
             this.ToolsLbl.BackColor = System.Drawing.Color.Transparent;
             this.ToolsLbl.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.ToolsLbl.Location = new System.Drawing.Point(27, 173);
             this.ToolsLbl.Name = "ToolsLbl";
-            this.ToolsLbl.Size = new System.Drawing.Size(40, 19);
-            this.ToolsLbl.TabIndex = 173;
-            this.ToolsLbl.Text = "Tools";
             this.ToolsLbl.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // toolsPanel
             // 
-            this.toolsPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            resources.ApplyResources(this.toolsPanel, "toolsPanel");
             this.toolsPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.toolsPanel.Controls.Add(this.ChannelingBox);
             this.toolsPanel.Controls.Add(this.KnockbackSlider);
@@ -368,10 +305,7 @@
             this.toolsPanel.HorizontalScrollbarBarColor = true;
             this.toolsPanel.HorizontalScrollbarHighlightOnWheel = false;
             this.toolsPanel.HorizontalScrollbarSize = 10;
-            this.toolsPanel.Location = new System.Drawing.Point(23, 183);
             this.toolsPanel.Name = "toolsPanel";
-            this.toolsPanel.Size = new System.Drawing.Size(254, 193);
-            this.toolsPanel.TabIndex = 172;
             this.toolsPanel.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.toolsPanel.VerticalScrollbarBarColor = true;
             this.toolsPanel.VerticalScrollbarHighlightOnWheel = false;
@@ -379,108 +313,76 @@
             // 
             // KnockbackLbl
             // 
-            this.KnockbackLbl.AutoSize = true;
+            resources.ApplyResources(this.KnockbackLbl, "KnockbackLbl");
             this.KnockbackLbl.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.KnockbackLbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.KnockbackLbl.Location = new System.Drawing.Point(3, 138);
             this.KnockbackLbl.Name = "KnockbackLbl";
-            this.KnockbackLbl.Size = new System.Drawing.Size(77, 19);
-            this.KnockbackLbl.TabIndex = 176;
             this.KnockbackLbl.Tag = "";
-            this.KnockbackLbl.Text = "Knockback:";
             this.KnockbackLbl.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // LootingLbl
             // 
-            this.LootingLbl.AutoSize = true;
+            resources.ApplyResources(this.LootingLbl, "LootingLbl");
             this.LootingLbl.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.LootingLbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.LootingLbl.Location = new System.Drawing.Point(3, 112);
             this.LootingLbl.Name = "LootingLbl";
-            this.LootingLbl.Size = new System.Drawing.Size(59, 19);
-            this.LootingLbl.TabIndex = 174;
             this.LootingLbl.Tag = "";
-            this.LootingLbl.Text = "Looting:";
             this.LootingLbl.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // LureLbl
             // 
-            this.LureLbl.AutoSize = true;
+            resources.ApplyResources(this.LureLbl, "LureLbl");
             this.LureLbl.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.LureLbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.LureLbl.Location = new System.Drawing.Point(3, 86);
             this.LureLbl.Name = "LureLbl";
-            this.LureLbl.Size = new System.Drawing.Size(39, 19);
-            this.LureLbl.TabIndex = 172;
             this.LureLbl.Tag = "";
-            this.LureLbl.Text = "Lure:";
             this.LureLbl.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // LuckOfTheSeaLbl
             // 
-            this.LuckOfTheSeaLbl.AutoSize = true;
+            resources.ApplyResources(this.LuckOfTheSeaLbl, "LuckOfTheSeaLbl");
             this.LuckOfTheSeaLbl.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.LuckOfTheSeaLbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.LuckOfTheSeaLbl.Location = new System.Drawing.Point(3, 60);
             this.LuckOfTheSeaLbl.Name = "LuckOfTheSeaLbl";
-            this.LuckOfTheSeaLbl.Size = new System.Drawing.Size(110, 19);
-            this.LuckOfTheSeaLbl.TabIndex = 170;
             this.LuckOfTheSeaLbl.Tag = "";
-            this.LuckOfTheSeaLbl.Text = "Luck Of The Sea:";
             this.LuckOfTheSeaLbl.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // FireAspectLbl
             // 
-            this.FireAspectLbl.AutoSize = true;
+            resources.ApplyResources(this.FireAspectLbl, "FireAspectLbl");
             this.FireAspectLbl.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.FireAspectLbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.FireAspectLbl.Location = new System.Drawing.Point(3, 34);
             this.FireAspectLbl.Name = "FireAspectLbl";
-            this.FireAspectLbl.Size = new System.Drawing.Size(79, 19);
-            this.FireAspectLbl.TabIndex = 168;
             this.FireAspectLbl.Tag = "";
-            this.FireAspectLbl.Text = "Fire Aspect:";
             this.FireAspectLbl.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // EfficiencyLbl
             // 
-            this.EfficiencyLbl.AutoSize = true;
+            resources.ApplyResources(this.EfficiencyLbl, "EfficiencyLbl");
             this.EfficiencyLbl.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.EfficiencyLbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.EfficiencyLbl.Location = new System.Drawing.Point(3, 8);
             this.EfficiencyLbl.Name = "EfficiencyLbl";
-            this.EfficiencyLbl.Size = new System.Drawing.Size(67, 19);
-            this.EfficiencyLbl.TabIndex = 166;
             this.EfficiencyLbl.Tag = "";
-            this.EfficiencyLbl.Text = "Efficiency:";
             this.EfficiencyLbl.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // cursesLbl
             // 
-            this.cursesLbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cursesLbl.AutoSize = true;
+            resources.ApplyResources(this.cursesLbl, "cursesLbl");
             this.cursesLbl.BackColor = System.Drawing.Color.Transparent;
             this.cursesLbl.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.cursesLbl.Location = new System.Drawing.Point(287, 53);
             this.cursesLbl.Name = "cursesLbl";
-            this.cursesLbl.Size = new System.Drawing.Size(50, 19);
-            this.cursesLbl.TabIndex = 175;
-            this.cursesLbl.Text = "Curses";
             this.cursesLbl.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // cursesPanel
             // 
-            this.cursesPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            resources.ApplyResources(this.cursesPanel, "cursesPanel");
             this.cursesPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.cursesPanel.Controls.Add(this.VanishingCurseBox);
             this.cursesPanel.Controls.Add(this.BindingCurseBox);
             this.cursesPanel.HorizontalScrollbarBarColor = true;
             this.cursesPanel.HorizontalScrollbarHighlightOnWheel = false;
             this.cursesPanel.HorizontalScrollbarSize = 10;
-            this.cursesPanel.Location = new System.Drawing.Point(283, 63);
             this.cursesPanel.Name = "cursesPanel";
-            this.cursesPanel.Size = new System.Drawing.Size(281, 313);
-            this.cursesPanel.TabIndex = 174;
             this.cursesPanel.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.cursesPanel.VerticalScrollbarBarColor = true;
             this.cursesPanel.VerticalScrollbarHighlightOnWheel = false;
@@ -492,21 +394,16 @@
             // 
             // EnchantmentEditor
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(590, 390);
             this.Controls.Add(this.cursesLbl);
             this.Controls.Add(this.cursesPanel);
             this.Controls.Add(this.ToolsLbl);
             this.Controls.Add(this.toolsPanel);
             this.Controls.Add(this.ArmorLbl);
             this.Controls.Add(this.armorPanel);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(3840, 390);
-            this.MinimumSize = new System.Drawing.Size(590, 390);
             this.Name = "EnchantmentEditor";
-            this.Text = "Minecraft: Wii U Mod Injector - Enchantment Editor";
             this.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.TopMost = true;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Exiting);

@@ -8,8 +8,11 @@ using MetroFramework.Forms;
 using Minecraft_Wii_U_Mod_Injector.Helpers;
 using Minecraft_Wii_U_Mod_Injector.Helpers.Files;
 
-namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods
+namespace Minecraft_Wii_U_Mod_Injector.Forms.Graveyard
 {
+    // WARNING:
+    // This whole window will be removed at some point, I'm just going to keep this here for now until all the options have been transfered over to the new
+    // "Session Manager" window which has it's own Player Options tab for each individual player. With the exception of a few like the Information panel
     public partial class PlayerOptions : MetroForm
     {
         private readonly IniFile _savedData = new(Application.StartupPath + @"\Saved\Data\Minecraft.Wii.U.Mod.Injector.Data.ini");
@@ -64,11 +67,8 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods
 
         private void Init(object sender, EventArgs e)
         {
-            DiscordRP.SetPresence("Connected", "Player Options window");
-#if DEBUG
-            Console.WriteLine(@"PLAYER OPTIONS: LocalPlayer: 0x" + _localPlayer.ToString("X4"));
-            Console.WriteLine(@"PLAYER OPTIONS: SelfPlayer: 0x" + _Player.ToString("X4"));
-#endif
+            DiscordRpc.SetPresence("Connected", "Player Options window");
+
             if (!System.IO.Directory.Exists(_savedDataDir))
                 System.IO.Directory.CreateDirectory(_savedDataDir);
 
@@ -82,7 +82,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods
 
         private void Exiting(object sender, FormClosingEventArgs e)
         {
-            DiscordRP.SetPresence("Connected", new MainForm().MainTabs.SelectedTab.Text + " Tab");
+            DiscordRpc.SetPresence("Connected", new MainForm().MainTabs.SelectedTab.Text + " Tab");
             Dispose();
         }
 

@@ -6,9 +6,6 @@ using Minecraft_Wii_U_Mod_Injector.Properties;
 using System.Net;
 using System.Windows.Forms;
 using System.Diagnostics;
-using MetroFramework;
-using MetroFramework.Controls;
-using Minecraft_Wii_U_Mod_Injector.Forms.Managers;
 using Application = System.Windows.Forms.Application;
 
 namespace Minecraft_Wii_U_Mod_Injector.Helpers
@@ -47,11 +44,11 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
                     Settings.Default.Save();
                 }
 
-                DiscordRP.Initialize();
+                DiscordRpc.Initialize();
 
                 SetupUserPrefs();
 
-                DiscordRP.SetPresence("Disconnected", "Idle");
+                DiscordRpc.SetPresence("Disconnected", "Idle");
                 States.SwapState(States.StatesIds.Disconnected);
 
                 // Setup is finished, we can show the window now
@@ -60,7 +57,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
             catch (Exception error)
             {
                 Exceptions.LogError(error, "Failed to setup", true);
-                DiscordRP.Deinitialize();
+                DiscordRpc.Deinitialize();
                 Environment.Exit(0);
             }
         }
@@ -126,56 +123,21 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
                 {
                     Injector.Style = Injector.StyleMngr.Style = Settings.Default.Style;
                     Injector.ColorsBox.Text = Settings.Default.Style.ToString();
-                    Injector.TextAlign = Settings.Default.FormTxtAlign;
-                    Injector.TextAllignBox.Text = Settings.Default.FormTxtAlign.ToString();
                     Injector.MainTabs.SelectedIndex = Settings.Default.TabIndex;
                     Injector.CheckForPreRelease.Checked = Settings.Default.PrereleaseOptIn;
                     Injector.discordRpcCheckBox.Checked = Settings.Default.DiscordRPC;
 
                     if(!Settings.Default.DiscordRPC)
-                        DiscordRP.Deinitialize();
+                        DiscordRpc.Deinitialize();
 
                     Injector.HostIndicators.Checked = Settings.Default.HostIndicators;
-                    Injector.SeasonalThemes.Checked = Settings.Default.SeasonalThemes;
 
-                    if(Settings.Default.Language != "Default")
-                    {
-                        foreach (MetroTabPage page in Injector.MainTabs.TabPages)
-                            LanguageMngr.ApplyLanguage(page.Controls, Settings.Default.Language);
-                        foreach (MetroTabPage page in Injector.MinigamesTabs.TabPages)
-                            LanguageMngr.ApplyLanguage(page.Controls, Settings.Default.Language);
-                    }
-
-                    if (Settings.Default.SeasonalThemes)
-                    {
-                        //Halloween
-                        if (DateTime.Now.ToString("MM") == "10")
-                        {
-                            Injector.Style = Injector.StyleMngr.Style = MetroColorStyle.Orange;
-                            Injector.BuildTile.Text = LocalVer + @"
-Halloween Edition";
-                            Injector.ColorsBox.Enabled = false;
-                            Injector.Refresh();
-                        }
-
-                        //Christmas
-                        if (DateTime.Now.ToString("MM") == "12")
-                        {
-                            Injector.Style = MetroColorStyle.Red;
-                            Injector.StyleMngr.Style = MetroColorStyle.Green;
-                            Injector.BuildTile.Text = LocalVer + @"
-Christmas Edition";
-                            Injector.ColorsBox.Enabled = false;
-                            Injector.Refresh();
-                        }
-                    }
+                    // TODO Implement new language switcher logic here.. once there are languages setup
                 }
                 catch (Exception)
                 {
                     //Failing to set User Preferences isn't a big deal, so we ignore the exception if one happens
                 }
-
-                Injector.BuildNotesBox.Text = Resources.releaseNotes;
 
                 Miscellaneous.DoHostIndicators(Settings.Default.HostIndicators);
             }

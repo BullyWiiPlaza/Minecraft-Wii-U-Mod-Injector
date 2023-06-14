@@ -120,7 +120,1437 @@
   <metadata name="StyleMngr.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>28, 19</value>
   </metadata>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>760, 330</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="metroLabel3.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="metroLabel3.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="metroLabel3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>289, 89</value>
+  </data>
+  <data name="metroLabel3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>182, 25</value>
+  </data>
+  <data name="metroLabel3.TabIndex" type="System.Int32, mscorlib">
+    <value>23</value>
+  </data>
+  <data name="metroLabel3.Text" xml:space="preserve">
+    <value>Or, edit keys manually:</value>
+  </data>
+  <data name="&gt;&gt;metroLabel3.Name" xml:space="preserve">
+    <value>metroLabel3</value>
+  </data>
+  <data name="&gt;&gt;metroLabel3.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;metroLabel3.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;metroLabel3.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="phraseInput.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="resource.Image" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="resource.Location" type="System.Drawing.Point, System.Drawing">
+    <value>470, 1</value>
+  </data>
+  <data name="resource.Size" type="System.Drawing.Size, System.Drawing">
+    <value>21, 21</value>
+  </data>
+  <data name="resource.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="resource.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="phraseInput.Location" type="System.Drawing.Point, System.Drawing">
+    <value>134, 63</value>
+  </data>
+  <data name="phraseInput.Size" type="System.Drawing.Size, System.Drawing">
+    <value>492, 23</value>
+  </data>
+  <data name="phraseInput.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="&gt;&gt;phraseInput.Name" xml:space="preserve">
+    <value>phraseInput</value>
+  </data>
+  <data name="&gt;&gt;phraseInput.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroTextBox, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;phraseInput.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;phraseInput.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="resetKeyboard.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 63</value>
+  </data>
+  <data name="resetKeyboard.Size" type="System.Drawing.Size, System.Drawing">
+    <value>105, 23</value>
+  </data>
+  <data name="resetKeyboard.TabIndex" type="System.Int32, mscorlib">
+    <value>21</value>
+  </data>
+  <data name="resetKeyboard.Text" xml:space="preserve">
+    <value>Reset</value>
+  </data>
+  <data name="&gt;&gt;resetKeyboard.Name" xml:space="preserve">
+    <value>resetKeyboard</value>
+  </data>
+  <data name="&gt;&gt;resetKeyboard.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroButton, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;resetKeyboard.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;resetKeyboard.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="changePhrase.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="changePhrase.Location" type="System.Drawing.Point, System.Drawing">
+    <value>632, 63</value>
+  </data>
+  <data name="changePhrase.Size" type="System.Drawing.Size, System.Drawing">
+    <value>105, 23</value>
+  </data>
+  <data name="changePhrase.TabIndex" type="System.Int32, mscorlib">
+    <value>22</value>
+  </data>
+  <data name="changePhrase.Text" xml:space="preserve">
+    <value>Apply Phrase</value>
+  </data>
+  <data name="&gt;&gt;changePhrase.Name" xml:space="preserve">
+    <value>changePhrase</value>
+  </data>
+  <data name="&gt;&gt;changePhrase.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroButton, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;changePhrase.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;changePhrase.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="applyChangesBtn.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left, Right</value>
+  </data>
+  <data name="applyChangesBtn.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 284</value>
+  </data>
+  <data name="applyChangesBtn.Size" type="System.Drawing.Size, System.Drawing">
+    <value>714, 23</value>
+  </data>
+  <data name="applyChangesBtn.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="applyChangesBtn.Text" xml:space="preserve">
+    <value>Apply Changes</value>
+  </data>
+  <data name="&gt;&gt;applyChangesBtn.Name" xml:space="preserve">
+    <value>applyChangesBtn</value>
+  </data>
+  <data name="&gt;&gt;applyChangesBtn.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroButton, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;applyChangesBtn.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;applyChangesBtn.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="metroPanel2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="resource.Image1" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="resource.Location1" type="System.Drawing.Point, System.Drawing">
+    <value>5, 1</value>
+  </data>
+  <data name="resource.Size1" type="System.Drawing.Size, System.Drawing">
+    <value>21, 21</value>
+  </data>
+  <data name="resource.TabIndex1" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="resource.Visible1" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="customKeyQ.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="customKeyQ.Size" type="System.Drawing.Size, System.Drawing">
+    <value>27, 23</value>
+  </data>
+  <data name="customKeyQ.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="customKeyQ.Text" xml:space="preserve">
+    <value>q</value>
+  </data>
+  <data name="&gt;&gt;customKeyQ.Name" xml:space="preserve">
+    <value>customKeyQ</value>
+  </data>
+  <data name="&gt;&gt;customKeyQ.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroTextBox, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;customKeyQ.Parent" xml:space="preserve">
+    <value>metroPanel2</value>
+  </data>
+  <data name="&gt;&gt;customKeyQ.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="resource.Image2" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="resource.Location2" type="System.Drawing.Point, System.Drawing">
+    <value>5, 1</value>
+  </data>
+  <data name="resource.Size2" type="System.Drawing.Size, System.Drawing">
+    <value>21, 21</value>
+  </data>
+  <data name="resource.TabIndex2" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="resource.Visible2" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="customKeyApostrophe.Location" type="System.Drawing.Point, System.Drawing">
+    <value>317, 30</value>
+  </data>
+  <data name="customKeyApostrophe.Size" type="System.Drawing.Size, System.Drawing">
+    <value>27, 23</value>
+  </data>
+  <data name="customKeyApostrophe.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="customKeyApostrophe.Text" xml:space="preserve">
+    <value>'</value>
+  </data>
+  <data name="&gt;&gt;customKeyApostrophe.Name" xml:space="preserve">
+    <value>customKeyApostrophe</value>
+  </data>
+  <data name="&gt;&gt;customKeyApostrophe.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroTextBox, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;customKeyApostrophe.Parent" xml:space="preserve">
+    <value>metroPanel2</value>
+  </data>
+  <data name="&gt;&gt;customKeyApostrophe.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="resource.Image3" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="resource.Location3" type="System.Drawing.Point, System.Drawing">
+    <value>5, 1</value>
+  </data>
+  <data name="resource.Size3" type="System.Drawing.Size, System.Drawing">
+    <value>21, 21</value>
+  </data>
+  <data name="resource.TabIndex3" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="resource.Visible3" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="customKeyF.Location" type="System.Drawing.Point, System.Drawing">
+    <value>119, 30</value>
+  </data>
+  <data name="customKeyF.Size" type="System.Drawing.Size, System.Drawing">
+    <value>27, 23</value>
+  </data>
+  <data name="customKeyF.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="customKeyF.Text" xml:space="preserve">
+    <value>f</value>
+  </data>
+  <data name="&gt;&gt;customKeyF.Name" xml:space="preserve">
+    <value>customKeyF</value>
+  </data>
+  <data name="&gt;&gt;customKeyF.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroTextBox, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;customKeyF.Parent" xml:space="preserve">
+    <value>metroPanel2</value>
+  </data>
+  <data name="&gt;&gt;customKeyF.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="resource.Image4" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="resource.Location4" type="System.Drawing.Point, System.Drawing">
+    <value>5, 1</value>
+  </data>
+  <data name="resource.Size4" type="System.Drawing.Size, System.Drawing">
+    <value>21, 21</value>
+  </data>
+  <data name="resource.TabIndex4" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="resource.Visible4" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="customKeyC.Location" type="System.Drawing.Point, System.Drawing">
+    <value>102, 57</value>
+  </data>
+  <data name="customKeyC.Size" type="System.Drawing.Size, System.Drawing">
+    <value>27, 23</value>
+  </data>
+  <data name="customKeyC.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="customKeyC.Text" xml:space="preserve">
+    <value>c</value>
+  </data>
+  <data name="&gt;&gt;customKeyC.Name" xml:space="preserve">
+    <value>customKeyC</value>
+  </data>
+  <data name="&gt;&gt;customKeyC.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroTextBox, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;customKeyC.Parent" xml:space="preserve">
+    <value>metroPanel2</value>
+  </data>
+  <data name="&gt;&gt;customKeyC.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="resource.Image5" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="resource.Location5" type="System.Drawing.Point, System.Drawing">
+    <value>5, 1</value>
+  </data>
+  <data name="resource.Size5" type="System.Drawing.Size, System.Drawing">
+    <value>21, 21</value>
+  </data>
+  <data name="resource.TabIndex5" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="resource.Visible5" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="customKeyPeriod.Location" type="System.Drawing.Point, System.Drawing">
+    <value>300, 57</value>
+  </data>
+  <data name="customKeyPeriod.Size" type="System.Drawing.Size, System.Drawing">
+    <value>27, 23</value>
+  </data>
+  <data name="customKeyPeriod.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="customKeyPeriod.Text" xml:space="preserve">
+    <value>.</value>
+  </data>
+  <data name="&gt;&gt;customKeyPeriod.Name" xml:space="preserve">
+    <value>customKeyPeriod</value>
+  </data>
+  <data name="&gt;&gt;customKeyPeriod.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroTextBox, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;customKeyPeriod.Parent" xml:space="preserve">
+    <value>metroPanel2</value>
+  </data>
+  <data name="&gt;&gt;customKeyPeriod.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="resource.Image6" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="resource.Location6" type="System.Drawing.Point, System.Drawing">
+    <value>5, 1</value>
+  </data>
+  <data name="resource.Size6" type="System.Drawing.Size, System.Drawing">
+    <value>21, 21</value>
+  </data>
+  <data name="resource.TabIndex6" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="resource.Visible6" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="customKeyP.Location" type="System.Drawing.Point, System.Drawing">
+    <value>300, 3</value>
+  </data>
+  <data name="customKeyP.Size" type="System.Drawing.Size, System.Drawing">
+    <value>27, 23</value>
+  </data>
+  <data name="customKeyP.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="customKeyP.Text" xml:space="preserve">
+    <value>p</value>
+  </data>
+  <data name="&gt;&gt;customKeyP.Name" xml:space="preserve">
+    <value>customKeyP</value>
+  </data>
+  <data name="&gt;&gt;customKeyP.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroTextBox, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;customKeyP.Parent" xml:space="preserve">
+    <value>metroPanel2</value>
+  </data>
+  <data name="&gt;&gt;customKeyP.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="resource.Image7" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="resource.Location7" type="System.Drawing.Point, System.Drawing">
+    <value>5, 1</value>
+  </data>
+  <data name="resource.Size7" type="System.Drawing.Size, System.Drawing">
+    <value>21, 21</value>
+  </data>
+  <data name="resource.TabIndex7" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="resource.Visible7" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="customKeyJ.Location" type="System.Drawing.Point, System.Drawing">
+    <value>218, 30</value>
+  </data>
+  <data name="customKeyJ.Size" type="System.Drawing.Size, System.Drawing">
+    <value>27, 23</value>
+  </data>
+  <data name="customKeyJ.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="customKeyJ.Text" xml:space="preserve">
+    <value>j</value>
+  </data>
+  <data name="&gt;&gt;customKeyJ.Name" xml:space="preserve">
+    <value>customKeyJ</value>
+  </data>
+  <data name="&gt;&gt;customKeyJ.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroTextBox, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;customKeyJ.Parent" xml:space="preserve">
+    <value>metroPanel2</value>
+  </data>
+  <data name="&gt;&gt;customKeyJ.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="resource.Image8" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="resource.Location8" type="System.Drawing.Point, System.Drawing">
+    <value>5, 1</value>
+  </data>
+  <data name="resource.Size8" type="System.Drawing.Size, System.Drawing">
+    <value>21, 21</value>
+  </data>
+  <data name="resource.TabIndex8" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="resource.Visible8" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="customKeyR.Location" type="System.Drawing.Point, System.Drawing">
+    <value>102, 3</value>
+  </data>
+  <data name="customKeyR.Size" type="System.Drawing.Size, System.Drawing">
+    <value>27, 23</value>
+  </data>
+  <data name="customKeyR.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="customKeyR.Text" xml:space="preserve">
+    <value>r</value>
+  </data>
+  <data name="&gt;&gt;customKeyR.Name" xml:space="preserve">
+    <value>customKeyR</value>
+  </data>
+  <data name="&gt;&gt;customKeyR.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroTextBox, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;customKeyR.Parent" xml:space="preserve">
+    <value>metroPanel2</value>
+  </data>
+  <data name="&gt;&gt;customKeyR.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="resource.Image9" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="resource.Location9" type="System.Drawing.Point, System.Drawing">
+    <value>5, 1</value>
+  </data>
+  <data name="resource.Size9" type="System.Drawing.Size, System.Drawing">
+    <value>21, 21</value>
+  </data>
+  <data name="resource.TabIndex9" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="resource.Visible9" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="customKeyT.Location" type="System.Drawing.Point, System.Drawing">
+    <value>135, 3</value>
+  </data>
+  <data name="customKeyT.Size" type="System.Drawing.Size, System.Drawing">
+    <value>27, 23</value>
+  </data>
+  <data name="customKeyT.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="customKeyT.Text" xml:space="preserve">
+    <value>t</value>
+  </data>
+  <data name="&gt;&gt;customKeyT.Name" xml:space="preserve">
+    <value>customKeyT</value>
+  </data>
+  <data name="&gt;&gt;customKeyT.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroTextBox, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;customKeyT.Parent" xml:space="preserve">
+    <value>metroPanel2</value>
+  </data>
+  <data name="&gt;&gt;customKeyT.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="resource.Image10" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="resource.Location10" type="System.Drawing.Point, System.Drawing">
+    <value>5, 1</value>
+  </data>
+  <data name="resource.Size10" type="System.Drawing.Size, System.Drawing">
+    <value>21, 21</value>
+  </data>
+  <data name="resource.TabIndex10" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="resource.Visible10" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="customKeyN.Location" type="System.Drawing.Point, System.Drawing">
+    <value>201, 57</value>
+  </data>
+  <data name="customKeyN.Size" type="System.Drawing.Size, System.Drawing">
+    <value>27, 23</value>
+  </data>
+  <data name="customKeyN.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="customKeyN.Text" xml:space="preserve">
+    <value>n</value>
+  </data>
+  <data name="&gt;&gt;customKeyN.Name" xml:space="preserve">
+    <value>customKeyN</value>
+  </data>
+  <data name="&gt;&gt;customKeyN.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroTextBox, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;customKeyN.Parent" xml:space="preserve">
+    <value>metroPanel2</value>
+  </data>
+  <data name="&gt;&gt;customKeyN.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="resource.Image11" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="resource.Location11" type="System.Drawing.Point, System.Drawing">
+    <value>5, 1</value>
+  </data>
+  <data name="resource.Size11" type="System.Drawing.Size, System.Drawing">
+    <value>21, 21</value>
+  </data>
+  <data name="resource.TabIndex11" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="resource.Visible11" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="customKeyAT.Location" type="System.Drawing.Point, System.Drawing">
+    <value>333, 3</value>
+  </data>
+  <data name="customKeyAT.Size" type="System.Drawing.Size, System.Drawing">
+    <value>27, 23</value>
+  </data>
+  <data name="customKeyAT.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="customKeyAT.Text" xml:space="preserve">
+    <value>@</value>
+  </data>
+  <data name="&gt;&gt;customKeyAT.Name" xml:space="preserve">
+    <value>customKeyAT</value>
+  </data>
+  <data name="&gt;&gt;customKeyAT.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroTextBox, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;customKeyAT.Parent" xml:space="preserve">
+    <value>metroPanel2</value>
+  </data>
+  <data name="&gt;&gt;customKeyAT.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="resource.Image12" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="resource.Location12" type="System.Drawing.Point, System.Drawing">
+    <value>5, 1</value>
+  </data>
+  <data name="resource.Size12" type="System.Drawing.Size, System.Drawing">
+    <value>21, 21</value>
+  </data>
+  <data name="resource.TabIndex12" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="resource.Visible12" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="customKeyComma.Location" type="System.Drawing.Point, System.Drawing">
+    <value>267, 57</value>
+  </data>
+  <data name="customKeyComma.Size" type="System.Drawing.Size, System.Drawing">
+    <value>27, 23</value>
+  </data>
+  <data name="customKeyComma.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="customKeyComma.Text" xml:space="preserve">
+    <value>,</value>
+  </data>
+  <data name="&gt;&gt;customKeyComma.Name" xml:space="preserve">
+    <value>customKeyComma</value>
+  </data>
+  <data name="&gt;&gt;customKeyComma.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroTextBox, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;customKeyComma.Parent" xml:space="preserve">
+    <value>metroPanel2</value>
+  </data>
+  <data name="&gt;&gt;customKeyComma.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="resource.Image13" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="resource.Location13" type="System.Drawing.Point, System.Drawing">
+    <value>5, 1</value>
+  </data>
+  <data name="resource.Size13" type="System.Drawing.Size, System.Drawing">
+    <value>21, 21</value>
+  </data>
+  <data name="resource.TabIndex13" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="resource.Visible13" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="customKeyX.Location" type="System.Drawing.Point, System.Drawing">
+    <value>69, 57</value>
+  </data>
+  <data name="customKeyX.Size" type="System.Drawing.Size, System.Drawing">
+    <value>27, 23</value>
+  </data>
+  <data name="customKeyX.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="customKeyX.Text" xml:space="preserve">
+    <value>x</value>
+  </data>
+  <data name="&gt;&gt;customKeyX.Name" xml:space="preserve">
+    <value>customKeyX</value>
+  </data>
+  <data name="&gt;&gt;customKeyX.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroTextBox, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;customKeyX.Parent" xml:space="preserve">
+    <value>metroPanel2</value>
+  </data>
+  <data name="&gt;&gt;customKeyX.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="resource.Image14" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="resource.Location14" type="System.Drawing.Point, System.Drawing">
+    <value>5, 1</value>
+  </data>
+  <data name="resource.Size14" type="System.Drawing.Size, System.Drawing">
+    <value>21, 21</value>
+  </data>
+  <data name="resource.TabIndex14" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="resource.Visible14" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="customKeyG.Location" type="System.Drawing.Point, System.Drawing">
+    <value>152, 30</value>
+  </data>
+  <data name="customKeyG.Size" type="System.Drawing.Size, System.Drawing">
+    <value>27, 23</value>
+  </data>
+  <data name="customKeyG.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="customKeyG.Text" xml:space="preserve">
+    <value>g</value>
+  </data>
+  <data name="&gt;&gt;customKeyG.Name" xml:space="preserve">
+    <value>customKeyG</value>
+  </data>
+  <data name="&gt;&gt;customKeyG.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroTextBox, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;customKeyG.Parent" xml:space="preserve">
+    <value>metroPanel2</value>
+  </data>
+  <data name="&gt;&gt;customKeyG.ZOrder" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <data name="resource.Image15" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="resource.Location15" type="System.Drawing.Point, System.Drawing">
+    <value>5, 1</value>
+  </data>
+  <data name="resource.Size15" type="System.Drawing.Size, System.Drawing">
+    <value>21, 21</value>
+  </data>
+  <data name="resource.TabIndex15" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="resource.Visible15" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="customKeyU.Location" type="System.Drawing.Point, System.Drawing">
+    <value>201, 3</value>
+  </data>
+  <data name="customKeyU.Size" type="System.Drawing.Size, System.Drawing">
+    <value>27, 23</value>
+  </data>
+  <data name="customKeyU.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="customKeyU.Text" xml:space="preserve">
+    <value>u</value>
+  </data>
+  <data name="&gt;&gt;customKeyU.Name" xml:space="preserve">
+    <value>customKeyU</value>
+  </data>
+  <data name="&gt;&gt;customKeyU.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroTextBox, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;customKeyU.Parent" xml:space="preserve">
+    <value>metroPanel2</value>
+  </data>
+  <data name="&gt;&gt;customKeyU.ZOrder" xml:space="preserve">
+    <value>16</value>
+  </data>
+  <data name="resource.Image16" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="resource.Location16" type="System.Drawing.Point, System.Drawing">
+    <value>5, 1</value>
+  </data>
+  <data name="resource.Size16" type="System.Drawing.Size, System.Drawing">
+    <value>21, 21</value>
+  </data>
+  <data name="resource.TabIndex16" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="resource.Visible16" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="customKeyExclamation.Location" type="System.Drawing.Point, System.Drawing">
+    <value>350, 30</value>
+  </data>
+  <data name="customKeyExclamation.Size" type="System.Drawing.Size, System.Drawing">
+    <value>27, 23</value>
+  </data>
+  <data name="customKeyExclamation.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="customKeyExclamation.Text" xml:space="preserve">
+    <value>!</value>
+  </data>
+  <data name="&gt;&gt;customKeyExclamation.Name" xml:space="preserve">
+    <value>customKeyExclamation</value>
+  </data>
+  <data name="&gt;&gt;customKeyExclamation.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroTextBox, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;customKeyExclamation.Parent" xml:space="preserve">
+    <value>metroPanel2</value>
+  </data>
+  <data name="&gt;&gt;customKeyExclamation.ZOrder" xml:space="preserve">
+    <value>17</value>
+  </data>
+  <data name="resource.Image17" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="resource.Location17" type="System.Drawing.Point, System.Drawing">
+    <value>5, 1</value>
+  </data>
+  <data name="resource.Size17" type="System.Drawing.Size, System.Drawing">
+    <value>21, 21</value>
+  </data>
+  <data name="resource.TabIndex17" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="resource.Visible17" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="customKeyL.Location" type="System.Drawing.Point, System.Drawing">
+    <value>284, 30</value>
+  </data>
+  <data name="customKeyL.Size" type="System.Drawing.Size, System.Drawing">
+    <value>27, 23</value>
+  </data>
+  <data name="customKeyL.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="customKeyL.Text" xml:space="preserve">
+    <value>l</value>
+  </data>
+  <data name="&gt;&gt;customKeyL.Name" xml:space="preserve">
+    <value>customKeyL</value>
+  </data>
+  <data name="&gt;&gt;customKeyL.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroTextBox, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;customKeyL.Parent" xml:space="preserve">
+    <value>metroPanel2</value>
+  </data>
+  <data name="&gt;&gt;customKeyL.ZOrder" xml:space="preserve">
+    <value>18</value>
+  </data>
+  <data name="resource.Image18" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="resource.Location18" type="System.Drawing.Point, System.Drawing">
+    <value>5, 1</value>
+  </data>
+  <data name="resource.Size18" type="System.Drawing.Size, System.Drawing">
+    <value>21, 21</value>
+  </data>
+  <data name="resource.TabIndex18" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="resource.Visible18" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="customKeyD.Location" type="System.Drawing.Point, System.Drawing">
+    <value>86, 30</value>
+  </data>
+  <data name="customKeyD.Size" type="System.Drawing.Size, System.Drawing">
+    <value>27, 23</value>
+  </data>
+  <data name="customKeyD.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="customKeyD.Text" xml:space="preserve">
+    <value>d</value>
+  </data>
+  <data name="&gt;&gt;customKeyD.Name" xml:space="preserve">
+    <value>customKeyD</value>
+  </data>
+  <data name="&gt;&gt;customKeyD.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroTextBox, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;customKeyD.Parent" xml:space="preserve">
+    <value>metroPanel2</value>
+  </data>
+  <data name="&gt;&gt;customKeyD.ZOrder" xml:space="preserve">
+    <value>19</value>
+  </data>
+  <data name="resource.Image19" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="resource.Location19" type="System.Drawing.Point, System.Drawing">
+    <value>5, 1</value>
+  </data>
+  <data name="resource.Size19" type="System.Drawing.Size, System.Drawing">
+    <value>21, 21</value>
+  </data>
+  <data name="resource.TabIndex19" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="resource.Visible19" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="customKeyI.Location" type="System.Drawing.Point, System.Drawing">
+    <value>234, 3</value>
+  </data>
+  <data name="customKeyI.Size" type="System.Drawing.Size, System.Drawing">
+    <value>27, 23</value>
+  </data>
+  <data name="customKeyI.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="customKeyI.Text" xml:space="preserve">
+    <value>i</value>
+  </data>
+  <data name="&gt;&gt;customKeyI.Name" xml:space="preserve">
+    <value>customKeyI</value>
+  </data>
+  <data name="&gt;&gt;customKeyI.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroTextBox, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;customKeyI.Parent" xml:space="preserve">
+    <value>metroPanel2</value>
+  </data>
+  <data name="&gt;&gt;customKeyI.ZOrder" xml:space="preserve">
+    <value>20</value>
+  </data>
+  <data name="resource.Image20" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="resource.Location20" type="System.Drawing.Point, System.Drawing">
+    <value>5, 1</value>
+  </data>
+  <data name="resource.Size20" type="System.Drawing.Size, System.Drawing">
+    <value>21, 21</value>
+  </data>
+  <data name="resource.TabIndex20" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="resource.Visible20" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="customKeyV.Location" type="System.Drawing.Point, System.Drawing">
+    <value>135, 57</value>
+  </data>
+  <data name="customKeyV.Size" type="System.Drawing.Size, System.Drawing">
+    <value>27, 23</value>
+  </data>
+  <data name="customKeyV.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="customKeyV.Text" xml:space="preserve">
+    <value>v</value>
+  </data>
+  <data name="&gt;&gt;customKeyV.Name" xml:space="preserve">
+    <value>customKeyV</value>
+  </data>
+  <data name="&gt;&gt;customKeyV.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroTextBox, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;customKeyV.Parent" xml:space="preserve">
+    <value>metroPanel2</value>
+  </data>
+  <data name="&gt;&gt;customKeyV.ZOrder" xml:space="preserve">
+    <value>21</value>
+  </data>
+  <data name="resource.Image21" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="resource.Location21" type="System.Drawing.Point, System.Drawing">
+    <value>5, 1</value>
+  </data>
+  <data name="resource.Size21" type="System.Drawing.Size, System.Drawing">
+    <value>21, 21</value>
+  </data>
+  <data name="resource.TabIndex21" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="resource.Visible21" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="customKeyQuestion.Location" type="System.Drawing.Point, System.Drawing">
+    <value>333, 57</value>
+  </data>
+  <data name="customKeyQuestion.Size" type="System.Drawing.Size, System.Drawing">
+    <value>27, 23</value>
+  </data>
+  <data name="customKeyQuestion.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="customKeyQuestion.Text" xml:space="preserve">
+    <value>?</value>
+  </data>
+  <data name="&gt;&gt;customKeyQuestion.Name" xml:space="preserve">
+    <value>customKeyQuestion</value>
+  </data>
+  <data name="&gt;&gt;customKeyQuestion.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroTextBox, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;customKeyQuestion.Parent" xml:space="preserve">
+    <value>metroPanel2</value>
+  </data>
+  <data name="&gt;&gt;customKeyQuestion.ZOrder" xml:space="preserve">
+    <value>22</value>
+  </data>
+  <data name="resource.Image22" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="resource.Location22" type="System.Drawing.Point, System.Drawing">
+    <value>5, 1</value>
+  </data>
+  <data name="resource.Size22" type="System.Drawing.Size, System.Drawing">
+    <value>21, 21</value>
+  </data>
+  <data name="resource.TabIndex22" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="resource.Visible22" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="customKeyO.Location" type="System.Drawing.Point, System.Drawing">
+    <value>267, 3</value>
+  </data>
+  <data name="customKeyO.Size" type="System.Drawing.Size, System.Drawing">
+    <value>27, 23</value>
+  </data>
+  <data name="customKeyO.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="customKeyO.Text" xml:space="preserve">
+    <value>o</value>
+  </data>
+  <data name="&gt;&gt;customKeyO.Name" xml:space="preserve">
+    <value>customKeyO</value>
+  </data>
+  <data name="&gt;&gt;customKeyO.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroTextBox, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;customKeyO.Parent" xml:space="preserve">
+    <value>metroPanel2</value>
+  </data>
+  <data name="&gt;&gt;customKeyO.ZOrder" xml:space="preserve">
+    <value>23</value>
+  </data>
+  <data name="resource.Image23" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="resource.Location23" type="System.Drawing.Point, System.Drawing">
+    <value>5, 1</value>
+  </data>
+  <data name="resource.Size23" type="System.Drawing.Size, System.Drawing">
+    <value>21, 21</value>
+  </data>
+  <data name="resource.TabIndex23" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="resource.Visible23" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="customKeyA.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 30</value>
+  </data>
+  <data name="customKeyA.Size" type="System.Drawing.Size, System.Drawing">
+    <value>27, 23</value>
+  </data>
+  <data name="customKeyA.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="customKeyA.Text" xml:space="preserve">
+    <value>a</value>
+  </data>
+  <data name="&gt;&gt;customKeyA.Name" xml:space="preserve">
+    <value>customKeyA</value>
+  </data>
+  <data name="&gt;&gt;customKeyA.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroTextBox, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;customKeyA.Parent" xml:space="preserve">
+    <value>metroPanel2</value>
+  </data>
+  <data name="&gt;&gt;customKeyA.ZOrder" xml:space="preserve">
+    <value>24</value>
+  </data>
+  <data name="resource.Image24" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="resource.Location24" type="System.Drawing.Point, System.Drawing">
+    <value>5, 1</value>
+  </data>
+  <data name="resource.Size24" type="System.Drawing.Size, System.Drawing">
+    <value>21, 21</value>
+  </data>
+  <data name="resource.TabIndex24" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="resource.Visible24" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="customKeyE.Location" type="System.Drawing.Point, System.Drawing">
+    <value>69, 3</value>
+  </data>
+  <data name="customKeyE.Size" type="System.Drawing.Size, System.Drawing">
+    <value>27, 23</value>
+  </data>
+  <data name="customKeyE.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="customKeyE.Text" xml:space="preserve">
+    <value>e</value>
+  </data>
+  <data name="&gt;&gt;customKeyE.Name" xml:space="preserve">
+    <value>customKeyE</value>
+  </data>
+  <data name="&gt;&gt;customKeyE.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroTextBox, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;customKeyE.Parent" xml:space="preserve">
+    <value>metroPanel2</value>
+  </data>
+  <data name="&gt;&gt;customKeyE.ZOrder" xml:space="preserve">
+    <value>25</value>
+  </data>
+  <data name="resource.Image25" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="resource.Location25" type="System.Drawing.Point, System.Drawing">
+    <value>5, 1</value>
+  </data>
+  <data name="resource.Size25" type="System.Drawing.Size, System.Drawing">
+    <value>21, 21</value>
+  </data>
+  <data name="resource.TabIndex25" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="resource.Visible25" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="customKeyY.Location" type="System.Drawing.Point, System.Drawing">
+    <value>168, 3</value>
+  </data>
+  <data name="customKeyY.Size" type="System.Drawing.Size, System.Drawing">
+    <value>27, 23</value>
+  </data>
+  <data name="customKeyY.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="customKeyY.Text" xml:space="preserve">
+    <value>y</value>
+  </data>
+  <data name="&gt;&gt;customKeyY.Name" xml:space="preserve">
+    <value>customKeyY</value>
+  </data>
+  <data name="&gt;&gt;customKeyY.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroTextBox, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;customKeyY.Parent" xml:space="preserve">
+    <value>metroPanel2</value>
+  </data>
+  <data name="&gt;&gt;customKeyY.ZOrder" xml:space="preserve">
+    <value>26</value>
+  </data>
+  <data name="resource.Image26" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="resource.Location26" type="System.Drawing.Point, System.Drawing">
+    <value>5, 1</value>
+  </data>
+  <data name="resource.Size26" type="System.Drawing.Size, System.Drawing">
+    <value>21, 21</value>
+  </data>
+  <data name="resource.TabIndex26" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="resource.Visible26" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="customKeyB.Location" type="System.Drawing.Point, System.Drawing">
+    <value>168, 57</value>
+  </data>
+  <data name="customKeyB.Size" type="System.Drawing.Size, System.Drawing">
+    <value>27, 23</value>
+  </data>
+  <data name="customKeyB.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="customKeyB.Text" xml:space="preserve">
+    <value>b</value>
+  </data>
+  <data name="&gt;&gt;customKeyB.Name" xml:space="preserve">
+    <value>customKeyB</value>
+  </data>
+  <data name="&gt;&gt;customKeyB.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroTextBox, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;customKeyB.Parent" xml:space="preserve">
+    <value>metroPanel2</value>
+  </data>
+  <data name="&gt;&gt;customKeyB.ZOrder" xml:space="preserve">
+    <value>27</value>
+  </data>
+  <data name="resource.Image27" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="resource.Location27" type="System.Drawing.Point, System.Drawing">
+    <value>5, 1</value>
+  </data>
+  <data name="resource.Size27" type="System.Drawing.Size, System.Drawing">
+    <value>21, 21</value>
+  </data>
+  <data name="resource.TabIndex27" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="resource.Visible27" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="customKeyZ.Location" type="System.Drawing.Point, System.Drawing">
+    <value>36, 57</value>
+  </data>
+  <data name="customKeyZ.Size" type="System.Drawing.Size, System.Drawing">
+    <value>27, 23</value>
+  </data>
+  <data name="customKeyZ.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="customKeyZ.Text" xml:space="preserve">
+    <value>z</value>
+  </data>
+  <data name="&gt;&gt;customKeyZ.Name" xml:space="preserve">
+    <value>customKeyZ</value>
+  </data>
+  <data name="&gt;&gt;customKeyZ.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroTextBox, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;customKeyZ.Parent" xml:space="preserve">
+    <value>metroPanel2</value>
+  </data>
+  <data name="&gt;&gt;customKeyZ.ZOrder" xml:space="preserve">
+    <value>28</value>
+  </data>
+  <data name="resource.Image28" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="resource.Location28" type="System.Drawing.Point, System.Drawing">
+    <value>5, 1</value>
+  </data>
+  <data name="resource.Size28" type="System.Drawing.Size, System.Drawing">
+    <value>21, 21</value>
+  </data>
+  <data name="resource.TabIndex28" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="resource.Visible28" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="customKeyM.Location" type="System.Drawing.Point, System.Drawing">
+    <value>234, 57</value>
+  </data>
+  <data name="customKeyM.Size" type="System.Drawing.Size, System.Drawing">
+    <value>27, 23</value>
+  </data>
+  <data name="customKeyM.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="customKeyM.Text" xml:space="preserve">
+    <value>m</value>
+  </data>
+  <data name="&gt;&gt;customKeyM.Name" xml:space="preserve">
+    <value>customKeyM</value>
+  </data>
+  <data name="&gt;&gt;customKeyM.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroTextBox, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;customKeyM.Parent" xml:space="preserve">
+    <value>metroPanel2</value>
+  </data>
+  <data name="&gt;&gt;customKeyM.ZOrder" xml:space="preserve">
+    <value>29</value>
+  </data>
+  <data name="resource.Image29" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="resource.Location29" type="System.Drawing.Point, System.Drawing">
+    <value>5, 1</value>
+  </data>
+  <data name="resource.Size29" type="System.Drawing.Size, System.Drawing">
+    <value>21, 21</value>
+  </data>
+  <data name="resource.TabIndex29" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="resource.Visible29" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="customKeyW.Location" type="System.Drawing.Point, System.Drawing">
+    <value>36, 3</value>
+  </data>
+  <data name="customKeyW.Size" type="System.Drawing.Size, System.Drawing">
+    <value>27, 23</value>
+  </data>
+  <data name="customKeyW.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="customKeyW.Text" xml:space="preserve">
+    <value>w</value>
+  </data>
+  <data name="&gt;&gt;customKeyW.Name" xml:space="preserve">
+    <value>customKeyW</value>
+  </data>
+  <data name="&gt;&gt;customKeyW.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroTextBox, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;customKeyW.Parent" xml:space="preserve">
+    <value>metroPanel2</value>
+  </data>
+  <data name="&gt;&gt;customKeyW.ZOrder" xml:space="preserve">
+    <value>30</value>
+  </data>
+  <data name="resource.Image30" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="resource.Location30" type="System.Drawing.Point, System.Drawing">
+    <value>5, 1</value>
+  </data>
+  <data name="resource.Size30" type="System.Drawing.Size, System.Drawing">
+    <value>21, 21</value>
+  </data>
+  <data name="resource.TabIndex30" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="resource.Visible30" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="customKeyS.Location" type="System.Drawing.Point, System.Drawing">
+    <value>53, 30</value>
+  </data>
+  <data name="customKeyS.Size" type="System.Drawing.Size, System.Drawing">
+    <value>27, 23</value>
+  </data>
+  <data name="customKeyS.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="customKeyS.Text" xml:space="preserve">
+    <value>s</value>
+  </data>
+  <data name="&gt;&gt;customKeyS.Name" xml:space="preserve">
+    <value>customKeyS</value>
+  </data>
+  <data name="&gt;&gt;customKeyS.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroTextBox, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;customKeyS.Parent" xml:space="preserve">
+    <value>metroPanel2</value>
+  </data>
+  <data name="&gt;&gt;customKeyS.ZOrder" xml:space="preserve">
+    <value>31</value>
+  </data>
+  <data name="resource.Image31" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="resource.Location31" type="System.Drawing.Point, System.Drawing">
+    <value>5, 1</value>
+  </data>
+  <data name="resource.Size31" type="System.Drawing.Size, System.Drawing">
+    <value>21, 21</value>
+  </data>
+  <data name="resource.TabIndex31" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="resource.Visible31" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="customKeyK.Location" type="System.Drawing.Point, System.Drawing">
+    <value>251, 30</value>
+  </data>
+  <data name="customKeyK.Size" type="System.Drawing.Size, System.Drawing">
+    <value>27, 23</value>
+  </data>
+  <data name="customKeyK.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="customKeyK.Text" xml:space="preserve">
+    <value>k</value>
+  </data>
+  <data name="&gt;&gt;customKeyK.Name" xml:space="preserve">
+    <value>customKeyK</value>
+  </data>
+  <data name="&gt;&gt;customKeyK.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroTextBox, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;customKeyK.Parent" xml:space="preserve">
+    <value>metroPanel2</value>
+  </data>
+  <data name="&gt;&gt;customKeyK.ZOrder" xml:space="preserve">
+    <value>32</value>
+  </data>
+  <data name="resource.Image32" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="resource.Location32" type="System.Drawing.Point, System.Drawing">
+    <value>5, 1</value>
+  </data>
+  <data name="resource.Size32" type="System.Drawing.Size, System.Drawing">
+    <value>21, 21</value>
+  </data>
+  <data name="resource.TabIndex32" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="resource.Visible32" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="customKeyH.Location" type="System.Drawing.Point, System.Drawing">
+    <value>185, 30</value>
+  </data>
+  <data name="customKeyH.Size" type="System.Drawing.Size, System.Drawing">
+    <value>27, 23</value>
+  </data>
+  <data name="customKeyH.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="customKeyH.Text" xml:space="preserve">
+    <value>h</value>
+  </data>
+  <data name="&gt;&gt;customKeyH.Name" xml:space="preserve">
+    <value>customKeyH</value>
+  </data>
+  <data name="&gt;&gt;customKeyH.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroTextBox, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;customKeyH.Parent" xml:space="preserve">
+    <value>metroPanel2</value>
+  </data>
+  <data name="&gt;&gt;customKeyH.ZOrder" xml:space="preserve">
+    <value>33</value>
+  </data>
+  <data name="metroPanel2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>190, 151</value>
+  </data>
+  <data name="metroPanel2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>381, 85</value>
+  </data>
+  <data name="metroPanel2.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="&gt;&gt;metroPanel2.Name" xml:space="preserve">
+    <value>metroPanel2</value>
+  </data>
+  <data name="&gt;&gt;metroPanel2.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroPanel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;metroPanel2.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;metroPanel2.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAYAAAAAAAEAIAB3DwAAZgAAAICAAAABACAAKAgBAN0PAABAQAAAAQAgAChCAAAFGAEAMDAAAAEA
@@ -1852,6 +3282,30 @@
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD//wAA//8AAMP/AAAA/wAAAD8AAAAHAAAAAQAAAAAA
         AAAAAADAAAAA8AAAAPwAAAD/AQAA/8cAAP//AAD//wAA
 </value>
+  </data>
+  <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>659, 271</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Keyboard Customizer</value>
+  </data>
+  <data name="&gt;&gt;StyleMngr.Name" xml:space="preserve">
+    <value>StyleMngr</value>
+  </data>
+  <data name="&gt;&gt;StyleMngr.Type" xml:space="preserve">
+    <value>MetroFramework.Components.MetroStyleManager, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;ToolTipManager.Name" xml:space="preserve">
+    <value>ToolTipManager</value>
+  </data>
+  <data name="&gt;&gt;ToolTipManager.Type" xml:space="preserve">
+    <value>MetroFramework.Components.MetroToolTip, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>KeyboardCustomizer</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>MetroFramework.Forms.MetroForm, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
   </data>
   <metadata name="ToolTipManager.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>135, 19</value>

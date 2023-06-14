@@ -120,10 +120,729 @@
   <metadata name="StyleMngr.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>580, 175</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="replaceBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="replaceBox.ItemHeight" type="System.Int32, mscorlib">
+    <value>23</value>
+  </data>
+  <data name="replaceBox.Items" xml:space="preserve">
+    <value>Taking Inventory</value>
+  </data>
+  <data name="replaceBox.Items1" xml:space="preserve">
+    <value>Getting Wood</value>
+  </data>
+  <data name="replaceBox.Items2" xml:space="preserve">
+    <value>Benchmarking</value>
+  </data>
+  <data name="replaceBox.Items3" xml:space="preserve">
+    <value>Time to Mine!</value>
+  </data>
+  <data name="replaceBox.Items4" xml:space="preserve">
+    <value>Hot Topic</value>
+  </data>
+  <data name="replaceBox.Items5" xml:space="preserve">
+    <value>Acquire Hardware</value>
+  </data>
+  <data name="replaceBox.Items6" xml:space="preserve">
+    <value>Time to Farm!</value>
+  </data>
+  <data name="replaceBox.Items7" xml:space="preserve">
+    <value>Bake Bread</value>
+  </data>
+  <data name="replaceBox.Items8" xml:space="preserve">
+    <value>The Lie</value>
+  </data>
+  <data name="replaceBox.Items9" xml:space="preserve">
+    <value>Getting an Upgrade</value>
+  </data>
+  <data name="replaceBox.Items10" xml:space="preserve">
+    <value>Delicious Fish</value>
+  </data>
+  <data name="replaceBox.Items11" xml:space="preserve">
+    <value>On A Rail</value>
+  </data>
+  <data name="replaceBox.Items12" xml:space="preserve">
+    <value>Time to Strike!</value>
+  </data>
+  <data name="replaceBox.Items13" xml:space="preserve">
+    <value>Monster Hunter</value>
+  </data>
+  <data name="replaceBox.Items14" xml:space="preserve">
+    <value>Cow Tipper</value>
+  </data>
+  <data name="replaceBox.Items15" xml:space="preserve">
+    <value>When Pigs Fly</value>
+  </data>
+  <data name="replaceBox.Items16" xml:space="preserve">
+    <value>Leader of the Pack</value>
+  </data>
+  <data name="replaceBox.Items17" xml:space="preserve">
+    <value>MOAR Tools</value>
+  </data>
+  <data name="replaceBox.Items18" xml:space="preserve">
+    <value>Dispense With This</value>
+  </data>
+  <data name="replaceBox.Items19" xml:space="preserve">
+    <value>Into The Nether</value>
+  </data>
+  <data name="replaceBox.Items20" xml:space="preserve">
+    <value>Pork Chop</value>
+  </data>
+  <data name="replaceBox.Items21" xml:space="preserve">
+    <value>Passing the Time</value>
+  </data>
+  <data name="replaceBox.Items22" xml:space="preserve">
+    <value>Archer</value>
+  </data>
+  <data name="replaceBox.Items23" xml:space="preserve">
+    <value>Sniper Duel</value>
+  </data>
+  <data name="replaceBox.Items24" xml:space="preserve">
+    <value>DIAMONDS!</value>
+  </data>
+  <data name="replaceBox.Items25" xml:space="preserve">
+    <value>Return to Sender</value>
+  </data>
+  <data name="replaceBox.Items26" xml:space="preserve">
+    <value>Into Fire</value>
+  </data>
+  <data name="replaceBox.Items27" xml:space="preserve">
+    <value>Local Brewery</value>
+  </data>
+  <data name="replaceBox.Items28" xml:space="preserve">
+    <value>The End?</value>
+  </data>
+  <data name="replaceBox.Items29" xml:space="preserve">
+    <value>The End.</value>
+  </data>
+  <data name="replaceBox.Items30" xml:space="preserve">
+    <value>Enchanter</value>
+  </data>
+  <data name="replaceBox.Items31" xml:space="preserve">
+    <value>Overkill</value>
+  </data>
+  <data name="replaceBox.Items32" xml:space="preserve">
+    <value>Librarian</value>
+  </data>
+  <data name="replaceBox.Items33" xml:space="preserve">
+    <value>Adventuring Time</value>
+  </data>
+  <data name="replaceBox.Items34" xml:space="preserve">
+    <value>Repopulation</value>
+  </data>
+  <data name="replaceBox.Items35" xml:space="preserve">
+    <value>Diamonds to you!</value>
+  </data>
+  <data name="replaceBox.Items36" xml:space="preserve">
+    <value>The Haggler</value>
+  </data>
+  <data name="replaceBox.Items37" xml:space="preserve">
+    <value>Pot Planter</value>
+  </data>
+  <data name="replaceBox.Items38" xml:space="preserve">
+    <value>It's a Sign!</value>
+  </data>
+  <data name="replaceBox.Items39" xml:space="preserve">
+    <value>Iron Belly</value>
+  </data>
+  <data name="replaceBox.Items40" xml:space="preserve">
+    <value>Have a Shearful Day</value>
+  </data>
+  <data name="replaceBox.Items41" xml:space="preserve">
+    <value>Rainbow Collection</value>
+  </data>
+  <data name="replaceBox.Items42" xml:space="preserve">
+    <value>Stayin' Frosty</value>
+  </data>
+  <data name="replaceBox.Items43" xml:space="preserve">
+    <value>Chestful of Cobblestone</value>
+  </data>
+  <data name="replaceBox.Items44" xml:space="preserve">
+    <value>Renewable Energy</value>
+  </data>
+  <data name="replaceBox.Items45" xml:space="preserve">
+    <value>Music to my Ears</value>
+  </data>
+  <data name="replaceBox.Items46" xml:space="preserve">
+    <value>Body Guard</value>
+  </data>
+  <data name="replaceBox.Items47" xml:space="preserve">
+    <value>Iron Man</value>
+  </data>
+  <data name="replaceBox.Items48" xml:space="preserve">
+    <value>Zombie Doctor</value>
+  </data>
+  <data name="replaceBox.Items49" xml:space="preserve">
+    <value>Lion Tamer</value>
+  </data>
+  <data name="replaceBox.Items50" xml:space="preserve">
+    <value>The Beginning?</value>
+  </data>
+  <data name="replaceBox.Items51" xml:space="preserve">
+    <value>The Beginning.</value>
+  </data>
+  <data name="replaceBox.Items52" xml:space="preserve">
+    <value>Beaconator</value>
+  </data>
+  <data name="replaceBox.Items53" xml:space="preserve">
+    <value>Overpowered</value>
+  </data>
+  <data name="replaceBox.Items54" xml:space="preserve">
+    <value>Tie Dye Outfit</value>
+  </data>
+  <data name="replaceBox.Items55" xml:space="preserve">
+    <value>Trampoline</value>
+  </data>
+  <data name="replaceBox.Items56" xml:space="preserve">
+    <value>The Student...</value>
+  </data>
+  <data name="replaceBox.Items57" xml:space="preserve">
+    <value>...has become the Master</value>
+  </data>
+  <data name="replaceBox.Items58" xml:space="preserve">
+    <value>'Tis but a scratch</value>
+  </data>
+  <data name="replaceBox.Items59" xml:space="preserve">
+    <value>Cupid</value>
+  </data>
+  <data name="replaceBox.Items60" xml:space="preserve">
+    <value>Hunger Pain</value>
+  </data>
+  <data name="replaceBox.Items61" xml:space="preserve">
+    <value>Mine!</value>
+  </data>
+  <data name="replaceBox.Items62" xml:space="preserve">
+    <value>The End... Again...</value>
+  </data>
+  <data name="replaceBox.Items63" xml:space="preserve">
+    <value>You Need a Mint</value>
+  </data>
+  <data name="replaceBox.Items64" xml:space="preserve">
+    <value>Super Sonic</value>
+  </data>
+  <data name="replaceBox.Items65" xml:space="preserve">
+    <value>Dry Spell</value>
+  </data>
+  <data name="replaceBox.Items66" xml:space="preserve">
+    <value>Free Diver</value>
+  </data>
+  <data name="replaceBox.Items67" xml:space="preserve">
+    <value>Super Fuel</value>
+  </data>
+  <data name="replaceBox.Items68" xml:space="preserve">
+    <value>Saddle Up</value>
+  </data>
+  <data name="replaceBox.Items69" xml:space="preserve">
+    <value>Taste of Your Own Medicine</value>
+  </data>
+  <data name="replaceBox.Items70" xml:space="preserve">
+    <value>Beam Me Up</value>
+  </data>
+  <data name="replaceBox.Items71" xml:space="preserve">
+    <value>Map Room</value>
+  </data>
+  <data name="replaceBox.Items72" xml:space="preserve">
+    <value>Camouflage</value>
+  </data>
+  <data name="replaceBox.Items73" xml:space="preserve">
+    <value>Back from the Dead</value>
+  </data>
+  <data name="replaceBox.Items74" xml:space="preserve">
+    <value>S-No Throw</value>
+  </data>
+  <data name="replaceBox.Items75" xml:space="preserve">
+    <value>Snow Storm</value>
+  </data>
+  <data name="replaceBox.Items76" xml:space="preserve">
+    <value>Hotshot</value>
+  </data>
+  <data name="replaceBox.Items77" xml:space="preserve">
+    <value>Snowplough</value>
+  </data>
+  <data name="replaceBox.Items78" xml:space="preserve">
+    <value>Overlord</value>
+  </data>
+  <data name="replaceBox.Items79" xml:space="preserve">
+    <value>Underdog</value>
+  </data>
+  <data name="replaceBox.Items80" xml:space="preserve">
+    <value>The Deep End</value>
+  </data>
+  <data name="replaceBox.Items81" xml:space="preserve">
+    <value>Great View From Up Here</value>
+  </data>
+  <data name="replaceBox.Items82" xml:space="preserve">
+    <value>Change of Sheets</value>
+  </data>
+  <data name="replaceBox.Items83" xml:space="preserve">
+    <value>Cheating Death</value>
+  </data>
+  <data name="replaceBox.Items84" xml:space="preserve">
+    <value>So I Got That Going For Me...</value>
+  </data>
+  <data name="replaceBox.Items85" xml:space="preserve">
+    <value>Let It Go!</value>
+  </data>
+  <data name="replaceBox.Items86" xml:space="preserve">
+    <value>Feeling Ill</value>
+  </data>
+  <data name="replaceBox.Items87" xml:space="preserve">
+    <value>One Pickle, Two Pickle, Sea Pickle, Four</value>
+  </data>
+  <data name="replaceBox.Items88" xml:space="preserve">
+    <value>Alternative Fuel</value>
+  </data>
+  <data name="replaceBox.Items89" xml:space="preserve">
+    <value>Moskstraumen</value>
+  </data>
+  <data name="replaceBox.Items90" xml:space="preserve">
+    <value>Castaway</value>
+  </data>
+  <data name="replaceBox.Items91" xml:space="preserve">
+    <value>Sleep with the Fishes</value>
+  </data>
+  <data name="replaceBox.Items92" xml:space="preserve">
+    <value>Echolocation</value>
+  </data>
+  <data name="replaceBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>100, 63</value>
+  </data>
+  <data name="replaceBox.MaxDropDownItems" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="replaceBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>457, 29</value>
+  </data>
+  <data name="replaceBox.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
   <metadata name="ToolTips.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>143, 17</value>
   </metadata>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="replaceBox.ToolTip" xml:space="preserve">
+    <value>What achievement should be edited?</value>
+  </data>
+  <data name="&gt;&gt;replaceBox.Name" xml:space="preserve">
+    <value>replaceBox</value>
+  </data>
+  <data name="&gt;&gt;replaceBox.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroComboBox, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;replaceBox.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;replaceBox.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="replaceLbl.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="replaceLbl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>19, 63</value>
+  </data>
+  <data name="replaceLbl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 25</value>
+  </data>
+  <data name="replaceLbl.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="replaceLbl.Text" xml:space="preserve">
+    <value>Replace:</value>
+  </data>
+  <data name="&gt;&gt;replaceLbl.Name" xml:space="preserve">
+    <value>replaceLbl</value>
+  </data>
+  <data name="&gt;&gt;replaceLbl.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;replaceLbl.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;replaceLbl.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="ApplyBtn.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="ApplyBtn.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 135</value>
+  </data>
+  <data name="ApplyBtn.Size" type="System.Drawing.Size, System.Drawing">
+    <value>534, 23</value>
+  </data>
+  <data name="ApplyBtn.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="ApplyBtn.Text" xml:space="preserve">
+    <value>Apply</value>
+  </data>
+  <data name="ApplyBtn.ToolTip" xml:space="preserve">
+    <value>Applies the achievement edit</value>
+  </data>
+  <data name="&gt;&gt;ApplyBtn.Name" xml:space="preserve">
+    <value>ApplyBtn</value>
+  </data>
+  <data name="&gt;&gt;ApplyBtn.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroButton, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;ApplyBtn.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;ApplyBtn.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="withBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="withBox.ItemHeight" type="System.Int32, mscorlib">
+    <value>23</value>
+  </data>
+  <data name="withBox.Items" xml:space="preserve">
+    <value>Taking Inventory</value>
+  </data>
+  <data name="withBox.Items1" xml:space="preserve">
+    <value>Getting Wood</value>
+  </data>
+  <data name="withBox.Items2" xml:space="preserve">
+    <value>Benchmarking</value>
+  </data>
+  <data name="withBox.Items3" xml:space="preserve">
+    <value>Time to Mine!</value>
+  </data>
+  <data name="withBox.Items4" xml:space="preserve">
+    <value>Hot Topic</value>
+  </data>
+  <data name="withBox.Items5" xml:space="preserve">
+    <value>Acquire Hardware</value>
+  </data>
+  <data name="withBox.Items6" xml:space="preserve">
+    <value>Time to Farm!</value>
+  </data>
+  <data name="withBox.Items7" xml:space="preserve">
+    <value>Bake Bread</value>
+  </data>
+  <data name="withBox.Items8" xml:space="preserve">
+    <value>The Lie</value>
+  </data>
+  <data name="withBox.Items9" xml:space="preserve">
+    <value>Getting an Upgrade</value>
+  </data>
+  <data name="withBox.Items10" xml:space="preserve">
+    <value>Delicious Fish</value>
+  </data>
+  <data name="withBox.Items11" xml:space="preserve">
+    <value>On A Rail</value>
+  </data>
+  <data name="withBox.Items12" xml:space="preserve">
+    <value>Time to Strike!</value>
+  </data>
+  <data name="withBox.Items13" xml:space="preserve">
+    <value>Monster Hunter</value>
+  </data>
+  <data name="withBox.Items14" xml:space="preserve">
+    <value>Cow Tipper</value>
+  </data>
+  <data name="withBox.Items15" xml:space="preserve">
+    <value>When Pigs Fly</value>
+  </data>
+  <data name="withBox.Items16" xml:space="preserve">
+    <value>Leader of the Pack</value>
+  </data>
+  <data name="withBox.Items17" xml:space="preserve">
+    <value>MOAR Tools</value>
+  </data>
+  <data name="withBox.Items18" xml:space="preserve">
+    <value>Dispense With This</value>
+  </data>
+  <data name="withBox.Items19" xml:space="preserve">
+    <value>Into The Nether</value>
+  </data>
+  <data name="withBox.Items20" xml:space="preserve">
+    <value>Pork Chop</value>
+  </data>
+  <data name="withBox.Items21" xml:space="preserve">
+    <value>Passing the Time</value>
+  </data>
+  <data name="withBox.Items22" xml:space="preserve">
+    <value>Archer</value>
+  </data>
+  <data name="withBox.Items23" xml:space="preserve">
+    <value>Sniper Duel</value>
+  </data>
+  <data name="withBox.Items24" xml:space="preserve">
+    <value>DIAMONDS!</value>
+  </data>
+  <data name="withBox.Items25" xml:space="preserve">
+    <value>Return to Sender</value>
+  </data>
+  <data name="withBox.Items26" xml:space="preserve">
+    <value>Into Fire</value>
+  </data>
+  <data name="withBox.Items27" xml:space="preserve">
+    <value>Local Brewery</value>
+  </data>
+  <data name="withBox.Items28" xml:space="preserve">
+    <value>The End?</value>
+  </data>
+  <data name="withBox.Items29" xml:space="preserve">
+    <value>The End.</value>
+  </data>
+  <data name="withBox.Items30" xml:space="preserve">
+    <value>Enchanter</value>
+  </data>
+  <data name="withBox.Items31" xml:space="preserve">
+    <value>Overkill</value>
+  </data>
+  <data name="withBox.Items32" xml:space="preserve">
+    <value>Librarian</value>
+  </data>
+  <data name="withBox.Items33" xml:space="preserve">
+    <value>Adventuring Time</value>
+  </data>
+  <data name="withBox.Items34" xml:space="preserve">
+    <value>Repopulation</value>
+  </data>
+  <data name="withBox.Items35" xml:space="preserve">
+    <value>Diamonds to you!</value>
+  </data>
+  <data name="withBox.Items36" xml:space="preserve">
+    <value>The Haggler</value>
+  </data>
+  <data name="withBox.Items37" xml:space="preserve">
+    <value>Pot Planter</value>
+  </data>
+  <data name="withBox.Items38" xml:space="preserve">
+    <value>It's a Sign!</value>
+  </data>
+  <data name="withBox.Items39" xml:space="preserve">
+    <value>Iron Belly</value>
+  </data>
+  <data name="withBox.Items40" xml:space="preserve">
+    <value>Have a Shearful Day</value>
+  </data>
+  <data name="withBox.Items41" xml:space="preserve">
+    <value>Rainbow Collection</value>
+  </data>
+  <data name="withBox.Items42" xml:space="preserve">
+    <value>Stayin' Frosty</value>
+  </data>
+  <data name="withBox.Items43" xml:space="preserve">
+    <value>Chestful of Cobblestone</value>
+  </data>
+  <data name="withBox.Items44" xml:space="preserve">
+    <value>Renewable Energy</value>
+  </data>
+  <data name="withBox.Items45" xml:space="preserve">
+    <value>Music to my Ears</value>
+  </data>
+  <data name="withBox.Items46" xml:space="preserve">
+    <value>Body Guard</value>
+  </data>
+  <data name="withBox.Items47" xml:space="preserve">
+    <value>Iron Man</value>
+  </data>
+  <data name="withBox.Items48" xml:space="preserve">
+    <value>Zombie Doctor</value>
+  </data>
+  <data name="withBox.Items49" xml:space="preserve">
+    <value>Lion Tamer</value>
+  </data>
+  <data name="withBox.Items50" xml:space="preserve">
+    <value>The Beginning?</value>
+  </data>
+  <data name="withBox.Items51" xml:space="preserve">
+    <value>The Beginning.</value>
+  </data>
+  <data name="withBox.Items52" xml:space="preserve">
+    <value>Beaconator</value>
+  </data>
+  <data name="withBox.Items53" xml:space="preserve">
+    <value>Overpowered</value>
+  </data>
+  <data name="withBox.Items54" xml:space="preserve">
+    <value>Tie Dye Outfit</value>
+  </data>
+  <data name="withBox.Items55" xml:space="preserve">
+    <value>Trampoline</value>
+  </data>
+  <data name="withBox.Items56" xml:space="preserve">
+    <value>The Student...</value>
+  </data>
+  <data name="withBox.Items57" xml:space="preserve">
+    <value>...has become the Master</value>
+  </data>
+  <data name="withBox.Items58" xml:space="preserve">
+    <value>'Tis but a scratch</value>
+  </data>
+  <data name="withBox.Items59" xml:space="preserve">
+    <value>Cupid</value>
+  </data>
+  <data name="withBox.Items60" xml:space="preserve">
+    <value>Hunger Pain</value>
+  </data>
+  <data name="withBox.Items61" xml:space="preserve">
+    <value>Mine!</value>
+  </data>
+  <data name="withBox.Items62" xml:space="preserve">
+    <value>The End... Again...</value>
+  </data>
+  <data name="withBox.Items63" xml:space="preserve">
+    <value>You Need a Mint</value>
+  </data>
+  <data name="withBox.Items64" xml:space="preserve">
+    <value>Super Sonic</value>
+  </data>
+  <data name="withBox.Items65" xml:space="preserve">
+    <value>Dry Spell</value>
+  </data>
+  <data name="withBox.Items66" xml:space="preserve">
+    <value>Free Diver</value>
+  </data>
+  <data name="withBox.Items67" xml:space="preserve">
+    <value>Super Fuel</value>
+  </data>
+  <data name="withBox.Items68" xml:space="preserve">
+    <value>Saddle Up</value>
+  </data>
+  <data name="withBox.Items69" xml:space="preserve">
+    <value>Taste of Your Own Medicine</value>
+  </data>
+  <data name="withBox.Items70" xml:space="preserve">
+    <value>Beam Me Up</value>
+  </data>
+  <data name="withBox.Items71" xml:space="preserve">
+    <value>Map Room</value>
+  </data>
+  <data name="withBox.Items72" xml:space="preserve">
+    <value>Camouflage</value>
+  </data>
+  <data name="withBox.Items73" xml:space="preserve">
+    <value>Back from the Dead</value>
+  </data>
+  <data name="withBox.Items74" xml:space="preserve">
+    <value>S-No Throw</value>
+  </data>
+  <data name="withBox.Items75" xml:space="preserve">
+    <value>Snow Storm</value>
+  </data>
+  <data name="withBox.Items76" xml:space="preserve">
+    <value>Hotshot</value>
+  </data>
+  <data name="withBox.Items77" xml:space="preserve">
+    <value>Snowplough</value>
+  </data>
+  <data name="withBox.Items78" xml:space="preserve">
+    <value>Overlord</value>
+  </data>
+  <data name="withBox.Items79" xml:space="preserve">
+    <value>Underdog</value>
+  </data>
+  <data name="withBox.Items80" xml:space="preserve">
+    <value>The Deep End</value>
+  </data>
+  <data name="withBox.Items81" xml:space="preserve">
+    <value>Great View From Up Here</value>
+  </data>
+  <data name="withBox.Items82" xml:space="preserve">
+    <value>Change of Sheets</value>
+  </data>
+  <data name="withBox.Items83" xml:space="preserve">
+    <value>Cheating Death</value>
+  </data>
+  <data name="withBox.Items84" xml:space="preserve">
+    <value>So I Got That Going For Me...</value>
+  </data>
+  <data name="withBox.Items85" xml:space="preserve">
+    <value>Let It Go!</value>
+  </data>
+  <data name="withBox.Items86" xml:space="preserve">
+    <value>Feeling Ill</value>
+  </data>
+  <data name="withBox.Items87" xml:space="preserve">
+    <value>One Pickle, Two Pickle, Sea Pickle, Four</value>
+  </data>
+  <data name="withBox.Items88" xml:space="preserve">
+    <value>Alternative Fuel</value>
+  </data>
+  <data name="withBox.Items89" xml:space="preserve">
+    <value>Moskstraumen</value>
+  </data>
+  <data name="withBox.Items90" xml:space="preserve">
+    <value>Castaway</value>
+  </data>
+  <data name="withBox.Items91" xml:space="preserve">
+    <value>Sleep with the Fishes</value>
+  </data>
+  <data name="withBox.Items92" xml:space="preserve">
+    <value>Echolocation</value>
+  </data>
+  <data name="withBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>72, 98</value>
+  </data>
+  <data name="withBox.MaxDropDownItems" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="withBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>485, 29</value>
+  </data>
+  <data name="withBox.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="withBox.ToolTip" xml:space="preserve">
+    <value>Which achievement do you want to replace the selected one with?</value>
+  </data>
+  <data name="&gt;&gt;withBox.Name" xml:space="preserve">
+    <value>withBox</value>
+  </data>
+  <data name="&gt;&gt;withBox.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroComboBox, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;withBox.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;withBox.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="withLbl.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="withLbl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>19, 98</value>
+  </data>
+  <data name="withLbl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>47, 25</value>
+  </data>
+  <data name="withLbl.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="withLbl.Text" xml:space="preserve">
+    <value>with:</value>
+  </data>
+  <data name="&gt;&gt;withLbl.Name" xml:space="preserve">
+    <value>withLbl</value>
+  </data>
+  <data name="&gt;&gt;withLbl.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;withLbl.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;withLbl.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAYAAAAAAAEAIAC7DAAAZgAAAICAAAABACAAKAgBACENAABAQAAAAQAgAChCAABJFQEAMDAAAAEA
@@ -1843,5 +2562,32 @@
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP//AAD//wAA//8A
         AP//AADg/wAA4B8AAOAfAADgBwAA4AcAAPgHAAD8BwAA/wcAAP/fAAD//wAA//8AAP//AAA=
 </value>
+  </data>
+  <data name="$this.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>3840, 175</value>
+  </data>
+  <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>580, 175</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Minecraft: Wii U Mod Injector - Achievement Editor</value>
+  </data>
+  <data name="&gt;&gt;StyleMngr.Name" xml:space="preserve">
+    <value>StyleMngr</value>
+  </data>
+  <data name="&gt;&gt;StyleMngr.Type" xml:space="preserve">
+    <value>MetroFramework.Components.MetroStyleManager, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;ToolTips.Name" xml:space="preserve">
+    <value>ToolTips</value>
+  </data>
+  <data name="&gt;&gt;ToolTips.Type" xml:space="preserve">
+    <value>MetroFramework.Components.MetroToolTip, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>AchievementEditor</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>MetroFramework.Forms.MetroForm, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
   </data>
 </root>

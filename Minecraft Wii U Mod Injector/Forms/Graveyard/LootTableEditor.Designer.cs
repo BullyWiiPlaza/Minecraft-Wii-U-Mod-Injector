@@ -1,4 +1,4 @@
-﻿namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods
+﻿namespace Minecraft_Wii_U_Mod_Injector.Forms.Graveyard
 {
     partial class LootTableEditor
     {

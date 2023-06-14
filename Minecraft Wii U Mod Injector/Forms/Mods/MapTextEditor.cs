@@ -17,7 +17,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods
             InitializeComponent();
             StyleMngr.Style = Style = iw.StyleMngr.Style;
             StyleMngr.Theme = Theme = iw.StyleMngr.Theme;
-            DiscordRP.SetPresence("Connected", "Map Text Editor");
+            DiscordRpc.SetPresence("Connected", "Map Text Editor");
 
             if (!System.IO.Directory.Exists(_savedDataDir))
                 System.IO.Directory.CreateDirectory(_savedDataDir);
@@ -30,7 +30,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods
         {
             const uint textStart = 0x108E2834;
 
-            MainForm.GeckoU.ClearString(textStart, 0x108E2984);
+            MainForm.GeckoU.ClearString(textStart, 0x24);
             MainForm.GeckoU.WriteString16(textStart, MapText.Text);
             _savedData.Write("SavedText" + _savedData.GetKeys("MapTextEditor").Count, MapText.Text, "MapTextEditor");
         }
@@ -43,7 +43,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods
 
         private void Exiting(object sender, FormClosingEventArgs e)
         {
-            DiscordRP.SetPresence("Connected", new MainForm().MainTabs.SelectedTab.Text + " Tab");
+            DiscordRpc.SetPresence("Connected", new MainForm().MainTabs.SelectedTab.Text + " Tab");
             Dispose();
         }
     }

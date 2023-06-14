@@ -63,13 +63,13 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
         {
             foreach (MetroFramework.Controls.MetroTabPage page in injector.MainTabs.TabPages)
             {
-                if ((string)page.Tag == "GeckoURequired")
+                if ((string)page.Tag != "GeckoURequired") 
+                    continue;
+
+                foreach (Control c in page.Controls)
                 {
-                    foreach (Control c in page.Controls)
-                    {
-                        if(c.Enabled != enabled)
-                            c.Enabled = enabled;
-                    }
+                    if(c.Enabled != enabled)
+                        c.Enabled = enabled;
                 }
             }
 

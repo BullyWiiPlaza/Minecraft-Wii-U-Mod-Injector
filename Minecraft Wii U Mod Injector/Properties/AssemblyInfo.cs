@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("Minecraft Wii U Mod Injector")]
-[assembly: AssemblyDescription("Mod Injector for Minecraft Wii U Edition by SlothWiiPlaza")]
+[assembly: AssemblyDescription("Mod Injector for Minecraft Wii U Edition by Sloth@WiiPlaza")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("Minecraft Wii U Mod Injector")]
-[assembly: AssemblyCopyright("Copyright © SlothWiiPlaza 2018 - 2022")]
+[assembly: AssemblyCopyright("Copyright © Sloth@WiiPlaza 2018 - 2023")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

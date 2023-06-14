@@ -120,13 +120,905 @@
   <metadata name="StyleMngr.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <metadata name="StyleExtender.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>246, 17</value>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
   </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>570, 490</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="EntityReplacerLbl.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="EntityReplacerLbl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>32, 51</value>
+  </data>
+  <data name="EntityReplacerLbl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>123, 25</value>
+  </data>
+  <data name="EntityReplacerLbl.TabIndex" type="System.Int32, mscorlib">
+    <value>184</value>
+  </data>
+  <data name="EntityReplacerLbl.Text" xml:space="preserve">
+    <value>Entity Replacer</value>
+  </data>
+  <data name="&gt;&gt;EntityReplacerLbl.Name" xml:space="preserve">
+    <value>EntityReplacerLbl</value>
+  </data>
+  <data name="&gt;&gt;EntityReplacerLbl.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;EntityReplacerLbl.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;EntityReplacerLbl.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="ReplaceEntityBtn.Location" type="System.Drawing.Point, System.Drawing">
+    <value>97, 53</value>
+  </data>
+  <data name="ReplaceEntityBtn.Size" type="System.Drawing.Size, System.Drawing">
+    <value>405, 47</value>
+  </data>
+  <data name="ReplaceEntityBtn.TabIndex" type="System.Int32, mscorlib">
+    <value>190</value>
+  </data>
+  <data name="ReplaceEntityBtn.Text" xml:space="preserve">
+    <value>Replace</value>
+  </data>
+  <data name="ReplaceEntityBtn.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
   <metadata name="ToolTips.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>143, 17</value>
   </metadata>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="ReplaceEntityBtn.ToolTip" xml:space="preserve">
+    <value>Replaces the first entity with the second</value>
+  </data>
+  <data name="&gt;&gt;ReplaceEntityBtn.Name" xml:space="preserve">
+    <value>ReplaceEntityBtn</value>
+  </data>
+  <data name="&gt;&gt;ReplaceEntityBtn.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroTile, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;ReplaceEntityBtn.Parent" xml:space="preserve">
+    <value>EntitySwapPnl</value>
+  </data>
+  <data name="&gt;&gt;ReplaceEntityBtn.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="WithEntity.ItemHeight" type="System.Int32, mscorlib">
+    <value>23</value>
+  </data>
+  <data name="WithEntity.Location" type="System.Drawing.Point, System.Drawing">
+    <value>327, 18</value>
+  </data>
+  <data name="WithEntity.Size" type="System.Drawing.Size, System.Drawing">
+    <value>175, 29</value>
+  </data>
+  <data name="WithEntity.TabIndex" type="System.Int32, mscorlib">
+    <value>189</value>
+  </data>
+  <data name="&gt;&gt;WithEntity.Name" xml:space="preserve">
+    <value>WithEntity</value>
+  </data>
+  <data name="&gt;&gt;WithEntity.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroComboBox, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;WithEntity.Parent" xml:space="preserve">
+    <value>EntitySwapPnl</value>
+  </data>
+  <data name="&gt;&gt;WithEntity.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="WithLbl.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="WithLbl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>278, 18</value>
+  </data>
+  <data name="WithLbl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>43, 25</value>
+  </data>
+  <data name="WithLbl.TabIndex" type="System.Int32, mscorlib">
+    <value>188</value>
+  </data>
+  <data name="WithLbl.Text" xml:space="preserve">
+    <value>with</value>
+  </data>
+  <data name="&gt;&gt;WithLbl.Name" xml:space="preserve">
+    <value>WithLbl</value>
+  </data>
+  <data name="&gt;&gt;WithLbl.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;WithLbl.Parent" xml:space="preserve">
+    <value>EntitySwapPnl</value>
+  </data>
+  <data name="&gt;&gt;WithLbl.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="ReplaceEntity.ItemHeight" type="System.Int32, mscorlib">
+    <value>23</value>
+  </data>
+  <data name="ReplaceEntity.Location" type="System.Drawing.Point, System.Drawing">
+    <value>97, 18</value>
+  </data>
+  <data name="ReplaceEntity.Size" type="System.Drawing.Size, System.Drawing">
+    <value>175, 29</value>
+  </data>
+  <data name="ReplaceEntity.TabIndex" type="System.Int32, mscorlib">
+    <value>187</value>
+  </data>
+  <data name="&gt;&gt;ReplaceEntity.Name" xml:space="preserve">
+    <value>ReplaceEntity</value>
+  </data>
+  <data name="&gt;&gt;ReplaceEntity.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroComboBox, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;ReplaceEntity.Parent" xml:space="preserve">
+    <value>EntitySwapPnl</value>
+  </data>
+  <data name="&gt;&gt;ReplaceEntity.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="ReplaceLbl.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="ReplaceLbl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 18</value>
+  </data>
+  <data name="ReplaceLbl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>71, 25</value>
+  </data>
+  <data name="ReplaceLbl.TabIndex" type="System.Int32, mscorlib">
+    <value>186</value>
+  </data>
+  <data name="ReplaceLbl.Text" xml:space="preserve">
+    <value>Replace</value>
+  </data>
+  <data name="&gt;&gt;ReplaceLbl.Name" xml:space="preserve">
+    <value>ReplaceLbl</value>
+  </data>
+  <data name="&gt;&gt;ReplaceLbl.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;ReplaceLbl.Parent" xml:space="preserve">
+    <value>EntitySwapPnl</value>
+  </data>
+  <data name="&gt;&gt;ReplaceLbl.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="EntitySwapPnl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 63</value>
+  </data>
+  <data name="EntitySwapPnl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>524, 121</value>
+  </data>
+  <data name="EntitySwapPnl.TabIndex" type="System.Int32, mscorlib">
+    <value>185</value>
+  </data>
+  <data name="&gt;&gt;EntitySwapPnl.Name" xml:space="preserve">
+    <value>EntitySwapPnl</value>
+  </data>
+  <data name="&gt;&gt;EntitySwapPnl.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroPanel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;EntitySwapPnl.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;EntitySwapPnl.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="ZombieLbl.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="ZombieLbl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>334, 190</value>
+  </data>
+  <data name="ZombieLbl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>55, 19</value>
+  </data>
+  <data name="ZombieLbl.TabIndex" type="System.Int32, mscorlib">
+    <value>183</value>
+  </data>
+  <data name="ZombieLbl.Text" xml:space="preserve">
+    <value>Zombie</value>
+  </data>
+  <data name="&gt;&gt;ZombieLbl.Name" xml:space="preserve">
+    <value>ZombieLbl</value>
+  </data>
+  <data name="&gt;&gt;ZombieLbl.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;ZombieLbl.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;ZombieLbl.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <metadata name="StyleExtender.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>246, 17</value>
+  </metadata>
+  <data name="BabyRateSlider.Location" type="System.Drawing.Point, System.Drawing">
+    <value>82, 20</value>
+  </data>
+  <data name="BabyRateSlider.Size" type="System.Drawing.Size, System.Drawing">
+    <value>83, 20</value>
+  </data>
+  <data name="BabyRateSlider.TabIndex" type="System.Int32, mscorlib">
+    <value>167</value>
+  </data>
+  <data name="BabyRateSlider.ToolTip" xml:space="preserve">
+    <value>How frequent do baby zombies spawn?</value>
+  </data>
+  <data name="&gt;&gt;BabyRateSlider.Name" xml:space="preserve">
+    <value>BabyRateSlider</value>
+  </data>
+  <data name="&gt;&gt;BabyRateSlider.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;BabyRateSlider.Parent" xml:space="preserve">
+    <value>ZombiePnl</value>
+  </data>
+  <data name="&gt;&gt;BabyRateSlider.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="BabyRateLbl.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="BabyRateLbl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 19</value>
+  </data>
+  <data name="BabyRateLbl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>73, 19</value>
+  </data>
+  <data name="BabyRateLbl.TabIndex" type="System.Int32, mscorlib">
+    <value>166</value>
+  </data>
+  <data name="BabyRateLbl.Text" xml:space="preserve">
+    <value>Baby Rate:</value>
+  </data>
+  <data name="&gt;&gt;BabyRateLbl.Name" xml:space="preserve">
+    <value>BabyRateLbl</value>
+  </data>
+  <data name="&gt;&gt;BabyRateLbl.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;BabyRateLbl.Parent" xml:space="preserve">
+    <value>ZombiePnl</value>
+  </data>
+  <data name="&gt;&gt;BabyRateLbl.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="ZombiePnl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>330, 200</value>
+  </data>
+  <data name="ZombiePnl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>170, 60</value>
+  </data>
+  <data name="ZombiePnl.TabIndex" type="System.Int32, mscorlib">
+    <value>182</value>
+  </data>
+  <data name="&gt;&gt;ZombiePnl.Name" xml:space="preserve">
+    <value>ZombiePnl</value>
+  </data>
+  <data name="&gt;&gt;ZombiePnl.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroPanel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;ZombiePnl.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;ZombiePnl.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="RabbitLbl.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="RabbitLbl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>74, 428</value>
+  </data>
+  <data name="RabbitLbl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>48, 19</value>
+  </data>
+  <data name="RabbitLbl.TabIndex" type="System.Int32, mscorlib">
+    <value>181</value>
+  </data>
+  <data name="RabbitLbl.Text" xml:space="preserve">
+    <value>Rabbit</value>
+  </data>
+  <data name="&gt;&gt;RabbitLbl.Name" xml:space="preserve">
+    <value>RabbitLbl</value>
+  </data>
+  <data name="&gt;&gt;RabbitLbl.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;RabbitLbl.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;RabbitLbl.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="RabbitVariantBox.ItemHeight" type="System.Int32, mscorlib">
+    <value>23</value>
+  </data>
+  <data name="RabbitVariantBox.Items" xml:space="preserve">
+    <value>Brown</value>
+  </data>
+  <data name="RabbitVariantBox.Items1" xml:space="preserve">
+    <value>White</value>
+  </data>
+  <data name="RabbitVariantBox.Items2" xml:space="preserve">
+    <value>Black</value>
+  </data>
+  <data name="RabbitVariantBox.Items3" xml:space="preserve">
+    <value>Black and White</value>
+  </data>
+  <data name="RabbitVariantBox.Items4" xml:space="preserve">
+    <value>Gold</value>
+  </data>
+  <data name="RabbitVariantBox.Items5" xml:space="preserve">
+    <value>Salt and Pepper</value>
+  </data>
+  <data name="RabbitVariantBox.Items6" xml:space="preserve">
+    <value>The Killer Bunny</value>
+  </data>
+  <data name="RabbitVariantBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>64, 5</value>
+  </data>
+  <data name="RabbitVariantBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>185, 29</value>
+  </data>
+  <data name="RabbitVariantBox.TabIndex" type="System.Int32, mscorlib">
+    <value>168</value>
+  </data>
+  <data name="RabbitVariantBox.ToolTip" xml:space="preserve">
+    <value>What variant should all rabbits be?</value>
+  </data>
+  <data name="&gt;&gt;RabbitVariantBox.Name" xml:space="preserve">
+    <value>RabbitVariantBox</value>
+  </data>
+  <data name="&gt;&gt;RabbitVariantBox.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroComboBox, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;RabbitVariantBox.Parent" xml:space="preserve">
+    <value>RabbitPnl</value>
+  </data>
+  <data name="&gt;&gt;RabbitVariantBox.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="RabbitVariantLbl.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="RabbitVariantLbl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 10</value>
+  </data>
+  <data name="RabbitVariantLbl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>55, 19</value>
+  </data>
+  <data name="RabbitVariantLbl.TabIndex" type="System.Int32, mscorlib">
+    <value>167</value>
+  </data>
+  <data name="RabbitVariantLbl.Text" xml:space="preserve">
+    <value>Variant:</value>
+  </data>
+  <data name="&gt;&gt;RabbitVariantLbl.Name" xml:space="preserve">
+    <value>RabbitVariantLbl</value>
+  </data>
+  <data name="&gt;&gt;RabbitVariantLbl.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;RabbitVariantLbl.Parent" xml:space="preserve">
+    <value>RabbitPnl</value>
+  </data>
+  <data name="&gt;&gt;RabbitVariantLbl.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="RabbitPnl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>70, 438</value>
+  </data>
+  <data name="RabbitPnl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>254, 40</value>
+  </data>
+  <data name="RabbitPnl.TabIndex" type="System.Int32, mscorlib">
+    <value>180</value>
+  </data>
+  <data name="&gt;&gt;RabbitPnl.Name" xml:space="preserve">
+    <value>RabbitPnl</value>
+  </data>
+  <data name="&gt;&gt;RabbitPnl.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroPanel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;RabbitPnl.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;RabbitPnl.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="ParrotLbl.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="ParrotLbl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>74, 373</value>
+  </data>
+  <data name="ParrotLbl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>47, 19</value>
+  </data>
+  <data name="ParrotLbl.TabIndex" type="System.Int32, mscorlib">
+    <value>179</value>
+  </data>
+  <data name="ParrotLbl.Text" xml:space="preserve">
+    <value>Parrot</value>
+  </data>
+  <data name="&gt;&gt;ParrotLbl.Name" xml:space="preserve">
+    <value>ParrotLbl</value>
+  </data>
+  <data name="&gt;&gt;ParrotLbl.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;ParrotLbl.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;ParrotLbl.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="ParrotVariantBox.ItemHeight" type="System.Int32, mscorlib">
+    <value>23</value>
+  </data>
+  <data name="ParrotVariantBox.Items" xml:space="preserve">
+    <value>Red</value>
+  </data>
+  <data name="ParrotVariantBox.Items1" xml:space="preserve">
+    <value>Blue</value>
+  </data>
+  <data name="ParrotVariantBox.Items2" xml:space="preserve">
+    <value>Green</value>
+  </data>
+  <data name="ParrotVariantBox.Items3" xml:space="preserve">
+    <value>Cyan</value>
+  </data>
+  <data name="ParrotVariantBox.Items4" xml:space="preserve">
+    <value>Gray</value>
+  </data>
+  <data name="ParrotVariantBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>64, 5</value>
+  </data>
+  <data name="ParrotVariantBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>185, 29</value>
+  </data>
+  <data name="ParrotVariantBox.TabIndex" type="System.Int32, mscorlib">
+    <value>168</value>
+  </data>
+  <data name="ParrotVariantBox.ToolTip" xml:space="preserve">
+    <value>What variant should all parrots be?</value>
+  </data>
+  <data name="&gt;&gt;ParrotVariantBox.Name" xml:space="preserve">
+    <value>ParrotVariantBox</value>
+  </data>
+  <data name="&gt;&gt;ParrotVariantBox.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroComboBox, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;ParrotVariantBox.Parent" xml:space="preserve">
+    <value>ParrotPnl</value>
+  </data>
+  <data name="&gt;&gt;ParrotVariantBox.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="ParrotVariantLbl.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="ParrotVariantLbl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 10</value>
+  </data>
+  <data name="ParrotVariantLbl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>55, 19</value>
+  </data>
+  <data name="ParrotVariantLbl.TabIndex" type="System.Int32, mscorlib">
+    <value>167</value>
+  </data>
+  <data name="ParrotVariantLbl.Text" xml:space="preserve">
+    <value>Variant:</value>
+  </data>
+  <data name="&gt;&gt;ParrotVariantLbl.Name" xml:space="preserve">
+    <value>ParrotVariantLbl</value>
+  </data>
+  <data name="&gt;&gt;ParrotVariantLbl.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;ParrotVariantLbl.Parent" xml:space="preserve">
+    <value>ParrotPnl</value>
+  </data>
+  <data name="&gt;&gt;ParrotVariantLbl.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="ParrotPnl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>70, 383</value>
+  </data>
+  <data name="ParrotPnl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>254, 40</value>
+  </data>
+  <data name="ParrotPnl.TabIndex" type="System.Int32, mscorlib">
+    <value>178</value>
+  </data>
+  <data name="&gt;&gt;ParrotPnl.Name" xml:space="preserve">
+    <value>ParrotPnl</value>
+  </data>
+  <data name="&gt;&gt;ParrotPnl.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroPanel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;ParrotPnl.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;ParrotPnl.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="LlamaLbl.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LlamaLbl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>74, 318</value>
+  </data>
+  <data name="LlamaLbl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>45, 19</value>
+  </data>
+  <data name="LlamaLbl.TabIndex" type="System.Int32, mscorlib">
+    <value>177</value>
+  </data>
+  <data name="LlamaLbl.Text" xml:space="preserve">
+    <value>Llama</value>
+  </data>
+  <data name="&gt;&gt;LlamaLbl.Name" xml:space="preserve">
+    <value>LlamaLbl</value>
+  </data>
+  <data name="&gt;&gt;LlamaLbl.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;LlamaLbl.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;LlamaLbl.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="LlamaVariantBox.ItemHeight" type="System.Int32, mscorlib">
+    <value>23</value>
+  </data>
+  <data name="LlamaVariantBox.Items" xml:space="preserve">
+    <value>Cream</value>
+  </data>
+  <data name="LlamaVariantBox.Items1" xml:space="preserve">
+    <value>White</value>
+  </data>
+  <data name="LlamaVariantBox.Items2" xml:space="preserve">
+    <value>Brown</value>
+  </data>
+  <data name="LlamaVariantBox.Items3" xml:space="preserve">
+    <value>Gray</value>
+  </data>
+  <data name="LlamaVariantBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>64, 5</value>
+  </data>
+  <data name="LlamaVariantBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>185, 29</value>
+  </data>
+  <data name="LlamaVariantBox.TabIndex" type="System.Int32, mscorlib">
+    <value>168</value>
+  </data>
+  <data name="LlamaVariantBox.ToolTip" xml:space="preserve">
+    <value>Which variant should all llamas be?</value>
+  </data>
+  <data name="&gt;&gt;LlamaVariantBox.Name" xml:space="preserve">
+    <value>LlamaVariantBox</value>
+  </data>
+  <data name="&gt;&gt;LlamaVariantBox.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroComboBox, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;LlamaVariantBox.Parent" xml:space="preserve">
+    <value>LlamaPnl</value>
+  </data>
+  <data name="&gt;&gt;LlamaVariantBox.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="LlamaVariantLbl.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LlamaVariantLbl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 10</value>
+  </data>
+  <data name="LlamaVariantLbl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>55, 19</value>
+  </data>
+  <data name="LlamaVariantLbl.TabIndex" type="System.Int32, mscorlib">
+    <value>167</value>
+  </data>
+  <data name="LlamaVariantLbl.Text" xml:space="preserve">
+    <value>Variant:</value>
+  </data>
+  <data name="&gt;&gt;LlamaVariantLbl.Name" xml:space="preserve">
+    <value>LlamaVariantLbl</value>
+  </data>
+  <data name="&gt;&gt;LlamaVariantLbl.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;LlamaVariantLbl.Parent" xml:space="preserve">
+    <value>LlamaPnl</value>
+  </data>
+  <data name="&gt;&gt;LlamaVariantLbl.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="LlamaPnl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>70, 328</value>
+  </data>
+  <data name="LlamaPnl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>254, 40</value>
+  </data>
+  <data name="LlamaPnl.TabIndex" type="System.Int32, mscorlib">
+    <value>176</value>
+  </data>
+  <data name="&gt;&gt;LlamaPnl.Name" xml:space="preserve">
+    <value>LlamaPnl</value>
+  </data>
+  <data name="&gt;&gt;LlamaPnl.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroPanel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;LlamaPnl.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;LlamaPnl.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="VillagersLbl.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="VillagersLbl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>74, 263</value>
+  </data>
+  <data name="VillagersLbl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>54, 19</value>
+  </data>
+  <data name="VillagersLbl.TabIndex" type="System.Int32, mscorlib">
+    <value>173</value>
+  </data>
+  <data name="VillagersLbl.Text" xml:space="preserve">
+    <value>Villager</value>
+  </data>
+  <data name="&gt;&gt;VillagersLbl.Name" xml:space="preserve">
+    <value>VillagersLbl</value>
+  </data>
+  <data name="&gt;&gt;VillagersLbl.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;VillagersLbl.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;VillagersLbl.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="ProfessionBox.ItemHeight" type="System.Int32, mscorlib">
+    <value>23</value>
+  </data>
+  <data name="ProfessionBox.Items" xml:space="preserve">
+    <value>Farmer/Fletcher/Fisherman/Sheperd</value>
+  </data>
+  <data name="ProfessionBox.Items1" xml:space="preserve">
+    <value>Librarian/Cartographer</value>
+  </data>
+  <data name="ProfessionBox.Items2" xml:space="preserve">
+    <value>Cleric</value>
+  </data>
+  <data name="ProfessionBox.Items3" xml:space="preserve">
+    <value>Tool/Weapon Smith</value>
+  </data>
+  <data name="ProfessionBox.Items4" xml:space="preserve">
+    <value>Butcher/Leatherworker</value>
+  </data>
+  <data name="ProfessionBox.Items5" xml:space="preserve">
+    <value>Nitwit</value>
+  </data>
+  <data name="ProfessionBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>84, 5</value>
+  </data>
+  <data name="ProfessionBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>165, 29</value>
+  </data>
+  <data name="ProfessionBox.TabIndex" type="System.Int32, mscorlib">
+    <value>168</value>
+  </data>
+  <data name="ProfessionBox.ToolTip" xml:space="preserve">
+    <value>What profession should all villagers be?</value>
+  </data>
+  <data name="&gt;&gt;ProfessionBox.Name" xml:space="preserve">
+    <value>ProfessionBox</value>
+  </data>
+  <data name="&gt;&gt;ProfessionBox.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroComboBox, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;ProfessionBox.Parent" xml:space="preserve">
+    <value>VillagersPnl</value>
+  </data>
+  <data name="&gt;&gt;ProfessionBox.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="ProfessionLbl.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="ProfessionLbl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 10</value>
+  </data>
+  <data name="ProfessionLbl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 19</value>
+  </data>
+  <data name="ProfessionLbl.TabIndex" type="System.Int32, mscorlib">
+    <value>167</value>
+  </data>
+  <data name="ProfessionLbl.Text" xml:space="preserve">
+    <value>Profession:</value>
+  </data>
+  <data name="&gt;&gt;ProfessionLbl.Name" xml:space="preserve">
+    <value>ProfessionLbl</value>
+  </data>
+  <data name="&gt;&gt;ProfessionLbl.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;ProfessionLbl.Parent" xml:space="preserve">
+    <value>VillagersPnl</value>
+  </data>
+  <data name="&gt;&gt;ProfessionLbl.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="VillagersPnl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>70, 273</value>
+  </data>
+  <data name="VillagersPnl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>254, 40</value>
+  </data>
+  <data name="VillagersPnl.TabIndex" type="System.Int32, mscorlib">
+    <value>172</value>
+  </data>
+  <data name="&gt;&gt;VillagersPnl.Name" xml:space="preserve">
+    <value>VillagersPnl</value>
+  </data>
+  <data name="&gt;&gt;VillagersPnl.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroPanel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;VillagersPnl.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;VillagersPnl.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="SheepLbl.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="SheepLbl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>74, 190</value>
+  </data>
+  <data name="SheepLbl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>46, 19</value>
+  </data>
+  <data name="SheepLbl.TabIndex" type="System.Int32, mscorlib">
+    <value>171</value>
+  </data>
+  <data name="SheepLbl.Text" xml:space="preserve">
+    <value>Sheep</value>
+  </data>
+  <data name="&gt;&gt;SheepLbl.Name" xml:space="preserve">
+    <value>SheepLbl</value>
+  </data>
+  <data name="&gt;&gt;SheepLbl.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;SheepLbl.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;SheepLbl.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="DontLoseWoolBox.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="DontLoseWoolBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>114, 36</value>
+  </data>
+  <data name="DontLoseWoolBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>105, 15</value>
+  </data>
+  <data name="DontLoseWoolBox.TabIndex" type="System.Int32, mscorlib">
+    <value>177</value>
+  </data>
+  <data name="DontLoseWoolBox.Text" xml:space="preserve">
+    <value>Don't lose wool</value>
+  </data>
+  <data name="DontLoseWoolBox.ToolTip" xml:space="preserve">
+    <value>Sheep will not lose their wool when sheared</value>
+  </data>
+  <data name="&gt;&gt;DontLoseWoolBox.Name" xml:space="preserve">
+    <value>DontLoseWoolBox</value>
+  </data>
+  <data name="&gt;&gt;DontLoseWoolBox.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroCheckBox, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;DontLoseWoolBox.Parent" xml:space="preserve">
+    <value>armorPanel</value>
+  </data>
+  <data name="&gt;&gt;DontLoseWoolBox.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="WoolMultiplier.Location" type="System.Drawing.Point, System.Drawing">
+    <value>114, 10</value>
+  </data>
+  <data name="WoolMultiplier.Size" type="System.Drawing.Size, System.Drawing">
+    <value>135, 20</value>
+  </data>
+  <data name="WoolMultiplier.TabIndex" type="System.Int32, mscorlib">
+    <value>167</value>
+  </data>
+  <data name="WoolMultiplier.ToolTip" xml:space="preserve">
+    <value>How much should we multiply wool from sheared sheep?</value>
+  </data>
+  <data name="&gt;&gt;WoolMultiplier.Name" xml:space="preserve">
+    <value>WoolMultiplier</value>
+  </data>
+  <data name="&gt;&gt;WoolMultiplier.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;WoolMultiplier.Parent" xml:space="preserve">
+    <value>armorPanel</value>
+  </data>
+  <data name="&gt;&gt;WoolMultiplier.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="WoolMultiplierLbl.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="WoolMultiplierLbl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 8</value>
+  </data>
+  <data name="WoolMultiplierLbl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>105, 19</value>
+  </data>
+  <data name="WoolMultiplierLbl.TabIndex" type="System.Int32, mscorlib">
+    <value>166</value>
+  </data>
+  <data name="WoolMultiplierLbl.Text" xml:space="preserve">
+    <value>Wool Multiplier:</value>
+  </data>
+  <data name="&gt;&gt;WoolMultiplierLbl.Name" xml:space="preserve">
+    <value>WoolMultiplierLbl</value>
+  </data>
+  <data name="&gt;&gt;WoolMultiplierLbl.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;WoolMultiplierLbl.Parent" xml:space="preserve">
+    <value>armorPanel</value>
+  </data>
+  <data name="&gt;&gt;WoolMultiplierLbl.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="armorPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>70, 200</value>
+  </data>
+  <data name="armorPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>254, 60</value>
+  </data>
+  <data name="armorPanel.TabIndex" type="System.Int32, mscorlib">
+    <value>170</value>
+  </data>
+  <data name="&gt;&gt;armorPanel.Name" xml:space="preserve">
+    <value>armorPanel</value>
+  </data>
+  <data name="&gt;&gt;armorPanel.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroPanel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;armorPanel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;armorPanel.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAYAAAAAAAEAIAC7DAAAZgAAAICAAAABACAAKAgBACENAABAQAAAAQAgAChCAABJFQEAMDAAAAEA
@@ -1846,5 +2738,38 @@
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP//AAD//wAA//8A
         AP//AADg/wAA4B8AAOAfAADgBwAA4AcAAPgHAAD8BwAA/wcAAP/fAAD//wAA//8AAP//AAA=
 </value>
+  </data>
+  <data name="$this.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>570, 490</value>
+  </data>
+  <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>570, 490</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Minecraft: Wii U Mod Injector - Entity Editor</value>
+  </data>
+  <data name="&gt;&gt;StyleMngr.Name" xml:space="preserve">
+    <value>StyleMngr</value>
+  </data>
+  <data name="&gt;&gt;StyleMngr.Type" xml:space="preserve">
+    <value>MetroFramework.Components.MetroStyleManager, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;ToolTips.Name" xml:space="preserve">
+    <value>ToolTips</value>
+  </data>
+  <data name="&gt;&gt;ToolTips.Type" xml:space="preserve">
+    <value>MetroFramework.Components.MetroToolTip, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;StyleExtender.Name" xml:space="preserve">
+    <value>StyleExtender</value>
+  </data>
+  <data name="&gt;&gt;StyleExtender.Type" xml:space="preserve">
+    <value>MetroFramework.Components.MetroStyleExtender, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>EntityEditor</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>MetroFramework.Forms.MetroForm, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
   </data>
 </root>

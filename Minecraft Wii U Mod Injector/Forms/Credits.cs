@@ -33,6 +33,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms {
 
         private void KashiieraClicked(object sender, EventArgs e) {
             Process.Start("https://www.youtube.com/Kashiiera");
+            Process.Start("https://www.youtube.com/@KashiiUera");
         }
 
         private void Exiting(object sender, FormClosingEventArgs e) {

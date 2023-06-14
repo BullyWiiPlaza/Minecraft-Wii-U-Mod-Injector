@@ -120,31 +120,2456 @@
   <metadata name="StyleMngr.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <metadata name="ToolTips.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>124, 17</value>
-  </metadata>
-  <metadata name="NameBox.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="DescriptionBox.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="AuthorBox.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="FIlePathBox.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="lngMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>214, 14</value>
-  </metadata>
-  <metadata name="ServerNameBox.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="ServerUrlBox.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>565, 975</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="PlayRingSndBtn.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="PlayRingSndBtn.Location" type="System.Drawing.Point, System.Drawing">
+    <value>291, 409</value>
+  </data>
+  <data name="PlayRingSndBtn.Size" type="System.Drawing.Size, System.Drawing">
+    <value>251, 23</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="PlayRingSndBtn.TabIndex" type="System.Int32, mscorlib">
+    <value>34</value>
+  </data>
+  <data name="PlayRingSndBtn.Text" xml:space="preserve">
+    <value>Play "Ring" Sound Effect</value>
+  </data>
+  <metadata name="ToolTips.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>143, 17</value>
+  </metadata>
+  <data name="PlayRingSndBtn.ToolTip" xml:space="preserve">
+    <value>Plays a "ring" sound effect on the
+selected player</value>
+  </data>
+  <data name="&gt;&gt;PlayRingSndBtn.Name" xml:space="preserve">
+    <value>PlayRingSndBtn</value>
+  </data>
+  <data name="&gt;&gt;PlayRingSndBtn.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroButton, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;PlayRingSndBtn.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;PlayRingSndBtn.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="JumpBtn.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="JumpBtn.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 409</value>
+  </data>
+  <data name="JumpBtn.Size" type="System.Drawing.Size, System.Drawing">
+    <value>251, 23</value>
+  </data>
+  <data name="JumpBtn.TabIndex" type="System.Int32, mscorlib">
+    <value>33</value>
+  </data>
+  <data name="JumpBtn.Text" xml:space="preserve">
+    <value>Jump</value>
+  </data>
+  <data name="JumpBtn.ToolTip" xml:space="preserve">
+    <value>Makes the selected player jump</value>
+  </data>
+  <data name="&gt;&gt;JumpBtn.Name" xml:space="preserve">
+    <value>JumpBtn</value>
+  </data>
+  <data name="&gt;&gt;JumpBtn.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroButton, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;JumpBtn.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;JumpBtn.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="UpdatePlrInfoBtn.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="UpdatePlrInfoBtn.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 923</value>
+  </data>
+  <data name="UpdatePlrInfoBtn.Size" type="System.Drawing.Size, System.Drawing">
+    <value>519, 23</value>
+  </data>
+  <data name="UpdatePlrInfoBtn.TabIndex" type="System.Int32, mscorlib">
+    <value>32</value>
+  </data>
+  <data name="UpdatePlrInfoBtn.Text" xml:space="preserve">
+    <value>Update</value>
+  </data>
+  <data name="UpdatePlrInfoBtn.ToolTip" xml:space="preserve">
+    <value>Updates the Information panel with
+the selected players their information</value>
+  </data>
+  <data name="&gt;&gt;UpdatePlrInfoBtn.Name" xml:space="preserve">
+    <value>UpdatePlrInfoBtn</value>
+  </data>
+  <data name="&gt;&gt;UpdatePlrInfoBtn.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroButton, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;UpdatePlrInfoBtn.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;UpdatePlrInfoBtn.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="InformationLbl.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="InformationLbl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>26, 442</value>
+  </data>
+  <data name="InformationLbl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 25</value>
+  </data>
+  <data name="InformationLbl.TabIndex" type="System.Int32, mscorlib">
+    <value>29</value>
+  </data>
+  <data name="InformationLbl.Text" xml:space="preserve">
+    <value>Information</value>
+  </data>
+  <data name="&gt;&gt;InformationLbl.Name" xml:space="preserve">
+    <value>InformationLbl</value>
+  </data>
+  <data name="&gt;&gt;InformationLbl.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;InformationLbl.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;InformationLbl.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="PlayerInformationPnl.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="PlayerInformationPnl.AutoScroll" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="PlayerInformationPnl.AutoScrollMargin" type="System.Drawing.Size, System.Drawing">
+    <value>5, 10</value>
+  </data>
+  <data name="PlayerInformationPnl.AutoScrollMinSize" type="System.Drawing.Size, System.Drawing">
+    <value>0, 50</value>
+  </data>
+  <data name="resource.Image" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="resource.Location" type="System.Drawing.Point, System.Drawing">
+    <value>388, 1</value>
+  </data>
+  <data name="resource.Size" type="System.Drawing.Size, System.Drawing">
+    <value>21, 21</value>
+  </data>
+  <data name="resource.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="resource.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="CanBuildBox.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="CanBuildBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>87, 246</value>
+  </data>
+  <data name="CanBuildBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>410, 23</value>
+  </data>
+  <data name="CanBuildBox.TabIndex" type="System.Int32, mscorlib">
+    <value>75</value>
+  </data>
+  <data name="CanBuildBox.ToolTip" xml:space="preserve">
+    <value>Is the selected player allowed to 
+build?</value>
+  </data>
+  <data name="&gt;&gt;CanBuildBox.Name" xml:space="preserve">
+    <value>CanBuildBox</value>
+  </data>
+  <data name="&gt;&gt;CanBuildBox.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroTextBox, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;CanBuildBox.Parent" xml:space="preserve">
+    <value>PlayerInformationPnl</value>
+  </data>
+  <data name="&gt;&gt;CanBuildBox.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="CanBuildLbl.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="CanBuildLbl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 246</value>
+  </data>
+  <data name="CanBuildLbl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>68, 19</value>
+  </data>
+  <data name="CanBuildLbl.TabIndex" type="System.Int32, mscorlib">
+    <value>74</value>
+  </data>
+  <data name="CanBuildLbl.Text" xml:space="preserve">
+    <value>Can Build:</value>
+  </data>
+  <data name="&gt;&gt;CanBuildLbl.Name" xml:space="preserve">
+    <value>CanBuildLbl</value>
+  </data>
+  <data name="&gt;&gt;CanBuildLbl.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;CanBuildLbl.Parent" xml:space="preserve">
+    <value>PlayerInformationPnl</value>
+  </data>
+  <data name="&gt;&gt;CanBuildLbl.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="resource.Image1" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="resource.Location1" type="System.Drawing.Point, System.Drawing">
+    <value>384, 1</value>
+  </data>
+  <data name="resource.Size1" type="System.Drawing.Size, System.Drawing">
+    <value>21, 21</value>
+  </data>
+  <data name="resource.TabIndex1" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="resource.Visible1" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="IsStarvingBox.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="IsStarvingBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>89, 653</value>
+  </data>
+  <data name="IsStarvingBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>406, 23</value>
+  </data>
+  <data name="IsStarvingBox.TabIndex" type="System.Int32, mscorlib">
+    <value>73</value>
+  </data>
+  <data name="IsStarvingBox.ToolTip" xml:space="preserve">
+    <value>Is the selected player currently starving?</value>
+  </data>
+  <data name="&gt;&gt;IsStarvingBox.Name" xml:space="preserve">
+    <value>IsStarvingBox</value>
+  </data>
+  <data name="&gt;&gt;IsStarvingBox.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroTextBox, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;IsStarvingBox.Parent" xml:space="preserve">
+    <value>PlayerInformationPnl</value>
+  </data>
+  <data name="&gt;&gt;IsStarvingBox.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="IsStarvingLbl.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="IsStarvingLbl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 653</value>
+  </data>
+  <data name="IsStarvingLbl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>72, 19</value>
+  </data>
+  <data name="IsStarvingLbl.TabIndex" type="System.Int32, mscorlib">
+    <value>72</value>
+  </data>
+  <data name="IsStarvingLbl.Text" xml:space="preserve">
+    <value>Is Starving:</value>
+  </data>
+  <data name="&gt;&gt;IsStarvingLbl.Name" xml:space="preserve">
+    <value>IsStarvingLbl</value>
+  </data>
+  <data name="&gt;&gt;IsStarvingLbl.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;IsStarvingLbl.Parent" xml:space="preserve">
+    <value>PlayerInformationPnl</value>
+  </data>
+  <data name="&gt;&gt;IsStarvingLbl.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="resource.Image2" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="resource.Location2" type="System.Drawing.Point, System.Drawing">
+    <value>330, 1</value>
+  </data>
+  <data name="resource.Size2" type="System.Drawing.Size, System.Drawing">
+    <value>21, 21</value>
+  </data>
+  <data name="resource.TabIndex2" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="resource.Visible2" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="IsSpectatingPlayerBox.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="IsSpectatingPlayerBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>143, 624</value>
+  </data>
+  <data name="IsSpectatingPlayerBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>352, 23</value>
+  </data>
+  <data name="IsSpectatingPlayerBox.TabIndex" type="System.Int32, mscorlib">
+    <value>71</value>
+  </data>
+  <data name="IsSpectatingPlayerBox.ToolTip" xml:space="preserve">
+    <value>Is the selected player currently
+spectating another player?</value>
+  </data>
+  <data name="&gt;&gt;IsSpectatingPlayerBox.Name" xml:space="preserve">
+    <value>IsSpectatingPlayerBox</value>
+  </data>
+  <data name="&gt;&gt;IsSpectatingPlayerBox.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroTextBox, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;IsSpectatingPlayerBox.Parent" xml:space="preserve">
+    <value>PlayerInformationPnl</value>
+  </data>
+  <data name="&gt;&gt;IsSpectatingPlayerBox.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="IsSpectatingPlayerLbl.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="IsSpectatingPlayerLbl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 624</value>
+  </data>
+  <data name="IsSpectatingPlayerLbl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>126, 19</value>
+  </data>
+  <data name="IsSpectatingPlayerLbl.TabIndex" type="System.Int32, mscorlib">
+    <value>70</value>
+  </data>
+  <data name="IsSpectatingPlayerLbl.Text" xml:space="preserve">
+    <value>Is Spectating Player:</value>
+  </data>
+  <data name="&gt;&gt;IsSpectatingPlayerLbl.Name" xml:space="preserve">
+    <value>IsSpectatingPlayerLbl</value>
+  </data>
+  <data name="&gt;&gt;IsSpectatingPlayerLbl.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;IsSpectatingPlayerLbl.Parent" xml:space="preserve">
+    <value>PlayerInformationPnl</value>
+  </data>
+  <data name="&gt;&gt;IsSpectatingPlayerLbl.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="resource.Image3" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="resource.Location3" type="System.Drawing.Point, System.Drawing">
+    <value>301, 1</value>
+  </data>
+  <data name="resource.Size3" type="System.Drawing.Size, System.Drawing">
+    <value>21, 21</value>
+  </data>
+  <data name="resource.TabIndex3" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="resource.Visible3" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="IsSleepingEnoughBox.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="IsSleepingEnoughBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>172, 595</value>
+  </data>
+  <data name="IsSleepingEnoughBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>323, 23</value>
+  </data>
+  <data name="IsSleepingEnoughBox.TabIndex" type="System.Int32, mscorlib">
+    <value>69</value>
+  </data>
+  <data name="IsSleepingEnoughBox.ToolTip" xml:space="preserve">
+    <value>Is the selected player sleeping long enough?</value>
+  </data>
+  <data name="&gt;&gt;IsSleepingEnoughBox.Name" xml:space="preserve">
+    <value>IsSleepingEnoughBox</value>
+  </data>
+  <data name="&gt;&gt;IsSleepingEnoughBox.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroTextBox, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;IsSleepingEnoughBox.Parent" xml:space="preserve">
+    <value>PlayerInformationPnl</value>
+  </data>
+  <data name="&gt;&gt;IsSleepingEnoughBox.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="IsSleepingEnoughLbl.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="IsSleepingEnoughLbl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 595</value>
+  </data>
+  <data name="IsSleepingEnoughLbl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>155, 19</value>
+  </data>
+  <data name="IsSleepingEnoughLbl.TabIndex" type="System.Int32, mscorlib">
+    <value>68</value>
+  </data>
+  <data name="IsSleepingEnoughLbl.Text" xml:space="preserve">
+    <value>Is Sleeping Long Enough:</value>
+  </data>
+  <data name="&gt;&gt;IsSleepingEnoughLbl.Name" xml:space="preserve">
+    <value>IsSleepingEnoughLbl</value>
+  </data>
+  <data name="&gt;&gt;IsSleepingEnoughLbl.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;IsSleepingEnoughLbl.Parent" xml:space="preserve">
+    <value>PlayerInformationPnl</value>
+  </data>
+  <data name="&gt;&gt;IsSleepingEnoughLbl.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="resource.Image4" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="resource.Location4" type="System.Drawing.Point, System.Drawing">
+    <value>382, 1</value>
+  </data>
+  <data name="resource.Size4" type="System.Drawing.Size, System.Drawing">
+    <value>21, 21</value>
+  </data>
+  <data name="resource.TabIndex4" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="resource.Visible4" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="IsSleepingBox.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="IsSleepingBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>91, 566</value>
+  </data>
+  <data name="IsSleepingBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>404, 23</value>
+  </data>
+  <data name="IsSleepingBox.TabIndex" type="System.Int32, mscorlib">
+    <value>67</value>
+  </data>
+  <data name="IsSleepingBox.ToolTip" xml:space="preserve">
+    <value>Is the selected player currently 
+sleeping?</value>
+  </data>
+  <data name="&gt;&gt;IsSleepingBox.Name" xml:space="preserve">
+    <value>IsSleepingBox</value>
+  </data>
+  <data name="&gt;&gt;IsSleepingBox.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroTextBox, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;IsSleepingBox.Parent" xml:space="preserve">
+    <value>PlayerInformationPnl</value>
+  </data>
+  <data name="&gt;&gt;IsSleepingBox.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="IsSleepingLbl.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="IsSleepingLbl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 566</value>
+  </data>
+  <data name="IsSleepingLbl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>74, 19</value>
+  </data>
+  <data name="IsSleepingLbl.TabIndex" type="System.Int32, mscorlib">
+    <value>66</value>
+  </data>
+  <data name="IsSleepingLbl.Text" xml:space="preserve">
+    <value>Is Sleeping:</value>
+  </data>
+  <data name="&gt;&gt;IsSleepingLbl.Name" xml:space="preserve">
+    <value>IsSleepingLbl</value>
+  </data>
+  <data name="&gt;&gt;IsSleepingLbl.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;IsSleepingLbl.Parent" xml:space="preserve">
+    <value>PlayerInformationPnl</value>
+  </data>
+  <data name="&gt;&gt;IsSleepingLbl.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="resource.Image5" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="resource.Location5" type="System.Drawing.Point, System.Drawing">
+    <value>297, 1</value>
+  </data>
+  <data name="resource.Size5" type="System.Drawing.Size, System.Drawing">
+    <value>21, 21</value>
+  </data>
+  <data name="resource.TabIndex5" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="resource.Visible5" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="IsSendMsgBox.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="IsSendMsgBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>176, 537</value>
+  </data>
+  <data name="IsSendMsgBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>319, 23</value>
+  </data>
+  <data name="IsSendMsgBox.TabIndex" type="System.Int32, mscorlib">
+    <value>65</value>
+  </data>
+  <data name="IsSendMsgBox.ToolTip" xml:space="preserve">
+    <value>Is the selected player allowed to
+send messages?</value>
+  </data>
+  <data name="&gt;&gt;IsSendMsgBox.Name" xml:space="preserve">
+    <value>IsSendMsgBox</value>
+  </data>
+  <data name="&gt;&gt;IsSendMsgBox.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroTextBox, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;IsSendMsgBox.Parent" xml:space="preserve">
+    <value>PlayerInformationPnl</value>
+  </data>
+  <data name="&gt;&gt;IsSendMsgBox.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="IsSendMsgLbl.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="IsSendMsgLbl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 537</value>
+  </data>
+  <data name="IsSendMsgLbl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>159, 19</value>
+  </data>
+  <data name="IsSendMsgLbl.TabIndex" type="System.Int32, mscorlib">
+    <value>64</value>
+  </data>
+  <data name="IsSendMsgLbl.Text" xml:space="preserve">
+    <value>Is Send Message Enabled:</value>
+  </data>
+  <data name="&gt;&gt;IsSendMsgLbl.Name" xml:space="preserve">
+    <value>IsSendMsgLbl</value>
+  </data>
+  <data name="&gt;&gt;IsSendMsgLbl.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;IsSendMsgLbl.Parent" xml:space="preserve">
+    <value>PlayerInformationPnl</value>
+  </data>
+  <data name="&gt;&gt;IsSendMsgLbl.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="resource.Image6" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="resource.Location6" type="System.Drawing.Point, System.Drawing">
+    <value>367, 1</value>
+  </data>
+  <data name="resource.Size6" type="System.Drawing.Size, System.Drawing">
+    <value>21, 21</value>
+  </data>
+  <data name="resource.TabIndex6" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="resource.Visible6" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="ModeratorBox.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="ModeratorBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>108, 14</value>
+  </data>
+  <data name="ModeratorBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>389, 23</value>
+  </data>
+  <data name="ModeratorBox.TabIndex" type="System.Int32, mscorlib">
+    <value>31</value>
+  </data>
+  <data name="ModeratorBox.ToolTip" xml:space="preserve">
+    <value>Is the selected player a moderator?</value>
+  </data>
+  <data name="&gt;&gt;ModeratorBox.Name" xml:space="preserve">
+    <value>ModeratorBox</value>
+  </data>
+  <data name="&gt;&gt;ModeratorBox.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroTextBox, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;ModeratorBox.Parent" xml:space="preserve">
+    <value>PlayerInformationPnl</value>
+  </data>
+  <data name="&gt;&gt;ModeratorBox.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="ModeratorLbl.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="ModeratorLbl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>14, 14</value>
+  </data>
+  <data name="ModeratorLbl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>89, 19</value>
+  </data>
+  <data name="ModeratorLbl.TabIndex" type="System.Int32, mscorlib">
+    <value>30</value>
+  </data>
+  <data name="ModeratorLbl.Text" xml:space="preserve">
+    <value>Is Moderator:</value>
+  </data>
+  <data name="&gt;&gt;ModeratorLbl.Name" xml:space="preserve">
+    <value>ModeratorLbl</value>
+  </data>
+  <data name="&gt;&gt;ModeratorLbl.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;ModeratorLbl.Parent" xml:space="preserve">
+    <value>PlayerInformationPnl</value>
+  </data>
+  <data name="&gt;&gt;ModeratorLbl.ZOrder" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <data name="resource.Image7" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="resource.Location7" type="System.Drawing.Point, System.Drawing">
+    <value>321, 1</value>
+  </data>
+  <data name="resource.Size7" type="System.Drawing.Size, System.Drawing">
+    <value>21, 21</value>
+  </data>
+  <data name="resource.TabIndex7" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="resource.Visible7" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="IsRespawnedForcedBox.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="IsRespawnedForcedBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>152, 508</value>
+  </data>
+  <data name="IsRespawnedForcedBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>343, 23</value>
+  </data>
+  <data name="IsRespawnedForcedBox.TabIndex" type="System.Int32, mscorlib">
+    <value>63</value>
+  </data>
+  <data name="IsRespawnedForcedBox.ToolTip" xml:space="preserve">
+    <value>Is the selected player their respawn
+forced?</value>
+  </data>
+  <data name="&gt;&gt;IsRespawnedForcedBox.Name" xml:space="preserve">
+    <value>IsRespawnedForcedBox</value>
+  </data>
+  <data name="&gt;&gt;IsRespawnedForcedBox.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroTextBox, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;IsRespawnedForcedBox.Parent" xml:space="preserve">
+    <value>PlayerInformationPnl</value>
+  </data>
+  <data name="&gt;&gt;IsRespawnedForcedBox.ZOrder" xml:space="preserve">
+    <value>16</value>
+  </data>
+  <data name="IsRespawnedForcedLbl.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="IsRespawnedForcedLbl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 508</value>
+  </data>
+  <data name="IsRespawnedForcedLbl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>135, 19</value>
+  </data>
+  <data name="IsRespawnedForcedLbl.TabIndex" type="System.Int32, mscorlib">
+    <value>62</value>
+  </data>
+  <data name="IsRespawnedForcedLbl.Text" xml:space="preserve">
+    <value>Is Respawned Forced:</value>
+  </data>
+  <data name="&gt;&gt;IsRespawnedForcedLbl.Name" xml:space="preserve">
+    <value>IsRespawnedForcedLbl</value>
+  </data>
+  <data name="&gt;&gt;IsRespawnedForcedLbl.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;IsRespawnedForcedLbl.Parent" xml:space="preserve">
+    <value>PlayerInformationPnl</value>
+  </data>
+  <data name="&gt;&gt;IsRespawnedForcedLbl.ZOrder" xml:space="preserve">
+    <value>17</value>
+  </data>
+  <data name="resource.Image8" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="resource.Location8" type="System.Drawing.Point, System.Drawing">
+    <value>310, 1</value>
+  </data>
+  <data name="resource.Size8" type="System.Drawing.Size, System.Drawing">
+    <value>21, 21</value>
+  </data>
+  <data name="resource.TabIndex8" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="resource.Visible8" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="IsReducedDebugBox.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="IsReducedDebugBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>163, 479</value>
+  </data>
+  <data name="IsReducedDebugBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>332, 23</value>
+  </data>
+  <data name="IsReducedDebugBox.TabIndex" type="System.Int32, mscorlib">
+    <value>61</value>
+  </data>
+  <data name="IsReducedDebugBox.ToolTip" xml:space="preserve">
+    <value>Is the selected player have reduced
+debug info?</value>
+  </data>
+  <data name="&gt;&gt;IsReducedDebugBox.Name" xml:space="preserve">
+    <value>IsReducedDebugBox</value>
+  </data>
+  <data name="&gt;&gt;IsReducedDebugBox.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroTextBox, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;IsReducedDebugBox.Parent" xml:space="preserve">
+    <value>PlayerInformationPnl</value>
+  </data>
+  <data name="&gt;&gt;IsReducedDebugBox.ZOrder" xml:space="preserve">
+    <value>18</value>
+  </data>
+  <data name="IsReducedDebugLbl.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="IsReducedDebugLbl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 479</value>
+  </data>
+  <data name="IsReducedDebugLbl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>144, 19</value>
+  </data>
+  <data name="IsReducedDebugLbl.TabIndex" type="System.Int32, mscorlib">
+    <value>60</value>
+  </data>
+  <data name="IsReducedDebugLbl.Text" xml:space="preserve">
+    <value>Is Reduced Debug Info:</value>
+  </data>
+  <data name="&gt;&gt;IsReducedDebugLbl.Name" xml:space="preserve">
+    <value>IsReducedDebugLbl</value>
+  </data>
+  <data name="&gt;&gt;IsReducedDebugLbl.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;IsReducedDebugLbl.Parent" xml:space="preserve">
+    <value>PlayerInformationPnl</value>
+  </data>
+  <data name="&gt;&gt;IsReducedDebugLbl.ZOrder" xml:space="preserve">
+    <value>19</value>
+  </data>
+  <data name="resource.Image9" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="resource.Location9" type="System.Drawing.Point, System.Drawing">
+    <value>332, 1</value>
+  </data>
+  <data name="resource.Size9" type="System.Drawing.Size, System.Drawing">
+    <value>21, 21</value>
+  </data>
+  <data name="resource.TabIndex9" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="resource.Visible9" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="IsPushedByWaterBox.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="IsPushedByWaterBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>143, 449</value>
+  </data>
+  <data name="IsPushedByWaterBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>354, 23</value>
+  </data>
+  <data name="IsPushedByWaterBox.TabIndex" type="System.Int32, mscorlib">
+    <value>59</value>
+  </data>
+  <data name="IsPushedByWaterBox.ToolTip" xml:space="preserve">
+    <value>Is the selected player currently
+being pushed by water?</value>
+  </data>
+  <data name="&gt;&gt;IsPushedByWaterBox.Name" xml:space="preserve">
+    <value>IsPushedByWaterBox</value>
+  </data>
+  <data name="&gt;&gt;IsPushedByWaterBox.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroTextBox, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;IsPushedByWaterBox.Parent" xml:space="preserve">
+    <value>PlayerInformationPnl</value>
+  </data>
+  <data name="&gt;&gt;IsPushedByWaterBox.ZOrder" xml:space="preserve">
+    <value>20</value>
+  </data>
+  <data name="IsPushedByWaterLbl.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="IsPushedByWaterLbl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 449</value>
+  </data>
+  <data name="IsPushedByWaterLbl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>124, 19</value>
+  </data>
+  <data name="IsPushedByWaterLbl.TabIndex" type="System.Int32, mscorlib">
+    <value>58</value>
+  </data>
+  <data name="IsPushedByWaterLbl.Text" xml:space="preserve">
+    <value>Is Pushed By Water:</value>
+  </data>
+  <data name="&gt;&gt;IsPushedByWaterLbl.Name" xml:space="preserve">
+    <value>IsPushedByWaterLbl</value>
+  </data>
+  <data name="&gt;&gt;IsPushedByWaterLbl.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;IsPushedByWaterLbl.Parent" xml:space="preserve">
+    <value>PlayerInformationPnl</value>
+  </data>
+  <data name="&gt;&gt;IsPushedByWaterLbl.ZOrder" xml:space="preserve">
+    <value>21</value>
+  </data>
+  <data name="resource.Image10" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="resource.Location10" type="System.Drawing.Point, System.Drawing">
+    <value>361, 1</value>
+  </data>
+  <data name="resource.Size10" type="System.Drawing.Size, System.Drawing">
+    <value>21, 21</value>
+  </data>
+  <data name="resource.TabIndex10" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="resource.Visible10" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="IsLocalPlayerBox.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="IsLocalPlayerBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>114, 420</value>
+  </data>
+  <data name="IsLocalPlayerBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>383, 23</value>
+  </data>
+  <data name="IsLocalPlayerBox.TabIndex" type="System.Int32, mscorlib">
+    <value>57</value>
+  </data>
+  <data name="IsLocalPlayerBox.ToolTip" xml:space="preserve">
+    <value>Is the selected player local?</value>
+  </data>
+  <data name="&gt;&gt;IsLocalPlayerBox.Name" xml:space="preserve">
+    <value>IsLocalPlayerBox</value>
+  </data>
+  <data name="&gt;&gt;IsLocalPlayerBox.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroTextBox, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;IsLocalPlayerBox.Parent" xml:space="preserve">
+    <value>PlayerInformationPnl</value>
+  </data>
+  <data name="&gt;&gt;IsLocalPlayerBox.ZOrder" xml:space="preserve">
+    <value>22</value>
+  </data>
+  <data name="IsLocalPlayerLbl.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="IsLocalPlayerLbl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 420</value>
+  </data>
+  <data name="IsLocalPlayerLbl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>95, 19</value>
+  </data>
+  <data name="IsLocalPlayerLbl.TabIndex" type="System.Int32, mscorlib">
+    <value>56</value>
+  </data>
+  <data name="IsLocalPlayerLbl.Text" xml:space="preserve">
+    <value>Is Local Player:</value>
+  </data>
+  <data name="&gt;&gt;IsLocalPlayerLbl.Name" xml:space="preserve">
+    <value>IsLocalPlayerLbl</value>
+  </data>
+  <data name="&gt;&gt;IsLocalPlayerLbl.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;IsLocalPlayerLbl.Parent" xml:space="preserve">
+    <value>PlayerInformationPnl</value>
+  </data>
+  <data name="&gt;&gt;IsLocalPlayerLbl.ZOrder" xml:space="preserve">
+    <value>23</value>
+  </data>
+  <data name="resource.Image11" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="resource.Location11" type="System.Drawing.Point, System.Drawing">
+    <value>393, 1</value>
+  </data>
+  <data name="resource.Size11" type="System.Drawing.Size, System.Drawing">
+    <value>21, 21</value>
+  </data>
+  <data name="resource.TabIndex11" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="resource.Visible11" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="IsInWallBox.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="IsInWallBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>82, 391</value>
+  </data>
+  <data name="IsInWallBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>415, 23</value>
+  </data>
+  <data name="IsInWallBox.TabIndex" type="System.Int32, mscorlib">
+    <value>55</value>
+  </data>
+  <data name="IsInWallBox.ToolTip" xml:space="preserve">
+    <value>Is the selected player currently inside 
+of a wall?</value>
+  </data>
+  <data name="&gt;&gt;IsInWallBox.Name" xml:space="preserve">
+    <value>IsInWallBox</value>
+  </data>
+  <data name="&gt;&gt;IsInWallBox.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroTextBox, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;IsInWallBox.Parent" xml:space="preserve">
+    <value>PlayerInformationPnl</value>
+  </data>
+  <data name="&gt;&gt;IsInWallBox.ZOrder" xml:space="preserve">
+    <value>24</value>
+  </data>
+  <data name="IsInWallLbl.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="IsInWallLbl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 391</value>
+  </data>
+  <data name="IsInWallLbl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>63, 19</value>
+  </data>
+  <data name="IsInWallLbl.TabIndex" type="System.Int32, mscorlib">
+    <value>54</value>
+  </data>
+  <data name="IsInWallLbl.Text" xml:space="preserve">
+    <value>Is In Wall:</value>
+  </data>
+  <data name="&gt;&gt;IsInWallLbl.Name" xml:space="preserve">
+    <value>IsInWallLbl</value>
+  </data>
+  <data name="&gt;&gt;IsInWallLbl.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;IsInWallLbl.Parent" xml:space="preserve">
+    <value>PlayerInformationPnl</value>
+  </data>
+  <data name="&gt;&gt;IsInWallLbl.ZOrder" xml:space="preserve">
+    <value>25</value>
+  </data>
+  <data name="resource.Image12" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="resource.Location12" type="System.Drawing.Point, System.Drawing">
+    <value>376, 1</value>
+  </data>
+  <data name="resource.Size12" type="System.Drawing.Size, System.Drawing">
+    <value>21, 21</value>
+  </data>
+  <data name="resource.TabIndex12" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="resource.Visible12" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="IsImmobileBox.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="IsImmobileBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>99, 362</value>
+  </data>
+  <data name="IsImmobileBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>398, 23</value>
+  </data>
+  <data name="IsImmobileBox.TabIndex" type="System.Int32, mscorlib">
+    <value>53</value>
+  </data>
+  <data name="IsImmobileBox.ToolTip" xml:space="preserve">
+    <value>Is the selected player currently Immobile?</value>
+  </data>
+  <data name="&gt;&gt;IsImmobileBox.Name" xml:space="preserve">
+    <value>IsImmobileBox</value>
+  </data>
+  <data name="&gt;&gt;IsImmobileBox.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroTextBox, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;IsImmobileBox.Parent" xml:space="preserve">
+    <value>PlayerInformationPnl</value>
+  </data>
+  <data name="&gt;&gt;IsImmobileBox.ZOrder" xml:space="preserve">
+    <value>26</value>
+  </data>
+  <data name="IsImmobileLbl.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="IsImmobileLbl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 362</value>
+  </data>
+  <data name="IsImmobileLbl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>80, 19</value>
+  </data>
+  <data name="IsImmobileLbl.TabIndex" type="System.Int32, mscorlib">
+    <value>52</value>
+  </data>
+  <data name="IsImmobileLbl.Text" xml:space="preserve">
+    <value>Is Immobile:</value>
+  </data>
+  <data name="&gt;&gt;IsImmobileLbl.Name" xml:space="preserve">
+    <value>IsImmobileLbl</value>
+  </data>
+  <data name="&gt;&gt;IsImmobileLbl.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;IsImmobileLbl.Parent" xml:space="preserve">
+    <value>PlayerInformationPnl</value>
+  </data>
+  <data name="&gt;&gt;IsImmobileLbl.ZOrder" xml:space="preserve">
+    <value>27</value>
+  </data>
+  <data name="resource.Image13" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="resource.Location13" type="System.Drawing.Point, System.Drawing">
+    <value>406, 1</value>
+  </data>
+  <data name="resource.Size13" type="System.Drawing.Size, System.Drawing">
+    <value>21, 21</value>
+  </data>
+  <data name="resource.TabIndex13" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="resource.Visible13" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="IsHurtBox.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="IsHurtBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>69, 333</value>
+  </data>
+  <data name="IsHurtBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>428, 23</value>
+  </data>
+  <data name="IsHurtBox.TabIndex" type="System.Int32, mscorlib">
+    <value>51</value>
+  </data>
+  <data name="IsHurtBox.ToolTip" xml:space="preserve">
+    <value>Is the selected player currently hurt?</value>
+  </data>
+  <data name="&gt;&gt;IsHurtBox.Name" xml:space="preserve">
+    <value>IsHurtBox</value>
+  </data>
+  <data name="&gt;&gt;IsHurtBox.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroTextBox, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;IsHurtBox.Parent" xml:space="preserve">
+    <value>PlayerInformationPnl</value>
+  </data>
+  <data name="&gt;&gt;IsHurtBox.ZOrder" xml:space="preserve">
+    <value>28</value>
+  </data>
+  <data name="IsHurtLbl.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="IsHurtLbl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 333</value>
+  </data>
+  <data name="IsHurtLbl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>50, 19</value>
+  </data>
+  <data name="IsHurtLbl.TabIndex" type="System.Int32, mscorlib">
+    <value>50</value>
+  </data>
+  <data name="IsHurtLbl.Text" xml:space="preserve">
+    <value>Is Hurt:</value>
+  </data>
+  <data name="&gt;&gt;IsHurtLbl.Name" xml:space="preserve">
+    <value>IsHurtLbl</value>
+  </data>
+  <data name="&gt;&gt;IsHurtLbl.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;IsHurtLbl.Parent" xml:space="preserve">
+    <value>PlayerInformationPnl</value>
+  </data>
+  <data name="&gt;&gt;IsHurtLbl.ZOrder" xml:space="preserve">
+    <value>29</value>
+  </data>
+  <data name="resource.Image14" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="resource.Location14" type="System.Drawing.Point, System.Drawing">
+    <value>346, 1</value>
+  </data>
+  <data name="resource.Size14" type="System.Drawing.Size, System.Drawing">
+    <value>21, 21</value>
+  </data>
+  <data name="resource.TabIndex14" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="resource.Visible14" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="IsCreativeFlyingBox.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="IsCreativeFlyingBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>129, 304</value>
+  </data>
+  <data name="IsCreativeFlyingBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>368, 23</value>
+  </data>
+  <data name="IsCreativeFlyingBox.TabIndex" type="System.Int32, mscorlib">
+    <value>49</value>
+  </data>
+  <data name="IsCreativeFlyingBox.ToolTip" xml:space="preserve">
+    <value>Is the selected player currently flying?</value>
+  </data>
+  <data name="&gt;&gt;IsCreativeFlyingBox.Name" xml:space="preserve">
+    <value>IsCreativeFlyingBox</value>
+  </data>
+  <data name="&gt;&gt;IsCreativeFlyingBox.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroTextBox, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;IsCreativeFlyingBox.Parent" xml:space="preserve">
+    <value>PlayerInformationPnl</value>
+  </data>
+  <data name="&gt;&gt;IsCreativeFlyingBox.ZOrder" xml:space="preserve">
+    <value>30</value>
+  </data>
+  <data name="IsCreativeFlyingLbl.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="IsCreativeFlyingLbl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 304</value>
+  </data>
+  <data name="IsCreativeFlyingLbl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>110, 19</value>
+  </data>
+  <data name="IsCreativeFlyingLbl.TabIndex" type="System.Int32, mscorlib">
+    <value>48</value>
+  </data>
+  <data name="IsCreativeFlyingLbl.Text" xml:space="preserve">
+    <value>Is Creative Flying:</value>
+  </data>
+  <data name="&gt;&gt;IsCreativeFlyingLbl.Name" xml:space="preserve">
+    <value>IsCreativeFlyingLbl</value>
+  </data>
+  <data name="&gt;&gt;IsCreativeFlyingLbl.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;IsCreativeFlyingLbl.Parent" xml:space="preserve">
+    <value>PlayerInformationPnl</value>
+  </data>
+  <data name="&gt;&gt;IsCreativeFlyingLbl.ZOrder" xml:space="preserve">
+    <value>31</value>
+  </data>
+  <data name="resource.Image15" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="resource.Location15" type="System.Drawing.Point, System.Drawing">
+    <value>314, 1</value>
+  </data>
+  <data name="resource.Size15" type="System.Drawing.Size, System.Drawing">
+    <value>21, 21</value>
+  </data>
+  <data name="resource.TabIndex15" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="resource.Visible15" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="IsXpDropperBox.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="IsXpDropperBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>161, 275</value>
+  </data>
+  <data name="IsXpDropperBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>336, 23</value>
+  </data>
+  <data name="IsXpDropperBox.TabIndex" type="System.Int32, mscorlib">
+    <value>47</value>
+  </data>
+  <data name="IsXpDropperBox.ToolTip" xml:space="preserve">
+    <value>Is the selected player an experience dropper?</value>
+  </data>
+  <data name="&gt;&gt;IsXpDropperBox.Name" xml:space="preserve">
+    <value>IsXpDropperBox</value>
+  </data>
+  <data name="&gt;&gt;IsXpDropperBox.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroTextBox, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;IsXpDropperBox.Parent" xml:space="preserve">
+    <value>PlayerInformationPnl</value>
+  </data>
+  <data name="&gt;&gt;IsXpDropperBox.ZOrder" xml:space="preserve">
+    <value>32</value>
+  </data>
+  <data name="IsXpDropperLbl.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="IsXpDropperLbl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 275</value>
+  </data>
+  <data name="IsXpDropperLbl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>142, 19</value>
+  </data>
+  <data name="IsXpDropperLbl.TabIndex" type="System.Int32, mscorlib">
+    <value>46</value>
+  </data>
+  <data name="IsXpDropperLbl.Text" xml:space="preserve">
+    <value>Is Experience Dropper:</value>
+  </data>
+  <data name="&gt;&gt;IsXpDropperLbl.Name" xml:space="preserve">
+    <value>IsXpDropperLbl</value>
+  </data>
+  <data name="&gt;&gt;IsXpDropperLbl.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;IsXpDropperLbl.Parent" xml:space="preserve">
+    <value>PlayerInformationPnl</value>
+  </data>
+  <data name="&gt;&gt;IsXpDropperLbl.ZOrder" xml:space="preserve">
+    <value>33</value>
+  </data>
+  <data name="resource.Image16" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="resource.Location16" type="System.Drawing.Point, System.Drawing">
+    <value>388, 1</value>
+  </data>
+  <data name="resource.Size16" type="System.Drawing.Size, System.Drawing">
+    <value>21, 21</value>
+  </data>
+  <data name="resource.TabIndex16" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="resource.Visible16" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="CanMineBox.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="CanMineBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>87, 217</value>
+  </data>
+  <data name="CanMineBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>410, 23</value>
+  </data>
+  <data name="CanMineBox.TabIndex" type="System.Int32, mscorlib">
+    <value>45</value>
+  </data>
+  <data name="CanMineBox.ToolTip" xml:space="preserve">
+    <value>Is the selected player allowed to
+mine?</value>
+  </data>
+  <data name="&gt;&gt;CanMineBox.Name" xml:space="preserve">
+    <value>CanMineBox</value>
+  </data>
+  <data name="&gt;&gt;CanMineBox.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroTextBox, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;CanMineBox.Parent" xml:space="preserve">
+    <value>PlayerInformationPnl</value>
+  </data>
+  <data name="&gt;&gt;CanMineBox.ZOrder" xml:space="preserve">
+    <value>34</value>
+  </data>
+  <data name="CanMineLbl.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="CanMineLbl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 217</value>
+  </data>
+  <data name="CanMineLbl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>68, 19</value>
+  </data>
+  <data name="CanMineLbl.TabIndex" type="System.Int32, mscorlib">
+    <value>44</value>
+  </data>
+  <data name="CanMineLbl.Text" xml:space="preserve">
+    <value>Can Mine:</value>
+  </data>
+  <data name="&gt;&gt;CanMineLbl.Name" xml:space="preserve">
+    <value>CanMineLbl</value>
+  </data>
+  <data name="&gt;&gt;CanMineLbl.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;CanMineLbl.Parent" xml:space="preserve">
+    <value>PlayerInformationPnl</value>
+  </data>
+  <data name="&gt;&gt;CanMineLbl.ZOrder" xml:space="preserve">
+    <value>35</value>
+  </data>
+  <data name="resource.Image17" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="resource.Location17" type="System.Drawing.Point, System.Drawing">
+    <value>314, 1</value>
+  </data>
+  <data name="resource.Size17" type="System.Drawing.Size, System.Drawing">
+    <value>21, 21</value>
+  </data>
+  <data name="resource.TabIndex17" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="resource.Visible17" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="CanIgnoreExhaustionBox.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="CanIgnoreExhaustionBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>161, 188</value>
+  </data>
+  <data name="CanIgnoreExhaustionBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>336, 23</value>
+  </data>
+  <data name="CanIgnoreExhaustionBox.TabIndex" type="System.Int32, mscorlib">
+    <value>43</value>
+  </data>
+  <data name="CanIgnoreExhaustionBox.ToolTip" xml:space="preserve">
+    <value>Is the selected player allowed to 
+ignore exhaustion?</value>
+  </data>
+  <data name="&gt;&gt;CanIgnoreExhaustionBox.Name" xml:space="preserve">
+    <value>CanIgnoreExhaustionBox</value>
+  </data>
+  <data name="&gt;&gt;CanIgnoreExhaustionBox.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroTextBox, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;CanIgnoreExhaustionBox.Parent" xml:space="preserve">
+    <value>PlayerInformationPnl</value>
+  </data>
+  <data name="&gt;&gt;CanIgnoreExhaustionBox.ZOrder" xml:space="preserve">
+    <value>36</value>
+  </data>
+  <data name="CanIgnoreExhaustionLbl.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="CanIgnoreExhaustionLbl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 188</value>
+  </data>
+  <data name="CanIgnoreExhaustionLbl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>142, 19</value>
+  </data>
+  <data name="CanIgnoreExhaustionLbl.TabIndex" type="System.Int32, mscorlib">
+    <value>42</value>
+  </data>
+  <data name="CanIgnoreExhaustionLbl.Text" xml:space="preserve">
+    <value>Can Ignore Exhaustion:</value>
+  </data>
+  <data name="&gt;&gt;CanIgnoreExhaustionLbl.Name" xml:space="preserve">
+    <value>CanIgnoreExhaustionLbl</value>
+  </data>
+  <data name="&gt;&gt;CanIgnoreExhaustionLbl.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;CanIgnoreExhaustionLbl.Parent" xml:space="preserve">
+    <value>PlayerInformationPnl</value>
+  </data>
+  <data name="&gt;&gt;CanIgnoreExhaustionLbl.ZOrder" xml:space="preserve">
+    <value>37</value>
+  </data>
+  <data name="resource.Image18" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="resource.Location18" type="System.Drawing.Point, System.Drawing">
+    <value>401, 1</value>
+  </data>
+  <data name="resource.Size18" type="System.Drawing.Size, System.Drawing">
+    <value>21, 21</value>
+  </data>
+  <data name="resource.TabIndex18" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="resource.Visible18" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="CanFlyBox.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="CanFlyBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>74, 159</value>
+  </data>
+  <data name="CanFlyBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>423, 23</value>
+  </data>
+  <data name="CanFlyBox.TabIndex" type="System.Int32, mscorlib">
+    <value>41</value>
+  </data>
+  <data name="CanFlyBox.ToolTip" xml:space="preserve">
+    <value>Is the selected player allowed to Fly?</value>
+  </data>
+  <data name="&gt;&gt;CanFlyBox.Name" xml:space="preserve">
+    <value>CanFlyBox</value>
+  </data>
+  <data name="&gt;&gt;CanFlyBox.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroTextBox, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;CanFlyBox.Parent" xml:space="preserve">
+    <value>PlayerInformationPnl</value>
+  </data>
+  <data name="&gt;&gt;CanFlyBox.ZOrder" xml:space="preserve">
+    <value>38</value>
+  </data>
+  <data name="CanFlyLbl.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="CanFlyLbl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 159</value>
+  </data>
+  <data name="CanFlyLbl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>55, 19</value>
+  </data>
+  <data name="CanFlyLbl.TabIndex" type="System.Int32, mscorlib">
+    <value>40</value>
+  </data>
+  <data name="CanFlyLbl.Text" xml:space="preserve">
+    <value>Can Fly:</value>
+  </data>
+  <data name="&gt;&gt;CanFlyLbl.Name" xml:space="preserve">
+    <value>CanFlyLbl</value>
+  </data>
+  <data name="&gt;&gt;CanFlyLbl.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;CanFlyLbl.Parent" xml:space="preserve">
+    <value>PlayerInformationPnl</value>
+  </data>
+  <data name="&gt;&gt;CanFlyLbl.ZOrder" xml:space="preserve">
+    <value>39</value>
+  </data>
+  <data name="resource.Image19" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="resource.Location19" type="System.Drawing.Point, System.Drawing">
+    <value>339, 1</value>
+  </data>
+  <data name="resource.Size19" type="System.Drawing.Size, System.Drawing">
+    <value>21, 21</value>
+  </data>
+  <data name="resource.TabIndex19" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="resource.Visible19" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="CanHarmPlayersBox.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="CanHarmPlayersBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>136, 130</value>
+  </data>
+  <data name="CanHarmPlayersBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>361, 23</value>
+  </data>
+  <data name="CanHarmPlayersBox.TabIndex" type="System.Int32, mscorlib">
+    <value>39</value>
+  </data>
+  <data name="CanHarmPlayersBox.ToolTip" xml:space="preserve">
+    <value>Is the selected player allowed to harm players?</value>
+  </data>
+  <data name="&gt;&gt;CanHarmPlayersBox.Name" xml:space="preserve">
+    <value>CanHarmPlayersBox</value>
+  </data>
+  <data name="&gt;&gt;CanHarmPlayersBox.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroTextBox, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;CanHarmPlayersBox.Parent" xml:space="preserve">
+    <value>PlayerInformationPnl</value>
+  </data>
+  <data name="&gt;&gt;CanHarmPlayersBox.ZOrder" xml:space="preserve">
+    <value>40</value>
+  </data>
+  <data name="CanHarmPlayersLbl.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="CanHarmPlayersLbl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 130</value>
+  </data>
+  <data name="CanHarmPlayersLbl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>117, 19</value>
+  </data>
+  <data name="CanHarmPlayersLbl.TabIndex" type="System.Int32, mscorlib">
+    <value>38</value>
+  </data>
+  <data name="CanHarmPlayersLbl.Text" xml:space="preserve">
+    <value>Can Harm Players:</value>
+  </data>
+  <data name="&gt;&gt;CanHarmPlayersLbl.Name" xml:space="preserve">
+    <value>CanHarmPlayersLbl</value>
+  </data>
+  <data name="&gt;&gt;CanHarmPlayersLbl.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;CanHarmPlayersLbl.Parent" xml:space="preserve">
+    <value>PlayerInformationPnl</value>
+  </data>
+  <data name="&gt;&gt;CanHarmPlayersLbl.ZOrder" xml:space="preserve">
+    <value>41</value>
+  </data>
+  <data name="resource.Image20" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="resource.Location20" type="System.Drawing.Point, System.Drawing">
+    <value>334, 1</value>
+  </data>
+  <data name="resource.Size20" type="System.Drawing.Size, System.Drawing">
+    <value>21, 21</value>
+  </data>
+  <data name="resource.TabIndex20" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="resource.Visible20" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="CanHarmAnimalsBox.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="CanHarmAnimalsBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>141, 101</value>
+  </data>
+  <data name="CanHarmAnimalsBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>356, 23</value>
+  </data>
+  <data name="CanHarmAnimalsBox.TabIndex" type="System.Int32, mscorlib">
+    <value>37</value>
+  </data>
+  <data name="CanHarmAnimalsBox.ToolTip" xml:space="preserve">
+    <value>Is the selected player allowed to harm
+animals?</value>
+  </data>
+  <data name="&gt;&gt;CanHarmAnimalsBox.Name" xml:space="preserve">
+    <value>CanHarmAnimalsBox</value>
+  </data>
+  <data name="&gt;&gt;CanHarmAnimalsBox.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroTextBox, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;CanHarmAnimalsBox.Parent" xml:space="preserve">
+    <value>PlayerInformationPnl</value>
+  </data>
+  <data name="&gt;&gt;CanHarmAnimalsBox.ZOrder" xml:space="preserve">
+    <value>42</value>
+  </data>
+  <data name="CanHarmAnimalsLbl.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="CanHarmAnimalsLbl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 101</value>
+  </data>
+  <data name="CanHarmAnimalsLbl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>122, 19</value>
+  </data>
+  <data name="CanHarmAnimalsLbl.TabIndex" type="System.Int32, mscorlib">
+    <value>36</value>
+  </data>
+  <data name="CanHarmAnimalsLbl.Text" xml:space="preserve">
+    <value>Can Harm Animals:</value>
+  </data>
+  <data name="&gt;&gt;CanHarmAnimalsLbl.Name" xml:space="preserve">
+    <value>CanHarmAnimalsLbl</value>
+  </data>
+  <data name="&gt;&gt;CanHarmAnimalsLbl.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;CanHarmAnimalsLbl.Parent" xml:space="preserve">
+    <value>PlayerInformationPnl</value>
+  </data>
+  <data name="&gt;&gt;CanHarmAnimalsLbl.ZOrder" xml:space="preserve">
+    <value>43</value>
+  </data>
+  <data name="resource.Image21" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="resource.Location21" type="System.Drawing.Point, System.Drawing">
+    <value>320, 1</value>
+  </data>
+  <data name="resource.Size21" type="System.Drawing.Size, System.Drawing">
+    <value>21, 21</value>
+  </data>
+  <data name="resource.TabIndex21" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="resource.Visible21" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="InvulnerablePrivilegeBox.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="InvulnerablePrivilegeBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>155, 72</value>
+  </data>
+  <data name="InvulnerablePrivilegeBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>342, 23</value>
+  </data>
+  <data name="InvulnerablePrivilegeBox.TabIndex" type="System.Int32, mscorlib">
+    <value>35</value>
+  </data>
+  <data name="InvulnerablePrivilegeBox.ToolTip" xml:space="preserve">
+    <value>Does the selected player have the
+Invulnerable privilege?</value>
+  </data>
+  <data name="&gt;&gt;InvulnerablePrivilegeBox.Name" xml:space="preserve">
+    <value>InvulnerablePrivilegeBox</value>
+  </data>
+  <data name="&gt;&gt;InvulnerablePrivilegeBox.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroTextBox, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;InvulnerablePrivilegeBox.Parent" xml:space="preserve">
+    <value>PlayerInformationPnl</value>
+  </data>
+  <data name="&gt;&gt;InvulnerablePrivilegeBox.ZOrder" xml:space="preserve">
+    <value>44</value>
+  </data>
+  <data name="ArmorCoverLbl.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="ArmorCoverLbl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 72</value>
+  </data>
+  <data name="ArmorCoverLbl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>136, 19</value>
+  </data>
+  <data name="ArmorCoverLbl.TabIndex" type="System.Int32, mscorlib">
+    <value>34</value>
+  </data>
+  <data name="ArmorCoverLbl.Text" xml:space="preserve">
+    <value>Invulnerable Privilege:</value>
+  </data>
+  <data name="&gt;&gt;ArmorCoverLbl.Name" xml:space="preserve">
+    <value>ArmorCoverLbl</value>
+  </data>
+  <data name="&gt;&gt;ArmorCoverLbl.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;ArmorCoverLbl.Parent" xml:space="preserve">
+    <value>PlayerInformationPnl</value>
+  </data>
+  <data name="&gt;&gt;ArmorCoverLbl.ZOrder" xml:space="preserve">
+    <value>45</value>
+  </data>
+  <data name="resource.Image22" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="resource.Location22" type="System.Drawing.Point, System.Drawing">
+    <value>342, 1</value>
+  </data>
+  <data name="resource.Size22" type="System.Drawing.Size, System.Drawing">
+    <value>21, 21</value>
+  </data>
+  <data name="resource.TabIndex22" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="resource.Visible22" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="InvisiblePrivilegeBox.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="InvisiblePrivilegeBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>133, 43</value>
+  </data>
+  <data name="InvisiblePrivilegeBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>364, 23</value>
+  </data>
+  <data name="InvisiblePrivilegeBox.TabIndex" type="System.Int32, mscorlib">
+    <value>33</value>
+  </data>
+  <data name="InvisiblePrivilegeBox.ToolTip" xml:space="preserve">
+    <value>Does the selected player have the
+Invisible privilege?</value>
+  </data>
+  <data name="&gt;&gt;InvisiblePrivilegeBox.Name" xml:space="preserve">
+    <value>InvisiblePrivilegeBox</value>
+  </data>
+  <data name="&gt;&gt;InvisiblePrivilegeBox.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroTextBox, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;InvisiblePrivilegeBox.Parent" xml:space="preserve">
+    <value>PlayerInformationPnl</value>
+  </data>
+  <data name="&gt;&gt;InvisiblePrivilegeBox.ZOrder" xml:space="preserve">
+    <value>46</value>
+  </data>
+  <data name="InvisiblePrivilegeLbl.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="InvisiblePrivilegeLbl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 43</value>
+  </data>
+  <data name="InvisiblePrivilegeLbl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>111, 19</value>
+  </data>
+  <data name="InvisiblePrivilegeLbl.TabIndex" type="System.Int32, mscorlib">
+    <value>32</value>
+  </data>
+  <data name="InvisiblePrivilegeLbl.Text" xml:space="preserve">
+    <value>Invisible Privilege:</value>
+  </data>
+  <data name="&gt;&gt;InvisiblePrivilegeLbl.Name" xml:space="preserve">
+    <value>InvisiblePrivilegeLbl</value>
+  </data>
+  <data name="&gt;&gt;InvisiblePrivilegeLbl.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;InvisiblePrivilegeLbl.Parent" xml:space="preserve">
+    <value>PlayerInformationPnl</value>
+  </data>
+  <data name="&gt;&gt;InvisiblePrivilegeLbl.ZOrder" xml:space="preserve">
+    <value>47</value>
+  </data>
+  <data name="PlayerInformationPnl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 455</value>
+  </data>
+  <data name="PlayerInformationPnl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>519, 462</value>
+  </data>
+  <data name="PlayerInformationPnl.TabIndex" type="System.Int32, mscorlib">
+    <value>28</value>
+  </data>
+  <data name="&gt;&gt;PlayerInformationPnl.Name" xml:space="preserve">
+    <value>PlayerInformationPnl</value>
+  </data>
+  <data name="&gt;&gt;PlayerInformationPnl.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroPanel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;PlayerInformationPnl.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;PlayerInformationPnl.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="XpLevelSlider.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <metadata name="StyleExt.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>240, 17</value>
+  </metadata>
+  <data name="XpLevelSlider.Location" type="System.Drawing.Point, System.Drawing">
+    <value>108, 325</value>
+  </data>
+  <data name="XpLevelSlider.Size" type="System.Drawing.Size, System.Drawing">
+    <value>434, 20</value>
+  </data>
+  <data name="XpLevelSlider.TabIndex" type="System.Int32, mscorlib">
+    <value>27</value>
+  </data>
+  <data name="XpLevelSlider.ToolTip" xml:space="preserve">
+    <value>What Level should we be?
+Note: Affects newest player in splitscreen</value>
+  </data>
+  <data name="&gt;&gt;XpLevelSlider.Name" xml:space="preserve">
+    <value>XpLevelSlider</value>
+  </data>
+  <data name="&gt;&gt;XpLevelSlider.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;XpLevelSlider.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;XpLevelSlider.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="xpLbl.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="xpLbl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 320</value>
+  </data>
+  <data name="xpLbl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>79, 25</value>
+  </data>
+  <data name="xpLbl.TabIndex" type="System.Int32, mscorlib">
+    <value>26</value>
+  </data>
+  <data name="xpLbl.Text" xml:space="preserve">
+    <value>XP Level:</value>
+  </data>
+  <data name="&gt;&gt;xpLbl.Name" xml:space="preserve">
+    <value>xpLbl</value>
+  </data>
+  <data name="&gt;&gt;xpLbl.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;xpLbl.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;xpLbl.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="DeleteSkinBtn.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="DeleteSkinBtn.Location" type="System.Drawing.Point, System.Drawing">
+    <value>362, 225</value>
+  </data>
+  <data name="DeleteSkinBtn.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 23</value>
+  </data>
+  <data name="DeleteSkinBtn.TabIndex" type="System.Int32, mscorlib">
+    <value>25</value>
+  </data>
+  <data name="DeleteSkinBtn.Text" xml:space="preserve">
+    <value>Delete from List</value>
+  </data>
+  <data name="DeleteSkinBtn.ToolTip" xml:space="preserve">
+    <value>Deletes the skin from the list</value>
+  </data>
+  <data name="&gt;&gt;DeleteSkinBtn.Name" xml:space="preserve">
+    <value>DeleteSkinBtn</value>
+  </data>
+  <data name="&gt;&gt;DeleteSkinBtn.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroButton, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;DeleteSkinBtn.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;DeleteSkinBtn.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="LoopSkins.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LoopSkins.Location" type="System.Drawing.Point, System.Drawing">
+    <value>176, 254</value>
+  </data>
+  <data name="LoopSkins.Size" type="System.Drawing.Size, System.Drawing">
+    <value>80, 15</value>
+  </data>
+  <data name="LoopSkins.TabIndex" type="System.Int32, mscorlib">
+    <value>24</value>
+  </data>
+  <data name="LoopSkins.Text" xml:space="preserve">
+    <value>Loop Skins</value>
+  </data>
+  <data name="LoopSkins.ToolTip" xml:space="preserve">
+    <value>Loops between the saved skins every half a second</value>
+  </data>
+  <data name="&gt;&gt;LoopSkins.Name" xml:space="preserve">
+    <value>LoopSkins</value>
+  </data>
+  <data name="&gt;&gt;LoopSkins.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroCheckBox, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;LoopSkins.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;LoopSkins.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="GetSkinIDBtn.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="GetSkinIDBtn.Location" type="System.Drawing.Point, System.Drawing">
+    <value>442, 168</value>
+  </data>
+  <data name="GetSkinIDBtn.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 23</value>
+  </data>
+  <data name="GetSkinIDBtn.TabIndex" type="System.Int32, mscorlib">
+    <value>23</value>
+  </data>
+  <data name="GetSkinIDBtn.Text" xml:space="preserve">
+    <value>Get</value>
+  </data>
+  <data name="GetSkinIDBtn.ToolTip" xml:space="preserve">
+    <value>Gets the currently equipped Skin's ID</value>
+  </data>
+  <data name="&gt;&gt;GetSkinIDBtn.Name" xml:space="preserve">
+    <value>GetSkinIDBtn</value>
+  </data>
+  <data name="&gt;&gt;GetSkinIDBtn.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroButton, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;GetSkinIDBtn.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;GetSkinIDBtn.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="SkinNameLbl.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="SkinNameLbl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>72, 194</value>
+  </data>
+  <data name="SkinNameLbl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>98, 25</value>
+  </data>
+  <data name="SkinNameLbl.TabIndex" type="System.Int32, mscorlib">
+    <value>22</value>
+  </data>
+  <data name="SkinNameLbl.Text" xml:space="preserve">
+    <value>Skin Name:</value>
+  </data>
+  <data name="&gt;&gt;SkinNameLbl.Name" xml:space="preserve">
+    <value>SkinNameLbl</value>
+  </data>
+  <data name="&gt;&gt;SkinNameLbl.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;SkinNameLbl.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;SkinNameLbl.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="SkinNameBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="resource.Image23" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="resource.Location23" type="System.Drawing.Point, System.Drawing">
+    <value>344, 1</value>
+  </data>
+  <data name="resource.Size23" type="System.Drawing.Size, System.Drawing">
+    <value>21, 21</value>
+  </data>
+  <data name="resource.TabIndex23" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="resource.Visible23" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="SkinNameBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>176, 196</value>
+  </data>
+  <data name="SkinNameBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>366, 23</value>
+  </data>
+  <data name="SkinNameBox.TabIndex" type="System.Int32, mscorlib">
+    <value>21</value>
+  </data>
+  <data name="SkinNameBox.ToolTip" xml:space="preserve">
+    <value>The name of the skin you wanna save</value>
+  </data>
+  <data name="&gt;&gt;SkinNameBox.Name" xml:space="preserve">
+    <value>SkinNameBox</value>
+  </data>
+  <data name="&gt;&gt;SkinNameBox.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroTextBox, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;SkinNameBox.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;SkinNameBox.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="SkinList.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="SkinList.ItemHeight" type="System.Int32, mscorlib">
+    <value>23</value>
+  </data>
+  <data name="SkinList.Location" type="System.Drawing.Point, System.Drawing">
+    <value>72, 133</value>
+  </data>
+  <data name="SkinList.MaxDropDownItems" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="SkinList.Size" type="System.Drawing.Size, System.Drawing">
+    <value>470, 29</value>
+  </data>
+  <data name="SkinList.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="SkinList.ToolTip" xml:space="preserve">
+    <value>Your saved skins</value>
+  </data>
+  <data name="&gt;&gt;SkinList.Name" xml:space="preserve">
+    <value>SkinList</value>
+  </data>
+  <data name="&gt;&gt;SkinList.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroComboBox, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;SkinList.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;SkinList.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="SkinLbl.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="SkinLbl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>19, 133</value>
+  </data>
+  <data name="SkinLbl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>47, 25</value>
+  </data>
+  <data name="SkinLbl.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="SkinLbl.Text" xml:space="preserve">
+    <value>Skin:</value>
+  </data>
+  <data name="&gt;&gt;SkinLbl.Name" xml:space="preserve">
+    <value>SkinLbl</value>
+  </data>
+  <data name="&gt;&gt;SkinLbl.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;SkinLbl.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;SkinLbl.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="SkinIDBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="SkinIDBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>146, 170</value>
+  </data>
+  <data name="SkinIDBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>290, 20</value>
+  </data>
+  <data name="SkinIDBox.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="SkinIDBox.ToolTip" xml:space="preserve">
+    <value>The ID of the skin you want to apply</value>
+  </data>
+  <data name="&gt;&gt;SkinIDBox.Name" xml:space="preserve">
+    <value>SkinIDBox</value>
+  </data>
+  <data name="&gt;&gt;SkinIDBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SkinIDBox.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;SkinIDBox.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="AddSkinBtn.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="AddSkinBtn.Location" type="System.Drawing.Point, System.Drawing">
+    <value>176, 225</value>
+  </data>
+  <data name="AddSkinBtn.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 23</value>
+  </data>
+  <data name="AddSkinBtn.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="AddSkinBtn.Text" xml:space="preserve">
+    <value>Add to List</value>
+  </data>
+  <data name="AddSkinBtn.ToolTip" xml:space="preserve">
+    <value>Adds and saves the skin to the Skin List</value>
+  </data>
+  <data name="&gt;&gt;AddSkinBtn.Name" xml:space="preserve">
+    <value>AddSkinBtn</value>
+  </data>
+  <data name="&gt;&gt;AddSkinBtn.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroButton, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;AddSkinBtn.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;AddSkinBtn.ZOrder" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <data name="SkinIDLbl.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="SkinIDLbl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>72, 166</value>
+  </data>
+  <data name="SkinIDLbl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>68, 25</value>
+  </data>
+  <data name="SkinIDLbl.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="SkinIDLbl.Text" xml:space="preserve">
+    <value>Skin ID:</value>
+  </data>
+  <data name="&gt;&gt;SkinIDLbl.Name" xml:space="preserve">
+    <value>SkinIDLbl</value>
+  </data>
+  <data name="&gt;&gt;SkinIDLbl.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;SkinIDLbl.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;SkinIDLbl.ZOrder" xml:space="preserve">
+    <value>16</value>
+  </data>
+  <data name="CapeBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="CapeBox.ItemHeight" type="System.Int32, mscorlib">
+    <value>23</value>
+  </data>
+  <data name="CapeBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>80, 280</value>
+  </data>
+  <data name="CapeBox.MaxDropDownItems" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="CapeBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>462, 29</value>
+  </data>
+  <data name="CapeBox.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="CapeBox.ToolTip" xml:space="preserve">
+    <value>What cape should we have equipped?</value>
+  </data>
+  <data name="&gt;&gt;CapeBox.Name" xml:space="preserve">
+    <value>CapeBox</value>
+  </data>
+  <data name="&gt;&gt;CapeBox.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroComboBox, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;CapeBox.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;CapeBox.ZOrder" xml:space="preserve">
+    <value>17</value>
+  </data>
+  <data name="capeLbl.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="capeLbl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>19, 280</value>
+  </data>
+  <data name="capeLbl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>55, 25</value>
+  </data>
+  <data name="capeLbl.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="capeLbl.Text" xml:space="preserve">
+    <value>Cape:</value>
+  </data>
+  <data name="&gt;&gt;capeLbl.Name" xml:space="preserve">
+    <value>capeLbl</value>
+  </data>
+  <data name="&gt;&gt;capeLbl.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;capeLbl.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;capeLbl.ZOrder" xml:space="preserve">
+    <value>18</value>
+  </data>
+  <data name="SwapOffhandBtn.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="SwapOffhandBtn.Location" type="System.Drawing.Point, System.Drawing">
+    <value>291, 380</value>
+  </data>
+  <data name="SwapOffhandBtn.Size" type="System.Drawing.Size, System.Drawing">
+    <value>251, 23</value>
+  </data>
+  <data name="SwapOffhandBtn.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="SwapOffhandBtn.Text" xml:space="preserve">
+    <value>Swap with Offhand</value>
+  </data>
+  <data name="SwapOffhandBtn.ToolTip" xml:space="preserve">
+    <value>Swaps the items between your offhand and main hand</value>
+  </data>
+  <data name="&gt;&gt;SwapOffhandBtn.Name" xml:space="preserve">
+    <value>SwapOffhandBtn</value>
+  </data>
+  <data name="&gt;&gt;SwapOffhandBtn.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroButton, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;SwapOffhandBtn.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;SwapOffhandBtn.ZOrder" xml:space="preserve">
+    <value>19</value>
+  </data>
+  <data name="DropStackBtn.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="DropStackBtn.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 380</value>
+  </data>
+  <data name="DropStackBtn.Size" type="System.Drawing.Size, System.Drawing">
+    <value>251, 23</value>
+  </data>
+  <data name="DropStackBtn.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="DropStackBtn.Text" xml:space="preserve">
+    <value>Drop Stack</value>
+  </data>
+  <data name="DropStackBtn.ToolTip" xml:space="preserve">
+    <value>Drops the entire stack of items you are currently holding
+</value>
+  </data>
+  <data name="&gt;&gt;DropStackBtn.Name" xml:space="preserve">
+    <value>DropStackBtn</value>
+  </data>
+  <data name="&gt;&gt;DropStackBtn.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroButton, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;DropStackBtn.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;DropStackBtn.ZOrder" xml:space="preserve">
+    <value>20</value>
+  </data>
+  <data name="GameModeBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="GameModeBox.ItemHeight" type="System.Int32, mscorlib">
+    <value>23</value>
+  </data>
+  <data name="GameModeBox.Items" xml:space="preserve">
+    <value>Survival</value>
+  </data>
+  <data name="GameModeBox.Items1" xml:space="preserve">
+    <value>Creative</value>
+  </data>
+  <data name="GameModeBox.Items2" xml:space="preserve">
+    <value>Adventure</value>
+  </data>
+  <data name="GameModeBox.Items3" xml:space="preserve">
+    <value>Spectator</value>
+  </data>
+  <data name="GameModeBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>139, 63</value>
+  </data>
+  <data name="GameModeBox.MaxDropDownItems" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="GameModeBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>403, 29</value>
+  </data>
+  <data name="GameModeBox.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="GameModeBox.ToolTip" xml:space="preserve">
+    <value>What game mode should we be in?</value>
+  </data>
+  <data name="&gt;&gt;GameModeBox.Name" xml:space="preserve">
+    <value>GameModeBox</value>
+  </data>
+  <data name="&gt;&gt;GameModeBox.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroComboBox, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;GameModeBox.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;GameModeBox.ZOrder" xml:space="preserve">
+    <value>21</value>
+  </data>
+  <data name="GameModeLbl.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="GameModeLbl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>19, 63</value>
+  </data>
+  <data name="GameModeLbl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>110, 25</value>
+  </data>
+  <data name="GameModeLbl.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="GameModeLbl.Text" xml:space="preserve">
+    <value>Game Mode:</value>
+  </data>
+  <data name="&gt;&gt;GameModeLbl.Name" xml:space="preserve">
+    <value>GameModeLbl</value>
+  </data>
+  <data name="&gt;&gt;GameModeLbl.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;GameModeLbl.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;GameModeLbl.ZOrder" xml:space="preserve">
+    <value>22</value>
+  </data>
+  <data name="OpenScoreboardBtn.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="OpenScoreboardBtn.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 351</value>
+  </data>
+  <data name="OpenScoreboardBtn.Size" type="System.Drawing.Size, System.Drawing">
+    <value>251, 23</value>
+  </data>
+  <data name="OpenScoreboardBtn.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="OpenScoreboardBtn.Text" xml:space="preserve">
+    <value>Open Scoreboard</value>
+  </data>
+  <data name="OpenScoreboardBtn.ToolTip" xml:space="preserve">
+    <value>Opens the scoreboard</value>
+  </data>
+  <data name="&gt;&gt;OpenScoreboardBtn.Name" xml:space="preserve">
+    <value>OpenScoreboardBtn</value>
+  </data>
+  <data name="&gt;&gt;OpenScoreboardBtn.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroButton, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;OpenScoreboardBtn.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;OpenScoreboardBtn.ZOrder" xml:space="preserve">
+    <value>23</value>
+  </data>
+  <data name="CameraBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="CameraBox.ItemHeight" type="System.Int32, mscorlib">
+    <value>23</value>
+  </data>
+  <data name="CameraBox.Items" xml:space="preserve">
+    <value>First Person</value>
+  </data>
+  <data name="CameraBox.Items1" xml:space="preserve">
+    <value>Third Person (Back)</value>
+  </data>
+  <data name="CameraBox.Items2" xml:space="preserve">
+    <value>Third Person (Front)</value>
+  </data>
+  <data name="CameraBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>104, 98</value>
+  </data>
+  <data name="CameraBox.MaxDropDownItems" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="CameraBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>438, 29</value>
+  </data>
+  <data name="CameraBox.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="CameraBox.ToolTip" xml:space="preserve">
+    <value>What camera prespective should we be in?</value>
+  </data>
+  <data name="&gt;&gt;CameraBox.Name" xml:space="preserve">
+    <value>CameraBox</value>
+  </data>
+  <data name="&gt;&gt;CameraBox.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroComboBox, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;CameraBox.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;CameraBox.ZOrder" xml:space="preserve">
+    <value>24</value>
+  </data>
+  <data name="CameraLbl.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="CameraLbl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>19, 98</value>
+  </data>
+  <data name="CameraLbl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 25</value>
+  </data>
+  <data name="CameraLbl.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="CameraLbl.Text" xml:space="preserve">
+    <value>Camera:</value>
+  </data>
+  <data name="&gt;&gt;CameraLbl.Name" xml:space="preserve">
+    <value>CameraLbl</value>
+  </data>
+  <data name="&gt;&gt;CameraLbl.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;CameraLbl.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;CameraLbl.ZOrder" xml:space="preserve">
+    <value>25</value>
+  </data>
+  <data name="CloseContainersBtn.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="CloseContainersBtn.Location" type="System.Drawing.Point, System.Drawing">
+    <value>291, 351</value>
+  </data>
+  <data name="CloseContainersBtn.Size" type="System.Drawing.Size, System.Drawing">
+    <value>251, 23</value>
+  </data>
+  <data name="CloseContainersBtn.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="CloseContainersBtn.Text" xml:space="preserve">
+    <value>Close Container</value>
+  </data>
+  <data name="CloseContainersBtn.ToolTip" xml:space="preserve">
+    <value>Closes out of any container menus</value>
+  </data>
+  <data name="&gt;&gt;CloseContainersBtn.Name" xml:space="preserve">
+    <value>CloseContainersBtn</value>
+  </data>
+  <data name="&gt;&gt;CloseContainersBtn.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroButton, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;CloseContainersBtn.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;CloseContainersBtn.ZOrder" xml:space="preserve">
+    <value>26</value>
+  </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAYAAAAAAAEAIAC7DAAAZgAAAICAAAABACAAKAgBACENAABAQAAAAQAgAChCAABJFQEAMDAAAAEA
@@ -1865,4 +4290,46 @@
         AP//AADg/wAA4B8AAOAfAADgBwAA4AcAAPgHAAD8BwAA/wcAAP/fAAD//wAA//8AAP//AAA=
 </value>
   </data>
+  <data name="$this.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>3840, 975</value>
+  </data>
+  <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>565, 975</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Minecraft: Wii U Mod Injector - Player Options</value>
+  </data>
+  <data name="&gt;&gt;StyleMngr.Name" xml:space="preserve">
+    <value>StyleMngr</value>
+  </data>
+  <data name="&gt;&gt;StyleMngr.Type" xml:space="preserve">
+    <value>MetroFramework.Components.MetroStyleManager, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;ToolTips.Name" xml:space="preserve">
+    <value>ToolTips</value>
+  </data>
+  <data name="&gt;&gt;ToolTips.Type" xml:space="preserve">
+    <value>MetroFramework.Components.MetroToolTip, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;StyleExt.Name" xml:space="preserve">
+    <value>StyleExt</value>
+  </data>
+  <data name="&gt;&gt;StyleExt.Type" xml:space="preserve">
+    <value>MetroFramework.Components.MetroStyleExtender, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;SkinLoopTimer.Name" xml:space="preserve">
+    <value>SkinLoopTimer</value>
+  </data>
+  <data name="&gt;&gt;SkinLoopTimer.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>PlayerOptions</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>MetroFramework.Forms.MetroForm, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <metadata name="SkinLoopTimer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>334, 17</value>
+  </metadata>
 </root>

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.IO;
 using System.Net.Sockets;
 using Minecraft_Wii_U_Mod_Injector.Helpers;
@@ -22,13 +23,13 @@ namespace Minecraft_Wii_U_Mod_Injector.Wii_U.Gecko_U
         }
 
         /// <summary>
-        /// Connects to the Wii U
+        /// Attempts a connection to the Wii U
         /// </summary>
         public void Connect()
         {
-#if DEBUG
-            Console.WriteLine(@"GECKO U: Attempting connection to " + Host + @":" + Port);
-#endif
+
+            Debug.WriteLine(@"Attempting connection to " + Host + @":" + Port, "GeckoUConnect");
+
             _tcpClient = new TcpClient
             {
                 NoDelay = true
@@ -41,9 +42,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Wii_U.Gecko_U
             {
                 if (!tcpAsyncResult.AsyncWaitHandle.WaitOne(TimeSpan.FromSeconds(5), false))
                 {
-#if DEBUG
-                    Console.WriteLine(@"GECKO U: Connection to " + Host + @":" + Port + @" unsuccessful, timed out");
-#endif
+                    Debug.WriteLine(@"Connection to " + Host + @":" + Port + @" unsuccessful, timed out", "GeckoUConnect");
                     _tcpClient.Close();
                     throw new IOException("Unable to Connect to the Wii U, connection timed-out", new TimeoutException());
                 }
@@ -53,9 +52,8 @@ namespace Minecraft_Wii_U_Mod_Injector.Wii_U.Gecko_U
             }
             catch
             {
-#if DEBUG
-                Console.WriteLine(@"GECKO U: Connection to " + Host + @":" + Port + @" unsuccessful");
-#endif
+
+                Debug.WriteLine(@"Connection to " + Host + @":" + Port + @" unsuccessful", "GeckoUConnect");
                 throw new IOException("Unable to connect to the Wii U, connection timed-out", new TimeoutException());
 
             }
@@ -70,19 +68,15 @@ namespace Minecraft_Wii_U_Mod_Injector.Wii_U.Gecko_U
             Array.Reverse(CmdMaximumMemoryChunkSizeOut);
             
             CmdMaxBufferSize = BitConverter.ToUInt32(CmdMaximumMemoryChunkSizeOut, 0);
-#if DEBUG
-            Console.WriteLine(@"GECKO U: Connection to " + Host + @":" + Port + @" successful");
-#endif
+            Debug.WriteLine(@"Connection to " + Host + @":" + Port + @" successful");
         }
 
         /// <summary>
-        /// Disconnect from the Wii U
+        /// Disconnects from the Wii U
         /// </summary>
         public void Close()
         {
-#if DEBUG
-            Console.WriteLine(@"GECKO U: Closing connection " + Host + @":" + Port);
-#endif
+            Debug.WriteLine(@"Closing connection " + Host + @":" + Port, "GeckoUConnect");
             try
             {
                 _tcpClient?.Close();
@@ -99,14 +93,12 @@ namespace Minecraft_Wii_U_Mod_Injector.Wii_U.Gecko_U
                 _tcpClient = null;
                 NetworkStream = null;
 
-#if DEBUG
-                Console.WriteLine(@"GECKO U: Connection closed");
-#endif
+                Debug.WriteLine(@"Connection closed", "GeckoUConnect");
             }
         }
 
         /// <summary>
-        /// Read from the Wii U from the buffer
+        /// Read bytes from the network stream
         /// </summary>
         /// <param name="buffer">The Buffer</param>
         /// <param name="byteCount">NoBytes</param>
@@ -118,13 +110,9 @@ namespace Minecraft_Wii_U_Mod_Injector.Wii_U.Gecko_U
 
             while (byteCount > 0)
             {
-#if DEBUG
-                Console.WriteLine(@"GECKO U: Reading " + byteCount + @" from the network stream");
-#endif
+                Debug.WriteLine(@"Reading " + byteCount + @" from the network stream", "GeckoUConnect");
                 var read = NetworkStream.Read(buffer, offset, (int)byteCount);
-#if DEBUG
-                Console.WriteLine(@"GECKO U: Read buffer: " + StringUtils.ByteArrayToString(buffer));
-#endif
+                Debug.WriteLine(@"Read buffer: " + StringUtils.ByteArrayToString(buffer), "GeckoUConnect");
 
                 if (read >= 0)
                 {
@@ -140,16 +128,14 @@ namespace Minecraft_Wii_U_Mod_Injector.Wii_U.Gecko_U
         }
 
         /// <summary>
-        /// Write data to the Wii U from the Buffer
+        /// Writes bytes to the network stream
         /// </summary>
         /// <param name="buffer">The Buffer</param>
         /// <param name="byteCount">NoBytes</param>
         /// <param name="bytesWritten">Amount of bytes written</param>
         public void Write(byte[] buffer, int byteCount, out uint bytesWritten)
         {
-#if DEBUG
-            Console.WriteLine(@"GECKO U: Writing to the network stream: " + StringUtils.ByteArrayToString(buffer));
-#endif
+            Debug.WriteLine(@"Writing to the network stream: " + StringUtils.ByteArrayToString(buffer), "GeckoUConnect");
             NetworkStream.Write(buffer, 0, byteCount);
 
             if (byteCount >= 0)
@@ -161,9 +147,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Wii_U.Gecko_U
                 bytesWritten = 0;
             }
 
-#if DEBUG
-            Console.WriteLine(@"GECKO U: Flushing network stream");
-#endif
+            Debug.WriteLine(@"Flushing network stream", "GeckoUConnect");
             NetworkStream.Flush();
         }
     }

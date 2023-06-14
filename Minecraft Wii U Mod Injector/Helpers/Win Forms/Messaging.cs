@@ -3,7 +3,7 @@ using MetroFramework;
 
 namespace Minecraft_Wii_U_Mod_Injector.Helpers.Win_Forms
 {
-    class Messaging
+    internal class Messaging
     {
         public static MainForm Owner = new MainForm();
 

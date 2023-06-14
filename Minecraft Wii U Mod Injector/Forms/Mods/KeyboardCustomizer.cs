@@ -14,11 +14,11 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods {
         }
 
         private void OnLoad(object sender, EventArgs e) {
-            DiscordRP.SetPresence("Connected", "Keyboard Customizer");
+            DiscordRpc.SetPresence("Connected", "Keyboard Customizer");
         }
 
         private void OnExit(object sender, FormClosingEventArgs e) {
-            DiscordRP.SetPresence("Connected", $"{new MainForm().MainTabs.SelectedTab.Text} Tab");
+            DiscordRpc.SetPresence("Connected", $"{new MainForm().MainTabs.SelectedTab.Text} Tab");
             Dispose();
         }
 

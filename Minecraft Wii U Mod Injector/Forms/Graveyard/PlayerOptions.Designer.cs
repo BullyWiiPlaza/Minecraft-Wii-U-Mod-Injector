@@ -1,4 +1,4 @@
-﻿namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods
+﻿namespace Minecraft_Wii_U_Mod_Injector.Forms.Graveyard
 {
     partial class PlayerOptions
     {
@@ -126,176 +126,127 @@
             // 
             // CloseContainersBtn
             // 
-            this.CloseContainersBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.CloseContainersBtn.Location = new System.Drawing.Point(291, 351);
+            resources.ApplyResources(this.CloseContainersBtn, "CloseContainersBtn");
             this.CloseContainersBtn.Name = "CloseContainersBtn";
-            this.CloseContainersBtn.Size = new System.Drawing.Size(251, 23);
-            this.CloseContainersBtn.TabIndex = 6;
-            this.CloseContainersBtn.Text = "Close Container";
             this.CloseContainersBtn.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTips.SetToolTip(this.CloseContainersBtn, "Closes out of any container menus");
+            this.ToolTips.SetToolTip(this.CloseContainersBtn, resources.GetString("CloseContainersBtn.ToolTip"));
             this.CloseContainersBtn.UseSelectable = true;
             this.CloseContainersBtn.Click += new System.EventHandler(this.CloseContainersBtnClicked);
             // 
             // CameraBox
             // 
-            this.CameraBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            resources.ApplyResources(this.CameraBox, "CameraBox");
             this.CameraBox.DisplayMember = "1";
             this.CameraBox.FormattingEnabled = true;
-            this.CameraBox.ItemHeight = 23;
             this.CameraBox.Items.AddRange(new object[] {
-            "First Person",
-            "Third Person (Back)",
-            "Third Person (Front)"});
-            this.CameraBox.Location = new System.Drawing.Point(104, 98);
-            this.CameraBox.MaxDropDownItems = 3;
+            resources.GetString("CameraBox.Items"),
+            resources.GetString("CameraBox.Items1"),
+            resources.GetString("CameraBox.Items2")});
             this.CameraBox.Name = "CameraBox";
-            this.CameraBox.Size = new System.Drawing.Size(438, 29);
-            this.CameraBox.TabIndex = 8;
             this.CameraBox.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTips.SetToolTip(this.CameraBox, "What camera prespective should we be in?");
+            this.ToolTips.SetToolTip(this.CameraBox, resources.GetString("CameraBox.ToolTip"));
             this.CameraBox.UseSelectable = true;
             this.CameraBox.ValueMember = "1";
             this.CameraBox.SelectedIndexChanged += new System.EventHandler(this.CameraBoxChanged);
             // 
             // OpenScoreboardBtn
             // 
-            this.OpenScoreboardBtn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.OpenScoreboardBtn.Location = new System.Drawing.Point(23, 351);
+            resources.ApplyResources(this.OpenScoreboardBtn, "OpenScoreboardBtn");
             this.OpenScoreboardBtn.Name = "OpenScoreboardBtn";
-            this.OpenScoreboardBtn.Size = new System.Drawing.Size(251, 23);
-            this.OpenScoreboardBtn.TabIndex = 9;
-            this.OpenScoreboardBtn.Text = "Open Scoreboard";
             this.OpenScoreboardBtn.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTips.SetToolTip(this.OpenScoreboardBtn, "Opens the scoreboard");
+            this.ToolTips.SetToolTip(this.OpenScoreboardBtn, resources.GetString("OpenScoreboardBtn.ToolTip"));
             this.OpenScoreboardBtn.UseSelectable = true;
             this.OpenScoreboardBtn.Click += new System.EventHandler(this.OpenScoreboardBtnClicked);
             // 
             // GameModeBox
             // 
-            this.GameModeBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            resources.ApplyResources(this.GameModeBox, "GameModeBox");
             this.GameModeBox.DisplayMember = "1";
             this.GameModeBox.FormattingEnabled = true;
-            this.GameModeBox.ItemHeight = 23;
             this.GameModeBox.Items.AddRange(new object[] {
-            "Survival",
-            "Creative",
-            "Adventure",
-            "Spectator"});
-            this.GameModeBox.Location = new System.Drawing.Point(139, 63);
-            this.GameModeBox.MaxDropDownItems = 3;
+            resources.GetString("GameModeBox.Items"),
+            resources.GetString("GameModeBox.Items1"),
+            resources.GetString("GameModeBox.Items2"),
+            resources.GetString("GameModeBox.Items3")});
             this.GameModeBox.Name = "GameModeBox";
-            this.GameModeBox.Size = new System.Drawing.Size(403, 29);
-            this.GameModeBox.TabIndex = 11;
             this.GameModeBox.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTips.SetToolTip(this.GameModeBox, "What game mode should we be in?");
+            this.ToolTips.SetToolTip(this.GameModeBox, resources.GetString("GameModeBox.ToolTip"));
             this.GameModeBox.UseSelectable = true;
             this.GameModeBox.ValueMember = "0";
             this.GameModeBox.SelectedIndexChanged += new System.EventHandler(this.GameModeBoxChanged);
             // 
             // DropStackBtn
             // 
-            this.DropStackBtn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.DropStackBtn.Location = new System.Drawing.Point(23, 380);
+            resources.ApplyResources(this.DropStackBtn, "DropStackBtn");
             this.DropStackBtn.Name = "DropStackBtn";
-            this.DropStackBtn.Size = new System.Drawing.Size(251, 23);
-            this.DropStackBtn.TabIndex = 12;
-            this.DropStackBtn.Text = "Drop Stack";
             this.DropStackBtn.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTips.SetToolTip(this.DropStackBtn, "Drops the entire stack of items you are currently holding\r\n");
+            this.ToolTips.SetToolTip(this.DropStackBtn, resources.GetString("DropStackBtn.ToolTip"));
             this.DropStackBtn.UseSelectable = true;
             this.DropStackBtn.Click += new System.EventHandler(this.DropStackBtnClicked);
             // 
             // CapeBox
             // 
-            this.CapeBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            resources.ApplyResources(this.CapeBox, "CapeBox");
             this.CapeBox.DisplayMember = "1";
             this.CapeBox.FormattingEnabled = true;
-            this.CapeBox.ItemHeight = 23;
-            this.CapeBox.Location = new System.Drawing.Point(80, 280);
-            this.CapeBox.MaxDropDownItems = 3;
             this.CapeBox.Name = "CapeBox";
-            this.CapeBox.Size = new System.Drawing.Size(462, 29);
-            this.CapeBox.TabIndex = 14;
             this.CapeBox.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTips.SetToolTip(this.CapeBox, "What cape should we have equipped?");
+            this.ToolTips.SetToolTip(this.CapeBox, resources.GetString("CapeBox.ToolTip"));
             this.CapeBox.UseSelectable = true;
             this.CapeBox.ValueMember = "1";
             this.CapeBox.SelectedIndexChanged += new System.EventHandler(this.CapeBoxChanged);
             // 
             // AddSkinBtn
             // 
-            this.AddSkinBtn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.AddSkinBtn.Location = new System.Drawing.Point(176, 225);
+            resources.ApplyResources(this.AddSkinBtn, "AddSkinBtn");
             this.AddSkinBtn.Name = "AddSkinBtn";
-            this.AddSkinBtn.Size = new System.Drawing.Size(180, 23);
-            this.AddSkinBtn.TabIndex = 17;
-            this.AddSkinBtn.Text = "Add to List";
             this.AddSkinBtn.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTips.SetToolTip(this.AddSkinBtn, "Adds and saves the skin to the Skin List");
+            this.ToolTips.SetToolTip(this.AddSkinBtn, resources.GetString("AddSkinBtn.ToolTip"));
             this.AddSkinBtn.UseSelectable = true;
             this.AddSkinBtn.Click += new System.EventHandler(this.AddSkinBtnClicked);
             // 
             // SkinIDBox
             // 
-            this.SkinIDBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            resources.ApplyResources(this.SkinIDBox, "SkinIDBox");
             this.StyleExt.SetApplyMetroTheme(this.SkinIDBox, true);
             this.SkinIDBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.SkinIDBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
-            this.SkinIDBox.Location = new System.Drawing.Point(146, 170);
             this.SkinIDBox.Maximum = new decimal(new int[] {
             1661992959,
             1808227885,
             5,
             0});
             this.SkinIDBox.Name = "SkinIDBox";
-            this.SkinIDBox.Size = new System.Drawing.Size(290, 20);
-            this.SkinIDBox.TabIndex = 18;
-            this.ToolTips.SetToolTip(this.SkinIDBox, "The ID of the skin you want to apply");
+            this.ToolTips.SetToolTip(this.SkinIDBox, resources.GetString("SkinIDBox.ToolTip"));
             // 
             // SkinList
             // 
-            this.SkinList.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            resources.ApplyResources(this.SkinList, "SkinList");
             this.SkinList.DisplayMember = "1";
             this.SkinList.FormattingEnabled = true;
-            this.SkinList.ItemHeight = 23;
-            this.SkinList.Location = new System.Drawing.Point(72, 133);
-            this.SkinList.MaxDropDownItems = 3;
             this.SkinList.Name = "SkinList";
-            this.SkinList.Size = new System.Drawing.Size(470, 29);
-            this.SkinList.TabIndex = 20;
             this.SkinList.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTips.SetToolTip(this.SkinList, "Your saved skins");
+            this.ToolTips.SetToolTip(this.SkinList, resources.GetString("SkinList.ToolTip"));
             this.SkinList.UseSelectable = true;
             this.SkinList.ValueMember = "1";
             this.SkinList.SelectedIndexChanged += new System.EventHandler(this.SkinListChanged);
             // 
             // SkinNameBox
             // 
-            this.SkinNameBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            resources.ApplyResources(this.SkinNameBox, "SkinNameBox");
             // 
             // 
             // 
-            this.SkinNameBox.CustomButton.Image = null;
-            this.SkinNameBox.CustomButton.Location = new System.Drawing.Point(344, 1);
+            this.SkinNameBox.CustomButton.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image23")));
+            this.SkinNameBox.CustomButton.Location = ((System.Drawing.Point)(resources.GetObject("resource.Location23")));
             this.SkinNameBox.CustomButton.Name = "";
-            this.SkinNameBox.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.SkinNameBox.CustomButton.Size = ((System.Drawing.Size)(resources.GetObject("resource.Size23")));
             this.SkinNameBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.SkinNameBox.CustomButton.TabIndex = 1;
+            this.SkinNameBox.CustomButton.TabIndex = ((int)(resources.GetObject("resource.TabIndex23")));
             this.SkinNameBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.SkinNameBox.CustomButton.UseSelectable = true;
-            this.SkinNameBox.CustomButton.Visible = false;
+            this.SkinNameBox.CustomButton.Visible = ((bool)(resources.GetObject("resource.Visible23")));
             this.SkinNameBox.Lines = new string[0];
-            this.SkinNameBox.Location = new System.Drawing.Point(176, 196);
             this.SkinNameBox.MaxLength = 32767;
             this.SkinNameBox.Name = "SkinNameBox";
             this.SkinNameBox.PasswordChar = '\0';
@@ -304,84 +255,61 @@
             this.SkinNameBox.SelectionLength = 0;
             this.SkinNameBox.SelectionStart = 0;
             this.SkinNameBox.ShortcutsEnabled = true;
-            this.SkinNameBox.Size = new System.Drawing.Size(366, 23);
-            this.SkinNameBox.TabIndex = 21;
             this.SkinNameBox.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTips.SetToolTip(this.SkinNameBox, "The name of the skin you wanna save");
+            this.ToolTips.SetToolTip(this.SkinNameBox, resources.GetString("SkinNameBox.ToolTip"));
             this.SkinNameBox.UseSelectable = true;
             this.SkinNameBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.SkinNameBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
             // GetSkinIDBtn
             // 
-            this.GetSkinIDBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.GetSkinIDBtn.Location = new System.Drawing.Point(442, 168);
+            resources.ApplyResources(this.GetSkinIDBtn, "GetSkinIDBtn");
             this.GetSkinIDBtn.Name = "GetSkinIDBtn";
-            this.GetSkinIDBtn.Size = new System.Drawing.Size(100, 23);
-            this.GetSkinIDBtn.TabIndex = 23;
-            this.GetSkinIDBtn.Text = "Get";
             this.GetSkinIDBtn.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTips.SetToolTip(this.GetSkinIDBtn, "Gets the currently equipped Skin\'s ID");
+            this.ToolTips.SetToolTip(this.GetSkinIDBtn, resources.GetString("GetSkinIDBtn.ToolTip"));
             this.GetSkinIDBtn.UseSelectable = true;
             this.GetSkinIDBtn.Click += new System.EventHandler(this.GetSkinIdBtnClicked);
             // 
             // LoopSkins
             // 
-            this.LoopSkins.AutoSize = true;
-            this.LoopSkins.Location = new System.Drawing.Point(176, 254);
+            resources.ApplyResources(this.LoopSkins, "LoopSkins");
             this.LoopSkins.Name = "LoopSkins";
-            this.LoopSkins.Size = new System.Drawing.Size(80, 15);
-            this.LoopSkins.TabIndex = 24;
-            this.LoopSkins.Text = "Loop Skins";
             this.LoopSkins.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTips.SetToolTip(this.LoopSkins, "Loops between the saved skins every half a second");
+            this.ToolTips.SetToolTip(this.LoopSkins, resources.GetString("LoopSkins.ToolTip"));
             this.LoopSkins.UseSelectable = true;
             this.LoopSkins.CheckedChanged += new System.EventHandler(this.LoopSkinsToggled);
             // 
             // DeleteSkinBtn
             // 
-            this.DeleteSkinBtn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.DeleteSkinBtn.Location = new System.Drawing.Point(362, 225);
+            resources.ApplyResources(this.DeleteSkinBtn, "DeleteSkinBtn");
             this.DeleteSkinBtn.Name = "DeleteSkinBtn";
-            this.DeleteSkinBtn.Size = new System.Drawing.Size(180, 23);
-            this.DeleteSkinBtn.TabIndex = 25;
-            this.DeleteSkinBtn.Text = "Delete from List";
             this.DeleteSkinBtn.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTips.SetToolTip(this.DeleteSkinBtn, "Deletes the skin from the list");
+            this.ToolTips.SetToolTip(this.DeleteSkinBtn, resources.GetString("DeleteSkinBtn.ToolTip"));
             this.DeleteSkinBtn.UseSelectable = true;
             this.DeleteSkinBtn.Click += new System.EventHandler(this.DeleteSkinBtnClicked);
             // 
             // SwapOffhandBtn
             // 
-            this.SwapOffhandBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.SwapOffhandBtn.Location = new System.Drawing.Point(291, 380);
+            resources.ApplyResources(this.SwapOffhandBtn, "SwapOffhandBtn");
             this.SwapOffhandBtn.Name = "SwapOffhandBtn";
-            this.SwapOffhandBtn.Size = new System.Drawing.Size(251, 23);
-            this.SwapOffhandBtn.TabIndex = 12;
-            this.SwapOffhandBtn.Text = "Swap with Offhand";
             this.SwapOffhandBtn.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTips.SetToolTip(this.SwapOffhandBtn, "Swaps the items between your offhand and main hand");
+            this.ToolTips.SetToolTip(this.SwapOffhandBtn, resources.GetString("SwapOffhandBtn.ToolTip"));
             this.SwapOffhandBtn.UseSelectable = true;
             this.SwapOffhandBtn.Click += new System.EventHandler(this.SwapOffhandBtn_Click);
             // 
             // XpLevelSlider
             // 
-            this.XpLevelSlider.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            resources.ApplyResources(this.XpLevelSlider, "XpLevelSlider");
             this.StyleExt.SetApplyMetroTheme(this.XpLevelSlider, true);
             this.XpLevelSlider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.XpLevelSlider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
-            this.XpLevelSlider.Location = new System.Drawing.Point(108, 325);
             this.XpLevelSlider.Maximum = new decimal(new int[] {
             99999999,
             0,
             0,
             0});
             this.XpLevelSlider.Name = "XpLevelSlider";
-            this.XpLevelSlider.Size = new System.Drawing.Size(434, 20);
-            this.XpLevelSlider.TabIndex = 27;
-            this.ToolTips.SetToolTip(this.XpLevelSlider, "What Level should we be?\r\nNote: Affects newest player in splitscreen");
+            this.ToolTips.SetToolTip(this.XpLevelSlider, resources.GetString("XpLevelSlider.ToolTip"));
             this.XpLevelSlider.ValueChanged += new System.EventHandler(this.XpLevelSliderChanged);
             // 
             // ModeratorBox
@@ -389,18 +317,17 @@
             // 
             // 
             // 
-            this.ModeratorBox.CustomButton.Image = null;
-            this.ModeratorBox.CustomButton.Location = new System.Drawing.Point(367, 1);
+            this.ModeratorBox.CustomButton.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image6")));
+            this.ModeratorBox.CustomButton.Location = ((System.Drawing.Point)(resources.GetObject("resource.Location6")));
             this.ModeratorBox.CustomButton.Name = "";
-            this.ModeratorBox.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.ModeratorBox.CustomButton.Size = ((System.Drawing.Size)(resources.GetObject("resource.Size6")));
             this.ModeratorBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.ModeratorBox.CustomButton.TabIndex = 1;
+            this.ModeratorBox.CustomButton.TabIndex = ((int)(resources.GetObject("resource.TabIndex6")));
             this.ModeratorBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.ModeratorBox.CustomButton.UseSelectable = true;
-            this.ModeratorBox.CustomButton.Visible = false;
-            this.ModeratorBox.Enabled = false;
+            this.ModeratorBox.CustomButton.Visible = ((bool)(resources.GetObject("resource.Visible6")));
+            resources.ApplyResources(this.ModeratorBox, "ModeratorBox");
             this.ModeratorBox.Lines = new string[0];
-            this.ModeratorBox.Location = new System.Drawing.Point(108, 14);
             this.ModeratorBox.MaxLength = 32767;
             this.ModeratorBox.Name = "ModeratorBox";
             this.ModeratorBox.PasswordChar = '\0';
@@ -410,25 +337,18 @@
             this.ModeratorBox.SelectionLength = 0;
             this.ModeratorBox.SelectionStart = 0;
             this.ModeratorBox.ShortcutsEnabled = true;
-            this.ModeratorBox.Size = new System.Drawing.Size(389, 23);
-            this.ModeratorBox.TabIndex = 31;
             this.ModeratorBox.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTips.SetToolTip(this.ModeratorBox, "Is the selected player a moderator?");
+            this.ToolTips.SetToolTip(this.ModeratorBox, resources.GetString("ModeratorBox.ToolTip"));
             this.ModeratorBox.UseSelectable = true;
             this.ModeratorBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.ModeratorBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
             // UpdatePlrInfoBtn
             // 
-            this.UpdatePlrInfoBtn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.UpdatePlrInfoBtn.Location = new System.Drawing.Point(23, 923);
+            resources.ApplyResources(this.UpdatePlrInfoBtn, "UpdatePlrInfoBtn");
             this.UpdatePlrInfoBtn.Name = "UpdatePlrInfoBtn";
-            this.UpdatePlrInfoBtn.Size = new System.Drawing.Size(519, 23);
-            this.UpdatePlrInfoBtn.TabIndex = 32;
-            this.UpdatePlrInfoBtn.Text = "Update";
             this.UpdatePlrInfoBtn.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTips.SetToolTip(this.UpdatePlrInfoBtn, "Updates the Information panel with\r\nthe selected players their information");
+            this.ToolTips.SetToolTip(this.UpdatePlrInfoBtn, resources.GetString("UpdatePlrInfoBtn.ToolTip"));
             this.UpdatePlrInfoBtn.UseSelectable = true;
             this.UpdatePlrInfoBtn.Click += new System.EventHandler(this.UpdatePlrInfoBtnClicked);
             // 
@@ -437,18 +357,17 @@
             // 
             // 
             // 
-            this.InvisiblePrivilegeBox.CustomButton.Image = null;
-            this.InvisiblePrivilegeBox.CustomButton.Location = new System.Drawing.Point(342, 1);
+            this.InvisiblePrivilegeBox.CustomButton.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image22")));
+            this.InvisiblePrivilegeBox.CustomButton.Location = ((System.Drawing.Point)(resources.GetObject("resource.Location22")));
             this.InvisiblePrivilegeBox.CustomButton.Name = "";
-            this.InvisiblePrivilegeBox.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.InvisiblePrivilegeBox.CustomButton.Size = ((System.Drawing.Size)(resources.GetObject("resource.Size22")));
             this.InvisiblePrivilegeBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.InvisiblePrivilegeBox.CustomButton.TabIndex = 1;
+            this.InvisiblePrivilegeBox.CustomButton.TabIndex = ((int)(resources.GetObject("resource.TabIndex22")));
             this.InvisiblePrivilegeBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.InvisiblePrivilegeBox.CustomButton.UseSelectable = true;
-            this.InvisiblePrivilegeBox.CustomButton.Visible = false;
-            this.InvisiblePrivilegeBox.Enabled = false;
+            this.InvisiblePrivilegeBox.CustomButton.Visible = ((bool)(resources.GetObject("resource.Visible22")));
+            resources.ApplyResources(this.InvisiblePrivilegeBox, "InvisiblePrivilegeBox");
             this.InvisiblePrivilegeBox.Lines = new string[0];
-            this.InvisiblePrivilegeBox.Location = new System.Drawing.Point(133, 43);
             this.InvisiblePrivilegeBox.MaxLength = 32767;
             this.InvisiblePrivilegeBox.Name = "InvisiblePrivilegeBox";
             this.InvisiblePrivilegeBox.PasswordChar = '\0';
@@ -458,10 +377,8 @@
             this.InvisiblePrivilegeBox.SelectionLength = 0;
             this.InvisiblePrivilegeBox.SelectionStart = 0;
             this.InvisiblePrivilegeBox.ShortcutsEnabled = true;
-            this.InvisiblePrivilegeBox.Size = new System.Drawing.Size(364, 23);
-            this.InvisiblePrivilegeBox.TabIndex = 33;
             this.InvisiblePrivilegeBox.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTips.SetToolTip(this.InvisiblePrivilegeBox, "Does the selected player have the\r\nInvisible privilege?");
+            this.ToolTips.SetToolTip(this.InvisiblePrivilegeBox, resources.GetString("InvisiblePrivilegeBox.ToolTip"));
             this.InvisiblePrivilegeBox.UseSelectable = true;
             this.InvisiblePrivilegeBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.InvisiblePrivilegeBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -471,18 +388,17 @@
             // 
             // 
             // 
-            this.InvulnerablePrivilegeBox.CustomButton.Image = null;
-            this.InvulnerablePrivilegeBox.CustomButton.Location = new System.Drawing.Point(320, 1);
+            this.InvulnerablePrivilegeBox.CustomButton.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image21")));
+            this.InvulnerablePrivilegeBox.CustomButton.Location = ((System.Drawing.Point)(resources.GetObject("resource.Location21")));
             this.InvulnerablePrivilegeBox.CustomButton.Name = "";
-            this.InvulnerablePrivilegeBox.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.InvulnerablePrivilegeBox.CustomButton.Size = ((System.Drawing.Size)(resources.GetObject("resource.Size21")));
             this.InvulnerablePrivilegeBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.InvulnerablePrivilegeBox.CustomButton.TabIndex = 1;
+            this.InvulnerablePrivilegeBox.CustomButton.TabIndex = ((int)(resources.GetObject("resource.TabIndex21")));
             this.InvulnerablePrivilegeBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.InvulnerablePrivilegeBox.CustomButton.UseSelectable = true;
-            this.InvulnerablePrivilegeBox.CustomButton.Visible = false;
-            this.InvulnerablePrivilegeBox.Enabled = false;
+            this.InvulnerablePrivilegeBox.CustomButton.Visible = ((bool)(resources.GetObject("resource.Visible21")));
+            resources.ApplyResources(this.InvulnerablePrivilegeBox, "InvulnerablePrivilegeBox");
             this.InvulnerablePrivilegeBox.Lines = new string[0];
-            this.InvulnerablePrivilegeBox.Location = new System.Drawing.Point(155, 72);
             this.InvulnerablePrivilegeBox.MaxLength = 32767;
             this.InvulnerablePrivilegeBox.Name = "InvulnerablePrivilegeBox";
             this.InvulnerablePrivilegeBox.PasswordChar = '\0';
@@ -492,10 +408,8 @@
             this.InvulnerablePrivilegeBox.SelectionLength = 0;
             this.InvulnerablePrivilegeBox.SelectionStart = 0;
             this.InvulnerablePrivilegeBox.ShortcutsEnabled = true;
-            this.InvulnerablePrivilegeBox.Size = new System.Drawing.Size(342, 23);
-            this.InvulnerablePrivilegeBox.TabIndex = 35;
             this.InvulnerablePrivilegeBox.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTips.SetToolTip(this.InvulnerablePrivilegeBox, "Does the selected player have the\r\nInvulnerable privilege?");
+            this.ToolTips.SetToolTip(this.InvulnerablePrivilegeBox, resources.GetString("InvulnerablePrivilegeBox.ToolTip"));
             this.InvulnerablePrivilegeBox.UseSelectable = true;
             this.InvulnerablePrivilegeBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.InvulnerablePrivilegeBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -505,18 +419,17 @@
             // 
             // 
             // 
-            this.CanHarmAnimalsBox.CustomButton.Image = null;
-            this.CanHarmAnimalsBox.CustomButton.Location = new System.Drawing.Point(334, 1);
+            this.CanHarmAnimalsBox.CustomButton.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image20")));
+            this.CanHarmAnimalsBox.CustomButton.Location = ((System.Drawing.Point)(resources.GetObject("resource.Location20")));
             this.CanHarmAnimalsBox.CustomButton.Name = "";
-            this.CanHarmAnimalsBox.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.CanHarmAnimalsBox.CustomButton.Size = ((System.Drawing.Size)(resources.GetObject("resource.Size20")));
             this.CanHarmAnimalsBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.CanHarmAnimalsBox.CustomButton.TabIndex = 1;
+            this.CanHarmAnimalsBox.CustomButton.TabIndex = ((int)(resources.GetObject("resource.TabIndex20")));
             this.CanHarmAnimalsBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.CanHarmAnimalsBox.CustomButton.UseSelectable = true;
-            this.CanHarmAnimalsBox.CustomButton.Visible = false;
-            this.CanHarmAnimalsBox.Enabled = false;
+            this.CanHarmAnimalsBox.CustomButton.Visible = ((bool)(resources.GetObject("resource.Visible20")));
+            resources.ApplyResources(this.CanHarmAnimalsBox, "CanHarmAnimalsBox");
             this.CanHarmAnimalsBox.Lines = new string[0];
-            this.CanHarmAnimalsBox.Location = new System.Drawing.Point(141, 101);
             this.CanHarmAnimalsBox.MaxLength = 32767;
             this.CanHarmAnimalsBox.Name = "CanHarmAnimalsBox";
             this.CanHarmAnimalsBox.PasswordChar = '\0';
@@ -526,10 +439,8 @@
             this.CanHarmAnimalsBox.SelectionLength = 0;
             this.CanHarmAnimalsBox.SelectionStart = 0;
             this.CanHarmAnimalsBox.ShortcutsEnabled = true;
-            this.CanHarmAnimalsBox.Size = new System.Drawing.Size(356, 23);
-            this.CanHarmAnimalsBox.TabIndex = 37;
             this.CanHarmAnimalsBox.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTips.SetToolTip(this.CanHarmAnimalsBox, "Is the selected player allowed to harm\r\nanimals?");
+            this.ToolTips.SetToolTip(this.CanHarmAnimalsBox, resources.GetString("CanHarmAnimalsBox.ToolTip"));
             this.CanHarmAnimalsBox.UseSelectable = true;
             this.CanHarmAnimalsBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.CanHarmAnimalsBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -539,18 +450,17 @@
             // 
             // 
             // 
-            this.CanHarmPlayersBox.CustomButton.Image = null;
-            this.CanHarmPlayersBox.CustomButton.Location = new System.Drawing.Point(339, 1);
+            this.CanHarmPlayersBox.CustomButton.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image19")));
+            this.CanHarmPlayersBox.CustomButton.Location = ((System.Drawing.Point)(resources.GetObject("resource.Location19")));
             this.CanHarmPlayersBox.CustomButton.Name = "";
-            this.CanHarmPlayersBox.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.CanHarmPlayersBox.CustomButton.Size = ((System.Drawing.Size)(resources.GetObject("resource.Size19")));
             this.CanHarmPlayersBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.CanHarmPlayersBox.CustomButton.TabIndex = 1;
+            this.CanHarmPlayersBox.CustomButton.TabIndex = ((int)(resources.GetObject("resource.TabIndex19")));
             this.CanHarmPlayersBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.CanHarmPlayersBox.CustomButton.UseSelectable = true;
-            this.CanHarmPlayersBox.CustomButton.Visible = false;
-            this.CanHarmPlayersBox.Enabled = false;
+            this.CanHarmPlayersBox.CustomButton.Visible = ((bool)(resources.GetObject("resource.Visible19")));
+            resources.ApplyResources(this.CanHarmPlayersBox, "CanHarmPlayersBox");
             this.CanHarmPlayersBox.Lines = new string[0];
-            this.CanHarmPlayersBox.Location = new System.Drawing.Point(136, 130);
             this.CanHarmPlayersBox.MaxLength = 32767;
             this.CanHarmPlayersBox.Name = "CanHarmPlayersBox";
             this.CanHarmPlayersBox.PasswordChar = '\0';
@@ -560,10 +470,8 @@
             this.CanHarmPlayersBox.SelectionLength = 0;
             this.CanHarmPlayersBox.SelectionStart = 0;
             this.CanHarmPlayersBox.ShortcutsEnabled = true;
-            this.CanHarmPlayersBox.Size = new System.Drawing.Size(361, 23);
-            this.CanHarmPlayersBox.TabIndex = 39;
             this.CanHarmPlayersBox.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTips.SetToolTip(this.CanHarmPlayersBox, "Is the selected player allowed to harm players?");
+            this.ToolTips.SetToolTip(this.CanHarmPlayersBox, resources.GetString("CanHarmPlayersBox.ToolTip"));
             this.CanHarmPlayersBox.UseSelectable = true;
             this.CanHarmPlayersBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.CanHarmPlayersBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -573,18 +481,17 @@
             // 
             // 
             // 
-            this.CanFlyBox.CustomButton.Image = null;
-            this.CanFlyBox.CustomButton.Location = new System.Drawing.Point(401, 1);
+            this.CanFlyBox.CustomButton.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image18")));
+            this.CanFlyBox.CustomButton.Location = ((System.Drawing.Point)(resources.GetObject("resource.Location18")));
             this.CanFlyBox.CustomButton.Name = "";
-            this.CanFlyBox.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.CanFlyBox.CustomButton.Size = ((System.Drawing.Size)(resources.GetObject("resource.Size18")));
             this.CanFlyBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.CanFlyBox.CustomButton.TabIndex = 1;
+            this.CanFlyBox.CustomButton.TabIndex = ((int)(resources.GetObject("resource.TabIndex18")));
             this.CanFlyBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.CanFlyBox.CustomButton.UseSelectable = true;
-            this.CanFlyBox.CustomButton.Visible = false;
-            this.CanFlyBox.Enabled = false;
+            this.CanFlyBox.CustomButton.Visible = ((bool)(resources.GetObject("resource.Visible18")));
+            resources.ApplyResources(this.CanFlyBox, "CanFlyBox");
             this.CanFlyBox.Lines = new string[0];
-            this.CanFlyBox.Location = new System.Drawing.Point(74, 159);
             this.CanFlyBox.MaxLength = 32767;
             this.CanFlyBox.Name = "CanFlyBox";
             this.CanFlyBox.PasswordChar = '\0';
@@ -594,10 +501,8 @@
             this.CanFlyBox.SelectionLength = 0;
             this.CanFlyBox.SelectionStart = 0;
             this.CanFlyBox.ShortcutsEnabled = true;
-            this.CanFlyBox.Size = new System.Drawing.Size(423, 23);
-            this.CanFlyBox.TabIndex = 41;
             this.CanFlyBox.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTips.SetToolTip(this.CanFlyBox, "Is the selected player allowed to Fly?");
+            this.ToolTips.SetToolTip(this.CanFlyBox, resources.GetString("CanFlyBox.ToolTip"));
             this.CanFlyBox.UseSelectable = true;
             this.CanFlyBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.CanFlyBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -607,18 +512,17 @@
             // 
             // 
             // 
-            this.CanIgnoreExhaustionBox.CustomButton.Image = null;
-            this.CanIgnoreExhaustionBox.CustomButton.Location = new System.Drawing.Point(314, 1);
+            this.CanIgnoreExhaustionBox.CustomButton.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image17")));
+            this.CanIgnoreExhaustionBox.CustomButton.Location = ((System.Drawing.Point)(resources.GetObject("resource.Location17")));
             this.CanIgnoreExhaustionBox.CustomButton.Name = "";
-            this.CanIgnoreExhaustionBox.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.CanIgnoreExhaustionBox.CustomButton.Size = ((System.Drawing.Size)(resources.GetObject("resource.Size17")));
             this.CanIgnoreExhaustionBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.CanIgnoreExhaustionBox.CustomButton.TabIndex = 1;
+            this.CanIgnoreExhaustionBox.CustomButton.TabIndex = ((int)(resources.GetObject("resource.TabIndex17")));
             this.CanIgnoreExhaustionBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.CanIgnoreExhaustionBox.CustomButton.UseSelectable = true;
-            this.CanIgnoreExhaustionBox.CustomButton.Visible = false;
-            this.CanIgnoreExhaustionBox.Enabled = false;
+            this.CanIgnoreExhaustionBox.CustomButton.Visible = ((bool)(resources.GetObject("resource.Visible17")));
+            resources.ApplyResources(this.CanIgnoreExhaustionBox, "CanIgnoreExhaustionBox");
             this.CanIgnoreExhaustionBox.Lines = new string[0];
-            this.CanIgnoreExhaustionBox.Location = new System.Drawing.Point(161, 188);
             this.CanIgnoreExhaustionBox.MaxLength = 32767;
             this.CanIgnoreExhaustionBox.Name = "CanIgnoreExhaustionBox";
             this.CanIgnoreExhaustionBox.PasswordChar = '\0';
@@ -628,10 +532,8 @@
             this.CanIgnoreExhaustionBox.SelectionLength = 0;
             this.CanIgnoreExhaustionBox.SelectionStart = 0;
             this.CanIgnoreExhaustionBox.ShortcutsEnabled = true;
-            this.CanIgnoreExhaustionBox.Size = new System.Drawing.Size(336, 23);
-            this.CanIgnoreExhaustionBox.TabIndex = 43;
             this.CanIgnoreExhaustionBox.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTips.SetToolTip(this.CanIgnoreExhaustionBox, "Is the selected player allowed to \r\nignore exhaustion?");
+            this.ToolTips.SetToolTip(this.CanIgnoreExhaustionBox, resources.GetString("CanIgnoreExhaustionBox.ToolTip"));
             this.CanIgnoreExhaustionBox.UseSelectable = true;
             this.CanIgnoreExhaustionBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.CanIgnoreExhaustionBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -641,18 +543,17 @@
             // 
             // 
             // 
-            this.CanMineBox.CustomButton.Image = null;
-            this.CanMineBox.CustomButton.Location = new System.Drawing.Point(388, 1);
+            this.CanMineBox.CustomButton.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image16")));
+            this.CanMineBox.CustomButton.Location = ((System.Drawing.Point)(resources.GetObject("resource.Location16")));
             this.CanMineBox.CustomButton.Name = "";
-            this.CanMineBox.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.CanMineBox.CustomButton.Size = ((System.Drawing.Size)(resources.GetObject("resource.Size16")));
             this.CanMineBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.CanMineBox.CustomButton.TabIndex = 1;
+            this.CanMineBox.CustomButton.TabIndex = ((int)(resources.GetObject("resource.TabIndex16")));
             this.CanMineBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.CanMineBox.CustomButton.UseSelectable = true;
-            this.CanMineBox.CustomButton.Visible = false;
-            this.CanMineBox.Enabled = false;
+            this.CanMineBox.CustomButton.Visible = ((bool)(resources.GetObject("resource.Visible16")));
+            resources.ApplyResources(this.CanMineBox, "CanMineBox");
             this.CanMineBox.Lines = new string[0];
-            this.CanMineBox.Location = new System.Drawing.Point(87, 217);
             this.CanMineBox.MaxLength = 32767;
             this.CanMineBox.Name = "CanMineBox";
             this.CanMineBox.PasswordChar = '\0';
@@ -662,10 +563,8 @@
             this.CanMineBox.SelectionLength = 0;
             this.CanMineBox.SelectionStart = 0;
             this.CanMineBox.ShortcutsEnabled = true;
-            this.CanMineBox.Size = new System.Drawing.Size(410, 23);
-            this.CanMineBox.TabIndex = 45;
             this.CanMineBox.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTips.SetToolTip(this.CanMineBox, "Is the selected player allowed to\r\nmine?");
+            this.ToolTips.SetToolTip(this.CanMineBox, resources.GetString("CanMineBox.ToolTip"));
             this.CanMineBox.UseSelectable = true;
             this.CanMineBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.CanMineBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -675,18 +574,17 @@
             // 
             // 
             // 
-            this.IsXpDropperBox.CustomButton.Image = null;
-            this.IsXpDropperBox.CustomButton.Location = new System.Drawing.Point(314, 1);
+            this.IsXpDropperBox.CustomButton.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image15")));
+            this.IsXpDropperBox.CustomButton.Location = ((System.Drawing.Point)(resources.GetObject("resource.Location15")));
             this.IsXpDropperBox.CustomButton.Name = "";
-            this.IsXpDropperBox.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.IsXpDropperBox.CustomButton.Size = ((System.Drawing.Size)(resources.GetObject("resource.Size15")));
             this.IsXpDropperBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.IsXpDropperBox.CustomButton.TabIndex = 1;
+            this.IsXpDropperBox.CustomButton.TabIndex = ((int)(resources.GetObject("resource.TabIndex15")));
             this.IsXpDropperBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.IsXpDropperBox.CustomButton.UseSelectable = true;
-            this.IsXpDropperBox.CustomButton.Visible = false;
-            this.IsXpDropperBox.Enabled = false;
+            this.IsXpDropperBox.CustomButton.Visible = ((bool)(resources.GetObject("resource.Visible15")));
+            resources.ApplyResources(this.IsXpDropperBox, "IsXpDropperBox");
             this.IsXpDropperBox.Lines = new string[0];
-            this.IsXpDropperBox.Location = new System.Drawing.Point(161, 275);
             this.IsXpDropperBox.MaxLength = 32767;
             this.IsXpDropperBox.Name = "IsXpDropperBox";
             this.IsXpDropperBox.PasswordChar = '\0';
@@ -696,10 +594,8 @@
             this.IsXpDropperBox.SelectionLength = 0;
             this.IsXpDropperBox.SelectionStart = 0;
             this.IsXpDropperBox.ShortcutsEnabled = true;
-            this.IsXpDropperBox.Size = new System.Drawing.Size(336, 23);
-            this.IsXpDropperBox.TabIndex = 47;
             this.IsXpDropperBox.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTips.SetToolTip(this.IsXpDropperBox, "Is the selected player an experience dropper?");
+            this.ToolTips.SetToolTip(this.IsXpDropperBox, resources.GetString("IsXpDropperBox.ToolTip"));
             this.IsXpDropperBox.UseSelectable = true;
             this.IsXpDropperBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.IsXpDropperBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -709,18 +605,17 @@
             // 
             // 
             // 
-            this.IsCreativeFlyingBox.CustomButton.Image = null;
-            this.IsCreativeFlyingBox.CustomButton.Location = new System.Drawing.Point(346, 1);
+            this.IsCreativeFlyingBox.CustomButton.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image14")));
+            this.IsCreativeFlyingBox.CustomButton.Location = ((System.Drawing.Point)(resources.GetObject("resource.Location14")));
             this.IsCreativeFlyingBox.CustomButton.Name = "";
-            this.IsCreativeFlyingBox.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.IsCreativeFlyingBox.CustomButton.Size = ((System.Drawing.Size)(resources.GetObject("resource.Size14")));
             this.IsCreativeFlyingBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.IsCreativeFlyingBox.CustomButton.TabIndex = 1;
+            this.IsCreativeFlyingBox.CustomButton.TabIndex = ((int)(resources.GetObject("resource.TabIndex14")));
             this.IsCreativeFlyingBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.IsCreativeFlyingBox.CustomButton.UseSelectable = true;
-            this.IsCreativeFlyingBox.CustomButton.Visible = false;
-            this.IsCreativeFlyingBox.Enabled = false;
+            this.IsCreativeFlyingBox.CustomButton.Visible = ((bool)(resources.GetObject("resource.Visible14")));
+            resources.ApplyResources(this.IsCreativeFlyingBox, "IsCreativeFlyingBox");
             this.IsCreativeFlyingBox.Lines = new string[0];
-            this.IsCreativeFlyingBox.Location = new System.Drawing.Point(129, 304);
             this.IsCreativeFlyingBox.MaxLength = 32767;
             this.IsCreativeFlyingBox.Name = "IsCreativeFlyingBox";
             this.IsCreativeFlyingBox.PasswordChar = '\0';
@@ -730,10 +625,8 @@
             this.IsCreativeFlyingBox.SelectionLength = 0;
             this.IsCreativeFlyingBox.SelectionStart = 0;
             this.IsCreativeFlyingBox.ShortcutsEnabled = true;
-            this.IsCreativeFlyingBox.Size = new System.Drawing.Size(368, 23);
-            this.IsCreativeFlyingBox.TabIndex = 49;
             this.IsCreativeFlyingBox.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTips.SetToolTip(this.IsCreativeFlyingBox, "Is the selected player currently flying?");
+            this.ToolTips.SetToolTip(this.IsCreativeFlyingBox, resources.GetString("IsCreativeFlyingBox.ToolTip"));
             this.IsCreativeFlyingBox.UseSelectable = true;
             this.IsCreativeFlyingBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.IsCreativeFlyingBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -743,18 +636,17 @@
             // 
             // 
             // 
-            this.IsHurtBox.CustomButton.Image = null;
-            this.IsHurtBox.CustomButton.Location = new System.Drawing.Point(406, 1);
+            this.IsHurtBox.CustomButton.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image13")));
+            this.IsHurtBox.CustomButton.Location = ((System.Drawing.Point)(resources.GetObject("resource.Location13")));
             this.IsHurtBox.CustomButton.Name = "";
-            this.IsHurtBox.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.IsHurtBox.CustomButton.Size = ((System.Drawing.Size)(resources.GetObject("resource.Size13")));
             this.IsHurtBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.IsHurtBox.CustomButton.TabIndex = 1;
+            this.IsHurtBox.CustomButton.TabIndex = ((int)(resources.GetObject("resource.TabIndex13")));
             this.IsHurtBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.IsHurtBox.CustomButton.UseSelectable = true;
-            this.IsHurtBox.CustomButton.Visible = false;
-            this.IsHurtBox.Enabled = false;
+            this.IsHurtBox.CustomButton.Visible = ((bool)(resources.GetObject("resource.Visible13")));
+            resources.ApplyResources(this.IsHurtBox, "IsHurtBox");
             this.IsHurtBox.Lines = new string[0];
-            this.IsHurtBox.Location = new System.Drawing.Point(69, 333);
             this.IsHurtBox.MaxLength = 32767;
             this.IsHurtBox.Name = "IsHurtBox";
             this.IsHurtBox.PasswordChar = '\0';
@@ -764,10 +656,8 @@
             this.IsHurtBox.SelectionLength = 0;
             this.IsHurtBox.SelectionStart = 0;
             this.IsHurtBox.ShortcutsEnabled = true;
-            this.IsHurtBox.Size = new System.Drawing.Size(428, 23);
-            this.IsHurtBox.TabIndex = 51;
             this.IsHurtBox.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTips.SetToolTip(this.IsHurtBox, "Is the selected player currently hurt?");
+            this.ToolTips.SetToolTip(this.IsHurtBox, resources.GetString("IsHurtBox.ToolTip"));
             this.IsHurtBox.UseSelectable = true;
             this.IsHurtBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.IsHurtBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -777,18 +667,17 @@
             // 
             // 
             // 
-            this.IsImmobileBox.CustomButton.Image = null;
-            this.IsImmobileBox.CustomButton.Location = new System.Drawing.Point(376, 1);
+            this.IsImmobileBox.CustomButton.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image12")));
+            this.IsImmobileBox.CustomButton.Location = ((System.Drawing.Point)(resources.GetObject("resource.Location12")));
             this.IsImmobileBox.CustomButton.Name = "";
-            this.IsImmobileBox.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.IsImmobileBox.CustomButton.Size = ((System.Drawing.Size)(resources.GetObject("resource.Size12")));
             this.IsImmobileBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.IsImmobileBox.CustomButton.TabIndex = 1;
+            this.IsImmobileBox.CustomButton.TabIndex = ((int)(resources.GetObject("resource.TabIndex12")));
             this.IsImmobileBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.IsImmobileBox.CustomButton.UseSelectable = true;
-            this.IsImmobileBox.CustomButton.Visible = false;
-            this.IsImmobileBox.Enabled = false;
+            this.IsImmobileBox.CustomButton.Visible = ((bool)(resources.GetObject("resource.Visible12")));
+            resources.ApplyResources(this.IsImmobileBox, "IsImmobileBox");
             this.IsImmobileBox.Lines = new string[0];
-            this.IsImmobileBox.Location = new System.Drawing.Point(99, 362);
             this.IsImmobileBox.MaxLength = 32767;
             this.IsImmobileBox.Name = "IsImmobileBox";
             this.IsImmobileBox.PasswordChar = '\0';
@@ -798,10 +687,8 @@
             this.IsImmobileBox.SelectionLength = 0;
             this.IsImmobileBox.SelectionStart = 0;
             this.IsImmobileBox.ShortcutsEnabled = true;
-            this.IsImmobileBox.Size = new System.Drawing.Size(398, 23);
-            this.IsImmobileBox.TabIndex = 53;
             this.IsImmobileBox.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTips.SetToolTip(this.IsImmobileBox, "Is the selected player currently Immobile?");
+            this.ToolTips.SetToolTip(this.IsImmobileBox, resources.GetString("IsImmobileBox.ToolTip"));
             this.IsImmobileBox.UseSelectable = true;
             this.IsImmobileBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.IsImmobileBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -811,18 +698,17 @@
             // 
             // 
             // 
-            this.IsInWallBox.CustomButton.Image = null;
-            this.IsInWallBox.CustomButton.Location = new System.Drawing.Point(393, 1);
+            this.IsInWallBox.CustomButton.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image11")));
+            this.IsInWallBox.CustomButton.Location = ((System.Drawing.Point)(resources.GetObject("resource.Location11")));
             this.IsInWallBox.CustomButton.Name = "";
-            this.IsInWallBox.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.IsInWallBox.CustomButton.Size = ((System.Drawing.Size)(resources.GetObject("resource.Size11")));
             this.IsInWallBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.IsInWallBox.CustomButton.TabIndex = 1;
+            this.IsInWallBox.CustomButton.TabIndex = ((int)(resources.GetObject("resource.TabIndex11")));
             this.IsInWallBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.IsInWallBox.CustomButton.UseSelectable = true;
-            this.IsInWallBox.CustomButton.Visible = false;
-            this.IsInWallBox.Enabled = false;
+            this.IsInWallBox.CustomButton.Visible = ((bool)(resources.GetObject("resource.Visible11")));
+            resources.ApplyResources(this.IsInWallBox, "IsInWallBox");
             this.IsInWallBox.Lines = new string[0];
-            this.IsInWallBox.Location = new System.Drawing.Point(82, 391);
             this.IsInWallBox.MaxLength = 32767;
             this.IsInWallBox.Name = "IsInWallBox";
             this.IsInWallBox.PasswordChar = '\0';
@@ -832,10 +718,8 @@
             this.IsInWallBox.SelectionLength = 0;
             this.IsInWallBox.SelectionStart = 0;
             this.IsInWallBox.ShortcutsEnabled = true;
-            this.IsInWallBox.Size = new System.Drawing.Size(415, 23);
-            this.IsInWallBox.TabIndex = 55;
             this.IsInWallBox.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTips.SetToolTip(this.IsInWallBox, "Is the selected player currently inside \r\nof a wall?");
+            this.ToolTips.SetToolTip(this.IsInWallBox, resources.GetString("IsInWallBox.ToolTip"));
             this.IsInWallBox.UseSelectable = true;
             this.IsInWallBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.IsInWallBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -845,18 +729,17 @@
             // 
             // 
             // 
-            this.IsLocalPlayerBox.CustomButton.Image = null;
-            this.IsLocalPlayerBox.CustomButton.Location = new System.Drawing.Point(361, 1);
+            this.IsLocalPlayerBox.CustomButton.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image10")));
+            this.IsLocalPlayerBox.CustomButton.Location = ((System.Drawing.Point)(resources.GetObject("resource.Location10")));
             this.IsLocalPlayerBox.CustomButton.Name = "";
-            this.IsLocalPlayerBox.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.IsLocalPlayerBox.CustomButton.Size = ((System.Drawing.Size)(resources.GetObject("resource.Size10")));
             this.IsLocalPlayerBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.IsLocalPlayerBox.CustomButton.TabIndex = 1;
+            this.IsLocalPlayerBox.CustomButton.TabIndex = ((int)(resources.GetObject("resource.TabIndex10")));
             this.IsLocalPlayerBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.IsLocalPlayerBox.CustomButton.UseSelectable = true;
-            this.IsLocalPlayerBox.CustomButton.Visible = false;
-            this.IsLocalPlayerBox.Enabled = false;
+            this.IsLocalPlayerBox.CustomButton.Visible = ((bool)(resources.GetObject("resource.Visible10")));
+            resources.ApplyResources(this.IsLocalPlayerBox, "IsLocalPlayerBox");
             this.IsLocalPlayerBox.Lines = new string[0];
-            this.IsLocalPlayerBox.Location = new System.Drawing.Point(114, 420);
             this.IsLocalPlayerBox.MaxLength = 32767;
             this.IsLocalPlayerBox.Name = "IsLocalPlayerBox";
             this.IsLocalPlayerBox.PasswordChar = '\0';
@@ -866,10 +749,8 @@
             this.IsLocalPlayerBox.SelectionLength = 0;
             this.IsLocalPlayerBox.SelectionStart = 0;
             this.IsLocalPlayerBox.ShortcutsEnabled = true;
-            this.IsLocalPlayerBox.Size = new System.Drawing.Size(383, 23);
-            this.IsLocalPlayerBox.TabIndex = 57;
             this.IsLocalPlayerBox.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTips.SetToolTip(this.IsLocalPlayerBox, "Is the selected player local?");
+            this.ToolTips.SetToolTip(this.IsLocalPlayerBox, resources.GetString("IsLocalPlayerBox.ToolTip"));
             this.IsLocalPlayerBox.UseSelectable = true;
             this.IsLocalPlayerBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.IsLocalPlayerBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -879,18 +760,17 @@
             // 
             // 
             // 
-            this.IsPushedByWaterBox.CustomButton.Image = null;
-            this.IsPushedByWaterBox.CustomButton.Location = new System.Drawing.Point(332, 1);
+            this.IsPushedByWaterBox.CustomButton.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image9")));
+            this.IsPushedByWaterBox.CustomButton.Location = ((System.Drawing.Point)(resources.GetObject("resource.Location9")));
             this.IsPushedByWaterBox.CustomButton.Name = "";
-            this.IsPushedByWaterBox.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.IsPushedByWaterBox.CustomButton.Size = ((System.Drawing.Size)(resources.GetObject("resource.Size9")));
             this.IsPushedByWaterBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.IsPushedByWaterBox.CustomButton.TabIndex = 1;
+            this.IsPushedByWaterBox.CustomButton.TabIndex = ((int)(resources.GetObject("resource.TabIndex9")));
             this.IsPushedByWaterBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.IsPushedByWaterBox.CustomButton.UseSelectable = true;
-            this.IsPushedByWaterBox.CustomButton.Visible = false;
-            this.IsPushedByWaterBox.Enabled = false;
+            this.IsPushedByWaterBox.CustomButton.Visible = ((bool)(resources.GetObject("resource.Visible9")));
+            resources.ApplyResources(this.IsPushedByWaterBox, "IsPushedByWaterBox");
             this.IsPushedByWaterBox.Lines = new string[0];
-            this.IsPushedByWaterBox.Location = new System.Drawing.Point(143, 449);
             this.IsPushedByWaterBox.MaxLength = 32767;
             this.IsPushedByWaterBox.Name = "IsPushedByWaterBox";
             this.IsPushedByWaterBox.PasswordChar = '\0';
@@ -900,10 +780,8 @@
             this.IsPushedByWaterBox.SelectionLength = 0;
             this.IsPushedByWaterBox.SelectionStart = 0;
             this.IsPushedByWaterBox.ShortcutsEnabled = true;
-            this.IsPushedByWaterBox.Size = new System.Drawing.Size(354, 23);
-            this.IsPushedByWaterBox.TabIndex = 59;
             this.IsPushedByWaterBox.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTips.SetToolTip(this.IsPushedByWaterBox, "Is the selected player currently\r\nbeing pushed by water?");
+            this.ToolTips.SetToolTip(this.IsPushedByWaterBox, resources.GetString("IsPushedByWaterBox.ToolTip"));
             this.IsPushedByWaterBox.UseSelectable = true;
             this.IsPushedByWaterBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.IsPushedByWaterBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -913,18 +791,17 @@
             // 
             // 
             // 
-            this.IsReducedDebugBox.CustomButton.Image = null;
-            this.IsReducedDebugBox.CustomButton.Location = new System.Drawing.Point(310, 1);
+            this.IsReducedDebugBox.CustomButton.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image8")));
+            this.IsReducedDebugBox.CustomButton.Location = ((System.Drawing.Point)(resources.GetObject("resource.Location8")));
             this.IsReducedDebugBox.CustomButton.Name = "";
-            this.IsReducedDebugBox.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.IsReducedDebugBox.CustomButton.Size = ((System.Drawing.Size)(resources.GetObject("resource.Size8")));
             this.IsReducedDebugBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.IsReducedDebugBox.CustomButton.TabIndex = 1;
+            this.IsReducedDebugBox.CustomButton.TabIndex = ((int)(resources.GetObject("resource.TabIndex8")));
             this.IsReducedDebugBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.IsReducedDebugBox.CustomButton.UseSelectable = true;
-            this.IsReducedDebugBox.CustomButton.Visible = false;
-            this.IsReducedDebugBox.Enabled = false;
+            this.IsReducedDebugBox.CustomButton.Visible = ((bool)(resources.GetObject("resource.Visible8")));
+            resources.ApplyResources(this.IsReducedDebugBox, "IsReducedDebugBox");
             this.IsReducedDebugBox.Lines = new string[0];
-            this.IsReducedDebugBox.Location = new System.Drawing.Point(163, 479);
             this.IsReducedDebugBox.MaxLength = 32767;
             this.IsReducedDebugBox.Name = "IsReducedDebugBox";
             this.IsReducedDebugBox.PasswordChar = '\0';
@@ -934,10 +811,8 @@
             this.IsReducedDebugBox.SelectionLength = 0;
             this.IsReducedDebugBox.SelectionStart = 0;
             this.IsReducedDebugBox.ShortcutsEnabled = true;
-            this.IsReducedDebugBox.Size = new System.Drawing.Size(332, 23);
-            this.IsReducedDebugBox.TabIndex = 61;
             this.IsReducedDebugBox.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTips.SetToolTip(this.IsReducedDebugBox, "Is the selected player have reduced\r\ndebug info?");
+            this.ToolTips.SetToolTip(this.IsReducedDebugBox, resources.GetString("IsReducedDebugBox.ToolTip"));
             this.IsReducedDebugBox.UseSelectable = true;
             this.IsReducedDebugBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.IsReducedDebugBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -947,18 +822,17 @@
             // 
             // 
             // 
-            this.IsRespawnedForcedBox.CustomButton.Image = null;
-            this.IsRespawnedForcedBox.CustomButton.Location = new System.Drawing.Point(321, 1);
+            this.IsRespawnedForcedBox.CustomButton.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image7")));
+            this.IsRespawnedForcedBox.CustomButton.Location = ((System.Drawing.Point)(resources.GetObject("resource.Location7")));
             this.IsRespawnedForcedBox.CustomButton.Name = "";
-            this.IsRespawnedForcedBox.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.IsRespawnedForcedBox.CustomButton.Size = ((System.Drawing.Size)(resources.GetObject("resource.Size7")));
             this.IsRespawnedForcedBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.IsRespawnedForcedBox.CustomButton.TabIndex = 1;
+            this.IsRespawnedForcedBox.CustomButton.TabIndex = ((int)(resources.GetObject("resource.TabIndex7")));
             this.IsRespawnedForcedBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.IsRespawnedForcedBox.CustomButton.UseSelectable = true;
-            this.IsRespawnedForcedBox.CustomButton.Visible = false;
-            this.IsRespawnedForcedBox.Enabled = false;
+            this.IsRespawnedForcedBox.CustomButton.Visible = ((bool)(resources.GetObject("resource.Visible7")));
+            resources.ApplyResources(this.IsRespawnedForcedBox, "IsRespawnedForcedBox");
             this.IsRespawnedForcedBox.Lines = new string[0];
-            this.IsRespawnedForcedBox.Location = new System.Drawing.Point(152, 508);
             this.IsRespawnedForcedBox.MaxLength = 32767;
             this.IsRespawnedForcedBox.Name = "IsRespawnedForcedBox";
             this.IsRespawnedForcedBox.PasswordChar = '\0';
@@ -968,10 +842,8 @@
             this.IsRespawnedForcedBox.SelectionLength = 0;
             this.IsRespawnedForcedBox.SelectionStart = 0;
             this.IsRespawnedForcedBox.ShortcutsEnabled = true;
-            this.IsRespawnedForcedBox.Size = new System.Drawing.Size(343, 23);
-            this.IsRespawnedForcedBox.TabIndex = 63;
             this.IsRespawnedForcedBox.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTips.SetToolTip(this.IsRespawnedForcedBox, "Is the selected player their respawn\r\nforced?");
+            this.ToolTips.SetToolTip(this.IsRespawnedForcedBox, resources.GetString("IsRespawnedForcedBox.ToolTip"));
             this.IsRespawnedForcedBox.UseSelectable = true;
             this.IsRespawnedForcedBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.IsRespawnedForcedBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -981,18 +853,17 @@
             // 
             // 
             // 
-            this.IsSendMsgBox.CustomButton.Image = null;
-            this.IsSendMsgBox.CustomButton.Location = new System.Drawing.Point(297, 1);
+            this.IsSendMsgBox.CustomButton.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image5")));
+            this.IsSendMsgBox.CustomButton.Location = ((System.Drawing.Point)(resources.GetObject("resource.Location5")));
             this.IsSendMsgBox.CustomButton.Name = "";
-            this.IsSendMsgBox.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.IsSendMsgBox.CustomButton.Size = ((System.Drawing.Size)(resources.GetObject("resource.Size5")));
             this.IsSendMsgBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.IsSendMsgBox.CustomButton.TabIndex = 1;
+            this.IsSendMsgBox.CustomButton.TabIndex = ((int)(resources.GetObject("resource.TabIndex5")));
             this.IsSendMsgBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.IsSendMsgBox.CustomButton.UseSelectable = true;
-            this.IsSendMsgBox.CustomButton.Visible = false;
-            this.IsSendMsgBox.Enabled = false;
+            this.IsSendMsgBox.CustomButton.Visible = ((bool)(resources.GetObject("resource.Visible5")));
+            resources.ApplyResources(this.IsSendMsgBox, "IsSendMsgBox");
             this.IsSendMsgBox.Lines = new string[0];
-            this.IsSendMsgBox.Location = new System.Drawing.Point(176, 537);
             this.IsSendMsgBox.MaxLength = 32767;
             this.IsSendMsgBox.Name = "IsSendMsgBox";
             this.IsSendMsgBox.PasswordChar = '\0';
@@ -1002,10 +873,8 @@
             this.IsSendMsgBox.SelectionLength = 0;
             this.IsSendMsgBox.SelectionStart = 0;
             this.IsSendMsgBox.ShortcutsEnabled = true;
-            this.IsSendMsgBox.Size = new System.Drawing.Size(319, 23);
-            this.IsSendMsgBox.TabIndex = 65;
             this.IsSendMsgBox.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTips.SetToolTip(this.IsSendMsgBox, "Is the selected player allowed to\r\nsend messages?");
+            this.ToolTips.SetToolTip(this.IsSendMsgBox, resources.GetString("IsSendMsgBox.ToolTip"));
             this.IsSendMsgBox.UseSelectable = true;
             this.IsSendMsgBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.IsSendMsgBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -1015,18 +884,17 @@
             // 
             // 
             // 
-            this.IsSleepingBox.CustomButton.Image = null;
-            this.IsSleepingBox.CustomButton.Location = new System.Drawing.Point(382, 1);
+            this.IsSleepingBox.CustomButton.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image4")));
+            this.IsSleepingBox.CustomButton.Location = ((System.Drawing.Point)(resources.GetObject("resource.Location4")));
             this.IsSleepingBox.CustomButton.Name = "";
-            this.IsSleepingBox.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.IsSleepingBox.CustomButton.Size = ((System.Drawing.Size)(resources.GetObject("resource.Size4")));
             this.IsSleepingBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.IsSleepingBox.CustomButton.TabIndex = 1;
+            this.IsSleepingBox.CustomButton.TabIndex = ((int)(resources.GetObject("resource.TabIndex4")));
             this.IsSleepingBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.IsSleepingBox.CustomButton.UseSelectable = true;
-            this.IsSleepingBox.CustomButton.Visible = false;
-            this.IsSleepingBox.Enabled = false;
+            this.IsSleepingBox.CustomButton.Visible = ((bool)(resources.GetObject("resource.Visible4")));
+            resources.ApplyResources(this.IsSleepingBox, "IsSleepingBox");
             this.IsSleepingBox.Lines = new string[0];
-            this.IsSleepingBox.Location = new System.Drawing.Point(91, 566);
             this.IsSleepingBox.MaxLength = 32767;
             this.IsSleepingBox.Name = "IsSleepingBox";
             this.IsSleepingBox.PasswordChar = '\0';
@@ -1036,10 +904,8 @@
             this.IsSleepingBox.SelectionLength = 0;
             this.IsSleepingBox.SelectionStart = 0;
             this.IsSleepingBox.ShortcutsEnabled = true;
-            this.IsSleepingBox.Size = new System.Drawing.Size(404, 23);
-            this.IsSleepingBox.TabIndex = 67;
             this.IsSleepingBox.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTips.SetToolTip(this.IsSleepingBox, "Is the selected player currently \r\nsleeping?");
+            this.ToolTips.SetToolTip(this.IsSleepingBox, resources.GetString("IsSleepingBox.ToolTip"));
             this.IsSleepingBox.UseSelectable = true;
             this.IsSleepingBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.IsSleepingBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -1049,18 +915,17 @@
             // 
             // 
             // 
-            this.IsSleepingEnoughBox.CustomButton.Image = null;
-            this.IsSleepingEnoughBox.CustomButton.Location = new System.Drawing.Point(301, 1);
+            this.IsSleepingEnoughBox.CustomButton.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
+            this.IsSleepingEnoughBox.CustomButton.Location = ((System.Drawing.Point)(resources.GetObject("resource.Location3")));
             this.IsSleepingEnoughBox.CustomButton.Name = "";
-            this.IsSleepingEnoughBox.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.IsSleepingEnoughBox.CustomButton.Size = ((System.Drawing.Size)(resources.GetObject("resource.Size3")));
             this.IsSleepingEnoughBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.IsSleepingEnoughBox.CustomButton.TabIndex = 1;
+            this.IsSleepingEnoughBox.CustomButton.TabIndex = ((int)(resources.GetObject("resource.TabIndex3")));
             this.IsSleepingEnoughBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.IsSleepingEnoughBox.CustomButton.UseSelectable = true;
-            this.IsSleepingEnoughBox.CustomButton.Visible = false;
-            this.IsSleepingEnoughBox.Enabled = false;
+            this.IsSleepingEnoughBox.CustomButton.Visible = ((bool)(resources.GetObject("resource.Visible3")));
+            resources.ApplyResources(this.IsSleepingEnoughBox, "IsSleepingEnoughBox");
             this.IsSleepingEnoughBox.Lines = new string[0];
-            this.IsSleepingEnoughBox.Location = new System.Drawing.Point(172, 595);
             this.IsSleepingEnoughBox.MaxLength = 32767;
             this.IsSleepingEnoughBox.Name = "IsSleepingEnoughBox";
             this.IsSleepingEnoughBox.PasswordChar = '\0';
@@ -1070,10 +935,8 @@
             this.IsSleepingEnoughBox.SelectionLength = 0;
             this.IsSleepingEnoughBox.SelectionStart = 0;
             this.IsSleepingEnoughBox.ShortcutsEnabled = true;
-            this.IsSleepingEnoughBox.Size = new System.Drawing.Size(323, 23);
-            this.IsSleepingEnoughBox.TabIndex = 69;
             this.IsSleepingEnoughBox.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTips.SetToolTip(this.IsSleepingEnoughBox, "Is the selected player sleeping long enough?");
+            this.ToolTips.SetToolTip(this.IsSleepingEnoughBox, resources.GetString("IsSleepingEnoughBox.ToolTip"));
             this.IsSleepingEnoughBox.UseSelectable = true;
             this.IsSleepingEnoughBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.IsSleepingEnoughBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -1083,18 +946,17 @@
             // 
             // 
             // 
-            this.IsSpectatingPlayerBox.CustomButton.Image = null;
-            this.IsSpectatingPlayerBox.CustomButton.Location = new System.Drawing.Point(330, 1);
+            this.IsSpectatingPlayerBox.CustomButton.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
+            this.IsSpectatingPlayerBox.CustomButton.Location = ((System.Drawing.Point)(resources.GetObject("resource.Location2")));
             this.IsSpectatingPlayerBox.CustomButton.Name = "";
-            this.IsSpectatingPlayerBox.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.IsSpectatingPlayerBox.CustomButton.Size = ((System.Drawing.Size)(resources.GetObject("resource.Size2")));
             this.IsSpectatingPlayerBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.IsSpectatingPlayerBox.CustomButton.TabIndex = 1;
+            this.IsSpectatingPlayerBox.CustomButton.TabIndex = ((int)(resources.GetObject("resource.TabIndex2")));
             this.IsSpectatingPlayerBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.IsSpectatingPlayerBox.CustomButton.UseSelectable = true;
-            this.IsSpectatingPlayerBox.CustomButton.Visible = false;
-            this.IsSpectatingPlayerBox.Enabled = false;
+            this.IsSpectatingPlayerBox.CustomButton.Visible = ((bool)(resources.GetObject("resource.Visible2")));
+            resources.ApplyResources(this.IsSpectatingPlayerBox, "IsSpectatingPlayerBox");
             this.IsSpectatingPlayerBox.Lines = new string[0];
-            this.IsSpectatingPlayerBox.Location = new System.Drawing.Point(143, 624);
             this.IsSpectatingPlayerBox.MaxLength = 32767;
             this.IsSpectatingPlayerBox.Name = "IsSpectatingPlayerBox";
             this.IsSpectatingPlayerBox.PasswordChar = '\0';
@@ -1104,10 +966,8 @@
             this.IsSpectatingPlayerBox.SelectionLength = 0;
             this.IsSpectatingPlayerBox.SelectionStart = 0;
             this.IsSpectatingPlayerBox.ShortcutsEnabled = true;
-            this.IsSpectatingPlayerBox.Size = new System.Drawing.Size(352, 23);
-            this.IsSpectatingPlayerBox.TabIndex = 71;
             this.IsSpectatingPlayerBox.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTips.SetToolTip(this.IsSpectatingPlayerBox, "Is the selected player currently\r\nspectating another player?");
+            this.ToolTips.SetToolTip(this.IsSpectatingPlayerBox, resources.GetString("IsSpectatingPlayerBox.ToolTip"));
             this.IsSpectatingPlayerBox.UseSelectable = true;
             this.IsSpectatingPlayerBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.IsSpectatingPlayerBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -1117,18 +977,17 @@
             // 
             // 
             // 
-            this.IsStarvingBox.CustomButton.Image = null;
-            this.IsStarvingBox.CustomButton.Location = new System.Drawing.Point(384, 1);
+            this.IsStarvingBox.CustomButton.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
+            this.IsStarvingBox.CustomButton.Location = ((System.Drawing.Point)(resources.GetObject("resource.Location1")));
             this.IsStarvingBox.CustomButton.Name = "";
-            this.IsStarvingBox.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.IsStarvingBox.CustomButton.Size = ((System.Drawing.Size)(resources.GetObject("resource.Size1")));
             this.IsStarvingBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.IsStarvingBox.CustomButton.TabIndex = 1;
+            this.IsStarvingBox.CustomButton.TabIndex = ((int)(resources.GetObject("resource.TabIndex1")));
             this.IsStarvingBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.IsStarvingBox.CustomButton.UseSelectable = true;
-            this.IsStarvingBox.CustomButton.Visible = false;
-            this.IsStarvingBox.Enabled = false;
+            this.IsStarvingBox.CustomButton.Visible = ((bool)(resources.GetObject("resource.Visible1")));
+            resources.ApplyResources(this.IsStarvingBox, "IsStarvingBox");
             this.IsStarvingBox.Lines = new string[0];
-            this.IsStarvingBox.Location = new System.Drawing.Point(89, 653);
             this.IsStarvingBox.MaxLength = 32767;
             this.IsStarvingBox.Name = "IsStarvingBox";
             this.IsStarvingBox.PasswordChar = '\0';
@@ -1138,25 +997,18 @@
             this.IsStarvingBox.SelectionLength = 0;
             this.IsStarvingBox.SelectionStart = 0;
             this.IsStarvingBox.ShortcutsEnabled = true;
-            this.IsStarvingBox.Size = new System.Drawing.Size(406, 23);
-            this.IsStarvingBox.TabIndex = 73;
             this.IsStarvingBox.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTips.SetToolTip(this.IsStarvingBox, "Is the selected player currently starving?");
+            this.ToolTips.SetToolTip(this.IsStarvingBox, resources.GetString("IsStarvingBox.ToolTip"));
             this.IsStarvingBox.UseSelectable = true;
             this.IsStarvingBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.IsStarvingBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
             // JumpBtn
             // 
-            this.JumpBtn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.JumpBtn.Location = new System.Drawing.Point(23, 409);
+            resources.ApplyResources(this.JumpBtn, "JumpBtn");
             this.JumpBtn.Name = "JumpBtn";
-            this.JumpBtn.Size = new System.Drawing.Size(251, 23);
-            this.JumpBtn.TabIndex = 33;
-            this.JumpBtn.Text = "Jump";
             this.JumpBtn.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTips.SetToolTip(this.JumpBtn, "Makes the selected player jump");
+            this.ToolTips.SetToolTip(this.JumpBtn, resources.GetString("JumpBtn.ToolTip"));
             this.JumpBtn.UseSelectable = true;
             this.JumpBtn.Click += new System.EventHandler(this.JumpBtnClicked);
             // 
@@ -1165,18 +1017,17 @@
             // 
             // 
             // 
-            this.CanBuildBox.CustomButton.Image = null;
-            this.CanBuildBox.CustomButton.Location = new System.Drawing.Point(388, 1);
+            this.CanBuildBox.CustomButton.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            this.CanBuildBox.CustomButton.Location = ((System.Drawing.Point)(resources.GetObject("resource.Location")));
             this.CanBuildBox.CustomButton.Name = "";
-            this.CanBuildBox.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.CanBuildBox.CustomButton.Size = ((System.Drawing.Size)(resources.GetObject("resource.Size")));
             this.CanBuildBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.CanBuildBox.CustomButton.TabIndex = 1;
+            this.CanBuildBox.CustomButton.TabIndex = ((int)(resources.GetObject("resource.TabIndex")));
             this.CanBuildBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.CanBuildBox.CustomButton.UseSelectable = true;
-            this.CanBuildBox.CustomButton.Visible = false;
-            this.CanBuildBox.Enabled = false;
+            this.CanBuildBox.CustomButton.Visible = ((bool)(resources.GetObject("resource.Visible")));
+            resources.ApplyResources(this.CanBuildBox, "CanBuildBox");
             this.CanBuildBox.Lines = new string[0];
-            this.CanBuildBox.Location = new System.Drawing.Point(87, 246);
             this.CanBuildBox.MaxLength = 32767;
             this.CanBuildBox.Name = "CanBuildBox";
             this.CanBuildBox.PasswordChar = '\0';
@@ -1186,69 +1037,47 @@
             this.CanBuildBox.SelectionLength = 0;
             this.CanBuildBox.SelectionStart = 0;
             this.CanBuildBox.ShortcutsEnabled = true;
-            this.CanBuildBox.Size = new System.Drawing.Size(410, 23);
-            this.CanBuildBox.TabIndex = 75;
             this.CanBuildBox.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTips.SetToolTip(this.CanBuildBox, "Is the selected player allowed to \r\nbuild?");
+            this.ToolTips.SetToolTip(this.CanBuildBox, resources.GetString("CanBuildBox.ToolTip"));
             this.CanBuildBox.UseSelectable = true;
             this.CanBuildBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.CanBuildBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
             // PlayRingSndBtn
             // 
-            this.PlayRingSndBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.PlayRingSndBtn.Location = new System.Drawing.Point(291, 409);
+            resources.ApplyResources(this.PlayRingSndBtn, "PlayRingSndBtn");
             this.PlayRingSndBtn.Name = "PlayRingSndBtn";
-            this.PlayRingSndBtn.Size = new System.Drawing.Size(251, 23);
-            this.PlayRingSndBtn.TabIndex = 34;
-            this.PlayRingSndBtn.Text = "Play \"Ring\" Sound Effect";
             this.PlayRingSndBtn.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTips.SetToolTip(this.PlayRingSndBtn, "Plays a \"ring\" sound effect on the\r\nselected player");
+            this.ToolTips.SetToolTip(this.PlayRingSndBtn, resources.GetString("PlayRingSndBtn.ToolTip"));
             this.PlayRingSndBtn.UseSelectable = true;
             this.PlayRingSndBtn.Click += new System.EventHandler(this.PlayRingSndBtnClicked);
             // 
             // CameraLbl
             // 
-            this.CameraLbl.AutoSize = true;
+            resources.ApplyResources(this.CameraLbl, "CameraLbl");
             this.CameraLbl.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.CameraLbl.Location = new System.Drawing.Point(19, 98);
             this.CameraLbl.Name = "CameraLbl";
-            this.CameraLbl.Size = new System.Drawing.Size(75, 25);
-            this.CameraLbl.TabIndex = 7;
-            this.CameraLbl.Text = "Camera:";
             this.CameraLbl.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // GameModeLbl
             // 
-            this.GameModeLbl.AutoSize = true;
+            resources.ApplyResources(this.GameModeLbl, "GameModeLbl");
             this.GameModeLbl.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.GameModeLbl.Location = new System.Drawing.Point(19, 63);
             this.GameModeLbl.Name = "GameModeLbl";
-            this.GameModeLbl.Size = new System.Drawing.Size(110, 25);
-            this.GameModeLbl.TabIndex = 10;
-            this.GameModeLbl.Text = "Game Mode:";
             this.GameModeLbl.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // capeLbl
             // 
-            this.capeLbl.AutoSize = true;
+            resources.ApplyResources(this.capeLbl, "capeLbl");
             this.capeLbl.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.capeLbl.Location = new System.Drawing.Point(19, 280);
             this.capeLbl.Name = "capeLbl";
-            this.capeLbl.Size = new System.Drawing.Size(55, 25);
-            this.capeLbl.TabIndex = 13;
-            this.capeLbl.Text = "Cape:";
             this.capeLbl.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // SkinIDLbl
             // 
-            this.SkinIDLbl.AutoSize = true;
+            resources.ApplyResources(this.SkinIDLbl, "SkinIDLbl");
             this.SkinIDLbl.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.SkinIDLbl.Location = new System.Drawing.Point(72, 166);
             this.SkinIDLbl.Name = "SkinIDLbl";
-            this.SkinIDLbl.Size = new System.Drawing.Size(68, 25);
-            this.SkinIDLbl.TabIndex = 15;
-            this.SkinIDLbl.Text = "Skin ID:";
             this.SkinIDLbl.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // StyleExt
@@ -1257,24 +1086,16 @@
             // 
             // SkinLbl
             // 
-            this.SkinLbl.AutoSize = true;
+            resources.ApplyResources(this.SkinLbl, "SkinLbl");
             this.SkinLbl.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.SkinLbl.Location = new System.Drawing.Point(19, 133);
             this.SkinLbl.Name = "SkinLbl";
-            this.SkinLbl.Size = new System.Drawing.Size(47, 25);
-            this.SkinLbl.TabIndex = 19;
-            this.SkinLbl.Text = "Skin:";
             this.SkinLbl.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // SkinNameLbl
             // 
-            this.SkinNameLbl.AutoSize = true;
+            resources.ApplyResources(this.SkinNameLbl, "SkinNameLbl");
             this.SkinNameLbl.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.SkinNameLbl.Location = new System.Drawing.Point(72, 194);
             this.SkinNameLbl.Name = "SkinNameLbl";
-            this.SkinNameLbl.Size = new System.Drawing.Size(98, 25);
-            this.SkinNameLbl.TabIndex = 22;
-            this.SkinNameLbl.Text = "Skin Name:";
             this.SkinNameLbl.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // SkinLoopTimer
@@ -1284,22 +1105,14 @@
             // 
             // xpLbl
             // 
-            this.xpLbl.AutoSize = true;
+            resources.ApplyResources(this.xpLbl, "xpLbl");
             this.xpLbl.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.xpLbl.Location = new System.Drawing.Point(23, 320);
             this.xpLbl.Name = "xpLbl";
-            this.xpLbl.Size = new System.Drawing.Size(79, 25);
-            this.xpLbl.TabIndex = 26;
-            this.xpLbl.Text = "XP Level:";
             this.xpLbl.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // PlayerInformationPnl
             // 
-            this.PlayerInformationPnl.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.PlayerInformationPnl.AutoScroll = true;
-            this.PlayerInformationPnl.AutoScrollMargin = new System.Drawing.Size(5, 10);
-            this.PlayerInformationPnl.AutoScrollMinSize = new System.Drawing.Size(0, 50);
+            resources.ApplyResources(this.PlayerInformationPnl, "PlayerInformationPnl");
             this.PlayerInformationPnl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.PlayerInformationPnl.Controls.Add(this.CanBuildBox);
             this.PlayerInformationPnl.Controls.Add(this.CanBuildLbl);
@@ -1351,10 +1164,7 @@
             this.PlayerInformationPnl.HorizontalScrollbarBarColor = false;
             this.PlayerInformationPnl.HorizontalScrollbarHighlightOnWheel = true;
             this.PlayerInformationPnl.HorizontalScrollbarSize = 10;
-            this.PlayerInformationPnl.Location = new System.Drawing.Point(23, 455);
             this.PlayerInformationPnl.Name = "PlayerInformationPnl";
-            this.PlayerInformationPnl.Size = new System.Drawing.Size(519, 462);
-            this.PlayerInformationPnl.TabIndex = 28;
             this.PlayerInformationPnl.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.PlayerInformationPnl.VerticalScrollbar = true;
             this.PlayerInformationPnl.VerticalScrollbarBarColor = true;
@@ -1363,250 +1173,153 @@
             // 
             // CanBuildLbl
             // 
-            this.CanBuildLbl.AutoSize = true;
-            this.CanBuildLbl.Location = new System.Drawing.Point(13, 246);
+            resources.ApplyResources(this.CanBuildLbl, "CanBuildLbl");
             this.CanBuildLbl.Name = "CanBuildLbl";
-            this.CanBuildLbl.Size = new System.Drawing.Size(68, 19);
-            this.CanBuildLbl.TabIndex = 74;
-            this.CanBuildLbl.Text = "Can Build:";
             this.CanBuildLbl.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // IsStarvingLbl
             // 
-            this.IsStarvingLbl.AutoSize = true;
-            this.IsStarvingLbl.Location = new System.Drawing.Point(11, 653);
+            resources.ApplyResources(this.IsStarvingLbl, "IsStarvingLbl");
             this.IsStarvingLbl.Name = "IsStarvingLbl";
-            this.IsStarvingLbl.Size = new System.Drawing.Size(72, 19);
-            this.IsStarvingLbl.TabIndex = 72;
-            this.IsStarvingLbl.Text = "Is Starving:";
             this.IsStarvingLbl.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // IsSpectatingPlayerLbl
             // 
-            this.IsSpectatingPlayerLbl.AutoSize = true;
-            this.IsSpectatingPlayerLbl.Location = new System.Drawing.Point(11, 624);
+            resources.ApplyResources(this.IsSpectatingPlayerLbl, "IsSpectatingPlayerLbl");
             this.IsSpectatingPlayerLbl.Name = "IsSpectatingPlayerLbl";
-            this.IsSpectatingPlayerLbl.Size = new System.Drawing.Size(126, 19);
-            this.IsSpectatingPlayerLbl.TabIndex = 70;
-            this.IsSpectatingPlayerLbl.Text = "Is Spectating Player:";
             this.IsSpectatingPlayerLbl.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // IsSleepingEnoughLbl
             // 
-            this.IsSleepingEnoughLbl.AutoSize = true;
-            this.IsSleepingEnoughLbl.Location = new System.Drawing.Point(11, 595);
+            resources.ApplyResources(this.IsSleepingEnoughLbl, "IsSleepingEnoughLbl");
             this.IsSleepingEnoughLbl.Name = "IsSleepingEnoughLbl";
-            this.IsSleepingEnoughLbl.Size = new System.Drawing.Size(155, 19);
-            this.IsSleepingEnoughLbl.TabIndex = 68;
-            this.IsSleepingEnoughLbl.Text = "Is Sleeping Long Enough:";
             this.IsSleepingEnoughLbl.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // IsSleepingLbl
             // 
-            this.IsSleepingLbl.AutoSize = true;
-            this.IsSleepingLbl.Location = new System.Drawing.Point(11, 566);
+            resources.ApplyResources(this.IsSleepingLbl, "IsSleepingLbl");
             this.IsSleepingLbl.Name = "IsSleepingLbl";
-            this.IsSleepingLbl.Size = new System.Drawing.Size(74, 19);
-            this.IsSleepingLbl.TabIndex = 66;
-            this.IsSleepingLbl.Text = "Is Sleeping:";
             this.IsSleepingLbl.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // IsSendMsgLbl
             // 
-            this.IsSendMsgLbl.AutoSize = true;
-            this.IsSendMsgLbl.Location = new System.Drawing.Point(11, 537);
+            resources.ApplyResources(this.IsSendMsgLbl, "IsSendMsgLbl");
             this.IsSendMsgLbl.Name = "IsSendMsgLbl";
-            this.IsSendMsgLbl.Size = new System.Drawing.Size(159, 19);
-            this.IsSendMsgLbl.TabIndex = 64;
-            this.IsSendMsgLbl.Text = "Is Send Message Enabled:";
             this.IsSendMsgLbl.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // ModeratorLbl
             // 
-            this.ModeratorLbl.AutoSize = true;
-            this.ModeratorLbl.Location = new System.Drawing.Point(14, 14);
+            resources.ApplyResources(this.ModeratorLbl, "ModeratorLbl");
             this.ModeratorLbl.Name = "ModeratorLbl";
-            this.ModeratorLbl.Size = new System.Drawing.Size(89, 19);
-            this.ModeratorLbl.TabIndex = 30;
-            this.ModeratorLbl.Text = "Is Moderator:";
             this.ModeratorLbl.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // IsRespawnedForcedLbl
             // 
-            this.IsRespawnedForcedLbl.AutoSize = true;
-            this.IsRespawnedForcedLbl.Location = new System.Drawing.Point(11, 508);
+            resources.ApplyResources(this.IsRespawnedForcedLbl, "IsRespawnedForcedLbl");
             this.IsRespawnedForcedLbl.Name = "IsRespawnedForcedLbl";
-            this.IsRespawnedForcedLbl.Size = new System.Drawing.Size(135, 19);
-            this.IsRespawnedForcedLbl.TabIndex = 62;
-            this.IsRespawnedForcedLbl.Text = "Is Respawned Forced:";
             this.IsRespawnedForcedLbl.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // IsReducedDebugLbl
             // 
-            this.IsReducedDebugLbl.AutoSize = true;
-            this.IsReducedDebugLbl.Location = new System.Drawing.Point(11, 479);
+            resources.ApplyResources(this.IsReducedDebugLbl, "IsReducedDebugLbl");
             this.IsReducedDebugLbl.Name = "IsReducedDebugLbl";
-            this.IsReducedDebugLbl.Size = new System.Drawing.Size(144, 19);
-            this.IsReducedDebugLbl.TabIndex = 60;
-            this.IsReducedDebugLbl.Text = "Is Reduced Debug Info:";
             this.IsReducedDebugLbl.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // IsPushedByWaterLbl
             // 
-            this.IsPushedByWaterLbl.AutoSize = true;
-            this.IsPushedByWaterLbl.Location = new System.Drawing.Point(13, 449);
+            resources.ApplyResources(this.IsPushedByWaterLbl, "IsPushedByWaterLbl");
             this.IsPushedByWaterLbl.Name = "IsPushedByWaterLbl";
-            this.IsPushedByWaterLbl.Size = new System.Drawing.Size(124, 19);
-            this.IsPushedByWaterLbl.TabIndex = 58;
-            this.IsPushedByWaterLbl.Text = "Is Pushed By Water:";
             this.IsPushedByWaterLbl.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // IsLocalPlayerLbl
             // 
-            this.IsLocalPlayerLbl.AutoSize = true;
-            this.IsLocalPlayerLbl.Location = new System.Drawing.Point(13, 420);
+            resources.ApplyResources(this.IsLocalPlayerLbl, "IsLocalPlayerLbl");
             this.IsLocalPlayerLbl.Name = "IsLocalPlayerLbl";
-            this.IsLocalPlayerLbl.Size = new System.Drawing.Size(95, 19);
-            this.IsLocalPlayerLbl.TabIndex = 56;
-            this.IsLocalPlayerLbl.Text = "Is Local Player:";
             this.IsLocalPlayerLbl.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // IsInWallLbl
             // 
-            this.IsInWallLbl.AutoSize = true;
-            this.IsInWallLbl.Location = new System.Drawing.Point(13, 391);
+            resources.ApplyResources(this.IsInWallLbl, "IsInWallLbl");
             this.IsInWallLbl.Name = "IsInWallLbl";
-            this.IsInWallLbl.Size = new System.Drawing.Size(63, 19);
-            this.IsInWallLbl.TabIndex = 54;
-            this.IsInWallLbl.Text = "Is In Wall:";
             this.IsInWallLbl.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // IsImmobileLbl
             // 
-            this.IsImmobileLbl.AutoSize = true;
-            this.IsImmobileLbl.Location = new System.Drawing.Point(13, 362);
+            resources.ApplyResources(this.IsImmobileLbl, "IsImmobileLbl");
             this.IsImmobileLbl.Name = "IsImmobileLbl";
-            this.IsImmobileLbl.Size = new System.Drawing.Size(80, 19);
-            this.IsImmobileLbl.TabIndex = 52;
-            this.IsImmobileLbl.Text = "Is Immobile:";
             this.IsImmobileLbl.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // IsHurtLbl
             // 
-            this.IsHurtLbl.AutoSize = true;
-            this.IsHurtLbl.Location = new System.Drawing.Point(13, 333);
+            resources.ApplyResources(this.IsHurtLbl, "IsHurtLbl");
             this.IsHurtLbl.Name = "IsHurtLbl";
-            this.IsHurtLbl.Size = new System.Drawing.Size(50, 19);
-            this.IsHurtLbl.TabIndex = 50;
-            this.IsHurtLbl.Text = "Is Hurt:";
             this.IsHurtLbl.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // IsCreativeFlyingLbl
             // 
-            this.IsCreativeFlyingLbl.AutoSize = true;
-            this.IsCreativeFlyingLbl.Location = new System.Drawing.Point(13, 304);
+            resources.ApplyResources(this.IsCreativeFlyingLbl, "IsCreativeFlyingLbl");
             this.IsCreativeFlyingLbl.Name = "IsCreativeFlyingLbl";
-            this.IsCreativeFlyingLbl.Size = new System.Drawing.Size(110, 19);
-            this.IsCreativeFlyingLbl.TabIndex = 48;
-            this.IsCreativeFlyingLbl.Text = "Is Creative Flying:";
             this.IsCreativeFlyingLbl.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // IsXpDropperLbl
             // 
-            this.IsXpDropperLbl.AutoSize = true;
-            this.IsXpDropperLbl.Location = new System.Drawing.Point(13, 275);
+            resources.ApplyResources(this.IsXpDropperLbl, "IsXpDropperLbl");
             this.IsXpDropperLbl.Name = "IsXpDropperLbl";
-            this.IsXpDropperLbl.Size = new System.Drawing.Size(142, 19);
-            this.IsXpDropperLbl.TabIndex = 46;
-            this.IsXpDropperLbl.Text = "Is Experience Dropper:";
             this.IsXpDropperLbl.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // CanMineLbl
             // 
-            this.CanMineLbl.AutoSize = true;
-            this.CanMineLbl.Location = new System.Drawing.Point(13, 217);
+            resources.ApplyResources(this.CanMineLbl, "CanMineLbl");
             this.CanMineLbl.Name = "CanMineLbl";
-            this.CanMineLbl.Size = new System.Drawing.Size(68, 19);
-            this.CanMineLbl.TabIndex = 44;
-            this.CanMineLbl.Text = "Can Mine:";
             this.CanMineLbl.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // CanIgnoreExhaustionLbl
             // 
-            this.CanIgnoreExhaustionLbl.AutoSize = true;
-            this.CanIgnoreExhaustionLbl.Location = new System.Drawing.Point(13, 188);
+            resources.ApplyResources(this.CanIgnoreExhaustionLbl, "CanIgnoreExhaustionLbl");
             this.CanIgnoreExhaustionLbl.Name = "CanIgnoreExhaustionLbl";
-            this.CanIgnoreExhaustionLbl.Size = new System.Drawing.Size(142, 19);
-            this.CanIgnoreExhaustionLbl.TabIndex = 42;
-            this.CanIgnoreExhaustionLbl.Text = "Can Ignore Exhaustion:";
             this.CanIgnoreExhaustionLbl.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // CanFlyLbl
             // 
-            this.CanFlyLbl.AutoSize = true;
-            this.CanFlyLbl.Location = new System.Drawing.Point(13, 159);
+            resources.ApplyResources(this.CanFlyLbl, "CanFlyLbl");
             this.CanFlyLbl.Name = "CanFlyLbl";
-            this.CanFlyLbl.Size = new System.Drawing.Size(55, 19);
-            this.CanFlyLbl.TabIndex = 40;
-            this.CanFlyLbl.Text = "Can Fly:";
             this.CanFlyLbl.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // CanHarmPlayersLbl
             // 
-            this.CanHarmPlayersLbl.AutoSize = true;
-            this.CanHarmPlayersLbl.Location = new System.Drawing.Point(13, 130);
+            resources.ApplyResources(this.CanHarmPlayersLbl, "CanHarmPlayersLbl");
             this.CanHarmPlayersLbl.Name = "CanHarmPlayersLbl";
-            this.CanHarmPlayersLbl.Size = new System.Drawing.Size(117, 19);
-            this.CanHarmPlayersLbl.TabIndex = 38;
-            this.CanHarmPlayersLbl.Text = "Can Harm Players:";
             this.CanHarmPlayersLbl.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // CanHarmAnimalsLbl
             // 
-            this.CanHarmAnimalsLbl.AutoSize = true;
-            this.CanHarmAnimalsLbl.Location = new System.Drawing.Point(13, 101);
+            resources.ApplyResources(this.CanHarmAnimalsLbl, "CanHarmAnimalsLbl");
             this.CanHarmAnimalsLbl.Name = "CanHarmAnimalsLbl";
-            this.CanHarmAnimalsLbl.Size = new System.Drawing.Size(122, 19);
-            this.CanHarmAnimalsLbl.TabIndex = 36;
-            this.CanHarmAnimalsLbl.Text = "Can Harm Animals:";
             this.CanHarmAnimalsLbl.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // ArmorCoverLbl
             // 
-            this.ArmorCoverLbl.AutoSize = true;
-            this.ArmorCoverLbl.Location = new System.Drawing.Point(13, 72);
+            resources.ApplyResources(this.ArmorCoverLbl, "ArmorCoverLbl");
             this.ArmorCoverLbl.Name = "ArmorCoverLbl";
-            this.ArmorCoverLbl.Size = new System.Drawing.Size(136, 19);
-            this.ArmorCoverLbl.TabIndex = 34;
-            this.ArmorCoverLbl.Text = "Invulnerable Privilege:";
             this.ArmorCoverLbl.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // InvisiblePrivilegeLbl
             // 
-            this.InvisiblePrivilegeLbl.AutoSize = true;
-            this.InvisiblePrivilegeLbl.Location = new System.Drawing.Point(13, 43);
+            resources.ApplyResources(this.InvisiblePrivilegeLbl, "InvisiblePrivilegeLbl");
             this.InvisiblePrivilegeLbl.Name = "InvisiblePrivilegeLbl";
-            this.InvisiblePrivilegeLbl.Size = new System.Drawing.Size(111, 19);
-            this.InvisiblePrivilegeLbl.TabIndex = 32;
-            this.InvisiblePrivilegeLbl.Text = "Invisible Privilege:";
             this.InvisiblePrivilegeLbl.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // InformationLbl
             // 
-            this.InformationLbl.AutoSize = true;
+            resources.ApplyResources(this.InformationLbl, "InformationLbl");
             this.InformationLbl.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.InformationLbl.Location = new System.Drawing.Point(26, 442);
             this.InformationLbl.Name = "InformationLbl";
-            this.InformationLbl.Size = new System.Drawing.Size(100, 25);
-            this.InformationLbl.TabIndex = 29;
-            this.InformationLbl.Text = "Information";
             this.InformationLbl.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // PlayerOptions
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(565, 975);
             this.Controls.Add(this.PlayRingSndBtn);
             this.Controls.Add(this.JumpBtn);
             this.Controls.Add(this.UpdatePlrInfoBtn);
@@ -1634,12 +1347,8 @@
             this.Controls.Add(this.CameraBox);
             this.Controls.Add(this.CameraLbl);
             this.Controls.Add(this.CloseContainersBtn);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(3840, 975);
-            this.MinimumSize = new System.Drawing.Size(565, 975);
             this.Name = "PlayerOptions";
-            this.Text = "Minecraft: Wii U Mod Injector - Player Options";
             this.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.TopMost = true;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Exiting);

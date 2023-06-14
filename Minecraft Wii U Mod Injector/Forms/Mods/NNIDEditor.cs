@@ -17,7 +17,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods
 
         private void Init(object sender, EventArgs e)
         {
-            DiscordRP.SetPresence("Connected", "Nintendo Network ID Editor");
+            DiscordRpc.SetPresence("Connected", "Nintendo Network ID Editor");
 
             if(!MainForm.IsPointerLoaded())
                 WarningLbl.Hide();
@@ -25,7 +25,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods
 
         private void Exiting(object sender, FormClosingEventArgs e)
         {
-            DiscordRP.SetPresence("Connected", new MainForm().MainTabs.SelectedTab.Text + " Tab");
+            DiscordRpc.SetPresence("Connected", new MainForm().MainTabs.SelectedTab.Text + " Tab");
             Dispose();
         }
 

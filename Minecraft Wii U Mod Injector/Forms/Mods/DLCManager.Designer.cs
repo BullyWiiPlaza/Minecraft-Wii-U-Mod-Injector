@@ -31,7 +31,6 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.ColumnHeader DLCPackNames;
-            System.Windows.Forms.ListViewGroup listViewGroup1 = new System.Windows.Forms.ListViewGroup("DLCName", System.Windows.Forms.HorizontalAlignment.Left);
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DLCManager));
             this.ListPacksBtn = new MetroFramework.Controls.MetroButton();
             this.StyleMngr = new MetroFramework.Components.MetroStyleManager(this.components);
@@ -47,16 +46,12 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods
             // 
             // DLCPackNames
             // 
-            DLCPackNames.Width = 200;
+            resources.ApplyResources(DLCPackNames, "DLCPackNames");
             // 
             // ListPacksBtn
             // 
-            this.ListPacksBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ListPacksBtn.Location = new System.Drawing.Point(864, 533);
+            resources.ApplyResources(this.ListPacksBtn, "ListPacksBtn");
             this.ListPacksBtn.Name = "ListPacksBtn";
-            this.ListPacksBtn.Size = new System.Drawing.Size(263, 23);
-            this.ListPacksBtn.TabIndex = 0;
-            this.ListPacksBtn.Text = "List DLC Packs";
             this.ListPacksBtn.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.ListPacksBtn.UseSelectable = true;
             this.ListPacksBtn.Click += new System.EventHandler(this.ListPacksBtn_Click);
@@ -68,35 +63,22 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods
             // 
             // PackCountLabel
             // 
-            this.PackCountLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.PackCountLabel.AutoSize = true;
-            this.PackCountLabel.Location = new System.Drawing.Point(864, 508);
+            resources.ApplyResources(this.PackCountLabel, "PackCountLabel");
             this.PackCountLabel.Name = "PackCountLabel";
-            this.PackCountLabel.Size = new System.Drawing.Size(143, 19);
-            this.PackCountLabel.TabIndex = 2;
-            this.PackCountLabel.Text = "Current Pack amount : ";
             this.PackCountLabel.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // DLCPackListView
             // 
-            this.DLCPackListView.Alignment = System.Windows.Forms.ListViewAlignment.SnapToGrid;
-            this.DLCPackListView.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            resources.ApplyResources(this.DLCPackListView, "DLCPackListView");
             this.DLCPackListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             DLCPackNames});
-            this.DLCPackListView.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.DLCPackListView.FullRowSelect = true;
             this.DLCPackListView.GridLines = true;
-            listViewGroup1.Header = "DLCName";
-            listViewGroup1.Name = "DLCName";
             this.DLCPackListView.Groups.AddRange(new System.Windows.Forms.ListViewGroup[] {
-            listViewGroup1});
-            this.DLCPackListView.Location = new System.Drawing.Point(23, 63);
+            ((System.Windows.Forms.ListViewGroup)(resources.GetObject("DLCPackListView.Groups")))});
             this.DLCPackListView.MultiSelect = false;
             this.DLCPackListView.Name = "DLCPackListView";
             this.DLCPackListView.OwnerDraw = true;
-            this.DLCPackListView.Size = new System.Drawing.Size(835, 464);
-            this.DLCPackListView.TabIndex = 1;
             this.DLCPackListView.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.DLCPackListView.UseCompatibleStateImageBehavior = false;
             this.DLCPackListView.UseSelectable = true;
@@ -105,13 +87,8 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods
             // 
             // dlcPackInfoLabel
             // 
-            this.dlcPackInfoLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.dlcPackInfoLabel.AutoSize = true;
-            this.dlcPackInfoLabel.Location = new System.Drawing.Point(864, 63);
+            resources.ApplyResources(this.dlcPackInfoLabel, "dlcPackInfoLabel");
             this.dlcPackInfoLabel.Name = "dlcPackInfoLabel";
-            this.dlcPackInfoLabel.Size = new System.Drawing.Size(88, 19);
-            this.dlcPackInfoLabel.TabIndex = 3;
-            this.dlcPackInfoLabel.Text = "DLC Pack Info";
             this.dlcPackInfoLabel.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // ToolTipManager
@@ -122,50 +99,34 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Mods
             // 
             // setLicenseMaskBtn
             // 
-            this.setLicenseMaskBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.setLicenseMaskBtn.Enabled = false;
-            this.setLicenseMaskBtn.Location = new System.Drawing.Point(443, 533);
+            resources.ApplyResources(this.setLicenseMaskBtn, "setLicenseMaskBtn");
             this.setLicenseMaskBtn.Name = "setLicenseMaskBtn";
-            this.setLicenseMaskBtn.Size = new System.Drawing.Size(415, 23);
-            this.setLicenseMaskBtn.TabIndex = 4;
-            this.setLicenseMaskBtn.Text = "Set License Mask";
             this.setLicenseMaskBtn.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.setLicenseMaskBtn, "Set the License Mask e.g unlocks the selected DLC Pack");
+            this.ToolTipManager.SetToolTip(this.setLicenseMaskBtn, resources.GetString("setLicenseMaskBtn.ToolTip"));
             this.setLicenseMaskBtn.UseSelectable = true;
             this.setLicenseMaskBtn.Click += new System.EventHandler(this.SetLicenseMask);
             // 
             // removePackBtn
             // 
-            this.removePackBtn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.removePackBtn.Enabled = false;
-            this.removePackBtn.Location = new System.Drawing.Point(23, 533);
+            resources.ApplyResources(this.removePackBtn, "removePackBtn");
             this.removePackBtn.Name = "removePackBtn";
-            this.removePackBtn.Size = new System.Drawing.Size(415, 23);
-            this.removePackBtn.TabIndex = 5;
-            this.removePackBtn.Text = "Remove Pack";
             this.removePackBtn.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.removePackBtn, "Removes the selected DLC Pack from memory");
+            this.ToolTipManager.SetToolTip(this.removePackBtn, resources.GetString("removePackBtn.ToolTip"));
             this.removePackBtn.UseSelectable = true;
             this.removePackBtn.Click += new System.EventHandler(this.RemovePackBtn_Click);
             // 
             // DLCManager
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1150, 580);
             this.Controls.Add(this.removePackBtn);
             this.Controls.Add(this.setLicenseMaskBtn);
             this.Controls.Add(this.dlcPackInfoLabel);
             this.Controls.Add(this.PackCountLabel);
             this.Controls.Add(this.DLCPackListView);
             this.Controls.Add(this.ListPacksBtn);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(3840, 580);
-            this.MinimumSize = new System.Drawing.Size(1150, 580);
             this.Name = "DLCManager";
-            this.Text = "Minecraft: Wii U Mod Injector - DLC Manager [BETA]";
             this.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.OnExit);
             this.Load += new System.EventHandler(this.OnLoad);

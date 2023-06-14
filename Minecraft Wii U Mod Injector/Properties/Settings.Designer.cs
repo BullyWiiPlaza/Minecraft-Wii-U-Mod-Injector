@@ -181,30 +181,6 @@ namespace Minecraft_Wii_U_Mod_Injector.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Left")]
-        public global::MetroFramework.Forms.MetroFormTextAlign FormTxtAlign {
-            get {
-                return ((global::MetroFramework.Forms.MetroFormTextAlign)(this["FormTxtAlign"]));
-            }
-            set {
-                this["FormTxtAlign"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool SeasonalThemes {
-            get {
-                return ((bool)(this["SeasonalThemes"]));
-            }
-            set {
-                this["SeasonalThemes"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("False")]
         public bool SeenTutorial {
             get {

@@ -102,8 +102,8 @@
             this.slothWiiPlazaCredits.Name = "slothWiiPlazaCredits";
             this.slothWiiPlazaCredits.Size = new System.Drawing.Size(353, 57);
             this.slothWiiPlazaCredits.TabIndex = 48;
-            this.slothWiiPlazaCredits.Text = "SlothWiiPlaza: \r\n- Creating/Programming the Minecraft Wii U Mod Injector\r\n- Creat" +
-    "ing most mods";
+            this.slothWiiPlazaCredits.Text = "Sloth@WiiPlaza: \r\n- Creating/Programming the Minecraft Wii U Mod Injector\r\n- Crea" +
+    "ting most mods";
             this.slothWiiPlazaCredits.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.slothWiiPlazaCredits.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.slothWiiPlazaCredits.UseSelectable = true;

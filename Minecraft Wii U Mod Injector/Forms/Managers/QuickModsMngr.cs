@@ -10,6 +10,7 @@ using MetroFramework.Forms;
 using Minecraft_Wii_U_Mod_Injector.Helpers;
 using Minecraft_Wii_U_Mod_Injector.Helpers.Files;
 using Minecraft_Wii_U_Mod_Injector.Helpers.Win_Forms;
+using Minecraft_Wii_U_Mod_Injector.Properties;
 using Application = System.Windows.Forms.Application;
 
 namespace Minecraft_Wii_U_Mod_Injector.Forms.Managers
@@ -52,12 +53,12 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Managers
             if (!Directory.Exists(_qmmRootDir))
                 Directory.CreateDirectory(_qmmRootDir);
 
-            if (!Properties.Settings.Default.SeenQmmMngr)
+            if (!Settings.Default.SeenQmmMngr)
                 Messaging.Show(
                     "Welcome to the Quick Mods Manager!\nQuick Mods are basically mod presets, you activate a quick mod and it activates a bunch of mods within that" +
                     " preset.\nThis is useful for whenever you want to activate a large amount of mods at once");
 
-            Properties.Settings.Default.SeenQmmMngr = true;
+            Settings.Default.SeenQmmMngr = true;
 
             LoadInstalledQmms();
 
@@ -70,13 +71,13 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Managers
 
             foreach (MetroTabPage page in _iw.MinigamesTabs.TabPages) PopulateModsList(page);
 
-            DiscordRP.SetPresence(_iw.IsConnected ? "Connected" : "Disconnected",
+            DiscordRpc.SetPresence(_iw.IsConnected ? "Connected" : "Disconnected",
                 "Quick Mods Manager - Browsing Quick Mods");
         }
 
         private void Exiting(object sender, FormClosingEventArgs e)
         {
-            DiscordRP.SetPresence(_iw.IsConnected ? "Connected" : "Disconnected", _iw.MainTabs.SelectedTab.Text + " Tab");
+            DiscordRpc.SetPresence(_iw.IsConnected ? "Connected" : "Disconnected", _iw.MainTabs.SelectedTab.Text + " Tab");
             Dispose();
         }
 
@@ -124,10 +125,10 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Managers
             }
 
             if (tile.TileCount == 0)
-                DiscordRP.SetPresence(_iw.IsConnected ? "Connected" : "Disconnected",
+                DiscordRpc.SetPresence(_iw.IsConnected ? "Connected" : "Disconnected",
                     "Quick Mods Manager - Browsing Quick Mods");
             else
-                DiscordRP.SetPresence(_iw.IsConnected ? "Connected" : "Disconnected",
+                DiscordRpc.SetPresence(_iw.IsConnected ? "Connected" : "Disconnected",
                     "Quick Mods Manager - Making a new Quick Mod");
 
             EmptyTile.Text = @"Currently Viewing:
@@ -254,7 +255,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Forms.Managers
         {
             SwapTab(CreatorTile, null);
 
-            DiscordRP.SetPresence(_iw.IsConnected ? "Connected" : "Disconnected",
+            DiscordRpc.SetPresence(_iw.IsConnected ? "Connected" : "Disconnected",
                 "Quick Mods Manager - Editing " + file.Read("name", "meta"));
 
             qmmNameBox.Text = file.Read("name", "meta");

@@ -132,11 +132,12 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
 
                     Injector.HostIndicators.Checked = Settings.Default.HostIndicators;
 
-                    // TODO Implement new language switcher logic here.. once there are languages setup
+                    // TODO
+                    // Implement new language switcher logic here.. once there are languages setup
                 }
-                catch (Exception)
+                catch (Exception e)
                 {
-                    //Failing to set User Preferences isn't a big deal, so we ignore the exception if one happens
+                    Debug.WriteLine(e);
                 }
 
                 Miscellaneous.DoHostIndicators(Settings.Default.HostIndicators);

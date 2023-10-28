@@ -1,4 +1,4 @@
-[Release v1.533.00 (June 14th, 2023)]
+[Release v1.534.00 (November N/A, 2023)]
 
 # Overview
 
@@ -8,67 +8,12 @@ This update adds several mods, has several additions and fixes a couple of bugs
 
 ### General Additions & Updates
 
-- Player(s) / Item(s) > Developer Mode options have been split up into 3 different mods "Detailed Item Tooltips", "Skin Changing In Gameplay" and "Selectable Map Variants"
-- Player(s) / Item(s) > Detailed Item Tooltips
-- Player(s) / Item(s) > Session Manager
-- Player(s) / Item(s) > Session Manager > Session Options > Maximum Player Count
-- Player(s) / Item(s) > Session Manager > Player Options > Game Mode
-- Player(s) / Item(s) > Session Manager > Player Options > Skin
-- Player(s) / Item(s) > Session Manager > Player Options > Cape
-- Player(s) / Item(s) > Session Manager > Player Options > XP Level
-- Player(s) / Item(s) > Session Manager > Player Options > Unlock/Lock Player Positions
-- Player(s) / Item(s) > Session Manager > Player Options > Set Players Vulnerable/Invulnerable
-- Player(s) / Item(s) > Fully Charged Bows
-- Player(s) / Item(s) > Disable Potion Particles
-- Player(s) / Item(s) > Elytra Forward Speed
-- Player(s) / Item(s) > Elytra Takeoff Height
-- Player(s) / Item(s) > Elytra Recovery Height
-- Player(s) / Item(s) > Field Of View has been improved
-- Player(s) / Item(s) > Field Of View Splitscreen has been removed due to improvements to Field Of View
-- Player(s) / Item(s) > Insane Critical Hits has been replaced with a customizable "Critical Hit Multiplier" slider
-- Player(s) / Item(s) > Fast Swimming has been replaced wih a customizable "Swimming Speed" slider
-- World / Entities > World Generation Editor > Warnings added for when adjusting World Size/going past 64 chunks
-- World / Entities > Always Day Light has been moved from Player(s) / Item(s)
-- World / Entities > Bubble Column Anywhere
-- World / Entities > Giant Texture Fix
-- World / Entities > Renamed Tab Button from "World and Entities" to match with the other buttons
-- World / Entities > Removed Loot Table Editor
-- World / Entities > Entity Editor > Entity Swapper
-- General Game > Panorama Mode
-- General Game > Join Random Games
-- General Game > Arrow/Potion Crash Fix
-- General Game > Uncensor Content
-- Minigames > General > Players > Ready/Unready All Players
-- Minigames > General > Players >  Set Players Invulnerable/Vulnerable
-- Minigames > General > Players >  Lock/Unlock Player Positions
-- Minigames > General > Players >  Game Mode
-- Minigames > General > Gameplay > Skin Changing In Gameplay
-- Minigames > Battle > Selectable Map Variants
-- Minigames > Glide > Start "Round End" Timer
-- Settings > Language Manager has been replaced with a Language selection box
-- Settings > Languages can now be applied to all windows and controls
-- Cemu Graphics Pack Manager > Support for "data section" mods
-- Cemu Graphics Pack Manager > Export All, which exports all mods to individual graphic packs so you can toggle them on and off in-game
-- Cemu Graphics Pack Manager > Included several missing mods (Not all, this utility has no active development at the moment and will be overhauled at a later date)
-- Cemu Graphics Pack Manager > Added Tool Tips
-- Cemu Graphics Pack Manager > Updated old mod names
-- Windows > File and Folder Browser dialogs now use a modernized window
-- Tool Tips > Several Tool Tips have been adjusted to provide more information
-- Credits > Updated Credits
-
 # Fixes
 
 ### Mod Fixes
-
-- Player(s) / Item(s) > "Craft Anything" no longer makes lighting strike constantly
-- Player(s) / Item(s) > "No Collision" now affects all blocks
-- World / Entities > World Generation Editor > Nether Size now correctly adjusts the Nether instead of the overworld
-- World / Entities > World Generation Editor > Amplified Terrain no longer messes with other functions
-- General Game > Map Text Editor > Setting Map Text no longer freezes the Wii U
+- World / Entities > Gaint Texture Fix now writes to the correct address and should no longer crash
+- Players / Items > Session Manager > Player Options > Set Vulnerable no longer locks player in position
 
 ### General Fixes
-
-- Navigation Menu > Clicking on the Minigames tile will only pop out the menu rather than switch to the last selected TabPage
-- Navigation Menu > Clicking on any Minigames sub category while the currently selected tab is not Minigames will now switch the Tab to the Minigames tab
-- Cemu Graphics Pack Manager > Overwriting a existing Graphics Pack no longer throws an exception
-- Cemu Graphics Pack Manager > Fixed an issue where the selected mods had a chance of duplicating in the patches.txt file
+- Cemu Graphics Pack Manager > Checkbox text has been corrected
+- Cemu Graphics Pack Manager > Tab controls are now properly alligned

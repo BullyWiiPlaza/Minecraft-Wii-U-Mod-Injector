@@ -259,7 +259,7 @@
             this.SetInvulnerableTile.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
             this.ToolTipManager.SetToolTip(this.SetInvulnerableTile, resources.GetString("SetInvulnerableTile.ToolTip"));
             this.SetInvulnerableTile.UseSelectable = true;
-            this.SetInvulnerableTile.Click += new System.EventHandler(this.PositionTilesClicked);
+            this.SetInvulnerableTile.Click += new System.EventHandler(this.VulnerabilityTileClicked);
             // 
             // LockPositionTile
             // 
@@ -376,7 +376,7 @@
             this.PlayersTabControl.HotTrack = true;
             resources.ApplyResources(this.PlayersTabControl, "PlayersTabControl");
             this.PlayersTabControl.Name = "PlayersTabControl";
-            this.PlayersTabControl.SelectedIndex = 0;
+            this.PlayersTabControl.SelectedIndex = 1;
             this.PlayersTabControl.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.PlayersTabControl.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.PlayersTabControl.UseSelectable = true;

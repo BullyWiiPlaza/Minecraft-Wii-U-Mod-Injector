@@ -15,6 +15,9 @@ using Application = System.Windows.Forms.Application;
 
 namespace Minecraft_Wii_U_Mod_Injector.Forms.Managers
 {
+    // TODO
+    // - Rework of the entire Graphics Pack Manager
+    // * The current system is extremely fragile, messy and is missing a lot of features. It's in desperate need of a rework.
     public partial class CemuPckMngr : MetroForm
     {
         #region references

@@ -328,7 +328,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.settingsTab = new MetroFramework.Controls.MetroTabPage();
             this.LanguageBox = new MetroFramework.Controls.MetroComboBox();
             this.LanguageLbl = new MetroFramework.Controls.MetroLabel();
-            this.TipsBtn = new MetroFramework.Controls.MetroButton();
             this.TutorialBtn = new MetroFramework.Controls.MetroButton();
             this.HostIndicators = new MetroFramework.Controls.MetroCheckBox();
             this.CemuPckMngrBtn = new MetroFramework.Controls.MetroButton();
@@ -440,7 +439,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             resources.ApplyResources(this.MinigamesTile, "MinigamesTile");
             this.MinigamesTile.Name = "MinigamesTile";
             this.MinigamesTile.PaintTileCount = false;
-            this.MinigamesTile.Tag = "";
+            this.MinigamesTile.Tag = "MgTile";
             this.MinigamesTile.TileCount = 4;
             this.MinigamesTile.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
             this.MinigamesTile.UseSelectable = true;
@@ -535,7 +534,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             resources.ApplyResources(this.SetupTutorialBtn, "SetupTutorialBtn");
             this.SetupTutorialBtn.Name = "SetupTutorialBtn";
             this.SetupTutorialBtn.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.SetupTutorialBtn, resources.GetString("SetupTutorialBtn.ToolTip"));
             this.SetupTutorialBtn.UseSelectable = true;
             this.SetupTutorialBtn.Click += new System.EventHandler(this.SetupTutorialBtnClicked);
             // 
@@ -544,7 +542,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             resources.ApplyResources(this.FaqBtn, "FaqBtn");
             this.FaqBtn.Name = "FaqBtn";
             this.FaqBtn.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.FaqBtn, resources.GetString("FaqBtn.ToolTip"));
             this.FaqBtn.UseSelectable = true;
             this.FaqBtn.Click += new System.EventHandler(this.OpenFaqInfoClicked);
             // 
@@ -561,7 +558,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             resources.ApplyResources(this.CreditsBtn, "CreditsBtn");
             this.CreditsBtn.Name = "CreditsBtn";
             this.CreditsBtn.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.CreditsBtn, resources.GetString("CreditsBtn.ToolTip"));
             this.CreditsBtn.UseSelectable = true;
             this.CreditsBtn.Click += new System.EventHandler(this.CreditsBtnClicked);
             // 
@@ -570,7 +566,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             resources.ApplyResources(this.ConnectBtn, "ConnectBtn");
             this.ConnectBtn.Name = "ConnectBtn";
             this.ConnectBtn.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.ConnectBtn, resources.GetString("ConnectBtn.ToolTip"));
             this.ConnectBtn.UseSelectable = true;
             this.ConnectBtn.Click += new System.EventHandler(this.ConnectBtnClicked);
             // 
@@ -579,7 +574,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             resources.ApplyResources(this.DiscordSrvBtn, "DiscordSrvBtn");
             this.DiscordSrvBtn.Name = "DiscordSrvBtn";
             this.DiscordSrvBtn.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.DiscordSrvBtn, resources.GetString("DiscordSrvBtn.ToolTip"));
             this.DiscordSrvBtn.UseSelectable = true;
             this.DiscordSrvBtn.Click += new System.EventHandler(this.DiscordSrvBtnClicked);
             // 
@@ -766,13 +760,13 @@ namespace Minecraft_Wii_U_Mod_Injector
             0});
             this.ElytraForwardSpeedSlider.Name = "ElytraForwardSpeedSlider";
             this.ElytraForwardSpeedSlider.Tag = "";
-            this.ToolTipManager.SetToolTip(this.ElytraForwardSpeedSlider, resources.GetString("ElytraForwardSpeedSlider.ToolTip"));
             this.ElytraForwardSpeedSlider.Value = new decimal(new int[] {
             1872,
             0,
             0,
             196608});
             this.ElytraForwardSpeedSlider.ValueChanged += new System.EventHandler(this.ElytraForwardSpeedSliderChanged);
+            this.ElytraForwardSpeedSlider.Click += new System.EventHandler(this.SliderClicked);
             // 
             // ElytraForwardSpeed
             // 
@@ -804,7 +798,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             0});
             this.ElytraRecoveryHeightSlider.Name = "ElytraRecoveryHeightSlider";
             this.ElytraRecoveryHeightSlider.Tag = "";
-            this.ToolTipManager.SetToolTip(this.ElytraRecoveryHeightSlider, resources.GetString("ElytraRecoveryHeightSlider.ToolTip"));
             this.ElytraRecoveryHeightSlider.Value = new decimal(new int[] {
             215,
             0,
@@ -842,7 +835,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             0});
             this.ElytraTakeoffHeightSlider.Name = "ElytraTakeoffHeightSlider";
             this.ElytraTakeoffHeightSlider.Tag = "";
-            this.ToolTipManager.SetToolTip(this.ElytraTakeoffHeightSlider, resources.GetString("ElytraTakeoffHeightSlider.ToolTip"));
             this.ElytraTakeoffHeightSlider.Value = new decimal(new int[] {
             1875,
             0,
@@ -868,7 +860,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.DisablePotionParticles.Style = MetroFramework.MetroColorStyle.Blue;
             this.DisablePotionParticles.Tag = "NonHost";
             this.DisablePotionParticles.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.DisablePotionParticles, resources.GetString("DisablePotionParticles.ToolTip"));
             this.DisablePotionParticles.UseSelectable = true;
             this.DisablePotionParticles.UseStyleColors = true;
             this.DisablePotionParticles.CheckedChanged += new System.EventHandler(this.DisablePotionParticlesToggled);
@@ -880,7 +871,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.FullyChargedBows.Style = MetroFramework.MetroColorStyle.Orange;
             this.FullyChargedBows.Tag = "Host";
             this.FullyChargedBows.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.FullyChargedBows, resources.GetString("FullyChargedBows.ToolTip"));
             this.FullyChargedBows.UseSelectable = true;
             this.FullyChargedBows.UseStyleColors = true;
             this.FullyChargedBows.CheckedChanged += new System.EventHandler(this.FullyChargedBowsToggled);
@@ -905,7 +895,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.SessionManagerBtn.Style = MetroFramework.MetroColorStyle.Blue;
             this.SessionManagerBtn.Tag = "NonHost";
             this.SessionManagerBtn.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.SessionManagerBtn, resources.GetString("SessionManagerBtn.ToolTip"));
             this.SessionManagerBtn.UseSelectable = true;
             this.SessionManagerBtn.UseStyleColors = true;
             this.SessionManagerBtn.Click += new System.EventHandler(this.SessionManagerBtnClicked);
@@ -919,13 +908,13 @@ namespace Minecraft_Wii_U_Mod_Injector
             resources.ApplyResources(this.SwimmingSpeedSlider, "SwimmingSpeedSlider");
             this.SwimmingSpeedSlider.Name = "SwimmingSpeedSlider";
             this.SwimmingSpeedSlider.Tag = "";
-            this.ToolTipManager.SetToolTip(this.SwimmingSpeedSlider, resources.GetString("SwimmingSpeedSlider.ToolTip"));
             this.SwimmingSpeedSlider.Value = new decimal(new int[] {
             2,
             0,
             0,
             131072});
             this.SwimmingSpeedSlider.ValueChanged += new System.EventHandler(this.SwimmingSpeedSliderChanged);
+            this.SwimmingSpeedSlider.Click += new System.EventHandler(this.SliderClicked);
             // 
             // SwimmingSpeedLbl
             // 
@@ -945,7 +934,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.InstantSleep.Style = MetroFramework.MetroColorStyle.Orange;
             this.InstantSleep.Tag = "Host";
             this.InstantSleep.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.InstantSleep, resources.GetString("InstantSleep.ToolTip"));
             this.InstantSleep.UseSelectable = true;
             this.InstantSleep.UseStyleColors = true;
             this.InstantSleep.CheckedChanged += new System.EventHandler(this.InstantSleepToggled);
@@ -957,7 +945,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.NoCooldowns.Style = MetroFramework.MetroColorStyle.Blue;
             this.NoCooldowns.Tag = "NonHost";
             this.NoCooldowns.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.NoCooldowns, resources.GetString("NoCooldowns.ToolTip"));
             this.NoCooldowns.UseSelectable = true;
             this.NoCooldowns.UseStyleColors = true;
             this.NoCooldowns.CheckedChanged += new System.EventHandler(this.NoCooldownsToggled);
@@ -1000,7 +987,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             resources.GetString("defPotionBox.Items28")});
             this.defPotionBox.Name = "defPotionBox";
             this.defPotionBox.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.defPotionBox, resources.GetString("defPotionBox.ToolTip"));
             this.defPotionBox.UseSelectable = true;
             this.defPotionBox.SelectedIndexChanged += new System.EventHandler(this.DefPotionBoxChanged);
             // 
@@ -1024,13 +1010,13 @@ namespace Minecraft_Wii_U_Mod_Injector
             resources.ApplyResources(this.AirborneSpeedSlider, "AirborneSpeedSlider");
             this.AirborneSpeedSlider.Name = "AirborneSpeedSlider";
             this.AirborneSpeedSlider.Tag = "";
-            this.ToolTipManager.SetToolTip(this.AirborneSpeedSlider, resources.GetString("AirborneSpeedSlider.ToolTip"));
             this.AirborneSpeedSlider.Value = new decimal(new int[] {
             2,
             0,
             0,
             65536});
             this.AirborneSpeedSlider.ValueChanged += new System.EventHandler(this.AirborneSpeedSliderChanged);
+            this.AirborneSpeedSlider.Click += new System.EventHandler(this.SliderClicked);
             // 
             // AirborneSpeed
             // 
@@ -1051,7 +1037,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.PunchToRide.Style = MetroFramework.MetroColorStyle.Blue;
             this.PunchToRide.Tag = "NonHost";
             this.PunchToRide.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.PunchToRide, resources.GetString("PunchToRide.ToolTip"));
             this.PunchToRide.UseSelectable = true;
             this.PunchToRide.UseStyleColors = true;
             this.PunchToRide.CheckedChanged += new System.EventHandler(this.PunchToRideToggled);
@@ -1063,7 +1048,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.UnlimitedTotemsOfUndying.Style = MetroFramework.MetroColorStyle.Orange;
             this.UnlimitedTotemsOfUndying.Tag = "Host";
             this.UnlimitedTotemsOfUndying.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.UnlimitedTotemsOfUndying, resources.GetString("UnlimitedTotemsOfUndying.ToolTip"));
             this.UnlimitedTotemsOfUndying.UseSelectable = true;
             this.UnlimitedTotemsOfUndying.UseStyleColors = true;
             this.UnlimitedTotemsOfUndying.CheckedChanged += new System.EventHandler(this.UnlimitedTotemsOfUndyingToggled);
@@ -1076,7 +1060,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.SplashLingeringPotions.Style = MetroFramework.MetroColorStyle.Orange;
             this.SplashLingeringPotions.Tag = "Host";
             this.SplashLingeringPotions.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.SplashLingeringPotions, resources.GetString("SplashLingeringPotions.ToolTip"));
             this.SplashLingeringPotions.UseSelectable = true;
             this.SplashLingeringPotions.UseStyleColors = true;
             this.SplashLingeringPotions.CheckedChanged += new System.EventHandler(this.SplashLingeringPotionsToggled);
@@ -1089,7 +1072,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.EffectsLastForever.Style = MetroFramework.MetroColorStyle.Orange;
             this.EffectsLastForever.Tag = "Host";
             this.EffectsLastForever.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.EffectsLastForever, resources.GetString("EffectsLastForever.ToolTip"));
             this.EffectsLastForever.UseSelectable = true;
             this.EffectsLastForever.UseStyleColors = true;
             this.EffectsLastForever.CheckedChanged += new System.EventHandler(this.EffectsLastForeverToggled);
@@ -1101,7 +1083,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.ItemOfUndying.Style = MetroFramework.MetroColorStyle.Orange;
             this.ItemOfUndying.Tag = "Host";
             this.ItemOfUndying.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.ItemOfUndying, resources.GetString("ItemOfUndying.ToolTip"));
             this.ItemOfUndying.UseSelectable = true;
             this.ItemOfUndying.UseStyleColors = true;
             this.ItemOfUndying.CheckedChanged += new System.EventHandler(this.ItemOfUndyingToggled);
@@ -1113,7 +1094,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.NoDamage.Style = MetroFramework.MetroColorStyle.Orange;
             this.NoDamage.Tag = "Host";
             this.NoDamage.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.NoDamage, resources.GetString("NoDamage.ToolTip"));
             this.NoDamage.UseSelectable = true;
             this.NoDamage.UseStyleColors = true;
             this.NoDamage.CheckedChanged += new System.EventHandler(this.NoDamageToggled);
@@ -1132,7 +1112,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             0});
             this.WaterDownStrengthSlider.Name = "WaterDownStrengthSlider";
             this.WaterDownStrengthSlider.Tag = "";
-            this.ToolTipManager.SetToolTip(this.WaterDownStrengthSlider, resources.GetString("WaterDownStrengthSlider.ToolTip"));
             this.WaterDownStrengthSlider.Value = new decimal(new int[] {
             1285,
             0,
@@ -1167,7 +1146,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             resources.GetString("breatheBox.Items5")});
             this.breatheBox.Name = "breatheBox";
             this.breatheBox.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.breatheBox, resources.GetString("breatheBox.ToolTip"));
             this.breatheBox.UseSelectable = true;
             this.breatheBox.SelectedIndexChanged += new System.EventHandler(this.BreatheBoxChanged);
             // 
@@ -1189,7 +1167,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.BreakBedrock.Style = MetroFramework.MetroColorStyle.Blue;
             this.BreakBedrock.Tag = "NonHost";
             this.BreakBedrock.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.BreakBedrock, resources.GetString("BreakBedrock.ToolTip"));
             this.BreakBedrock.UseSelectable = true;
             this.BreakBedrock.UseStyleColors = true;
             this.BreakBedrock.CheckedChanged += new System.EventHandler(this.BreakBedrockToggled);
@@ -1201,7 +1178,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.BreakAnything.Style = MetroFramework.MetroColorStyle.Blue;
             this.BreakAnything.Tag = "NonHost";
             this.BreakAnything.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.BreakAnything, resources.GetString("BreakAnything.ToolTip"));
             this.BreakAnything.UseSelectable = true;
             this.BreakAnything.UseStyleColors = true;
             this.BreakAnything.CheckedChanged += new System.EventHandler(this.BreakAnythingToggled);
@@ -1213,7 +1189,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.AirJump.Style = MetroFramework.MetroColorStyle.Blue;
             this.AirJump.Tag = "NonHost";
             this.AirJump.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.AirJump, resources.GetString("AirJump.ToolTip"));
             this.AirJump.UseSelectable = true;
             this.AirJump.UseStyleColors = true;
             this.AirJump.CheckedChanged += new System.EventHandler(this.AirJumpToggled);
@@ -1225,7 +1200,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.LeftHanded.Style = MetroFramework.MetroColorStyle.Blue;
             this.LeftHanded.Tag = "NonHost";
             this.LeftHanded.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.LeftHanded, resources.GetString("LeftHanded.ToolTip"));
             this.LeftHanded.UseSelectable = true;
             this.LeftHanded.UseStyleColors = true;
             this.LeftHanded.CheckedChanged += new System.EventHandler(this.LeftHandedToggled);
@@ -1243,7 +1217,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             0});
             this.MaxStackSlider.Name = "MaxStackSlider";
             this.MaxStackSlider.Tag = "";
-            this.ToolTipManager.SetToolTip(this.MaxStackSlider, resources.GetString("MaxStackSlider.ToolTip"));
             this.MaxStackSlider.Value = new decimal(new int[] {
             64,
             0,
@@ -1269,7 +1242,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.UnlimitedEnchants.Style = MetroFramework.MetroColorStyle.Orange;
             this.UnlimitedEnchants.Tag = "Host";
             this.UnlimitedEnchants.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.UnlimitedEnchants, resources.GetString("UnlimitedEnchants.ToolTip"));
             this.UnlimitedEnchants.UseSelectable = true;
             this.UnlimitedEnchants.UseStyleColors = true;
             this.UnlimitedEnchants.CheckedChanged += new System.EventHandler(this.UnlimitedEnchantsToggled);
@@ -1281,7 +1253,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.EnchantmentEditorBtn.Style = MetroFramework.MetroColorStyle.Blue;
             this.EnchantmentEditorBtn.Tag = "NonHost";
             this.EnchantmentEditorBtn.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.EnchantmentEditorBtn, resources.GetString("EnchantmentEditorBtn.ToolTip"));
             this.EnchantmentEditorBtn.UseSelectable = true;
             this.EnchantmentEditorBtn.UseStyleColors = true;
             this.EnchantmentEditorBtn.Click += new System.EventHandler(this.EnchantmentEditorBtnClicked);
@@ -1293,7 +1264,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.Invisible.Style = MetroFramework.MetroColorStyle.Orange;
             this.Invisible.Tag = "Host";
             this.Invisible.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.Invisible, resources.GetString("Invisible.ToolTip"));
             this.Invisible.UseSelectable = true;
             this.Invisible.UseStyleColors = true;
             this.Invisible.CheckedChanged += new System.EventHandler(this.InvisibleToggled);
@@ -1316,7 +1286,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             0});
             this.PotionAmplifierSlider.Name = "PotionAmplifierSlider";
             this.PotionAmplifierSlider.Tag = "";
-            this.ToolTipManager.SetToolTip(this.PotionAmplifierSlider, resources.GetString("PotionAmplifierSlider.ToolTip"));
             this.PotionAmplifierSlider.ValueChanged += new System.EventHandler(this.PotionAmplifierSliderChanged);
             // 
             // FrictionSlider
@@ -1338,7 +1307,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             -2147483648});
             this.FrictionSlider.Name = "FrictionSlider";
             this.FrictionSlider.Tag = "";
-            this.ToolTipManager.SetToolTip(this.FrictionSlider, resources.GetString("FrictionSlider.ToolTip"));
             this.FrictionSlider.Value = new decimal(new int[] {
             91000003,
             0,
@@ -1361,7 +1329,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             resources.ApplyResources(this.playerModelScaleSlider, "playerModelScaleSlider");
             this.playerModelScaleSlider.Name = "playerModelScaleSlider";
             this.playerModelScaleSlider.Tag = "";
-            this.ToolTipManager.SetToolTip(this.playerModelScaleSlider, resources.GetString("playerModelScaleSlider.ToolTip"));
             this.playerModelScaleSlider.Value = new decimal(new int[] {
             9375,
             0,
@@ -1389,7 +1356,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             0});
             this.CriticalHitMultiplierSlider.Name = "CriticalHitMultiplierSlider";
             this.CriticalHitMultiplierSlider.Tag = "";
-            this.ToolTipManager.SetToolTip(this.CriticalHitMultiplierSlider, resources.GetString("CriticalHitMultiplierSlider.ToolTip"));
             this.CriticalHitMultiplierSlider.Value = new decimal(new int[] {
             15,
             0,
@@ -1422,7 +1388,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             -2147483648});
             this.RiptideFlyingSpeedSlider.Name = "RiptideFlyingSpeedSlider";
             this.RiptideFlyingSpeedSlider.Tag = "";
-            this.ToolTipManager.SetToolTip(this.RiptideFlyingSpeedSlider, resources.GetString("RiptideFlyingSpeedSlider.ToolTip"));
             this.RiptideFlyingSpeedSlider.Value = new decimal(new int[] {
             25,
             0,
@@ -1450,7 +1415,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             0});
             this.SprintingSpeedScaleSlider.Name = "SprintingSpeedScaleSlider";
             this.SprintingSpeedScaleSlider.Tag = "";
-            this.ToolTipManager.SetToolTip(this.SprintingSpeedScaleSlider, resources.GetString("SprintingSpeedScaleSlider.ToolTip"));
             this.SprintingSpeedScaleSlider.Value = new decimal(new int[] {
             1875,
             0,
@@ -1472,7 +1436,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             0});
             this.EnchantmentLevelSlider.Name = "EnchantmentLevelSlider";
             this.EnchantmentLevelSlider.Tag = "";
-            this.ToolTipManager.SetToolTip(this.EnchantmentLevelSlider, resources.GetString("EnchantmentLevelSlider.ToolTip"));
             this.EnchantmentLevelSlider.ValueChanged += new System.EventHandler(this.EnchantmentLevelSliderChanged);
             // 
             // WalkingSpeedScaleSlider
@@ -1494,7 +1457,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             0});
             this.WalkingSpeedScaleSlider.Name = "WalkingSpeedScaleSlider";
             this.WalkingSpeedScaleSlider.Tag = "";
-            this.ToolTipManager.SetToolTip(this.WalkingSpeedScaleSlider, resources.GetString("WalkingSpeedScaleSlider.ToolTip"));
             this.WalkingSpeedScaleSlider.Value = new decimal(new int[] {
             163,
             0,
@@ -1527,7 +1489,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             -2147483648});
             this.ReachSlider.Name = "ReachSlider";
             this.ReachSlider.Tag = "";
-            this.ToolTipManager.SetToolTip(this.ReachSlider, resources.GetString("ReachSlider.ToolTip"));
             this.ReachSlider.Value = new decimal(new int[] {
             45,
             0,
@@ -1560,7 +1521,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             -2147483648});
             this.JumpHeightSlider.Name = "JumpHeightSlider";
             this.JumpHeightSlider.Tag = "";
-            this.ToolTipManager.SetToolTip(this.JumpHeightSlider, resources.GetString("JumpHeightSlider.ToolTip"));
             this.JumpHeightSlider.Value = new decimal(new int[] {
             420,
             0,
@@ -1582,13 +1542,13 @@ namespace Minecraft_Wii_U_Mod_Injector
             0});
             this.FieldOfViewSlider.Name = "FieldOfViewSlider";
             this.FieldOfViewSlider.Tag = "";
-            this.ToolTipManager.SetToolTip(this.FieldOfViewSlider, resources.GetString("FieldOfViewSlider.ToolTip"));
             this.FieldOfViewSlider.Value = new decimal(new int[] {
             70,
             0,
             0,
             0});
             this.FieldOfViewSlider.ValueChanged += new System.EventHandler(this.FieldOfViewSliderChanged);
+            this.FieldOfViewSlider.Click += new System.EventHandler(this.SliderClicked);
             // 
             // HitBoxScaleSlider
             // 
@@ -1604,7 +1564,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             resources.ApplyResources(this.HitBoxScaleSlider, "HitBoxScaleSlider");
             this.HitBoxScaleSlider.Name = "HitBoxScaleSlider";
             this.HitBoxScaleSlider.Tag = "";
-            this.ToolTipManager.SetToolTip(this.HitBoxScaleSlider, resources.GetString("HitBoxScaleSlider.ToolTip"));
             this.HitBoxScaleSlider.Value = new decimal(new int[] {
             5,
             0,
@@ -1631,7 +1590,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.NoSlowDowns.Style = MetroFramework.MetroColorStyle.Blue;
             this.NoSlowDowns.Tag = "NonHost";
             this.NoSlowDowns.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.NoSlowDowns, resources.GetString("NoSlowDowns.ToolTip"));
             this.NoSlowDowns.UseSelectable = true;
             this.NoSlowDowns.UseStyleColors = true;
             this.NoSlowDowns.CheckedChanged += new System.EventHandler(this.NoSlowDownsToggled);
@@ -1643,7 +1601,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.ESP.Style = MetroFramework.MetroColorStyle.Blue;
             this.ESP.Tag = "NonHost";
             this.ESP.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.ESP, resources.GetString("ESP.ToolTip"));
             this.ESP.UseSelectable = true;
             this.ESP.UseStyleColors = true;
             this.ESP.CheckedChanged += new System.EventHandler(this.EspToggled);
@@ -1655,7 +1612,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.AlwaysInWater.Style = MetroFramework.MetroColorStyle.Blue;
             this.AlwaysInWater.Tag = "NonHost";
             this.AlwaysInWater.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.AlwaysInWater, resources.GetString("AlwaysInWater.ToolTip"));
             this.AlwaysInWater.UseSelectable = true;
             this.AlwaysInWater.UseStyleColors = true;
             this.AlwaysInWater.CheckedChanged += new System.EventHandler(this.AlwaysInWaterToggled);
@@ -1667,7 +1623,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.LevelX.Style = MetroFramework.MetroColorStyle.Orange;
             this.LevelX.Tag = "Host";
             this.LevelX.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.LevelX, resources.GetString("LevelX.ToolTip"));
             this.LevelX.UseSelectable = true;
             this.LevelX.UseStyleColors = true;
             this.LevelX.CheckedChanged += new System.EventHandler(this.LevelXToggled);
@@ -1679,7 +1634,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.SeeThroughBlocks.Style = MetroFramework.MetroColorStyle.Blue;
             this.SeeThroughBlocks.Tag = "NonHost";
             this.SeeThroughBlocks.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.SeeThroughBlocks, resources.GetString("SeeThroughBlocks.ToolTip"));
             this.SeeThroughBlocks.UseSelectable = true;
             this.SeeThroughBlocks.UseStyleColors = true;
             this.SeeThroughBlocks.CheckedChanged += new System.EventHandler(this.SeeThroughBlocksToggled);
@@ -1691,7 +1645,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.AlwaysInLava.Style = MetroFramework.MetroColorStyle.Blue;
             this.AlwaysInLava.Tag = "NonHost";
             this.AlwaysInLava.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.AlwaysInLava, resources.GetString("AlwaysInLava.ToolTip"));
             this.AlwaysInLava.UseSelectable = true;
             this.AlwaysInLava.UseStyleColors = true;
             this.AlwaysInLava.CheckedChanged += new System.EventHandler(this.AlwaysInLavaToggled);
@@ -1703,7 +1656,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.HideBlocks.Style = MetroFramework.MetroColorStyle.Blue;
             this.HideBlocks.Tag = "NonHost";
             this.HideBlocks.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.HideBlocks, resources.GetString("HideBlocks.ToolTip"));
             this.HideBlocks.UseSelectable = true;
             this.HideBlocks.UseStyleColors = true;
             this.HideBlocks.CheckedChanged += new System.EventHandler(this.HideBlocksToggled);
@@ -1716,7 +1668,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.UnderwaterEffects.Tag = "NonHost";
             this.UnderwaterEffects.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.UnderwaterEffects.ThreeState = true;
-            this.ToolTipManager.SetToolTip(this.UnderwaterEffects, resources.GetString("UnderwaterEffects.ToolTip"));
             this.UnderwaterEffects.UseSelectable = true;
             this.UnderwaterEffects.UseStyleColors = true;
             this.UnderwaterEffects.CheckStateChanged += new System.EventHandler(this.UnderwaterEffectsToggled);
@@ -1750,7 +1701,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.GodModeAll.Style = MetroFramework.MetroColorStyle.Orange;
             this.GodModeAll.Tag = "Host";
             this.GodModeAll.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.GodModeAll, resources.GetString("GodModeAll.ToolTip"));
             this.GodModeAll.UseSelectable = true;
             this.GodModeAll.UseStyleColors = true;
             this.GodModeAll.CheckedChanged += new System.EventHandler(this.GodModeAllToggled);
@@ -1817,7 +1767,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.GodMode.Style = MetroFramework.MetroColorStyle.Orange;
             this.GodMode.Tag = "Host";
             this.GodMode.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.GodMode, resources.GetString("GodMode.ToolTip"));
             this.GodMode.UseSelectable = true;
             this.GodMode.UseStyleColors = true;
             this.GodMode.CheckedChanged += new System.EventHandler(this.GodModeToggled);
@@ -1851,7 +1800,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.DeadMauFiveMode.Style = MetroFramework.MetroColorStyle.Orange;
             this.DeadMauFiveMode.Tag = "Host";
             this.DeadMauFiveMode.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.DeadMauFiveMode, resources.GetString("DeadMauFiveMode.ToolTip"));
             this.DeadMauFiveMode.UseSelectable = true;
             this.DeadMauFiveMode.UseStyleColors = true;
             this.DeadMauFiveMode.CheckedChanged += new System.EventHandler(this.DeadMauFiveModeToggled);
@@ -1863,7 +1811,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.TakeEverythingAnywhere.Style = MetroFramework.MetroColorStyle.Blue;
             this.TakeEverythingAnywhere.Tag = "NonHost";
             this.TakeEverythingAnywhere.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.TakeEverythingAnywhere, resources.GetString("TakeEverythingAnywhere.ToolTip"));
             this.TakeEverythingAnywhere.UseSelectable = true;
             this.TakeEverythingAnywhere.UseStyleColors = true;
             this.TakeEverythingAnywhere.CheckedChanged += new System.EventHandler(this.TakeEverythingAnywhereToggled);
@@ -1886,7 +1833,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.HiddenGameModesUnlocked.Style = MetroFramework.MetroColorStyle.Blue;
             this.HiddenGameModesUnlocked.Tag = "NonHost";
             this.HiddenGameModesUnlocked.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.HiddenGameModesUnlocked, resources.GetString("HiddenGameModesUnlocked.ToolTip"));
             this.HiddenGameModesUnlocked.UseSelectable = true;
             this.HiddenGameModesUnlocked.UseStyleColors = true;
             this.HiddenGameModesUnlocked.CheckedChanged += new System.EventHandler(this.HiddenGameModesUnlockedToggled);
@@ -1909,7 +1855,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.CraftingTableAnywhere.Style = MetroFramework.MetroColorStyle.Blue;
             this.CraftingTableAnywhere.Tag = "NonHost";
             this.CraftingTableAnywhere.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.CraftingTableAnywhere, resources.GetString("CraftingTableAnywhere.ToolTip"));
             this.CraftingTableAnywhere.UseSelectable = true;
             this.CraftingTableAnywhere.UseStyleColors = true;
             this.CraftingTableAnywhere.CheckedChanged += new System.EventHandler(this.CraftingTableAnywhereToggled);
@@ -1921,7 +1866,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.VisibleHitboxes.Style = MetroFramework.MetroColorStyle.Blue;
             this.VisibleHitboxes.Tag = "NonHost";
             this.VisibleHitboxes.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.VisibleHitboxes, resources.GetString("VisibleHitboxes.ToolTip"));
             this.VisibleHitboxes.UseSelectable = true;
             this.VisibleHitboxes.UseStyleColors = true;
             this.VisibleHitboxes.CheckedChanged += new System.EventHandler(this.VisibleHitboxesToggled);
@@ -1933,7 +1877,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.NnidEditorBtn.Style = MetroFramework.MetroColorStyle.Blue;
             this.NnidEditorBtn.Tag = "NonHost";
             this.NnidEditorBtn.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.NnidEditorBtn, resources.GetString("NnidEditorBtn.ToolTip"));
             this.NnidEditorBtn.UseSelectable = true;
             this.NnidEditorBtn.UseStyleColors = true;
             this.NnidEditorBtn.Click += new System.EventHandler(this.NnidEditorBtnClicked);
@@ -1945,7 +1888,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.AlwaysSwimming.Style = MetroFramework.MetroColorStyle.Orange;
             this.AlwaysSwimming.Tag = "Host";
             this.AlwaysSwimming.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.AlwaysSwimming, resources.GetString("AlwaysSwimming.ToolTip"));
             this.AlwaysSwimming.UseSelectable = true;
             this.AlwaysSwimming.UseStyleColors = true;
             this.AlwaysSwimming.CheckedChanged += new System.EventHandler(this.AlwaysSwimmingToggled);
@@ -1957,7 +1899,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.InfiniteRiptide.Style = MetroFramework.MetroColorStyle.Blue;
             this.InfiniteRiptide.Tag = "NonHost";
             this.InfiniteRiptide.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.InfiniteRiptide, resources.GetString("InfiniteRiptide.ToolTip"));
             this.InfiniteRiptide.UseSelectable = true;
             this.InfiniteRiptide.UseStyleColors = true;
             this.InfiniteRiptide.CheckedChanged += new System.EventHandler(this.InfiniteRiptideToggled);
@@ -1969,7 +1910,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.FullRotation.Style = MetroFramework.MetroColorStyle.Blue;
             this.FullRotation.Tag = "NonHost";
             this.FullRotation.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.FullRotation, resources.GetString("FullRotation.ToolTip"));
             this.FullRotation.UseSelectable = true;
             this.FullRotation.UseStyleColors = true;
             this.FullRotation.CheckedChanged += new System.EventHandler(this.FullRotationToggled);
@@ -1981,7 +1921,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.AlwaysDamagedPlayers.Style = MetroFramework.MetroColorStyle.Orange;
             this.AlwaysDamagedPlayers.Tag = "Host";
             this.AlwaysDamagedPlayers.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.AlwaysDamagedPlayers, resources.GetString("AlwaysDamagedPlayers.ToolTip"));
             this.AlwaysDamagedPlayers.UseSelectable = true;
             this.AlwaysDamagedPlayers.UseStyleColors = true;
             this.AlwaysDamagedPlayers.CheckedChanged += new System.EventHandler(this.AlwaysDamagedPlayersToggled);
@@ -1993,7 +1932,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.InfiniteItems.Style = MetroFramework.MetroColorStyle.Orange;
             this.InfiniteItems.Tag = "Host";
             this.InfiniteItems.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.InfiniteItems, resources.GetString("InfiniteItems.ToolTip"));
             this.InfiniteItems.UseSelectable = true;
             this.InfiniteItems.UseStyleColors = true;
             this.InfiniteItems.CheckedChanged += new System.EventHandler(this.InfiniteItemsToggled);
@@ -2005,7 +1943,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.RapidBow.Style = MetroFramework.MetroColorStyle.Orange;
             this.RapidBow.Tag = "Host";
             this.RapidBow.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.RapidBow, resources.GetString("RapidBow.ToolTip"));
             this.RapidBow.UseSelectable = true;
             this.RapidBow.UseStyleColors = true;
             this.RapidBow.CheckedChanged += new System.EventHandler(this.RapidBowToggled);
@@ -2018,7 +1955,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.BloodVision.Style = MetroFramework.MetroColorStyle.Blue;
             this.BloodVision.Tag = "NonHost";
             this.BloodVision.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.BloodVision, resources.GetString("BloodVision.ToolTip"));
             this.BloodVision.UseSelectable = true;
             this.BloodVision.UseStyleColors = true;
             this.BloodVision.CheckedChanged += new System.EventHandler(this.BloodVisionToggled);
@@ -2031,7 +1967,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.IgnorePotions.Style = MetroFramework.MetroColorStyle.Orange;
             this.IgnorePotions.Tag = "Host";
             this.IgnorePotions.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.IgnorePotions, resources.GetString("IgnorePotions.ToolTip"));
             this.IgnorePotions.UseSelectable = true;
             this.IgnorePotions.UseStyleColors = true;
             this.IgnorePotions.CheckedChanged += new System.EventHandler(this.IgnorePotionsToggled);
@@ -2044,7 +1979,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.BypassInvulnerability.Style = MetroFramework.MetroColorStyle.Orange;
             this.BypassInvulnerability.Tag = "Host";
             this.BypassInvulnerability.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.BypassInvulnerability, resources.GetString("BypassInvulnerability.ToolTip"));
             this.BypassInvulnerability.UseSelectable = true;
             this.BypassInvulnerability.UseStyleColors = true;
             this.BypassInvulnerability.CheckedChanged += new System.EventHandler(this.BypassInvulnerabilityToggled);
@@ -2058,7 +1992,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.WearAnything.Style = MetroFramework.MetroColorStyle.Blue;
             this.WearAnything.Tag = "NonHost";
             this.WearAnything.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.WearAnything, resources.GetString("WearAnything.ToolTip"));
             this.WearAnything.UseSelectable = true;
             this.WearAnything.UseStyleColors = true;
             this.WearAnything.CheckedChanged += new System.EventHandler(this.WearAnythingToggled);
@@ -2072,7 +2005,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.WalkonWater.Style = MetroFramework.MetroColorStyle.Blue;
             this.WalkonWater.Tag = "NonHost";
             this.WalkonWater.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.WalkonWater, resources.GetString("WalkonWater.ToolTip"));
             this.WalkonWater.UseSelectable = true;
             this.WalkonWater.UseStyleColors = true;
             this.WalkonWater.CheckedChanged += new System.EventHandler(this.WalkonWaterToggled);
@@ -2086,7 +2018,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.AlwaysElytra.Style = MetroFramework.MetroColorStyle.Blue;
             this.AlwaysElytra.Tag = "NonHost";
             this.AlwaysElytra.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.AlwaysElytra, resources.GetString("AlwaysElytra.ToolTip"));
             this.AlwaysElytra.UseSelectable = true;
             this.AlwaysElytra.UseStyleColors = true;
             this.AlwaysElytra.CheckedChanged += new System.EventHandler(this.AlwaysElytraToggled);
@@ -2100,7 +2031,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.CaveFinder.Style = MetroFramework.MetroColorStyle.Blue;
             this.CaveFinder.Tag = "NonHost";
             this.CaveFinder.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.CaveFinder, resources.GetString("CaveFinder.ToolTip"));
             this.CaveFinder.UseSelectable = true;
             this.CaveFinder.UseStyleColors = true;
             this.CaveFinder.CheckedChanged += new System.EventHandler(this.CaveFinderToggled);
@@ -2114,7 +2044,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.Wallhack.Style = MetroFramework.MetroColorStyle.Blue;
             this.Wallhack.Tag = "NonHost";
             this.Wallhack.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.Wallhack, resources.GetString("Wallhack.ToolTip"));
             this.Wallhack.UseSelectable = true;
             this.Wallhack.UseStyleColors = true;
             this.Wallhack.CheckedChanged += new System.EventHandler(this.WallhackToggled);
@@ -2127,7 +2056,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.LargeXPDrops.Style = MetroFramework.MetroColorStyle.Orange;
             this.LargeXPDrops.Tag = "Host";
             this.LargeXPDrops.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.LargeXPDrops, resources.GetString("LargeXPDrops.ToolTip"));
             this.LargeXPDrops.UseSelectable = true;
             this.LargeXPDrops.UseStyleColors = true;
             this.LargeXPDrops.CheckedChanged += new System.EventHandler(this.LargeXpDropsToggled);
@@ -2140,7 +2068,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.WallClimbing.Style = MetroFramework.MetroColorStyle.Blue;
             this.WallClimbing.Tag = "NonHost";
             this.WallClimbing.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.WallClimbing, resources.GetString("WallClimbing.ToolTip"));
             this.WallClimbing.UseSelectable = true;
             this.WallClimbing.UseStyleColors = true;
             this.WallClimbing.CheckedChanged += new System.EventHandler(this.WallClimbingToggled);
@@ -2153,7 +2080,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.NoCollision.Style = MetroFramework.MetroColorStyle.Blue;
             this.NoCollision.Tag = "NonHost";
             this.NoCollision.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.NoCollision, resources.GetString("NoCollision.ToolTip"));
             this.NoCollision.UseSelectable = true;
             this.NoCollision.UseStyleColors = true;
             this.NoCollision.CheckedChanged += new System.EventHandler(this.NoCollisionToggled);
@@ -2166,7 +2092,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.InfiniteAir.Style = MetroFramework.MetroColorStyle.Orange;
             this.InfiniteAir.Tag = "Host";
             this.InfiniteAir.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.InfiniteAir, resources.GetString("InfiniteAir.ToolTip"));
             this.InfiniteAir.UseSelectable = true;
             this.InfiniteAir.UseStyleColors = true;
             this.InfiniteAir.CheckedChanged += new System.EventHandler(this.InfiniteAirToggled);
@@ -2179,7 +2104,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.InfiniteDurability.Style = MetroFramework.MetroColorStyle.Orange;
             this.InfiniteDurability.Tag = "Host";
             this.InfiniteDurability.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.InfiniteDurability, resources.GetString("InfiniteDurability.ToolTip"));
             this.InfiniteDurability.UseSelectable = true;
             this.InfiniteDurability.UseStyleColors = true;
             this.InfiniteDurability.CheckedChanged += new System.EventHandler(this.InfiniteDurabilityToggled);
@@ -2192,7 +2116,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.SuperKnockback.Style = MetroFramework.MetroColorStyle.Orange;
             this.SuperKnockback.Tag = "Host";
             this.SuperKnockback.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.SuperKnockback, resources.GetString("SuperKnockback.ToolTip"));
             this.SuperKnockback.UseSelectable = true;
             this.SuperKnockback.UseStyleColors = true;
             this.SuperKnockback.CheckedChanged += new System.EventHandler(this.SuperKnockbackToggled);
@@ -2205,7 +2128,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.DisabledKnockback.Style = MetroFramework.MetroColorStyle.Orange;
             this.DisabledKnockback.Tag = "Host";
             this.DisabledKnockback.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.DisabledKnockback, resources.GetString("DisabledKnockback.ToolTip"));
             this.DisabledKnockback.UseSelectable = true;
             this.DisabledKnockback.UseStyleColors = true;
             this.DisabledKnockback.CheckedChanged += new System.EventHandler(this.DisabledKnockbackToggled);
@@ -2218,7 +2140,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.SilkTouchAnything.Style = MetroFramework.MetroColorStyle.Orange;
             this.SilkTouchAnything.Tag = "Host";
             this.SilkTouchAnything.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.SilkTouchAnything, resources.GetString("SilkTouchAnything.ToolTip"));
             this.SilkTouchAnything.UseSelectable = true;
             this.SilkTouchAnything.UseStyleColors = true;
             this.SilkTouchAnything.CheckedChanged += new System.EventHandler(this.SilkTouchAnythingToggled);
@@ -2230,7 +2151,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.DetailedItemTooltips.Style = MetroFramework.MetroColorStyle.Blue;
             this.DetailedItemTooltips.Tag = "NonHost";
             this.DetailedItemTooltips.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.DetailedItemTooltips, resources.GetString("DetailedItemTooltips.ToolTip"));
             this.DetailedItemTooltips.UseSelectable = true;
             this.DetailedItemTooltips.UseStyleColors = true;
             this.DetailedItemTooltips.CheckedChanged += new System.EventHandler(this.DetailedItemTooltipsToggled);
@@ -2242,7 +2162,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.PickLiquidBlocks.Style = MetroFramework.MetroColorStyle.Blue;
             this.PickLiquidBlocks.Tag = "NonHost";
             this.PickLiquidBlocks.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.PickLiquidBlocks, resources.GetString("PickLiquidBlocks.ToolTip"));
             this.PickLiquidBlocks.UseSelectable = true;
             this.PickLiquidBlocks.UseStyleColors = true;
             this.PickLiquidBlocks.CheckedChanged += new System.EventHandler(this.PickLiquidBlocksToggled);
@@ -2254,7 +2173,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.DuelWieldanyItem.Style = MetroFramework.MetroColorStyle.Orange;
             this.DuelWieldanyItem.Tag = "Host";
             this.DuelWieldanyItem.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.DuelWieldanyItem, resources.GetString("DuelWieldanyItem.ToolTip"));
             this.DuelWieldanyItem.UseSelectable = true;
             this.DuelWieldanyItem.UseStyleColors = true;
             this.DuelWieldanyItem.CheckedChanged += new System.EventHandler(this.DuelWieldAnyItemToggled);
@@ -2266,7 +2184,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.DisableStarving.Style = MetroFramework.MetroColorStyle.Orange;
             this.DisableStarving.Tag = "Host";
             this.DisableStarving.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.DisableStarving, resources.GetString("DisableStarving.ToolTip"));
             this.DisableStarving.UseSelectable = true;
             this.DisableStarving.UseStyleColors = true;
             this.DisableStarving.CheckedChanged += new System.EventHandler(this.DisableStarvingToggled);
@@ -2278,7 +2195,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.InstantMining.Style = MetroFramework.MetroColorStyle.Orange;
             this.InstantMining.Tag = "Host";
             this.InstantMining.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.InstantMining, resources.GetString("InstantMining.ToolTip"));
             this.InstantMining.UseSelectable = true;
             this.InstantMining.UseStyleColors = true;
             this.InstantMining.CheckedChanged += new System.EventHandler(this.InstantMiningToggled);
@@ -2290,7 +2206,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.Flight.Style = MetroFramework.MetroColorStyle.Blue;
             this.Flight.Tag = "NonHost";
             this.Flight.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.Flight, resources.GetString("Flight.ToolTip"));
             this.Flight.UseSelectable = true;
             this.Flight.UseStyleColors = true;
             this.Flight.CheckedChanged += new System.EventHandler(this.FlightToggled);
@@ -2302,7 +2217,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.DisableSuffocating.Style = MetroFramework.MetroColorStyle.Orange;
             this.DisableSuffocating.Tag = "Host";
             this.DisableSuffocating.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.DisableSuffocating, resources.GetString("DisableSuffocating.ToolTip"));
             this.DisableSuffocating.UseSelectable = true;
             this.DisableSuffocating.UseStyleColors = true;
             this.DisableSuffocating.CheckedChanged += new System.EventHandler(this.DisableSuffocatingToggled);
@@ -2314,7 +2228,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.NoFallDamage.Style = MetroFramework.MetroColorStyle.Orange;
             this.NoFallDamage.Tag = "Host";
             this.NoFallDamage.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.NoFallDamage, resources.GetString("NoFallDamage.ToolTip"));
             this.NoFallDamage.UseSelectable = true;
             this.NoFallDamage.UseStyleColors = true;
             this.NoFallDamage.CheckedChanged += new System.EventHandler(this.NoFallDamageToggled);
@@ -2326,7 +2239,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.CraftAnything.Style = MetroFramework.MetroColorStyle.Blue;
             this.CraftAnything.Tag = "NonHost";
             this.CraftAnything.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.CraftAnything, resources.GetString("CraftAnything.ToolTip"));
             this.CraftAnything.UseSelectable = true;
             this.CraftAnything.UseStyleColors = true;
             this.CraftAnything.CheckedChanged += new System.EventHandler(this.CraftAnythingToggled);
@@ -2339,7 +2251,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.CreativeMode.Style = MetroFramework.MetroColorStyle.Orange;
             this.CreativeMode.Tag = "Host";
             this.CreativeMode.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.CreativeMode, resources.GetString("CreativeMode.ToolTip"));
             this.CreativeMode.UseSelectable = true;
             this.CreativeMode.UseStyleColors = true;
             this.CreativeMode.CheckedChanged += new System.EventHandler(this.CreativeModeToggled);
@@ -2399,7 +2310,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.GiantTextureFix.Style = MetroFramework.MetroColorStyle.Blue;
             this.GiantTextureFix.Tag = "NonHost";
             this.GiantTextureFix.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.GiantTextureFix, resources.GetString("GiantTextureFix.ToolTip"));
             this.GiantTextureFix.UseSelectable = true;
             this.GiantTextureFix.UseStyleColors = true;
             this.GiantTextureFix.CheckedChanged += new System.EventHandler(this.GiantTextureFixToggled);
@@ -2425,7 +2335,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.AlwaysDaylight.Style = MetroFramework.MetroColorStyle.Blue;
             this.AlwaysDaylight.Tag = "NonHost";
             this.AlwaysDaylight.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.AlwaysDaylight, resources.GetString("AlwaysDaylight.ToolTip"));
             this.AlwaysDaylight.UseSelectable = true;
             this.AlwaysDaylight.UseStyleColors = true;
             this.AlwaysDaylight.CheckedChanged += new System.EventHandler(this.AlwaysDaylightToggled);
@@ -2438,7 +2347,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.BubbleColumnAnywhere.Style = MetroFramework.MetroColorStyle.Orange;
             this.BubbleColumnAnywhere.Tag = "Host";
             this.BubbleColumnAnywhere.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.BubbleColumnAnywhere, resources.GetString("BubbleColumnAnywhere.ToolTip"));
             this.BubbleColumnAnywhere.UseSelectable = true;
             this.BubbleColumnAnywhere.UseStyleColors = true;
             this.BubbleColumnAnywhere.CheckedChanged += new System.EventHandler(this.BubbleColumnAnywhereToggled);
@@ -2456,7 +2364,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             0});
             this.FogDistanceSlider.Name = "FogDistanceSlider";
             this.FogDistanceSlider.Tag = "";
-            this.ToolTipManager.SetToolTip(this.FogDistanceSlider, resources.GetString("FogDistanceSlider.ToolTip"));
             this.FogDistanceSlider.ValueChanged += new System.EventHandler(this.FogDistanceSliderChanged);
             // 
             // FogDistance
@@ -2477,7 +2384,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.EntityEditorBtn.Style = MetroFramework.MetroColorStyle.Orange;
             this.EntityEditorBtn.Tag = "Host";
             this.EntityEditorBtn.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.EntityEditorBtn, resources.GetString("EntityEditorBtn.ToolTip"));
             this.EntityEditorBtn.UseSelectable = true;
             this.EntityEditorBtn.UseStyleColors = true;
             this.EntityEditorBtn.Click += new System.EventHandler(this.EntityEditorBtnClicked);
@@ -2491,7 +2397,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.ThunderMode.Tag = "Host";
             this.ThunderMode.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.ThunderMode.ThreeState = true;
-            this.ToolTipManager.SetToolTip(this.ThunderMode, resources.GetString("ThunderMode.ToolTip"));
             this.ThunderMode.UseSelectable = true;
             this.ThunderMode.UseStyleColors = true;
             this.ThunderMode.CheckStateChanged += new System.EventHandler(this.ThunderModeToggled);
@@ -2505,7 +2410,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.RainMode.Tag = "Host";
             this.RainMode.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.RainMode.ThreeState = true;
-            this.ToolTipManager.SetToolTip(this.RainMode, resources.GetString("RainMode.ToolTip"));
             this.RainMode.UseSelectable = true;
             this.RainMode.UseStyleColors = true;
             this.RainMode.CheckStateChanged += new System.EventHandler(this.RainModeToggled);
@@ -2517,7 +2421,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.WorldGenerationOptsBtn.Style = MetroFramework.MetroColorStyle.Orange;
             this.WorldGenerationOptsBtn.Tag = "Host";
             this.WorldGenerationOptsBtn.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.WorldGenerationOptsBtn, resources.GetString("WorldGenerationOptsBtn.ToolTip"));
             this.WorldGenerationOptsBtn.UseSelectable = true;
             this.WorldGenerationOptsBtn.UseStyleColors = true;
             this.WorldGenerationOptsBtn.Click += new System.EventHandler(this.WorldGenerationOptsBtnClicked);
@@ -2530,7 +2433,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.Collision.Style = MetroFramework.MetroColorStyle.Blue;
             this.Collision.Tag = "NonHost";
             this.Collision.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.Collision, resources.GetString("Collision.ToolTip"));
             this.Collision.UseSelectable = true;
             this.Collision.UseStyleColors = true;
             this.Collision.CheckedChanged += new System.EventHandler(this.CollisionToggled);
@@ -2543,7 +2445,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.DisableFallingBlocks.Style = MetroFramework.MetroColorStyle.Orange;
             this.DisableFallingBlocks.Tag = "Host";
             this.DisableFallingBlocks.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.DisableFallingBlocks, resources.GetString("DisableFallingBlocks.ToolTip"));
             this.DisableFallingBlocks.UseSelectable = true;
             this.DisableFallingBlocks.UseStyleColors = true;
             this.DisableFallingBlocks.CheckedChanged += new System.EventHandler(this.DisableFallingBlocksToggled);
@@ -2561,7 +2462,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             0});
             this.LiquidSpreadTimeSlider.Name = "LiquidSpreadTimeSlider";
             this.LiquidSpreadTimeSlider.Tag = "";
-            this.ToolTipManager.SetToolTip(this.LiquidSpreadTimeSlider, resources.GetString("LiquidSpreadTimeSlider.ToolTip"));
             this.LiquidSpreadTimeSlider.ValueChanged += new System.EventHandler(this.LiquidSpreadTimeSliderChanged);
             // 
             // LiquidSpreadTime
@@ -2583,7 +2483,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.InvulnerableEntities.Style = MetroFramework.MetroColorStyle.Orange;
             this.InvulnerableEntities.Tag = "Host";
             this.InvulnerableEntities.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.InvulnerableEntities, resources.GetString("InvulnerableEntities.ToolTip"));
             this.InvulnerableEntities.UseSelectable = true;
             this.InvulnerableEntities.UseStyleColors = true;
             this.InvulnerableEntities.CheckedChanged += new System.EventHandler(this.InvulnerableEntitiesToggled);
@@ -2596,7 +2495,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.SleepingDoesntClearWeather.Style = MetroFramework.MetroColorStyle.Orange;
             this.SleepingDoesntClearWeather.Tag = "Host";
             this.SleepingDoesntClearWeather.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.SleepingDoesntClearWeather, resources.GetString("SleepingDoesntClearWeather.ToolTip"));
             this.SleepingDoesntClearWeather.UseSelectable = true;
             this.SleepingDoesntClearWeather.UseStyleColors = true;
             this.SleepingDoesntClearWeather.CheckedChanged += new System.EventHandler(this.SleepingDoesntClearWeatherToggled);
@@ -2614,7 +2512,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             0});
             this.EntitySpeedSlider.Name = "EntitySpeedSlider";
             this.EntitySpeedSlider.Tag = "";
-            this.ToolTipManager.SetToolTip(this.EntitySpeedSlider, resources.GetString("EntitySpeedSlider.ToolTip"));
             this.EntitySpeedSlider.Value = new decimal(new int[] {
             20,
             0,
@@ -2641,7 +2538,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.SuperFurnace.Style = MetroFramework.MetroColorStyle.Orange;
             this.SuperFurnace.Tag = "Host";
             this.SuperFurnace.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.SuperFurnace, resources.GetString("SuperFurnace.ToolTip"));
             this.SuperFurnace.UseSelectable = true;
             this.SuperFurnace.UseStyleColors = true;
             this.SuperFurnace.CheckedChanged += new System.EventHandler(this.SuperFurnaceToggled);
@@ -2654,7 +2550,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.WaterLogAnything.Style = MetroFramework.MetroColorStyle.Orange;
             this.WaterLogAnything.Tag = "Host";
             this.WaterLogAnything.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.WaterLogAnything, resources.GetString("WaterLogAnything.ToolTip"));
             this.WaterLogAnything.UseSelectable = true;
             this.WaterLogAnything.UseStyleColors = true;
             this.WaterLogAnything.CheckedChanged += new System.EventHandler(this.WaterLogAnythingToggled);
@@ -2667,7 +2562,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.LeashAnyMobs.Style = MetroFramework.MetroColorStyle.Orange;
             this.LeashAnyMobs.Tag = "Host";
             this.LeashAnyMobs.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.LeashAnyMobs, resources.GetString("LeashAnyMobs.ToolTip"));
             this.LeashAnyMobs.UseSelectable = true;
             this.LeashAnyMobs.UseStyleColors = true;
             this.LeashAnyMobs.CheckedChanged += new System.EventHandler(this.LeashAnyMobsToggled);
@@ -2679,7 +2573,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.SunProofMobs.Style = MetroFramework.MetroColorStyle.Orange;
             this.SunProofMobs.Tag = "Host";
             this.SunProofMobs.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.SunProofMobs, resources.GetString("SunProofMobs.ToolTip"));
             this.SunProofMobs.UseSelectable = true;
             this.SunProofMobs.UseStyleColors = true;
             this.SunProofMobs.CheckedChanged += new System.EventHandler(this.SunProofMobsToggled);
@@ -2692,7 +2585,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.DisableCreativeFlag.Style = MetroFramework.MetroColorStyle.Orange;
             this.DisableCreativeFlag.Tag = "Host";
             this.DisableCreativeFlag.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.DisableCreativeFlag, resources.GetString("DisableCreativeFlag.ToolTip"));
             this.DisableCreativeFlag.UseSelectable = true;
             this.DisableCreativeFlag.UseStyleColors = true;
             this.DisableCreativeFlag.CheckedChanged += new System.EventHandler(this.DisableCreativeFlagToggled);
@@ -2704,7 +2596,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.ZombieJockey.Style = MetroFramework.MetroColorStyle.Orange;
             this.ZombieJockey.Tag = "Host";
             this.ZombieJockey.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.ZombieJockey, resources.GetString("ZombieJockey.ToolTip"));
             this.ZombieJockey.UseSelectable = true;
             this.ZombieJockey.UseStyleColors = true;
             this.ZombieJockey.CheckedChanged += new System.EventHandler(this.ZombieJockeyToggled);
@@ -2723,7 +2614,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.IgnitedCreepers.Style = MetroFramework.MetroColorStyle.Orange;
             this.IgnitedCreepers.Tag = "Host";
             this.IgnitedCreepers.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.IgnitedCreepers, resources.GetString("IgnitedCreepers.ToolTip"));
             this.IgnitedCreepers.UseSelectable = true;
             this.IgnitedCreepers.UseStyleColors = true;
             this.IgnitedCreepers.CheckedChanged += new System.EventHandler(this.IgnitedCreepersToggled);
@@ -2735,7 +2625,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.SuperchargedCreepers.Style = MetroFramework.MetroColorStyle.Orange;
             this.SuperchargedCreepers.Tag = "Host";
             this.SuperchargedCreepers.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.SuperchargedCreepers, resources.GetString("SuperchargedCreepers.ToolTip"));
             this.SuperchargedCreepers.UseSelectable = true;
             this.SuperchargedCreepers.UseStyleColors = true;
             this.SuperchargedCreepers.CheckedChanged += new System.EventHandler(this.SuperchargedCreepersToggled);
@@ -2747,7 +2636,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.UncapEntitySpawnLimit.Style = MetroFramework.MetroColorStyle.Orange;
             this.UncapEntitySpawnLimit.Tag = "Host";
             this.UncapEntitySpawnLimit.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.UncapEntitySpawnLimit, resources.GetString("UncapEntitySpawnLimit.ToolTip"));
             this.UncapEntitySpawnLimit.UseSelectable = true;
             this.UncapEntitySpawnLimit.UseStyleColors = true;
             this.UncapEntitySpawnLimit.CheckedChanged += new System.EventHandler(this.UncapEntitySpawnLimitToggled);
@@ -2760,7 +2648,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.AcidLiquidBlocks.Style = MetroFramework.MetroColorStyle.Orange;
             this.AcidLiquidBlocks.Tag = "Host";
             this.AcidLiquidBlocks.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.AcidLiquidBlocks, resources.GetString("AcidLiquidBlocks.ToolTip"));
             this.AcidLiquidBlocks.UseSelectable = true;
             this.AcidLiquidBlocks.UseStyleColors = true;
             this.AcidLiquidBlocks.CheckedChanged += new System.EventHandler(this.AcidLiquidBlocksToggled);
@@ -2779,7 +2666,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.FoggyWeather.Style = MetroFramework.MetroColorStyle.Blue;
             this.FoggyWeather.Tag = "NonHost";
             this.FoggyWeather.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.FoggyWeather, resources.GetString("FoggyWeather.ToolTip"));
             this.FoggyWeather.UseSelectable = true;
             this.FoggyWeather.UseStyleColors = true;
             this.FoggyWeather.CheckedChanged += new System.EventHandler(this.FoggyWeatherToggled);
@@ -2805,7 +2691,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.StaticLiquidBlocks.Style = MetroFramework.MetroColorStyle.Orange;
             this.StaticLiquidBlocks.Tag = "Host";
             this.StaticLiquidBlocks.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.StaticLiquidBlocks, resources.GetString("StaticLiquidBlocks.ToolTip"));
             this.StaticLiquidBlocks.UseSelectable = true;
             this.StaticLiquidBlocks.UseStyleColors = true;
             this.StaticLiquidBlocks.CheckedChanged += new System.EventHandler(this.StaticLiquidBlocksToggled);
@@ -2818,7 +2703,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.NoFog.Style = MetroFramework.MetroColorStyle.Blue;
             this.NoFog.Tag = "NonHost";
             this.NoFog.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.NoFog, resources.GetString("NoFog.ToolTip"));
             this.NoFog.UseSelectable = true;
             this.NoFog.UseStyleColors = true;
             this.NoFog.CheckedChanged += new System.EventHandler(this.NoFogToggled);
@@ -2881,7 +2765,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.BiomeSelectMenu.Tag = "Host";
             this.BiomeSelectMenu.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.BiomeSelectMenu.ThreeState = true;
-            this.ToolTipManager.SetToolTip(this.BiomeSelectMenu, resources.GetString("BiomeSelectMenu.ToolTip"));
             this.BiomeSelectMenu.UseSelectable = true;
             this.BiomeSelectMenu.UseStyleColors = true;
             this.BiomeSelectMenu.CheckedChanged += new System.EventHandler(this.BiomeSelectMenuToggled);
@@ -2893,7 +2776,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.UncensorContent.Style = MetroFramework.MetroColorStyle.Blue;
             this.UncensorContent.Tag = "NonHost";
             this.UncensorContent.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.UncensorContent, resources.GetString("UncensorContent.ToolTip"));
             this.UncensorContent.UseSelectable = true;
             this.UncensorContent.UseStyleColors = true;
             this.UncensorContent.CheckedChanged += new System.EventHandler(this.UncensorContentToggled);
@@ -2905,7 +2787,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.JoinRandomGames.Style = MetroFramework.MetroColorStyle.Blue;
             this.JoinRandomGames.Tag = "NonHost";
             this.JoinRandomGames.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.JoinRandomGames, resources.GetString("JoinRandomGames.ToolTip"));
             this.JoinRandomGames.UseSelectable = true;
             this.JoinRandomGames.UseStyleColors = true;
             this.JoinRandomGames.CheckedChanged += new System.EventHandler(this.JoinRandomGamesToggled);
@@ -2917,7 +2798,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.ArrowPotionCrashFix.Style = MetroFramework.MetroColorStyle.Blue;
             this.ArrowPotionCrashFix.Tag = "NonHost";
             this.ArrowPotionCrashFix.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.ArrowPotionCrashFix, resources.GetString("ArrowPotionCrashFix.ToolTip"));
             this.ArrowPotionCrashFix.UseSelectable = true;
             this.ArrowPotionCrashFix.UseStyleColors = true;
             this.ArrowPotionCrashFix.CheckedChanged += new System.EventHandler(this.ArrowPotionCrashFixToggled);
@@ -2932,7 +2812,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.PanoramaMode.Tag = "NonHost";
             this.PanoramaMode.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.PanoramaMode.ThreeState = true;
-            this.ToolTipManager.SetToolTip(this.PanoramaMode, resources.GetString("PanoramaMode.ToolTip"));
             this.PanoramaMode.UseSelectable = true;
             this.PanoramaMode.UseStyleColors = true;
             this.PanoramaMode.CheckStateChanged += new System.EventHandler(this.PanoramaModeToggled);
@@ -2944,7 +2823,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.ArmorHUD.Style = MetroFramework.MetroColorStyle.Blue;
             this.ArmorHUD.Tag = "NonHost";
             this.ArmorHUD.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.ArmorHUD, resources.GetString("ArmorHUD.ToolTip"));
             this.ArmorHUD.UseSelectable = true;
             this.ArmorHUD.UseStyleColors = true;
             this.ArmorHUD.CheckedChanged += new System.EventHandler(this.ArmorHudToggled);
@@ -2958,7 +2836,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             resources.ApplyResources(this.metroPanel1, "metroPanel1");
             this.metroPanel1.Name = "metroPanel1";
             this.metroPanel1.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.metroPanel1, resources.GetString("metroPanel1.ToolTip"));
             this.metroPanel1.VerticalScrollbarBarColor = true;
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel1.VerticalScrollbarSize = 10;
@@ -2969,7 +2846,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.KeyboardCustomizerBtn.Name = "KeyboardCustomizerBtn";
             this.KeyboardCustomizerBtn.Tag = "NonHost";
             this.KeyboardCustomizerBtn.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.KeyboardCustomizerBtn, resources.GetString("KeyboardCustomizerBtn.ToolTip"));
             this.KeyboardCustomizerBtn.UseSelectable = true;
             this.KeyboardCustomizerBtn.UseStyleColors = true;
             this.KeyboardCustomizerBtn.Click += new System.EventHandler(this.KeyboardCustomizerBtn_Click);
@@ -2980,7 +2856,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.DebugConsoleCustomizerBtn.Name = "DebugConsoleCustomizerBtn";
             this.DebugConsoleCustomizerBtn.Tag = "NonHost";
             this.DebugConsoleCustomizerBtn.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.DebugConsoleCustomizerBtn, resources.GetString("DebugConsoleCustomizerBtn.ToolTip"));
             this.DebugConsoleCustomizerBtn.UseSelectable = true;
             this.DebugConsoleCustomizerBtn.UseStyleColors = true;
             this.DebugConsoleCustomizerBtn.Click += new System.EventHandler(this.DebugConsoleCustomizerBtn_Click);
@@ -2998,7 +2873,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             0});
             this.CursedSlider.Name = "CursedSlider";
             this.CursedSlider.Tag = "";
-            this.ToolTipManager.SetToolTip(this.CursedSlider, resources.GetString("CursedSlider.ToolTip"));
             this.CursedSlider.Value = new decimal(new int[] {
             1,
             0,
@@ -3023,7 +2897,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.DLCManagerBtn.Name = "DLCManagerBtn";
             this.DLCManagerBtn.Tag = "NonHost";
             this.DLCManagerBtn.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.DLCManagerBtn, resources.GetString("DLCManagerBtn.ToolTip"));
             this.DLCManagerBtn.UseSelectable = true;
             this.DLCManagerBtn.UseStyleColors = true;
             this.DLCManagerBtn.Click += new System.EventHandler(this.DLCManagerBtn_Click);
@@ -3035,7 +2908,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.PreventBeingKicked.Style = MetroFramework.MetroColorStyle.Blue;
             this.PreventBeingKicked.Tag = "NonHost";
             this.PreventBeingKicked.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.PreventBeingKicked, resources.GetString("PreventBeingKicked.ToolTip"));
             this.PreventBeingKicked.UseSelectable = true;
             this.PreventBeingKicked.UseStyleColors = true;
             this.PreventBeingKicked.CheckedChanged += new System.EventHandler(this.PreventBeingKickedToggled);
@@ -3047,7 +2919,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.Cursed.Style = MetroFramework.MetroColorStyle.Blue;
             this.Cursed.Tag = "NonHost";
             this.Cursed.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.Cursed, resources.GetString("Cursed.ToolTip"));
             this.Cursed.UseSelectable = true;
             this.Cursed.UseStyleColors = true;
             this.Cursed.CheckedChanged += new System.EventHandler(this.CursedToggled);
@@ -3061,7 +2932,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.FreezeGameWhenPaused.Tag = "NonHost";
             this.FreezeGameWhenPaused.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.FreezeGameWhenPaused.ThreeState = true;
-            this.ToolTipManager.SetToolTip(this.FreezeGameWhenPaused, resources.GetString("FreezeGameWhenPaused.ToolTip"));
             this.FreezeGameWhenPaused.UseSelectable = true;
             this.FreezeGameWhenPaused.UseStyleColors = true;
             this.FreezeGameWhenPaused.CheckStateChanged += new System.EventHandler(this.FreezeGameWhenPausedToggled);
@@ -3073,7 +2943,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.AchievementsEverywhere.Style = MetroFramework.MetroColorStyle.Orange;
             this.AchievementsEverywhere.Tag = "Host";
             this.AchievementsEverywhere.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.AchievementsEverywhere, resources.GetString("AchievementsEverywhere.ToolTip"));
             this.AchievementsEverywhere.UseSelectable = true;
             this.AchievementsEverywhere.UseStyleColors = true;
             this.AchievementsEverywhere.CheckedChanged += new System.EventHandler(this.AchievementsEverywhereToggled);
@@ -3085,7 +2954,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.MuteMicrophone.Style = MetroFramework.MetroColorStyle.Blue;
             this.MuteMicrophone.Tag = "NonHost";
             this.MuteMicrophone.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.MuteMicrophone, resources.GetString("MuteMicrophone.ToolTip"));
             this.MuteMicrophone.UseSelectable = true;
             this.MuteMicrophone.UseStyleColors = true;
             this.MuteMicrophone.CheckedChanged += new System.EventHandler(this.MuteMicrophoneToggled);
@@ -3097,7 +2965,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.AchievementEditor.Style = MetroFramework.MetroColorStyle.Blue;
             this.AchievementEditor.Tag = "NonHost";
             this.AchievementEditor.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.AchievementEditor, resources.GetString("AchievementEditor.ToolTip"));
             this.AchievementEditor.UseSelectable = true;
             this.AchievementEditor.UseStyleColors = true;
             this.AchievementEditor.Click += new System.EventHandler(this.AchievementEditorClicked);
@@ -3109,7 +2976,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.UnlockSignKeyboard.Style = MetroFramework.MetroColorStyle.Blue;
             this.UnlockSignKeyboard.Tag = "NonHost";
             this.UnlockSignKeyboard.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.UnlockSignKeyboard, resources.GetString("UnlockSignKeyboard.ToolTip"));
             this.UnlockSignKeyboard.UseSelectable = true;
             this.UnlockSignKeyboard.UseStyleColors = true;
             this.UnlockSignKeyboard.CheckedChanged += new System.EventHandler(this.UnlockSignKeyboardToggled);
@@ -3123,7 +2989,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.DebugConsole.Style = MetroFramework.MetroColorStyle.Blue;
             this.DebugConsole.Tag = "NonHost";
             this.DebugConsole.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.DebugConsole, resources.GetString("DebugConsole.ToolTip"));
             this.DebugConsole.UseSelectable = true;
             this.DebugConsole.UseStyleColors = true;
             this.DebugConsole.CheckedChanged += new System.EventHandler(this.DebugConsoleToggled);
@@ -3162,7 +3027,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.vpadDisplaySwitch.Style = MetroFramework.MetroColorStyle.Blue;
             this.vpadDisplaySwitch.Tag = "NonHost";
             this.vpadDisplaySwitch.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.vpadDisplaySwitch, resources.GetString("vpadDisplaySwitch.ToolTip"));
             this.vpadDisplaySwitch.UseSelectable = true;
             this.vpadDisplaySwitch.UseStyleColors = true;
             this.vpadDisplaySwitch.CheckedChanged += new System.EventHandler(this.VpadDisplaySwitchToggled);
@@ -3174,7 +3038,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.UIColorPickerBtn.Style = MetroFramework.MetroColorStyle.Blue;
             this.UIColorPickerBtn.Tag = "NonHost";
             this.UIColorPickerBtn.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.UIColorPickerBtn, resources.GetString("UIColorPickerBtn.ToolTip"));
             this.UIColorPickerBtn.UseSelectable = true;
             this.UIColorPickerBtn.UseStyleColors = true;
             this.UIColorPickerBtn.Click += new System.EventHandler(this.UiColorPickerBtnClicked);
@@ -3188,7 +3051,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.DisableTeleporting.Style = MetroFramework.MetroColorStyle.Orange;
             this.DisableTeleporting.Tag = "Host";
             this.DisableTeleporting.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.DisableTeleporting, resources.GetString("DisableTeleporting.ToolTip"));
             this.DisableTeleporting.UseSelectable = true;
             this.DisableTeleporting.UseStyleColors = true;
             this.DisableTeleporting.CheckedChanged += new System.EventHandler(this.DisableTeleportingToggled);
@@ -3202,7 +3064,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.GamepadSplitscreen.Style = MetroFramework.MetroColorStyle.Blue;
             this.GamepadSplitscreen.Tag = "NonHost";
             this.GamepadSplitscreen.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.GamepadSplitscreen, resources.GetString("GamepadSplitscreen.ToolTip"));
             this.GamepadSplitscreen.UseSelectable = true;
             this.GamepadSplitscreen.UseStyleColors = true;
             this.GamepadSplitscreen.CheckedChanged += new System.EventHandler(this.GamepadSplitscreenToggled);
@@ -3214,7 +3075,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.disableVPadInput.Style = MetroFramework.MetroColorStyle.Blue;
             this.disableVPadInput.Tag = "NonHost";
             this.disableVPadInput.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.disableVPadInput, resources.GetString("disableVPadInput.ToolTip"));
             this.disableVPadInput.UseSelectable = true;
             this.disableVPadInput.UseStyleColors = true;
             this.disableVPadInput.CheckedChanged += new System.EventHandler(this.DisableVPadInputToggled);
@@ -3228,7 +3088,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.BypassFriendsOnly.Style = MetroFramework.MetroColorStyle.Blue;
             this.BypassFriendsOnly.Tag = "NonHost";
             this.BypassFriendsOnly.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.BypassFriendsOnly, resources.GetString("BypassFriendsOnly.ToolTip"));
             this.BypassFriendsOnly.UseSelectable = true;
             this.BypassFriendsOnly.UseStyleColors = true;
             this.BypassFriendsOnly.CheckedChanged += new System.EventHandler(this.BypassFriendsOnlyToggled);
@@ -3241,7 +3100,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.DisablePermanentKicks.Style = MetroFramework.MetroColorStyle.Blue;
             this.DisablePermanentKicks.Tag = "NonHost";
             this.DisablePermanentKicks.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.DisablePermanentKicks, resources.GetString("DisablePermanentKicks.ToolTip"));
             this.DisablePermanentKicks.UseSelectable = true;
             this.DisablePermanentKicks.UseStyleColors = true;
             this.DisablePermanentKicks.CheckedChanged += new System.EventHandler(this.DisablePermanentKicksToggled);
@@ -3253,7 +3111,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.MapTextEditor.Style = MetroFramework.MetroColorStyle.Blue;
             this.MapTextEditor.Tag = "NonHost";
             this.MapTextEditor.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.MapTextEditor, resources.GetString("MapTextEditor.ToolTip"));
             this.MapTextEditor.UseSelectable = true;
             this.MapTextEditor.UseStyleColors = true;
             this.MapTextEditor.Click += new System.EventHandler(this.MapTextEditorClicked);
@@ -3265,7 +3122,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.HostOptions.Style = MetroFramework.MetroColorStyle.Orange;
             this.HostOptions.Tag = "Host";
             this.HostOptions.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.HostOptions, resources.GetString("HostOptions.ToolTip"));
             this.HostOptions.UseSelectable = true;
             this.HostOptions.UseStyleColors = true;
             this.HostOptions.CheckedChanged += new System.EventHandler(this.HostOptionsToggled);
@@ -3277,7 +3133,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.SlowMotion.Style = MetroFramework.MetroColorStyle.Blue;
             this.SlowMotion.Tag = "NonHost";
             this.SlowMotion.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.SlowMotion, resources.GetString("SlowMotion.ToolTip"));
             this.SlowMotion.UseSelectable = true;
             this.SlowMotion.UseStyleColors = true;
             this.SlowMotion.CheckedChanged += new System.EventHandler(this.SlowMotionToggled);
@@ -3289,7 +3144,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.AllDLCUnlocked.Style = MetroFramework.MetroColorStyle.Blue;
             this.AllDLCUnlocked.Tag = "NonHost";
             this.AllDLCUnlocked.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.AllDLCUnlocked, resources.GetString("AllDLCUnlocked.ToolTip"));
             this.AllDLCUnlocked.UseSelectable = true;
             this.AllDLCUnlocked.UseStyleColors = true;
             this.AllDLCUnlocked.CheckedChanged += new System.EventHandler(this.AllDlcUnlockedToggled);
@@ -3301,7 +3155,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.ExitGame.Style = MetroFramework.MetroColorStyle.Blue;
             this.ExitGame.Tag = "NonHost";
             this.ExitGame.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.ExitGame, resources.GetString("ExitGame.ToolTip"));
             this.ExitGame.UseSelectable = true;
             this.ExitGame.UseStyleColors = true;
             this.ExitGame.Click += new System.EventHandler(this.ExitGameClicked);
@@ -3329,7 +3182,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             resources.ApplyResources(this.MinigamesTabs, "MinigamesTabs");
             this.MinigamesTabs.Multiline = true;
             this.MinigamesTabs.Name = "MinigamesTabs";
-            this.MinigamesTabs.SelectedIndex = 0;
+            this.MinigamesTabs.SelectedIndex = 2;
             this.MinigamesTabs.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.MinigamesTabs.Tag = "GeckoURequired";
             this.MinigamesTabs.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -3380,7 +3233,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.SkinChangingDuringGameplay.Style = MetroFramework.MetroColorStyle.Orange;
             this.SkinChangingDuringGameplay.Tag = "Host";
             this.SkinChangingDuringGameplay.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.SkinChangingDuringGameplay, resources.GetString("SkinChangingDuringGameplay.ToolTip"));
             this.SkinChangingDuringGameplay.UseSelectable = true;
             this.SkinChangingDuringGameplay.UseStyleColors = true;
             this.SkinChangingDuringGameplay.CheckedChanged += new System.EventHandler(this.SkinChangingDuringGameplayToggled);
@@ -3393,7 +3245,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.UnreadyAllPlayers.Style = MetroFramework.MetroColorStyle.Orange;
             this.UnreadyAllPlayers.Tag = "Host";
             this.UnreadyAllPlayers.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.UnreadyAllPlayers, resources.GetString("UnreadyAllPlayers.ToolTip"));
             this.UnreadyAllPlayers.UseSelectable = true;
             this.UnreadyAllPlayers.UseStyleColors = true;
             // 
@@ -3405,7 +3256,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.ReadyAllPlayers.Style = MetroFramework.MetroColorStyle.Orange;
             this.ReadyAllPlayers.Tag = "Host";
             this.ReadyAllPlayers.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.ReadyAllPlayers, resources.GetString("ReadyAllPlayers.ToolTip"));
             this.ReadyAllPlayers.UseSelectable = true;
             this.ReadyAllPlayers.UseStyleColors = true;
             this.ReadyAllPlayers.Click += new System.EventHandler(this.SetPlayersReady_Clicked);
@@ -3418,7 +3268,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.UnlockPlayerPositions.Style = MetroFramework.MetroColorStyle.Orange;
             this.UnlockPlayerPositions.Tag = "Host";
             this.UnlockPlayerPositions.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.UnlockPlayerPositions, resources.GetString("UnlockPlayerPositions.ToolTip"));
             this.UnlockPlayerPositions.UseSelectable = true;
             this.UnlockPlayerPositions.UseStyleColors = true;
             this.UnlockPlayerPositions.Click += new System.EventHandler(this.MgPlayerPositionLock);
@@ -3431,7 +3280,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.LockPlayerPositions.Style = MetroFramework.MetroColorStyle.Orange;
             this.LockPlayerPositions.Tag = "Host";
             this.LockPlayerPositions.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.LockPlayerPositions, resources.GetString("LockPlayerPositions.ToolTip"));
             this.LockPlayerPositions.UseSelectable = true;
             this.LockPlayerPositions.UseStyleColors = true;
             this.LockPlayerPositions.Click += new System.EventHandler(this.MgPlayerPositionLock);
@@ -3443,7 +3291,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.TNTGriefing.Style = MetroFramework.MetroColorStyle.Orange;
             this.TNTGriefing.Tag = "Host";
             this.TNTGriefing.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.TNTGriefing, resources.GetString("TNTGriefing.ToolTip"));
             this.TNTGriefing.UseSelectable = true;
             this.TNTGriefing.UseStyleColors = true;
             this.TNTGriefing.CheckedChanged += new System.EventHandler(this.TntGriefingToggled);
@@ -3455,7 +3302,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.DisabledKillBarriers.Style = MetroFramework.MetroColorStyle.Orange;
             this.DisabledKillBarriers.Tag = "Host";
             this.DisabledKillBarriers.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.DisabledKillBarriers, resources.GetString("DisabledKillBarriers.ToolTip"));
             this.DisabledKillBarriers.UseSelectable = true;
             this.DisabledKillBarriers.UseStyleColors = true;
             this.DisabledKillBarriers.CheckedChanged += new System.EventHandler(this.DisabledKillBarriersToggled);
@@ -3468,7 +3314,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.SetPlayersVulnerable.Style = MetroFramework.MetroColorStyle.Orange;
             this.SetPlayersVulnerable.Tag = "Host";
             this.SetPlayersVulnerable.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.SetPlayersVulnerable, resources.GetString("SetPlayersVulnerable.ToolTip"));
             this.SetPlayersVulnerable.UseSelectable = true;
             this.SetPlayersVulnerable.UseStyleColors = true;
             this.SetPlayersVulnerable.Click += new System.EventHandler(this.SetPlayersInvulnerability);
@@ -3480,7 +3325,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.SqueakInfinitely.Style = MetroFramework.MetroColorStyle.Blue;
             this.SqueakInfinitely.Tag = "NonHost";
             this.SqueakInfinitely.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.SqueakInfinitely, resources.GetString("SqueakInfinitely.ToolTip"));
             this.SqueakInfinitely.UseSelectable = true;
             this.SqueakInfinitely.UseStyleColors = true;
             this.SqueakInfinitely.CheckedChanged += new System.EventHandler(this.SqueakInfinitelyToggled);
@@ -3505,7 +3349,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.AllowMobs.Style = MetroFramework.MetroColorStyle.Orange;
             this.AllowMobs.Tag = "Host";
             this.AllowMobs.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.AllowMobs, resources.GetString("AllowMobs.ToolTip"));
             this.AllowMobs.UseSelectable = true;
             this.AllowMobs.UseStyleColors = true;
             this.AllowMobs.CheckedChanged += new System.EventHandler(this.AllowMobsToggled);
@@ -3518,7 +3361,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.SetPlayersInvulnerable.Style = MetroFramework.MetroColorStyle.Orange;
             this.SetPlayersInvulnerable.Tag = "Host";
             this.SetPlayersInvulnerable.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.SetPlayersInvulnerable, resources.GetString("SetPlayersInvulnerable.ToolTip"));
             this.SetPlayersInvulnerable.UseSelectable = true;
             this.SetPlayersInvulnerable.UseStyleColors = true;
             this.SetPlayersInvulnerable.Click += new System.EventHandler(this.SetPlayersInvulnerability);
@@ -3530,7 +3372,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.Solo.Style = MetroFramework.MetroColorStyle.Orange;
             this.Solo.Tag = "Host";
             this.Solo.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.Solo, resources.GetString("Solo.ToolTip"));
             this.Solo.UseSelectable = true;
             this.Solo.UseStyleColors = true;
             this.Solo.CheckedChanged += new System.EventHandler(this.SoloToggled);
@@ -3555,7 +3396,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.LiquidsCanConvert.Style = MetroFramework.MetroColorStyle.Orange;
             this.LiquidsCanConvert.Tag = "Host";
             this.LiquidsCanConvert.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.LiquidsCanConvert, resources.GetString("LiquidsCanConvert.ToolTip"));
             this.LiquidsCanConvert.UseSelectable = true;
             this.LiquidsCanConvert.UseStyleColors = true;
             this.LiquidsCanConvert.CheckedChanged += new System.EventHandler(this.LiquidsCanConvertToggled);
@@ -3598,7 +3438,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.AllPermissions.Style = MetroFramework.MetroColorStyle.Blue;
             this.AllPermissions.Tag = "NonHost";
             this.AllPermissions.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.AllPermissions, resources.GetString("AllPermissions.ToolTip"));
             this.AllPermissions.UseSelectable = true;
             this.AllPermissions.UseStyleColors = true;
             this.AllPermissions.CheckedChanged += new System.EventHandler(this.AllPermissionsToggled);
@@ -3610,7 +3449,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.NoPosLock.Style = MetroFramework.MetroColorStyle.Blue;
             this.NoPosLock.Tag = "NonHost";
             this.NoPosLock.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.NoPosLock, resources.GetString("NoPosLock.ToolTip"));
             this.NoPosLock.UseSelectable = true;
             this.NoPosLock.UseStyleColors = true;
             this.NoPosLock.CheckedChanged += new System.EventHandler(this.NoPositionLockToggled);
@@ -3621,7 +3459,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.metroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.metroLabel1, resources.GetString("metroLabel1.ToolTip"));
             // 
             // RequiredPlayersSlider
             // 
@@ -3635,7 +3472,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             0,
             0});
             this.RequiredPlayersSlider.Name = "RequiredPlayersSlider";
-            this.ToolTipManager.SetToolTip(this.RequiredPlayersSlider, resources.GetString("RequiredPlayersSlider.ToolTip"));
             this.RequiredPlayersSlider.Value = new decimal(new int[] {
             2,
             0,
@@ -3650,7 +3486,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.AlwaysDamaged.Style = MetroFramework.MetroColorStyle.Orange;
             this.AlwaysDamaged.Tag = "Host";
             this.AlwaysDamaged.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.AlwaysDamaged, resources.GetString("AlwaysDamaged.ToolTip"));
             this.AlwaysDamaged.UseSelectable = true;
             this.AlwaysDamaged.UseStyleColors = true;
             this.AlwaysDamaged.CheckedChanged += new System.EventHandler(this.AlwaysDamagedToggled);
@@ -3693,7 +3528,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.SelectableMapVariants.Style = MetroFramework.MetroColorStyle.Orange;
             this.SelectableMapVariants.Tag = "Host";
             this.SelectableMapVariants.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.SelectableMapVariants, resources.GetString("SelectableMapVariants.ToolTip"));
             this.SelectableMapVariants.UseSelectable = true;
             this.SelectableMapVariants.UseStyleColors = true;
             this.SelectableMapVariants.CheckedChanged += new System.EventHandler(this.SelectableMapVariantsToggled);
@@ -3709,7 +3543,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             resources.GetString("MapSizeBox.Items1")});
             this.MapSizeBox.Name = "MapSizeBox";
             this.MapSizeBox.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.MapSizeBox, resources.GetString("MapSizeBox.ToolTip"));
             this.MapSizeBox.UseSelectable = true;
             this.MapSizeBox.SelectedIndexChanged += new System.EventHandler(this.MapSizeBoxChanged);
             // 
@@ -3732,7 +3565,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.EndGame.Style = MetroFramework.MetroColorStyle.Orange;
             this.EndGame.Tag = "Host";
             this.EndGame.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.EndGame, resources.GetString("EndGame.ToolTip"));
             this.EndGame.UseSelectable = true;
             this.EndGame.UseStyleColors = true;
             this.EndGame.Click += new System.EventHandler(this.EndGameClicked);
@@ -3760,7 +3592,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             0,
             0});
             this.RefillIntervalSlider.Name = "RefillIntervalSlider";
-            this.ToolTipManager.SetToolTip(this.RefillIntervalSlider, resources.GetString("RefillIntervalSlider.ToolTip"));
             this.RefillIntervalSlider.Value = new decimal(new int[] {
             30,
             0,
@@ -3775,7 +3606,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.AntiEndGame.Style = MetroFramework.MetroColorStyle.Orange;
             this.AntiEndGame.Tag = "Host";
             this.AntiEndGame.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.AntiEndGame, resources.GetString("AntiEndGame.ToolTip"));
             this.AntiEndGame.UseSelectable = true;
             this.AntiEndGame.UseStyleColors = true;
             this.AntiEndGame.CheckedChanged += new System.EventHandler(this.AntiEndGameToggled);
@@ -3803,7 +3633,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.DisableCameraAnimation.Style = MetroFramework.MetroColorStyle.Blue;
             this.DisableCameraAnimation.Tag = "NonHost";
             this.DisableCameraAnimation.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.DisableCameraAnimation, resources.GetString("DisableCameraAnimation.ToolTip"));
             this.DisableCameraAnimation.UseSelectable = true;
             this.DisableCameraAnimation.UseStyleColors = true;
             this.DisableCameraAnimation.CheckedChanged += new System.EventHandler(this.DisableCameraAnimationToggled);
@@ -3815,7 +3644,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.UnlockInventoty.Style = MetroFramework.MetroColorStyle.Blue;
             this.UnlockInventoty.Tag = "NonHost";
             this.UnlockInventoty.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.UnlockInventoty, resources.GetString("UnlockInventoty.ToolTip"));
             this.UnlockInventoty.UseSelectable = true;
             this.UnlockInventoty.UseStyleColors = true;
             this.UnlockInventoty.CheckedChanged += new System.EventHandler(this.UnlockInventoryToggled);
@@ -3827,7 +3655,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.TumbleHUD.Style = MetroFramework.MetroColorStyle.Blue;
             this.TumbleHUD.Tag = "NonHost";
             this.TumbleHUD.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.TumbleHUD, resources.GetString("TumbleHUD.ToolTip"));
             this.TumbleHUD.UseSelectable = true;
             this.TumbleHUD.UseStyleColors = true;
             this.TumbleHUD.CheckedChanged += new System.EventHandler(this.TumbleHudToggled);
@@ -3860,7 +3687,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.StartRoundEndTimer.Style = MetroFramework.MetroColorStyle.Orange;
             this.StartRoundEndTimer.Tag = "Host";
             this.StartRoundEndTimer.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.StartRoundEndTimer, resources.GetString("StartRoundEndTimer.ToolTip"));
             this.StartRoundEndTimer.UseSelectable = true;
             this.StartRoundEndTimer.UseStyleColors = true;
             this.StartRoundEndTimer.Click += new System.EventHandler(this.StartRoundEndTimer_Clicked);
@@ -3889,7 +3715,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             0});
             this.ringScoreBlue.Name = "ringScoreBlue";
             this.ringScoreBlue.Tag = "";
-            this.ToolTipManager.SetToolTip(this.ringScoreBlue, resources.GetString("ringScoreBlue.ToolTip"));
             // 
             // ringScoreO
             // 
@@ -3915,7 +3740,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             0});
             this.ringScoreOrange.Name = "ringScoreOrange";
             this.ringScoreOrange.Tag = "";
-            this.ToolTipManager.SetToolTip(this.ringScoreOrange, resources.GetString("ringScoreOrange.ToolTip"));
             this.ringScoreOrange.ValueChanged += new System.EventHandler(this.GlideRingScoreSliderChanged);
             // 
             // ringScoreG
@@ -3942,7 +3766,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             0});
             this.ringScoreGreen.Name = "ringScoreGreen";
             this.ringScoreGreen.Tag = "";
-            this.ToolTipManager.SetToolTip(this.ringScoreGreen, resources.GetString("ringScoreGreen.ToolTip"));
             this.ringScoreGreen.ValueChanged += new System.EventHandler(this.GlideRingScoreSliderChanged);
             // 
             // commandsTab
@@ -3991,7 +3814,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.CommandsInMinigames.Style = MetroFramework.MetroColorStyle.Orange;
             this.CommandsInMinigames.Tag = "Host";
             this.CommandsInMinigames.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.CommandsInMinigames, resources.GetString("CommandsInMinigames.ToolTip"));
             this.CommandsInMinigames.UseSelectable = true;
             this.CommandsInMinigames.UseStyleColors = true;
             this.CommandsInMinigames.CheckedChanged += new System.EventHandler(this.CommandsInMinigamesToggled);
@@ -4047,7 +3869,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             resources.ApplyResources(this.javaTellBox, "javaTellBox");
             this.javaTellBox.Name = "javaTellBox";
             this.javaTellBox.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.javaTellBox, resources.GetString("javaTellBox.ToolTip"));
             this.javaTellBox.UseSelectable = true;
             // 
             // bedrockTellBox
@@ -4057,7 +3878,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.bedrockTellBox.Name = "bedrockTellBox";
             this.bedrockTellBox.TabStop = true;
             this.bedrockTellBox.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.bedrockTellBox, resources.GetString("bedrockTellBox.ToolTip"));
             this.bedrockTellBox.UseSelectable = true;
             // 
             // tellMsgBox
@@ -4088,7 +3908,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.tellMsgBox.ShortcutsEnabled = true;
             this.tellMsgBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.tellMsgBox.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.tellMsgBox, resources.GetString("tellMsgBox.ToolTip"));
             this.tellMsgBox.UseSelectable = true;
             this.tellMsgBox.WaterMark = "Enter message... (Pressing ENTER also sends the message)";
             this.tellMsgBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -4101,7 +3920,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             resources.ApplyResources(this.tellrawCmdBtn, "tellrawCmdBtn");
             this.tellrawCmdBtn.Name = "tellrawCmdBtn";
             this.tellrawCmdBtn.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.tellrawCmdBtn, resources.GetString("tellrawCmdBtn.ToolTip"));
             this.tellrawCmdBtn.UseSelectable = true;
             this.tellrawCmdBtn.Click += new System.EventHandler(this.TellrawCmdBtnClicked);
             // 
@@ -4133,7 +3951,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.tellNameBox.ShortcutsEnabled = true;
             this.tellNameBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.tellNameBox.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.tellNameBox, resources.GetString("tellNameBox.ToolTip"));
             this.tellNameBox.UseSelectable = true;
             this.tellNameBox.WaterMark = "Enter name... (not required)";
             this.tellNameBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -4172,7 +3989,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             resources.ApplyResources(this.giveXPLevelsBtn, "giveXPLevelsBtn");
             this.giveXPLevelsBtn.Name = "giveXPLevelsBtn";
             this.giveXPLevelsBtn.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.giveXPLevelsBtn, resources.GetString("giveXPLevelsBtn.ToolTip"));
             this.giveXPLevelsBtn.UseSelectable = true;
             this.giveXPLevelsBtn.Click += new System.EventHandler(this.GiveXpLevelsBtnClicked);
             // 
@@ -4182,7 +3998,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             resources.ApplyResources(this.giveXPOrbsBtn, "giveXPOrbsBtn");
             this.giveXPOrbsBtn.Name = "giveXPOrbsBtn";
             this.giveXPOrbsBtn.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.giveXPOrbsBtn, resources.GetString("giveXPOrbsBtn.ToolTip"));
             this.giveXPOrbsBtn.UseSelectable = true;
             this.giveXPOrbsBtn.Click += new System.EventHandler(this.GiveXpOrbsBtnClicked);
             // 
@@ -4280,7 +4095,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             resources.ApplyResources(this.SurvivalCommandBtn, "SurvivalCommandBtn");
             this.SurvivalCommandBtn.Name = "SurvivalCommandBtn";
             this.SurvivalCommandBtn.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.SurvivalCommandBtn, resources.GetString("SurvivalCommandBtn.ToolTip"));
             this.SurvivalCommandBtn.UseSelectable = true;
             this.SurvivalCommandBtn.Click += new System.EventHandler(this.SurvivalCommandBtnClicked);
             // 
@@ -4315,7 +4129,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             resources.ApplyResources(this.setWorldSpawnBtn, "setWorldSpawnBtn");
             this.setWorldSpawnBtn.Name = "setWorldSpawnBtn";
             this.setWorldSpawnBtn.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.setWorldSpawnBtn, resources.GetString("setWorldSpawnBtn.ToolTip"));
             this.setWorldSpawnBtn.UseSelectable = true;
             this.setWorldSpawnBtn.Click += new System.EventHandler(this.SetWorldSpawnBtnClicked);
             // 
@@ -4325,7 +4138,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             resources.ApplyResources(this.downfallCommandBtn, "downfallCommandBtn");
             this.downfallCommandBtn.Name = "downfallCommandBtn";
             this.downfallCommandBtn.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.downfallCommandBtn, resources.GetString("downfallCommandBtn.ToolTip"));
             this.downfallCommandBtn.UseSelectable = true;
             this.downfallCommandBtn.Click += new System.EventHandler(this.DownfallCommandBtnClicked);
             // 
@@ -4359,7 +4171,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             resources.ApplyResources(this.killCommandBtn, "killCommandBtn");
             this.killCommandBtn.Name = "killCommandBtn";
             this.killCommandBtn.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.killCommandBtn, resources.GetString("killCommandBtn.ToolTip"));
             this.killCommandBtn.UseSelectable = true;
             this.killCommandBtn.Click += new System.EventHandler(this.KillCommandBtnClicked);
             // 
@@ -4394,7 +4205,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             resources.ApplyResources(this.timeCommandBtn, "timeCommandBtn");
             this.timeCommandBtn.Name = "timeCommandBtn";
             this.timeCommandBtn.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.timeCommandBtn, resources.GetString("timeCommandBtn.ToolTip"));
             this.timeCommandBtn.UseSelectable = true;
             this.timeCommandBtn.Click += new System.EventHandler(this.TimeCommandBtnClicked);
             // 
@@ -4540,7 +4350,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             resources.ApplyResources(this.enchantCommandBtn, "enchantCommandBtn");
             this.enchantCommandBtn.Name = "enchantCommandBtn";
             this.enchantCommandBtn.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.enchantCommandBtn, resources.GetString("enchantCommandBtn.ToolTip"));
             this.enchantCommandBtn.UseSelectable = true;
             this.enchantCommandBtn.Click += new System.EventHandler(this.EnchantCommandBtnClicked);
             // 
@@ -4611,7 +4420,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             resources.ApplyResources(this.itemIdHelpBtn, "itemIdHelpBtn");
             this.itemIdHelpBtn.Name = "itemIdHelpBtn";
             this.itemIdHelpBtn.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.itemIdHelpBtn, resources.GetString("itemIdHelpBtn.ToolTip"));
             this.itemIdHelpBtn.UseSelectable = true;
             this.itemIdHelpBtn.Click += new System.EventHandler(this.ItemIdHelpBtnClicked);
             // 
@@ -4621,7 +4429,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             resources.ApplyResources(this.giveCommandBtn, "giveCommandBtn");
             this.giveCommandBtn.Name = "giveCommandBtn";
             this.giveCommandBtn.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.giveCommandBtn, resources.GetString("giveCommandBtn.ToolTip"));
             this.giveCommandBtn.UseSelectable = true;
             this.giveCommandBtn.Click += new System.EventHandler(this.GiveCommandBtnClicked);
             // 
@@ -4653,7 +4460,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.giveDataBox.ShortcutsEnabled = true;
             this.giveDataBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.giveDataBox.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.giveDataBox, resources.GetString("giveDataBox.ToolTip"));
             this.giveDataBox.UseSelectable = true;
             this.giveDataBox.WaterMark = "Data Value";
             this.giveDataBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -4687,7 +4493,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.giveAmountBox.ShortcutsEnabled = true;
             this.giveAmountBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.giveAmountBox.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.giveAmountBox, resources.GetString("giveAmountBox.ToolTip"));
             this.giveAmountBox.UseSelectable = true;
             this.giveAmountBox.WaterMark = "Item Amount (Max 32767)";
             this.giveAmountBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -4721,7 +4526,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.giveIDBox.ShortcutsEnabled = true;
             this.giveIDBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.giveIDBox.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.giveIDBox, resources.GetString("giveIDBox.ToolTip"));
             this.giveIDBox.UseSelectable = true;
             this.giveIDBox.WaterMark = "Item ID";
             this.giveIDBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -4732,7 +4536,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             // 
             this.settingsTab.Controls.Add(this.LanguageBox);
             this.settingsTab.Controls.Add(this.LanguageLbl);
-            this.settingsTab.Controls.Add(this.TipsBtn);
             this.settingsTab.Controls.Add(this.TutorialBtn);
             this.settingsTab.Controls.Add(this.HostIndicators);
             this.settingsTab.Controls.Add(this.CemuPckMngrBtn);
@@ -4773,21 +4576,11 @@ namespace Minecraft_Wii_U_Mod_Injector
             this.LanguageLbl.Name = "LanguageLbl";
             this.LanguageLbl.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
-            // TipsBtn
-            // 
-            resources.ApplyResources(this.TipsBtn, "TipsBtn");
-            this.TipsBtn.Name = "TipsBtn";
-            this.TipsBtn.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.TipsBtn, resources.GetString("TipsBtn.ToolTip"));
-            this.TipsBtn.UseSelectable = true;
-            this.TipsBtn.Click += new System.EventHandler(this.TipsBtnClicked);
-            // 
             // TutorialBtn
             // 
             resources.ApplyResources(this.TutorialBtn, "TutorialBtn");
             this.TutorialBtn.Name = "TutorialBtn";
             this.TutorialBtn.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.TutorialBtn, resources.GetString("TutorialBtn.ToolTip"));
             this.TutorialBtn.UseSelectable = true;
             this.TutorialBtn.Click += new System.EventHandler(this.TutorialBtnClicked);
             // 
@@ -4796,7 +4589,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             resources.ApplyResources(this.HostIndicators, "HostIndicators");
             this.HostIndicators.Name = "HostIndicators";
             this.HostIndicators.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.HostIndicators, resources.GetString("HostIndicators.ToolTip"));
             this.HostIndicators.UseSelectable = true;
             this.HostIndicators.CheckedChanged += new System.EventHandler(this.HostIndicatorsToggled);
             // 
@@ -4805,7 +4597,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             resources.ApplyResources(this.CemuPckMngrBtn, "CemuPckMngrBtn");
             this.CemuPckMngrBtn.Name = "CemuPckMngrBtn";
             this.CemuPckMngrBtn.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.CemuPckMngrBtn, resources.GetString("CemuPckMngrBtn.ToolTip"));
             this.CemuPckMngrBtn.UseSelectable = true;
             this.CemuPckMngrBtn.Click += new System.EventHandler(this.CemuPckMngrBtnClicked);
             // 
@@ -4814,7 +4605,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             resources.ApplyResources(this.QuickModsManagerBtn, "QuickModsManagerBtn");
             this.QuickModsManagerBtn.Name = "QuickModsManagerBtn";
             this.QuickModsManagerBtn.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.QuickModsManagerBtn, resources.GetString("QuickModsManagerBtn.ToolTip"));
             this.QuickModsManagerBtn.UseSelectable = true;
             this.QuickModsManagerBtn.Click += new System.EventHandler(this.QuickModsManagerBtnClicked);
             // 
@@ -4823,7 +4613,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             resources.ApplyResources(this.CheckForPreRelease, "CheckForPreRelease");
             this.CheckForPreRelease.Name = "CheckForPreRelease";
             this.CheckForPreRelease.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.CheckForPreRelease, resources.GetString("CheckForPreRelease.ToolTip"));
             this.CheckForPreRelease.UseSelectable = true;
             this.CheckForPreRelease.CheckedChanged += new System.EventHandler(this.CheckForPreReleaseToggled);
             // 
@@ -4845,7 +4634,6 @@ namespace Minecraft_Wii_U_Mod_Injector
             resources.ApplyResources(this.updateBtn, "updateBtn");
             this.updateBtn.Name = "updateBtn";
             this.updateBtn.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ToolTipManager.SetToolTip(this.updateBtn, resources.GetString("updateBtn.ToolTip"));
             this.updateBtn.UseSelectable = true;
             this.updateBtn.Click += new System.EventHandler(this.CheckUpdatesClicked);
             // 
@@ -5417,8 +5205,6 @@ namespace Minecraft_Wii_U_Mod_Injector
         private MetroButton QuickModsManagerBtn;
         private MetroButton updateBtn;
         private MetroButton CemuPckMngrBtn;
-        private MetroButton TutorialBtn;
-        private MetroButton TipsBtn;
         private MetroLabel ColorLabel;
         public MetroComboBox ColorsBox;
         public MetroCheckBox discordRpcCheckBox;
@@ -5457,5 +5243,6 @@ namespace Minecraft_Wii_U_Mod_Injector
         public System.Windows.Forms.NumericUpDown ElytraForwardSpeedSlider;
         public MetroLabel ElytraForwardSpeed;
         public MetroCheckBox BiomeSelectMenu;
+        private MetroButton TutorialBtn;
     }
 }

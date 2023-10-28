@@ -465,7 +465,7 @@ public partial class SessionManager : MetroForm
         _masterGameModePtr = MainForm.GeckoU.PeekUInt(MainForm.GeckoU.PeekUInt(0x109CD8FC) + 0x14C);
 
         MainForm.GeckoU.CallFunction(0x02C8DDDC, _masterGameModePtr, _currentPlayerPtr,
-            vulTile == UnlockPositionTile ? 0x0 : (uint)0x1);
+            vulTile == SetVulnerableTile ? 0x0 : (uint)0x1);
     }
 
     private void CloseContainerTileClicked(object sender, EventArgs e)

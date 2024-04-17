@@ -479,7 +479,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             resources.ApplyResources(this.MainTabs, "MainTabs");
             this.MainTabs.Multiline = true;
             this.MainTabs.Name = "MainTabs";
-            this.MainTabs.SelectedIndex = 1;
+            this.MainTabs.SelectedIndex = 5;
             this.MainTabs.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.MainTabs.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.MainTabs.Theme = MetroFramework.MetroThemeStyle.Dark;
@@ -3182,7 +3182,7 @@ namespace Minecraft_Wii_U_Mod_Injector
             resources.ApplyResources(this.MinigamesTabs, "MinigamesTabs");
             this.MinigamesTabs.Multiline = true;
             this.MinigamesTabs.Name = "MinigamesTabs";
-            this.MinigamesTabs.SelectedIndex = 2;
+            this.MinigamesTabs.SelectedIndex = 0;
             this.MinigamesTabs.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.MinigamesTabs.Tag = "GeckoURequired";
             this.MinigamesTabs.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;

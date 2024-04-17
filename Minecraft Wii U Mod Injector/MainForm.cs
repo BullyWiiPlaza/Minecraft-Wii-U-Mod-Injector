@@ -301,8 +301,6 @@ namespace Minecraft_Wii_U_Mod_Injector {
                         States.SwapState(States.StatesIds.Connected);
                         IsConnected = true;
 
-                        Console.WriteLine("MINECRAFT SERVER: " + MinecraftFunctions.GetMinecraftServer().ToString("X4"));
-
                         break;
 
                     case States.StatesIds.Connected:
@@ -1802,7 +1800,7 @@ namespace Minecraft_Wii_U_Mod_Injector {
         private void ElytraTakeoffHeightSliderChanged(object sender, EventArgs e) {
 
             // Clean Up
-            if (ElytraTakeoffHeightSlider.Value == (decimal)1.875){
+            if (ElytraTakeoffHeightSlider.Value == (decimal)1.875) {
                 GeckoU.WriteUInt(0x11010014, 0x00000000);
                 GeckoU.WriteUInt(0x0271DB40, 0x3D801066);
                 GeckoU.WriteUInt(0x0271DB44, 0xC96CA9F8);

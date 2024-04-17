@@ -14,7 +14,7 @@ namespace Minecraft_Wii_U_Mod_Injector.Helpers
     {
         public static MainForm Injector = new();
 
-        public static string LocalVer = "1.533.00";
+        public static string LocalVer = "1.534.00";
         public static string GitVer = string.Empty;
         public static string UpdaterPath = $@"{Application.StartupPath}\Minecraft.Wii.U.Mod.Injector.Updater.exe";
 

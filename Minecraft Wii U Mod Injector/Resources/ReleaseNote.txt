@@ -1,4 +1,4 @@
-[Release v1.534.00 (November N/A, 2023)]
+[Release v1.534.00 (April 17th, 2024)]
 
 # Overview
 
